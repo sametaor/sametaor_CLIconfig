@@ -121,4 +121,4 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 $env:PATH += ";$env:LOCALAPPDATA\MEGAcmd"
 mega-webdav MegaDrive
-echo "Commonly used commands:","cd","ls","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
+echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
