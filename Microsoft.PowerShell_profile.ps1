@@ -54,6 +54,7 @@ neofetch
 function ep { notepad $PROFILE }
 function la { Get-ChildItem -Path . -Force | Format-Table -AutoSize }
 function ll { Get-ChildItem -Path . -Force -Hidden | Format-Table -AutoSize }
+function lt { lsd --tree --depth 3 }
 function sysinfo { Get-ComputerInfo }
 function flushdns { Clear-DnsClientCache }
 function cpy { Set-Clipboard $args[0] }
