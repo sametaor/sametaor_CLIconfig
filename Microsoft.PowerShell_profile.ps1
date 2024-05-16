@@ -110,7 +110,7 @@ function sed($file, $find, $replace) {
     (Get-Content $file).replace("$find", $replace) | Set-Content $file
 }
 
-oh-my-posh init pwsh --config 'https://gist.githubusercontent.com/sametaor/51560833f343c7b6cae4394d1b5214f2/raw/c2e6f7bd6c6f148fae215ae04239d379113096c9/sametaor.omp.json' | iex
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/sametaor.omp.json' | iex
 Import-Module -Name Terminal-Icons
 Import-Module MusicPlayer
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
