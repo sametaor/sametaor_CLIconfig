@@ -167,7 +167,7 @@
           "trailing_diamond": "",
           "foreground": "#000000",
           "background": "#0B59E7",
-          "template": "  {{ .Context }} "
+          "template": "  {{ .Context }} ({{ .RunningContainers }}) "
         },
         {
           "type": "dotnet",
