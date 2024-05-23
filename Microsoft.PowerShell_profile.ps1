@@ -1,3 +1,5 @@
+Import-Module -Name Microsoft.WinGet.Client
+Import-Module -Name Microsoft.WinGet.CommandNotFound
 $canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
 function Update-PowerShell {
     if (-not $global:canConnectToGitHub) {
@@ -114,8 +116,6 @@ function sed($file, $find, $replace) {
 oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/sametaor.omp.json' | iex
 Import-Module -Name Terminal-Icons
 Import-Module MusicPlayer
-Import-Module Microsoft.WinGet.Client
-Import-Module Microsoft.WinGet.CommandNotFound
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -PredictionSource History
