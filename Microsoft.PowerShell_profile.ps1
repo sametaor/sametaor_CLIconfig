@@ -1,5 +1,6 @@
 Import-Module -Name Microsoft.WinGet.Client
 Import-Module -Name Microsoft.WinGet.CommandNotFound
+Import-Module "gsudoModule"
 $canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
 function Update-PowerShell {
     if (-not $global:canConnectToGitHub) {
