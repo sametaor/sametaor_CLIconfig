@@ -123,3 +123,5 @@ Set-PSReadLineOption -EditMode Windows
 $env:PATH += ";$env:LOCALAPPDATA\MEGAcmd"
 mega-webdav MegaDrive
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
+echo "Checking for Updates..."
+winget upgrade --all --include-unknown
