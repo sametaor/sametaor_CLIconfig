@@ -125,4 +125,22 @@ mega-webdav MegaDrive
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
 echo "Checking for upgrades..."
 winget upgrade --all --include-unknown
-choco upgrade all --acceptlicense -y -i
+
+$here = Split-Path -parent $MyInvocation.MyCommand.Definition
+$script = $MyInvocation.MyCommand.Name
+
+$identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
+$principal = New-Object System.Security.Principal.WindowsPrincipal($identity)
+if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Warning "Not running with administrative rights. Attempting to elevate..."
+    $command = "-ExecutionPolicy bypass -File `"$here\$script`""
+    Start-Process powershell -verb runas -argumentlist $command
+    Exit
+}
+
+Write-Host "`n========= Updating chocolatey... ========="
+& choco upgrade -y all
+
+Write-Host "Press any key to continue..."
+$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
