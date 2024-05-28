@@ -140,4 +140,4 @@ if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Adm
 
 Write-Host "`n========= Updating chocolatey... ========="
 & choco upgrade -y all
-
+Exit
