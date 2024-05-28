@@ -134,7 +134,8 @@ $principal = New-Object System.Security.Principal.WindowsPrincipal($identity)
 if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Write-Warning "Not running with administrative rights. Attempting to elevate..."
     $command = "-ExecutionPolicy bypass -File `"$here\$script`""
-    $powsh = "pwsh -NoProfile"
+    $pwsh = "C:\Program Files\PowerShell\7\pwsh.exe"
+    $powsh = "$pwsh -NoProfile"
     Start-Process $powsh -verb runas -argumentlist $command
     Exit
 }
