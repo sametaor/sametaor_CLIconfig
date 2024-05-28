@@ -126,3 +126,4 @@ echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spice
 echo "Checking for upgrades..."
 winget upgrade --all --include-unknown
 gsudo choco upgrade -y -i
+exit
