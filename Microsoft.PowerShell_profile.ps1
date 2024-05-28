@@ -115,10 +115,10 @@ function sed($file, $find, $replace) {
 
 oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/sametaor.omp.json' | iex
 Import-Module -Name Terminal-Icons
+$env:PATH += ";$env:LOCALAPPDATA\MEGAcmd
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
-$env:PATH += ";$env:LOCALAPPDATA\MEGAcmd
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
