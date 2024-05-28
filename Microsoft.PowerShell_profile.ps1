@@ -125,5 +125,5 @@ mega-webdav MegaDrive
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
 echo "Checking for upgrades..."
 winget upgrade --all --include-unknown
-gsudo choco upgrade -y -i
+gsudo choco upgrade all -y -i
 exit
