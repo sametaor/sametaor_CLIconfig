@@ -141,6 +141,3 @@ if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Adm
 Write-Host "`n========= Updating chocolatey... ========="
 & choco upgrade -y all
 
-Write-Host "Press any key to continue..."
-$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
-
