@@ -135,9 +135,7 @@ if (-not $principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Adm
     Write-Warning "Not running with administrative rights. Attempting to elevate..."
     $command = "-ExecutionPolicy bypass -File `"$here\$script`""
     Start-Process pwsh -verb runas -argumentlist $command
+    Write-Host "`n========= Updating chocolatey... ========="
+& choco upgrade -y all
     Exit
 }
-
-Write-Host "`n========= Updating chocolatey... ========="
-& choco upgrade -y all
-Exit
