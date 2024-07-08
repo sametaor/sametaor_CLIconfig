@@ -263,8 +263,6 @@
   ],
   "console_title_template": "{{.UserName}}@{{.HostName}} : {{.Folder}}",
   "transient_prompt": {
-        "background": "#000000",
-        "foreground": "#ffffff",
         "template": ""
     },
   "final_space": true,
