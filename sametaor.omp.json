@@ -265,7 +265,7 @@
   "transient_prompt": {
         "background": "transparent",
         "foreground": "#ffffff",
-        "template": "{{ .UserName }} on {{ .Name }} {{ .Shell }} @ {{ .HostName }} 󰂵 {{ .PWD }} =>  "
+        "template": "{{ .UserName }} on {{ .Segments.Name }} {{ .Shell }} @ {{ .HostName }} 󰂵 {{ .PWD }} =>  "
     },
   "final_space": true,
   "version": 2
