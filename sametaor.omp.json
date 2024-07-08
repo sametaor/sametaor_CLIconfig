@@ -122,7 +122,7 @@
           "powerline_symbol": "",
           "foreground": "#ffffff",
           "background": "#0077c2",
-          "template": "{{ .Name }}  - {{ .Version}}",
+          "template": "{{ .Name }} {{ .Shell }} - {{ .Version}}",
           "properties": {
             "mapped_shell_names": {
               "pwsh": "\uebc7",
@@ -265,7 +265,7 @@
   "transient_prompt": {
         "background": "transparent",
         "foreground": "#ffffff",
-        "template": "{{ .UserName }} on {{ .Shell }} @ {{ .HostName }} 󰂵 {{ .PWD }} =>  "
+        "template": "{{ .UserName }} on {{ .Name }} {{ .Shell }} @ {{ .HostName }} 󰂵 {{ .PWD }} =>  "
     },
   "final_space": true,
   "version": 2
