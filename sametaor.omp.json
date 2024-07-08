@@ -263,6 +263,8 @@
   ],
   "console_title_template": "{{.UserName}}@{{.HostName}} : {{.Folder}}",
   "transient_prompt": {
+        "background": "transparent",
+        "foreground": "#ffffff",
         "template": "{{ .UserName }} on {{ .Shell }} @ {{ .HostName }} 󰂵 {{ .PWD }}"
     },
   "final_space": true,
