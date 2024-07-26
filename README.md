@@ -1,1 +1,1 @@
-# mypowershellconfig
+# Dotfiles + config files
