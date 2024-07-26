@@ -1,0 +1,13 @@
+# This applies the noon colorscheme and wallpaper
+
+[Unit]
+Description=Logs system statistics to the systemd journal
+Wants=dynwallb.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/sametaor/Scripts/DynWalls/scripts/switchwallb.sh
+Restart=on-failure
+RestartSec=1000ms
+RestartSteps=5
+RestartMaxDelaySec=100000ms

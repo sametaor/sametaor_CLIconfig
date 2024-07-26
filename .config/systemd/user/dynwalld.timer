@@ -1,0 +1,16 @@
+# This timer unit is for testing
+# By David Both
+# Licensed under GPL V2
+#
+
+[Unit]
+Description=Logs some system statistics to the systemd journal
+
+
+[Timer]
+Unit=dynwalld.service
+OnCalendar=*-*-* 20:00:00 Asia/Kolkata
+Persistent=true
+
+[Install]
+WantedBy=timers.target

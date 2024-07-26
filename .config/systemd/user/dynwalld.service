@@ -1,0 +1,13 @@
+# This applies the night colorscheme and wallpaper
+
+[Unit]
+Description=Logs system statistics to the systemd journal
+Wants=dynwalld.timer
+
+[Service]
+Type=oneshot
+ExecStart=/home/sametaor/Scripts/DynWalls/scripts/switchwalld.sh
+Restart=on-failure
+RestartSec=1000ms
+RestartSteps=5
+RestartMaxDelaySec=100000ms
