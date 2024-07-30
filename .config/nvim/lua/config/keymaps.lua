@@ -65,3 +65,5 @@ vim.api.nvim_set_keymap("n", "<leader>n", ":ASToggle<CR>", {})
 vim.keymap.set("n", "<leader>d", ":Telescope colorscheme<CR>", { desc = "View and change colors" })
 
 vim.keymap.set("n", "<leader>v", ":Cheatsheet<CR>", { desc = "View cheatsheet" })
+
+vim.keymap.set("n", "<leader>i", ":LiveServerToggle<CR>", { desc = "Start/Stop Live Server" })
