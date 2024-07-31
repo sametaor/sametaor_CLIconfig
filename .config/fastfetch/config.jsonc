@@ -181,7 +181,7 @@
       "key": "{$3}{#32} Wttr  ",
       "type": "command",
       "shell": "/bin/sh",
-      "text": "curl 'wttr.in/Noida?format=3'"
+      "text": "curl 'wttr.in/Noida?format=%l:+%C+%t'"
     },
     {
       "key": "{$3}{#35}󰦖 Time  ",
