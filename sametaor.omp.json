@@ -275,6 +275,7 @@
     },
     {
       "alignment": "right",
+      "newline": true,
       "segments": [
         {
           "type": "command",
