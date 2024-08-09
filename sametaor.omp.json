@@ -103,7 +103,7 @@
           },
           "style": "diamond",
           "powerline_symbol": "\ue0b2",
-          "template": " {{ .CurrentDate | date .Format }} ",
+          "template": "󰥔 {{ .CurrentDate | date .Format }} ",
           "trailing_diamond": "\ue0b4╾\u256e",
           "type": "time"
         }
@@ -246,9 +246,9 @@
           },
           "style": "diamond",
           "powerline_symbol": "",
-          "trailing_diamond": "\ue0b4╾╯",
+          "trailing_diamond": "\ue0b4╾┤",
           "invert_powerline": true,
-          "template": "{{.FormattedMs}} ",
+          "template": " {{.FormattedMs}} ",
           "type": "executiontime"
         }
       ],
@@ -269,6 +269,25 @@
           "style": "plain",
           "template": " {{if .Root}}#{{else}}${{end}}",
           "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "command",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "╾╯",
+          "foreground": "#ffffff",
+          "background": "#ff5900",
+          "template": "{{ .Output }}",
+          "properties": {
+            "shell": "bash",
+            "command": "curl 'wttr.in/Noida?format=%c+%t\n'"
+          }
         }
       ],
       "type": "prompt"
