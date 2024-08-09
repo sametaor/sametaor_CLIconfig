@@ -286,7 +286,7 @@
           "template": "{{ .Output }}",
           "properties": {
             "shell": "bash",
-            "command": "curl 'wttr.in/Noida?format=%c+%t\n'"
+            "command": "curl wttr.in/Noida?format=%c+%t\n"
           }
         }
       ],
