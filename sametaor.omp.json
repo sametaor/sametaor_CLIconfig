@@ -283,10 +283,10 @@
           "trailing_diamond": "╾╯",
           "foreground": "#ffffff",
           "background": "#ff5900",
-          "template": "{{ .Output }}",
+          "template": " {{ .Output }}",
           "properties": {
             "shell": "bash",
-            "command": "echo 'Hello'"
+            "command": "curl 'wttr.in/Noida?format=%c+%t\n'"
           }
         }
       ],
