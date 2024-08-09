@@ -286,11 +286,11 @@
           "template": " {{ .Output }}",
           "properties": {
             "shell": "bash",
-            "command": "echo $(curl 'wttr.in/Noida?format=%c+%t\n'"
+            "command": "echo $(curl 'wttr.in/Noida?format=%c+%t\n')"
           }
         }
       ],
-      "type": "rprompt"
+      "type": "prompt"
     }
   ],
   "console_title_template": "{{.UserName}}@{{.HostName}} : {{.Folder}}",
