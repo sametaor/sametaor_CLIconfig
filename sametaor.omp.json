@@ -225,7 +225,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#ffffff",
-          "background": "#00897b",
+          "background": "#a406cc",
           "background_templates": [
             "{{ if .Error }}#e91e63{{ end }}"
           ],
