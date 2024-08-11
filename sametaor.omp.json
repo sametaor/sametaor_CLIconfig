@@ -222,6 +222,19 @@
       "alignment": "right",
       "segments": [
         {
+          "type": "command",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "foreground": "#ffffff",
+          "background": "#ff5900",
+          "template": " {{ .Output }} ",
+          "properties": {
+            "shell": "bash",
+            "command": "echo $(curl wttr.in?format=%c+%t)"
+          }
+        },
+        {
           "type": "status",
           "style": "powerline",
           "powerline_symbol": "",
@@ -247,23 +260,10 @@
           },
           "style": "diamond",
           "powerline_symbol": "",
-          "trailing_diamond": "",
+          "trailing_diamond": "\ue0b4╾╯",
           "invert_powerline": true,
           "template": " {{.FormattedMs}} ",
           "type": "executiontime"
-        },
-        {
-          "type": "command",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "\ue0b4╾╯",
-          "foreground": "#ffffff",
-          "background": "#ff5900",
-          "template": " {{ .Output }} ",
-          "properties": {
-            "shell": "bash",
-            "command": "echo $(curl wttr.in?format=%c+%t)"
-          }
         }
       ],
       "type": "prompt"
