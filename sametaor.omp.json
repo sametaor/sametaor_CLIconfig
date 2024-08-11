@@ -248,23 +248,10 @@
           },
           "style": "diamond",
           "powerline_symbol": "",
-          "trailing_diamond": "",
+          "trailing_diamond": "\ue0b4╾╯",
           "invert_powerline": true,
           "template": " {{.FormattedMs}} ",
           "type": "executiontime"
-        },
-        {
-          "type": "command",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "\ue0b4╾╯",
-          "invert_powerline": true,
-          "foreground": "#ffffff",
-          "background": "#ff5900",
-          "properties": {
-            "shell": "bash",
-            "command": "echo $(curl wttr.in?format=%t)"
-          }
         }
       ],
       "type": "prompt"
