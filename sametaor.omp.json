@@ -270,7 +270,7 @@
     },
     {
       "alignment": "left",
-      "newline": false,
+      "newline": true,
       "segments": [
         {
           "type": "text",
