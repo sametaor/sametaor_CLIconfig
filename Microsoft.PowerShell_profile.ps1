@@ -53,7 +53,7 @@ function Update-Profile {
     }
 }
 Update-Profile
-neofetch
+fastfetch
 function ep { notepad $PROFILE }
 function la { Get-ChildItem -Path . -Force | Format-Table -AutoSize }
 function ll { Get-ChildItem -Path . -Force -Hidden | Format-Table -AutoSize }
@@ -121,8 +121,7 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
-$env:PATH += ";$env:LOCALAPPDATA\MEGAcmd"
-mega-webdav MegaDrive
+Invoke-Expression (& { (zoxide init powershell | Out-String) })
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
 echo "Checking for upgrades..."
 winget upgrade --all --include-unknown
