@@ -92,7 +92,7 @@
           "invert_powerline": true,
           "background": "#ee22da",
           "foreground": "#222222",
-          "powerline_symbol": "\ue0b2 "
+          "powerline_symbol": "\ue0b2"
         },
         {
           "background": "#61afef",
