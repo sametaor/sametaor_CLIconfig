@@ -1,5 +1,6 @@
 Import-Module -Name Microsoft.WinGet.Client
 Import-Module -Name Microsoft.WinGet.CommandNotFound
+Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 Import-Module "gsudoModule"
 $canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
 function Update-PowerShell {
@@ -113,7 +114,15 @@ function grep($regex, $dir) {
 function sed($file, $find, $replace) {
     (Get-Content $file).replace("$find", $replace) | Set-Content $file
 }
-
+function yy {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath $cwd
+    }
+    Remove-Item -Path $tmp
+}
 oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/sametaor.omp.json' | iex
 Import-Module -Name Terminal-Icons
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
