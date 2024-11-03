@@ -132,5 +132,5 @@ Set-PSReadLineOption -EditMode Windows
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 echo "Commonly used commands:","cd","ls" "lt","ep","clear","winget","wsl","spicetify","choco","pip","git","gh","neofetch-win","py","sfc /scannow"
 echo "Checking for upgrades..."
-winget upgrade --all --include-unknown
+winget upgrade --all --include-unknown --include-pinned
 sudo choco upgrade all -y -i
