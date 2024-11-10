@@ -1,0 +1,7 @@
+{
+  "theme": "Windows11_Metro10",
+  "resourceVariables[0].variableKey": "",
+  "resourceVariables[0].value": "",
+  "controlStyles[0].target": "Border#AcrylicBorder",
+  "controlStyles[0].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.6\" TintColor=\"#143f78\" TintLuminosityOpacity=\"0.35\" Opacity=\"1\" FallbackColor=\"#143f78\"/>"
+}
