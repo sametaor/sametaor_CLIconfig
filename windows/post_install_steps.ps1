@@ -1,6 +1,7 @@
 $winget_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/wingetinstall.json"
 $winutil_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/winutilconfig.json"
 
+$hyperion = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/HyperV_on_HomeEdition.bat"
 winget upgrade all
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -103,8 +104,7 @@ gh alias set scr screensaver
 gh alias set stars user-stars
 
 $osInfo = Get-CimInstance -ClassName Win32_OperatingSystem
-
-if ($osInfo.Caption -like "*Home*") { & "HyperV_on_HomeEdition.bat" } else {
+if ($osInfo.Caption -like "*Home*") { & &hypervon } else {
 
     Write-Output "Skipping HyperV installation as detected version is not Home Edition"
 
