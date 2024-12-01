@@ -85,6 +85,7 @@ Invoke-WebRequest -useb https://raw.githubusercontent.com/sametaor/sametaor_CLIc
 
 git config --global user.name "sametaor"
 git config --global user.email "71749831+sametaor@users.noreply.github.co"
+git config --global gpg.program "c:/Program Files (x86)/GnuPG/bin/gpg.exe"
 
 gh auth login
 gh config set editor code
