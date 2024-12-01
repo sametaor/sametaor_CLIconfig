@@ -2,6 +2,7 @@ $winget_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/
 $winutil_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/winutilconfig.json"
 
 $hypervon = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/HyperV_on_HomeEdition.bat"
+
 winget upgrade all
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
