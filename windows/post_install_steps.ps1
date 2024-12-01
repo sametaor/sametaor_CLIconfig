@@ -83,6 +83,8 @@ Invoke-RestMethod https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/
 
 Invoke-WebRequest -useb https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/.config/fastfetch/config.jsonc -OutFile $HOME\fastfetch
 
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/HyperV_on_HomeEdition.bat" -OutFile HyperV_on_HomeEdition.bat
+
 git config --global user.name "sametaor"
 git config --global user.email "71749831+sametaor@users.noreply.github.co"
 git config --global gpg.program "c:/Program Files (x86)/GnuPG/bin/gpg.exe"
