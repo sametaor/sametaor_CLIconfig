@@ -1,0 +1,115 @@
+{
+    "pinnedList": [
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Word.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Excel.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\PowerPoint.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Access.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\OneNote.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Publisher.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Outlook (classic).lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Installer.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio 2022.lnk"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code\\Visual Studio Code.lnk"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Visual Studio Code - Insiders\\Visual Studio Code - Insiders.lnk"
+        },
+        {
+            "packagedAppId": "Microsoft.OutlookforWindows_8wekyb3d8bbwe!Microsoft.OutlookforWindows"
+        },
+        {
+            "packagedAppId": "Microsoft.WindowsStore_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "windows.immersivecontrolpanel_cw5n1h2txyewy!microsoft.windows.immersivecontrolpanel"
+        },
+        {
+            "packagedAppId": "Microsoft.Windows.Photos_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "Microsoft.Paint_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "Microsoft.WindowsAlarms_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "Microsoft.WindowsNotepad_8wekyb3d8bbwe!App"
+        },
+        {
+            "packagedAppId": "Microsoft.ScreenSketch_8wekyb3d8bbwe!App"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\System Tools\\Control Panel.lnk"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\File Explorer.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Zen Browser.lnk"
+        },
+        {
+            "packagedAppId": "Microsoft.SunriseBaseGame_8wekyb3d8bbwe!SunriseReleaseFinal"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Prism Launcher.lnk"
+        },
+        {
+            "packagedAppId": "Microsoft.GamingApp_8wekyb3d8bbwe!Microsoft.Xbox.App"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Discord Inc\\Discord.lnk"
+        },
+        {
+            "packagedAppId": "5319275A.WhatsAppDesktop_cv1g1gvanyjgm!App"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Accessories\\Windows Media Center.lnk"
+        },
+        {
+            "desktopAppLink": "%APPDATA%\\Microsoft\\Windows\\Start Menu\\Programs\\Spotify.lnk"
+        },
+        {
+            "secondaryTile": {
+                "tileId": "HPSmart",
+                "arguments": "HPSmart secondary tile",
+                "displayName": "HP Smart",
+                "packagedAppId": "AD2F1837.HPPrinterControl_v10z8vjag6ke6!AD2F1837.HPPrinterControl",
+                "largeIconPath": "ms-appx:///Assets/Logo.png"
+            }
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Adobe Premiere Pro 2025.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\Adobe Photoshop 2025.lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\OBS Studio\\OBS Studio (64bit).lnk"
+        },
+        {
+            "desktopAppLink": "%ALLUSERSPROFILE%\\Microsoft\\Windows\\Start Menu\\Programs\\VMware\\VMware Workstation Pro.lnk"
+        }
+    ]
+}
