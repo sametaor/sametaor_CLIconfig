@@ -1,0 +1,1246 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"HubsSidebarEnabled"=dword:00000000
+
+; How to Remove the Shortcut Arrow Icon in Windows 10 & 11
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons]
+"29"="C:\\Windows\\blank.ico"
+
+; http://www.majorgeeks.com/content/page/how_to_automatically_back_up_the_registry_on_windows_10.html
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Configuration Manager]
+"EnablePeriodicBackup"=dword:00000001
+
+; How to Add Boot to UEFI Firmware Settings Desktop Context Menu
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Firmware]
+"Icon"="bootux.dll,-1016"
+"MUIVerb"="Boot to UEFI Firmware Settings"
+"Position"="Bottom"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Firmware\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c,shutdown /r /fw' -Verb runAs\""
+
+; How to Add Default Apps to Context Menu
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\DefaultApps]
+"MUIVerb"="Default apps"
+"Position"="Bottom"
+"Icon"="imageres.dll,-24"
+"SettingsURI"="ms-settings:defaultapps"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\DefaultApps\command]
+"DelegateExecute"="{556FF0D6-A1EE-49E5-9FA4-90AE116AD744}"
+
+; How to Add Extract All Context Menu for ZIP Files
+[HKEY_CLASSES_ROOT\CompressedFolder\ShellEx\ContextMenuHandlers\{b8cdcb65-b1bf-4b42-9428-1dfdb7ee92af}]
+@="Compressed (zipped) Folder Menu"
+
+; How to Add Install Cab File to the Context Menu
+[-HKEY_CLASSES_ROOT\CABFolder\Shell\RunAs]
+
+[HKEY_CLASSES_ROOT\CABFolder\Shell\RunAs]
+@="Install Cab File"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\CABFolder\Shell\RunAs\Command]
+@="cmd /k dism /online /add-package /packagepath:\"%1\""
+
+; https://www.majorgeeks.com/files/details/add_kill_all_not_responding_tasks_context_menu.html
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\KillNRTasks]
+"icon"="taskmgr.exe,-30651"
+"MUIverb"="Kill all not responding tasks"
+"Position"="Top"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\KillNRTasks\command]
+@="CMD.exe /C taskkill.exe /f /fi \"status eq Not Responding\" & Pause"
+
+; Add or Remove 'Look For an App in the Microsoft Store' Context Menu in Windows 11
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+"NoUseStoreOpenWith"=-
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Explorer]
+"NoUseStoreOpenWith"=dword:00000001
+
+; How to Add New Windows Batch File to the Windows 10 Context Menu
+[HKEY_CLASSES_ROOT\.bat\ShellNew]
+"NullFile"=""
+
+; Tutorial: https://www.majorgeeks.com/content/page/how_to_show_time_only_on_the_windows_10_taskbar.html
+
+[HKEY_CLASSES_ROOT\*\shell\Open With Notepad]
+
+[HKEY_CLASSES_ROOT\*\shell\Open With Notepad\command]
+@="notepad.exe %1"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\DismContextMenu]
+"Icon"="WmiPrvSE.exe"
+"MUIVerb"="Repair Windows Image"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\shell\DismContextMenu\shell\CheckHealth]
+"HasLUAShield"=""
+"MUIVerb"="Check Health of Windows Image"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\shell\DismContextMenu\shell\CheckHealth\command]
+@="PowerShell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/k, Dism /Online /Cleanup-Image /CheckHealth' -Verb runAs\""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\shell\DismContextMenu\shell\RestoreHealth]
+"HasLUAShield"=""
+"MUIVerb"="Repair Windows Image"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\shell\DismContextMenu\shell\RestoreHealth\command]
+@="PowerShell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/k, Dism /Online /Cleanup-Image /RestoreHealth' -Verb runAs\""
+
+; How to Add Restart Explorer Desktop Context Menu
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart Explorer]
+"icon"="explorer.exe"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart Explorer\shell\01menu]
+"MUIVerb"="Restart Explorer Now"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart Explorer\shell\01menu\command]
+@=hex(2):63,00,6d,00,64,00,2e,00,65,00,78,00,65,00,20,00,2f,00,63,00,20,00,74,\
+  00,61,00,73,00,6b,00,6b,00,69,00,6c,00,6c,00,20,00,2f,00,66,00,20,00,2f,00,\
+  69,00,6d,00,20,00,65,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,\
+  00,78,00,65,00,20,00,20,00,26,00,20,00,73,00,74,00,61,00,72,00,74,00,20,00,\
+  65,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,00,\
+  00
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart Explorer\shell\02menu]
+"MUIVerb"="Restart Explorer with Pause"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart Explorer\shell\02menu\command]
+@=hex(2):63,00,6d,00,64,00,2e,00,65,00,78,00,65,00,20,00,2f,00,63,00,20,00,40,\
+  00,65,00,63,00,68,00,6f,00,20,00,6f,00,66,00,66,00,20,00,26,00,20,00,65,00,\
+  63,00,68,00,6f,00,2e,00,20,00,26,00,20,00,65,00,63,00,68,00,6f,00,20,00,53,\
+  00,74,00,6f,00,70,00,70,00,69,00,6e,00,67,00,20,00,65,00,78,00,70,00,6c,00,\
+  6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,20,00,70,00,72,00,6f,00,63,\
+  00,65,00,73,00,73,00,20,00,2e,00,20,00,2e,00,20,00,2e,00,20,00,26,00,20,00,\
+  65,00,63,00,68,00,6f,00,2e,00,20,00,26,00,20,00,74,00,61,00,73,00,6b,00,6b,\
+  00,69,00,6c,00,6c,00,20,00,2f,00,66,00,20,00,2f,00,69,00,6d,00,20,00,65,00,\
+  78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,00,65,00,20,00,26,\
+  00,20,00,65,00,63,00,68,00,6f,00,2e,00,20,00,26,00,20,00,65,00,63,00,68,00,\
+  6f,00,2e,00,20,00,26,00,20,00,65,00,63,00,68,00,6f,00,20,00,57,00,61,00,69,\
+  00,74,00,69,00,6e,00,67,00,20,00,74,00,6f,00,20,00,73,00,74,00,61,00,72,00,\
+  74,00,20,00,65,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,78,\
+  00,65,00,20,00,70,00,72,00,6f,00,63,00,65,00,73,00,73,00,20,00,77,00,68,00,\
+  65,00,6e,00,20,00,79,00,6f,00,75,00,20,00,61,00,72,00,65,00,20,00,72,00,65,\
+  00,61,00,64,00,79,00,20,00,2e,00,20,00,2e,00,20,00,2e,00,20,00,26,00,20,00,\
+  70,00,61,00,75,00,73,00,65,00,20,00,26,00,26,00,20,00,73,00,74,00,61,00,72,\
+  00,74,00,20,00,65,00,78,00,70,00,6c,00,6f,00,72,00,65,00,72,00,2e,00,65,00,\
+  78,00,65,00,20,00,26,00,26,00,20,00,65,00,78,00,69,00,74,00,00,00
+
+; How to Add 'Create Restore Point' Context Menu in Windows 10 & 11
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Create Restore Point]
+"HasLUAShield"=""
+"Icon"="SystemPropertiesProtection.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Create Restore Point\command]
+@="PowerShell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c, PowerShell Checkpoint-Computer -Description \"Manual\" -RestorePointType \"MODIFY_SETTINGS\"' -Verb runAs\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore]
+"SystemRestorePointCreationFrequency"=dword:00000000
+
+; How to Add Safe Mode to The Desktop Context Menu in Windows 10 & 11
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode]
+"icon"="bootux.dll,-1032"
+"MUIVerb"="Safe Mode"
+"Position"=-
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\001-NormalMode]
+@="Restart in Normal Mode"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\001-NormalMode\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c,bcdedit /deletevalue {current} safeboot & bcdedit /deletevalue {current} safebootalternateshell & shutdown -r -t 00 -f' -Verb runAs\""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\002-SafeMode]
+@="Restart in Safe Mode"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\002-SafeMode\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c,bcdedit /set {current} safeboot minimal & bcdedit /deletevalue {current} safebootalternateshell & shutdown -r -t 00 -f' -Verb runAs\""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\003-SafeModeNetworking]
+@="Restart in Safe Mode with Networking"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\003-SafeModeNetworking\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c,bcdedit /set {current} safeboot network & bcdedit /deletevalue {current} safebootalternateshell & shutdown -r -t 00 -f' -Verb runAs\""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\004-SafeModeCommandPrompt]
+@="Restart in Safe Mode with Command Prompt"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\SafeMode\shell\004-SafeModeCommandPrompt\command]
+@="powershell -windowstyle hidden -command \"Start-Process cmd -ArgumentList '/s,/c,bcdedit /set {current} safeboot minimal & bcdedit /set {current} safebootalternateshell yes & shutdown -r -t 00 -f' -Verb runAs\""
+
+; How to Add VBScript Script File to New Context Menu in Windows 10
+[HKEY_CLASSES_ROOT\.vbs\ShellNew]
+"NullFile"=""
+"ItemName"=hex(2):40,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,\
+  6f,00,74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,\
+  00,77,00,73,00,68,00,65,00,78,00,74,00,2e,00,64,00,6c,00,6c,00,2c,00,2d,00,\
+  34,00,38,00,30,00,32,00,00,00
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsTools]
+"Position"="Bottom"
+"Icon"=hex(2):25,00,73,00,79,00,73,00,74,00,65,00,6d,00,72,00,6f,00,6f,00,74,\
+  00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,69,00,\
+  6d,00,61,00,67,00,65,00,72,00,65,00,73,00,2e,00,64,00,6c,00,6c,00,2c,00,2d,\
+  00,31,00,31,00,34,00,00,00
+"MUIVerb"="Windows Tools"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsTools\command]
+@="explorer.exe shell:::{D20EA4E1-3957-11d2-A40B-0C5020524153}"
+
+; How to Add Disk Cleanup to Context Menu in Windows 10
+[HKEY_CLASSES_ROOT\Drive\shell\Windows.CleanUp]
+"CommandStateSync"=""
+"ExplorerCommandHandler"="{9cca66bb-9c78-4e59-a76f-a5e9990b8aa0}"
+"Icon"="%SystemRoot%\\System32\\cleanmgr.exe,-104"
+"ImpliedSelectionModel"=dword:00000001
+
+; How to Enable or Disable Advanced Indexing Options
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
+"PreventUsingAdvancedIndexingOptions"=-
+
+; How to Turn Autocorrect on or Off in Windows 10
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\TabletTip\1.7]
+"EnableAutocorrection"=dword:00000000
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\TabletTip\1.7]
+"EnableSpellchecking"=dword:00000001
+
+; How to Change Your Device Usage in Windows 11
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\business]
+"Intent"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\creative]
+"Intent"=dword:00000001
+"Priority"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\entertainment]
+"Intent"=dword:00000001
+"Priority"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\gaming]
+"Intent"=dword:00000001
+"Priority"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\schoolwork]
+"Intent"=dword:00000001
+"Priority"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent\OffDeviceConsent]
+"accepted"=dword:00000001
+
+; How to Show Full Details When Deleting a File
+[HKEY_CLASSES_ROOT\AllFilesystemObjects]
+"ConflictPrompt"="prop:System.ItemTypeText;System.Size;System.DateModified;System.DateCreated"
+"ExtendedTileInfo"="prop:System.ItemTypeText;System.Size;System.DateModified;System.OfflineAvailability"
+"FullDetails"="prop:System.PropGroup.FileSystem;System.ItemNameDisplay;System.ItemTypeText;System.ItemFolderPathDisplay;System.Size;System.DateCreated;System.DateModified;System.FileAttributes;*System.StorageProviderState;*System.OfflineAvailability;*System.OfflineStatus;*System.SharedWith;*System.FileOwner;*System.ComputerName"
+"InfoTip"="prop:System.ItemTypeText;System.Size;System.DateModified"
+"NoRecentDocs"=""
+"NoStaticDefaultVerb"=""
+"PreviewDetails"="prop:System.DateModified;System.Size;System.DateCreated;*System.StorageProviderState;*System.OfflineAvailability;*System.OfflineStatus;*System.SharedWith"
+"PreviewTitle"="prop:System.ItemNameDisplay;System.ItemTypeText"
+"QuickTip"="prop:System.ItemTypeText;System.Size;System.DateModified"
+"SetDefaultsFor"="prop:System.Author;System.Document.DateCreated"
+"TileInfo"="prop:System.ItemTypeText;System.Size;System.DateModified"
+"FileOperationPrompt"="prop:System.PropGroup.FileSystem;System.ItemNameDisplay;System.ItemTypeText;System.ItemFolderPathDisplay;System.Size;System.DateCreated;System.DateModified;System.FileAttributes;System.OfflineAvailability;System.OfflineStatus;System.SharedWith;System.FileOwner;System.ComputerName"
+
+; How to Add or Remove Burn disc image Context Menu in Windows 10
+[HKEY_CLASSES_ROOT\Windows.IsoFile\shell\burn]
+"MUIVerb"=hex(2):40,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,\
+  6f,00,74,00,25,00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,\
+  00,69,00,73,00,6f,00,62,00,75,00,72,00,6e,00,2e,00,65,00,78,00,65,00,2c,00,\
+  2d,00,33,00,35,00,31,00,00,00
+
+[HKEY_CLASSES_ROOT\Windows.IsoFile\shell\burn\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,53,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,69,00,73,00,\
+  6f,00,62,00,75,00,72,00,6e,00,2e,00,65,00,78,00,65,00,20,00,22,00,25,00,31,\
+  00,22,00,00,00
+
+; How to Add or Remove Optimize Drives Context Menu in Windows 10
+[HKEY_CLASSES_ROOT\Drive\shell\dfrgui]
+"MUIVerb"="Optimize drives"
+"Icon"="dfrgui.exe"
+
+[HKEY_CLASSES_ROOT\Drive\shell\dfrgui\command]
+@="dfrgui.exe"
+
+; Move Libraries Above or Below This PC in File Explorer
+[HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}]
+"SortOrderIndex"=dword:00000042
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash]
+"MUIVerb"="Hash"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\01SHA1]
+"MUIVerb"="SHA1"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\01SHA1\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA1 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\02SHA256]
+"MUIVerb"="SHA256"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\02SHA256\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA256 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\03SHA384]
+"MUIVerb"="SHA384"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\03SHA384\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA384 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\04SHA512]
+"MUIVerb"="SHA512"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\04SHA512\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm SHA512 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\05MACTripleDES]
+"MUIVerb"="MACTripleDES"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\05MACTripleDES\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm MACTripleDES | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\06MD5]
+"MUIVerb"="MD5"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\06MD5\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm MD5 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\07RIPEMD160]
+"MUIVerb"="RIPEMD160"
+
+[HKEY_CLASSES_ROOT\*\shell\GetFileHash\shell\07RIPEMD160\command]
+@="powershell.exe -noexit get-filehash -literalpath '%1' -algorithm RIPEMD160 | format-list"
+
+[HKEY_CLASSES_ROOT\*\shell\Attributes]
+"MUIVerb"="Attributes"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\aShow]
+"MUIVerb"="Show current attributes"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\aShow\command]
+@="cmd.exe /k attrib \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\bReset]
+"MUIVerb"="Reset attributes"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\bReset\command]
+@="attrib -r -a -s -h -i \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\cReadOnlySet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Read-only attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\cReadOnlySet\command]
+@="attrib +r \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\dReadOnlyRemove]
+"MUIVerb"="Remove Read-only attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\dReadOnlyRemove\command]
+@="attrib -r \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\eHiddenSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Hidden attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\eHiddenSet\command]
+@="attrib +h \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\fHiddenRemove]
+"MUIVerb"="Remove Hidden attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\fHiddenRemove\command]
+@="attrib -h \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\gSystemSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set System attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\gSystemSet\command]
+@="attrib +s \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\hSystemRemove]
+"MUIVerb"="Remove System attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\hSystemRemove\command]
+@="attrib -s \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\iArchiveSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Archive attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\iArchiveSet\command]
+@="attrib +a \"%1\""
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\jArchiveRemove]
+"MUIVerb"="Remove Archive attribute"
+
+[HKEY_CLASSES_ROOT\*\Shell\Attributes\Shell\jArchiveRemove\command]
+@="attrib -a \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes]
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\aShow]
+"MUIVerb"="Show current attributes"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\aShow\command]
+@="cmd.exe /k attrib \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\bShow]
+"MUIVerb"="Show attributes of this folder, subfolders and files"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\bShow\command]
+@="cmd.exe /k attrib \"%1\" & attrib \"%1\\*.*\" /s /d"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\cReset]
+"MUIVerb"="Reset attributes"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\cReset\command]
+@="cmd.exe /c attrib -r -a -s -h -i \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\dReset]
+"MUIVerb"="Reset attributes for this folder, subfolders and files"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\dReset\command]
+@="cmd.exe /c attrib -r -a -s -h -i \"%1\" & attrib -r -a -s -h -i \"%1\\*.*\" /s /d"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\eReadOnlySet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Read-only attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\eReadOnlySet\command]
+@="cmd.exe /c attrib +r \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\fReadOnlySet]
+"MUIVerb"="Set Read-only attribute to this folder, subfolders and files"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\fReadOnlySet\command]
+@="cmd.exe /c attrib +r \"%1\" & attrib +r \"%1\\*.*\" /s"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\gReadOnlyRemove]
+"MUIVerb"="Remove Read-only attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\gReadOnlyRemove\command]
+@="cmd.exe /c attrib -r \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\hReadOnlyRemove]
+"MUIVerb"="Remove Read-only attribute from this folder and subfiles"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\hReadOnlyRemove\command]
+@="cmd.exe /c attrib -r \"%1\" & attrib -r \"%1\\*.*\" /s"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\iHiddenSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Hidden attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\iHiddenSet\command]
+@="cmd.exe /c attrib +h \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\jHiddenSet]
+"MUIVerb"="Set Hidden attribute to this folder, subfolders and files"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\jHiddenSet\command]
+@="cmd.exe /c attrib +h \"%1\" & attrib +h \"%1\\*.*\" /s /d"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\kHiddenRemove]
+"MUIVerb"="Remove Hidden attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\kHiddenRemove\command]
+@="cmd.exe /c attrib -h \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\lHiddenRemove]
+"MUIVerb"="Remove Hidden attribute from this folder, subfolders and files"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\lHiddenRemove\command]
+@="cmd.exe /c attrib -h \"%1\" & attrib -h \"%1\\*.*\" /s /d"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\mSystemSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set System attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\mSystemSet\command]
+@="cmd.exe /c attrib +s \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\oSystemRemove]
+"MUIVerb"="Remove System attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\oSystemRemove\command]
+@="cmd.exe /c attrib -h \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\qArchiveSet]
+"CommandFlags"=dword:00000020
+"MUIVerb"="Set Archive attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\qArchiveSet\command]
+@="cmd.exe /c attrib +a \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\sArchiveRemove]
+"MUIVerb"="Remove Archive attribute"
+
+[HKEY_CLASSES_ROOT\Directory\Shell\Attributes\Shell\sArchiveRemove\command]
+@="cmd.exe /c attrib -a \"%1\""
+
+; How to Add or Remove Linux From the File Explorer Navigation Pane
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{B2B4A4D1-2754-4140-A2EB-9A76D9D7CDC6}]
+"System.IsPinnedToNameSpaceTree"=-
+
+; Open File Explorer To This PC
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"LaunchTo"=dword:00000001
+
+; How to Add or Remove the Recycle Bin in File Explorer
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{645FF040-5081-101B-9F08-00AA002F954E}]
+"System.IsPinnedToNameSpaceTree"=dword:00000001
+
+; How To Take Full Ownership of Files & Folders
+[HKEY_CLASSES_ROOT\*\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\*\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" && icacls \"%1\" /grant administrators:F"
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas]
+@="Take Ownership"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\runas\command]
+@="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+"IsolatedCommand"="cmd.exe /c takeown /f \"%1\" /r /d y && icacls \"%1\" /grant administrators:F /t"
+
+; How to Add Unblock File Context Menu
+[HKEY_CLASSES_ROOT\*\shell\unblock]
+"MUIVerb"="Unblock"
+"Extended"=-
+
+[HKEY_CLASSES_ROOT\*\shell\unblock\command]
+@="powershell.exe Unblock-File -LiteralPath '%L'"
+
+[HKEY_CLASSES_ROOT\Directory\shell\unblock]
+"MUIVerb"="Unblock"
+"Extended"=-
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\unblock\shell\001flyout]
+"MUIVerb"="Unblock files in this folder"
+
+[HKEY_CLASSES_ROOT\Directory\shell\unblock\shell\001flyout\command]
+@="powershell.exe get-childitem -LiteralPath '%L' | Unblock-File"
+
+[HKEY_CLASSES_ROOT\Directory\shell\unblock\shell\002flyout]
+"MUIVerb"="Unblock files in this folder and subfolders"
+
+[HKEY_CLASSES_ROOT\Directory\shell\unblock\shell\002flyout\command]
+@="powershell.exe get-childitem -LiteralPath '%L' -recurse | Unblock-File"
+
+; How to Add or Remove User Folder in File Explorer
+[HKEY_CURRENT_USER\Software\Classes\CLSID\{59031a47-3f72-44a7-89c5-5595fe6b30ee}]
+"System.IsPinnedToNameSpaceTree"=dword:00000001
+
+; Tutorial: https://www.elevenforum.com/t/turn-on-or-off-hardware-accelerated-gpu-scheduling-in-windows-11.852/
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers]
+"HwSchMode"=dword:00000002
+
+; Turn Optimizations for Windowed Games On or Off in Windows 11
+[HKEY_CURRENT_USER\Software\Microsoft\DirectX\GraphicsSettings]
+"SwapEffectUpgradeCache"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\DirectX\UserGpuPreferences]
+"DirectXUserGlobalSettings"="SwapEffectUpgradeEnable=1;"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System]
+"AllowClipboardHistory"=-
+
+; How to Limit Diagnostic Log Collection in Windows 10 & 11
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection]
+"LimitDiagnosticLogCollection"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\NetworkProvider]
+"RestoreConnection"=dword:00000000
+
+; How to Enable or Disable Modern Standby
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power]
+"PlatformAoAcOverride"=-
+
+; Add or Remove' Select Power Plan' Context Menu in Windows 10
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan]
+"Icon"="powercpl.dll"
+"MUIVerb"="Select Power Plan"
+"Position"="Middle"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\01menu]
+"MUIVerb"="Power Saver"
+"Icon"="powercpl.dll"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\01menu\command]
+@="powercfg.exe /setactive a1841308-3541-4fab-bc81-f71556f20b4a"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\02menu]
+"MUIVerb"="Balanced"
+"Icon"="powercpl.dll"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\02menu\command]
+@="powercfg.exe /setactive 381b4222-f694-41f0-9685-ff5bb260df2e"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\03menu]
+"MUIVerb"="High Performance"
+"Icon"="powercpl.dll"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\03menu\command]
+@="powercfg.exe /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\04menu]
+"MUIVerb"="Ultimate Performance"
+"Icon"="powercpl.dll"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\04menu\command]
+@="powercfg.exe /setactive e9a42b02-d5df-448d-aa00-03f14749eb61"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\05menu]
+"MUIVerb"="Power Options"
+"Icon"="powercpl.dll"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\PowerPlan\shell\05menu\command]
+@="control.exe powercfg.cpl"
+
+; https://www.majorgeeks.com/content/page/how_to_add_open_command_window_here_context_menu.html
+[HKEY_CLASSES_ROOT\Directory\shell\cmd2]
+@="@shell32.dll,-8506"
+"Extended"=-
+"Icon"="imageres.dll,-5323"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmd2\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmd2]
+@="@shell32.dll,-8506"
+"Extended"=-
+"Icon"="imageres.dll,-5323"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmd2\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\cmd2]
+@="@shell32.dll,-8506"
+"Extended"=-
+"Icon"="imageres.dll,-5323"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\Drive\shell\cmd2\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\cmd2]
+@="@shell32.dll,-8506"
+"Extended"=-
+"Icon"="imageres.dll,-5323"
+"NoWorkingDirectory"=""
+
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\cmd2\command]
+@="cmd.exe /s /k pushd \"%V\""
+
+; https://www.majorgeeks.com/content/page/how_to_add_open_powershell_window_here_as_administrator_context_menu.html
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PowerShellAsAdmin]
+@="Open PowerShell window here as administrator"
+"Extended"=-
+"HasLUAShield"=""
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\PowerShellAsAdmin\command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/k,pushd,%V && start PowerShell && exit' -Verb RunAs\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\PowerShellAsAdmin]
+@="Open PowerShell window here as administrator"
+"Extended"=-
+"HasLUAShield"=""
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\PowerShellAsAdmin\command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/k,pushd,%V && start PowerShell && exit' -Verb RunAs\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\PowerShellAsAdmin]
+@="Open PowerShell window here as administrator"
+"Extended"=-
+"HasLUAShield"=""
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\Drive\shell\PowerShellAsAdmin\command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/k,pushd,%V && start PowerShell && exit' -Verb RunAs\""
+
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\PowerShellAsAdmin]
+@="Open PowerShell window here as administrator"
+"Extended"=-
+"HasLUAShield"=""
+"Icon"="powershell.exe"
+
+[HKEY_CLASSES_ROOT\LibraryFolder\Background\shell\PowerShellAsAdmin\command]
+@="PowerShell -windowstyle hidden -Command \"Start-Process cmd -ArgumentList '/s,/k,pushd,%V && start PowerShell && exit' -Verb RunAs\""
+
+; How to Add or Remove 'Devices and Printers' to This PC in Windows 10
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8A91A66-3A7D-4424-8D24-04E180695C7A}]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{A8A91A66-3A7D-4424-8D24-04E180695C7A}]
+
+; How to Add Advanced User Accounts to Control Panel in Windows
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}]
+@="Advanced User Accounts"
+"InfoTip"="Opens netplwiz"
+"System.ControlPanel.Category"="9"
+
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\DefaultIcon]
+@="%SystemRoot%\\System32\\netplwiz.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{98641F47-8C25-4936-BEE4-C2CE1298969D}\Shell\Open\command]
+@="netplwiz.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{98641F47-8C25-4936-BEE4-C2CE1298969D}]
+@="Add Advanced User Accounts to Control Panel"
+
+; How to Add Color and Appearance to Control Panel in Windows
+[HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}]
+@="Color and Appearance"
+"InfoTip"="Change the color of your taskbar, window borders, and Start menu"
+"System.ApplicationName"="Microsoft.Personalization"
+"System.ControlPanel.Category"=dword:00000001
+"System.Software.TasksFileUrl"="Internal"
+
+[HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}\DefaultIcon]
+@="%SystemRoot%\\System32\\imageres.dll,-197"
+
+[HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}\Shell\Open\command]
+@="explorer shell:::{ED834ED6-4B5A-4bfe-8F11-A626DCB6A921} -Microsoft.Personalization\\pageColorization"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{106ee807-9e5d-451b-a9c5-74908630cefb}]
+@="Color and Appearance"
+
+; How to Add Disk Management to Control Panel in Windows
+[HKEY_CLASSES_ROOT\CLSID\{403ac161-c813-4819-b37f-3aacf0e12e0e}]
+@="Disk Management"
+"InfoTip"="Create and format hard disk partitions"
+"System.ControlPanel.Category"="2"
+"System.ControlPanel.EnableInSafeMode"="3"
+
+[HKEY_CLASSES_ROOT\CLSID\{403ac161-c813-4819-b37f-3aacf0e12e0e}\DefaultIcon]
+@="%WinDir%\\System32\\dmdskres.dll,-344"
+
+[HKEY_CLASSES_ROOT\CLSID\{403ac161-c813-4819-b37f-3aacf0e12e0e}\Shell\Open\command]
+ @="mmc.exe diskmgmt.msc"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{403ac161-c813-4819-b37f-3aacf0e12e0e}]
+@="Disk Management"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{E91B00A7-97F2-4934-B06A-101C194D2333}]
+@="All Tasks"
+"InfoTip"="All Control Panel items in a single view"
+"System.ControlPanel.Category"="5"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{E91B00A7-97F2-4934-B06A-101C194D2333}\DefaultIcon]
+@="%SystemRoot%\\System32\\imageres.dll,-27"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{E91B00A7-97F2-4934-B06A-101C194D2333}\Shell\Open\Command]
+@="explorer.exe shell:::{ED7BA470-8E54-465E-825C-99712043E01C}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{E91B00A7-97F2-4934-B06A-101C194D2333}]
+@="All Tasks"
+
+; How to Add Group Policy Editor to Control Panel in Windows 10
+; https://www.majorgeeks.com/content/page/how_to_add_group_policy_editor_to_control_panel_in_windows_10.html
+
+[HKEY_CLASSES_ROOT\CLSID\{1695E87D-8BC9-4803-A701-D812E7C55223}]
+@="Local Group Policy Editor"
+"InfoTip"="Starts the Local Group Policy Editor"
+"System.ControlPanel.Category"="5"
+
+[HKEY_CLASSES_ROOT\CLSID\{1695E87D-8BC9-4803-A701-D812E7C55223}\DefaultIcon]
+@="%SYSTEMROOT%\\System32\\gpedit.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{1695E87D-8BC9-4803-A701-D812E7C55223}\Shell\Open\Command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6d,00,6d,00,\
+  63,00,2e,00,65,00,78,00,65,00,20,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,\
+  00,52,00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,\
+  33,00,32,00,5c,00,67,00,70,00,65,00,64,00,69,00,74,00,2e,00,6d,00,73,00,63,\
+  00,00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{1695E87D-8BC9-4803-A701-D812E7C55223}]
+@="Local Group Policy Editor"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{134797C7-95FB-4FD7-A8C7-067C1B1A2C71}]
+@="System Configuration"
+"InfoTip"="Perform advanced troubleshooting and system configuration"
+"System.ControlPanel.Category"="5"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{134797C7-95FB-4FD7-A8C7-067C1B1A2C71}\DefaultIcon]
+@="msconfig.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{134797C7-95FB-4FD7-A8C7-067C1B1A2C71}\Shell\Open\Command]
+@="msconfig.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{134797C7-95FB-4FD7-A8C7-067C1B1A2C71}]
+@="System Configuration"
+
+; https://www.majorgeeks.com/content/page/add_or_remove_the_classic_personalize_context_menu.html
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization]
+"Icon"="themecpl.dll"
+"MUIVerb"="Personalize (Classic)"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\001flyout]
+"MUIVerb"="Theme Settings"
+"ControlPanelName"="Microsoft.Personalization"
+"Icon"="themecpl.dll"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\001flyout\command]
+@="explorer shell:::{ED834ED6-4B5A-4bfe-8F11-A626DCB6A921}"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\002flyout]
+"Icon"="imageres.dll,-110"
+"MUIVerb"="Desktop Background"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\002flyout\command]
+@="explorer shell:::{ED834ED6-4B5A-4bfe-8F11-A626DCB6A921} -Microsoft.Personalization\\pageWallpaper"
+
+[-HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\003flyout]
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\004flyout]
+"Icon"="themecpl.dll"
+"MUIVerb"="Color and Appearance"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\004flyout\command]
+@="explorer shell:::{ED834ED6-4B5A-4bfe-8F11-A626DCB6A921} -Microsoft.Personalization\\pageColorization"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout]
+"Icon"="SndVol.exe,-101"
+"MUIVerb"="Sounds"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\005flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL mmsys.cpl,,2"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout]
+"Icon"="PhotoScreensaver.scr"
+"MUIVerb"="Screen Saver Settings"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\006flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,1"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\007flyout]
+"Icon"="desk.cpl"
+"MUIVerb"="Desktop Icon Settings"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\007flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL desk.cpl,,0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout]
+"Icon"="main.cpl"
+"MUIVerb"="Mouse Pointers"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\008flyout\command]
+@="rundll32.exe shell32.dll,Control_RunDLL main.cpl,,1"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout]
+"Icon"="taskbarcpl.dll,-1"
+"MUIVerb"="Notification Area Icons"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\009flyout\command]
+@="explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9}"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\010flyout]
+"Icon"="taskbarcpl.dll,-1"
+"MUIVerb"="System Icons"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Personalization\shell\010flyout\command]
+@="explorer shell:::{05d7b0f4-2121-4eff-bf6b-ed3f69b894d9} \\SystemIcons,,0"
+
+[HKEY_CLASSES_ROOT\CLSID\{2AF5D196-7BE1-42EE-8F48-F826F2690A27}]
+@="Registry Editor"
+"InfoTip"="Starts the Registry Editor"
+"System.ControlPanel.Category"="5"
+
+[HKEY_CLASSES_ROOT\CLSID\{2AF5D196-7BE1-42EE-8F48-F826F2690A27}\DefaultIcon]
+@="%SYSTEMROOT%\\regedit.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{2AF5D196-7BE1-42EE-8F48-F826F2690A27}\Shell\Open\Command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,72,00,65,00,67,00,65,00,64,00,69,00,74,00,2e,00,65,00,78,00,65,00,\
+  00,00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{2AF5D196-7BE1-42EE-8F48-F826F2690A27}]
+@="Registry Editor"
+
+; How to Add Services to Control Panel in Windows
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D14ED2E1-C75B-443c-BD7C-FC03B2F08C01}]
+@="Services"
+"InfoTip"="Starts, stops, and configure Windows services."
+"System.ControlPanel.Category"="5"
+"System.ControlPanel.EnableInSafeMode"="3"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D14ED2E1-C75B-443c-BD7C-FC03B2F08C01}\DefaultIcon]
+@="%SystemRoot%\\System32\\filemgmt.dll,-236"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{D14ED2E1-C75B-443c-BD7C-FC03B2F08C01}\Shell\Open\Command]
+@="mmc.exe services.msc"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{D14ED2E1-C75B-443c-BD7C-FC03B2F08C01}]
+@="Services"
+
+; Add Settings or Control Panel as Context Menu
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings]
+"Position"="Bottom"
+"Icon"="SystemSettingsBroker.exe"
+"SubCommands"=""
+
+; Settings home page
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\01menu]
+"Icon"="SystemSettingsBroker.exe"
+"MUIVerb"="Settings"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\01menu\command]
+@="explorer ms-settings:"
+
+; System category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\02menu]
+"CommandFlags"=dword:00000020
+"MUIVerb"="System"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\02menu\command]
+@="explorer ms-settings:display"
+
+; Devices category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\03menu]
+"MUIVerb"="Devices"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\03menu\command]
+@="explorer ms-settings:bluetooth"
+
+; Phone category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\04menu]
+"MUIVerb"="Phone"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\04menu\command]
+@="explorer ms-settings:mobile-devices"
+
+; Network & Internet category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\05menu]
+"MUIVerb"="Network & Internet"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\05menu\command]
+@="explorer ms-settings:network"
+
+; Personalization category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\06menu]
+"MUIVerb"="Personalization"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\06menu\command]
+@="explorer ms-settings:personalization"
+
+; Apps category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\07menu]
+"MUIVerb"="Apps"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\07menu\command]
+@="explorer ms-settings:appsfeatures"
+
+; Accounts category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\08menu]
+"MUIVerb"="Accounts"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\08menu\command]
+@="explorer ms-settings:yourinfo"
+
+; Time & language category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\09menu]
+"MUIVerb"="Time && language"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\09menu\command]
+@="explorer ms-settings:dateandtime"
+
+; Gaming category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\10menu]
+"MUIVerb"="Gaming"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\10menu\command]
+@="explorer ms-settings:gaming-gamebar"
+
+; Ease of Access category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\11menu]
+"MUIVerb"="Ease of Access"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\11menu\command]
+@="explorer ms-settings:easeofaccess-narrator"
+
+; Search category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\12menu]
+"MUIVerb"="Search"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\12menu\command]
+@="explorer ms-settings:search-permissions"
+
+; Cortana category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\13menu]
+"MUIVerb"="Cortana"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\13menu\command]
+@="explorer ms-settings:cortana"
+
+; Privacy category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\14menu]
+"MUIVerb"="Privacy"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\14menu\command]
+@="explorer ms-settings:privacy"
+
+
+; Update & security category
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\15menu]
+"MUIVerb"="Update && security"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Settings\shell\15menu\command]
+@="explorer ms-settings:windowsupdate"
+
+; Tutorial: How to Enable or Disable Blue Screen of Death (BSOD) Auto Restart in Windows 10
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl]
+"AutoReboot"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MicrosoftEdge\Main]
+"AllowPrelaunch"=dword:00000000
+
+; https://www.majorgeeks.com/content/page/how_to_add_restart_with_options_context_menu_in_windows_10.html
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart]
+"Icon"="shell32.dll,-16739"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\001flyout]
+"MUIVerb"="Force apps to close, and full shutdown and restart PC with no time-out or warning"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\001flyout\command]
+@="shutdown /r /f /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\002flyout]
+"MUIVerb"="Full shutdown and restart PC with warning"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\002flyout\command]
+@="shutdown /r"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\003flyout]
+"MUIVerb"="Full shutdown and restart PC. After rebooted, restart any opened registered apps."
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\003flyout\command]
+@="shutdown /g /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\004flyout]
+"MUIVerb"="Restart to Advanced Startup Options"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Restart\shell\004flyout\command]
+@="shutdown /r /o /f /t 0"
+
+; Tutorial: https://www.tenforums.com/tutorials/96619-add-shut-down-context-menu-windows-10-a.html
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown]
+"Icon"="shell32.dll,-28"
+"MUIVerb"="Power"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\001flyout]
+"MUIVerb"="Force apps to close, and shutdown PC with no time-out or warning"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\001flyout\command]
+@="shutdown /s /f /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\002flyout]
+"MUIVerb"="Shutdown PC with warning"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\002flyout\command]
+@="shutdown /s"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\003flyout]
+"MUIVerb"="Turn off PC with no time-out or warning, but prompt to save any unsaved work"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\003flyout\command]
+@="shutdown /p"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\004flyout]
+"MUIVerb"="Shutdown PC and prepares it for fast startup"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\004flyout\command]
+@="shutdown /s /hybrid /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\005flyout]
+"MUIVerb"="Force apps to close, shutdown PC, and prepares it for fast startup"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\005flyout\command]
+@="shutdown /s /hybrid /f /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\006flyout]
+"MUIVerb"="Shutdown PC. On next boot, restart any opened registered apps"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\006flyout\command]
+@="shutdown /sg /t 0"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\007flyout]
+"MUIVerb"="Slide to shut down PC"
+"CommandFlags"=dword:00000020
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\Shutdown\shell\007flyout\command]
+@="SlideToShutDown.exe"
+
+; Show Detailed Information During Start Up, Shut Down, Login, and Logout
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Serialize]
+"StartupDelayInMSec"=dword:00000000
+
+; https://www.majorgeeks.com/content/page/how_to_add_or_remove_accounts_settings_context_menu_in_windows_10.html
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings]
+"Icon"="%SystemRoot%\\System32\\twinui.dll,-11411"
+"MUIVerb"="Accounts Settings"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\001flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Your info"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\001flyout\command]
+@="explorer ms-settings:yourinfo"
+
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\002flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Email and app accounts"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\002flyout\command]
+@="explorer ms-settings:emailandaccounts"
+
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\003flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Sign-in options"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\003flyout\command]
+@="explorer ms-settings:signinoptions"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\004flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Access work or school"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\004flyout\command]
+@="explorer ms-settings:workplace"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\005flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Family and other people"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\005flyout\command]
+@="explorer ms-settings:otherusers"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\006flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Sync your settings"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\AccountsSettings\shell\006flyout\command]
+@="explorer ms-settings:sync"
+
+; Add or Remove 'Open in Windows Terminal' in Windows 11
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{9F156763-7844-4DC4-B2B1-901F640F5155}"=-
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{9F156763-7844-4DC4-B2B1-901F640F5155}"=-
+
+; How to Disable Widgets in Windows 11
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Dsh]
+"AllowNewsAndInterests"=dword:00000000
+
+; Add Windows Update to The Control Panel in Windows 10
+[HKEY_CLASSES_ROOT\CLSID\{36eef7db-88ad-4e81-ad49-0e313f0c35f8}]
+@="@%SystemRoot%\\system32\\shell32.dll,-22068"
+"InfoTip"="@%SystemRoot%\\system32\\shell32.dll,-22580"
+"System.ApplicationName"="Microsoft.WindowsUpdate"
+"System.ControlPanel.Category"="5,10"
+"System.Software.TasksFileUrl"="Internal"
+
+[HKEY_CLASSES_ROOT\CLSID\{36eef7db-88ad-4e81-ad49-0e313f0c35f8}\DefaultIcon]
+@="%SystemRoot%\\shell32.dll,-47"
+
+[HKEY_CLASSES_ROOT\CLSID\{36eef7db-88ad-4e81-ad49-0e313f0c35f8}\Shell\Open\command]
+ @="control /name microsoft.WindowsUpdate"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{36eef7db-88ad-4e81-ad49-0e313f0c35f8}]
+@="Windows Update"
+
+; Add Windows Update Context Menu
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings]
+"Icon"="%SystemRoot%\\System32\\shell32.dll,-47"
+"MUIVerb"="Windows Update Settings"
+"Position"="Bottom"
+"SubCommands"=""
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\001flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Windows Update"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\001flyout\command]
+@="explorer ms-settings:windowsupdate"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\002flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Check for updates"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\002flyout\command]
+@="explorer ms-settings:windowsupdate-action"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\003flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Update history"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\003flyout\command]
+@="explorer ms-settings:windowsupdate-history"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\004flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Restart options"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\004flyout\command]
+@="explorer ms-settings:windowsupdate-restartoptions"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\005flyout]
+"Icon"="%SystemRoot%\\System32\\bootux.dll,-1032"
+"MUIVerb"="Advanced options"
+
+[HKEY_CLASSES_ROOT\DesktopBackground\Shell\WindowsUpdateSettings\shell\005flyout\command]
+@="explorer ms-settings:windowsupdate-options"
