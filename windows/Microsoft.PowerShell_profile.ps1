@@ -38,7 +38,7 @@ function Update-Profile {
     }
 
     try {
-        $url = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/Microsoft.PowerShell_profile.ps1"
+        $url = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/Microsoft.PowerShell_profile.ps1"
         $oldhash = Get-FileHash $PROFILE
         Invoke-RestMethod $url -OutFile "$env:temp/Microsoft.PowerShell_profile.ps1"
         $newhash = Get-FileHash "$env:temp/Microsoft.PowerShell_profile.ps1"
@@ -122,7 +122,7 @@ function yy {
     }
     Remove-Item -Path $tmp
 }
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/misc/sametaor.omp.json' | Invoke-Expression
 Import-Module -Name Terminal-Icons
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
