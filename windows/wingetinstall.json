@@ -312,6 +312,9 @@
                 },
                 {
                     "PackageIdentifier": "Google.AndroidStudio"
+                },
+                {
+                    "PackageIdentifier": "Ventoy.Ventoy"
                 }
             ],
             "SourceDetails": {

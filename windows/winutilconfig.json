@@ -288,6 +288,10 @@
       "choco": "file-converter"
     },
     {
+      "winget": "Ventoy.Ventoy",
+      "choco": "ventoy"
+    },
+    {
       "winget": "Microsoft.VisualStudio.2022.Community",
       "choco": "visualstudio2022community"
     },

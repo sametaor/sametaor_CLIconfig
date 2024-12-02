@@ -1,9 +1,9 @@
-$winget_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/wingetinstall.json"
-$winutil_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/winutilconfig.json"
+$winget_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/wingetinstall.json"
+$winutil_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/winutilconfig.json"
 
-$hypervon = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/HyperV_on_HomeEdition.bat"
+$hypervon = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/HyperV_on_HomeEdition.bat"
 
-$regconfig = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/windows/regconfig.reg"
+$regconfig = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/regconfig.reg"
 
 $proc = start-process reg.exe -ArgumentList "import $regconfig" -PassThru -Wait
 if ($proc.ExitCode -eq 0) {
@@ -72,7 +72,7 @@ wsl --install -d Ubuntu
 Invoke-WebRequest -Uri https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.pyp
 python get-pip.py
 python -m pip install -U pip
-pip install -r https://raw.githubusercontent.com/sametaor/Test-bot-for-Discord/requirements.txt
+pip install -r https://raw.githubusercontent.com/sametaor/Test-bot-for-Discord/refs/heads/master/requirements.txt
 
 npm install -g npm
 
