@@ -157,7 +157,7 @@
           "properties": {
             "shell": "bash",
             "command": "playerctl metadata --all-players --format ' {{ status }}: {{ artist }} - {{ title }}'"
-        }
+          }
         },
         {
           "type": "python",
