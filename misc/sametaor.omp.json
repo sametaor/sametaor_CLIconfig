@@ -156,7 +156,7 @@
           "background": "#1BD760",
           "properties": {
             "shell": "bash",
-            "command": "playerctl metadata --all-players --format ' {{ status }}: {{ artist }} - {{ title }}'"
+            "command": "playerctl metadata --format ' {{ status }}: {{ artist }} - {{ title }}'"
           }
         },
         {
