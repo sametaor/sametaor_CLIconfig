@@ -10,3 +10,6 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 complete -F _command doas
+
+eval "$(oh-my-posh init bash)"
+eval "$(zoxide init bash)"
