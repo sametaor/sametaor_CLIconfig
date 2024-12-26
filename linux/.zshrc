@@ -112,8 +112,8 @@ alias codew='codium --enable-features=UseOzonePlatform,WaylandWindowDecorations 
 alias code=codium
 alias vim=nvim
 alias vi=nvim
-alias neo='neo-matrix -a -D -c cyan'
-alias matrix='neo-matrix -a -D'
+alias neo='tmatrix -s 15 --fade -c default -C cyan -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
+alias matrix='tmatrix -s 15 --fade -c default -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
 alias ':q'=exit
 
 # Invoke fastfetch at startup
@@ -129,29 +129,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init zsh --config "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json")"
 
 eval "$(zoxide init zsh)"
-
-# zsh parameter completion for the dotnet CLI
-
-_dotnet_zsh_complete()
-{
-  local completions=("$(dotnet complete "$words")")
-
-  # If the completion list is empty, just continue with filename selection
-  if [ -z "$completions" ]
-  then
-    _arguments '*::arguments: _normal'
-    return
-  fi
-
-  # This is not a variable assignment, don't remove spaces!
-  _values = "${(ps:\n:)completions}"
-}
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-compdef _dotnet_zsh_complete dotnet
 
 export GPG_TTY=$(tty)
 
