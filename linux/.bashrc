@@ -13,3 +13,9 @@ complete -F _command doas
 
 eval "$(oh-my-posh init bash)"
 eval "$(zoxide init bash)"
+
+sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
+
+clear
+
+fastfetch
