@@ -47,7 +47,7 @@ ENABLE_CORRECTION="true"
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+ COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -62,6 +62,11 @@ ENABLE_CORRECTION="true"
 # see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
+# fzf-tab stuff
+zstyle ':fzf-tab:*' fzf-command fzf
+zstyle ':fzf-tab:*' fzf-bindings 'ctrl-j:accept' 'ctrl-a:toggle-all'
+
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
@@ -70,9 +75,9 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux command-not-found copypath gh themes zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
-
+plugins=(git archlinux command-not-found copypath gh themes zsh-autosuggestions zsh-syntax-highlighting fzf-tab 1password aliases alias-finder zoxide battery brew chezmoi colored-man-pages colorize common-aliases cp direnv dotenv dotnet eza fzf git-auto-fetch git-commit git-escape-magic git-extras github git-lfs git-prompt gnu-utils history httpie man marktext npm pipenv pylint python rclone rsync ruby snap ssh ssh-agent sudo systemd thefuck themes tldr tmux tmuxinator torrent vscode yum)
 source $ZSH/oh-my-zsh.sh
+source /usr/share/doc/git-extras/git-extras-completion.zsh
 
 # User configuration
 
@@ -115,7 +120,13 @@ alias vi=nvim
 alias neo='tmatrix -s 15 --fade -c default -C cyan -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
 alias matrix='tmatrix -s 15 --fade -c default -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
 alias ':q'=exit
-alias lt='lsd --depth 3 --tree'
+alias ls='eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o'
+alias lt='eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient -T -L 2 --git --git-repos -o --no-user'
+alias pkgsearch="pacman -Qq | fzf --preview 'pacman -Qil {}' --layout=reverse --bind 'enter:execute(pacman -Qil {} | less)'"
+alias pkgbrowse="pacman -Slq | fzf --preview 'pacman -Si {}' --layout=reverse"
+alias pkgtop="pkgtop -pacman yay"
+alias lolcat="lolcat -t"
+alias git-send='_git-send() { git add . && git commit -m "$1" && git push }; _git-send'
 
 # Invoke auto update
 sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
@@ -135,6 +146,7 @@ eval "$(zoxide init zsh)"
 
 export GPG_TTY=$(tty)
 
+export FZF_DEFAULT_OPTS='--color=fg:#c8d3f5,fg+:#c8d3f5,bg:#222436,bg+:#2a2e54 --color=hl:#82aaff,hl+:#86e1fc,info:#c3e88d,marker:#ffc777 --color=prompt:#ff757f,spinner:#c099ff,pointer:#c099ff,header:#828bb8 --color=border:#6c75ba,label:#9da8ee,query:#c8d3f5 --border="rounded" --border-label="FZF" --border-label-pos="0" --preview-window="border-double" --padding="1" --margin="1" --prompt=">_ " --marker=">>" --pointer="=>" --separator="─" --scrollbar="|" --layout="reverse" --info="right" --tmux left,80% --height=80%'
 # zsh parameter completion for the dotnet CLI
 
 _dotnet_zsh_complete()
