@@ -57,12 +57,12 @@ fastfetch
 function ep { notepad $PROFILE }
 function la { Get-ChildItem -Path . -Force | Format-Table -AutoSize }
 function ll { Get-ChildItem -Path . -Force -Hidden | Format-Table -AutoSize }
-function lt { lsd --tree --depth 3 }
+function lt { eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient -T -L 2 --git --git-repos -o --no-user }
 function sysinfo { Get-ComputerInfo }
 function flushdns { Clear-DnsClientCache }
 function cpy { Set-Clipboard $args[0] }
 function pst { Get-Clipboard }
-function lazyg {
+function git-send {
     git add .
     git commit -m "$args"
     git push

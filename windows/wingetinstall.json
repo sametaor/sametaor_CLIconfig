@@ -1,348 +1,348 @@
 {
-    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-    "CreationDate": "2024-12-01T16:35:24.806-00:00",
-    "Sources": [
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "CreationDate": "2024-12-01T16:35:24.806-00:00",
+  "Sources": [
+    {
+      "Packages": [
         {
-            "Packages": [
-                {
-                    "PackageIdentifier": "7zip.7zip"
-                },
-                {
-                    "PackageIdentifier": "Git.Git"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.Office"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.OneDrive"
-                },
-                {
-                    "PackageIdentifier": "Proton.ProtonVPN"
-                },
-                {
-                    "PackageIdentifier": "winaero.tweaker"
-                },
-                {
-                    "PackageIdentifier": "AntibodySoftware.WizTree"
-                },
-                {
-                    "PackageIdentifier": "Zen-Team.Zen-Browser.Optimized"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2010.x64"
-                },
-                {
-                    "PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
-                },
-                {
-                    "PackageIdentifier": "Nilesoft.Shell"
-                },
-                {
-                    "PackageIdentifier": "OpenJS.NodeJS"
-                },
-                {
-                    "PackageIdentifier": "Google.GoogleDrive"
-                },
-                {
-                    "PackageIdentifier": "GitExtensionsTeam.GitExtensions"
-                },
-                {
-                    "PackageIdentifier": "voidtools.Everything"
-                },
-                {
-                    "PackageIdentifier": "Oracle.JDK.17"
-                },
-                {
-                    "PackageIdentifier": "AdrienAllard.FileConverter"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.PowerShell"
-                },
-                {
-                    "PackageIdentifier": "Nvidia.PhysX"
-                },
-                {
-                    "PackageIdentifier": "TechPowerUp.NVCleanstall"
-                },
-                {
-                    "PackageIdentifier": "FxSound.FxSound"
-                },
-                {
-                    "PackageIdentifier": "GitHub.cli"
-                },
-                {
-                    "PackageIdentifier": "Klocman.BulkCrapUninstaller"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
-                },
-                {
-                    "PackageIdentifier": "MichaelTippach.ASIO4ALL"
-                },
-                {
-                    "PackageIdentifier": "Adobe.CreativeCloud"
-                },
-                {
-                    "PackageIdentifier": "GnuPG.GnuPG"
-                },
-                {
-                    "PackageIdentifier": "GnuPG.Gpg4win"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.Edge"
-                },
-                {
-                    "PackageIdentifier": "OBSProject.OBSStudio"
-                },
-                {
-                    "PackageIdentifier": "Rainmeter.Rainmeter"
-                },
-                {
-                    "PackageIdentifier": "Libretro.RetroArch"
-                },
-                {
-                    "PackageIdentifier": "Valve.Steam"
-                },
-                {
-                    "PackageIdentifier": "Ubisoft.Connect"
-                },
-                {
-                    "PackageIdentifier": "qBittorrent.qBittorrent"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.3_1"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.5"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2012.x86"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.7"
-                },
-                {
-                    "PackageIdentifier": "Intel.IntelDriverAndSupportAssistant"
-                },
-                {
-                    "PackageIdentifier": "GOG.Galaxy"
-                },
-                {
-                    "PackageIdentifier": "Python.Launcher"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.Runtime.3_1"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.8"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2013.x86"
-                },
-                {
-                    "PackageIdentifier": "HelmutBuhler.8GadgetPack"
-                },
-                {
-                    "PackageIdentifier": "Chocolatey.Chocolatey"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2010.x86"
-                },
-                {
-                    "PackageIdentifier": "ElectronicArts.EADesktop"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCRedist.2015+.x86"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DotNet.Runtime.8"
-                },
-                {
-                    "PackageIdentifier": "BtbN.FFmpeg.GPL"
-                },
-                {
-                    "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
-                },
-                {
-                    "PackageIdentifier": "Discord.Discord"
-                },
-                {
-                    "PackageIdentifier": "Fastfetch-cli.Fastfetch"
-                },
-                {
-                    "PackageIdentifier": "Flow-Launcher.Flow-Launcher"
-                },
-                {
-                    "PackageIdentifier": "JesseDuffield.lazygit"
-                },
-                {
-                    "PackageIdentifier": "JustArchiNET.ArchiSteamFarm"
-                },
-                {
-                    "PackageIdentifier": "rcmaehl.MSEdgeRedirect"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.NuGet"
-                },
-                {
-                    "PackageIdentifier": "Playnite.Playnite"
-                },
-                {
-                    "PackageIdentifier": "Timeraa.PreMiD"
-                },
-                {
-                    "PackageIdentifier": "PrismLauncher.PrismLauncher"
-                },
-                {
-                    "PackageIdentifier": "Spotify.Spotify"
-                },
-                {
-                    "PackageIdentifier": "ajeetdsouza.zoxide"
-                },
-                {
-                    "PackageIdentifier": "jqlang.jq"
-                },
-                {
-                    "PackageIdentifier": "junegunn.fzf"
-                },
-                {
-                    "PackageIdentifier": "lsd-rs.lsd"
-                },
-                {
-                    "PackageIdentifier": "sharkdp.bat"
-                },
-                {
-                    "PackageIdentifier": "xemu-project.xemu"
-                },
-                {
-                    "PackageIdentifier": "yt-dlp.yt-dlp"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"
-                },
-                {
-                    "PackageIdentifier": "Ollama.Ollama"
-                },
-                {
-                    "PackageIdentifier": "Telegram.TelegramDesktop"
-                },
-                {
-                    "PackageIdentifier": "MicaForEveryone.MicaForEveryone"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VisualStudioCode"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.PowerToys"
-                },
-                {
-                    "PackageIdentifier": "Python.Python.3.12"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.Teams"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.AppInstaller"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.UI.Xaml.2.7"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.UI.Xaml.2.8"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.VCLibs.Desktop.14"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.DevHome"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.WindowsTerminal"
-                },
-                {
-                    "PackageIdentifier": "Microsoft.WSL"
-                },
-                {
-                    "PackageIdentifier": "EFIBootEditor.EFIBootEditor"
-                },
-                {
-                    "PackageIdentifier": "Anaconda.Anaconda3"
-                },
-                {
-                    "PackageIdentifier": "REALiX.HWiNFO"
-                },
-                {
-                    "PackageIdentifier": "DevToys-app.DevToys"
-                },
-                {
-                    "PackageIdentifier": "GodotEngine.GodotEngine"
-                },
-                {
-                    "PackageIdentifier": "HermannSchinagl.LinkShellExtension"
-                },
-                {
-                    "PackageIdentifier": "FxSound.FxSound"
-                },
-                {
-                    "PackageIdentifier": "WiseCleaner.WiseToys"
-                },
-                {
-                    "PackageIdentifier": "CalcProgrammer1.OpenRGB"
-                },
-                {
-                    "PackageIdentifier": "RamenSoftware.Windhawk"
-                },
-                {
-                    "PackageIdentifier": "Google.EarthPro"
-                },
-                {
-                    "PackageIdentifier": "Genymobile.scrcpy"
-                },
-                {
-                    "PackageIdentifier": "Google.AndroidStudio"
-                },
-                {
-                    "PackageIdentifier": "Ventoy.Ventoy"
-                }
-            ],
-            "SourceDetails": {
-                "Argument": "https://cdn.winget.microsoft.com/cache",
-                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-                "Name": "winget",
-                "Type": "Microsoft.PreIndexed.Package"
-            }
+          "PackageIdentifier": "7zip.7zip"
         },
         {
-            "Packages": [
-                {
-                    "PackageIdentifier": "9NBLGGH556L3"
-                },
-                {
-                    "PackageIdentifier": "9NKSQGP7F2NH"
-                },
-                {
-                    "PackageIdentifier": "9WZDNCRFHWLH"
-                }
-            ],
-            "SourceDetails": {
-                "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-                "Identifier": "StoreEdgeFD",
-                "Name": "msstore",
-                "Type": "Microsoft.Rest"
-            }
+          "PackageIdentifier": "Git.Git"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Office"
+        },
+        {
+          "PackageIdentifier": "Microsoft.OneDrive"
+        },
+        {
+          "PackageIdentifier": "Proton.ProtonVPN"
+        },
+        {
+          "PackageIdentifier": "winaero.tweaker"
+        },
+        {
+          "PackageIdentifier": "AntibodySoftware.WizTree"
+        },
+        {
+          "PackageIdentifier": "Zen-Team.Zen-Browser.Optimized"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2010.x64"
+        },
+        {
+          "PackageIdentifier": "JanDeDobbeleer.OhMyPosh"
+        },
+        {
+          "PackageIdentifier": "Nilesoft.Shell"
+        },
+        {
+          "PackageIdentifier": "OpenJS.NodeJS"
+        },
+        {
+          "PackageIdentifier": "Google.GoogleDrive"
+        },
+        {
+          "PackageIdentifier": "GitExtensionsTeam.GitExtensions"
+        },
+        {
+          "PackageIdentifier": "voidtools.Everything"
+        },
+        {
+          "PackageIdentifier": "Oracle.JDK.17"
+        },
+        {
+          "PackageIdentifier": "AdrienAllard.FileConverter"
+        },
+        {
+          "PackageIdentifier": "Microsoft.PowerShell"
+        },
+        {
+          "PackageIdentifier": "Nvidia.PhysX"
+        },
+        {
+          "PackageIdentifier": "TechPowerUp.NVCleanstall"
+        },
+        {
+          "PackageIdentifier": "FxSound.FxSound"
+        },
+        {
+          "PackageIdentifier": "GitHub.cli"
+        },
+        {
+          "PackageIdentifier": "Klocman.BulkCrapUninstaller"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VisualStudio.2022.Community"
+        },
+        {
+          "PackageIdentifier": "MichaelTippach.ASIO4ALL"
+        },
+        {
+          "PackageIdentifier": "Adobe.CreativeCloud"
+        },
+        {
+          "PackageIdentifier": "GnuPG.GnuPG"
+        },
+        {
+          "PackageIdentifier": "GnuPG.Gpg4win"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Edge"
+        },
+        {
+          "PackageIdentifier": "OBSProject.OBSStudio"
+        },
+        {
+          "PackageIdentifier": "Rainmeter.Rainmeter"
+        },
+        {
+          "PackageIdentifier": "Libretro.RetroArch"
+        },
+        {
+          "PackageIdentifier": "Valve.Steam"
+        },
+        {
+          "PackageIdentifier": "Ubisoft.Connect"
+        },
+        {
+          "PackageIdentifier": "qBittorrent.qBittorrent"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2013.x64"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.6"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.3_1"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.5"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2012.x86"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.7"
+        },
+        {
+          "PackageIdentifier": "Intel.IntelDriverAndSupportAssistant"
+        },
+        {
+          "PackageIdentifier": "GOG.Galaxy"
+        },
+        {
+          "PackageIdentifier": "Python.Launcher"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.Runtime.3_1"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2015+.x64"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.DesktopRuntime.8"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2013.x86"
+        },
+        {
+          "PackageIdentifier": "HelmutBuhler.8GadgetPack"
+        },
+        {
+          "PackageIdentifier": "Chocolatey.Chocolatey"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2010.x86"
+        },
+        {
+          "PackageIdentifier": "ElectronicArts.EADesktop"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCRedist.2015+.x86"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DotNet.Runtime.8"
+        },
+        {
+          "PackageIdentifier": "BtbN.FFmpeg.GPL"
+        },
+        {
+          "PackageIdentifier": "BurntSushi.ripgrep.MSVC"
+        },
+        {
+          "PackageIdentifier": "Discord.Discord"
+        },
+        {
+          "PackageIdentifier": "Fastfetch-cli.Fastfetch"
+        },
+        {
+          "PackageIdentifier": "Flow-Launcher.Flow-Launcher"
+        },
+        {
+          "PackageIdentifier": "JesseDuffield.lazygit"
+        },
+        {
+          "PackageIdentifier": "JustArchiNET.ArchiSteamFarm"
+        },
+        {
+          "PackageIdentifier": "rcmaehl.MSEdgeRedirect"
+        },
+        {
+          "PackageIdentifier": "Microsoft.NuGet"
+        },
+        {
+          "PackageIdentifier": "Playnite.Playnite"
+        },
+        {
+          "PackageIdentifier": "Timeraa.PreMiD"
+        },
+        {
+          "PackageIdentifier": "PrismLauncher.PrismLauncher"
+        },
+        {
+          "PackageIdentifier": "Spotify.Spotify"
+        },
+        {
+          "PackageIdentifier": "ajeetdsouza.zoxide"
+        },
+        {
+          "PackageIdentifier": "jqlang.jq"
+        },
+        {
+          "PackageIdentifier": "junegunn.fzf"
+        },
+        {
+          "PackageIdentifier": "eza-community.eza"
+        },
+        {
+          "PackageIdentifier": "sharkdp.bat"
+        },
+        {
+          "PackageIdentifier": "xemu-project.xemu"
+        },
+        {
+          "PackageIdentifier": "yt-dlp.yt-dlp"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VisualStudioCode.Insiders"
+        },
+        {
+          "PackageIdentifier": "Ollama.Ollama"
+        },
+        {
+          "PackageIdentifier": "Telegram.TelegramDesktop"
+        },
+        {
+          "PackageIdentifier": "MicaForEveryone.MicaForEveryone"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VisualStudioCode"
+        },
+        {
+          "PackageIdentifier": "Microsoft.PowerToys"
+        },
+        {
+          "PackageIdentifier": "Python.Python.3.12"
+        },
+        {
+          "PackageIdentifier": "Microsoft.Teams"
+        },
+        {
+          "PackageIdentifier": "Microsoft.AppInstaller"
+        },
+        {
+          "PackageIdentifier": "Microsoft.UI.Xaml.2.7"
+        },
+        {
+          "PackageIdentifier": "Microsoft.UI.Xaml.2.8"
+        },
+        {
+          "PackageIdentifier": "Microsoft.VCLibs.Desktop.14"
+        },
+        {
+          "PackageIdentifier": "Microsoft.DevHome"
+        },
+        {
+          "PackageIdentifier": "Microsoft.WindowsTerminal"
+        },
+        {
+          "PackageIdentifier": "Microsoft.WSL"
+        },
+        {
+          "PackageIdentifier": "EFIBootEditor.EFIBootEditor"
+        },
+        {
+          "PackageIdentifier": "Anaconda.Anaconda3"
+        },
+        {
+          "PackageIdentifier": "REALiX.HWiNFO"
+        },
+        {
+          "PackageIdentifier": "DevToys-app.DevToys"
+        },
+        {
+          "PackageIdentifier": "GodotEngine.GodotEngine"
+        },
+        {
+          "PackageIdentifier": "HermannSchinagl.LinkShellExtension"
+        },
+        {
+          "PackageIdentifier": "FxSound.FxSound"
+        },
+        {
+          "PackageIdentifier": "WiseCleaner.WiseToys"
+        },
+        {
+          "PackageIdentifier": "CalcProgrammer1.OpenRGB"
+        },
+        {
+          "PackageIdentifier": "RamenSoftware.Windhawk"
+        },
+        {
+          "PackageIdentifier": "Google.EarthPro"
+        },
+        {
+          "PackageIdentifier": "Genymobile.scrcpy"
+        },
+        {
+          "PackageIdentifier": "Google.AndroidStudio"
+        },
+        {
+          "PackageIdentifier": "Ventoy.Ventoy"
         }
-    ],
-    "WinGetVersion": "1.9.25200"
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    },
+    {
+      "Packages": [
+        {
+          "PackageIdentifier": "9NBLGGH556L3"
+        },
+        {
+          "PackageIdentifier": "9NKSQGP7F2NH"
+        },
+        {
+          "PackageIdentifier": "9WZDNCRFHWLH"
+        }
+      ],
+      "SourceDetails": {
+        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+        "Identifier": "StoreEdgeFD",
+        "Name": "msstore",
+        "Type": "Microsoft.Rest"
+      }
+    }
+  ],
+  "WinGetVersion": "1.9.25200"
 }
