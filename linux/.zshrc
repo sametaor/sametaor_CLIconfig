@@ -70,7 +70,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux command-not-found copypath gh themes zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git archlinux command-not-found copypath gh themes zsh-autosuggestions zsh-syntax-highlighting fzf-tab)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,12 +115,15 @@ alias vi=nvim
 alias neo='tmatrix -s 15 --fade -c default -C cyan -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
 alias matrix='tmatrix -s 15 --fade -c default -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10'
 alias ':q'=exit
-
-# Invoke fastfetch at startup
-fastfetch
+alias lt='lsd --depth 3 --tree'
 
 # Invoke auto update
-yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
+sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
+
+clear
+
+# Invoke Fastfetch
+fastfetch
 
 export EDITOR=/usr/bin/nvim
 
@@ -162,3 +165,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# Created by `pipx` on 2024-12-28 05:44:32
+export PATH="$PATH:/home/sametaor/.local/bin"
+
+if [ -e /home/sametaor/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sametaor/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
