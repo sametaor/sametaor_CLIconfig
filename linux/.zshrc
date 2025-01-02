@@ -111,8 +111,8 @@ source /usr/share/doc/git-extras/git-extras-completion.zsh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias upgrade='sudo pacman -Syu --noconfirm && yay -Syu --nodiffmenu --save'
-alias yay='yay --nodiffmenu'
+alias upgrade='sudo pacman -Syu --noconfirm && yay -Syu'
+alias yay='yay'
 alias cd=z
 alias z1="z .."
 alias z2="z ../.."
@@ -488,6 +488,58 @@ alias sc-edit="sudo systemctl edit"
 alias sc-ennow="sudo systemctl enable --now"
 alias sc-disnow="sudo systemctl disable --now"
 alias sc-masknow="sudo systemctl mask --now"
+alias h='function hdi(){ howdoi $* -c -n 5; }; hdi'
+alias hless='function hdi(){ howdoi $* -c | less --raw-control-chars --quit-if-one-screen --no-init; }; hdi'
+alias hcook='function hcook(){ HOWDOI_URL=cooking.stackexchange.com howdoi $* ; }; hcook'
+alias hso='function hso(){ HOWDOI_URL=stackoverflow.com howdoi $* ; }; hso'
+alias hpol='function hpol(){ HOWDOI_URL=politics.stackexchange.com howdoi $* ; }; hpol'
+alias htor='function htor(){ HOWDOI_URL=tor.stackexchange.com howdoi $* ; }; htor'
+alias hsnd='function hsnd(){ HOWDOI_URL=sound.stackexchange.com howdoi $* ; }; hsnd'
+alias hastro='function hastro(){ HOWDOI_URL=astronomy.stackexchange.com howdoi $* ; }; hastro'
+alias haub='function haub(){ HOWDOI_URL=askubuntu.com howdoi $* ; }; haub'
+alias hacad='function hacad(){ HOWDOI_URL=academia.stackexchange.com howdoi $* ; }; hacad'
+alias hmov='function hmov(){ HOWDOI_URL=movies.stackexchange.com howdoi $* ; }; hmov'
+alias htrav='function htrav(){ HOWDOI_URL=travel.stackexchange.com howdoi $* ; }; htrav'
+alias hjp='function hjp(){ HOWDOI_URL=japanese.stackexchange.com howdoi $* ; }; hjp'
+alias hgd='function hgd(){ HOWDOI_URL=graphicdesign.stackexchange.com howdoi $* ; }; hgd'
+alias hcs='function hcse(){ HOWDOI_URL=computer-science.stackexchange.com howdoi $* ; }; hcse'
+alias hsec='function hse(){ HOWDOI_URL=security.stackexchange.com howdoi $* ; }; hse'
+alias hchess='function hchess(){ HOWDOI_URL=chess.stackexchange.com howdoi $* ; }; hchess'
+alias hvid='function hvid(){ HOWDOI_URL=video.stackexchange.com howdoi $* ; }; hvid'
+alias hwapps='function hwapps(){ HOWDOI_URL=webapps.stackexchange.com howdoi $* ; }; hwapps'
+alias hunix='function hunix(){ HOWDOI_URL=unix.stackexchange.com howdoi $* ; }; hunix'
+alias hux='function hux(){ HOWDOI_URL=ux.stackexchange.com howdoi $* ; }; hux'
+alias hphil='function hphil(){ HOWDOI_URL=philosophy.stackexchange.com howdoi $* ; }; hphil'
+alias hphoto='function hphoto(){ HOWDOI_URL=photo.stackexchange.com howdoi $* ; }; hphoto'
+alias hdiy='function hdiy(){ HOWDOI_URL=diy.stackexchange.com howdoi $* ; }; hdiy'
+alias hgdev='function hgdev(){ HOWDOI_URL=gamedev.stackexchange.com howdoi $* ; }; hgdev'
+alias hsu='function hsu(){ HOWDOI_URL=superuser.com howdoi $* }; hsu'
+alias hgame='function hgame(){ HOWDOI_URL=gaming.stackexchange.com howdoi $* }; hgame'
+alias hdroid='function hdroid(){ HOWDOI_URL=android.stackexchange.com howdoi $* }; hdroid'
+alias hfr='function hfr(){ HOWDOI_URL=french.stackexchange.com howdoi $* }; hfr'
+alias hru='function hru(){ HOWDOI_URL=russian.stackexchange.com howdoi $* }; hru'
+alias hlance='function hlance(){ HOWDOI_URL=freelancing.stackexchange.com howdoi $* }; hlance'
+alias hmeta='function hmeta(){ HOWDOI_URL=meta.stackexchange.com howdoi $* }; hmeta'
+alias hsapps='function hsapps(){ HOWDOI_URL=stackapps.com howdoi $* }; hsapps'
+alias hwrite='function hwrite(){ HOWDOI_URL=writing.stackexchange.com howdoi $* }; hwrite'
+alias hmech='function hmech(){ HOWDOI_URL=mechanics.stackexchange.com howdoi $* }; hmech'
+alias hmus='function hmus(){ HOWDOI_URL=music.stackexchange.com howdoi $* }; hmus'
+alias hout='function hout(){ HOWDOI_URL=outdoors.stackexchange.com howdoi $* }; hout'
+alias hspace='function hspace(){ HOWDOI_URL=space.stackexchange.com howdoi $* }; hspace'
+alias hcgi='function hcgi(){ HOWDOI_URL=computergraphics.stackexchange.com howdoi $* }; hcgi'
+alias hblend='function hblend(){ HOWDOI_URL=blender.stackexchange.com howdoi $* }; hblend'
+alias hiot='function hiot(){ HOWDOI_URL=iot.stackexchange.com howdoi $* }; hiot'
+alias hlang='function hlang(){ HOWDOI_URL=languagelearning.stackexchange.com howdoi $* }; hlang'
+alias hai='function hai(){ HOWDOI_URL=ai.stackexchange.com howdoi $* }; hai'
+alias hoss='function hoss(){ HOWDOI_URL=opensource.stackexchange.com howdoi $* }; hoss'
+alias hhack='function hhack(){ HOWDOI_URL=lifehacks.stackexchange.com howdoi $* }; hhack'
+alias hvim='function hvim(){ HOWDOI_URL=vi.stackexchange.com howdoi $* }; hvim'
+alias hemacs='function hemacs(){ HOWDOI_URL=emacs.stackexchange.com howdoi $* }; hemacs'
+alias hebooks='function hebooks(){ HOWDOI_URL=ebooks.stackexchange.com howdoi $* }; hebooks'
+alias hsdg='function hsdg(){ HOWDOI_URL=sustainability.stackexchange.com howdoi $* }; hsdg'
+alias hhwrec='function hhwrec(){ HOWDOI_URL=hardwarerecs.stackexchange.com howdoi $* }; hhwrec'
+alias helem='function helem(){ HOWDOI_URL=elementaryos.stackexchange.com howdoi $* }; helem'
+alias hgenai='function hgenai(){ HOWDOI_URL=genai.stackexchange.com howdoi $* }; hgenai'
 
 # Invoke auto update
 sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
