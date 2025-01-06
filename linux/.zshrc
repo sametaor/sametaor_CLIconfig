@@ -672,6 +672,10 @@ eval "$(pyenv init -)"
 
 compdef _dotnet_zsh_complete dotnet
 
+# DBUS and XDG vars
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+
 # pnpm
 export PNPM_HOME="/home/sametaor/.local/share/pnpm"
 case ":$PATH:" in
@@ -683,6 +687,15 @@ esac
 # Created by `pipx` on 2024-12-28 05:44:32
 export PATH="$PATH:/home/sametaor/.local/bin"
 
+# For Rust's cargo package manager
+PATH="$PATH:$HOME/.cargo/bin"
+
 if [ -e /home/sametaor/.nix-profile/etc/profile.d/nix.sh ]; then . /home/sametaor/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+PATH="/home/sametaor/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/sametaor/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/sametaor/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/sametaor/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/sametaor/perl5"; export PERL_MM_OPT;
