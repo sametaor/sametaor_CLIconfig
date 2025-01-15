@@ -337,7 +337,7 @@ function pipll { pip list --local }
 function pipsh { pip show }
 function pipu { pip uninstall }
 function pipuy { pip uninstall --yes }
-function pipUp  }python -m pip install --upgrade pip }
+function pipUp { python -m pip install --upgrade pip }
 function pipV { pip --version }
 function dps { docker ps }
 function drit { docker run -it }
