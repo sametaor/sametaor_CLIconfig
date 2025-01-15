@@ -54,7 +54,6 @@ function Update-Profile {
 }
 Update-Profile
 fastfetch
-function ep { notepad $PROFILE }
 function cd { z }
 function z1 { z .. }
 function z2 { z ../.. }
@@ -90,100 +89,7 @@ function ghlih { gh auth login --hostname }
 function ghliw { gh auth login --web }
 function ghlo { gh auth logout }
 function ghloh { gh auth logout --hostname }
-function anches }
-function ghrpci { gh repo create --internal }
-function ghrpcpv { gh repo create --private }
-function ghrpcpb { gh repo create --public }
-function ghrpcps { gh repo create --push }
-function ghrpd { gh repo delete }
-function ghrpdc { gh repo delete --confirm }
-function ghrpdk { gh repo deploy-key }
-function ghrpdka { gh repo deploy-key add }
-function ghrpdkaw { gh repo deploy-key add --allow-write }
-function ghrpdkd { gh repo deploy-key delete }
-function ghrpdkl { gh repo deploy-key list }
-function ghrpe { gh repo edit }
-function ghrpeat { gh repo edit --add-topic }
-function ghrpeaf { gh repo edit --allow-forking }
-function ghrpeau { gh repo edit --allow-update-branch }
-function ghrpedb { gh repo edit --default-branch }
-function ghrpedm { gh repo edit --delete-branch-on-merge }
-function ghrpeds { gh repo edit --description }
-function ghrpeam { gh repo edit --enable-auto-merge }
-function ghrped { gh repo edit --enable-discussions }
-function ghrpei { gh repo edit --enable-issues }
-function ghrpemc { gh repo edit --enable-merge-commit }
-function ghrpep { gh repo edit --enable-projects }
-function ghrperm { gh repo edit --enable-rebase-merge }
-function ghrpesm { gh repo edit --enable-squash-merge }
-function ghrpew { gh repo edit --enable-wiki }
-function ghrpeh { gh repo edit --homepage }
-function ghrpert { gh repo edit --remove-topic }
-function ghrpet { gh repo edit --template }
-function ghrpev { gh repo edit --visibility }
-function ghrpf { gh repo fork }
-function ghrpfc { gh repo fork --clone }
-function ghrpfr { gh repo fork --remote }
-function ghrpl { gh repo list }
-function ghrpla { gh repo list --archived }
-function ghrplf { gh repo list --fork }
-function ghrpln { gh repo list --no-archived }
-function ghrpls { gh repo list --source }
-function ghrpr { gh repo rename }
-function ghrprc { gh repo rename --confirm }
-function ghrps { gh repo sync }
-function ghrpsf { gh repo sync --force }
-function ghrpv { gh repo view }
-function ghrpvw { gh repo view --web }
-function pipc { pip config }
-function pipcg { pip config --global }
-function pipcgd { pip config --global debug }
-function pipcge { pip config --global edit }
-function pipcgg { pip config --global get }
-function pipcgl { pip config --global list }
-function pipcgs { pip config --global set }
-function pipcgu { pip config --global unset }
-function pipcu { pip config --user }
-function pipcud { pip config --user debug }
-function pipcue { pip config --user edit }
-function pipcug { pip config --user get }
-function pipcul { pip config --user list }
-function pipcus { pip config --user set }
-function pipcuu { pip config --user unset }
-function pipde { pip debug }
-function piph { pip help }
-function pipi { pip install }
-function pipiu { pip install --upgrade }
-function pipl { pip list }
-function piplo { pip list --outdated }
-function piplu { pip list --uptodate }
-function piple { pip list --editable }
-function pipll { pip list --local }
-function pipsh { pip show }
-function pipu { pip uninstall }
-function pipuy { pip uninstall --yes }
-function pipUp  }python -m pip install --upgrade pip }
-function pipV { pip --version }
-function dps { docker ps }
-function drit { docker run -it }
-function deit { docker exec -it }
-function dlog { docker logs }
-function dip { docker inspect --format "{{ .NetworkSettings.IPAddress }}" $* }
-function dstop-all { docker stop $(docker ps -q -f "status=running") }
-function drm { docker rm }
-function dvls { docker volume ls $* }
-function fd {
-  fd
-  fzf
-}
-function fzf { fzf --preview 'bat --color=always {}' --preview-window '~3' }
-function gpglk { gpg --list-secret-key --keyid-format LONG }
-function gpgep { gpg --armor --export }
-function ytnpl { yt-dlp --no-playlist --restrict-filenames }
-function ytp { ytnpl --write-subs --write-auto-subs --format 244+299 }
-function ytpp { ytnpl --write-subs --write-auto-subs --format 247+299 }
-function yts { ytnpl --write-subs --write-auto-subs --format worstaudio --extract-audio }
-function ytm { ytnpl --format bestaudio --extract-audio }ghast { gh auth status }
+function ghast { gh auth status }
 function ghasth { gh auth status --hostname }
 function ghastt { gh auth status --show-token }
 function ghatk { gh auth token }
@@ -359,7 +265,100 @@ function ghrpca { gh repo create --add-readme }
 function ghrpcc { gh repo create --clone }
 function ghrpcdi { gh repo create --disable-issues }
 function ghrpcdw { gh repo create --disable-wiki }
-function ghrpcia { gh repo create --include-all-br }
+function ghrpcia { gh repo create --include-all-branches }
+function ghrpci { gh repo create --internal }
+function ghrpcpv { gh repo create --private }
+function ghrpcpb { gh repo create --public }
+function ghrpcps { gh repo create --push }
+function ghrpd { gh repo delete }
+function ghrpdc { gh repo delete --confirm }
+function ghrpdk { gh repo deploy-key }
+function ghrpdka { gh repo deploy-key add }
+function ghrpdkaw { gh repo deploy-key add --allow-write }
+function ghrpdkd { gh repo deploy-key delete }
+function ghrpdkl { gh repo deploy-key list }
+function ghrpe { gh repo edit }
+function ghrpeat { gh repo edit --add-topic }
+function ghrpeaf { gh repo edit --allow-forking }
+function ghrpeau { gh repo edit --allow-update-branch }
+function ghrpedb { gh repo edit --default-branch }
+function ghrpedm { gh repo edit --delete-branch-on-merge }
+function ghrpeds { gh repo edit --description }
+function ghrpeam { gh repo edit --enable-auto-merge }
+function ghrped { gh repo edit --enable-discussions }
+function ghrpei { gh repo edit --enable-issues }
+function ghrpemc { gh repo edit --enable-merge-commit }
+function ghrpep { gh repo edit --enable-projects }
+function ghrperm { gh repo edit --enable-rebase-merge }
+function ghrpesm { gh repo edit --enable-squash-merge }
+function ghrpew { gh repo edit --enable-wiki }
+function ghrpeh { gh repo edit --homepage }
+function ghrpert { gh repo edit --remove-topic }
+function ghrpet { gh repo edit --template }
+function ghrpev { gh repo edit --visibility }
+function ghrpf { gh repo fork }
+function ghrpfc { gh repo fork --clone }
+function ghrpfr { gh repo fork --remote }
+function ghrpl { gh repo list }
+function ghrpla { gh repo list --archived }
+function ghrplf { gh repo list --fork }
+function ghrpln { gh repo list --no-archived }
+function ghrpls { gh repo list --source }
+function ghrpr { gh repo rename }
+function ghrprc { gh repo rename --confirm }
+function ghrps { gh repo sync }
+function ghrpsf { gh repo sync --force }
+function ghrpv { gh repo view }
+function ghrpvw { gh repo view --web }
+function pipc { pip config }
+function pipcg { pip config --global }
+function pipcgd { pip config --global debug }
+function pipcge { pip config --global edit }
+function pipcgg { pip config --global get }
+function pipcgl { pip config --global list }
+function pipcgs { pip config --global set }
+function pipcgu { pip config --global unset }
+function pipcu { pip config --user }
+function pipcud { pip config --user debug }
+function pipcue { pip config --user edit }
+function pipcug { pip config --user get }
+function pipcul { pip config --user list }
+function pipcus { pip config --user set }
+function pipcuu { pip config --user unset }
+function pipde { pip debug }
+function piph { pip help }
+function pipi { pip install }
+function pipiu { pip install --upgrade }
+function pipl { pip list }
+function piplo { pip list --outdated }
+function piplu { pip list --uptodate }
+function piple { pip list --editable }
+function pipll { pip list --local }
+function pipsh { pip show }
+function pipu { pip uninstall }
+function pipuy { pip uninstall --yes }
+function pipUp  }python -m pip install --upgrade pip }
+function pipV { pip --version }
+function dps { docker ps }
+function drit { docker run -it }
+function deit { docker exec -it }
+function dlog { docker logs }
+function dip { docker inspect --format "{{ .NetworkSettings.IPAddress }}" $* }
+function dstop-all { docker stop $(docker ps -q -f "status=running") }
+function drm { docker rm }
+function dvls { docker volume ls $* }
+function fd {
+    fd
+    fzf
+}
+function fzf { fzf --preview 'bat --color=always {}' --preview-window '~3' }
+function gpglk { gpg --list-secret-key --keyid-format LONG }
+function gpgep { gpg --armor --export }
+function ytnpl { yt-dlp --no-playlist --restrict-filenames }
+function ytp { ytnpl --write-subs --write-auto-subs --format 244+299 }
+function ytpp { ytnpl --write-subs --write-auto-subs --format 247+299 }
+function yts { ytnpl --write-subs --write-auto-subs --format worstaudio --extract-audio }
+function ytm { ytnpl --format bestaudio --extract-audio }
 function sysinfo { Get-ComputerInfo }
 function flushdns { Clear-DnsClientCache }
 function cpy { Set-Clipboard $args[0] }
