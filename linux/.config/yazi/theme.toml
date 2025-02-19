@@ -1,0 +1,5 @@
+# theme.toml
+# Colorschemes
+[flavor]
+dark = "tokyo-night"
+light = ""
