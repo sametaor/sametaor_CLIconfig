@@ -48,7 +48,7 @@
   "controlStyles[12].styles[6]": "Width@ActiveRunningIndicator=20",
   "controlStyles[13].target": "Grid#SystemTrayFrameGrid",
   "controlStyles[13].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.35\" TintColor=\"Black\" TintLuminosityOpacity=\"0.35\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[13].styles[1]": "CornerRadius=20",
+  "controlStyles[13].styles[1]": "CornerRadius=9",
   "controlStyles[13].styles[2]": "Margin=0,5,12,5",
   "controlStyles[13].styles[3]": "Padding=10,0,0,0",
   "controlStyles[14].target": "Border#BackgroundBorder",
