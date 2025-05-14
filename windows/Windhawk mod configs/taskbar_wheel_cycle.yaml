@@ -1,0 +1,9 @@
+{
+  "skipMinimizedWindows": 0,
+  "wrapAround": 1,
+  "reverseScrollingDirection": 0,
+  "enableMouseWheelCycling": 1,
+  "cycleLeftKeyboardShortcut": "Alt+VK_OEM_4",
+  "cycleRightKeyboardShortcut": "Alt+VK_OEM_6",
+  "oldTaskbarOnWin11": 0
+}
