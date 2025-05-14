@@ -93,8 +93,8 @@
         "height": 40
     },
     "font": {
-        "fontFamily": "Outfit",
-        "fontUrl": "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap",
+        "fontFamily": "Oxanium",
+        "fontUrl": "https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap",
         "isGoogleFonts": true
     },
     "grains": {
