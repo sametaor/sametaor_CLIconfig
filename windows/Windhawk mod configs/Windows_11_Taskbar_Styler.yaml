@@ -47,14 +47,14 @@
   "controlStyles[12].styles[5]": "Fill@ActiveRunningIndicator :=<SolidColorBrush Color=\"{ThemeResource SystemAccentColorLight1}\" />",
   "controlStyles[12].styles[6]": "Width@ActiveRunningIndicator=20",
   "controlStyles[13].target": "Grid#SystemTrayFrameGrid",
-  "controlStyles[13].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.6\" TintColor=\"Black\" TintLuminosityOpacity=\"0.35\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
-  "controlStyles[13].styles[1]": "CornerRadius=10",
+  "controlStyles[13].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.35\" TintColor=\"Black\" TintLuminosityOpacity=\"0.35\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
+  "controlStyles[13].styles[1]": "CornerRadius=20",
   "controlStyles[13].styles[2]": "Margin=0,5,12,5",
   "controlStyles[13].styles[3]": "Padding=10,0,0,0",
   "controlStyles[14].target": "Border#BackgroundBorder",
   "controlStyles[14].styles[0]": "Margin=2,5,2,5",
   "controlStyles[14].styles[1]": "CornerRadius=8",
   "controlStyles[15].target": "Grid#OverflowRootGrid > Border",
-  "controlStyles[15].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.6\" TintColor=\"Black\" TintLuminosityOpacity=\"0.4\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
+  "controlStyles[15].styles[0]": "Background:=<AcrylicBrush TintOpacity=\"0.35\" TintColor=\"Black\" TintLuminosityOpacity=\"0.35\" Opacity=\"1\" FallbackColor=\"#262626\"/>",
   "controlStyles[14].styles[2]": "BorderThickness = 0"
 }
