@@ -24,7 +24,6 @@ Status:children_add(function()
 		" ",
 	})
 end, 500, Status.RIGHT)
-require("eza-preview"):setup()
 require("restore"):setup({
 	-- Set the position for confirm and overwrite dialogs.
 	-- don't forget to set height: `h = xx`
