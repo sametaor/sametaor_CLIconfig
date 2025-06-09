@@ -119,7 +119,8 @@
     },
     {
       "key": "{$3}{#33}󰔎 Theme ",
-      "type": "theme"
+      "type": "theme",
+      "format": "{1}"
     },
     {
       "key": "{$3}{#35} Icons ",
@@ -128,12 +129,13 @@
     },
     {
       "key": "{$3}{#36} Term  ",
-      "type": "terminal"
+      "type": "terminal",
+      "format": "{1}"
     },
     {
       "key": "{$3}{#38}󰛖 Fonts ",
       "type": "font",
-      "format": "{1}, {2}"
+      "format": "{1}"
     },
     {
       "type": "custom",
