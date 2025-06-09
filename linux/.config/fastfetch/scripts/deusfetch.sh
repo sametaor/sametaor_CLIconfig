@@ -9,7 +9,7 @@ RESET='\033[0m'
 
 # ───────────────────────────────────────────────────────────────
 # Load utils for cursor position
-source "./utils.sh"
+source "/home/sametaor/.config/fastfetch/scripts/utils.sh"
 read CURSOR_ROW CURSOR_COL < <(get_cursor_position)
 
 # Measure terminal height
