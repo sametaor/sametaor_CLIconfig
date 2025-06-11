@@ -8,3 +8,5 @@ get_cursor_position() {
   row=${row#*[}
   echo "$row $col"
 }
+
+# Due credits go to AslanLM and his project, Gifetch. Project link:- https://github.com/AslanLM/Gifetch
