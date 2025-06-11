@@ -56,7 +56,7 @@ done
 tput cup 32 0
 echo
 stty sane
+tput cnorm
 
 # Due credits go to AslanLM and his project, Gifetch. Project link:- https://github.com/AslanLM/Gifetch
 # I used the gifetch script and modified it accordingly, feel free to reuse it in your own way!
-tput cnorm
