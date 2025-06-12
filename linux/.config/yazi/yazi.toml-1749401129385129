@@ -1,6 +1,6 @@
 # yazi.toml
 
-[mgr]
+[manager]
 ratio = [1,2,5]
 linemode = "mtime"
 show_hidden = true

@@ -14,38 +14,40 @@ end)
 return {
 	setup = function(st, args)
 		Header:children_remove(1, Header.LEFT)
-		Header:children_add(function() return ui.Line.parse(st.output or "") end, 1000, Header.LEFT)
+		Header:children_add(function()
+			return ui.Line.parse(st.output or "")
+		end, 1000, Header.LEFT)
 
 		st.config = default_config
 		if args ~= nil and args.config ~= nil then
 			st.config = args.config
 		end
-		
-		local callback =  function()
+
+		local callback = function()
 			local cwd = cx.active.current.cwd
 			if st.cwd ~= cwd then
 				st.cwd = cwd
 				ya.manager_emit("plugin", { st._id, ya.quote(tostring(cwd), true) })
 			end
-		end	
-		
+		end
+
 		ps.sub("cd", callback)
 		ps.sub("tab", callback)
 	end,
 
 	entry = function(_, job)
 		local output = Command("oh-my-posh")
-			:args({
+			:arg({
 				"print",
 				"primary",
 				"--no-status",
 				"-c",
 				get_config(),
 			})
-			:cwd(job.args[1])
+			:cwd(job.arg[1])
 			:output()
 		if output then
-			save(job.args[1], output.stdout:gsub("^%s+", ""))
+			save(job.arg[1], output.stdout:gsub("^%s+", ""))
 		end
 	end,
 }

@@ -46,3 +46,4 @@ require("restore"):setup({
 require("omp"):setup({
 	config = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/misc/sametaor.omp.json",
 })
+require("duckdb"):setup()
