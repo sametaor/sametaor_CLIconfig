@@ -1,7 +1,22 @@
 {
-  "theme": "Minimal Explorer11",
+  "theme": "MicaBar",
   "styleConstants[0]": "",
   "resourceVariables[0].variableKey": "",
   "resourceVariables[0].value": "",
-  "explorerFrameContainerHeight": 0
+  "explorerFrameContainerHeight": 0,
+  "controlStyles[0].target": "TabViewItem > Grid#LayoutRoot",
+  "controlStyles[0].styles[0]": "CornerRadius=8",
+  "controlStyles[1].target": "TabViewItem",
+  "controlStyles[1].styles[0]": "Margin=0,0,3,0",
+  "controlStyles[0].styles[1]": "Margin=0,-3,0,3",
+  "controlStyles[0].styles[2]": "Height=28",
+  "controlStyles[2].target": "TabViewItem > Grid#LayoutRoot > Grid#TabContainer",
+  "controlStyles[2].styles[0]": "Background=Transparent",
+  "controlStyles[2].styles[1]": "BorderBrush=Transparent",
+  "controlStyles[3].target": "TabViewItem > Grid#LayoutRoot@CommonState",
+  "controlStyles[3].styles[0]": "Background@Selected:=<SolidColorBrush Color=\\\"#808080\\\" Opacity=\\\"0.35\\\"/>",
+  "controlStyles[3].styles[1]": "Background@PointerOverSelected:=<SolidColorBrush Color=\\\"#808080\\\" Opacity=\\\"0.35\\\"/>",
+  "controlStyles[3].styles[2]": "Background@PointerOver:=<AcrylicBrush TintColor=\\\"Transparent\\\" Opacity=\\\"0.13\\\"/>",
+  "controlStyles[3].styles[3]": "Background@Normal:=<AcrylicBrush TintColor=\\\"Transparent\\\" Opacity=\\\"0.05\\\"/>",
+  "controlStyles[3].styles[4]": "Background@PressedSelected:=<SolidColorBrush Color=\\\"#808080\\\" Opacity=\\\"0.35\\\"/>"
 }
