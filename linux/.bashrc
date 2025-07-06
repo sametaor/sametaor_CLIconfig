@@ -11,7 +11,7 @@ PS1='[\u@\h \W]\$ '
 
 complete -F _command doas
 
-eval "$(oh-my-posh init bash)"
+eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/misc/sametaor.omp.json')"
 eval "$(zoxide init bash)"
 
 sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
