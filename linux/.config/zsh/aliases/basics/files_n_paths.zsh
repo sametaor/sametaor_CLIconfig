@@ -1,0 +1,11 @@
+alias cd=z
+alias c=clear
+alias rm="rm -ir"
+alias rmf="rm -irf"
+alias cp="cp -irv"
+alias mkd="mkdir -ip"
+alias zshrc='nvim ~/.zshrc'
+alias dud='du -d 1 -h'
+alias duh='du -sh'
+alias t='tail -f'
+alias path='echo -e "${PATH//:/\\n}"'
