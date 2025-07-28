@@ -36,146 +36,107 @@ sametaor_CLIconfig/
 ### 📋 Essential Requirements
 
 #### ✅ Core System Tools
-- [ ] **Git** - Version control system
-  - Linux: `sudo apt install git` (Ubuntu/Debian) or `sudo yum install git` (RHEL/CentOS)
-  - Windows: [Git for Windows](https://git-scm.com/download/win) or via Chocolatey: `choco install git`
 
-- [ ] **Terminal Emulator**
-  - Linux: GNOME Terminal, Konsole, Alacritty, or Kitty
-  - Windows: Windows Terminal (recommended), PowerShell 7+, or ConEmu
-
-- [ ] **Text Editor**
-  - Cross-platform: VSCode, Vim, Nano, or Emacs
-  - Platform-specific configurations included
-
----
+| Tool             | Linux (Distro-specific)                 | Windows                          | Android/Termux                  |
+|------------------|-----------------------------------------|----------------------------------|----------------------------------|
+| Git              | `apt/yum/pacman`                        | Git for Windows, Chocolatey      | `pkg install git`                |
+| Terminal Emulator| GNOME Terminal, Konsole, Alacritty, etc | Windows Terminal, PowerShell     | Native Termux / Termux:API       |
+| Text Editor      | Neovim, Nano, Emacs, VSCode             | VSCode, Notepad++, Nano          | Vim, Neovim                      |
 
 ### 🐧 Linux-Specific Prerequisites
 
-#### ✅ Shell Environment
-- [ ] **Bash** (usually pre-installed)
+#### Distro Subclassifications
 
-- [ ] **Zsh** (recommended)
-  - Ubuntu/Debian: `sudo apt install zsh`
-  - RHEL/CentOS: `sudo yum install zsh`
-  - Arch: `sudo pacman -S zsh`
+**Arch Linux**
+- Zsh: `sudo pacman -S zsh`
+- bat: `sudo pacman -S bat`
+- exa: `sudo pacman -S exa`
+- fd: `sudo pacman -S fd`
+- ripgrep: `sudo pacman -S ripgrep`
+- fzf: `sudo pacman -S fzf`
+- tmux: `sudo pacman -S tmux`
+- Others: htop, neofetch, kitty, yazi, nvim, doom-emacs, ghostty, cava, fastfetch (`sudo pacman -S <tool>` or AUR as needed)
 
-- [ ] **Oh My Zsh** (optional but recommended)
-  - Install: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+**Ubuntu/Debian**
+- Zsh: `sudo apt install zsh`
+- bat: `sudo apt install bat` *(might be batcat)*
+- exa: `sudo apt install exa` (22.04+) or Github
+- fd-find: `sudo apt install fd-find` *(alias fd='fdfind')*
+- ripgrep: `sudo apt install ripgrep`
+- fzf: `sudo apt install fzf`
+- tmux: `sudo apt install tmux`
+- Others as above (`sudo apt install <tool>` when available)
 
-#### ✅ Essential CLI Tools
-- [ ] **curl/wget** - Download utilities
-  - Usually pre-installed; if not: `sudo apt install curl wget`
+**Fedora**
+- Use `dnf install` for above tools.
 
-- [ ] **tree** - Directory structure visualization
-  - Ubuntu/Debian: `sudo apt install tree`
-  - RHEL/CentOS: `sudo yum install tree`
+**NixOS**
+- Use `nix-env -iA nixos.<toolname>` for above.
 
-- [ ] **bat** - Enhanced cat with syntax highlighting
-  - Ubuntu 20.04+: `sudo apt install bat`
-  - **Note:** On older Ubuntu/Debian, the package is `batcat`, use: `sudo apt install batcat`
-  - **Caveat:** Command may be `batcat` instead of `bat` on some distributions
-  - **Alias setup:** Add `alias bat='batcat'` to your shell config if needed
-
-- [ ] **exa** - Modern ls replacement
-  - Ubuntu: `sudo apt install exa` (22.04+) or download from [GitHub releases](https://github.com/ogham/exa/releases)
-  - Arch: `sudo pacman -S exa`
-
-- [ ] **fd** - Fast find alternative
-  - Ubuntu: `sudo apt install fd-find`
-  - **Note:** Command is `fdfind` on Ubuntu, alias with `alias fd='fdfind'`
-
-- [ ] **ripgrep (rg)** - Fast grep alternative
-  - Ubuntu: `sudo apt install ripgrep`
-  - RHEL/CentOS: Install via [GitHub releases](https://github.com/BurntSushi/ripgrep/releases)
-  - Arch: `sudo pacman -S ripgrep`
-
-- [ ] **fzf** - Fuzzy finder
-  - Ubuntu: `sudo apt install fzf`
-  - RHEL/CentOS: `sudo yum install fzf` (EPEL required)
-  - Arch: `sudo pacman -S fzf`
-
----
+#### General:
+- bash (default almost everywhere)
+- zsh + Oh My Zsh: (`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`)
+- tree, curl/wget, nodejs, python3, yazi (AUR), doom-emacs (manual), hyprland (AUR or manual)
+- Systemd, tmux, neovim, kitty, ghostty, jamesdsp (AUR), fastfetch
 
 ### 🪟 Windows-Specific Prerequisites
 
-#### ✅ PowerShell Environment
-- [ ] **PowerShell 7+** (recommended over Windows PowerShell 5.1)
-  - Download from [Microsoft PowerShell GitHub](https://github.com/PowerShell/PowerShell/releases)
-  - Or via Chocolatey: `choco install powershell-core`
-  - Or via winget: `winget install Microsoft.PowerShell`
+- PowerShell 7+ (winget or Chocolatey)
+- Windows Terminal (Store or package managers)
+- Chocolatey/winget for package management
+- WSL (optional)
+- Registry tweaks: regconfig.reg
+- UI customization: Windhawk, .json mod files
+- VMware VM configs for legacy Windows (optional)
+- Utility scripts: post_install_steps.ps1, HyperV_on_HomeEdition.bat, winutilconfig.json, startlayout.json
+- Package installations: (bat, fd, fzf, ripgrep, nodejs, python, yazi, nvim, etc) see wingetinstall.json and use `winget` or `choco`
+- Python3, Node.js, Yazi: All via package manager
+- Neovim and Doom Emacs: via Scoop or manual
+- Spicetify: via `winget install spicetify-cli` or manual
 
-- [ ] **Windows Terminal** (highly recommended)
-  - Install from Microsoft Store or [GitHub releases](https://github.com/microsoft/terminal/releases)
-  - Or via Chocolatey: `choco install microsoft-windows-terminal`
+### 🤖 Android/Termux-compatible Tools
 
-#### ✅ Package Manager
-- [ ] **Chocolatey** (recommended) OR **winget** (built-in Windows 10+)
-  - Chocolatey: Follow installation at [chocolatey.org](https://chocolatey.org/install)
-  - winget: Pre-installed on Windows 10 1809+ and Windows 11
+| Tool        | Termux/Android CLI Equivalent                |
+|-------------|---------------------------------------------|
+| git         | `pkg install git`                            |
+| bash        | Native (default)                             |
+| zsh         | `pkg install zsh`                            |
+| oh-my-zsh   | Manual install via curl                      |
+| vim         | `pkg install vim`                            |
+| neovim      | `pkg install neovim`                         |
+| fd          | `pkg install fd`                             |
+| ripgrep     | `pkg install ripgrep`                        |
+| fzf         | `pkg install fzf`                            |
+| bat         | `pkg install bat`                            |
+| htop        | `pkg install htop`                           |
+| tree        | `pkg install tree`                           |
+| tmux        | `pkg install tmux`                           |
+| exa/eza     | **Not available** (lsd may be but not eza)   |
+| zoxide      | `pkg install zoxide`                         |
+| fastfetch   | `pkg install fastfetch`                      |
+| neofetch    | `pkg install neofetch`                       |
+| **Not Supported:** GUI/Wayland/desktop, btop, ghostty, hyprland, yazi, doom-emacs, jamesdsp, cava, spicetify (unsupported platform) |
 
-#### ✅ Essential CLI Tools (Windows)
-- [ ] **Windows Subsystem for Linux (WSL)** (optional but recommended)
-  - Enable via: `wsl --install`
-  - Provides Linux environment within Windows
-
-- [ ] **bat** - Enhanced cat with syntax highlighting
-  - Chocolatey: `choco install bat`
-  - winget: `winget install sharkdp.bat`
-
-- [ ] **ripgrep (rg)** - Fast grep alternative
-  - Chocolatey: `choco install ripgrep`
-  - winget: `winget install BurntSushi.ripgrep.MSVC`
-
-- [ ] **fd** - Fast find alternative
-  - Chocolatey: `choco install fd`
-  - winget: `winget install sharkdp.fd`
-
-- [ ] **fzf** - Fuzzy finder
-  - Chocolatey: `choco install fzf`
-  - winget: `winget install junegunn.fzf`
-
----
-
-### 🔧 Optional but Recommended
-
-#### ✅ Development Tools
-- [ ] **Node.js** (for various CLI tools and productivity scripts)
-  - Linux: Use your distribution's package manager or [NodeSource repository](https://github.com/nodesource/distributions)
-  - Windows: Download from [nodejs.org](https://nodejs.org/) or `choco install nodejs`
-
-- [ ] **Python 3** (for automation scripts)
-  - Linux: Usually pre-installed; if not: `sudo apt install python3 python3-pip`
-  - Windows: Download from [python.org](https://python.org/) or `choco install python`
-
-#### ✅ Additional CLI Enhancements
-- [ ] **tmux** (Linux) - Terminal multiplexer
-  - Ubuntu/Debian: `sudo apt install tmux`
-  - RHEL/CentOS: `sudo yum install tmux`
-
-- [ ] **htop** - Enhanced process viewer
-  - Linux: `sudo apt install htop` (Ubuntu/Debian) or `sudo yum install htop` (RHEL/CentOS)
-  - Windows: Available via Chocolatey: `choco install htop` (limited functionality)
-
-- [ ] **neofetch** - System information display
-  - Linux: `sudo apt install neofetch` or `sudo pacman -S neofetch`
-  - Windows: `choco install neofetch`
-
----
-
-### 📝 Installation Notes
-
-#### ⚠️ Important Considerations
-- **Backup existing configs:** Always backup your current dotfiles before applying new ones
-- **Permission requirements:** Some installations may require administrator/root privileges
-- **Network access:** Most tools require internet connectivity for download and installation
-- **System compatibility:** Verify tool compatibility with your specific OS version
-
-#### 🔄 Package Manager Alternatives
-- **Linux alternatives:** snap, flatpak, AppImage, or compile from source
-- **Windows alternatives:** Scoop package manager as alternative to Chocolatey
-- **Cross-platform:** Many tools available via language-specific package managers (pip, npm, cargo)
+*Note: Only standard CLI tools are usable in Termux/Android. Anything needing Linux kernel features, X11/Wayland, systemd, or desktop-level dependencies won't work.*
 
 ## Credits
 
-*For more information or contributions, please see the appropriate subdirectory or open an issue in the repository.*
+This configuration draws on and credits the following projects, repositories, and communities. If you use or contribute, please check upstream licenses and attributions.
+
+- **btop config:** Based on [aristocratos/btop](https://github.com/aristocratos/btop) (MIT License)
+- **Doom Emacs config:** Inspired by [hlissner/doom-emacs](https://github.com/hlissner/doom-emacs), as well as other public dotfiles like [danilevy1212/doom](https://github.com/danilevy1212/doom)
+- **Hyprland configs:** Built referencing [hyprland-community/awesome-hyprland](https://github.com/hyprland-community/awesome-hyprland), dotfiles like [JaKooLit/Hyprland-Dots](https://github.com/JaKooLit/Hyprland-Dots)
+- **Neovim config:** Inspired by [jdhao/nvim-config](https://github.com/jdhao/nvim-config), [chadcat/chad.nvim](https://github.com/chadcat/chad.nvim)
+- **Kitty config:** Derived from [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) and community inspiration
+- **Tmux config:** Modeled after [tmux/tmux](https://github.com/tmux/tmux) and open dotfile best practices
+- **Zsh + Oh My Zsh:** Built atop [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh); plugin credits to their authors
+- **Cava configs:** Based on [karlstav/cava](https://github.com/karlstav/cava)
+- **Spicetify configs:** Credits to [spicetify/spicetify-cli](https://github.com/spicetify/spicetify-cli), [Daksh777/SpotifyNoPremium](https://github.com/Daksh777/SpotifyNoPremium)
+- **Dynamic wallpaper scripts:** Custom, but design aligns with common Hyprland/Swaybar ecosystem patterns
+- **Arch update script:** Aggregates logic from ArchWiki and AUR helper documentation
+- **PowerShell macros/profile:** Includes elements based on [janDeDobbeleer/oh-my-posh](https://github.com/janDeDobbeleer/oh-my-posh), and various community functions/aliases (see profile headers for specific notes)
+- **Windows tuning/configs:** Windhawk mod configs reference [RamenSoftware/Windhawk](https://github.com/RamenSoftware/Windhawk), and utilize open-source snippets and schemas from the Windows community
+- **Spotify/Spicetify skins:** Draw on preset community themes/skins
+- **General**: Many settings and snippets inspired by open dotfiles shared in the Linux, Windows, and developer communities
+
+For further credit needs or missing attribution, please open an issue or PR.
