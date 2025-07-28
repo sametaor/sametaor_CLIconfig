@@ -1,4 +1,7 @@
 # sametaor_CLIconfig
+
+(The content below has been written by perplexity's assistant, future rectification and further commits will follow. Stay tuned!)
+
 This repository serves as a unified, version-controlled collection of **dotfiles and environment configuration scripts** for a variety of operating systems and platforms. Its primary goal is to **streamline the process of setting up a personalized, consistent, and productivity-focused user shell/CLI experience** across:
 - **Linux**
 - **Windows**
