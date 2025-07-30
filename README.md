@@ -248,14 +248,14 @@ Below is a categorized, collapsible “cheat sheet” of every essential tool, c
 | Tool               | Description                        | Arch (Pacman/yay)          | Ubuntu/Debian (apt)       | Fedora/RHEL (dnf)    | openSUSE (zypper)    | Alpine (apk)           | NixOS (nix-env)            | Gentoo (emerge)      | Windows (winget/scoop/choco)                       | Android/Termux         |
 |--------------------|------------------------------------|----------------------------|---------------------------|----------------------|----------------------|-------------------------|----------------------------|----------------------|----------------------------------------------------|------------------------|
 | RetroArch          | Emulator frontend                  | `sudo pacman -S retroarch` | `sudo apt install retroarch` | `sudo dnf install retroarch` | `sudo zypper install retroarch` | `apk add retroarch` | `nix-env -iA nixos.retroarch` | `emerge retroarch` | `winget install Libretro.RetroArch`/`scoop install retroarch`/`choco install retroarch` | Manual |
-| Discord            | Gaming/voice chat client           | `yay -S discord`           | `sudo apt install discord` | `sudo dnf install discord` | `sudo zypper install discord` | Manual | `nix-env -iA nixos.discord` | `emerge discord` | `winget install Discord.Discord`/`scoop install discord`/`choco install discord` | Manual |
+| Discord            | Gaming/voice chat client           | `yay -S discord`           | `sudo apt install discord` | `sudo dnf install discord` | `sudo zypper install discord` | `flatpak install flathub com.discordapp.Discord` | `nix-env -iA nixos.discord` | `emerge discord` | `winget install Discord.Discord`/`scoop install discord`/`choco install discord` | Manual |
 | EA Desktop         | EA game launcher                   | Manual                     | Manual                    | Manual                | Manual                | Manual                  | Manual                    | Manual                | `winget install ElectronicArts.EADesktop`/`scoop install ea-app` | Manual |
-| Steam              | Game distribution platform         | `sudo pacman -S steam`     | `sudo apt install steam`  | `sudo dnf install steam` | `sudo zypper install steam` | Manual | `nix-env -iA nixos.steam` | `emerge steam` | `winget install Valve.Steam`/`scoop install steam`/`choco install steam` | Manual |
-| Epic Games Launcher| Game launcher/store                | Manual                     | Manual                    | Manual                | Manual                | Manual                  | Manual                    | Manual                | `winget install EpicGames.EpicGamesLauncher`/`scoop install epic-games-launcher` | Manual |
-| Xemu               | Xbox emulator                      | `yay -S xemu`              | Manual                    | Manual                | Manual                | Manual                  | `nix-env -iA nixos.xemu`   | Manual                | `winget install xemu-project.xemu`/`scoop install xemu` | Manual |
-| Playnite           | Game library manager               | Manual                     | Manual                    | Manual                | Manual                | Manual                  | Manual                    | Manual                | `winget install Playnite.Playnite`/`scoop install playnite`/`choco install playnite` | Manual |
-| Prism Launcher     | Minecraft launcher (multi-platform)| `yay -S prismlauncher`     | `sudo apt install prismlauncher` | `sudo dnf install prismlauncher` | `sudo zypper install prismlauncher` | Manual | `nix-env -iA nixos.prismlauncher` | `emerge prismlauncher` | `winget install PrismLauncher.PrismLauncher`/`scoop install prismlauncher` | Manual |
-| ArchiSteamFarm     | Steam farming bot                  | Manual                     | Manual                    | Manual                | Manual                | Manual                  | Manual                    | Manual                | `winget install JustArchi.ArchiSteamFarm`/`scoop install archisteamfarm` | Manual |
+| Steam              | Game distribution platform         | `sudo pacman -S steam`     | `sudo apt install steam`  | `sudo dnf install steam` | `sudo zypper install steam` | `flatpak install flathub com.valvesoftware.Steam` | `nix-env -iA nixos.steam` | `emerge steam` | `winget install Valve.Steam`/`scoop install steam`/`choco install steam` | Manual |
+| Epic Games Launcher| Game launcher/store                | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `flatpak install flathub com.heroicgameslauncher.hgl` | `winget install EpicGames.EpicGamesLauncher`/`scoop install epic-games-launcher` | Manual |
+| Xemu               | Xbox emulator                      | `yay -S xemu`              | `flatpak install flathub app.xemu.xemu` | `flatpak install flathub app.xemu.xemu` | `flatpak install flathub app.xemu.xemu` | `flatpak install flathub app.xemu.xemu` | `nix-env -iA nixos.xemu`   | Manual                | `winget install xemu-project.xemu`/`scoop install xemu` | Manual |
+| Playnite           | Game library manager               | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `flatpak install flathub com.playnite.Playnite` | `winget install Playnite.Playnite`/`scoop install playnite`/`choco install playnite` | Manual |
+| Prism Launcher     | Minecraft launcher (multi-platform)| `yay -S prismlauncher`     | `sudo apt install prismlauncher` | `sudo dnf install prismlauncher` | `sudo zypper install prismlauncher` | `flatpak install flathub org.prismlauncher.PrismLauncher` | `nix-env -iA nixos.prismlauncher` | `emerge prismlauncher` | `winget install PrismLauncher.PrismLauncher`/`scoop install prismlauncher` | Manual |
+| ArchiSteamFarm     | Steam farming bot                  | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm` | `winget install JustArchi.ArchiSteamFarm`/`scoop install archisteamfarm` | Manual |
 | NVCleanstall       | NVIDIA driver customizer           | Manual                     | Manual                    | Manual                | Manual                | Manual                  | Manual                    | Manual                | `winget install TechPowerUp.NVCleanstall`/`choco install nvcleanstall` | Manual |
 
 </details>
@@ -266,12 +266,12 @@ Below is a categorized, collapsible “cheat sheet” of every essential tool, c
 | Tool                   | Description                              | Arch (Pacman/yay)          | Ubuntu/Debian (apt)       | Fedora/RHEL (dnf)    | openSUSE (zypper)    | Alpine (apk)           | NixOS (nix-env)            | Gentoo (emerge)      | Windows (winget/scoop/choco)                       | Android/Termux         |
 |------------------------|------------------------------------------|----------------------------|---------------------------|----------------------|----------------------|-------------------------|----------------------------|----------------------|----------------------------------------------------|------------------------|
 | Powershell             | Cross-platform shell                     | `sudo pacman -S powershell`| `sudo apt install powershell` | `sudo dnf install powershell` | `sudo zypper install powershell` | Manual | `nix-env -iA nixos.powershell` | `emerge powershell` | `winget install Microsoft.Powershell`/`scoop install powershell`/`choco install powershell` | `pkg install powershell` |
-| Windows Terminal       | Modern terminal emulator (Windows)       | N/A                        | N/A                      | N/A                 | N/A                 | N/A                    | N/A                       | N/A                 | `winget install Microsoft.WindowsTerminal`/`scoop install windows-terminal`/`choco install microsoft-windows-terminal` | N/A |
+| Windows Terminal       | Modern terminal emulator (Windows)       | `flatpak install flathub com.microsoft.WindowsTerminal` | `flatpak install flathub com.microsoft.WindowsTerminal` | `flatpak install flathub com.microsoft.WindowsTerminal` | `flatpak install flathub com.microsoft.WindowsTerminal` | N/A | N/A | N/A | `winget install Microsoft.WindowsTerminal`/`scoop install windows-terminal`/`choco install microsoft-windows-terminal` | N/A |
 | Terminal Icons         | Terminal icon theme                      | Manual                     | Manual                   | Manual              | Manual              | Manual                 | Manual                    | Manual              | `winget install devblackops.terminal-icons`/`scoop install terminal-icons` | Manual |
-| 7zip                   | File archiver/compression tool           | `sudo pacman -S p7zip`     | `sudo apt install p7zip-full` | `sudo dnf install p7zip` | `sudo zypper install p7zip` | `apk add p7zip` | `nix-env -iA nixos.p7zip` | `emerge p7zip` | `winget install 7zip.7zip`/`scoop install 7zip`/`choco install 7zip` | Manual |
-| Github CLI             | GitHub command-line tool                 | `sudo pacman -S github-cli`| `sudo apt install gh`    | `sudo dnf install gh`| `sudo zypper install gh` | Manual | `nix-env -iA nixos.gh` | `emerge gh` | `winget install GitHub.cli`/`scoop install gh`/`choco install gh` | Manual |
+| 7zip                   | File archiver/compression tool           | `sudo pacman -S p7zip`     | `sudo apt install p7zip-full` | `sudo dnf install p7zip` | `sudo zypper install p7zip` | `apk add p7zip` | `nix-env -iA nixos.p7zip` | `emerge p7zip` | `winget install 7zip.7zip`/`scoop install 7zip`/`choco install 7zip` | `pkg install p7zip` |
+| Github CLI             | GitHub command-line tool                 | `sudo pacman -S github-cli`| `sudo apt install gh`    | `sudo dnf install gh`| `sudo zypper install gh` | `apk add gh` | `nix-env -iA nixos.gh` | `emerge gh` | `winget install GitHub.cli`/`scoop install gh`/`choco install gh` | `pkg install gh` |
 | Git Extensions         | Git GUI extension                        | Manual                     | Manual                   | Manual              | Manual              | Manual                 | Manual                    | Manual              | `winget install GitExtensionsTeam.GitExtensions`/`choco install gitextensions` | Manual |
-| Docker Desktop         | Container management (Windows/macOS)     | Manual                     | Manual                   | Manual              | Manual              | Manual                 | Manual                    | Manual              | `winget install Docker.DockerDesktop`/`scoop install docker-desktop`/`choco install docker-desktop` | Manual |
+| Docker Desktop         | Container management (Windows/macOS)     | `yay -S docker-desktop-bin` | `brew install --cask docker` | `brew install --cask docker` | `brew install --cask docker` | Manual | Manual | Manual | `winget install Docker.DockerDesktop`/`scoop install docker-desktop`/`choco install docker-desktop` | Manual |
 | Fzf                    | Fuzzy finder for terminal                | `sudo pacman -S fzf`       | `sudo apt install fzf`   | `sudo dnf install fzf` | `sudo zypper install fzf` | `apk add fzf` | `nix-env -iA nixos.fzf` | `emerge fzf` | `winget install junegunn.fzf`/`scoop install fzf`/`choco install fzf` | `pkg install fzf` |
 | Fastfetch              | System info fetcher                      | `sudo pacman -S fastfetch` | `sudo apt install fastfetch` | `sudo dnf install fastfetch` | `sudo zypper install fastfetch` | `apk add fastfetch` | `nix-env -iA nixos.fastfetch` | `emerge fastfetch` | `winget install fastfetch.cli`/`scoop install fastfetch` | Manual |
 | Oh-my-posh             | Prompt theme engine (shells)             | Manual                     | Manual                   | Manual              | Manual              | Manual                 | Manual                    | Manual              | `winget install JanDeDobbeleer.OhMyPosh`/`scoop install oh-my-posh`/`choco install oh-my-posh` | Manual |
@@ -317,147 +317,207 @@ Below is a categorized, collapsible “cheat sheet” of every essential tool, c
 
 | Tool      | Description                | Arch (Pacman/yay)      | Ubuntu/Debian (apt)   | Fedora/RHEL (dnf)    | openSUSE (zypper)    | Alpine (apk)   | NixOS (nix-env)        | Gentoo (emerge)  | Windows (winget/scoop/choco)                  | Android/Termux         |
 |-----------|----------------------------|------------------------|-----------------------|----------------------|----------------------|---------------|------------------------|------------------|-----------------------------------------------|------------------------|
-| Discord   | Gaming/voice chat client   | `yay -S discord`       | `sudo apt install discord` | `sudo dnf install discord` | `sudo zypper install discord` | Manual        | `nix-env -iA nixos.discord` | `emerge discord` | `winget install Discord.Discord`/`scoop install discord`/`choco install discord` | Manual |
-| Telegram  | Messaging app              | `sudo pacman -S telegram-desktop` | `sudo apt install telegram-desktop` | `sudo dnf install telegram-desktop` | `sudo zypper install telegram-desktop` | Manual | `nix-env -iA nixos.telegram-desktop` | `emerge telegram-desktop` | `winget install Telegram.TelegramDesktop`/`scoop install telegram`/`choco install telegram` | Manual |
-| PreMiD    | Rich presence integration  | Manual                 | Manual                | Manual               | Manual               | Manual        | Manual                 | Manual           | `winget install PreMiD.PreMiD`/`scoop install premid` | Manual |
+| Discord   | Gaming/voice chat client   | `yay -S discord`       | `sudo apt install discord` | `sudo dnf install discord` | `sudo zypper install discord` | `flatpak install flathub com.discordapp.Discord` | `nix-env -iA nixos.discord` | `emerge discord` | `winget install Discord.Discord`/`scoop install discord`/`choco install discord` | Manual |
+| Telegram  | Messaging app              | `sudo pacman -S telegram-desktop` | `sudo apt install telegram-desktop` | `sudo dnf install telegram-desktop` | `sudo zypper install telegram-desktop` | `flatpak install flathub org.telegram.desktop` | `nix-env -iA nixos.telegram-desktop` | `emerge telegram-desktop` | `winget install Telegram.TelegramDesktop`/`scoop install telegram`/`choco install telegram` | Manual |
+| PreMiD    | Rich presence integration  | `npm install -g premid` | `npm install -g premid` | `npm install -g premid` | `npm install -g premid` | `npm install -g premid` | `npm install -g premid` | `npm install -g premid` | `winget install PreMiD.PreMiD`/`scoop install premid` | Manual |
 
 </details>
 
-
-
 > **Note:**  
 > Some tools are only available through secondary means such as `pip`, `cargo`, `gem`, or manual download from their official website or GitHub releases. If a tool is not available through your platform’s main package manager, refer to the corresponding “Manual”, “GitHub”, or language-specific package column, or check the official project documentation for installation instructions. Some Windows utilities (like Windhawk, Zen Browser, EFI Boot Editor, etc.) require manual installation. Platform-specific or feature-only tools may also require dedicated setup outside package management systems.
+
 
 ## Credits
 
 _All software, scripts, and config seeds referenced in this repository are the intellectual property of their respective authors and maintainers. Their generosity and effort enable this repo's cross-platform CLI and customization curation._
 
-### Core System, Editor & Shell Tools
-
-- **Bash** – Brian Fox and the GNU Project – [GNU Bash](https://www.gnu.org/software/bash/)
-- **Zsh** – Paul Falstad and contributors – [zsh-users/zsh](https://github.com/zsh-users/zsh)
-- **Zsh-completions** – [zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions)
-- **Oh My Zsh** – Robby Russell et al – [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
-- **Oh My Posh** – Jan De Dobbeleer – [JanDeDobbeleer/oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)
-- **Tmux** – Nicholas Marriott – [tmux/tmux](https://github.com/tmux/tmux)
-- **Tmuxinator** – Gabriel Sobrinho, team – [tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator)
-- **Neovim** – neovim team – [neovim/neovim](https://github.com/neovim/neovim)
-- **Lazygit** – Jesse Duffield – [JesseDuffield/lazygit](https://github.com/JesseDuffield/lazygit)
-- **Doom Emacs** – Henrik Lissner – [hlissner/doom-emacs](https://github.com/hlissner/doom-emacs)
-- **Emacs** – FSF (Richard Stallman et al) – [emacs-mirror/emacs](https://github.com/emacs-mirror/emacs)
-- **VSCodium** – VSCodium community – [VSCodium/vscodium](https://github.com/VSCodium/vscodium)
-- **Nano** – Chris Allegretta et al – [nano-editor/nano](https://github.com/nano-editor/nano)
-- **Helix** – Kiro Risk, contributors – [helix-editor/helix](https://github.com/helix-editor/helix)
-- **Kakoune** – Martin Tournoij, contributors – [mawww/kakoune](https://github.com/mawww/kakoune)
-- **Glow** – Charmbracelet – [charmbracelet/glow](https://github.com/charmbracelet/glow)
-- **Micro** – Zachary Yedidia – [zyedidia/micro](https://github.com/zyedidia/micro)
-- **nb (nb-preview/nbterm)** – Ichiro Hara (dalance) – [dalance/nb](https://github.com/dalance/nb)
-
-### Package Managers & Build Tools
-
-- **Pacman** – Arch Linux Team – [archlinux/pacman](https://gitlab.archlinux.org/pacman/pacman)
-- **Yay** – Jguer – [Jguer/yay](https://github.com/Jguer/yay)
-- **Apt, Dpkg** – Debian/Ubuntu maintainers – [debian/dpkg](https://salsa.debian.org/dpkg-team/dpkg)
-- **Dnf / Yum** – Fedora, Red Hat – [rpm-software-management/dnf](https://github.com/rpm-software-management/dnf)
-- **Zypper** – openSUSE Team – [openSUSE/zypper](https://github.com/openSUSE/zypper)
-- **Apk** – Alpine Team – [alpinelinux/apk-tools](https://gitlab.alpinelinux.org/alpine/apk-tools)
-- **Flatpak** – Alex Larsson/Red Hat – [flatpak/flatpak](https://github.com/flatpak/flatpak)
-- **Snapd** – Canonical – [snapcore/snapd](https://github.com/snapcore/snapd)
-- **Nix** – Domen Kožar et al – [NixOS/nix](https://github.com/NixOS/nix)
-- **Homebrew** – Homebrew contributors – [Homebrew/brew](https://github.com/Homebrew/brew)
-- **Macports** – MacPorts Team – [macports/macports-base](https://github.com/macports/macports-base)
-- **Pip / Pipx / Pipenv** – PyPA – [pypa/pip](https://github.com/pypa/pip), [pipxproject/pipx](https://github.com/pipxproject/pipx), [pypa/pipenv](https://github.com/pypa/pipenv)
-- **Cargo** – Rust Team – [rust-lang/cargo](https://github.com/rust-lang/cargo)
-- **Gem** – Ruby community – [rubygems/rubygems](https://github.com/rubygems/rubygems)
-- **Npm / Pnpm** – npm community – [npm/cli](https://github.com/npm/cli), [pnpm/pnpm](https://github.com/pnpm/pnpm)
-- **Docker / Podman / Docker Compose** – [docker/compose](https://github.com/docker/compose), [containers/podman](https://github.com/containers/podman)
-- **Dotnet** – Microsoft – [dotnet/core](https://github.com/dotnet/core)
-- **GitHub CLI** – GitHub – [cli/cli](https://github.com/cli/cli)
-- **Anaconda/Miniconda** – Continuum – [ContinuumIO/anaconda-issues](https://github.com/ContinuumIO/anaconda-issues)
-
-### Utility, Network, Scripting, Data Tools
-
-- **Btop** – Aristocratos – [aristocratos/btop](https://github.com/aristocratos/btop)
-- **Fastfetch** – fastfetch-cli contributors – [fastfetch-cli/fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- **Ripgrep** – Andrew Gallant – [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
-- **Fd** – David Peter – [sharkdp/fd](https://github.com/sharkdp/fd)
-- **Exa/Eza** – Benjamin Sago, eza community – [ogham/exa](https://github.com/ogham/exa), [eza-community/eza](https://github.com/eza-community/eza)
-- **Bat** – David Peter – [sharkdp/bat](https://github.com/sharkdp/bat)
-- **Hexyl** – David Peter – [sharkdp/hexyl](https://github.com/sharkdp/hexyl)
-- **Less** – Mark Nudelman – [gwsw/less](https://github.com/gwsw/less)
-- **Tree** – Steve Baker, Old-Man-Programmer – [Old-Man-Programmer/tree](https://github.com/Old-Man-Programmer/tree)
-- **Ranger** – Roman Zimbelmann – [ranger/ranger](https://github.com/ranger/ranger)
-- **Yazi** – YaZi contributors – [sxyazi/yazi](https://github.com/sxyazi/yazi)
-- **Navi** – Denis Idoro – [denisidoro/navi](https://github.com/denisidoro/navi)
-- **Pkgtop** – Aryan Saini – [AryanSaini121/pkgtop](https://github.com/AryanSaini121/pkgtop)
-- **Reflector** – Xyne – [Xyne/reflector](https://github.com/Xyne/reflector)
-- **Opendoas (Doas)** – Ted Unangst – [tedu/opendoas](https://github.com/Duncaen/OpenDoas)
-- **Tmatrix** – Abishek Vashok – [abishekvashok/tmatrix](https://github.com/abishekvashok/tmatrix)
-- **Lolcat** – Ruby community – [busyloop/lolcat](https://github.com/busyloop/lolcat)
-- **Man-db** – Colin Watson – [man-db/man-db](https://gitlab.com/man-db/man-db)
-- **Rmpc** – mierak – [mierak/rmpc](https://github.com/mierak/rmpc)
-- **Yt-dlp** – yt-dlp contributors – [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp)
-- **Pygmentize** – Pygments Team – [pygments/pygments](https://github.com/pygments/pygments)
-- **Ascii-image-converter** – TheZoraiz – [TheZoraiz/ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter)
-
-### Wayland, Compositor & Desktop Tools
-
-- **Hyprland** – Vaxry – [hyprwm/Hyprland](https://github.com/hyprwm/Hyprland)
-- **Hypridle** – [hyprwm/hypridle](https://github.com/hyprwm/hypridle)
-- **Hyprpicker** – [hyprwm/hyprpicker](https://github.com/hyprwm/hyprpicker)
-- **Hyprplugins** – [hyprwm/hyprplugins](https://github.com/hyprwm/hyprplugins)
-- **Hyprshot** – [hyprwm/hyprshot](https://github.com/hyprwm/hyprshot)
-- **Fuzzel** – Christian M. Aagesen – [fuzzel-project/fuzzel](https://github.com/fuzzel-project/fuzzel)
-- **Cliphist** – sentriz – [sentriz/cliphist](https://github.com/sentriz/cliphist)
-- **wl-clipboard** – Aleksey Bugaev – [bugaevc/wl-clipboard](https://github.com/bugaevc/wl-clipboard)
-- **Swww** – LG Fae – [LGFae/swww](https://github.com/LGFae/swww)
-- **Ghostty** – Mitchell Hashimoto – [mitchellh/ghostty](https://github.com/mitchellh/ghostty)
-- **Kitty** – Kovid Goyal – [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
-- **Playerctl** – Alec A. Criscuolo – [acrisci/playerctl](https://github.com/acrisci/playerctl)
-- **JamesDSP** – Audio4Linux team – [Audio4Linux/JDSP4Linux](https://github.com/Audio4Linux/JDSP4Linux)
-- **Dino** – Dino contributors – [dino/dino](https://github.com/dino/dino)
-- **Rclone** – Nick Craig-Wood – [rclone/rclone](https://github.com/rclone/rclone)
-- **Steam** – Valve – [ValveSoftware/steam-for-linux](https://github.com/ValveSoftware/steam-for-linux)
-- **Exifaudio** – Spotlight0xff – [Spotlight0xff/exifaudio](https://github.com/Spotlight0xff/exifaudio)
-- **Ouch** – Ouch contributors – [ouch-org/ouch](https://github.com/ouch-org/ouch)
-- **DuckDB** – DuckDB Labs – [duckdb/duckdb](https://github.com/duckdb/duckdb)
-
-### Windows, Cross-Platform & GUI Utilities
-
-- **Chris Titus Tech's WinUtil** – Chris Titus – [ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil)
-- **PowerShell** – Microsoft – [PowerShell/PowerShell](https://github.com/powershell/powershell)
-- **Windhawk** – Roman Lebedev – [ramensoftware/windhawk](https://github.com/ramensoftware/windhawk)
-- **Winaero Tweaker** – Sergey Tkachenko – [Winaero Tweaker](https://winaero.com)
-- **WizTree** – Antibody Software – [AntibodySoftware/WizTree](https://github.com/AntibodySoftware/WizTree)
-- **Zen Browser** – zenbrowser – [zenbrowser/zenbrowser](https://github.com/zenbrowser/zenbrowser)
-- **NVCleanstall** – TechPowerUp – [techpowerup.com/download/techpowerup-nvcleanstall/](https://www.techpowerup.com/download/techpowerup-nvcleanstall/)
-- **Playnite** – Josef Nemec – [JosefNemec/Playnite](https://github.com/JosefNemec/Playnite)
-- **Epic Games Launcher** – Epic Games Inc. – [epicgames.com/store/en-US/download/epic-games-launcher](https://epicgames.com/store/en-US/download/epic-games-launcher)
-- **GOG Galaxy** – GOG.com – [GOGcom/galaxy-integrations-python-api](https://github.com/GOGcom/galaxy-integrations-python-api)
-- **ArchiSteamFarm** – JustArchi – [JustArchiNET/ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm)
-- **Premid** – Timeraa et al – [Timeraa/PreMiD](https://github.com/Timeraa/PreMiD)
-- **Rainmeter** – Rainmeter team – [rainmeter.net](https://www.rainmeter.net/)
-- **Mica For Everyone** – MicaForEveryone team – [MicaForEveryone/MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone)
-- **Bitwarden** – Bitwarden Inc – [bitwarden/clients](https://github.com/bitwarden/clients)
-- **MS Teams, Visual Studio, VSCode, Chocolatey, Scoop, OneDrive** – Microsoft, [microsoft.com](https://microsoft.com), [chocolatey.org](https://chocolatey.org), [scoop.sh](https://scoop.sh)
-- **Ollama** – Ollama contributors – [ollama/ollama](https://github.com/ollama/ollama)
-- **Xemu** – [mborgerson/xemu](https://github.com/mborgerson/xemu)
-- **File Converter** – Adrien Allard – [AdrienAllard/FileConverter](https://github.com/AdrienAllard/FileConverter)
-- **Bulk Crap Uninstaller** – Klocman – [Klocman/Bulk-Crap-Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller)
-- **Flow Launcher** – Flow-Launcher contributors – [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher)
-- **WiseToys** – WiseToys Team – [WiseUncle/WiseToys](https://github.com/WiseUncle/WiseToys)
-- **EarthPro** – Google Inc – [EarthPro](https://www.google.com/earth/versions/#earth-pro)
-- **Scrcpy** – Genymobile – [Genymobile/scrcpy](https://github.com/Genymobile/scrcpy)
-- **OpenRGB** – Adam Honse – [AdamHonse/OpenRGB](https://github.com/AdamHonse/OpenRGB)
-- **DevToys** – DevToys team – [DevToysApp/DevToys](https://github.com/DevToysApp/DevToys)
-- **Godot Engine** – Godot Team – [godotengine/godot](https://github.com/godotengine/godot)
-- **Prism Launcher** – Prism Launcher Team – [PrismLauncher/PrismLauncher](https://github.com/PrismLauncher/PrismLauncher)
-- **Ventoy** – longpanda – [ventoy/Ventoy](https://github.com/ventoy/Ventoy)
-- **Discord** – Discord, Inc. – [discord.com](https://discord.com/)
-- **Telegram** – Telegram Messenger LLP – [telegram.org](https://telegram.org/)
-- **Spotify** – Spotify AB – [spotify.com](https://www.spotify.com/)
-- **Jq** – Stephen Dolan – [stedolan/jq](https://github.com/stedolan/jq)
-
----
+- [AdrienAllard/FileConverter](https://github.com/AdrienAllard/FileConverter) – [Adrien Allard](https://github.com/AdrienAllard)
+- [alpinelinux/apk-tools](https://gitlab.alpinelinux.org/alpine/apk-tools) – [Alpine Team](https://alpinelinux.org/)
+- [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) – [JustArchi](https://github.com/JustArchiNET)
+- [Audio4Linux/JDSP4Linux](https://github.com/Audio4Linux/JDSP4Linux) – [Audio4Linux team](https://github.com/Audio4Linux)
+- [Bat](https://github.com/sharkdp/bat) – [David Peter](https://github.com/sharkdp)
+- [Bitwarden/clients](https://github.com/bitwarden/clients) – [Bitwarden Inc](https://bitwarden.com/)
+- [Btop](https://github.com/aristocratos/btop) – [Aristocratos](https://github.com/aristocratos)
+- [Bulk-Crap-Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller) – [Klocman](https://github.com/Klocman)
+- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep) – [Andrew Gallant](https://github.com/BurntSushi)
+- [busyloop/lolcat](https://github.com/busyloop/lolcat) – [Ruby community](https://github.com/busyloop)
+- [charmbracelet/glow](https://github.com/charmbracelet/glow) – [Charmbracelet](https://github.com/charmbracelet)
+- [ChrisTitusTech/winutil](https://github.com/ChrisTitusTech/winutil) – [Chris Titus](https://github.com/ChrisTitusTech)
+- [cli/cli](https://github.com/cli/cli) – [GitHub](https://github.com/cli)
+- [Cliphist](https://github.com/sentriz/cliphist) – [sentriz](https://github.com/sentriz)
+- [containers/podman](https://github.com/containers/podman) – [Podman contributors](https://github.com/containers/podman)
+- [dalance/nb](https://github.com/dalance/nb) – [Ichiro Hara (dalance)](https://github.com/dalance)
+- [debian/dpkg](https://salsa.debian.org/dpkg-team/dpkg) – [Debian/Ubuntu maintainers](https://www.debian.org/)
+- [denisidoro/navi](https://github.com/denisidoro/navi) – [Denis Idoro](https://github.com/denisidoro)
+- [DevToysApp/DevToys](https://github.com/DevToysApp/DevToys) – [DevToys team](https://github.com/DevToysApp)
+- [discord.com](https://discord.com/) – [Discord, Inc.](https://discord.com/)
+- [docker/compose](https://github.com/docker/compose) – [Docker contributors](https://github.com/docker/compose)
+- [dotnet/core](https://github.com/dotnet/core) – [Microsoft](https://github.com/dotnet)
+- [Doom Emacs](https://github.com/hlissner/doom-emacs) – [Henrik Lissner](https://github.com/hlissner)
+- [DuckDB](https://github.com/duckdb/duckdb) – [DuckDB Labs](https://github.com/duckdb)
+- [EarthPro](https://www.google.com/earth/versions/#earth-pro) – [Google Inc](https://www.google.com/)
+- [Emacs](https://github.com/emacs-mirror/emacs) – [FSF (Richard Stallman et al)](https://www.gnu.org/software/emacs/)
+- [Epic Games Launcher](https://epicgames.com/store/en-US/download/epic-games-launcher) – [Epic Games Inc.](https://www.epicgames.com/)
+- [eza-community/eza](https://github.com/eza-community/eza) – [eza community](https://github.com/eza-community)
+- [Exifaudio](https://github.com/Spotlight0xff/exifaudio) – [Spotlight0xff](https://github.com/Spotlight0xff)
+- [Fastfetch](https://github.com/fastfetch-cli/fastfetch) – [fastfetch-cli contributors](https://github.com/fastfetch-cli)
+- [fd](https://github.com/sharkdp/fd) – [David Peter](https://github.com/sharkdp)
+- [Flow-Launcher/Flow.Launcher](https://github.com/Flow-Launcher/Flow.Launcher) – [Flow-Launcher contributors](https://github.com/Flow-Launcher)
+- [Fuzzel](https://github.com/fuzzel-project/fuzzel) – [Christian M. Aagesen](https://github.com/fuzzel-project)
+- [genymobile/scrcpy](https://github.com/Genymobile/scrcpy) – [Genymobile](https://github.com/Genymobile)
+- [GOGcom/galaxy-integrations-python-api](https://github.com/GOGcom/galaxy-integrations-python-api) – [GOG.com](https://www.gog.com/)
+- [godotengine/godot](https://github.com/godotengine/godot) – [Godot Team](https://github.com/godotengine)
+- [GNU Bash](https://www.gnu.org/software/bash/) – [Brian Fox and the GNU Project](https://www.gnu.org/software/bash/)
+- [gwsw/less](https://github.com/gwsw/less) – [Mark Nudelman](https://github.com/gwsw)
+- [hasleo.com/efibooteditor](https://www.hasleo.com/efibooteditor.html) – [Hasleo Software](https://www.hasleo.com/)
+- [helix-editor/helix](https://github.com/helix-editor/helix) – [Kiro Risk, contributors](https://github.com/helix-editor)
+- [Homebrew/brew](https://github.com/Homebrew/brew) – [Homebrew contributors](https://github.com/Homebrew)
+- [Hyprland](https://github.com/hyprwm/Hyprland) – [Vaxry](https://github.com/hyprwm)
+- [hyprwm/hypridle](https://github.com/hyprwm/hypridle) – [Hypridle contributors](https://github.com/hyprwm)
+- [hyprwm/hyprpicker](https://github.com/hyprwm/hyprpicker) – [Hyprpicker contributors](https://github.com/hyprwm)
+- [hyprwm/hyprplugins](https://github.com/hyprwm/hyprplugins) – [Hyprplugins contributors](https://github.com/hyprwm)
+- [hyprwm/hyprshot](https://github.com/hyprwm/hyprshot) – [Hyprshot contributors](https://github.com/hyprwm)
+- [JesseDuffield/lazygit](https://github.com/JesseDuffield/lazygit) – [Jesse Duffield](https://github.com/JesseDuffield)
+- [JustArchiNET/ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) – [JustArchi](https://github.com/JustArchiNET)
+- [Kakoune](https://github.com/mawww/kakoune) – [Martin Tournoij, contributors](https://github.com/mawww)
+- [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty) – [Kovid Goyal](https://github.com/kovidgoyal)
+- [LGFae/swww](https://github.com/LGFae/swww) – [LG Fae](https://github.com/LGFae)
+- [Man-db](https://gitlab.com/man-db/man-db) – [Colin Watson](https://gitlab.com/man-db)
+- [mborgerson/xemu](https://github.com/mborgerson/xemu) – [mborgerson](https://github.com/mborgerson)
+- [MicaForEveryone/MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone) – [MicaForEveryone team](https://github.com/MicaForEveryone)
+- [Microsoft](https://microsoft.com) – [Microsoft](https://microsoft.com)
+- [nano-editor/nano](https://github.com/nano-editor/nano) – [Chris Allegretta et al](https://github.com/nano-editor)
+- [neovim/neovim](https://github.com/neovim/neovim) – [neovim team](https://github.com/neovim)
+- [Nilesoft.Shell](https://nilesoft.org/shell/) – [Nilesoft](https://nilesoft.org/)
+- [NixOS/nix](https://github.com/NixOS/nix) – [Domen Kožar et al](https://github.com/NixOS)
+- [npm/cli](https://github.com/npm/cli) – [npm community](https://github.com/npm)
+- [nvi/nvi](https://github.com/nvi-editor/nvi) – [nvi contributors](https://github.com/nvi-editor)
+- [ogham/exa](https://github.com/ogham/exa) – [Benjamin Sago](https://github.com/ogham)
+- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh) – [Jan De Dobbeleer](https://github.com/JanDeDobbeleer)
+- [ohmyzsh/ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) – [Robby Russell et al](https://github.com/ohmyzsh)
+- [OpenDoas](https://github.com/Duncaen/OpenDoas) – [Ted Unangst](https://github.com/Duncaen)
+- [OpenRGB](https://github.com/AdamHonse/OpenRGB) – [Adam Honse](https://github.com/AdamHonse)
+- [ouch-org/ouch](https://github.com/ouch-org/ouch) – [Ouch contributors](https://github.com/ouch-org)
+- [Pacman](https://gitlab.archlinux.org/pacman/pacman) – [Arch Linux Team](https://archlinux.org/)
+- [pipxproject/pipx](https://github.com/pipxproject/pipx) – [pipx contributors](https://github.com/pipxproject)
+- [Playnite](https://github.com/JosefNemec/Playnite) – [Josef Nemec](https://github.com/JosefNemec)
+- [Playerctl](https://github.com/acrisci/playerctl) – [Alec A. Criscuolo](https://github.com/acrisci)
+- [PowerShell/PowerShell](https://github.com/PowerShell/PowerShell) – [Microsoft](https://github.com/PowerShell)
+- [PrismLauncher/PrismLauncher](https://github.com/PrismLauncher/PrismLauncher) – [Prism Launcher Team](https://github.com/PrismLauncher)
+- [pygments/pygments](https://github.com/pygments/pygments) – [Pygments Team](https://github.com/pygments)
+- [pypa/pip](https://github.com/pypa/pip) – [PyPA](https://github.com/pypa)
+- [pypa/pipenv](https://github.com/pypa/pipenv) – [PyPA](https://github.com/pypa)
+- [rainmeter.net](https://www.rainmeter.net/) – [Rainmeter team](https://www.rainmeter.net/)
+- [ramensoftware/windhawk](https://github.com/ramensoftware/windhawk) – [Roman Lebedev](https://github.com/ramensoftware)
+- [Ranger](https://github.com/ranger/ranger) – [Roman Zimbelmann](https://github.com/ranger)
+- [Reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) – [Andrew Gallant](https://github.com/BurntSushi)
+- [rmpc](https://github.com/mierak/rmpc) – [mierak](https://github.com/mierak)
+- [rust-lang/cargo](https://github.com/rust-lang/cargo) – [Rust Team](https://github.com/rust-lang)
+- [scoop.sh](https://scoop.sh) – [Scoop contributors](https://github.com/ScoopInstaller)
+- [sxyazi/yazi](https://github.com/sxyazi/yazi) – [YaZi contributors](https://github.com/sxyazi)
+- [stedolan/jq](https://github.com/stedolan/jq) – [Stephen Dolan](https://github.com/stedolan)
+- [Steam for Linux](https://github.com/ValveSoftware/steam-for-linux) – [Valve](https://github.com/ValveSoftware)
+- [Taskbar mods (Windhawk)](https://github.com/ramensoftware/windhawk) – [Roman Lebedev](https://github.com/ramensoftware)
+- [Telegram](https://telegram.org/) – [Telegram Messenger LLP](https://telegram.org/)
+- [TheZoraiz/ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) – [TheZoraiz](https://github.com/TheZoraiz)
+- [tmux/tmux](https://github.com/tmux/tmux) – [Nicholas Marriott](https://github.com/tmux)
+- [tmuxinator/tmuxinator](https://github.com/tmuxinator/tmuxinator) – [Gabriel Sobrinho, team](https://github.com/tmuxinator)
+- [Tree](https://github.com/Old-Man-Programmer/tree) – [Steve Baker, Old-Man-Programmer](https://github.com/Old-Man-Programmer)
+- [ValveSoftware/steam-for-linux](https://github.com/ValveSoftware/steam-for-linux) – [Valve](https://github.com/ValveSoftware)
+- [ventoy/Ventoy](https://github.com/ventoy/Ventoy) – [longpanda](https://github.com/ventoy)
+- [VSCodium/vscodium](https://github.com/VSCodium/vscodium) – [VSCodium community](https://github.com/VSCodium)
+- [Win11 File Explorer Styler (Windhawk)](https://github.com/ramensoftware/windhawk) – [Roman Lebedev](https://github.com/ramensoftware)
+- [Winaero Tweaker](https://winaero.com) – [Sergey Tkachenko](https://winaero.com)
+- [WiseUncle/WiseToys](https://github.com/WiseUncle/WiseToys) – [WiseToys Team](https://github.com/WiseUncle)
+- [wiztree](https://github.com/AntibodySoftware/WizTree) – [Antibody Software](https://github.com/AntibodySoftware)
+- [Xyne/reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
+- [yt-dlp/yt-dlp](https://github.com/yt-dlp/yt-dlp) – [yt-dlp contributors](https://github.com/yt-dlp)
+- [zsh-users/zsh](https://github.com/zsh-users/zsh) – [Paul Falstad and contributors](https://github.com/zsh-users)
+- [zsh-users/zsh-completions](https://github.com/zsh-users/zsh-completions) – [zsh-users](https://github.com/zsh-users)
+- [8GadgetPack](https://8gadgetpack.net/) – [Helmut Buhler](https://8gadgetpack.net/)
+- [Adobe Creative Cloud](https://www.adobe.com/creativecloud.html) – [Adobe](https://www.adobe.com/)
+- [ASIO4ALL](https://www.asio4all.org/) – [Michael Tippach](https://www.asio4all.org/)
+- [Cava](https://github.com/karlstav/cava) – [Karl Stavestrand](https://github.com/karlstav)
+- [Discord](https://discord.com/) – [Discord, Inc.](https://discord.com/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) – [Docker, Inc.](https://www.docker.com/)
+- [EA Desktop](https://www.ea.com/ea-app) – [Electronic Arts](https://www.ea.com/)
+- [EFI Boot Editor](https://www.hasleo.com/efibooteditor.html) – [Hasleo Software](https://www.hasleo.com/)
+- [Everything](https://www.voidtools.com/) – [David Carpenter](https://www.voidtools.com/)
+- [FFmpeg](https://ffmpeg.org/) – [FFmpeg Team](https://ffmpeg.org/)
+- [Fzf](https://github.com/junegunn/fzf) – [Junegunn Choi](https://github.com/junegunn)
+- [Github CLI](https://cli.github.com/) – [GitHub](https://github.com/cli)
+- [Git Extensions](https://gitextensions.github.io/) – [Git Extensions Team](https://github.com/gitextensions/gitextensions)
+- [Google Android Studio](https://developer.android.com/studio) – [Google](https://developer.android.com/)
+- [Google Drive](https://www.google.com/drive/) – [Google](https://www.google.com/)
+- [HWiNFO](https://www.hwinfo.com/) – [REALiX](https://www.hwinfo.com/)
+- [JamesDSP](https://github.com/Audio4Linux/JDSP4Linux) – [Audio4Linux team](https://github.com/Audio4Linux)
+- [Kwinrc](https://invent.kde.org/plasma/kwin) – [KDE Community](https://kde.org/)
+- [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) – [Hermann Schinagl](https://schinagl.priv.at/)
+- [MacPorts](https://www.macports.org/) – [MacPorts Team](https://github.com/macports/macports-base)
+- [Microsoft Edge Redirect](https://rcmaehl.github.io/MSEdgeRedirect/) – [Robert Maehl](https://github.com/rcmaehl)
+- [Microsoft NuGet](https://www.nuget.org/) – [Microsoft](https://www.nuget.org/profiles/Microsoft)
+- [Microsoft OneDrive](https://onedrive.live.com/) – [Microsoft](https://microsoft.com)
+- [Microsoft PowerToys](https://github.com/microsoft/PowerToys) – [Microsoft](https://github.com/microsoft)
+- [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) – [MSI](https://www.msi.com/)
+- [Nb-preview](https://github.com/dalance/nb) – [Ichiro Hara (dalance)](https://github.com/dalance)
+- [Obsidian](https://obsidian.md/) – [Obsidian.md](https://obsidian.md/)
+- [Oh My Zsh](https://ohmyz.sh/) – [Robby Russell et al](https://github.com/ohmyzsh/ohmyzsh)
+- [OneDrive (abraunegg)](https://github.com/abraunegg/onedrive) – [abraunegg](https://github.com/abraunegg)
+- [Playnite](https://playnite.link/) – [Josef Nemec](https://github.com/JosefNemec)
+- [Podman](https://podman.io/) – [Podman contributors](https://github.com/containers/podman)
+- [PowerShell](https://github.com/PowerShell/PowerShell) – [Microsoft](https://github.com/PowerShell)
+- [PreMiD](https://github.com/Timeraa/PreMiD) – [Timeraa et al](https://github.com/Timeraa)
+- [Prism Launcher](https://prismlauncher.org/) – [Prism Launcher Team](https://github.com/PrismLauncher)
+- [Proot](https://proot-me.github.io/) – [proot-me](https://github.com/proot-me)
+- [ProtonVPN](https://protonvpn.com/) – [Proton AG](https://protonvpn.com/)
+- [Qbittorrent](https://www.qbittorrent.org/) – [qBittorrent Team](https://github.com/qbittorrent/qBittorrent)
+- [Qt5ct](https://github.com/qt5ct/qt5ct) – [Maksim Sosnovskiy](https://github.com/qt5ct)
+- [Rainmeter](https://www.rainmeter.net/) – [Rainmeter team](https://www.rainmeter.net/)
+- [RetroArch](https://www.retroarch.com/) – [Libretro Team](https://github.com/libretro/RetroArch)
+- [Scrcpy](https://github.com/Genymobile/scrcpy) – [Genymobile](https://github.com/Genymobile)
+- [Snapd](https://github.com/snapcore/snapd) – [Canonical](https://github.com/snapcore)
+- [Spicetify](https://github.com/spicetify/spicetify-cli) – [Khanhas](https://github.com/khanhas)
+- [Spotify](https://www.spotify.com/) – [Spotify AB](https://www.spotify.com/)
+- [Steam](https://store.steampowered.com/) – [Valve](https://store.steampowered.com/)
+- [Swww](https://github.com/LGFae/swww) – [LG Fae](https://github.com/LGFae)
+- [Telegram](https://telegram.org/) – [Telegram Messenger LLP](https://telegram.org/)
+- [Termux-API](https://wiki.termux.com/wiki/Termux:API) – [Termux contributors](https://github.com/termux/termux-api)
+- [VSCodium](https://vscodium.com/) – [VSCodium community](https://github.com/VSCodium)
+- [Wayland/Weston](https://wayland.freedesktop.org/) – [Wayland/Weston contributors](https://gitlab.freedesktop.org/wayland/weston)
+- [Windows Terminal](https://github.com/microsoft/terminal) – [Microsoft](https://github.com/microsoft)
+- [WiseToys](https://wisetoys.app/) – [WiseToys Team](https://github.com/WiseUncle)
+- [Wireplumber](https://pipewire.pages.freedesktop.org/wireplumber/) – [PipeWire Project](https://gitlab.freedesktop.org/pipewire/wireplumber)
+- [WizTree](https://wiztreefree.com/) – [Antibody Software](https://github.com/AntibodySoftware)
+- [Zen Browser](https://github.com/zenbrowser/zenbrowser) – [zenbrowser](https://github.com/zenbrowser)
+- [saumyajyoti/omp.yazi](https://github.com/saumyajyoti/omp.yazi) – [Saumyajyoti Mukherjee](https://github.com/saumyajyoti)
+- [ndtoan96/ouch.yazi](https://github.com/ndtoan96/ouch.yazi) – [ndtoan96](https://github.com/ndtoan96)
+- [boydaihungst/restore.yazi](https://github.com/boydaihungst/restore.yazi) – [boydaihungst](https://github.com/boydaihungst)
+- [kirasok/torrent-preview.yazi](https://github.com/kirasok/torrent-preview.yazi) – [kirasok](https://github.com/kirasok)
+- [AnirudhG07/rich-preview.yazi](https://github.com/AnirudhG07/rich-preview.yazi) – [AnirudhG07](https://github.com/AnirudhG07)
+- [yazi-rs/plugins:smart-filter](https://github.com/yazi-rs/plugins/tree/main/smart-filter.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:smart-enter](https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:nbpreview](https://github.com/AnirudhG07/nbpreview.yazi) – AnirudhG07
+- [yazi-rs/plugins:mount](https://github.com/yazi-rs/plugins/tree/main/mount.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:full-border](https://github.com/yazi-rs/plugins/tree/main/full-border.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:diff](https://github.com/yazi-rs/plugins/tree/main/diff.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:chmod](https://github.com/yazi-rs/plugins/tree/main/chmod.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:hide-preview](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:jump-to-char](https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:hexyl](https://github.com/yazi-rs/plugins/tree/main/hexyl.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:glow](https://github.com/yazi-rs/plugins/tree/main/glow.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:eza-preview](https://github.com/yazi-rs/plugins/tree/main/eza-preview.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:git](https://github.com/yazi-rs/plugins/tree/main/git.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:lazygit](https://github.com/yazi-rs/plugins/tree/main/lazygit.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:miller](https://github.com/yazi-rs/plugins/tree/main/miller.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:mediainfo](https://github.com/yazi-rs/plugins/tree/main/mediainfo.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:duckdb](https://github.com/wylie102/duckdb.yazi) – wylie102
+- [yazi-rs/plugins:exifaudio](https://github.com/Sonico98/exifaudio.yazi) – Sonico98
+- [Microsoft Learn](https://learn.microsoft.com/) - Microsoft documentation used in Windows configs
+- [Windows Answer File Generator](https://schneegans.de/windows/unattend-generator/) - Christian Schneegans
+- [MajorGeeks](https://www.majorgeeks.com/) - Windows utility scripts and Group Policy Editor enablement
+- [Perplexity AI](https://www.perplexity.ai/) - Initial README.md content generation
+- [Neovim Theme: Tokyo Night](https://github.com/folke/tokyonight.nvim) - Folke Lemaitre
+- [Zen Browser Theme Authors](https://github.com/zenbrowser/zenbrowser) - Various contributors including lenzfliker, paasito, ToBinio, shldk, rsiebertdev, Kaedriz, Felkazz, ocean-mars, HliasOuzounis, ch4og, danm36, n7itro, KiKaraage, DaitiDay, AmirhBeigi, Dinno-DEV, TheBigWazz, RobotoSkunk, Uiniel, Nimit1705
 
 _If you are the author of any tool/config/snip used here and wish a correction or further explicit attribution, please [open an issue or pull request](https://github.com/sametaor/sametaor_CLIconfig/issues) and you will be credited transparently. This repository is a personal reference implementation, not a redistribution, and does not claim ownership over any listed tool or script._
