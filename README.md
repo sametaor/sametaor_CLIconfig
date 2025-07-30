@@ -495,29 +495,36 @@ _All software, scripts, and config seeds referenced in this repository are the i
 - [boydaihungst/restore.yazi](https://github.com/boydaihungst/restore.yazi) – [boydaihungst](https://github.com/boydaihungst)
 - [kirasok/torrent-preview.yazi](https://github.com/kirasok/torrent-preview.yazi) – [kirasok](https://github.com/kirasok)
 - [AnirudhG07/rich-preview.yazi](https://github.com/AnirudhG07/rich-preview.yazi) – [AnirudhG07](https://github.com/AnirudhG07)
-- [yazi-rs/plugins:smart-filter](https://github.com/yazi-rs/plugins/tree/main/smart-filter.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:smart-enter](https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi) – yazi-rs contributors
+- [yazi-rs/plugins:smart-filter](https://github.com/yazi-rs/plugins/tree/main/smart-filter.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:smart-enter](https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
 - [yazi-rs/plugins:nbpreview](https://github.com/AnirudhG07/nbpreview.yazi) – AnirudhG07
-- [yazi-rs/plugins:mount](https://github.com/yazi-rs/plugins/tree/main/mount.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:full-border](https://github.com/yazi-rs/plugins/tree/main/full-border.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:diff](https://github.com/yazi-rs/plugins/tree/main/diff.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:chmod](https://github.com/yazi-rs/plugins/tree/main/chmod.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:hide-preview](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:jump-to-char](https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:hexyl](https://github.com/yazi-rs/plugins/tree/main/hexyl.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:glow](https://github.com/yazi-rs/plugins/tree/main/glow.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:eza-preview](https://github.com/yazi-rs/plugins/tree/main/eza-preview.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:git](https://github.com/yazi-rs/plugins/tree/main/git.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:lazygit](https://github.com/yazi-rs/plugins/tree/main/lazygit.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:miller](https://github.com/yazi-rs/plugins/tree/main/miller.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:mediainfo](https://github.com/yazi-rs/plugins/tree/main/mediainfo.yazi) – yazi-rs contributors
-- [yazi-rs/plugins:duckdb](https://github.com/wylie102/duckdb.yazi) – wylie102
-- [yazi-rs/plugins:exifaudio](https://github.com/Sonico98/exifaudio.yazi) – Sonico98
+- [yazi-rs/plugins:mount](https://github.com/yazi-rs/plugins/tree/main/mount.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:full-border](https://github.com/yazi-rs/plugins/tree/main/full-border.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:diff](https://github.com/yazi-rs/plugins/tree/main/diff.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:chmod](https://github.com/yazi-rs/plugins/tree/main/chmod.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:hide-preview](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:jump-to-char](https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:hexyl](https://github.com/yazi-rs/plugins/tree/main/hexyl.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:glow](https://github.com/yazi-rs/plugins/tree/main/glow.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:eza-preview](https://github.com/yazi-rs/plugins/tree/main/eza-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:git](https://github.com/yazi-rs/plugins/tree/main/git.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:lazygit](https://github.com/yazi-rs/plugins/tree/main/lazygit.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:miller](https://github.com/yazi-rs/plugins/tree/main/miller.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:mediainfo](https://github.com/yazi-rs/plugins/tree/main/mediainfo.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [yazi-rs/plugins:duckdb](https://github.com/wylie102/duckdb.yazi) – [wylie102](https://github.com/wylie102)
+- [yazi-rs/plugins:exifaudio](https://github.com/Sonico98/exifaudio.yazi) – [Sonico98](https://github.com/Sonico98)
 - [Microsoft Learn](https://learn.microsoft.com/) - Microsoft documentation used in Windows configs
 - [Windows Answer File Generator](https://schneegans.de/windows/unattend-generator/) - Christian Schneegans
 - [MajorGeeks](https://www.majorgeeks.com/) - Windows utility scripts and Group Policy Editor enablement
 - [Perplexity AI](https://www.perplexity.ai/) - Initial README.md content generation
 - [Neovim Theme: Tokyo Night](https://github.com/folke/tokyonight.nvim) - Folke Lemaitre
 - [Zen Browser Theme Authors](https://github.com/zenbrowser/zenbrowser) - Various contributors including lenzfliker, paasito, ToBinio, shldk, rsiebertdev, Kaedriz, Felkazz, ocean-mars, HliasOuzounis, ch4og, danm36, n7itro, KiKaraage, DaitiDay, AmirhBeigi, Dinno-DEV, TheBigWazz, RobotoSkunk, Uiniel, Nimit1705
+- [zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - [Zsh-users](https://github.com/zsh-users) - Zsh syntax highlighting implementation
+- [zsh-users/zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) - [Zsh-users](https://github.com/zsh-users) - History search functionality
+- [zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - [Zsh-users](https://github.com/zsh-users) - Auto-suggestions implementation
+- [Aloxaf/fzf-tab](https://github.com/Aloxaf/fzf-tab) - [Aloxaf](https://github.com/Aloxaf) - Fuzzy completion framework
+- [djui/alias-tips](https://github.com/djui/alias-tips) - [Djui](https://github.com/djui) - Alias tips implementation
+- [LazyVim/LazyVim](https://github.com/LazyVim/LazyVim) - [LazyVim](https://github.com/LazyVim) - Neovim configuration patterns and plugins structure
+- [folke/lazy.nvim](https://github.com/folke/lazy.nvim) - [Folke](https://github.com/folke) - Plugin management patterns for Neovim
 
 _If you are the author of any tool/config/snip used here and wish a correction or further explicit attribution, please [open an issue or pull request](https://github.com/sametaor/sametaor_CLIconfig/issues) and you will be credited transparently. This repository is a personal reference implementation, not a redistribution, and does not claim ownership over any listed tool or script._
