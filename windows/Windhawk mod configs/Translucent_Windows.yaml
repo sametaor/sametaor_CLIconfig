@@ -1,6 +1,6 @@
 {
   "RenderingMod.ThemeBackground": 1,
-  "RenderingMod.AccentColorControls": 0,
+  "RenderingMod.AccentColorControls": 1,
   "type": "acrylicblur",
   "AccentBlurBehind": "00000000",
   "ImmersiveDarkTitle": 1,
