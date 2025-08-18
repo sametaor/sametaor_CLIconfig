@@ -64,7 +64,36 @@ export ZSH_PLUGINS_DIR="$ZDOTDIR/plugins"
 
 # Helper: add a plugin once – no external manager needed
 zplug_add() {
-  local url=$1 name=${${1##*/}%.git}
+  local param=$1 host url name
+
+  if [[ "$param" == */* ]]; then
+    # Check for host prefix in form: host:author/repo
+    if [[ "$param" =~ ^([^:]+):(.+/.+)$ ]]; then
+      host=${match[1]}
+      param=${match}
+      case $host in
+        github)    url="https://github.com/${param}.git" ;;
+        gitlab)    url="https://gitlab.com/${param}.git" ;;
+        bitbucket) url="https://bitbucket.org/${param}.git" ;;
+        gitea)     url="https://gitea.com/${param}.git" ;;
+        # Common self-hosted or alternative domains
+        sourcehut) url="https://git.sr.ht/${param}" ;;         # SourceHut (no .git suffix)
+        pagure)    url="https://pagure.io/${param}.git" ;;    # Pagure
+        codeberg)  url="https://codeberg.org/${param}.git" ;; # Codeberg (Gitea-based)
+        # Custom host/domain fallback (assume HTTPS + .com + .git)
+        *)         url="https://${host}.com/${param}.git" ;;
+      esac
+    else
+      # Default: github
+      url="https://github.com/${param}.git"
+    fi
+    name=${param##*/}
+  else
+    # Param is a full URL
+    url="$param"
+    name=${${param##*/}%.git}
+  fi
+
   git -C "$ZSH_PLUGINS_DIR" clone --depth=1 "$url" "$name" 2>/dev/null || :
 }
 
