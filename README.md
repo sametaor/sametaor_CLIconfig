@@ -7,74 +7,15 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 - (*Planned*) **Android**
 
 ## Repository Structure
-
-<details>
-<summary><strong> Click here! </strong></summary>
-
 ```
 sametaor_CLIconfig/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── linux
-│   ├── .bashrc
-│   └── .config
-│       ├── btop
-│       ├── doom
-│       ├── fastfetch
-│       ├── ghostty
-│       ├── hypr
-│       ├── jamesdsp
-│       ├── kitty
-│       ├── kwinrc
-│       ├── nvim
-│       ├── rmpc
-│       ├── systemd
-│       ├── tmux
-│       ├── yazi
-│       └── zsh
 ├── misc
-│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
-│   ├── HyprBibataModernClassicSVG.tar.gz
-│   ├── Scripts
-│   │   ├── DynWalls
-│   │   └── Utils
-│   ├── Windows_3D_Emoji_14+15.ttf
-│   ├── ascii-neovim-logos.txt
-│   ├── cava.sh
-│   ├── sametaor.omp.json
-│   ├── spicetify_lucid_theme_settings.json
-│   ├── titan_aug.mp4
-│   └── zen-themes-export.json
 └── windows
-    ├── HyperV_on_HomeEdition.bat
-    ├── Microsoft.PowerShell_profile.ps1
-    ├── Virt_machines
-    │   └── VMWare
-    ├── Windhawk mod configs
-    │   ├── Slick_Window_Arrangement.yaml
-    │   ├── Taskbar_Button_Scroll.yaml
-    │   ├── Taskbar_Clock_Customization.yaml
-    │   ├── Taskbar_Volume_Control.yaml
-    │   ├── Taskbar_Wheel_Cycle.yaml
-    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
-    │   ├── Translucent_Windows.yaml
-    │   ├── Win11_File_Explorer_Styler.yaml
-    │   ├── Windows_11_Notification_Center_Styler.yaml
-    │   ├── Windows_11_Start_Menu_Styler.yaml
-    │   └── Windows_11_Taskbar_Styler.yaml
-    ├── Windows_7x11.png
-    ├── Windows_7x11ALT.png
-    ├── Windows_7x11ALT_lockscr.png
-    ├── autounattend.xml
-    ├── post_install_steps.ps1
-    ├── regconfig.reg
-    ├── startlayout.json
-    ├── unattend.iso
-    ├── wingetinstall.json
-    └── winutilconfig.json
 ```
-</details>
 
 ## Prerequisites
 Below is a categorized, collapsible "cheat sheet" of every essential tool, covering **all major Linux distros** and **Windows/Android** platforms. If a distro or platform doesn't offer the tool, it is marked "Manual" or "Not applicable". Every line includes a description for quick scanning.
