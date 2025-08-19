@@ -1902,6 +1902,7 @@ sametaor_CLIconfig/
     └── winutilconfig.json
 ```
 </details>
+
 ## General Concepts
 - **Dotfiles**—Hidden configuration files (`.bashrc`, `.zshrc`, etc.) that control the behavior of your shell, editors, and CLI environments.
 - **Portable scripts**—Reusable scripts for automating setup, installation, and environment bootstrapping.
