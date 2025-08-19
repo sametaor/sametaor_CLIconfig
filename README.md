@@ -6,16 +6,80 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 - (*Future support*) **macOS**
 - (*Planned*) **Android**
 
+## Purpose
+- **Centralized management:** Keep all sorts of CLI and environment configs in one place for backup, syncing, and migration.
+- **Cross-platform productivity:** Port finely-tuned environment, aliases, functions, and tool preferences to any supported OS.
+- **Rapid onboarding:** New or freshly-installed systems can be brought up to speed fast, reducing setup friction and human error.
+
 ## Repository Structure
+
+<details>
+<summary><strong> Click here! </strong></summary>
+
 ```
 sametaor_CLIconfig/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── linux
+│   ├── .bashrc
+│   └── .config
+│       ├── btop
+│       ├── doom
+│       ├── fastfetch
+│       ├── ghostty
+│       ├── hypr
+│       ├── jamesdsp
+│       ├── kitty
+│       ├── kwinrc
+│       ├── nvim
+│       ├── rmpc
+│       ├── systemd
+│       ├── tmux
+│       ├── yazi
+│       └── zsh
 ├── misc
+│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
+│   ├── HyprBibataModernClassicSVG.tar.gz
+│   ├── Scripts
+│   │   ├── DynWalls
+│   │   └── Utils
+│   ├── Windows_3D_Emoji_14+15.ttf
+│   ├── ascii-neovim-logos.txt
+│   ├── cava.sh
+│   ├── sametaor.omp.json
+│   ├── spicetify_lucid_theme_settings.json
+│   ├── titan_aug.mp4
+│   └── zen-themes-export.json
 └── windows
+    ├── HyperV_on_HomeEdition.bat
+    ├── Microsoft.PowerShell_profile.ps1
+    ├── Virt_machines
+    │   └── VMWare
+    ├── Windhawk mod configs
+    │   ├── Slick_Window_Arrangement.yaml
+    │   ├── Taskbar_Button_Scroll.yaml
+    │   ├── Taskbar_Clock_Customization.yaml
+    │   ├── Taskbar_Volume_Control.yaml
+    │   ├── Taskbar_Wheel_Cycle.yaml
+    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
+    │   ├── Translucent_Windows.yaml
+    │   ├── Win11_File_Explorer_Styler.yaml
+    │   ├── Windows_11_Notification_Center_Styler.yaml
+    │   ├── Windows_11_Start_Menu_Styler.yaml
+    │   └── Windows_11_Taskbar_Styler.yaml
+    ├── Windows_7x11.png
+    ├── Windows_7x11ALT.png
+    ├── Windows_7x11ALT_lockscr.png
+    ├── autounattend.xml
+    ├── post_install_steps.ps1
+    ├── regconfig.reg
+    ├── startlayout.json
+    ├── unattend.iso
+    ├── wingetinstall.json
+    └── winutilconfig.json
 ```
+</details>
 
 ## Prerequisites
 Below is a categorized, collapsible "cheat sheet" of every essential tool, covering **all major Linux distros** and **Windows/Android** platforms. If a distro or platform doesn't offer the tool, it is marked "Manual" or "Not applicable". Every line includes a description for quick scanning.
@@ -307,178 +371,6 @@ Below is a categorized, collapsible "cheat sheet" of every essential tool, cover
 
 _All software, scripts, and config seeds referenced in this repository are the intellectual property of their respective authors and maintainers. Their generosity and effort enable this repo's cross-platform CLI and customization curation._
 
-- [.Net](https://github.com/dotnet/core) – [Microsoft](https://github.com/dotnet)
-- [8GadgetPack](https://8gadgetpack.net/) – [Helmut Buhler](https://8gadgetpack.net/)
-- [Alias-tips](https://github.com/djui/alias-tips) - [Djui](https://github.com/djui) - Alias tips implementation
-- [Alpinelinux Apk-tools](https://gitlab.alpinelinux.org/alpine/apk-tools) – [Alpine Team](https://alpinelinux.org/)
-- [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) – [JustArchi](https://github.com/JustArchiNET)
-- [ASIO4ALL](https://www.asio4all.org/) – [Michael Tippach](https://www.asio4all.org/)
-- [Bat](https://github.com/sharkdp/bat) – [David Peter](https://github.com/sharkdp)
-- [Bitwarden](https://github.com/bitwarden/clients) – [Bitwarden Inc](https://bitwarden.com/)
-- [Btop](https://github.com/aristocratos/btop) – [Aristocratos](https://github.com/aristocratos)
-- [Bulk-Crap-Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller) – [Klocman](https://github.com/Klocman)
-- [Cava](https://github.com/karlstav/cava) – [Karl Stavestrand](https://github.com/karlstav)
-- [Chmod.yazi](https://github.com/yazi-rs/plugins/tree/main/chmod.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Cliphist](https://github.com/sentriz/cliphist) – [sentriz](https://github.com/sentriz)
-- [DevToys](https://github.com/DevToysApp/DevToys) – [DevToys team](https://github.com/DevToysApp)
-- [Diff.yazi](https://github.com/yazi-rs/plugins/tree/main/diff.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Discord](https://discord.com/) – [Discord, Inc.](https://discord.com/)
-- [Docker Compose](https://github.com/docker/compose) – [Docker contributors](https://github.com/docker/compose)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) – [Docker, Inc.](https://www.docker.com/)
-- [Doom Emacs](https://github.com/hlissner/doom-emacs) – [Henrik Lissner](https://github.com/hlissner)
-- [Dpkg](https://salsa.debian.org/dpkg-team/dpkg) – [Debian/Ubuntu maintainers](https://www.debian.org/)
-- [DuckDB.yazi](https://github.com/wylie102/duckdb.yazi) – [wylie102](https://github.com/wylie102)
-- [DuckDB](https://github.com/duckdb/duckdb) – [DuckDB Labs](https://github.com/duckdb)
-- [EA Desktop](https://www.ea.com/ea-app) – [Electronic Arts](https://www.ea.com/)
-- [EarthPro](https://www.google.com/earth/versions/#earth-pro) – [Google Inc](https://www.google.com/)
-- [EFI Boot Editor](https://www.hasleo.com/efibooteditor.html) – [Hasleo Software](https://www.hasleo.com/)
-- [Emacs](https://github.com/emacs-mirror/emacs) – [FSF (Richard Stallman et al)](https://www.gnu.org/software/emacs/)
-- [Epic Games Launcher](https://epicgames.com/store/en-US/download/epic-games-launcher) – [Epic Games Inc.](https://www.epicgames.com/)
-- [Everything](https://www.voidtools.com/) – [David Carpenter](https://www.voidtools.com/)
-- [ExifAudio.yazi](https://github.com/Sonico98/exifaudio.yazi) – [Sonico98](https://github.com/Sonico98)
-- [Exifaudio](https://github.com/Spotlight0xff/exifaudio) – [Spotlight0xff](https://github.com/Spotlight0xff)
-- [Eza](https://github.com/eza-community/eza) – [eza community](https://github.com/eza-community)
-- [Eza-Preview.yazi](https://github.com/yazi-rs/plugins/tree/main/eza-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Fastfetch](https://github.com/fastfetch-cli/fastfetch) – [fastfetch-cli contributors](https://github.com/fastfetch-cli)
-- [Fd](https://github.com/sharkdp/fd) – [David Peter](https://github.com/sharkdp)
-- [FFmpeg](https://ffmpeg.org/) – [FFmpeg Team](https://ffmpeg.org/)
-- [FileConverter](https://github.com/AdrienAllard/FileConverter) – [Adrien Allard](https://github.com/AdrienAllard)
-- [Flow-Launcher](https://github.com/Flow-Launcher/Flow.Launcher) – [Flow-Launcher contributors](https://github.com/Flow-Launcher)
-- [Folke&#39;s lazy.nvim](https://github.com/folke/lazy.nvim) - [Folke](https://github.com/folke) - Plugin management patterns for Neovim
-- [Full-Border.yazi](https://github.com/yazi-rs/plugins/tree/main/full-border.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Fuzzel](https://github.com/fuzzel-project/fuzzel) – [Christian M. Aagesen](https://github.com/fuzzel-project)
-- [Fzf](https://github.com/junegunn/fzf) – [Junegunn Choi](https://github.com/junegunn)
-- [Fzf-tab](https://github.com/Aloxaf/fzf-tab) - [Aloxaf](https://github.com/Aloxaf) - Fuzzy completion framework
-- [Git Extensions](https://gitextensions.github.io/) – [Git Extensions Team](https://github.com/gitextensions/gitextensions)
-- [Git.yazi](https://github.com/yazi-rs/plugins/tree/main/git.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Github CLI](https://cli.github.com/) – [GitHub](https://github.com/cli)
-- [Github cli](https://github.com/cli/cli) – [GitHub](https://github.com/cli)
-- [Glow.yazi](https://github.com/yazi-rs/plugins/tree/main/glow.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Glow](https://github.com/charmbracelet/glow) – [Charmbracelet](https://github.com/charmbracelet)
-- [GNU Bash](https://www.gnu.org/software/bash/) – [Brian Fox and the GNU Project](https://www.gnu.org/software/bash/)
-- [Godot](https://github.com/godotengine/godot) – [Godot Team](https://github.com/godotengine)
-- [GOG Galaxy](https://www.gog.com/galaxy) – [GOG.com](https://www.gog.com/)
-- [Google Android Studio](https://developer.android.com/studio) – [Google](https://developer.android.com/)
-- [Google Drive](https://www.google.com/drive/) – [Google](https://www.google.com/)
-- [Helix](https://github.com/helix-editor/helix) – [Kiro Risk, contributors](https://github.com/helix-editor)
-- [Hexyl.yazi](https://github.com/yazi-rs/plugins/tree/main/hexyl.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Hide-Preview.yazi](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Homebrew](https://github.com/Homebrew/brew) – [Homebrew contributors](https://github.com/Homebrew)
-- [HWiNFO](https://www.hwinfo.com/) – [REALiX](https://www.hwinfo.com/)
-- [Hypridle](https://github.com/hyprwm/hypridle) – [Hypridle contributors](https://github.com/hyprwm)
-- [Hyprland](https://github.com/hyprwm/Hyprland) – [Vaxry](https://github.com/hyprwm)
-- [Hyprpicker](https://github.com/hyprwm/hyprpicker) – [Hyprpicker contributors](https://github.com/hyprwm)
-- [Hyprplugins](https://github.com/hyprwm/hyprplugins) – [Hyprplugins contributors](https://github.com/hyprwm)
-- [Hyprshot](https://github.com/hyprwm/hyprshot) – [Hyprshot contributors](https://github.com/hyprwm)
-- [JamesDSP Linux](https://github.com/Audio4Linux/JDSP4Linux) – [Audio4Linux team](https://github.com/Audio4Linux)
-- [Jq](https://github.com/stedolan/jq) – [Stephen Dolan](https://github.com/stedolan)
-- [Jump-To-Char.yazi](https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Kakoune](https://github.com/mawww/kakoune) – [Martin Tournoij, contributors](https://github.com/mawww)
-- [Kitty](https://github.com/kovidgoyal/kitty) – [Kovid Goyal](https://github.com/kovidgoyal)
-- [Kwinrc](https://invent.kde.org/plasma/kwin) – [KDE Community](https://kde.org/)
-- [LazyGit.yazi](https://github.com/yazi-rs/plugins/tree/main/lazygit.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Lazygit](https://github.com/JesseDuffield/lazygit) – [Jesse Duffield](https://github.com/JesseDuffield)
-- [LazyVim](https://github.com/LazyVim/LazyVim) – [LazyVim](https://www.lazyvim.org/) - Neovim configuration patterns and plugins structure
-- [Less](https://github.com/gwsw/less) – [Mark Nudelman](https://github.com/gwsw)
-- [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) – [Hermann Schinagl](https://schinagl.priv.at/)
-- [Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/) - [Linus Torvalds et al](https://www.kernel.org/)
-- [Lolcat](https://github.com/busyloop/lolcat) – [Ruby community](https://github.com/busyloop)
-- [MacPorts](https://www.macports.org/) – [MacPorts Team](https://github.com/macports/macports-base)
-- [MajorGeeks](https://www.majorgeeks.com/) - Windows utility scripts and Group Policy Editor enablement
-- [Man-db](https://gitlab.com/man-db/man-db) – [Colin Watson](https://gitlab.com/man-db)
-- [MediaInfo.yazi](https://github.com/yazi-rs/plugins/tree/main/mediainfo.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone) – [MicaForEveryone team](https://github.com/MicaForEveryone)
-- [Microsoft Edge Redirect](https://rcmaehl.github.io/MSEdgeRedirect/) – [Robert Maehl](https://github.com/rcmaehl)
-- [Microsoft Learn](https://learn.microsoft.com/) - Microsoft documentation used in Windows configs
-- [Microsoft NuGet](https://www.nuget.org/) – [Microsoft](https://www.nuget.org/profiles/Microsoft)
-- [Microsoft OneDrive](https://onedrive.live.com/) – [Microsoft](https://microsoft.com)
-- [Microsoft PowerToys](https://github.com/microsoft/PowerToys) – [Microsoft](https://github.com/microsoft)
-- [Microsoft](https://microsoft.com) – [Microsoft](https://microsoft.com)
-- [Miller.yazi](https://github.com/yazi-rs/plugins/tree/main/miller.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Mount.yazi](https://github.com/yazi-rs/plugins/tree/main/mount.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) – [MSI](https://www.msi.com/)
-- [Nano](https://github.com/nano-editor/nano) – [Chris Allegretta et al](https://github.com/nano-editor)
-- [Navi](https://github.com/denisidoro/navi) – [Denis Idoro](https://github.com/denisidoro)
-- [Nb](https://github.com/xwmx/nb) – [William Melody (xwmx)](https://github.com/xwmx)
-- [Nbpreview.yazi](https://github.com/AnirudhG07/nbpreview.yazi) – AnirudhG07
-- [Nb-preview](https://github.com/dalance/nb) – [Ichiro Hara (dalance)](https://github.com/dalance)
-- [Neovim Theme: Tokyo Night](https://github.com/folke/tokyonight.nvim) - Folke Lemaitre
-- [Neovim](https://github.com/neovim/neovim) – [neovim team](https://github.com/neovim)
-- [Nilesoft Shell](https://nilesoft.org/shell/) – [Nilesoft](https://nilesoft.org/)
-- [Nix](https://github.com/NixOS/nix) – [Domen Kožar et al](https://github.com/NixOS)
-- [Npm](https://github.com/npm/cli) – [npm community](https://github.com/npm)
-- [Obsidian](https://obsidian.md/) – [Obsidian.md](https://obsidian.md/)
-- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh) – [Jan De Dobbeleer](https://github.com/JanDeDobbeleer)
-- [Oh My Zsh](https://ohmyz.sh/) – [Robby Russell et al](https://github.com/ohmyzsh/ohmyzsh)
-- [Omp.yazi](https://github.com/saumyajyoti/omp.yazi) – [Saumyajyoti Mukherjee](https://github.com/saumyajyoti)
-- [OneDrive (abraunegg)](https://github.com/abraunegg/onedrive) – [abraunegg](https://github.com/abraunegg)
-- [OpenDoas](https://github.com/Duncaen/OpenDoas) – [Ted Unangst](https://github.com/Duncaen)
-- [OpenRGB](https://github.com/AdamHonse/OpenRGB) – [Adam Honse](https://github.com/AdamHonse)
-- [Ouch](https://github.com/ouch-org/ouch) – [Ouch contributors](https://github.com/ouch-org)
-- [Pacman](https://gitlab.archlinux.org/pacman/pacman) – [Arch Linux Team](https://archlinux.org/)
-- [Perplexity AI](https://www.perplexity.ai/) - Initial README.md content generation
-- [Pip](https://github.com/pypa/pip) – [PyPA](https://github.com/pypa)
-- [Pipenv](https://github.com/pypa/pipenv) – [PyPA](https://github.com/pypa)
-- [Pipx](https://github.com/pipxproject/pipx) – [pipx contributors](https://github.com/pipxproject)
-- [Playerctl](https://github.com/acrisci/playerctl) – [Alec A. Criscuolo](https://github.com/acrisci)
-- [Playnite](https://playnite.link/) – [Josef Nemec](https://github.com/JosefNemec)
-- [Podman](https://github.com/containers/podman) – [Podman contributors](https://github.com/containers/podman)
-- [Podman](https://podman.io/) – [Podman contributors](https://github.com/containers/podman)
-- [PowerShell](https://github.com/PowerShell/PowerShell) – [Microsoft](https://github.com/PowerShell)
-- [PreMiD](https://github.com/Timeraa/PreMiD) – [Timeraa et al](https://github.com/Timeraa)
-- [Prism Launcher](https://prismlauncher.org/) – [Prism Launcher Team](https://github.com/PrismLauncher)
-- [Proot](https://proot-me.github.io/) – [proot-me](https://github.com/proot-me)
-- [ProtonVPN](https://protonvpn.com/) – [Proton AG](https://protonvpn.com/)
-- [Pygments](https://github.com/pygments/pygments) – [Pygments Team](https://github.com/pygments)
-- [Python](https://www.python.org/downloads/) - [Python.org](https://www.python.org)
-- [Qbittorrent](https://www.qbittorrent.org/) – [qBittorrent Team](https://github.com/qbittorrent/qBittorrent)
-- [Qt5ct](https://github.com/qt5ct/qt5ct) – [Maksim Sosnovskiy](https://github.com/qt5ct)
-- [Rainmeter](https://www.rainmeter.net/) – [Rainmeter team](https://www.rainmeter.net/)
-- [Ranger](https://github.com/ranger/ranger) – [Roman Zimbelmann](https://github.com/ranger)
-- [Reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
-- [Restore.yazi](https://github.com/boydaihungst/restore.yazi) – [boydaihungst](https://github.com/boydaihungst)
-- [RetroArch](https://www.retroarch.com/) – [Libretro Team](https://github.com/libretro/RetroArch)
-- [Rich-preview.yazi](https://github.com/AnirudhG07/rich-preview.yazi) – [AnirudhG07](https://github.com/AnirudhG07)
-- [Ripgrep](https://github.com/BurntSushi/ripgrep) – [Andrew Gallant](https://github.com/BurntSushi)
-- [Rmpc](https://github.com/mierak/rmpc) – [mierak](https://github.com/mierak)
-- [Rust-lang/Cargo](https://github.com/rust-lang/cargo) – [Rust Team](https://github.com/rust-lang)
-- [Scoop.sh](https://scoop.sh) – [Scoop contributors](https://github.com/ScoopInstaller)
-- [Scrcpy](https://github.com/Genymobile/scrcpy) – [Genymobile](https://github.com/Genymobile)
-- [Smart-Enter.yazi](https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
-- [Snapd](https://github.com/snapcore/snapd) – [Canonical](https://github.com/snapcore)
-- [Spicetify](https://github.com/spicetify/spicetify-cli) – [Khanhas](https://github.com/khanhas)
-- [Spotify](https://www.spotify.com/) – [Spotify AB](https://www.spotify.com/)
-- [Steam](https://store.steampowered.com/) – [Valve](https://store.steampowered.com/)
-- [Swww](https://github.com/LGFae/swww) – [LG Fae](https://github.com/LGFae)
-- [Telegram](https://telegram.org/) – [Telegram Messenger LLP](https://telegram.org/)
-- [Termux-API](https://wiki.termux.com/wiki/Termux:API) – [Termux contributors](https://github.com/termux/termux-api)
-- [TheZoraiz/ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) – [TheZoraiz](https://github.com/TheZoraiz)
-- [Tmux](https://github.com/tmux/tmux) – [Nicholas Marriott](https://github.com/tmux)
-- [Tmuxinator](https://github.com/tmuxinator/tmuxinator) – [Gabriel Sobrinho, team](https://github.com/tmuxinator)
-- [Torrent-preview.yazi](https://github.com/kirasok/torrent-preview.yazi) – [kirasok](https://github.com/kirasok)
-- [Tree](https://github.com/Old-Man-Programmer/tree) – [Steve Baker, Old-Man-Programmer](https://github.com/Old-Man-Programmer)
-- [Ventoy](https://github.com/ventoy/Ventoy) – [longpanda](https://github.com/ventoy)
-- [VSCodium](https://vscodium.com/) – [VSCodium community](https://github.com/VSCodium)
-- [Wayland/Weston](https://wayland.freedesktop.org/) – [Wayland/Weston contributors](https://gitlab.freedesktop.org/wayland/weston)
-- [Winaero Tweaker](https://winaero.com) – [Sergey Tkachenko](https://winaero.com)
-- [Windhawk](https://github.com/ramensoftware/windhawk) – [Roman Lebedev](https://github.com/ramensoftware)
-- [Windows Answer File Generator](https://schneegans.de/windows/unattend-generator/) - Christian Schneegans
-- [Windows Terminal](https://github.com/microsoft/terminal) – [Microsoft](https://github.com/microsoft)
-- [Winutil](https://github.com/ChrisTitusTech/winutil) – [Chris Titus](https://github.com/ChrisTitusTech)
-- [Wireplumber](https://pipewire.pages.freedesktop.org/wireplumber/) – [PipeWire Project](https://gitlab.freedesktop.org/pipewire/wireplumber)
-- [WiseToys](https://wisetoys.app/) – [WiseToys Team](https://github.com/WiseUncle)
-- [WiseUncle/WiseToys](https://github.com/WiseUncle/WiseToys) – [WiseToys Team](https://github.com/WiseUncle)
-- [WizTree](https://wiztreefree.com/) – [Antibody Software](https://github.com/AntibodySoftware)
-- [Xemu](https://github.com/mborgerson/xemu) – [mborgerson](https://github.com/mborgerson)
-- [Xyne/reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
-- [Yazi](https://github.com/sxyazi/yazi) – [YaZi contributors](https://github.com/sxyazi)
-- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) – [yt-dlp contributors](https://github.com/yt-dlp)
-- [Zen Browser Theme Authors](https://github.com/zenbrowser/zenbrowser) - Various contributors including lenzfliker, paasito, ToBinio, shldk, rsiebertdev, Kaedriz, Felkazz, ocean-mars, HliasOuzounis, ch4og, danm36, n7itro, KiKaraage, DaitiDay, AmirhBeigi, Dinno-DEV, TheBigWazz, RobotoSkunk, Uiniel, Nimit1705
-- [Zen Browser](https://github.com/zen-browser/desktop/releases/latest/) – [Zen Browser](https://zen-browser.app/)
-- [Zsh](https://github.com/zsh-users/zsh) – [Paul Falstad and contributors](https://github.com/zsh-users)
-- [Zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - [Zsh-users](https://github.com/zsh-users) - Auto-suggestions implementation
-- [Zsh-completions](https://github.com/zsh-users/zsh-completions) – [Zsh-users](https://github.com/zsh-users)
-- [Zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) - [Zsh-users](https://github.com/zsh-users) - History search functionality
-- [Zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - [Zsh-users](https://github.com/zsh-users) - Zsh syntax highlighting implementation
+_The credits are duly mentioned under the [CREDITS.md](https://github.com/sametaor/sametaor_CLIconfig/blob/master/CREDITS.md) document.
 
 _If you are the author of any tool/config/snip used here and wish a correction or further explicit attribution, please [open an issue or pull request](https://github.com/sametaor/sametaor_CLIconfig/issues) and you will be credited transparently. This repository is a personal reference implementation, not a redistribution, and does not claim ownership over any listed tool or script._
