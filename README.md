@@ -14,41 +14,66 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 ## Repository Structure
 ```
 sametaor_CLIconfig/
-├── linux/                    # Linux-specific dotfiles, shell scripts, and setup instructions
-│   ├── .bashrc            # Shell and application configuration files
-│   ├── .config          # Bash shell configuration
-│   │   ├── zsh           # Zsh shell configuration
-│   │   ├── nvim           # Vim editor configuration
-│   │   ├── tmux       # Tmux terminal multiplexer config
-│   │   └── 
-├── windows/                 # PowerShell scripts, Windows terminal configs, VMWare profiles
-│   ├── dotfiles/            # Windows configuration files
-│   │   ├── Microsoft.PowerShell_profile.ps1  # PowerShell profile
-│   │   ├── settings.json    # Windows Terminal settings
-│   │   └── .gitconfig       # Git configuration for Windows
-│   ├── scripts/             # PowerShell automation scripts
-│   │   ├── Setup.ps1        # Main Windows setup script
-│   │   ├── Install-Tools.ps1 # Package installation via winget/choco
-│   │   └── Backup-Config.ps1 # Configuration backup utility
-│   └── configs/             # Application configurations
-│       ├── vscode/          # Visual Studio Code settings
-│       ├── wsl/             # Windows Subsystem for Linux configs
-│       └── terminal/        # Windows Terminal themes and profiles
-├── misc/                    # Cross-platform tools, scripts, or configs not specific to one OS
-│   ├── themes/              # Color schemes and visual themes
-│   │   ├── dracula/         # Dracula theme variants
-│   │   ├── gruvbox/         # Gruvbox theme variants
-│   │   └── nord/            # Nord theme variants
-│   ├── fonts/               # Programming fonts and configurations
-│   │   ├── nerd-fonts/      # Patched fonts with icons
-│   │   └── install-fonts.sh # Font installation script
-│   └── common/              # Shared configuration snippets
-│       ├── aliases.txt      # Common shell aliases
-│       ├── functions.txt    # Reusable shell functions
-│       └── exports.txt      # Environment variable exports
+├── .gitignore
 ├── LICENSE
-├── README.md                # (this file)
-└── .gitignore
+├── README.md
+├── linux
+│   ├── .bashrc
+│   └── .config
+│       ├── btop
+│       ├── doom
+│       ├── fastfetch
+│       ├── ghostty
+│       ├── hypr
+│       ├── jamesdsp
+│       ├── kitty
+│       ├── kwinrc
+│       ├── nvim
+│       ├── rmpc
+│       ├── systemd
+│       ├── tmux
+│       ├── yazi
+│       └── zsh
+├── misc
+│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
+│   ├── HyprBibataModernClassicSVG.tar.gz
+│   ├── Scripts
+│   │   ├── DynWalls
+│   │   └── Utils
+│   ├── Windows_3D_Emoji_14+15.ttf
+│   ├── ascii-neovim-logos.txt
+│   ├── cava.sh
+│   ├── sametaor.omp.json
+│   ├── spicetify_lucid_theme_settings.json
+│   ├── titan_aug.mp4
+│   └── zen-themes-export.json
+└── windows
+    ├── HyperV_on_HomeEdition.bat
+    ├── Microsoft.PowerShell_profile.ps1
+    ├── Virt_machines
+    │   └── VMWare
+    ├── Windhawk mod configs
+    │   ├── Slick_Window_Arrangement.yaml
+    │   ├── Taskbar_Button_Scroll.yaml
+    │   ├── Taskbar_Clock_Customization.yaml
+    │   ├── Taskbar_Volume_Control.yaml
+    │   ├── Taskbar_Wheel_Cycle.yaml
+    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
+    │   ├── Translucent_Windows.yaml
+    │   ├── Win11_File_Explorer_Styler.yaml
+    │   ├── Windows_11_Notification_Center_Styler.yaml
+    │   ├── Windows_11_Start_Menu_Styler.yaml
+    │   └── Windows_11_Taskbar_Styler.yaml
+    ├── Windows_7x11.png
+    ├── Windows_7x11ALT.png
+    ├── Windows_7x11ALT_lockscr.png
+    ├── autounattend.xml
+    ├── post_install_steps.ps1
+    ├── regconfig.reg
+    ├── startlayout.json
+    ├── unattend.iso
+    ├── wingetinstall.json
+    └── winutilconfig.json
 ```
 
 ## General Concepts
