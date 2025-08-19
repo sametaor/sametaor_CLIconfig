@@ -12,6 +12,10 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 - **Rapid onboarding:** New or freshly-installed systems can be brought up to speed fast, reducing setup friction and human error.
 
 ## Repository Structure
+
+<details>
+<summary><strong> Click here! </strong></summary>
+
 ```
 sametaor_CLIconfig/
 ├── .gitignore
@@ -75,6 +79,7 @@ sametaor_CLIconfig/
     ├── wingetinstall.json
     └── winutilconfig.json
 ```
+</details>
 
 <details>
 <summary><strong>👀 Wanna view the whole structure?</strong></summary>
