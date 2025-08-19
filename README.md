@@ -18,52 +18,52 @@ sametaor_CLIconfig/
 ├── LICENSE
 ├── README.md
 ├── linux
-│   ├── .bashrc
-│   └── .config
-│       ├── btop
-│       ├── doom
-│       ├── fastfetch
-│       ├── ghostty
-│       ├── hypr
-│       ├── jamesdsp
-│       ├── kitty
-│       ├── kwinrc
-│       ├── nvim
-│       ├── rmpc
-│       ├── systemd
-│       ├── tmux
-│       ├── yazi
-│       └── zsh
+│   ├── .bashrc
+│   └── .config
+│       ├── btop
+│       ├── doom
+│       ├── fastfetch
+│       ├── ghostty
+│       ├── hypr
+│       ├── jamesdsp
+│       ├── kitty
+│       ├── kwinrc
+│       ├── nvim
+│       ├── rmpc
+│       ├── systemd
+│       ├── tmux
+│       ├── yazi
+│       └── zsh
 ├── misc
-│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
-│   ├── HyprBibataModernClassicSVG.tar.gz
-│   ├── Scripts
-│   │   ├── DynWalls
-│   │   └── Utils
-│   ├── Windows_3D_Emoji_14+15.ttf
-│   ├── ascii-neovim-logos.txt
-│   ├── cava.sh
-│   ├── sametaor.omp.json
-│   ├── spicetify_lucid_theme_settings.json
-│   ├── titan_aug.mp4
-│   └── zen-themes-export.json
+│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
+│   ├── HyprBibataModernClassicSVG.tar.gz
+│   ├── Scripts
+│   │   ├── DynWalls
+│   │   └── Utils
+│   ├── Windows_3D_Emoji_14+15.ttf
+│   ├── ascii-neovim-logos.txt
+│   ├── cava.sh
+│   ├── sametaor.omp.json
+│   ├── spicetify_lucid_theme_settings.json
+│   ├── titan_aug.mp4
+│   └── zen-themes-export.json
 └── windows
     ├── HyperV_on_HomeEdition.bat
     ├── Microsoft.PowerShell_profile.ps1
     ├── Virt_machines
-    │   └── VMWare
+    │   └── VMWare
     ├── Windhawk mod configs
-    │   ├── Slick_Window_Arrangement.yaml
-    │   ├── Taskbar_Button_Scroll.yaml
-    │   ├── Taskbar_Clock_Customization.yaml
-    │   ├── Taskbar_Volume_Control.yaml
-    │   ├── Taskbar_Wheel_Cycle.yaml
-    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
-    │   ├── Translucent_Windows.yaml
-    │   ├── Win11_File_Explorer_Styler.yaml
-    │   ├── Windows_11_Notification_Center_Styler.yaml
-    │   ├── Windows_11_Start_Menu_Styler.yaml
-    │   └── Windows_11_Taskbar_Styler.yaml
+    │   ├── Slick_Window_Arrangement.yaml
+    │   ├── Taskbar_Button_Scroll.yaml
+    │   ├── Taskbar_Clock_Customization.yaml
+    │   ├── Taskbar_Volume_Control.yaml
+    │   ├── Taskbar_Wheel_Cycle.yaml
+    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
+    │   ├── Translucent_Windows.yaml
+    │   ├── Win11_File_Explorer_Styler.yaml
+    │   ├── Windows_11_Notification_Center_Styler.yaml
+    │   ├── Windows_11_Start_Menu_Styler.yaml
+    │   └── Windows_11_Taskbar_Styler.yaml
     ├── Windows_7x11.png
     ├── Windows_7x11ALT.png
     ├── Windows_7x11ALT_lockscr.png
@@ -83,1813 +83,1813 @@ sametaor_CLIconfig/
 sametaor_CLIconfig/
 ├── .gitignore                                                         ├── LICENSE
 ├── README.md                                                          ├── linux
-│   ├── .bashrc
-│   └── .config
-│       ├── btop
-│       │   └── btop.conf
-│       ├── doom
-│       │   ├── config.el
-│       │   ├── init.el
-│       │   └── packages.el
-│       ├── fastfetch
-│       │   ├── config.jsonc
-│       │   ├── logos
-│       │   │   ├── Fastfetcharch.png
-│       │   │   ├── ascii
-│       │   │   │   ├── README.md
-│       │   │   │   ├── deus_ex
-│       │   │   │   │   ├── progress-0.png.txt
-│       │   │   │   │   ├── progress-1.png.txt
-│       │   │   │   │   ├── progress-10.png.txt
-│       │   │   │   │   ├── progress-100.png.txt
-│       │   │   │   │   ├── progress-101.png.txt
-│       │   │   │   │   ├── progress-102.png.txt                       │       │   │   │   │   ├── progress-103.png.txt
-│       │   │   │   │   ├── progress-104.png.txt
-│       │   │   │   │   ├── progress-105.png.txt
-│       │   │   │   │   ├── progress-106.png.txt
-│       │   │   │   │   ├── progress-107.png.txt
-│       │   │   │   │   ├── progress-108.png.txt
-│       │   │   │   │   ├── progress-109.png.txt
-│       │   │   │   │   ├── progress-11.png.txt
-│       │   │   │   │   ├── progress-110.png.txt
-│       │   │   │   │   ├── progress-111.png.txt
-│       │   │   │   │   ├── progress-112.png.txt
-│       │   │   │   │   ├── progress-113.png.txt
-│       │   │   │   │   ├── progress-114.png.txt
-│       │   │   │   │   ├── progress-115.png.txt
-│       │   │   │   │   ├── progress-116.png.txt                       │       │   │   │   │   ├── progress-117.png.txt
-│       │   │   │   │   ├── progress-118.png.txt
-│       │   │   │   │   ├── progress-119.png.txt
-│       │   │   │   │   ├── progress-12.png.txt
-│       │   │   │   │   ├── progress-120.png.txt
-│       │   │   │   │   ├── progress-121.png.txt
-│       │   │   │   │   ├── progress-122.png.txt
-│       │   │   │   │   ├── progress-123.png.txt
-│       │   │   │   │   ├── progress-124.png.txt
-│       │   │   │   │   ├── progress-125.png.txt
-│       │   │   │   │   ├── progress-126.png.txt
-│       │   │   │   │   ├── progress-127.png.txt
-│       │   │   │   │   ├── progress-128.png.txt
-│       │   │   │   │   ├── progress-129.png.txt
-│       │   │   │   │   ├── progress-13.png.txt
-│       │   │   │   │   ├── progress-130.png.txt
-│       │   │   │   │   ├── progress-131.png.txt
-│       │   │   │   │   ├── progress-132.png.txt
-│       │   │   │   │   ├── progress-133.png.txt
-│       │   │   │   │   ├── progress-134.png.txt
-│       │   │   │   │   ├── progress-135.png.txt
-│       │   │   │   │   ├── progress-136.png.txt
-│       │   │   │   │   ├── progress-137.png.txt
-│       │   │   │   │   ├── progress-138.png.txt
-│       │   │   │   │   ├── progress-139.png.txt                       │       │   │   │   │   ├── progress-14.png.txt
-│       │   │   │   │   ├── progress-140.png.txt
-│       │   │   │   │   ├── progress-141.png.txt
-│       │   │   │   │   ├── progress-142.png.txt
-│       │   │   │   │   ├── progress-143.png.txt
-│       │   │   │   │   ├── progress-144.png.txt
-│       │   │   │   │   ├── progress-145.png.txt
-│       │   │   │   │   ├── progress-146.png.txt
-│       │   │   │   │   ├── progress-147.png.txt
-│       │   │   │   │   ├── progress-148.png.txt
-│       │   │   │   │   ├── progress-149.png.txt
-│       │   │   │   │   ├── progress-15.png.txt
-│       │   │   │   │   ├── progress-150.png.txt
-│       │   │   │   │   ├── progress-151.png.txt
-│       │   │   │   │   ├── progress-152.png.txt
-│       │   │   │   │   ├── progress-153.png.txt
-│       │   │   │   │   ├── progress-154.png.txt
-│       │   │   │   │   ├── progress-155.png.txt
-│       │   │   │   │   ├── progress-156.png.txt
-│       │   │   │   │   ├── progress-157.png.txt
-│       │   │   │   │   ├── progress-158.png.txt
-│       │   │   │   │   ├── progress-159.png.txt
-│       │   │   │   │   ├── progress-16.png.txt
-│       │   │   │   │   ├── progress-160.png.txt
-│       │   │   │   │   ├── progress-161.png.txt
-│       │   │   │   │   ├── progress-162.png.txt
-│       │   │   │   │   ├── progress-163.png.txt
-│       │   │   │   │   ├── progress-164.png.txt
-│       │   │   │   │   ├── progress-165.png.txt
-│       │   │   │   │   ├── progress-166.png.txt
-│       │   │   │   │   ├── progress-167.png.txt
-│       │   │   │   │   ├── progress-168.png.txt
-│       │   │   │   │   ├── progress-169.png.txt
-│       │   │   │   │   ├── progress-17.png.txt
-│       │   │   │   │   ├── progress-170.png.txt
-│       │   │   │   │   ├── progress-171.png.txt
-│       │   │   │   │   ├── progress-172.png.txt
-│       │   │   │   │   ├── progress-173.png.txt
-│       │   │   │   │   ├── progress-174.png.txt
-│       │   │   │   │   ├── progress-175.png.txt
-│       │   │   │   │   ├── progress-176.png.txt
-│       │   │   │   │   ├── progress-177.png.txt
-│       │   │   │   │   ├── progress-178.png.txt
-│       │   │   │   │   ├── progress-179.png.txt
-│       │   │   │   │   ├── progress-18.png.txt
-│       │   │   │   │   ├── progress-180.png.txt
-│       │   │   │   │   ├── progress-181.png.txt
-│       │   │   │   │   ├── progress-182.png.txt
-│       │   │   │   │   ├── progress-183.png.txt
-│       │   │   │   │   ├── progress-184.png.txt
-│       │   │   │   │   ├── progress-185.png.txt
-│       │   │   │   │   ├── progress-186.png.txt
-│       │   │   │   │   ├── progress-187.png.txt
-│       │   │   │   │   ├── progress-188.png.txt
-│       │   │   │   │   ├── progress-189.png.txt
-│       │   │   │   │   ├── progress-19.png.txt
-│       │   │   │   │   ├── progress-190.png.txt
-│       │   │   │   │   ├── progress-191.png.txt
-│       │   │   │   │   ├── progress-192.png.txt
-│       │   │   │   │   ├── progress-193.png.txt                       │       │   │   │   │   ├── progress-194.png.txt
-│       │   │   │   │   ├── progress-195.png.txt
-│       │   │   │   │   ├── progress-196.png.txt
-│       │   │   │   │   ├── progress-197.png.txt                       │       │   │   │   │   ├── progress-198.png.txt
-│       │   │   │   │   ├── progress-199.png.txt
-│       │   │   │   │   ├── progress-2.png.txt                         │       │   │   │   │   ├── progress-20.png.txt
-│       │   │   │   │   ├── progress-200.png.txt                       │       │   │   │   │   ├── progress-201.png.txt
-│       │   │   │   │   ├── progress-202.png.txt
-│       │   │   │   │   ├── progress-203.png.txt                       │       │   │   │   │   ├── progress-204.png.txt
-│       │   │   │   │   ├── progress-205.png.txt                       │       │   │   │   │   ├── progress-206.png.txt
-│       │   │   │   │   ├── progress-207.png.txt                       │       │   │   │   │   ├── progress-208.png.txt
-│       │   │   │   │   ├── progress-209.png.txt                       │       │   │   │   │   ├── progress-21.png.txt
-│       │   │   │   │   ├── progress-210.png.txt                       │       │   │   │   │   ├── progress-211.png.txt
-│       │   │   │   │   ├── progress-212.png.txt                       │       │   │   │   │   ├── progress-213.png.txt
-│       │   │   │   │   ├── progress-214.png.txt                       │       │   │   │   │   ├── progress-215.png.txt
-│       │   │   │   │   ├── progress-216.png.txt                       │       │   │   │   │   ├── progress-217.png.txt
-│       │   │   │   │   ├── progress-218.png.txt                       │       │   │   │   │   ├── progress-219.png.txt
-│       │   │   │   │   ├── progress-22.png.txt
-│       │   │   │   │   ├── progress-220.png.txt
-│       │   │   │   │   ├── progress-221.png.txt                       │       │   │   │   │   ├── progress-222.png.txt
-│       │   │   │   │   ├── progress-223.png.txt                       │       │   │   │   │   ├── progress-224.png.txt
-│       │   │   │   │   ├── progress-225.png.txt                       │       │   │   │   │   ├── progress-226.png.txt
-│       │   │   │   │   ├── progress-227.png.txt                       │       │   │   │   │   ├── progress-228.png.txt
-│       │   │   │   │   ├── progress-229.png.txt                       │       │   │   │   │   ├── progress-23.png.txt
-│       │   │   │   │   ├── progress-230.png.txt                       │       │   │   │   │   ├── progress-231.png.txt
-│       │   │   │   │   ├── progress-232.png.txt                       │       │   │   │   │   ├── progress-233.png.txt
-│       │   │   │   │   ├── progress-234.png.txt                       │       │   │   │   │   ├── progress-235.png.txt
-│       │   │   │   │   ├── progress-236.png.txt                       │       │   │   │   │   ├── progress-237.png.txt
-│       │   │   │   │   ├── progress-238.png.txt                       │       │   │   │   │   ├── progress-239.png.txt
-│       │   │   │   │   ├── progress-24.png.txt                        │       │   │   │   │   ├── progress-240.png.txt
-│       │   │   │   │   ├── progress-241.png.txt                       │       │   │   │   │   ├── progress-242.png.txt
-│       │   │   │   │   ├── progress-243.png.txt                       │       │   │   │   │   ├── progress-244.png.txt
-│       │   │   │   │   ├── progress-245.png.txt                       │       │   │   │   │   ├── progress-246.png.txt
-│       │   │   │   │   ├── progress-247.png.txt                       │       │   │   │   │   ├── progress-248.png.txt
-│       │   │   │   │   ├── progress-249.png.txt                       │       │   │   │   │   ├── progress-25.png.txt
-│       │   │   │   │   ├── progress-250.png.txt                       │       │   │   │   │   ├── progress-251.png.txt
-│       │   │   │   │   ├── progress-252.png.txt                       │       │   │   │   │   ├── progress-253.png.txt
-│       │   │   │   │   ├── progress-254.png.txt                       │       │   │   │   │   ├── progress-255.png.txt
-│       │   │   │   │   ├── progress-256.png.txt                       │       │   │   │   │   ├── progress-257.png.txt
-│       │   │   │   │   ├── progress-258.png.txt                       │       │   │   │   │   ├── progress-259.png.txt
-│       │   │   │   │   ├── progress-26.png.txt
-│       │   │   │   │   ├── progress-260.png.txt
-│       │   │   │   │   ├── progress-261.png.txt
-│       │   │   │   │   ├── progress-262.png.txt                       │       │   │   │   │   ├── progress-263.png.txt
-│       │   │   │   │   ├── progress-264.png.txt                       │       │   │   │   │   ├── progress-265.png.txt
-│       │   │   │   │   ├── progress-266.png.txt
-│       │   │   │   │   ├── progress-267.png.txt                       │       │   │   │   │   ├── progress-268.png.txt
-│       │   │   │   │   ├── progress-269.png.txt                       │       │   │   │   │   ├── progress-27.png.txt
-│       │   │   │   │   ├── progress-270.png.txt                       │       │   │   │   │   ├── progress-271.png.txt
-│       │   │   │   │   ├── progress-272.png.txt
-│       │   │   │   │   ├── progress-273.png.txt
-│       │   │   │   │   ├── progress-274.png.txt                       │       │   │   │   │   ├── progress-275.png.txt
-│       │   │   │   │   ├── progress-276.png.txt
-│       │   │   │   │   ├── progress-277.png.txt                       │       │   │   │   │   ├── progress-278.png.txt
-│       │   │   │   │   ├── progress-279.png.txt                       │       │   │   │   │   ├── progress-28.png.txt
-│       │   │   │   │   ├── progress-280.png.txt
-│       │   │   │   │   ├── progress-281.png.txt                       │       │   │   │   │   ├── progress-282.png.txt
-│       │   │   │   │   ├── progress-283.png.txt                       │       │   │   │   │   ├── progress-284.png.txt
-│       │   │   │   │   ├── progress-285.png.txt
-│       │   │   │   │   ├── progress-286.png.txt
-│       │   │   │   │   ├── progress-287.png.txt
-│       │   │   │   │   ├── progress-288.png.txt
-│       │   │   │   │   ├── progress-289.png.txt                       │       │   │   │   │   ├── progress-29.png.txt
-│       │   │   │   │   ├── progress-290.png.txt
-│       │   │   │   │   ├── progress-291.png.txt
-│       │   │   │   │   ├── progress-292.png.txt                       │       │   │   │   │   ├── progress-293.png.txt
-│       │   │   │   │   ├── progress-294.png.txt                       │       │   │   │   │   ├── progress-295.png.txt
-│       │   │   │   │   ├── progress-296.png.txt                       │       │   │   │   │   ├── progress-297.png.txt
-│       │   │   │   │   ├── progress-298.png.txt
-│       │   │   │   │   ├── progress-299.png.txt
-│       │   │   │   │   ├── progress-3.png.txt                         │       │   │   │   │   ├── progress-30.png.txt
-│       │   │   │   │   ├── progress-300.png.txt                       │       │   │   │   │   ├── progress-301.png.txt
-│       │   │   │   │   ├── progress-302.png.txt
-│       │   │   │   │   ├── progress-303.png.txt                       │       │   │   │   │   ├── progress-304.png.txt
-│       │   │   │   │   ├── progress-305.png.txt
-│       │   │   │   │   ├── progress-306.png.txt
-│       │   │   │   │   ├── progress-307.png.txt                       │       │   │   │   │   ├── progress-308.png.txt
-│       │   │   │   │   ├── progress-309.png.txt                       │       │   │   │   │   ├── progress-31.png.txt
-│       │   │   │   │   ├── progress-310.png.txt                       │       │   │   │   │   ├── progress-311.png.txt
-│       │   │   │   │   ├── progress-312.png.txt                       │       │   │   │   │   ├── progress-313.png.txt
-│       │   │   │   │   ├── progress-314.png.txt                       │       │   │   │   │   ├── progress-315.png.txt
-│       │   │   │   │   ├── progress-316.png.txt
-│       │   │   │   │   ├── progress-317.png.txt
-│       │   │   │   │   ├── progress-318.png.txt
-│       │   │   │   │   ├── progress-319.png.txt
-│       │   │   │   │   ├── progress-32.png.txt                        │       │   │   │   │   ├── progress-320.png.txt
-│       │   │   │   │   ├── progress-321.png.txt
-│       │   │   │   │   ├── progress-322.png.txt
-│       │   │   │   │   ├── progress-323.png.txt
-│       │   │   │   │   ├── progress-324.png.txt
-│       │   │   │   │   ├── progress-325.png.txt
-│       │   │   │   │   ├── progress-326.png.txt                       │       │   │   │   │   ├── progress-327.png.txt
-│       │   │   │   │   ├── progress-328.png.txt
-│       │   │   │   │   ├── progress-329.png.txt                       │       │   │   │   │   ├── progress-33.png.txt
-│       │   │   │   │   ├── progress-330.png.txt                       │       │   │   │   │   ├── progress-331.png.txt
-│       │   │   │   │   ├── progress-332.png.txt
-│       │   │   │   │   ├── progress-333.png.txt
-│       │   │   │   │   ├── progress-334.png.txt                       │       │   │   │   │   ├── progress-335.png.txt
-│       │   │   │   │   ├── progress-336.png.txt
-│       │   │   │   │   ├── progress-337.png.txt
-│       │   │   │   │   ├── progress-338.png.txt
-│       │   │   │   │   ├── progress-339.png.txt
-│       │   │   │   │   ├── progress-34.png.txt
-│       │   │   │   │   ├── progress-340.png.txt
-│       │   │   │   │   ├── progress-341.png.txt
-│       │   │   │   │   ├── progress-342.png.txt
-│       │   │   │   │   ├── progress-343.png.txt
-│       │   │   │   │   ├── progress-344.png.txt
-│       │   │   │   │   ├── progress-345.png.txt                       │       │   │   │   │   ├── progress-346.png.txt
-│       │   │   │   │   ├── progress-347.png.txt
-│       │   │   │   │   ├── progress-348.png.txt
-│       │   │   │   │   ├── progress-349.png.txt
-│       │   │   │   │   ├── progress-35.png.txt
-│       │   │   │   │   ├── progress-350.png.txt
-│       │   │   │   │   ├── progress-351.png.txt
-│       │   │   │   │   ├── progress-352.png.txt
-│       │   │   │   │   ├── progress-353.png.txt
-│       │   │   │   │   ├── progress-354.png.txt
-│       │   │   │   │   ├── progress-355.png.txt
-│       │   │   │   │   ├── progress-356.png.txt
-│       │   │   │   │   ├── progress-357.png.txt
-│       │   │   │   │   ├── progress-358.png.txt
-│       │   │   │   │   ├── progress-359.png.txt
-│       │   │   │   │   ├── progress-36.png.txt
-│       │   │   │   │   ├── progress-360.png.txt
-│       │   │   │   │   ├── progress-361.png.txt
-│       │   │   │   │   ├── progress-362.png.txt
-│       │   │   │   │   ├── progress-363.png.txt
-│       │   │   │   │   ├── progress-364.png.txt
-│       │   │   │   │   ├── progress-365.png.txt
-│       │   │   │   │   ├── progress-366.png.txt
-│       │   │   │   │   ├── progress-367.png.txt
-│       │   │   │   │   ├── progress-368.png.txt
-│       │   │   │   │   ├── progress-369.png.txt
-│       │   │   │   │   ├── progress-37.png.txt
-│       │   │   │   │   ├── progress-370.png.txt
-│       │   │   │   │   ├── progress-371.png.txt
-│       │   │   │   │   ├── progress-372.png.txt
-│       │   │   │   │   ├── progress-373.png.txt
-│       │   │   │   │   ├── progress-374.png.txt
-│       │   │   │   │   ├── progress-38.png.txt
-│       │   │   │   │   ├── progress-39.png.txt
-│       │   │   │   │   ├── progress-4.png.txt
-│       │   │   │   │   ├── progress-40.png.txt
-│       │   │   │   │   ├── progress-41.png.txt
-│       │   │   │   │   ├── progress-42.png.txt
-│       │   │   │   │   ├── progress-43.png.txt
-│       │   │   │   │   ├── progress-44.png.txt
-│       │   │   │   │   ├── progress-45.png.txt
-│       │   │   │   │   ├── progress-46.png.txt
-│       │   │   │   │   ├── progress-47.png.txt
-│       │   │   │   │   ├── progress-48.png.txt
-│       │   │   │   │   ├── progress-49.png.txt
-│       │   │   │   │   ├── progress-5.png.txt
-│       │   │   │   │   ├── progress-50.png.txt
-│       │   │   │   │   ├── progress-51.png.txt
-│       │   │   │   │   ├── progress-52.png.txt
-│       │   │   │   │   ├── progress-53.png.txt
-│       │   │   │   │   ├── progress-54.png.txt
-│       │   │   │   │   ├── progress-55.png.txt
-│       │   │   │   │   ├── progress-56.png.txt
-│       │   │   │   │   ├── progress-57.png.txt
-│       │   │   │   │   ├── progress-58.png.txt
-│       │   │   │   │   ├── progress-59.png.txt
-│       │   │   │   │   ├── progress-6.png.txt
-│       │   │   │   │   ├── progress-60.png.txt                        │       │   │   │   │   ├── progress-61.png.txt
-│       │   │   │   │   ├── progress-62.png.txt                        │       │   │   │   │   ├── progress-63.png.txt
-│       │   │   │   │   ├── progress-64.png.txt                        │       │   │   │   │   ├── progress-65.png.txt
-│       │   │   │   │   ├── progress-66.png.txt                        │       │   │   │   │   ├── progress-67.png.txt
-│       │   │   │   │   ├── progress-68.png.txt                        │       │   │   │   │   ├── progress-69.png.txt
-│       │   │   │   │   ├── progress-7.png.txt                         │       │   │   │   │   ├── progress-70.png.txt
-│       │   │   │   │   ├── progress-71.png.txt                        │       │   │   │   │   ├── progress-72.png.txt
-│       │   │   │   │   ├── progress-73.png.txt                        │       │   │   │   │   ├── progress-74.png.txt
-│       │   │   │   │   ├── progress-75.png.txt
-│       │   │   │   │   ├── progress-76.png.txt
-│       │   │   │   │   ├── progress-77.png.txt
-│       │   │   │   │   ├── progress-78.png.txt
-│       │   │   │   │   ├── progress-79.png.txt
-│       │   │   │   │   ├── progress-8.png.txt                         │       │   │   │   │   ├── progress-80.png.txt
-│       │   │   │   │   ├── progress-81.png.txt
-│       │   │   │   │   ├── progress-82.png.txt
-│       │   │   │   │   ├── progress-83.png.txt
-│       │   │   │   │   ├── progress-84.png.txt                        │       │   │   │   │   ├── progress-85.png.txt
-│       │   │   │   │   ├── progress-86.png.txt                        │       │   │   │   │   ├── progress-87.png.txt
-│       │   │   │   │   ├── progress-88.png.txt
-│       │   │   │   │   ├── progress-89.png.txt
-│       │   │   │   │   ├── progress-9.png.txt
-│       │   │   │   │   ├── progress-90.png.txt                        │       │   │   │   │   ├── progress-91.png.txt
-│       │   │   │   │   ├── progress-92.png.txt                        │       │   │   │   │   ├── progress-93.png.txt
-│       │   │   │   │   ├── progress-94.png.txt
-│       │   │   │   │   ├── progress-95.png.txt                        │       │   │   │   │   ├── progress-96.png.txt
-│       │   │   │   │   ├── progress-97.png.txt
-│       │   │   │   │   ├── progress-98.png.txt                        │       │   │   │   │   └── progress-99.png.txt
-│       │   │   │   └── deus_ex_yellow                                 │       │   │   │       ├── progress-0.png.txt
-│       │   │   │       ├── progress-1.png.txt                         │       │   │   │       ├── progress-10.png.txt
-│       │   │   │       ├── progress-100.png.txt
-│       │   │   │       ├── progress-101.png.txt
-│       │   │   │       ├── progress-102.png.txt
-│       │   │   │       ├── progress-103.png.txt
-│       │   │   │       ├── progress-104.png.txt
-│       │   │   │       ├── progress-105.png.txt
-│       │   │   │       ├── progress-106.png.txt
-│       │   │   │       ├── progress-107.png.txt
-│       │   │   │       ├── progress-108.png.txt
-│       │   │   │       ├── progress-109.png.txt                       │       │   │   │       ├── progress-11.png.txt
-│       │   │   │       ├── progress-110.png.txt                       │       │   │   │       ├── progress-111.png.txt
-│       │   │   │       ├── progress-112.png.txt                       │       │   │   │       ├── progress-113.png.txt
-│       │   │   │       ├── progress-114.png.txt                       │       │   │   │       ├── progress-115.png.txt
-│       │   │   │       ├── progress-116.png.txt                       │       │   │   │       ├── progress-117.png.txt
-│       │   │   │       ├── progress-118.png.txt                       │       │   │   │       ├── progress-119.png.txt
-│       │   │   │       ├── progress-12.png.txt
-│       │   │   │       ├── progress-120.png.txt                       │       │   │   │       ├── progress-121.png.txt
-│       │   │   │       ├── progress-122.png.txt
-│       │   │   │       ├── progress-123.png.txt
-│       │   │   │       ├── progress-124.png.txt
-│       │   │   │       ├── progress-125.png.txt
-│       │   │   │       ├── progress-126.png.txt
-│       │   │   │       ├── progress-127.png.txt
-│       │   │   │       ├── progress-128.png.txt                       │       │   │   │       ├── progress-129.png.txt
-│       │   │   │       ├── progress-13.png.txt                        │       │   │   │       ├── progress-130.png.txt
-│       │   │   │       ├── progress-131.png.txt                       │       │   │   │       ├── progress-132.png.txt
-│       │   │   │       ├── progress-133.png.txt
-│       │   │   │       ├── progress-134.png.txt
-│       │   │   │       ├── progress-135.png.txt                       │       │   │   │       ├── progress-136.png.txt
-│       │   │   │       ├── progress-137.png.txt                       │       │   │   │       ├── progress-138.png.txt
-│       │   │   │       ├── progress-139.png.txt                       │       │   │   │       ├── progress-14.png.txt
-│       │   │   │       ├── progress-140.png.txt
-│       │   │   │       ├── progress-141.png.txt
-│       │   │   │       ├── progress-142.png.txt                       │       │   │   │       ├── progress-143.png.txt
-│       │   │   │       ├── progress-144.png.txt                       │       │   │   │       ├── progress-145.png.txt
-│       │   │   │       ├── progress-146.png.txt                       │       │   │   │       ├── progress-147.png.txt
-│       │   │   │       ├── progress-148.png.txt                       │       │   │   │       ├── progress-149.png.txt
-│       │   │   │       ├── progress-15.png.txt
-│       │   │   │       ├── progress-150.png.txt
-│       │   │   │       ├── progress-151.png.txt
-│       │   │   │       ├── progress-152.png.txt
-│       │   │   │       ├── progress-153.png.txt                       │       │   │   │       ├── progress-154.png.txt
-│       │   │   │       ├── progress-155.png.txt
-│       │   │   │       ├── progress-156.png.txt
-│       │   │   │       ├── progress-157.png.txt
-│       │   │   │       ├── progress-158.png.txt                       │       │   │   │       ├── progress-159.png.txt
-│       │   │   │       ├── progress-16.png.txt                        │       │   │   │       ├── progress-160.png.txt
-│       │   │   │       ├── progress-161.png.txt
-│       │   │   │       ├── progress-162.png.txt
-│       │   │   │       ├── progress-163.png.txt
-│       │   │   │       ├── progress-164.png.txt                       │       │   │   │       ├── progress-165.png.txt
-│       │   │   │       ├── progress-166.png.txt
-│       │   │   │       ├── progress-167.png.txt
-│       │   │   │       ├── progress-168.png.txt
-│       │   │   │       ├── progress-169.png.txt
-│       │   │   │       ├── progress-17.png.txt
-│       │   │   │       ├── progress-170.png.txt
-│       │   │   │       ├── progress-171.png.txt
-│       │   │   │       ├── progress-172.png.txt
-│       │   │   │       ├── progress-173.png.txt
-│       │   │   │       ├── progress-174.png.txt
-│       │   │   │       ├── progress-175.png.txt
-│       │   │   │       ├── progress-176.png.txt
-│       │   │   │       ├── progress-177.png.txt
-│       │   │   │       ├── progress-178.png.txt
-│       │   │   │       ├── progress-179.png.txt
-│       │   │   │       ├── progress-18.png.txt
-│       │   │   │       ├── progress-180.png.txt
-│       │   │   │       ├── progress-181.png.txt
-│       │   │   │       ├── progress-182.png.txt
-│       │   │   │       ├── progress-183.png.txt
-│       │   │   │       ├── progress-184.png.txt
-│       │   │   │       ├── progress-185.png.txt
-│       │   │   │       ├── progress-186.png.txt
-│       │   │   │       ├── progress-187.png.txt
-│       │   │   │       ├── progress-188.png.txt
-│       │   │   │       ├── progress-189.png.txt
-│       │   │   │       ├── progress-19.png.txt
-│       │   │   │       ├── progress-190.png.txt
-│       │   │   │       ├── progress-191.png.txt
-│       │   │   │       ├── progress-192.png.txt
-│       │   │   │       ├── progress-193.png.txt
-│       │   │   │       ├── progress-194.png.txt
-│       │   │   │       ├── progress-195.png.txt
-│       │   │   │       ├── progress-196.png.txt
-│       │   │   │       ├── progress-197.png.txt
-│       │   │   │       ├── progress-198.png.txt
-│       │   │   │       ├── progress-199.png.txt
-│       │   │   │       ├── progress-2.png.txt
-│       │   │   │       ├── progress-20.png.txt
-│       │   │   │       ├── progress-200.png.txt
-│       │   │   │       ├── progress-201.png.txt
-│       │   │   │       ├── progress-202.png.txt
-│       │   │   │       ├── progress-203.png.txt
-│       │   │   │       ├── progress-204.png.txt
-│       │   │   │       ├── progress-205.png.txt
-│       │   │   │       ├── progress-206.png.txt
-│       │   │   │       ├── progress-207.png.txt
-│       │   │   │       ├── progress-208.png.txt
-│       │   │   │       ├── progress-209.png.txt
-│       │   │   │       ├── progress-21.png.txt
-│       │   │   │       ├── progress-210.png.txt
-│       │   │   │       ├── progress-211.png.txt
-│       │   │   │       ├── progress-212.png.txt
-│       │   │   │       ├── progress-213.png.txt
-│       │   │   │       ├── progress-214.png.txt
-│       │   │   │       ├── progress-215.png.txt
-│       │   │   │       ├── progress-216.png.txt
-│       │   │   │       ├── progress-217.png.txt
-│       │   │   │       ├── progress-218.png.txt
-│       │   │   │       ├── progress-219.png.txt
-│       │   │   │       ├── progress-22.png.txt
-│       │   │   │       ├── progress-220.png.txt
-│       │   │   │       ├── progress-221.png.txt
-│       │   │   │       ├── progress-222.png.txt
-│       │   │   │       ├── progress-223.png.txt
-│       │   │   │       ├── progress-224.png.txt
-│       │   │   │       ├── progress-225.png.txt
-│       │   │   │       ├── progress-226.png.txt
-│       │   │   │       ├── progress-227.png.txt
-│       │   │   │       ├── progress-228.png.txt
-│       │   │   │       ├── progress-229.png.txt
-│       │   │   │       ├── progress-23.png.txt
-│       │   │   │       ├── progress-230.png.txt
-│       │   │   │       ├── progress-231.png.txt
-│       │   │   │       ├── progress-232.png.txt
-│       │   │   │       ├── progress-233.png.txt
-│       │   │   │       ├── progress-234.png.txt
-│       │   │   │       ├── progress-235.png.txt
-│       │   │   │       ├── progress-236.png.txt
-│       │   │   │       ├── progress-237.png.txt
-│       │   │   │       ├── progress-238.png.txt
-│       │   │   │       ├── progress-239.png.txt
-│       │   │   │       ├── progress-24.png.txt
-│       │   │   │       ├── progress-240.png.txt
-│       │   │   │       ├── progress-241.png.txt
-│       │   │   │       ├── progress-242.png.txt
-│       │   │   │       ├── progress-243.png.txt
-│       │   │   │       ├── progress-244.png.txt
-│       │   │   │       ├── progress-245.png.txt
-│       │   │   │       ├── progress-246.png.txt
-│       │   │   │       ├── progress-247.png.txt
-│       │   │   │       ├── progress-248.png.txt
-│       │   │   │       ├── progress-249.png.txt
-│       │   │   │       ├── progress-25.png.txt
-│       │   │   │       ├── progress-250.png.txt
-│       │   │   │       ├── progress-251.png.txt
-│       │   │   │       ├── progress-252.png.txt
-│       │   │   │       ├── progress-253.png.txt
-│       │   │   │       ├── progress-254.png.txt
-│       │   │   │       ├── progress-255.png.txt
-│       │   │   │       ├── progress-256.png.txt
-│       │   │   │       ├── progress-257.png.txt
-│       │   │   │       ├── progress-258.png.txt
-│       │   │   │       ├── progress-259.png.txt
-│       │   │   │       ├── progress-26.png.txt
-│       │   │   │       ├── progress-260.png.txt
-│       │   │   │       ├── progress-261.png.txt
-│       │   │   │       ├── progress-262.png.txt
-│       │   │   │       ├── progress-263.png.txt
-│       │   │   │       ├── progress-264.png.txt
-│       │   │   │       ├── progress-265.png.txt
-│       │   │   │       ├── progress-266.png.txt
-│       │   │   │       ├── progress-267.png.txt
-│       │   │   │       ├── progress-268.png.txt
-│       │   │   │       ├── progress-269.png.txt
-│       │   │   │       ├── progress-27.png.txt
-│       │   │   │       ├── progress-270.png.txt
-│       │   │   │       ├── progress-271.png.txt
-│       │   │   │       ├── progress-272.png.txt
-│       │   │   │       ├── progress-273.png.txt
-│       │   │   │       ├── progress-274.png.txt
-│       │   │   │       ├── progress-275.png.txt
-│       │   │   │       ├── progress-276.png.txt
-│       │   │   │       ├── progress-277.png.txt
-│       │   │   │       ├── progress-278.png.txt
-│       │   │   │       ├── progress-279.png.txt
-│       │   │   │       ├── progress-28.png.txt
-│       │   │   │       ├── progress-280.png.txt
-│       │   │   │       ├── progress-281.png.txt
-│       │   │   │       ├── progress-282.png.txt
-│       │   │   │       ├── progress-283.png.txt
-│       │   │   │       ├── progress-284.png.txt
-│       │   │   │       ├── progress-285.png.txt
-│       │   │   │       ├── progress-286.png.txt
-│       │   │   │       ├── progress-287.png.txt
-│       │   │   │       ├── progress-288.png.txt
-│       │   │   │       ├── progress-289.png.txt
-│       │   │   │       ├── progress-29.png.txt
-│       │   │   │       ├── progress-290.png.txt
-│       │   │   │       ├── progress-291.png.txt
-│       │   │   │       ├── progress-292.png.txt
-│       │   │   │       ├── progress-293.png.txt
-│       │   │   │       ├── progress-294.png.txt
-│       │   │   │       ├── progress-295.png.txt
-│       │   │   │       ├── progress-296.png.txt
-│       │   │   │       ├── progress-297.png.txt
-│       │   │   │       ├── progress-298.png.txt
-│       │   │   │       ├── progress-299.png.txt
-│       │   │   │       ├── progress-3.png.txt
-│       │   │   │       ├── progress-30.png.txt
-│       │   │   │       ├── progress-300.png.txt
-│       │   │   │       ├── progress-301.png.txt
-│       │   │   │       ├── progress-302.png.txt
-│       │   │   │       ├── progress-303.png.txt
-│       │   │   │       ├── progress-304.png.txt
-│       │   │   │       ├── progress-305.png.txt
-│       │   │   │       ├── progress-306.png.txt
-│       │   │   │       ├── progress-307.png.txt
-│       │   │   │       ├── progress-308.png.txt
-│       │   │   │       ├── progress-309.png.txt
-│       │   │   │       ├── progress-31.png.txt
-│       │   │   │       ├── progress-310.png.txt
-│       │   │   │       ├── progress-311.png.txt
-│       │   │   │       ├── progress-312.png.txt
-│       │   │   │       ├── progress-313.png.txt
-│       │   │   │       ├── progress-314.png.txt
-│       │   │   │       ├── progress-315.png.txt
-│       │   │   │       ├── progress-316.png.txt
-│       │   │   │       ├── progress-317.png.txt
-│       │   │   │       ├── progress-318.png.txt
-│       │   │   │       ├── progress-319.png.txt
-│       │   │   │       ├── progress-32.png.txt
-│       │   │   │       ├── progress-320.png.txt
-│       │   │   │       ├── progress-321.png.txt
-│       │   │   │       ├── progress-322.png.txt
-│       │   │   │       ├── progress-323.png.txt
-│       │   │   │       ├── progress-324.png.txt
-│       │   │   │       ├── progress-325.png.txt
-│       │   │   │       ├── progress-326.png.txt
-│       │   │   │       ├── progress-327.png.txt
-│       │   │   │       ├── progress-328.png.txt
-│       │   │   │       ├── progress-329.png.txt
-│       │   │   │       ├── progress-33.png.txt
-│       │   │   │       ├── progress-330.png.txt
-│       │   │   │       ├── progress-331.png.txt
-│       │   │   │       ├── progress-332.png.txt
-│       │   │   │       ├── progress-333.png.txt
-│       │   │   │       ├── progress-334.png.txt
-│       │   │   │       ├── progress-335.png.txt
-│       │   │   │       ├── progress-336.png.txt
-│       │   │   │       ├── progress-337.png.txt
-│       │   │   │       ├── progress-338.png.txt
-│       │   │   │       ├── progress-339.png.txt                       │       │   │   │       ├── progress-34.png.txt
-│       │   │   │       ├── progress-340.png.txt                       │       │   │   │       ├── progress-341.png.txt
-│       │   │   │       ├── progress-342.png.txt
-│       │   │   │       ├── progress-343.png.txt                       │       │   │   │       ├── progress-344.png.txt
-│       │   │   │       ├── progress-345.png.txt                       │       │   │   │       ├── progress-346.png.txt
-│       │   │   │       ├── progress-347.png.txt                       │       │   │   │       ├── progress-348.png.txt
-│       │   │   │       ├── progress-349.png.txt                       │       │   │   │       ├── progress-35.png.txt
-│       │   │   │       ├── progress-350.png.txt                       │       │   │   │       ├── progress-351.png.txt
-│       │   │   │       ├── progress-352.png.txt
-│       │   │   │       ├── progress-353.png.txt
-│       │   │   │       ├── progress-354.png.txt
-│       │   │   │       ├── progress-355.png.txt
-│       │   │   │       ├── progress-356.png.txt
-│       │   │   │       ├── progress-357.png.txt
-│       │   │   │       ├── progress-358.png.txt
-│       │   │   │       ├── progress-359.png.txt
-│       │   │   │       ├── progress-36.png.txt
-│       │   │   │       ├── progress-360.png.txt
-│       │   │   │       ├── progress-361.png.txt
-│       │   │   │       ├── progress-362.png.txt                       │       │   │   │       ├── progress-363.png.txt
-│       │   │   │       ├── progress-364.png.txt
-│       │   │   │       ├── progress-365.png.txt
-│       │   │   │       ├── progress-366.png.txt
-│       │   │   │       ├── progress-367.png.txt
-│       │   │   │       ├── progress-368.png.txt
-│       │   │   │       ├── progress-369.png.txt
-│       │   │   │       ├── progress-37.png.txt
-│       │   │   │       ├── progress-370.png.txt                       │       │   │   │       ├── progress-371.png.txt
-│       │   │   │       ├── progress-372.png.txt
-│       │   │   │       ├── progress-373.png.txt
-│       │   │   │       ├── progress-374.png.txt
-│       │   │   │       ├── progress-38.png.txt
-│       │   │   │       ├── progress-39.png.txt
-│       │   │   │       ├── progress-4.png.txt
-│       │   │   │       ├── progress-40.png.txt
-│       │   │   │       ├── progress-41.png.txt
-│       │   │   │       ├── progress-42.png.txt
-│       │   │   │       ├── progress-43.png.txt
-│       │   │   │       ├── progress-44.png.txt
-│       │   │   │       ├── progress-45.png.txt
-│       │   │   │       ├── progress-46.png.txt
-│       │   │   │       ├── progress-47.png.txt                        │       │   │   │       ├── progress-48.png.txt
-│       │   │   │       ├── progress-49.png.txt
-│       │   │   │       ├── progress-5.png.txt
-│       │   │   │       ├── progress-50.png.txt
-│       │   │   │       ├── progress-51.png.txt
-│       │   │   │       ├── progress-52.png.txt
-│       │   │   │       ├── progress-53.png.txt
-│       │   │   │       ├── progress-54.png.txt
-│       │   │   │       ├── progress-55.png.txt
-│       │   │   │       ├── progress-56.png.txt
-│       │   │   │       ├── progress-57.png.txt
-│       │   │   │       ├── progress-58.png.txt
-│       │   │   │       ├── progress-59.png.txt
-│       │   │   │       ├── progress-6.png.txt
-│       │   │   │       ├── progress-60.png.txt
-│       │   │   │       ├── progress-61.png.txt
-│       │   │   │       ├── progress-62.png.txt
-│       │   │   │       ├── progress-63.png.txt
-│       │   │   │       ├── progress-64.png.txt
-│       │   │   │       ├── progress-65.png.txt
-│       │   │   │       ├── progress-66.png.txt
-│       │   │   │       ├── progress-67.png.txt
-│       │   │   │       ├── progress-68.png.txt
-│       │   │   │       ├── progress-69.png.txt
-│       │   │   │       ├── progress-7.png.txt                         │       │   │   │       ├── progress-70.png.txt
-│       │   │   │       ├── progress-71.png.txt
-│       │   │   │       ├── progress-72.png.txt
-│       │   │   │       ├── progress-73.png.txt
-│       │   │   │       ├── progress-74.png.txt
-│       │   │   │       ├── progress-75.png.txt
-│       │   │   │       ├── progress-76.png.txt
-│       │   │   │       ├── progress-77.png.txt
-│       │   │   │       ├── progress-78.png.txt
-│       │   │   │       ├── progress-79.png.txt
-│       │   │   │       ├── progress-8.png.txt
-│       │   │   │       ├── progress-80.png.txt
-│       │   │   │       ├── progress-81.png.txt
-│       │   │   │       ├── progress-82.png.txt
-│       │   │   │       ├── progress-83.png.txt
-│       │   │   │       ├── progress-84.png.txt
-│       │   │   │       ├── progress-85.png.txt
-│       │   │   │       ├── progress-86.png.txt
-│       │   │   │       ├── progress-87.png.txt
-│       │   │   │       ├── progress-88.png.txt
-│       │   │   │       ├── progress-89.png.txt
-│       │   │   │       ├── progress-9.png.txt
-│       │   │   │       ├── progress-90.png.txt
-│       │   │   │       ├── progress-91.png.txt
-│       │   │   │       ├── progress-92.png.txt
-│       │   │   │       ├── progress-93.png.txt
-│       │   │   │       ├── progress-94.png.txt
-│       │   │   │       ├── progress-95.png.txt
-│       │   │   │       ├── progress-96.png.txt
-│       │   │   │       ├── progress-97.png.txt
-│       │   │   │       ├── progress-98.png.txt
-│       │   │   │       └── progress-99.png.txt
-│       │   │   ├── black_hud.gif
-│       │   │   ├── circle_hud.gif
-│       │   │   ├── deus_ex.gif
-│       │   │   ├── glitch.gif
-│       │   │   ├── image
-│       │   │   │   ├── README.md
-│       │   │   │   ├── deus_ex
-│       │   │   │   │   ├── progress-0.png
-│       │   │   │   │   ├── progress-1.png
-│       │   │   │   │   ├── progress-10.png
-│       │   │   │   │   ├── progress-100.png
-│       │   │   │   │   ├── progress-101.png
-│       │   │   │   │   ├── progress-102.png
-│       │   │   │   │   ├── progress-103.png
-│       │   │   │   │   ├── progress-104.png
-│       │   │   │   │   ├── progress-105.png
-│       │   │   │   │   ├── progress-106.png
-│       │   │   │   │   ├── progress-107.png
-│       │   │   │   │   ├── progress-108.png
-│       │   │   │   │   ├── progress-109.png
-│       │   │   │   │   ├── progress-11.png
-│       │   │   │   │   ├── progress-110.png
-│       │   │   │   │   ├── progress-111.png
-│       │   │   │   │   ├── progress-112.png
-│       │   │   │   │   ├── progress-113.png
-│       │   │   │   │   ├── progress-114.png
-│       │   │   │   │   ├── progress-115.png
-│       │   │   │   │   ├── progress-116.png
-│       │   │   │   │   ├── progress-117.png
-│       │   │   │   │   ├── progress-118.png
-│       │   │   │   │   ├── progress-119.png
-│       │   │   │   │   ├── progress-12.png
-│       │   │   │   │   ├── progress-120.png
-│       │   │   │   │   ├── progress-121.png
-│       │   │   │   │   ├── progress-122.png
-│       │   │   │   │   ├── progress-123.png
-│       │   │   │   │   ├── progress-124.png
-│       │   │   │   │   ├── progress-125.png
-│       │   │   │   │   ├── progress-126.png
-│       │   │   │   │   ├── progress-127.png
-│       │   │   │   │   ├── progress-128.png
-│       │   │   │   │   ├── progress-129.png
-│       │   │   │   │   ├── progress-13.png
-│       │   │   │   │   ├── progress-130.png
-│       │   │   │   │   ├── progress-131.png
-│       │   │   │   │   ├── progress-132.png
-│       │   │   │   │   ├── progress-133.png
-│       │   │   │   │   ├── progress-134.png
-│       │   │   │   │   ├── progress-135.png
-│       │   │   │   │   ├── progress-136.png
-│       │   │   │   │   ├── progress-137.png
-│       │   │   │   │   ├── progress-138.png
-│       │   │   │   │   ├── progress-139.png
-│       │   │   │   │   ├── progress-14.png
-│       │   │   │   │   ├── progress-140.png
-│       │   │   │   │   ├── progress-141.png
-│       │   │   │   │   ├── progress-142.png
-│       │   │   │   │   ├── progress-143.png
-│       │   │   │   │   ├── progress-144.png
-│       │   │   │   │   ├── progress-145.png
-│       │   │   │   │   ├── progress-146.png
-│       │   │   │   │   ├── progress-147.png
-│       │   │   │   │   ├── progress-148.png
-│       │   │   │   │   ├── progress-149.png
-│       │   │   │   │   ├── progress-15.png
-│       │   │   │   │   ├── progress-150.png
-│       │   │   │   │   ├── progress-151.png
-│       │   │   │   │   ├── progress-152.png
-│       │   │   │   │   ├── progress-153.png
-│       │   │   │   │   ├── progress-154.png
-│       │   │   │   │   ├── progress-155.png
-│       │   │   │   │   ├── progress-156.png
-│       │   │   │   │   ├── progress-157.png
-│       │   │   │   │   ├── progress-158.png
-│       │   │   │   │   ├── progress-159.png
-│       │   │   │   │   ├── progress-16.png
-│       │   │   │   │   ├── progress-160.png
-│       │   │   │   │   ├── progress-161.png
-│       │   │   │   │   ├── progress-162.png
-│       │   │   │   │   ├── progress-163.png
-│       │   │   │   │   ├── progress-164.png
-│       │   │   │   │   ├── progress-165.png
-│       │   │   │   │   ├── progress-166.png
-│       │   │   │   │   ├── progress-167.png
-│       │   │   │   │   ├── progress-168.png
-│       │   │   │   │   ├── progress-169.png
-│       │   │   │   │   ├── progress-17.png
-│       │   │   │   │   ├── progress-170.png
-│       │   │   │   │   ├── progress-171.png
-│       │   │   │   │   ├── progress-172.png
-│       │   │   │   │   ├── progress-173.png
-│       │   │   │   │   ├── progress-174.png
-│       │   │   │   │   ├── progress-175.png
-│       │   │   │   │   ├── progress-176.png
-│       │   │   │   │   ├── progress-177.png
-│       │   │   │   │   ├── progress-178.png
-│       │   │   │   │   ├── progress-179.png
-│       │   │   │   │   ├── progress-18.png
-│       │   │   │   │   ├── progress-180.png
-│       │   │   │   │   ├── progress-181.png
-│       │   │   │   │   ├── progress-182.png
-│       │   │   │   │   ├── progress-183.png
-│       │   │   │   │   ├── progress-184.png
-│       │   │   │   │   ├── progress-185.png
-│       │   │   │   │   ├── progress-186.png
-│       │   │   │   │   ├── progress-187.png
-│       │   │   │   │   ├── progress-188.png
-│       │   │   │   │   ├── progress-189.png
-│       │   │   │   │   ├── progress-19.png
-│       │   │   │   │   ├── progress-190.png
-│       │   │   │   │   ├── progress-191.png
-│       │   │   │   │   ├── progress-192.png
-│       │   │   │   │   ├── progress-193.png
-│       │   │   │   │   ├── progress-194.png
-│       │   │   │   │   ├── progress-195.png
-│       │   │   │   │   ├── progress-196.png
-│       │   │   │   │   ├── progress-197.png
-│       │   │   │   │   ├── progress-198.png
-│       │   │   │   │   ├── progress-199.png
-│       │   │   │   │   ├── progress-2.png
-│       │   │   │   │   ├── progress-20.png
-│       │   │   │   │   ├── progress-200.png
-│       │   │   │   │   ├── progress-201.png
-│       │   │   │   │   ├── progress-202.png
-│       │   │   │   │   ├── progress-203.png
-│       │   │   │   │   ├── progress-204.png
-│       │   │   │   │   ├── progress-205.png
-│       │   │   │   │   ├── progress-206.png
-│       │   │   │   │   ├── progress-207.png
-│       │   │   │   │   ├── progress-208.png
-│       │   │   │   │   ├── progress-209.png
-│       │   │   │   │   ├── progress-21.png
-│       │   │   │   │   ├── progress-210.png
-│       │   │   │   │   ├── progress-211.png
-│       │   │   │   │   ├── progress-212.png
-│       │   │   │   │   ├── progress-213.png
-│       │   │   │   │   ├── progress-214.png
-│       │   │   │   │   ├── progress-215.png
-│       │   │   │   │   ├── progress-216.png
-│       │   │   │   │   ├── progress-217.png
-│       │   │   │   │   ├── progress-218.png
-│       │   │   │   │   ├── progress-219.png
-│       │   │   │   │   ├── progress-22.png
-│       │   │   │   │   ├── progress-220.png
-│       │   │   │   │   ├── progress-221.png
-│       │   │   │   │   ├── progress-222.png
-│       │   │   │   │   ├── progress-223.png
-│       │   │   │   │   ├── progress-224.png
-│       │   │   │   │   ├── progress-225.png
-│       │   │   │   │   ├── progress-226.png
-│       │   │   │   │   ├── progress-227.png
-│       │   │   │   │   ├── progress-228.png
-│       │   │   │   │   ├── progress-229.png
-│       │   │   │   │   ├── progress-23.png
-│       │   │   │   │   ├── progress-230.png
-│       │   │   │   │   ├── progress-231.png
-│       │   │   │   │   ├── progress-232.png
-│       │   │   │   │   ├── progress-233.png                           │       │   │   │   │   ├── progress-234.png
-│       │   │   │   │   ├── progress-235.png                           │       │   │   │   │   ├── progress-236.png
-│       │   │   │   │   ├── progress-237.png
-│       │   │   │   │   ├── progress-238.png                           │       │   │   │   │   ├── progress-239.png
-│       │   │   │   │   ├── progress-24.png                            │       │   │   │   │   ├── progress-240.png
-│       │   │   │   │   ├── progress-241.png                           │       │   │   │   │   ├── progress-242.png
-│       │   │   │   │   ├── progress-243.png                           │       │   │   │   │   ├── progress-244.png
-│       │   │   │   │   ├── progress-245.png                           │       │   │   │   │   ├── progress-246.png
-│       │   │   │   │   ├── progress-247.png
-│       │   │   │   │   ├── progress-248.png
-│       │   │   │   │   ├── progress-249.png
-│       │   │   │   │   ├── progress-25.png
-│       │   │   │   │   ├── progress-250.png
-│       │   │   │   │   ├── progress-251.png
-│       │   │   │   │   ├── progress-252.png
-│       │   │   │   │   ├── progress-253.png
-│       │   │   │   │   ├── progress-254.png
-│       │   │   │   │   ├── progress-255.png
-│       │   │   │   │   ├── progress-256.png
-│       │   │   │   │   ├── progress-257.png
-│       │   │   │   │   ├── progress-258.png
-│       │   │   │   │   ├── progress-259.png
-│       │   │   │   │   ├── progress-26.png
-│       │   │   │   │   ├── progress-260.png
-│       │   │   │   │   ├── progress-261.png
-│       │   │   │   │   ├── progress-262.png
-│       │   │   │   │   ├── progress-263.png
-│       │   │   │   │   ├── progress-264.png
-│       │   │   │   │   ├── progress-265.png                           │       │   │   │   │   ├── progress-266.png
-│       │   │   │   │   ├── progress-267.png
-│       │   │   │   │   ├── progress-268.png
-│       │   │   │   │   ├── progress-269.png
-│       │   │   │   │   ├── progress-27.png
-│       │   │   │   │   ├── progress-270.png
-│       │   │   │   │   ├── progress-271.png
-│       │   │   │   │   ├── progress-272.png
-│       │   │   │   │   ├── progress-273.png
-│       │   │   │   │   ├── progress-274.png
-│       │   │   │   │   ├── progress-275.png
-│       │   │   │   │   ├── progress-276.png
-│       │   │   │   │   ├── progress-277.png
-│       │   │   │   │   ├── progress-278.png
-│       │   │   │   │   ├── progress-279.png                           │       │   │   │   │   ├── progress-28.png
-│       │   │   │   │   ├── progress-280.png
-│       │   │   │   │   ├── progress-281.png
-│       │   │   │   │   ├── progress-282.png
-│       │   │   │   │   ├── progress-283.png
-│       │   │   │   │   ├── progress-284.png
-│       │   │   │   │   ├── progress-285.png
-│       │   │   │   │   ├── progress-286.png
-│       │   │   │   │   ├── progress-287.png
-│       │   │   │   │   ├── progress-288.png
-│       │   │   │   │   ├── progress-289.png
-│       │   │   │   │   ├── progress-29.png
-│       │   │   │   │   ├── progress-290.png
-│       │   │   │   │   ├── progress-291.png
-│       │   │   │   │   ├── progress-292.png
-│       │   │   │   │   ├── progress-293.png
-│       │   │   │   │   ├── progress-294.png
-│       │   │   │   │   ├── progress-295.png
-│       │   │   │   │   ├── progress-296.png
-│       │   │   │   │   ├── progress-297.png
-│       │   │   │   │   ├── progress-298.png
-│       │   │   │   │   ├── progress-299.png
-│       │   │   │   │   ├── progress-3.png
-│       │   │   │   │   ├── progress-30.png
-│       │   │   │   │   ├── progress-300.png                           │       │   │   │   │   ├── progress-301.png
-│       │   │   │   │   ├── progress-302.png
-│       │   │   │   │   ├── progress-303.png
-│       │   │   │   │   ├── progress-304.png
-│       │   │   │   │   ├── progress-305.png
-│       │   │   │   │   ├── progress-306.png
-│       │   │   │   │   ├── progress-307.png
-│       │   │   │   │   ├── progress-308.png
-│       │   │   │   │   ├── progress-309.png
-│       │   │   │   │   ├── progress-31.png
-│       │   │   │   │   ├── progress-310.png
-│       │   │   │   │   ├── progress-311.png
-│       │   │   │   │   ├── progress-312.png
-│       │   │   │   │   ├── progress-313.png
-│       │   │   │   │   ├── progress-314.png
-│       │   │   │   │   ├── progress-315.png
-│       │   │   │   │   ├── progress-316.png
-│       │   │   │   │   ├── progress-317.png
-│       │   │   │   │   ├── progress-318.png
-│       │   │   │   │   ├── progress-319.png
-│       │   │   │   │   ├── progress-32.png
-│       │   │   │   │   ├── progress-320.png
-│       │   │   │   │   ├── progress-321.png
-│       │   │   │   │   ├── progress-322.png
-│       │   │   │   │   ├── progress-323.png
-│       │   │   │   │   ├── progress-324.png
-│       │   │   │   │   ├── progress-325.png
-│       │   │   │   │   ├── progress-326.png
-│       │   │   │   │   ├── progress-327.png
-│       │   │   │   │   ├── progress-328.png
-│       │   │   │   │   ├── progress-329.png
-│       │   │   │   │   ├── progress-33.png
-│       │   │   │   │   ├── progress-330.png
-│       │   │   │   │   ├── progress-331.png
-│       │   │   │   │   ├── progress-332.png
-│       │   │   │   │   ├── progress-333.png
-│       │   │   │   │   ├── progress-334.png
-│       │   │   │   │   ├── progress-335.png
-│       │   │   │   │   ├── progress-336.png
-│       │   │   │   │   ├── progress-337.png
-│       │   │   │   │   ├── progress-338.png
-│       │   │   │   │   ├── progress-339.png
-│       │   │   │   │   ├── progress-34.png
-│       │   │   │   │   ├── progress-340.png
-│       │   │   │   │   ├── progress-341.png
-│       │   │   │   │   ├── progress-342.png
-│       │   │   │   │   ├── progress-343.png
-│       │   │   │   │   ├── progress-344.png
-│       │   │   │   │   ├── progress-345.png
-│       │   │   │   │   ├── progress-346.png
-│       │   │   │   │   ├── progress-347.png
-│       │   │   │   │   ├── progress-348.png
-│       │   │   │   │   ├── progress-349.png
-│       │   │   │   │   ├── progress-35.png
-│       │   │   │   │   ├── progress-350.png
-│       │   │   │   │   ├── progress-351.png
-│       │   │   │   │   ├── progress-352.png
-│       │   │   │   │   ├── progress-353.png
-│       │   │   │   │   ├── progress-354.png
-│       │   │   │   │   ├── progress-355.png
-│       │   │   │   │   ├── progress-356.png
-│       │   │   │   │   ├── progress-357.png
-│       │   │   │   │   ├── progress-358.png
-│       │   │   │   │   ├── progress-359.png
-│       │   │   │   │   ├── progress-36.png
-│       │   │   │   │   ├── progress-360.png
-│       │   │   │   │   ├── progress-361.png
-│       │   │   │   │   ├── progress-362.png
-│       │   │   │   │   ├── progress-363.png
-│       │   │   │   │   ├── progress-364.png
-│       │   │   │   │   ├── progress-365.png
-│       │   │   │   │   ├── progress-366.png
-│       │   │   │   │   ├── progress-367.png
-│       │   │   │   │   ├── progress-368.png
-│       │   │   │   │   ├── progress-369.png
-│       │   │   │   │   ├── progress-37.png
-│       │   │   │   │   ├── progress-370.png
-│       │   │   │   │   ├── progress-371.png
-│       │   │   │   │   ├── progress-372.png
-│       │   │   │   │   ├── progress-373.png
-│       │   │   │   │   ├── progress-374.png
-│       │   │   │   │   ├── progress-38.png
-│       │   │   │   │   ├── progress-39.png
-│       │   │   │   │   ├── progress-4.png
-│       │   │   │   │   ├── progress-40.png
-│       │   │   │   │   ├── progress-41.png
-│       │   │   │   │   ├── progress-42.png
-│       │   │   │   │   ├── progress-43.png
-│       │   │   │   │   ├── progress-44.png
-│       │   │   │   │   ├── progress-45.png
-│       │   │   │   │   ├── progress-46.png
-│       │   │   │   │   ├── progress-47.png
-│       │   │   │   │   ├── progress-48.png
-│       │   │   │   │   ├── progress-49.png
-│       │   │   │   │   ├── progress-5.png
-│       │   │   │   │   ├── progress-50.png
-│       │   │   │   │   ├── progress-51.png
-│       │   │   │   │   ├── progress-52.png
-│       │   │   │   │   ├── progress-53.png
-│       │   │   │   │   ├── progress-54.png
-│       │   │   │   │   ├── progress-55.png
-│       │   │   │   │   ├── progress-56.png
-│       │   │   │   │   ├── progress-57.png
-│       │   │   │   │   ├── progress-58.png
-│       │   │   │   │   ├── progress-59.png
-│       │   │   │   │   ├── progress-6.png
-│       │   │   │   │   ├── progress-60.png
-│       │   │   │   │   ├── progress-61.png
-│       │   │   │   │   ├── progress-62.png
-│       │   │   │   │   ├── progress-63.png
-│       │   │   │   │   ├── progress-64.png
-│       │   │   │   │   ├── progress-65.png
-│       │   │   │   │   ├── progress-66.png
-│       │   │   │   │   ├── progress-67.png
-│       │   │   │   │   ├── progress-68.png
-│       │   │   │   │   ├── progress-69.png
-│       │   │   │   │   ├── progress-7.png
-│       │   │   │   │   ├── progress-70.png
-│       │   │   │   │   ├── progress-71.png
-│       │   │   │   │   ├── progress-72.png
-│       │   │   │   │   ├── progress-73.png
-│       │   │   │   │   ├── progress-74.png
-│       │   │   │   │   ├── progress-75.png
-│       │   │   │   │   ├── progress-76.png
-│       │   │   │   │   ├── progress-77.png
-│       │   │   │   │   ├── progress-78.png
-│       │   │   │   │   ├── progress-79.png
-│       │   │   │   │   ├── progress-8.png
-│       │   │   │   │   ├── progress-80.png
-│       │   │   │   │   ├── progress-81.png
-│       │   │   │   │   ├── progress-82.png
-│       │   │   │   │   ├── progress-83.png
-│       │   │   │   │   ├── progress-84.png
-│       │   │   │   │   ├── progress-85.png
-│       │   │   │   │   ├── progress-86.png
-│       │   │   │   │   ├── progress-87.png
-│       │   │   │   │   ├── progress-88.png
-│       │   │   │   │   ├── progress-89.png
-│       │   │   │   │   ├── progress-9.png
-│       │   │   │   │   ├── progress-90.png
-│       │   │   │   │   ├── progress-91.png
-│       │   │   │   │   ├── progress-92.png
-│       │   │   │   │   ├── progress-93.png
-│       │   │   │   │   ├── progress-94.png
-│       │   │   │   │   ├── progress-95.png
-│       │   │   │   │   ├── progress-96.png
-│       │   │   │   │   ├── progress-97.png
-│       │   │   │   │   ├── progress-98.png
-│       │   │   │   │   └── progress-99.png
-│       │   │   │   └── deus_ex_yellow
-│       │   │   │       ├── progress-0.png
-│       │   │   │       ├── progress-1.png
-│       │   │   │       ├── progress-10.png
-│       │   │   │       ├── progress-100.png
-│       │   │   │       ├── progress-101.png
-│       │   │   │       ├── progress-102.png
-│       │   │   │       ├── progress-103.png
-│       │   │   │       ├── progress-104.png
-│       │   │   │       ├── progress-105.png
-│       │   │   │       ├── progress-106.png
-│       │   │   │       ├── progress-107.png
-│       │   │   │       ├── progress-108.png
-│       │   │   │       ├── progress-109.png
-│       │   │   │       ├── progress-11.png
-│       │   │   │       ├── progress-110.png
-│       │   │   │       ├── progress-111.png
-│       │   │   │       ├── progress-112.png
-│       │   │   │       ├── progress-113.png
-│       │   │   │       ├── progress-114.png
-│       │   │   │       ├── progress-115.png
-│       │   │   │       ├── progress-116.png
-│       │   │   │       ├── progress-117.png
-│       │   │   │       ├── progress-118.png
-│       │   │   │       ├── progress-119.png
-│       │   │   │       ├── progress-12.png
-│       │   │   │       ├── progress-120.png
-│       │   │   │       ├── progress-121.png
-│       │   │   │       ├── progress-122.png
-│       │   │   │       ├── progress-123.png
-│       │   │   │       ├── progress-124.png
-│       │   │   │       ├── progress-125.png
-│       │   │   │       ├── progress-126.png
-│       │   │   │       ├── progress-127.png
-│       │   │   │       ├── progress-128.png
-│       │   │   │       ├── progress-129.png
-│       │   │   │       ├── progress-13.png
-│       │   │   │       ├── progress-130.png
-│       │   │   │       ├── progress-131.png
-│       │   │   │       ├── progress-132.png
-│       │   │   │       ├── progress-133.png
-│       │   │   │       ├── progress-134.png
-│       │   │   │       ├── progress-135.png
-│       │   │   │       ├── progress-136.png
-│       │   │   │       ├── progress-137.png
-│       │   │   │       ├── progress-138.png
-│       │   │   │       ├── progress-139.png
-│       │   │   │       ├── progress-14.png
-│       │   │   │       ├── progress-140.png
-│       │   │   │       ├── progress-141.png
-│       │   │   │       ├── progress-142.png
-│       │   │   │       ├── progress-143.png
-│       │   │   │       ├── progress-144.png
-│       │   │   │       ├── progress-145.png
-│       │   │   │       ├── progress-146.png
-│       │   │   │       ├── progress-147.png
-│       │   │   │       ├── progress-148.png
-│       │   │   │       ├── progress-149.png
-│       │   │   │       ├── progress-15.png
-│       │   │   │       ├── progress-150.png
-│       │   │   │       ├── progress-151.png
-│       │   │   │       ├── progress-152.png
-│       │   │   │       ├── progress-153.png
-│       │   │   │       ├── progress-154.png
-│       │   │   │       ├── progress-155.png
-│       │   │   │       ├── progress-156.png
-│       │   │   │       ├── progress-157.png
-│       │   │   │       ├── progress-158.png
-│       │   │   │       ├── progress-159.png
-│       │   │   │       ├── progress-16.png
-│       │   │   │       ├── progress-160.png
-│       │   │   │       ├── progress-161.png
-│       │   │   │       ├── progress-162.png
-│       │   │   │       ├── progress-163.png
-│       │   │   │       ├── progress-164.png
-│       │   │   │       ├── progress-165.png
-│       │   │   │       ├── progress-166.png
-│       │   │   │       ├── progress-167.png
-│       │   │   │       ├── progress-168.png
-│       │   │   │       ├── progress-169.png
-│       │   │   │       ├── progress-17.png
-│       │   │   │       ├── progress-170.png
-│       │   │   │       ├── progress-171.png
-│       │   │   │       ├── progress-172.png
-│       │   │   │       ├── progress-173.png
-│       │   │   │       ├── progress-174.png
-│       │   │   │       ├── progress-175.png
-│       │   │   │       ├── progress-176.png
-│       │   │   │       ├── progress-177.png
-│       │   │   │       ├── progress-178.png
-│       │   │   │       ├── progress-179.png
-│       │   │   │       ├── progress-18.png
-│       │   │   │       ├── progress-180.png
-│       │   │   │       ├── progress-181.png
-│       │   │   │       ├── progress-182.png
-│       │   │   │       ├── progress-183.png
-│       │   │   │       ├── progress-184.png
-│       │   │   │       ├── progress-185.png
-│       │   │   │       ├── progress-186.png
-│       │   │   │       ├── progress-187.png
-│       │   │   │       ├── progress-188.png
-│       │   │   │       ├── progress-189.png
-│       │   │   │       ├── progress-19.png
-│       │   │   │       ├── progress-190.png
-│       │   │   │       ├── progress-191.png
-│       │   │   │       ├── progress-192.png
-│       │   │   │       ├── progress-193.png
-│       │   │   │       ├── progress-194.png
-│       │   │   │       ├── progress-195.png
-│       │   │   │       ├── progress-196.png
-│       │   │   │       ├── progress-197.png
-│       │   │   │       ├── progress-198.png
-│       │   │   │       ├── progress-199.png
-│       │   │   │       ├── progress-2.png
-│       │   │   │       ├── progress-20.png
-│       │   │   │       ├── progress-200.png
-│       │   │   │       ├── progress-201.png
-│       │   │   │       ├── progress-202.png
-│       │   │   │       ├── progress-203.png
-│       │   │   │       ├── progress-204.png
-│       │   │   │       ├── progress-205.png
-│       │   │   │       ├── progress-206.png
-│       │   │   │       ├── progress-207.png
-│       │   │   │       ├── progress-208.png
-│       │   │   │       ├── progress-209.png
-│       │   │   │       ├── progress-21.png
-│       │   │   │       ├── progress-210.png
-│       │   │   │       ├── progress-211.png
-│       │   │   │       ├── progress-212.png
-│       │   │   │       ├── progress-213.png
-│       │   │   │       ├── progress-214.png
-│       │   │   │       ├── progress-215.png
-│       │   │   │       ├── progress-216.png
-│       │   │   │       ├── progress-217.png
-│       │   │   │       ├── progress-218.png
-│       │   │   │       ├── progress-219.png
-│       │   │   │       ├── progress-22.png
-│       │   │   │       ├── progress-220.png
-│       │   │   │       ├── progress-221.png
-│       │   │   │       ├── progress-222.png
-│       │   │   │       ├── progress-223.png
-│       │   │   │       ├── progress-224.png
-│       │   │   │       ├── progress-225.png
-│       │   │   │       ├── progress-226.png
-│       │   │   │       ├── progress-227.png
-│       │   │   │       ├── progress-228.png
-│       │   │   │       ├── progress-229.png
-│       │   │   │       ├── progress-23.png
-│       │   │   │       ├── progress-230.png
-│       │   │   │       ├── progress-231.png
-│       │   │   │       ├── progress-232.png
-│       │   │   │       ├── progress-233.png
-│       │   │   │       ├── progress-234.png
-│       │   │   │       ├── progress-235.png
-│       │   │   │       ├── progress-236.png
-│       │   │   │       ├── progress-237.png
-│       │   │   │       ├── progress-238.png
-│       │   │   │       ├── progress-239.png
-│       │   │   │       ├── progress-24.png
-│       │   │   │       ├── progress-240.png
-│       │   │   │       ├── progress-241.png
-│       │   │   │       ├── progress-242.png
-│       │   │   │       ├── progress-243.png
-│       │   │   │       ├── progress-244.png
-│       │   │   │       ├── progress-245.png
-│       │   │   │       ├── progress-246.png
-│       │   │   │       ├── progress-247.png
-│       │   │   │       ├── progress-248.png
-│       │   │   │       ├── progress-249.png
-│       │   │   │       ├── progress-25.png
-│       │   │   │       ├── progress-250.png
-│       │   │   │       ├── progress-251.png
-│       │   │   │       ├── progress-252.png
-│       │   │   │       ├── progress-253.png
-│       │   │   │       ├── progress-254.png
-│       │   │   │       ├── progress-255.png
-│       │   │   │       ├── progress-256.png
-│       │   │   │       ├── progress-257.png
-│       │   │   │       ├── progress-258.png
-│       │   │   │       ├── progress-259.png
-│       │   │   │       ├── progress-26.png
-│       │   │   │       ├── progress-260.png
-│       │   │   │       ├── progress-261.png
-│       │   │   │       ├── progress-262.png
-│       │   │   │       ├── progress-263.png
-│       │   │   │       ├── progress-264.png
-│       │   │   │       ├── progress-265.png
-│       │   │   │       ├── progress-266.png
-│       │   │   │       ├── progress-267.png
-│       │   │   │       ├── progress-268.png
-│       │   │   │       ├── progress-269.png
-│       │   │   │       ├── progress-27.png
-│       │   │   │       ├── progress-270.png
-│       │   │   │       ├── progress-271.png
-│       │   │   │       ├── progress-272.png
-│       │   │   │       ├── progress-273.png
-│       │   │   │       ├── progress-274.png
-│       │   │   │       ├── progress-275.png
-│       │   │   │       ├── progress-276.png
-│       │   │   │       ├── progress-277.png
-│       │   │   │       ├── progress-278.png
-│       │   │   │       ├── progress-279.png
-│       │   │   │       ├── progress-28.png
-│       │   │   │       ├── progress-280.png
-│       │   │   │       ├── progress-281.png
-│       │   │   │       ├── progress-282.png
-│       │   │   │       ├── progress-283.png
-│       │   │   │       ├── progress-284.png
-│       │   │   │       ├── progress-285.png
-│       │   │   │       ├── progress-286.png
-│       │   │   │       ├── progress-287.png
-│       │   │   │       ├── progress-288.png
-│       │   │   │       ├── progress-289.png
-│       │   │   │       ├── progress-29.png
-│       │   │   │       ├── progress-290.png
-│       │   │   │       ├── progress-291.png
-│       │   │   │       ├── progress-292.png
-│       │   │   │       ├── progress-293.png
-│       │   │   │       ├── progress-294.png
-│       │   │   │       ├── progress-295.png
-│       │   │   │       ├── progress-296.png
-│       │   │   │       ├── progress-297.png
-│       │   │   │       ├── progress-298.png
-│       │   │   │       ├── progress-299.png
-│       │   │   │       ├── progress-3.png
-│       │   │   │       ├── progress-30.png
-│       │   │   │       ├── progress-300.png
-│       │   │   │       ├── progress-301.png
-│       │   │   │       ├── progress-302.png
-│       │   │   │       ├── progress-303.png
-│       │   │   │       ├── progress-304.png
-│       │   │   │       ├── progress-305.png
-│       │   │   │       ├── progress-306.png
-│       │   │   │       ├── progress-307.png
-│       │   │   │       ├── progress-308.png
-│       │   │   │       ├── progress-309.png
-│       │   │   │       ├── progress-31.png
-│       │   │   │       ├── progress-310.png
-│       │   │   │       ├── progress-311.png
-│       │   │   │       ├── progress-312.png
-│       │   │   │       ├── progress-313.png
-│       │   │   │       ├── progress-314.png
-│       │   │   │       ├── progress-315.png
-│       │   │   │       ├── progress-316.png
-│       │   │   │       ├── progress-317.png
-│       │   │   │       ├── progress-318.png
-│       │   │   │       ├── progress-319.png
-│       │   │   │       ├── progress-32.png
-│       │   │   │       ├── progress-320.png
-│       │   │   │       ├── progress-321.png
-│       │   │   │       ├── progress-322.png
-│       │   │   │       ├── progress-323.png
-│       │   │   │       ├── progress-324.png
-│       │   │   │       ├── progress-325.png
-│       │   │   │       ├── progress-326.png
-│       │   │   │       ├── progress-327.png
-│       │   │   │       ├── progress-328.png
-│       │   │   │       ├── progress-329.png
-│       │   │   │       ├── progress-33.png
-│       │   │   │       ├── progress-330.png
-│       │   │   │       ├── progress-331.png
-│       │   │   │       ├── progress-332.png
-│       │   │   │       ├── progress-333.png
-│       │   │   │       ├── progress-334.png
-│       │   │   │       ├── progress-335.png
-│       │   │   │       ├── progress-336.png
-│       │   │   │       ├── progress-337.png
-│       │   │   │       ├── progress-338.png
-│       │   │   │       ├── progress-339.png
-│       │   │   │       ├── progress-34.png
-│       │   │   │       ├── progress-340.png
-│       │   │   │       ├── progress-341.png
-│       │   │   │       ├── progress-342.png
-│       │   │   │       ├── progress-343.png
-│       │   │   │       ├── progress-344.png
-│       │   │   │       ├── progress-345.png
-│       │   │   │       ├── progress-346.png
-│       │   │   │       ├── progress-347.png
-│       │   │   │       ├── progress-348.png
-│       │   │   │       ├── progress-349.png
-│       │   │   │       ├── progress-35.png
-│       │   │   │       ├── progress-350.png
-│       │   │   │       ├── progress-351.png
-│       │   │   │       ├── progress-352.png
-│       │   │   │       ├── progress-353.png
-│       │   │   │       ├── progress-354.png
-│       │   │   │       ├── progress-355.png
-│       │   │   │       ├── progress-356.png
-│       │   │   │       ├── progress-357.png
-│       │   │   │       ├── progress-358.png
-│       │   │   │       ├── progress-359.png
-│       │   │   │       ├── progress-36.png
-│       │   │   │       ├── progress-360.png
-│       │   │   │       ├── progress-361.png
-│       │   │   │       ├── progress-362.png
-│       │   │   │       ├── progress-363.png
-│       │   │   │       ├── progress-364.png
-│       │   │   │       ├── progress-365.png
-│       │   │   │       ├── progress-366.png
-│       │   │   │       ├── progress-367.png
-│       │   │   │       ├── progress-368.png
-│       │   │   │       ├── progress-369.png
-│       │   │   │       ├── progress-37.png
-│       │   │   │       ├── progress-370.png
-│       │   │   │       ├── progress-371.png
-│       │   │   │       ├── progress-372.png
-│       │   │   │       ├── progress-373.png
-│       │   │   │       ├── progress-374.png
-│       │   │   │       ├── progress-38.png
-│       │   │   │       ├── progress-39.png
-│       │   │   │       ├── progress-4.png
-│       │   │   │       ├── progress-40.png
-│       │   │   │       ├── progress-41.png
-│       │   │   │       ├── progress-42.png
-│       │   │   │       ├── progress-43.png
-│       │   │   │       ├── progress-44.png
-│       │   │   │       ├── progress-45.png
-│       │   │   │       ├── progress-46.png
-│       │   │   │       ├── progress-47.png
-│       │   │   │       ├── progress-48.png
-│       │   │   │       ├── progress-49.png
-│       │   │   │       ├── progress-5.png
-│       │   │   │       ├── progress-50.png
-│       │   │   │       ├── progress-51.png
-│       │   │   │       ├── progress-52.png
-│       │   │   │       ├── progress-53.png
-│       │   │   │       ├── progress-54.png
-│       │   │   │       ├── progress-55.png
-│       │   │   │       ├── progress-56.png
-│       │   │   │       ├── progress-57.png
-│       │   │   │       ├── progress-58.png
-│       │   │   │       ├── progress-59.png
-│       │   │   │       ├── progress-6.png
-│       │   │   │       ├── progress-60.png
-│       │   │   │       ├── progress-61.png
-│       │   │   │       ├── progress-62.png
-│       │   │   │       ├── progress-63.png
-│       │   │   │       ├── progress-64.png
-│       │   │   │       ├── progress-65.png
-│       │   │   │       ├── progress-66.png
-│       │   │   │       ├── progress-67.png
-│       │   │   │       ├── progress-68.png
-│       │   │   │       ├── progress-69.png
-│       │   │   │       ├── progress-7.png
-│       │   │   │       ├── progress-70.png
-│       │   │   │       ├── progress-71.png
-│       │   │   │       ├── progress-72.png
-│       │   │   │       ├── progress-73.png
-│       │   │   │       ├── progress-74.png
-│       │   │   │       ├── progress-75.png
-│       │   │   │       ├── progress-76.png
-│       │   │   │       ├── progress-77.png
-│       │   │   │       ├── progress-78.png
-│       │   │   │       ├── progress-79.png
-│       │   │   │       ├── progress-8.png
-│       │   │   │       ├── progress-80.png
-│       │   │   │       ├── progress-81.png
-│       │   │   │       ├── progress-82.png
-│       │   │   │       ├── progress-83.png
-│       │   │   │       ├── progress-84.png
-│       │   │   │       ├── progress-85.png
-│       │   │   │       ├── progress-86.png
-│       │   │   │       ├── progress-87.png
-│       │   │   │       ├── progress-88.png
-│       │   │   │       ├── progress-89.png
-│       │   │   │       ├── progress-9.png
-│       │   │   │       ├── progress-90.png
-│       │   │   │       ├── progress-91.png
-│       │   │   │       ├── progress-92.png
-│       │   │   │       ├── progress-93.png
-│       │   │   │       ├── progress-94.png
-│       │   │   │       ├── progress-95.png
-│       │   │   │       ├── progress-96.png
-│       │   │   │       ├── progress-97.png
-│       │   │   │       ├── progress-98.png
-│       │   │   │       └── progress-99.png
-│       │   │   └── unrap.gif
-│       │   └── scripts
-│       │       ├── ascii.py
-│       │       ├── deusfetch.sh
-│       │       └── utils.sh
-│       ├── ghostty
-│       │   ├── config
-│       │   ├── config.bak
-│       │   └── shaders
-│       │       ├── dx1.glsl
-│       │       ├── dx10.glsl
-│       │       ├── dx11.glsl
-│       │       ├── dx12.glsl
-│       │       ├── dx2.glsl
-│       │       ├── dx3.glsl
-│       │       ├── dx4.glsl
-│       │       ├── dx5.glsl
-│       │       ├── dx6.glsl
-│       │       ├── dx7.glsl
-│       │       ├── dx8.glsl                                           │       │       ├── dx9.glsl
-│       │       └── triangle_trouble.glsl                              │       ├── hypr
-│       │   ├── hypridle.conf
-│       │   ├── hyprland                                               │       │   │   ├── env.conf
-│       │   │   ├── execs.conf                                         │       │   │   ├── general.conf
-│       │   │   ├── keybinds.conf                                      │       │   │   └── rules.conf
-│       │   ├── hyprland.conf                                          │       │   ├── hyprlock
-│       │   │   └── status.sh                                          │       │   ├── hyprlock-scripts
-│       │   │   ├── battery-status.sh
-│       │   │   └── music-status.sh
-│       │   ├── hyprlock.conf
-│       │   └── shaders
-│       │       ├── chromatic_abberation.frag
-│       │       ├── crt.frag
-│       │       ├── drugs.frag
-│       │       ├── extradark.frag
-│       │       ├── invert.frag
-│       │       └── solarized.frag
-│       ├── jamesdsp
-│       │   ├── application.conf
-│       │   ├── audio.conf
-│       │   ├── graphiceq.conf
-│       │   ├── irs
-│       │   │   ├── Church.wav
-│       │   │   ├── CorredHRTF_Crossfeed.wav
-│       │   │   ├── CorredHRTF_Surround1.wav
-│       │   │   ├── CorredHRTF_Surround2.wav
-│       │   │   └── SwapChannels.wav
-│       │   ├── liveprog                                               │       │   │   ├── 3bandSplitting.eel
-│       │   │   ├── autopeakfilter.eel
-│       │   │   ├── dc_remove.eel
-│       │   │   ├── depthsurround.eel
-│       │   │   ├── downmixer.eel
-│       │   │   ├── downsampler.eel
-│       │   │   ├── dynamicbass.eel
-│       │   │   ├── fftConvolution2x4x2.eel
-│       │   │   ├── fftConvolutionHRTF.eel
-│       │   │   ├── firFilter.eel
-│       │   │   ├── firlsProc.eel
-│       │   │   ├── fractionalDelayline.eel
-│       │   │   ├── gainControl.eel
-│       │   │   ├── hadamVerb.eel
-│       │   │   ├── lowpass.eel                                        │       │   │   ├── metallic-reverb.eel
-│       │   │   ├── msCentreBoost.eel
-│       │   │   ├── pfb.eel
-│       │   │   ├── phaseshifter.eel
-│       │   │   ├── polyphaseFilterbank.eel
-│       │   │   ├── stereowide.eel
-│       │   │   ├── stft-filter.eel
-│       │   │   ├── stftCentreBoost.eel
-│       │   │   ├── stftCentreCut.eel
-│       │   │   ├── stftDenoise.eel
-│       │   │   └── swapChannels.eel
-│       │   └── vdc
-│       │       ├── Butterworth.vdc
-│       │       ├── FrontRearContrast.vdc
-│       │       └── mh750.vdc
-│       ├── kitty
-│       │   ├── current-theme.conf
-│       │   ├── kitty.conf
-│       │   └── kitty.conf.bak
-│       ├── kwinrc
-│       ├── nvim
-│       │   ├── .gitignore
-│       │   ├── .neoconf.json
-│       │   ├── LICENSE
-│       │   ├── README.md                                              │       │   ├── init.lua
-│       │   ├── lazy-lock.json
-│       │   ├── lazyvim.json
-│       │   ├── lua
-│       │   │   ├── config
-│       │   │   │   ├── autocmds.lua
-│       │   │   │   ├── keymaps.lua
-│       │   │   │   ├── lazy.lua
-│       │   │   │   └── options.lua
-│       │   │   └── plugins
-│       │   │       ├── activate.lua
-│       │   │       ├── autosave.lua
-│       │   │       ├── cheatsheet.lua
-│       │   │       ├── dashboard.lua
-│       │   │       ├── disabled_plugins.lua
-│       │   │       ├── dropbar.lua
-│       │   │       ├── example.lua
-│       │   │       ├── gesture_nvim.lua
-│       │   │       ├── live-server.lua
-│       │   │       ├── lualine.lua
-│       │   │       ├── markview_nvim.lua
-│       │   │       ├── mini-animate.lua
-│       │   │       ├── neo-tree.lua
-│       │   │       ├── neorg.lua
-│       │   │       ├── neovim.lua
-│       │   │       ├── noice.lua
-│       │   │       ├── nvim-cmp.lua
-│       │   │       ├── nvim-notify.lua
-│       │   │       ├── nvim-scrollbar.lua
-│       │   │       ├── presence.lua
-│       │   │       ├── tabby.lua
-│       │   │       ├── telescope-media-files.lua
-│       │   │       ├── telescope-tabs.lua
-│       │   │       ├── telescope.lua
-│       │   │       ├── tips.lua
-│       │   │       ├── toggleterm.lua
-│       │   │       ├── tokyonight.lua
-│       │   │       ├── undotree.lua
-│       │   │       ├── wakatime.lua
-│       │   │       ├── whereami_nvim.lua
-│       │   │       ├── yazi.lua
-│       │   │       └── zen-mode.lua
-│       │   └── stylua.toml
-│       ├── rmpc
-│       │   ├── config.ron
-│       │   ├── lyrics.sh
-│       │   └── themes
-│       │       └── theme.ron
-│       ├── systemd
-│       │   └── user
-│       │       ├── default.target.wants
-│       │       │   ├── pipewire-pulse.service
-│       │       │   └── ydotool.service
-│       │       ├── dynwalla.service
-│       │       ├── dynwalla.timer
-│       │       ├── dynwallb.service
-│       │       ├── dynwallb.timer
-│       │       ├── dynwallc.service
-│       │       ├── dynwallc.timer
-│       │       ├── dynwalld.service
-│       │       ├── dynwalld.timer
-│       │       ├── sockets.target.wants
-│       │       │   └── pipewire-pulse.socket
-│       │       └── timers.target.wants
-│       │           ├── dynwalla.timer
-│       │           ├── dynwallb.timer
-│       │           ├── dynwallc.timer
-│       │           └── dynwalld.timer
-│       ├── tmux
-│       │   ├── plugins
-│       │   │   └── tpm_log.txt
-│       │   ├── tmux.conf
-│       │   └── tmux.conf.local
-│       ├── yazi
-│       │   ├── flavors
-│       │   │   ├── kanagawa-dragon.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── LICENSE-tmtheme
-│       │   │   │   ├── README.md
-│       │   │   │   ├── flavor.toml
-│       │   │   │   ├── preview.png
-│       │   │   │   └── tmtheme.xml
-│       │   │   └── tokyo-night.yazi
-│       │   │       ├── LICENSE
-│       │   │       ├── LICENSE-tmtheme
-│       │   │       ├── README.md
-│       │   │       ├── flavor.toml
-│       │   │       ├── preview.png
-│       │   │       └── tmtheme.xml
-│       │   ├── init.lua
-│       │   ├── keymap.toml
-│       │   ├── package.toml
-│       │   ├── plugins
-│       │   │   ├── arrow.yazi
-│       │   │   │   └── main.lua
-│       │   │   ├── chmod.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── diff.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── duckdb.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── exifaudio.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── eza-preview.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── full-border.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── git.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── glow.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── hexyl.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── hide-preview.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── jump-to-char.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── lazygit.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── mediainfo.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   ├── assets
-│       │   │   │   │   ├── 2025-02-15-09-14-23.png
-│       │   │   │   │   ├── 2025-02-15-09-15-39.png
-│       │   │   │   │   ├── 2025-02-15-16-51-11.png
-│       │   │   │   │   └── 2025-02-15-16-52-39.png
-│       │   │   │   └── main.lua
-│       │   │   ├── miller.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── mount.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── nbpreview.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── omp.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── ouch.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── restore.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── rich-preview.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── smart-enter.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── smart-filter.yazi
-│       │   │   │   ├── LICENSE
-│       │   │   │   ├── README.md
-│       │   │   │   └── main.lua
-│       │   │   ├── smart-switch.yazi
-│       │   │   │   └── main.lua
-│       │   │   ├── smart-tab.yazi
-│       │   │   │   └── main.lua
-│       │   │   └── torrent-preview.yazi
-│       │   │       ├── LICENSE
-│       │   │       ├── README.md
-│       │   │       └── main.lua
-│       │   ├── theme.toml
-│       │   └── yazi.toml
-│       └── zsh
-│           ├── .zlogin
-│           ├── .zlogout
-│           ├── .zprofile
-│           ├── .zshenv
-│           ├── .zshrc
-│           ├── README.md
-│           ├── aliases
-│           │   ├── CLI
-│           │   │   ├── Docker
-│           │   │   │   ├── docker-compose.zsh
-│           │   │   │   └── docker.zsh
-│           │   │   ├── Git
-│           │   │   │   ├── git-lfs.zsh
-│           │   │   │   └── git.zsh
-│           │   │   ├── Python
-│           │   │   │   ├── pip.zsh
-│           │   │   │   ├── pipenv.zsh
-│           │   │   │   └── python.zsh
-│           │   │   ├── conda.zsh
-│           │   │   ├── eza.zsh
-│           │   │   ├── github_cli.zsh
-│           │   │   ├── gpg.zsh
-│           │   │   ├── homebrew.zsh
-│           │   │   ├── macports.zsh
-│           │   │   ├── npm.zsh
-│           │   │   ├── podman.zsh
-│           │   │   ├── rsync.zsh
-│           │   │   ├── ruby.zsh
-│           │   │   ├── snap.zsh
-│           │   │   ├── systemd.zsh
-│           │   │   ├── tmuxinator.zsh
-│           │   │   ├── vscodium.zsh
-│           │   │   └── yt-dlp.zsh
-│           │   ├── basics
-│           │   │   ├── files_n_paths.zsh
-│           │   │   ├── find_files.zsh
-│           │   │   └── misc.zsh
-│           │   └── os
-│           │       ├── arch.zsh
-│           │       ├── debian.zsh
-│           │       ├── fedora.zsh
-│           │       └── ubuntu.zsh
-│           ├── completions
-│           │   ├── auto
-│           │   │   └── gen_completion.bundle.zsh
-│           │   └── options.zsh
-│           ├── functions
-│           │   ├── CLI
-│           │   │   ├── Python
-│           │   │   │   ├── pip.bundle.zsh
-│           │   │   │   ├── pyenv.bundle.zsh
-│           │   │   │   └── python.zsh
-│           │   │   ├── command-not-found.bundle.zsh
-│           │   │   ├── doas.bundle.zsh
-│           │   │   ├── dotnet.zsh
-│           │   │   ├── yazi.zsh
-│           │   │   ├── yt-dlp.bundle.zsh
-│           │   │   └── zoxide-eza.bundle.zsh
-│           │   ├── misc
-│           │   │   ├── copyfile.zsh
-│           │   │   ├── copypath.zsh
-│           │   │   ├── mkdircd.zsh
-│           │   │   ├── torrent.zsh
-│           │   │   ├── ua.zsh
-│           │   │   └── updir.bundle.zsh
-│           │   └── os
-│           │       ├── Arch
-│           │       │   └── arch.bundle.zsh
-│           │       ├── Debian
-│           │       │   └── debian.bundle.zsh
-│           │       └── Ubuntu
-│           │           └── ubuntu.bundle.zsh
-│           └── plugin-opts
-│               ├── alias-tips.zsh
-│               ├── fzf-tab.zsh
-│               ├── zsh-auto-notify.zsh
-│               ├── zsh-autosuggestions.zsh
-│               └── zsh-history-substring-search.zsh
+│   ├── .bashrc
+│   └── .config
+│       ├── btop
+│       │   └── btop.conf
+│       ├── doom
+│       │   ├── config.el
+│       │   ├── init.el
+│       │   └── packages.el
+│       ├── fastfetch
+│       │   ├── config.jsonc
+│       │   ├── logos
+│       │   │   ├── Fastfetcharch.png
+│       │   │   ├── ascii
+│       │   │   │   ├── README.md
+│       │   │   │   ├── deus_ex
+│       │   │   │   │   ├── progress-0.png.txt
+│       │   │   │   │   ├── progress-1.png.txt
+│       │   │   │   │   ├── progress-10.png.txt
+│       │   │   │   │   ├── progress-100.png.txt
+│       │   │   │   │   ├── progress-101.png.txt
+│       │   │   │   │   ├── progress-102.png.txt                       │       │   │   │   │   ├── progress-103.png.txt
+│       │   │   │   │   ├── progress-104.png.txt
+│       │   │   │   │   ├── progress-105.png.txt
+│       │   │   │   │   ├── progress-106.png.txt
+│       │   │   │   │   ├── progress-107.png.txt
+│       │   │   │   │   ├── progress-108.png.txt
+│       │   │   │   │   ├── progress-109.png.txt
+│       │   │   │   │   ├── progress-11.png.txt
+│       │   │   │   │   ├── progress-110.png.txt
+│       │   │   │   │   ├── progress-111.png.txt
+│       │   │   │   │   ├── progress-112.png.txt
+│       │   │   │   │   ├── progress-113.png.txt
+│       │   │   │   │   ├── progress-114.png.txt
+│       │   │   │   │   ├── progress-115.png.txt
+│       │   │   │   │   ├── progress-116.png.txt                       │       │   │   │   │   ├── progress-117.png.txt
+│       │   │   │   │   ├── progress-118.png.txt
+│       │   │   │   │   ├── progress-119.png.txt
+│       │   │   │   │   ├── progress-12.png.txt
+│       │   │   │   │   ├── progress-120.png.txt
+│       │   │   │   │   ├── progress-121.png.txt
+│       │   │   │   │   ├── progress-122.png.txt
+│       │   │   │   │   ├── progress-123.png.txt
+│       │   │   │   │   ├── progress-124.png.txt
+│       │   │   │   │   ├── progress-125.png.txt
+│       │   │   │   │   ├── progress-126.png.txt
+│       │   │   │   │   ├── progress-127.png.txt
+│       │   │   │   │   ├── progress-128.png.txt
+│       │   │   │   │   ├── progress-129.png.txt
+│       │   │   │   │   ├── progress-13.png.txt
+│       │   │   │   │   ├── progress-130.png.txt
+│       │   │   │   │   ├── progress-131.png.txt
+│       │   │   │   │   ├── progress-132.png.txt
+│       │   │   │   │   ├── progress-133.png.txt
+│       │   │   │   │   ├── progress-134.png.txt
+│       │   │   │   │   ├── progress-135.png.txt
+│       │   │   │   │   ├── progress-136.png.txt
+│       │   │   │   │   ├── progress-137.png.txt
+│       │   │   │   │   ├── progress-138.png.txt
+│       │   │   │   │   ├── progress-139.png.txt                       │       │   │   │   │   ├── progress-14.png.txt
+│       │   │   │   │   ├── progress-140.png.txt
+│       │   │   │   │   ├── progress-141.png.txt
+│       │   │   │   │   ├── progress-142.png.txt
+│       │   │   │   │   ├── progress-143.png.txt
+│       │   │   │   │   ├── progress-144.png.txt
+│       │   │   │   │   ├── progress-145.png.txt
+│       │   │   │   │   ├── progress-146.png.txt
+│       │   │   │   │   ├── progress-147.png.txt
+│       │   │   │   │   ├── progress-148.png.txt
+│       │   │   │   │   ├── progress-149.png.txt
+│       │   │   │   │   ├── progress-15.png.txt
+│       │   │   │   │   ├── progress-150.png.txt
+│       │   │   │   │   ├── progress-151.png.txt
+│       │   │   │   │   ├── progress-152.png.txt
+│       │   │   │   │   ├── progress-153.png.txt
+│       │   │   │   │   ├── progress-154.png.txt
+│       │   │   │   │   ├── progress-155.png.txt
+│       │   │   │   │   ├── progress-156.png.txt
+│       │   │   │   │   ├── progress-157.png.txt
+│       │   │   │   │   ├── progress-158.png.txt
+│       │   │   │   │   ├── progress-159.png.txt
+│       │   │   │   │   ├── progress-16.png.txt
+│       │   │   │   │   ├── progress-160.png.txt
+│       │   │   │   │   ├── progress-161.png.txt
+│       │   │   │   │   ├── progress-162.png.txt
+│       │   │   │   │   ├── progress-163.png.txt
+│       │   │   │   │   ├── progress-164.png.txt
+│       │   │   │   │   ├── progress-165.png.txt
+│       │   │   │   │   ├── progress-166.png.txt
+│       │   │   │   │   ├── progress-167.png.txt
+│       │   │   │   │   ├── progress-168.png.txt
+│       │   │   │   │   ├── progress-169.png.txt
+│       │   │   │   │   ├── progress-17.png.txt
+│       │   │   │   │   ├── progress-170.png.txt
+│       │   │   │   │   ├── progress-171.png.txt
+│       │   │   │   │   ├── progress-172.png.txt
+│       │   │   │   │   ├── progress-173.png.txt
+│       │   │   │   │   ├── progress-174.png.txt
+│       │   │   │   │   ├── progress-175.png.txt
+│       │   │   │   │   ├── progress-176.png.txt
+│       │   │   │   │   ├── progress-177.png.txt
+│       │   │   │   │   ├── progress-178.png.txt
+│       │   │   │   │   ├── progress-179.png.txt
+│       │   │   │   │   ├── progress-18.png.txt
+│       │   │   │   │   ├── progress-180.png.txt
+│       │   │   │   │   ├── progress-181.png.txt
+│       │   │   │   │   ├── progress-182.png.txt
+│       │   │   │   │   ├── progress-183.png.txt
+│       │   │   │   │   ├── progress-184.png.txt
+│       │   │   │   │   ├── progress-185.png.txt
+│       │   │   │   │   ├── progress-186.png.txt
+│       │   │   │   │   ├── progress-187.png.txt
+│       │   │   │   │   ├── progress-188.png.txt
+│       │   │   │   │   ├── progress-189.png.txt
+│       │   │   │   │   ├── progress-19.png.txt
+│       │   │   │   │   ├── progress-190.png.txt
+│       │   │   │   │   ├── progress-191.png.txt
+│       │   │   │   │   ├── progress-192.png.txt
+│       │   │   │   │   ├── progress-193.png.txt                       │       │   │   │   │   ├── progress-194.png.txt
+│       │   │   │   │   ├── progress-195.png.txt
+│       │   │   │   │   ├── progress-196.png.txt
+│       │   │   │   │   ├── progress-197.png.txt                       │       │   │   │   │   ├── progress-198.png.txt
+│       │   │   │   │   ├── progress-199.png.txt
+│       │   │   │   │   ├── progress-2.png.txt                         │       │   │   │   │   ├── progress-20.png.txt
+│       │   │   │   │   ├── progress-200.png.txt                       │       │   │   │   │   ├── progress-201.png.txt
+│       │   │   │   │   ├── progress-202.png.txt
+│       │   │   │   │   ├── progress-203.png.txt                       │       │   │   │   │   ├── progress-204.png.txt
+│       │   │   │   │   ├── progress-205.png.txt                       │       │   │   │   │   ├── progress-206.png.txt
+│       │   │   │   │   ├── progress-207.png.txt                       │       │   │   │   │   ├── progress-208.png.txt
+│       │   │   │   │   ├── progress-209.png.txt                       │       │   │   │   │   ├── progress-21.png.txt
+│       │   │   │   │   ├── progress-210.png.txt                       │       │   │   │   │   ├── progress-211.png.txt
+│       │   │   │   │   ├── progress-212.png.txt                       │       │   │   │   │   ├── progress-213.png.txt
+│       │   │   │   │   ├── progress-214.png.txt                       │       │   │   │   │   ├── progress-215.png.txt
+│       │   │   │   │   ├── progress-216.png.txt                       │       │   │   │   │   ├── progress-217.png.txt
+│       │   │   │   │   ├── progress-218.png.txt                       │       │   │   │   │   ├── progress-219.png.txt
+│       │   │   │   │   ├── progress-22.png.txt
+│       │   │   │   │   ├── progress-220.png.txt
+│       │   │   │   │   ├── progress-221.png.txt                       │       │   │   │   │   ├── progress-222.png.txt
+│       │   │   │   │   ├── progress-223.png.txt                       │       │   │   │   │   ├── progress-224.png.txt
+│       │   │   │   │   ├── progress-225.png.txt                       │       │   │   │   │   ├── progress-226.png.txt
+│       │   │   │   │   ├── progress-227.png.txt                       │       │   │   │   │   ├── progress-228.png.txt
+│       │   │   │   │   ├── progress-229.png.txt                       │       │   │   │   │   ├── progress-23.png.txt
+│       │   │   │   │   ├── progress-230.png.txt                       │       │   │   │   │   ├── progress-231.png.txt
+│       │   │   │   │   ├── progress-232.png.txt                       │       │   │   │   │   ├── progress-233.png.txt
+│       │   │   │   │   ├── progress-234.png.txt                       │       │   │   │   │   ├── progress-235.png.txt
+│       │   │   │   │   ├── progress-236.png.txt                       │       │   │   │   │   ├── progress-237.png.txt
+│       │   │   │   │   ├── progress-238.png.txt                       │       │   │   │   │   ├── progress-239.png.txt
+│       │   │   │   │   ├── progress-24.png.txt                        │       │   │   │   │   ├── progress-240.png.txt
+│       │   │   │   │   ├── progress-241.png.txt                       │       │   │   │   │   ├── progress-242.png.txt
+│       │   │   │   │   ├── progress-243.png.txt                       │       │   │   │   │   ├── progress-244.png.txt
+│       │   │   │   │   ├── progress-245.png.txt                       │       │   │   │   │   ├── progress-246.png.txt
+│       │   │   │   │   ├── progress-247.png.txt                       │       │   │   │   │   ├── progress-248.png.txt
+│       │   │   │   │   ├── progress-249.png.txt                       │       │   │   │   │   ├── progress-25.png.txt
+│       │   │   │   │   ├── progress-250.png.txt                       │       │   │   │   │   ├── progress-251.png.txt
+│       │   │   │   │   ├── progress-252.png.txt                       │       │   │   │   │   ├── progress-253.png.txt
+│       │   │   │   │   ├── progress-254.png.txt                       │       │   │   │   │   ├── progress-255.png.txt
+│       │   │   │   │   ├── progress-256.png.txt                       │       │   │   │   │   ├── progress-257.png.txt
+│       │   │   │   │   ├── progress-258.png.txt                       │       │   │   │   │   ├── progress-259.png.txt
+│       │   │   │   │   ├── progress-26.png.txt
+│       │   │   │   │   ├── progress-260.png.txt
+│       │   │   │   │   ├── progress-261.png.txt
+│       │   │   │   │   ├── progress-262.png.txt                       │       │   │   │   │   ├── progress-263.png.txt
+│       │   │   │   │   ├── progress-264.png.txt                       │       │   │   │   │   ├── progress-265.png.txt
+│       │   │   │   │   ├── progress-266.png.txt
+│       │   │   │   │   ├── progress-267.png.txt                       │       │   │   │   │   ├── progress-268.png.txt
+│       │   │   │   │   ├── progress-269.png.txt                       │       │   │   │   │   ├── progress-27.png.txt
+│       │   │   │   │   ├── progress-270.png.txt                       │       │   │   │   │   ├── progress-271.png.txt
+│       │   │   │   │   ├── progress-272.png.txt
+│       │   │   │   │   ├── progress-273.png.txt
+│       │   │   │   │   ├── progress-274.png.txt                       │       │   │   │   │   ├── progress-275.png.txt
+│       │   │   │   │   ├── progress-276.png.txt
+│       │   │   │   │   ├── progress-277.png.txt                       │       │   │   │   │   ├── progress-278.png.txt
+│       │   │   │   │   ├── progress-279.png.txt                       │       │   │   │   │   ├── progress-28.png.txt
+│       │   │   │   │   ├── progress-280.png.txt
+│       │   │   │   │   ├── progress-281.png.txt                       │       │   │   │   │   ├── progress-282.png.txt
+│       │   │   │   │   ├── progress-283.png.txt                       │       │   │   │   │   ├── progress-284.png.txt
+│       │   │   │   │   ├── progress-285.png.txt
+│       │   │   │   │   ├── progress-286.png.txt
+│       │   │   │   │   ├── progress-287.png.txt
+│       │   │   │   │   ├── progress-288.png.txt
+│       │   │   │   │   ├── progress-289.png.txt                       │       │   │   │   │   ├── progress-29.png.txt
+│       │   │   │   │   ├── progress-290.png.txt
+│       │   │   │   │   ├── progress-291.png.txt
+│       │   │   │   │   ├── progress-292.png.txt                       │       │   │   │   │   ├── progress-293.png.txt
+│       │   │   │   │   ├── progress-294.png.txt                       │       │   │   │   │   ├── progress-295.png.txt
+│       │   │   │   │   ├── progress-296.png.txt                       │       │   │   │   │   ├── progress-297.png.txt
+│       │   │   │   │   ├── progress-298.png.txt
+│       │   │   │   │   ├── progress-299.png.txt
+│       │   │   │   │   ├── progress-3.png.txt                         │       │   │   │   │   ├── progress-30.png.txt
+│       │   │   │   │   ├── progress-300.png.txt                       │       │   │   │   │   ├── progress-301.png.txt
+│       │   │   │   │   ├── progress-302.png.txt
+│       │   │   │   │   ├── progress-303.png.txt                       │       │   │   │   │   ├── progress-304.png.txt
+│       │   │   │   │   ├── progress-305.png.txt
+│       │   │   │   │   ├── progress-306.png.txt
+│       │   │   │   │   ├── progress-307.png.txt                       │       │   │   │   │   ├── progress-308.png.txt
+│       │   │   │   │   ├── progress-309.png.txt                       │       │   │   │   │   ├── progress-31.png.txt
+│       │   │   │   │   ├── progress-310.png.txt                       │       │   │   │   │   ├── progress-311.png.txt
+│       │   │   │   │   ├── progress-312.png.txt                       │       │   │   │   │   ├── progress-313.png.txt
+│       │   │   │   │   ├── progress-314.png.txt                       │       │   │   │   │   ├── progress-315.png.txt
+│       │   │   │   │   ├── progress-316.png.txt
+│       │   │   │   │   ├── progress-317.png.txt
+│       │   │   │   │   ├── progress-318.png.txt
+│       │   │   │   │   ├── progress-319.png.txt
+│       │   │   │   │   ├── progress-32.png.txt                        │       │   │   │   │   ├── progress-320.png.txt
+│       │   │   │   │   ├── progress-321.png.txt
+│       │   │   │   │   ├── progress-322.png.txt
+│       │   │   │   │   ├── progress-323.png.txt
+│       │   │   │   │   ├── progress-324.png.txt
+│       │   │   │   │   ├── progress-325.png.txt
+│       │   │   │   │   ├── progress-326.png.txt                       │       │   │   │   │   ├── progress-327.png.txt
+│       │   │   │   │   ├── progress-328.png.txt
+│       │   │   │   │   ├── progress-329.png.txt                       │       │   │   │   │   ├── progress-33.png.txt
+│       │   │   │   │   ├── progress-330.png.txt                       │       │   │   │   │   ├── progress-331.png.txt
+│       │   │   │   │   ├── progress-332.png.txt
+│       │   │   │   │   ├── progress-333.png.txt
+│       │   │   │   │   ├── progress-334.png.txt                       │       │   │   │   │   ├── progress-335.png.txt
+│       │   │   │   │   ├── progress-336.png.txt
+│       │   │   │   │   ├── progress-337.png.txt
+│       │   │   │   │   ├── progress-338.png.txt
+│       │   │   │   │   ├── progress-339.png.txt
+│       │   │   │   │   ├── progress-34.png.txt
+│       │   │   │   │   ├── progress-340.png.txt
+│       │   │   │   │   ├── progress-341.png.txt
+│       │   │   │   │   ├── progress-342.png.txt
+│       │   │   │   │   ├── progress-343.png.txt
+│       │   │   │   │   ├── progress-344.png.txt
+│       │   │   │   │   ├── progress-345.png.txt                       │       │   │   │   │   ├── progress-346.png.txt
+│       │   │   │   │   ├── progress-347.png.txt
+│       │   │   │   │   ├── progress-348.png.txt
+│       │   │   │   │   ├── progress-349.png.txt
+│       │   │   │   │   ├── progress-35.png.txt
+│       │   │   │   │   ├── progress-350.png.txt
+│       │   │   │   │   ├── progress-351.png.txt
+│       │   │   │   │   ├── progress-352.png.txt
+│       │   │   │   │   ├── progress-353.png.txt
+│       │   │   │   │   ├── progress-354.png.txt
+│       │   │   │   │   ├── progress-355.png.txt
+│       │   │   │   │   ├── progress-356.png.txt
+│       │   │   │   │   ├── progress-357.png.txt
+│       │   │   │   │   ├── progress-358.png.txt
+│       │   │   │   │   ├── progress-359.png.txt
+│       │   │   │   │   ├── progress-36.png.txt
+│       │   │   │   │   ├── progress-360.png.txt
+│       │   │   │   │   ├── progress-361.png.txt
+│       │   │   │   │   ├── progress-362.png.txt
+│       │   │   │   │   ├── progress-363.png.txt
+│       │   │   │   │   ├── progress-364.png.txt
+│       │   │   │   │   ├── progress-365.png.txt
+│       │   │   │   │   ├── progress-366.png.txt
+│       │   │   │   │   ├── progress-367.png.txt
+│       │   │   │   │   ├── progress-368.png.txt
+│       │   │   │   │   ├── progress-369.png.txt
+│       │   │   │   │   ├── progress-37.png.txt
+│       │   │   │   │   ├── progress-370.png.txt
+│       │   │   │   │   ├── progress-371.png.txt
+│       │   │   │   │   ├── progress-372.png.txt
+│       │   │   │   │   ├── progress-373.png.txt
+│       │   │   │   │   ├── progress-374.png.txt
+│       │   │   │   │   ├── progress-38.png.txt
+│       │   │   │   │   ├── progress-39.png.txt
+│       │   │   │   │   ├── progress-4.png.txt
+│       │   │   │   │   ├── progress-40.png.txt
+│       │   │   │   │   ├── progress-41.png.txt
+│       │   │   │   │   ├── progress-42.png.txt
+│       │   │   │   │   ├── progress-43.png.txt
+│       │   │   │   │   ├── progress-44.png.txt
+│       │   │   │   │   ├── progress-45.png.txt
+│       │   │   │   │   ├── progress-46.png.txt
+│       │   │   │   │   ├── progress-47.png.txt
+│       │   │   │   │   ├── progress-48.png.txt
+│       │   │   │   │   ├── progress-49.png.txt
+│       │   │   │   │   ├── progress-5.png.txt
+│       │   │   │   │   ├── progress-50.png.txt
+│       │   │   │   │   ├── progress-51.png.txt
+│       │   │   │   │   ├── progress-52.png.txt
+│       │   │   │   │   ├── progress-53.png.txt
+│       │   │   │   │   ├── progress-54.png.txt
+│       │   │   │   │   ├── progress-55.png.txt
+│       │   │   │   │   ├── progress-56.png.txt
+│       │   │   │   │   ├── progress-57.png.txt
+│       │   │   │   │   ├── progress-58.png.txt
+│       │   │   │   │   ├── progress-59.png.txt
+│       │   │   │   │   ├── progress-6.png.txt
+│       │   │   │   │   ├── progress-60.png.txt                        │       │   │   │   │   ├── progress-61.png.txt
+│       │   │   │   │   ├── progress-62.png.txt                        │       │   │   │   │   ├── progress-63.png.txt
+│       │   │   │   │   ├── progress-64.png.txt                        │       │   │   │   │   ├── progress-65.png.txt
+│       │   │   │   │   ├── progress-66.png.txt                        │       │   │   │   │   ├── progress-67.png.txt
+│       │   │   │   │   ├── progress-68.png.txt                        │       │   │   │   │   ├── progress-69.png.txt
+│       │   │   │   │   ├── progress-7.png.txt                         │       │   │   │   │   ├── progress-70.png.txt
+│       │   │   │   │   ├── progress-71.png.txt                        │       │   │   │   │   ├── progress-72.png.txt
+│       │   │   │   │   ├── progress-73.png.txt                        │       │   │   │   │   ├── progress-74.png.txt
+│       │   │   │   │   ├── progress-75.png.txt
+│       │   │   │   │   ├── progress-76.png.txt
+│       │   │   │   │   ├── progress-77.png.txt
+│       │   │   │   │   ├── progress-78.png.txt
+│       │   │   │   │   ├── progress-79.png.txt
+│       │   │   │   │   ├── progress-8.png.txt                         │       │   │   │   │   ├── progress-80.png.txt
+│       │   │   │   │   ├── progress-81.png.txt
+│       │   │   │   │   ├── progress-82.png.txt
+│       │   │   │   │   ├── progress-83.png.txt
+│       │   │   │   │   ├── progress-84.png.txt                        │       │   │   │   │   ├── progress-85.png.txt
+│       │   │   │   │   ├── progress-86.png.txt                        │       │   │   │   │   ├── progress-87.png.txt
+│       │   │   │   │   ├── progress-88.png.txt
+│       │   │   │   │   ├── progress-89.png.txt
+│       │   │   │   │   ├── progress-9.png.txt
+│       │   │   │   │   ├── progress-90.png.txt                        │       │   │   │   │   ├── progress-91.png.txt
+│       │   │   │   │   ├── progress-92.png.txt                        │       │   │   │   │   ├── progress-93.png.txt
+│       │   │   │   │   ├── progress-94.png.txt
+│       │   │   │   │   ├── progress-95.png.txt                        │       │   │   │   │   ├── progress-96.png.txt
+│       │   │   │   │   ├── progress-97.png.txt
+│       │   │   │   │   ├── progress-98.png.txt                        │       │   │   │   │   └── progress-99.png.txt
+│       │   │   │   └── deus_ex_yellow                                 │       │   │   │       ├── progress-0.png.txt
+│       │   │   │       ├── progress-1.png.txt                         │       │   │   │       ├── progress-10.png.txt
+│       │   │   │       ├── progress-100.png.txt
+│       │   │   │       ├── progress-101.png.txt
+│       │   │   │       ├── progress-102.png.txt
+│       │   │   │       ├── progress-103.png.txt
+│       │   │   │       ├── progress-104.png.txt
+│       │   │   │       ├── progress-105.png.txt
+│       │   │   │       ├── progress-106.png.txt
+│       │   │   │       ├── progress-107.png.txt
+│       │   │   │       ├── progress-108.png.txt
+│       │   │   │       ├── progress-109.png.txt                       │       │   │   │       ├── progress-11.png.txt
+│       │   │   │       ├── progress-110.png.txt                       │       │   │   │       ├── progress-111.png.txt
+│       │   │   │       ├── progress-112.png.txt                       │       │   │   │       ├── progress-113.png.txt
+│       │   │   │       ├── progress-114.png.txt                       │       │   │   │       ├── progress-115.png.txt
+│       │   │   │       ├── progress-116.png.txt                       │       │   │   │       ├── progress-117.png.txt
+│       │   │   │       ├── progress-118.png.txt                       │       │   │   │       ├── progress-119.png.txt
+│       │   │   │       ├── progress-12.png.txt
+│       │   │   │       ├── progress-120.png.txt                       │       │   │   │       ├── progress-121.png.txt
+│       │   │   │       ├── progress-122.png.txt
+│       │   │   │       ├── progress-123.png.txt
+│       │   │   │       ├── progress-124.png.txt
+│       │   │   │       ├── progress-125.png.txt
+│       │   │   │       ├── progress-126.png.txt
+│       │   │   │       ├── progress-127.png.txt
+│       │   │   │       ├── progress-128.png.txt                       │       │   │   │       ├── progress-129.png.txt
+│       │   │   │       ├── progress-13.png.txt                        │       │   │   │       ├── progress-130.png.txt
+│       │   │   │       ├── progress-131.png.txt                       │       │   │   │       ├── progress-132.png.txt
+│       │   │   │       ├── progress-133.png.txt
+│       │   │   │       ├── progress-134.png.txt
+│       │   │   │       ├── progress-135.png.txt                       │       │   │   │       ├── progress-136.png.txt
+│       │   │   │       ├── progress-137.png.txt                       │       │   │   │       ├── progress-138.png.txt
+│       │   │   │       ├── progress-139.png.txt                       │       │   │   │       ├── progress-14.png.txt
+│       │   │   │       ├── progress-140.png.txt
+│       │   │   │       ├── progress-141.png.txt
+│       │   │   │       ├── progress-142.png.txt                       │       │   │   │       ├── progress-143.png.txt
+│       │   │   │       ├── progress-144.png.txt                       │       │   │   │       ├── progress-145.png.txt
+│       │   │   │       ├── progress-146.png.txt                       │       │   │   │       ├── progress-147.png.txt
+│       │   │   │       ├── progress-148.png.txt                       │       │   │   │       ├── progress-149.png.txt
+│       │   │   │       ├── progress-15.png.txt
+│       │   │   │       ├── progress-150.png.txt
+│       │   │   │       ├── progress-151.png.txt
+│       │   │   │       ├── progress-152.png.txt
+│       │   │   │       ├── progress-153.png.txt                       │       │   │   │       ├── progress-154.png.txt
+│       │   │   │       ├── progress-155.png.txt
+│       │   │   │       ├── progress-156.png.txt
+│       │   │   │       ├── progress-157.png.txt
+│       │   │   │       ├── progress-158.png.txt                       │       │   │   │       ├── progress-159.png.txt
+│       │   │   │       ├── progress-16.png.txt                        │       │   │   │       ├── progress-160.png.txt
+│       │   │   │       ├── progress-161.png.txt
+│       │   │   │       ├── progress-162.png.txt
+│       │   │   │       ├── progress-163.png.txt
+│       │   │   │       ├── progress-164.png.txt                       │       │   │   │       ├── progress-165.png.txt
+│       │   │   │       ├── progress-166.png.txt
+│       │   │   │       ├── progress-167.png.txt
+│       │   │   │       ├── progress-168.png.txt
+│       │   │   │       ├── progress-169.png.txt
+│       │   │   │       ├── progress-17.png.txt
+│       │   │   │       ├── progress-170.png.txt
+│       │   │   │       ├── progress-171.png.txt
+│       │   │   │       ├── progress-172.png.txt
+│       │   │   │       ├── progress-173.png.txt
+│       │   │   │       ├── progress-174.png.txt
+│       │   │   │       ├── progress-175.png.txt
+│       │   │   │       ├── progress-176.png.txt
+│       │   │   │       ├── progress-177.png.txt
+│       │   │   │       ├── progress-178.png.txt
+│       │   │   │       ├── progress-179.png.txt
+│       │   │   │       ├── progress-18.png.txt
+│       │   │   │       ├── progress-180.png.txt
+│       │   │   │       ├── progress-181.png.txt
+│       │   │   │       ├── progress-182.png.txt
+│       │   │   │       ├── progress-183.png.txt
+│       │   │   │       ├── progress-184.png.txt
+│       │   │   │       ├── progress-185.png.txt
+│       │   │   │       ├── progress-186.png.txt
+│       │   │   │       ├── progress-187.png.txt
+│       │   │   │       ├── progress-188.png.txt
+│       │   │   │       ├── progress-189.png.txt
+│       │   │   │       ├── progress-19.png.txt
+│       │   │   │       ├── progress-190.png.txt
+│       │   │   │       ├── progress-191.png.txt
+│       │   │   │       ├── progress-192.png.txt
+│       │   │   │       ├── progress-193.png.txt
+│       │   │   │       ├── progress-194.png.txt
+│       │   │   │       ├── progress-195.png.txt
+│       │   │   │       ├── progress-196.png.txt
+│       │   │   │       ├── progress-197.png.txt
+│       │   │   │       ├── progress-198.png.txt
+│       │   │   │       ├── progress-199.png.txt
+│       │   │   │       ├── progress-2.png.txt
+│       │   │   │       ├── progress-20.png.txt
+│       │   │   │       ├── progress-200.png.txt
+│       │   │   │       ├── progress-201.png.txt
+│       │   │   │       ├── progress-202.png.txt
+│       │   │   │       ├── progress-203.png.txt
+│       │   │   │       ├── progress-204.png.txt
+│       │   │   │       ├── progress-205.png.txt
+│       │   │   │       ├── progress-206.png.txt
+│       │   │   │       ├── progress-207.png.txt
+│       │   │   │       ├── progress-208.png.txt
+│       │   │   │       ├── progress-209.png.txt
+│       │   │   │       ├── progress-21.png.txt
+│       │   │   │       ├── progress-210.png.txt
+│       │   │   │       ├── progress-211.png.txt
+│       │   │   │       ├── progress-212.png.txt
+│       │   │   │       ├── progress-213.png.txt
+│       │   │   │       ├── progress-214.png.txt
+│       │   │   │       ├── progress-215.png.txt
+│       │   │   │       ├── progress-216.png.txt
+│       │   │   │       ├── progress-217.png.txt
+│       │   │   │       ├── progress-218.png.txt
+│       │   │   │       ├── progress-219.png.txt
+│       │   │   │       ├── progress-22.png.txt
+│       │   │   │       ├── progress-220.png.txt
+│       │   │   │       ├── progress-221.png.txt
+│       │   │   │       ├── progress-222.png.txt
+│       │   │   │       ├── progress-223.png.txt
+│       │   │   │       ├── progress-224.png.txt
+│       │   │   │       ├── progress-225.png.txt
+│       │   │   │       ├── progress-226.png.txt
+│       │   │   │       ├── progress-227.png.txt
+│       │   │   │       ├── progress-228.png.txt
+│       │   │   │       ├── progress-229.png.txt
+│       │   │   │       ├── progress-23.png.txt
+│       │   │   │       ├── progress-230.png.txt
+│       │   │   │       ├── progress-231.png.txt
+│       │   │   │       ├── progress-232.png.txt
+│       │   │   │       ├── progress-233.png.txt
+│       │   │   │       ├── progress-234.png.txt
+│       │   │   │       ├── progress-235.png.txt
+│       │   │   │       ├── progress-236.png.txt
+│       │   │   │       ├── progress-237.png.txt
+│       │   │   │       ├── progress-238.png.txt
+│       │   │   │       ├── progress-239.png.txt
+│       │   │   │       ├── progress-24.png.txt
+│       │   │   │       ├── progress-240.png.txt
+│       │   │   │       ├── progress-241.png.txt
+│       │   │   │       ├── progress-242.png.txt
+│       │   │   │       ├── progress-243.png.txt
+│       │   │   │       ├── progress-244.png.txt
+│       │   │   │       ├── progress-245.png.txt
+│       │   │   │       ├── progress-246.png.txt
+│       │   │   │       ├── progress-247.png.txt
+│       │   │   │       ├── progress-248.png.txt
+│       │   │   │       ├── progress-249.png.txt
+│       │   │   │       ├── progress-25.png.txt
+│       │   │   │       ├── progress-250.png.txt
+│       │   │   │       ├── progress-251.png.txt
+│       │   │   │       ├── progress-252.png.txt
+│       │   │   │       ├── progress-253.png.txt
+│       │   │   │       ├── progress-254.png.txt
+│       │   │   │       ├── progress-255.png.txt
+│       │   │   │       ├── progress-256.png.txt
+│       │   │   │       ├── progress-257.png.txt
+│       │   │   │       ├── progress-258.png.txt
+│       │   │   │       ├── progress-259.png.txt
+│       │   │   │       ├── progress-26.png.txt
+│       │   │   │       ├── progress-260.png.txt
+│       │   │   │       ├── progress-261.png.txt
+│       │   │   │       ├── progress-262.png.txt
+│       │   │   │       ├── progress-263.png.txt
+│       │   │   │       ├── progress-264.png.txt
+│       │   │   │       ├── progress-265.png.txt
+│       │   │   │       ├── progress-266.png.txt
+│       │   │   │       ├── progress-267.png.txt
+│       │   │   │       ├── progress-268.png.txt
+│       │   │   │       ├── progress-269.png.txt
+│       │   │   │       ├── progress-27.png.txt
+│       │   │   │       ├── progress-270.png.txt
+│       │   │   │       ├── progress-271.png.txt
+│       │   │   │       ├── progress-272.png.txt
+│       │   │   │       ├── progress-273.png.txt
+│       │   │   │       ├── progress-274.png.txt
+│       │   │   │       ├── progress-275.png.txt
+│       │   │   │       ├── progress-276.png.txt
+│       │   │   │       ├── progress-277.png.txt
+│       │   │   │       ├── progress-278.png.txt
+│       │   │   │       ├── progress-279.png.txt
+│       │   │   │       ├── progress-28.png.txt
+│       │   │   │       ├── progress-280.png.txt
+│       │   │   │       ├── progress-281.png.txt
+│       │   │   │       ├── progress-282.png.txt
+│       │   │   │       ├── progress-283.png.txt
+│       │   │   │       ├── progress-284.png.txt
+│       │   │   │       ├── progress-285.png.txt
+│       │   │   │       ├── progress-286.png.txt
+│       │   │   │       ├── progress-287.png.txt
+│       │   │   │       ├── progress-288.png.txt
+│       │   │   │       ├── progress-289.png.txt
+│       │   │   │       ├── progress-29.png.txt
+│       │   │   │       ├── progress-290.png.txt
+│       │   │   │       ├── progress-291.png.txt
+│       │   │   │       ├── progress-292.png.txt
+│       │   │   │       ├── progress-293.png.txt
+│       │   │   │       ├── progress-294.png.txt
+│       │   │   │       ├── progress-295.png.txt
+│       │   │   │       ├── progress-296.png.txt
+│       │   │   │       ├── progress-297.png.txt
+│       │   │   │       ├── progress-298.png.txt
+│       │   │   │       ├── progress-299.png.txt
+│       │   │   │       ├── progress-3.png.txt
+│       │   │   │       ├── progress-30.png.txt
+│       │   │   │       ├── progress-300.png.txt
+│       │   │   │       ├── progress-301.png.txt
+│       │   │   │       ├── progress-302.png.txt
+│       │   │   │       ├── progress-303.png.txt
+│       │   │   │       ├── progress-304.png.txt
+│       │   │   │       ├── progress-305.png.txt
+│       │   │   │       ├── progress-306.png.txt
+│       │   │   │       ├── progress-307.png.txt
+│       │   │   │       ├── progress-308.png.txt
+│       │   │   │       ├── progress-309.png.txt
+│       │   │   │       ├── progress-31.png.txt
+│       │   │   │       ├── progress-310.png.txt
+│       │   │   │       ├── progress-311.png.txt
+│       │   │   │       ├── progress-312.png.txt
+│       │   │   │       ├── progress-313.png.txt
+│       │   │   │       ├── progress-314.png.txt
+│       │   │   │       ├── progress-315.png.txt
+│       │   │   │       ├── progress-316.png.txt
+│       │   │   │       ├── progress-317.png.txt
+│       │   │   │       ├── progress-318.png.txt
+│       │   │   │       ├── progress-319.png.txt
+│       │   │   │       ├── progress-32.png.txt
+│       │   │   │       ├── progress-320.png.txt
+│       │   │   │       ├── progress-321.png.txt
+│       │   │   │       ├── progress-322.png.txt
+│       │   │   │       ├── progress-323.png.txt
+│       │   │   │       ├── progress-324.png.txt
+│       │   │   │       ├── progress-325.png.txt
+│       │   │   │       ├── progress-326.png.txt
+│       │   │   │       ├── progress-327.png.txt
+│       │   │   │       ├── progress-328.png.txt
+│       │   │   │       ├── progress-329.png.txt
+│       │   │   │       ├── progress-33.png.txt
+│       │   │   │       ├── progress-330.png.txt
+│       │   │   │       ├── progress-331.png.txt
+│       │   │   │       ├── progress-332.png.txt
+│       │   │   │       ├── progress-333.png.txt
+│       │   │   │       ├── progress-334.png.txt
+│       │   │   │       ├── progress-335.png.txt
+│       │   │   │       ├── progress-336.png.txt
+│       │   │   │       ├── progress-337.png.txt
+│       │   │   │       ├── progress-338.png.txt
+│       │   │   │       ├── progress-339.png.txt                       │       │   │   │       ├── progress-34.png.txt
+│       │   │   │       ├── progress-340.png.txt                       │       │   │   │       ├── progress-341.png.txt
+│       │   │   │       ├── progress-342.png.txt
+│       │   │   │       ├── progress-343.png.txt                       │       │   │   │       ├── progress-344.png.txt
+│       │   │   │       ├── progress-345.png.txt                       │       │   │   │       ├── progress-346.png.txt
+│       │   │   │       ├── progress-347.png.txt                       │       │   │   │       ├── progress-348.png.txt
+│       │   │   │       ├── progress-349.png.txt                       │       │   │   │       ├── progress-35.png.txt
+│       │   │   │       ├── progress-350.png.txt                       │       │   │   │       ├── progress-351.png.txt
+│       │   │   │       ├── progress-352.png.txt
+│       │   │   │       ├── progress-353.png.txt
+│       │   │   │       ├── progress-354.png.txt
+│       │   │   │       ├── progress-355.png.txt
+│       │   │   │       ├── progress-356.png.txt
+│       │   │   │       ├── progress-357.png.txt
+│       │   │   │       ├── progress-358.png.txt
+│       │   │   │       ├── progress-359.png.txt
+│       │   │   │       ├── progress-36.png.txt
+│       │   │   │       ├── progress-360.png.txt
+│       │   │   │       ├── progress-361.png.txt
+│       │   │   │       ├── progress-362.png.txt                       │       │   │   │       ├── progress-363.png.txt
+│       │   │   │       ├── progress-364.png.txt
+│       │   │   │       ├── progress-365.png.txt
+│       │   │   │       ├── progress-366.png.txt
+│       │   │   │       ├── progress-367.png.txt
+│       │   │   │       ├── progress-368.png.txt
+│       │   │   │       ├── progress-369.png.txt
+│       │   │   │       ├── progress-37.png.txt
+│       │   │   │       ├── progress-370.png.txt                       │       │   │   │       ├── progress-371.png.txt
+│       │   │   │       ├── progress-372.png.txt
+│       │   │   │       ├── progress-373.png.txt
+│       │   │   │       ├── progress-374.png.txt
+│       │   │   │       ├── progress-38.png.txt
+│       │   │   │       ├── progress-39.png.txt
+│       │   │   │       ├── progress-4.png.txt
+│       │   │   │       ├── progress-40.png.txt
+│       │   │   │       ├── progress-41.png.txt
+│       │   │   │       ├── progress-42.png.txt
+│       │   │   │       ├── progress-43.png.txt
+│       │   │   │       ├── progress-44.png.txt
+│       │   │   │       ├── progress-45.png.txt
+│       │   │   │       ├── progress-46.png.txt
+│       │   │   │       ├── progress-47.png.txt                        │       │   │   │       ├── progress-48.png.txt
+│       │   │   │       ├── progress-49.png.txt
+│       │   │   │       ├── progress-5.png.txt
+│       │   │   │       ├── progress-50.png.txt
+│       │   │   │       ├── progress-51.png.txt
+│       │   │   │       ├── progress-52.png.txt
+│       │   │   │       ├── progress-53.png.txt
+│       │   │   │       ├── progress-54.png.txt
+│       │   │   │       ├── progress-55.png.txt
+│       │   │   │       ├── progress-56.png.txt
+│       │   │   │       ├── progress-57.png.txt
+│       │   │   │       ├── progress-58.png.txt
+│       │   │   │       ├── progress-59.png.txt
+│       │   │   │       ├── progress-6.png.txt
+│       │   │   │       ├── progress-60.png.txt
+│       │   │   │       ├── progress-61.png.txt
+│       │   │   │       ├── progress-62.png.txt
+│       │   │   │       ├── progress-63.png.txt
+│       │   │   │       ├── progress-64.png.txt
+│       │   │   │       ├── progress-65.png.txt
+│       │   │   │       ├── progress-66.png.txt
+│       │   │   │       ├── progress-67.png.txt
+│       │   │   │       ├── progress-68.png.txt
+│       │   │   │       ├── progress-69.png.txt
+│       │   │   │       ├── progress-7.png.txt                         │       │   │   │       ├── progress-70.png.txt
+│       │   │   │       ├── progress-71.png.txt
+│       │   │   │       ├── progress-72.png.txt
+│       │   │   │       ├── progress-73.png.txt
+│       │   │   │       ├── progress-74.png.txt
+│       │   │   │       ├── progress-75.png.txt
+│       │   │   │       ├── progress-76.png.txt
+│       │   │   │       ├── progress-77.png.txt
+│       │   │   │       ├── progress-78.png.txt
+│       │   │   │       ├── progress-79.png.txt
+│       │   │   │       ├── progress-8.png.txt
+│       │   │   │       ├── progress-80.png.txt
+│       │   │   │       ├── progress-81.png.txt
+│       │   │   │       ├── progress-82.png.txt
+│       │   │   │       ├── progress-83.png.txt
+│       │   │   │       ├── progress-84.png.txt
+│       │   │   │       ├── progress-85.png.txt
+│       │   │   │       ├── progress-86.png.txt
+│       │   │   │       ├── progress-87.png.txt
+│       │   │   │       ├── progress-88.png.txt
+│       │   │   │       ├── progress-89.png.txt
+│       │   │   │       ├── progress-9.png.txt
+│       │   │   │       ├── progress-90.png.txt
+│       │   │   │       ├── progress-91.png.txt
+│       │   │   │       ├── progress-92.png.txt
+│       │   │   │       ├── progress-93.png.txt
+│       │   │   │       ├── progress-94.png.txt
+│       │   │   │       ├── progress-95.png.txt
+│       │   │   │       ├── progress-96.png.txt
+│       │   │   │       ├── progress-97.png.txt
+│       │   │   │       ├── progress-98.png.txt
+│       │   │   │       └── progress-99.png.txt
+│       │   │   ├── black_hud.gif
+│       │   │   ├── circle_hud.gif
+│       │   │   ├── deus_ex.gif
+│       │   │   ├── glitch.gif
+│       │   │   ├── image
+│       │   │   │   ├── README.md
+│       │   │   │   ├── deus_ex
+│       │   │   │   │   ├── progress-0.png
+│       │   │   │   │   ├── progress-1.png
+│       │   │   │   │   ├── progress-10.png
+│       │   │   │   │   ├── progress-100.png
+│       │   │   │   │   ├── progress-101.png
+│       │   │   │   │   ├── progress-102.png
+│       │   │   │   │   ├── progress-103.png
+│       │   │   │   │   ├── progress-104.png
+│       │   │   │   │   ├── progress-105.png
+│       │   │   │   │   ├── progress-106.png
+│       │   │   │   │   ├── progress-107.png
+│       │   │   │   │   ├── progress-108.png
+│       │   │   │   │   ├── progress-109.png
+│       │   │   │   │   ├── progress-11.png
+│       │   │   │   │   ├── progress-110.png
+│       │   │   │   │   ├── progress-111.png
+│       │   │   │   │   ├── progress-112.png
+│       │   │   │   │   ├── progress-113.png
+│       │   │   │   │   ├── progress-114.png
+│       │   │   │   │   ├── progress-115.png
+│       │   │   │   │   ├── progress-116.png
+│       │   │   │   │   ├── progress-117.png
+│       │   │   │   │   ├── progress-118.png
+│       │   │   │   │   ├── progress-119.png
+│       │   │   │   │   ├── progress-12.png
+│       │   │   │   │   ├── progress-120.png
+│       │   │   │   │   ├── progress-121.png
+│       │   │   │   │   ├── progress-122.png
+│       │   │   │   │   ├── progress-123.png
+│       │   │   │   │   ├── progress-124.png
+│       │   │   │   │   ├── progress-125.png
+│       │   │   │   │   ├── progress-126.png
+│       │   │   │   │   ├── progress-127.png
+│       │   │   │   │   ├── progress-128.png
+│       │   │   │   │   ├── progress-129.png
+│       │   │   │   │   ├── progress-13.png
+│       │   │   │   │   ├── progress-130.png
+│       │   │   │   │   ├── progress-131.png
+│       │   │   │   │   ├── progress-132.png
+│       │   │   │   │   ├── progress-133.png
+│       │   │   │   │   ├── progress-134.png
+│       │   │   │   │   ├── progress-135.png
+│       │   │   │   │   ├── progress-136.png
+│       │   │   │   │   ├── progress-137.png
+│       │   │   │   │   ├── progress-138.png
+│       │   │   │   │   ├── progress-139.png
+│       │   │   │   │   ├── progress-14.png
+│       │   │   │   │   ├── progress-140.png
+│       │   │   │   │   ├── progress-141.png
+│       │   │   │   │   ├── progress-142.png
+│       │   │   │   │   ├── progress-143.png
+│       │   │   │   │   ├── progress-144.png
+│       │   │   │   │   ├── progress-145.png
+│       │   │   │   │   ├── progress-146.png
+│       │   │   │   │   ├── progress-147.png
+│       │   │   │   │   ├── progress-148.png
+│       │   │   │   │   ├── progress-149.png
+│       │   │   │   │   ├── progress-15.png
+│       │   │   │   │   ├── progress-150.png
+│       │   │   │   │   ├── progress-151.png
+│       │   │   │   │   ├── progress-152.png
+│       │   │   │   │   ├── progress-153.png
+│       │   │   │   │   ├── progress-154.png
+│       │   │   │   │   ├── progress-155.png
+│       │   │   │   │   ├── progress-156.png
+│       │   │   │   │   ├── progress-157.png
+│       │   │   │   │   ├── progress-158.png
+│       │   │   │   │   ├── progress-159.png
+│       │   │   │   │   ├── progress-16.png
+│       │   │   │   │   ├── progress-160.png
+│       │   │   │   │   ├── progress-161.png
+│       │   │   │   │   ├── progress-162.png
+│       │   │   │   │   ├── progress-163.png
+│       │   │   │   │   ├── progress-164.png
+│       │   │   │   │   ├── progress-165.png
+│       │   │   │   │   ├── progress-166.png
+│       │   │   │   │   ├── progress-167.png
+│       │   │   │   │   ├── progress-168.png
+│       │   │   │   │   ├── progress-169.png
+│       │   │   │   │   ├── progress-17.png
+│       │   │   │   │   ├── progress-170.png
+│       │   │   │   │   ├── progress-171.png
+│       │   │   │   │   ├── progress-172.png
+│       │   │   │   │   ├── progress-173.png
+│       │   │   │   │   ├── progress-174.png
+│       │   │   │   │   ├── progress-175.png
+│       │   │   │   │   ├── progress-176.png
+│       │   │   │   │   ├── progress-177.png
+│       │   │   │   │   ├── progress-178.png
+│       │   │   │   │   ├── progress-179.png
+│       │   │   │   │   ├── progress-18.png
+│       │   │   │   │   ├── progress-180.png
+│       │   │   │   │   ├── progress-181.png
+│       │   │   │   │   ├── progress-182.png
+│       │   │   │   │   ├── progress-183.png
+│       │   │   │   │   ├── progress-184.png
+│       │   │   │   │   ├── progress-185.png
+│       │   │   │   │   ├── progress-186.png
+│       │   │   │   │   ├── progress-187.png
+│       │   │   │   │   ├── progress-188.png
+│       │   │   │   │   ├── progress-189.png
+│       │   │   │   │   ├── progress-19.png
+│       │   │   │   │   ├── progress-190.png
+│       │   │   │   │   ├── progress-191.png
+│       │   │   │   │   ├── progress-192.png
+│       │   │   │   │   ├── progress-193.png
+│       │   │   │   │   ├── progress-194.png
+│       │   │   │   │   ├── progress-195.png
+│       │   │   │   │   ├── progress-196.png
+│       │   │   │   │   ├── progress-197.png
+│       │   │   │   │   ├── progress-198.png
+│       │   │   │   │   ├── progress-199.png
+│       │   │   │   │   ├── progress-2.png
+│       │   │   │   │   ├── progress-20.png
+│       │   │   │   │   ├── progress-200.png
+│       │   │   │   │   ├── progress-201.png
+│       │   │   │   │   ├── progress-202.png
+│       │   │   │   │   ├── progress-203.png
+│       │   │   │   │   ├── progress-204.png
+│       │   │   │   │   ├── progress-205.png
+│       │   │   │   │   ├── progress-206.png
+│       │   │   │   │   ├── progress-207.png
+│       │   │   │   │   ├── progress-208.png
+│       │   │   │   │   ├── progress-209.png
+│       │   │   │   │   ├── progress-21.png
+│       │   │   │   │   ├── progress-210.png
+│       │   │   │   │   ├── progress-211.png
+│       │   │   │   │   ├── progress-212.png
+│       │   │   │   │   ├── progress-213.png
+│       │   │   │   │   ├── progress-214.png
+│       │   │   │   │   ├── progress-215.png
+│       │   │   │   │   ├── progress-216.png
+│       │   │   │   │   ├── progress-217.png
+│       │   │   │   │   ├── progress-218.png
+│       │   │   │   │   ├── progress-219.png
+│       │   │   │   │   ├── progress-22.png
+│       │   │   │   │   ├── progress-220.png
+│       │   │   │   │   ├── progress-221.png
+│       │   │   │   │   ├── progress-222.png
+│       │   │   │   │   ├── progress-223.png
+│       │   │   │   │   ├── progress-224.png
+│       │   │   │   │   ├── progress-225.png
+│       │   │   │   │   ├── progress-226.png
+│       │   │   │   │   ├── progress-227.png
+│       │   │   │   │   ├── progress-228.png
+│       │   │   │   │   ├── progress-229.png
+│       │   │   │   │   ├── progress-23.png
+│       │   │   │   │   ├── progress-230.png
+│       │   │   │   │   ├── progress-231.png
+│       │   │   │   │   ├── progress-232.png
+│       │   │   │   │   ├── progress-233.png                           │       │   │   │   │   ├── progress-234.png
+│       │   │   │   │   ├── progress-235.png                           │       │   │   │   │   ├── progress-236.png
+│       │   │   │   │   ├── progress-237.png
+│       │   │   │   │   ├── progress-238.png                           │       │   │   │   │   ├── progress-239.png
+│       │   │   │   │   ├── progress-24.png                            │       │   │   │   │   ├── progress-240.png
+│       │   │   │   │   ├── progress-241.png                           │       │   │   │   │   ├── progress-242.png
+│       │   │   │   │   ├── progress-243.png                           │       │   │   │   │   ├── progress-244.png
+│       │   │   │   │   ├── progress-245.png                           │       │   │   │   │   ├── progress-246.png
+│       │   │   │   │   ├── progress-247.png
+│       │   │   │   │   ├── progress-248.png
+│       │   │   │   │   ├── progress-249.png
+│       │   │   │   │   ├── progress-25.png
+│       │   │   │   │   ├── progress-250.png
+│       │   │   │   │   ├── progress-251.png
+│       │   │   │   │   ├── progress-252.png
+│       │   │   │   │   ├── progress-253.png
+│       │   │   │   │   ├── progress-254.png
+│       │   │   │   │   ├── progress-255.png
+│       │   │   │   │   ├── progress-256.png
+│       │   │   │   │   ├── progress-257.png
+│       │   │   │   │   ├── progress-258.png
+│       │   │   │   │   ├── progress-259.png
+│       │   │   │   │   ├── progress-26.png
+│       │   │   │   │   ├── progress-260.png
+│       │   │   │   │   ├── progress-261.png
+│       │   │   │   │   ├── progress-262.png
+│       │   │   │   │   ├── progress-263.png
+│       │   │   │   │   ├── progress-264.png
+│       │   │   │   │   ├── progress-265.png                           │       │   │   │   │   ├── progress-266.png
+│       │   │   │   │   ├── progress-267.png
+│       │   │   │   │   ├── progress-268.png
+│       │   │   │   │   ├── progress-269.png
+│       │   │   │   │   ├── progress-27.png
+│       │   │   │   │   ├── progress-270.png
+│       │   │   │   │   ├── progress-271.png
+│       │   │   │   │   ├── progress-272.png
+│       │   │   │   │   ├── progress-273.png
+│       │   │   │   │   ├── progress-274.png
+│       │   │   │   │   ├── progress-275.png
+│       │   │   │   │   ├── progress-276.png
+│       │   │   │   │   ├── progress-277.png
+│       │   │   │   │   ├── progress-278.png
+│       │   │   │   │   ├── progress-279.png                           │       │   │   │   │   ├── progress-28.png
+│       │   │   │   │   ├── progress-280.png
+│       │   │   │   │   ├── progress-281.png
+│       │   │   │   │   ├── progress-282.png
+│       │   │   │   │   ├── progress-283.png
+│       │   │   │   │   ├── progress-284.png
+│       │   │   │   │   ├── progress-285.png
+│       │   │   │   │   ├── progress-286.png
+│       │   │   │   │   ├── progress-287.png
+│       │   │   │   │   ├── progress-288.png
+│       │   │   │   │   ├── progress-289.png
+│       │   │   │   │   ├── progress-29.png
+│       │   │   │   │   ├── progress-290.png
+│       │   │   │   │   ├── progress-291.png
+│       │   │   │   │   ├── progress-292.png
+│       │   │   │   │   ├── progress-293.png
+│       │   │   │   │   ├── progress-294.png
+│       │   │   │   │   ├── progress-295.png
+│       │   │   │   │   ├── progress-296.png
+│       │   │   │   │   ├── progress-297.png
+│       │   │   │   │   ├── progress-298.png
+│       │   │   │   │   ├── progress-299.png
+│       │   │   │   │   ├── progress-3.png
+│       │   │   │   │   ├── progress-30.png
+│       │   │   │   │   ├── progress-300.png                           │       │   │   │   │   ├── progress-301.png
+│       │   │   │   │   ├── progress-302.png
+│       │   │   │   │   ├── progress-303.png
+│       │   │   │   │   ├── progress-304.png
+│       │   │   │   │   ├── progress-305.png
+│       │   │   │   │   ├── progress-306.png
+│       │   │   │   │   ├── progress-307.png
+│       │   │   │   │   ├── progress-308.png
+│       │   │   │   │   ├── progress-309.png
+│       │   │   │   │   ├── progress-31.png
+│       │   │   │   │   ├── progress-310.png
+│       │   │   │   │   ├── progress-311.png
+│       │   │   │   │   ├── progress-312.png
+│       │   │   │   │   ├── progress-313.png
+│       │   │   │   │   ├── progress-314.png
+│       │   │   │   │   ├── progress-315.png
+│       │   │   │   │   ├── progress-316.png
+│       │   │   │   │   ├── progress-317.png
+│       │   │   │   │   ├── progress-318.png
+│       │   │   │   │   ├── progress-319.png
+│       │   │   │   │   ├── progress-32.png
+│       │   │   │   │   ├── progress-320.png
+│       │   │   │   │   ├── progress-321.png
+│       │   │   │   │   ├── progress-322.png
+│       │   │   │   │   ├── progress-323.png
+│       │   │   │   │   ├── progress-324.png
+│       │   │   │   │   ├── progress-325.png
+│       │   │   │   │   ├── progress-326.png
+│       │   │   │   │   ├── progress-327.png
+│       │   │   │   │   ├── progress-328.png
+│       │   │   │   │   ├── progress-329.png
+│       │   │   │   │   ├── progress-33.png
+│       │   │   │   │   ├── progress-330.png
+│       │   │   │   │   ├── progress-331.png
+│       │   │   │   │   ├── progress-332.png
+│       │   │   │   │   ├── progress-333.png
+│       │   │   │   │   ├── progress-334.png
+│       │   │   │   │   ├── progress-335.png
+│       │   │   │   │   ├── progress-336.png
+│       │   │   │   │   ├── progress-337.png
+│       │   │   │   │   ├── progress-338.png
+│       │   │   │   │   ├── progress-339.png
+│       │   │   │   │   ├── progress-34.png
+│       │   │   │   │   ├── progress-340.png
+│       │   │   │   │   ├── progress-341.png
+│       │   │   │   │   ├── progress-342.png
+│       │   │   │   │   ├── progress-343.png
+│       │   │   │   │   ├── progress-344.png
+│       │   │   │   │   ├── progress-345.png
+│       │   │   │   │   ├── progress-346.png
+│       │   │   │   │   ├── progress-347.png
+│       │   │   │   │   ├── progress-348.png
+│       │   │   │   │   ├── progress-349.png
+│       │   │   │   │   ├── progress-35.png
+│       │   │   │   │   ├── progress-350.png
+│       │   │   │   │   ├── progress-351.png
+│       │   │   │   │   ├── progress-352.png
+│       │   │   │   │   ├── progress-353.png
+│       │   │   │   │   ├── progress-354.png
+│       │   │   │   │   ├── progress-355.png
+│       │   │   │   │   ├── progress-356.png
+│       │   │   │   │   ├── progress-357.png
+│       │   │   │   │   ├── progress-358.png
+│       │   │   │   │   ├── progress-359.png
+│       │   │   │   │   ├── progress-36.png
+│       │   │   │   │   ├── progress-360.png
+│       │   │   │   │   ├── progress-361.png
+│       │   │   │   │   ├── progress-362.png
+│       │   │   │   │   ├── progress-363.png
+│       │   │   │   │   ├── progress-364.png
+│       │   │   │   │   ├── progress-365.png
+│       │   │   │   │   ├── progress-366.png
+│       │   │   │   │   ├── progress-367.png
+│       │   │   │   │   ├── progress-368.png
+│       │   │   │   │   ├── progress-369.png
+│       │   │   │   │   ├── progress-37.png
+│       │   │   │   │   ├── progress-370.png
+│       │   │   │   │   ├── progress-371.png
+│       │   │   │   │   ├── progress-372.png
+│       │   │   │   │   ├── progress-373.png
+│       │   │   │   │   ├── progress-374.png
+│       │   │   │   │   ├── progress-38.png
+│       │   │   │   │   ├── progress-39.png
+│       │   │   │   │   ├── progress-4.png
+│       │   │   │   │   ├── progress-40.png
+│       │   │   │   │   ├── progress-41.png
+│       │   │   │   │   ├── progress-42.png
+│       │   │   │   │   ├── progress-43.png
+│       │   │   │   │   ├── progress-44.png
+│       │   │   │   │   ├── progress-45.png
+│       │   │   │   │   ├── progress-46.png
+│       │   │   │   │   ├── progress-47.png
+│       │   │   │   │   ├── progress-48.png
+│       │   │   │   │   ├── progress-49.png
+│       │   │   │   │   ├── progress-5.png
+│       │   │   │   │   ├── progress-50.png
+│       │   │   │   │   ├── progress-51.png
+│       │   │   │   │   ├── progress-52.png
+│       │   │   │   │   ├── progress-53.png
+│       │   │   │   │   ├── progress-54.png
+│       │   │   │   │   ├── progress-55.png
+│       │   │   │   │   ├── progress-56.png
+│       │   │   │   │   ├── progress-57.png
+│       │   │   │   │   ├── progress-58.png
+│       │   │   │   │   ├── progress-59.png
+│       │   │   │   │   ├── progress-6.png
+│       │   │   │   │   ├── progress-60.png
+│       │   │   │   │   ├── progress-61.png
+│       │   │   │   │   ├── progress-62.png
+│       │   │   │   │   ├── progress-63.png
+│       │   │   │   │   ├── progress-64.png
+│       │   │   │   │   ├── progress-65.png
+│       │   │   │   │   ├── progress-66.png
+│       │   │   │   │   ├── progress-67.png
+│       │   │   │   │   ├── progress-68.png
+│       │   │   │   │   ├── progress-69.png
+│       │   │   │   │   ├── progress-7.png
+│       │   │   │   │   ├── progress-70.png
+│       │   │   │   │   ├── progress-71.png
+│       │   │   │   │   ├── progress-72.png
+│       │   │   │   │   ├── progress-73.png
+│       │   │   │   │   ├── progress-74.png
+│       │   │   │   │   ├── progress-75.png
+│       │   │   │   │   ├── progress-76.png
+│       │   │   │   │   ├── progress-77.png
+│       │   │   │   │   ├── progress-78.png
+│       │   │   │   │   ├── progress-79.png
+│       │   │   │   │   ├── progress-8.png
+│       │   │   │   │   ├── progress-80.png
+│       │   │   │   │   ├── progress-81.png
+│       │   │   │   │   ├── progress-82.png
+│       │   │   │   │   ├── progress-83.png
+│       │   │   │   │   ├── progress-84.png
+│       │   │   │   │   ├── progress-85.png
+│       │   │   │   │   ├── progress-86.png
+│       │   │   │   │   ├── progress-87.png
+│       │   │   │   │   ├── progress-88.png
+│       │   │   │   │   ├── progress-89.png
+│       │   │   │   │   ├── progress-9.png
+│       │   │   │   │   ├── progress-90.png
+│       │   │   │   │   ├── progress-91.png
+│       │   │   │   │   ├── progress-92.png
+│       │   │   │   │   ├── progress-93.png
+│       │   │   │   │   ├── progress-94.png
+│       │   │   │   │   ├── progress-95.png
+│       │   │   │   │   ├── progress-96.png
+│       │   │   │   │   ├── progress-97.png
+│       │   │   │   │   ├── progress-98.png
+│       │   │   │   │   └── progress-99.png
+│       │   │   │   └── deus_ex_yellow
+│       │   │   │       ├── progress-0.png
+│       │   │   │       ├── progress-1.png
+│       │   │   │       ├── progress-10.png
+│       │   │   │       ├── progress-100.png
+│       │   │   │       ├── progress-101.png
+│       │   │   │       ├── progress-102.png
+│       │   │   │       ├── progress-103.png
+│       │   │   │       ├── progress-104.png
+│       │   │   │       ├── progress-105.png
+│       │   │   │       ├── progress-106.png
+│       │   │   │       ├── progress-107.png
+│       │   │   │       ├── progress-108.png
+│       │   │   │       ├── progress-109.png
+│       │   │   │       ├── progress-11.png
+│       │   │   │       ├── progress-110.png
+│       │   │   │       ├── progress-111.png
+│       │   │   │       ├── progress-112.png
+│       │   │   │       ├── progress-113.png
+│       │   │   │       ├── progress-114.png
+│       │   │   │       ├── progress-115.png
+│       │   │   │       ├── progress-116.png
+│       │   │   │       ├── progress-117.png
+│       │   │   │       ├── progress-118.png
+│       │   │   │       ├── progress-119.png
+│       │   │   │       ├── progress-12.png
+│       │   │   │       ├── progress-120.png
+│       │   │   │       ├── progress-121.png
+│       │   │   │       ├── progress-122.png
+│       │   │   │       ├── progress-123.png
+│       │   │   │       ├── progress-124.png
+│       │   │   │       ├── progress-125.png
+│       │   │   │       ├── progress-126.png
+│       │   │   │       ├── progress-127.png
+│       │   │   │       ├── progress-128.png
+│       │   │   │       ├── progress-129.png
+│       │   │   │       ├── progress-13.png
+│       │   │   │       ├── progress-130.png
+│       │   │   │       ├── progress-131.png
+│       │   │   │       ├── progress-132.png
+│       │   │   │       ├── progress-133.png
+│       │   │   │       ├── progress-134.png
+│       │   │   │       ├── progress-135.png
+│       │   │   │       ├── progress-136.png
+│       │   │   │       ├── progress-137.png
+│       │   │   │       ├── progress-138.png
+│       │   │   │       ├── progress-139.png
+│       │   │   │       ├── progress-14.png
+│       │   │   │       ├── progress-140.png
+│       │   │   │       ├── progress-141.png
+│       │   │   │       ├── progress-142.png
+│       │   │   │       ├── progress-143.png
+│       │   │   │       ├── progress-144.png
+│       │   │   │       ├── progress-145.png
+│       │   │   │       ├── progress-146.png
+│       │   │   │       ├── progress-147.png
+│       │   │   │       ├── progress-148.png
+│       │   │   │       ├── progress-149.png
+│       │   │   │       ├── progress-15.png
+│       │   │   │       ├── progress-150.png
+│       │   │   │       ├── progress-151.png
+│       │   │   │       ├── progress-152.png
+│       │   │   │       ├── progress-153.png
+│       │   │   │       ├── progress-154.png
+│       │   │   │       ├── progress-155.png
+│       │   │   │       ├── progress-156.png
+│       │   │   │       ├── progress-157.png
+│       │   │   │       ├── progress-158.png
+│       │   │   │       ├── progress-159.png
+│       │   │   │       ├── progress-16.png
+│       │   │   │       ├── progress-160.png
+│       │   │   │       ├── progress-161.png
+│       │   │   │       ├── progress-162.png
+│       │   │   │       ├── progress-163.png
+│       │   │   │       ├── progress-164.png
+│       │   │   │       ├── progress-165.png
+│       │   │   │       ├── progress-166.png
+│       │   │   │       ├── progress-167.png
+│       │   │   │       ├── progress-168.png
+│       │   │   │       ├── progress-169.png
+│       │   │   │       ├── progress-17.png
+│       │   │   │       ├── progress-170.png
+│       │   │   │       ├── progress-171.png
+│       │   │   │       ├── progress-172.png
+│       │   │   │       ├── progress-173.png
+│       │   │   │       ├── progress-174.png
+│       │   │   │       ├── progress-175.png
+│       │   │   │       ├── progress-176.png
+│       │   │   │       ├── progress-177.png
+│       │   │   │       ├── progress-178.png
+│       │   │   │       ├── progress-179.png
+│       │   │   │       ├── progress-18.png
+│       │   │   │       ├── progress-180.png
+│       │   │   │       ├── progress-181.png
+│       │   │   │       ├── progress-182.png
+│       │   │   │       ├── progress-183.png
+│       │   │   │       ├── progress-184.png
+│       │   │   │       ├── progress-185.png
+│       │   │   │       ├── progress-186.png
+│       │   │   │       ├── progress-187.png
+│       │   │   │       ├── progress-188.png
+│       │   │   │       ├── progress-189.png
+│       │   │   │       ├── progress-19.png
+│       │   │   │       ├── progress-190.png
+│       │   │   │       ├── progress-191.png
+│       │   │   │       ├── progress-192.png
+│       │   │   │       ├── progress-193.png
+│       │   │   │       ├── progress-194.png
+│       │   │   │       ├── progress-195.png
+│       │   │   │       ├── progress-196.png
+│       │   │   │       ├── progress-197.png
+│       │   │   │       ├── progress-198.png
+│       │   │   │       ├── progress-199.png
+│       │   │   │       ├── progress-2.png
+│       │   │   │       ├── progress-20.png
+│       │   │   │       ├── progress-200.png
+│       │   │   │       ├── progress-201.png
+│       │   │   │       ├── progress-202.png
+│       │   │   │       ├── progress-203.png
+│       │   │   │       ├── progress-204.png
+│       │   │   │       ├── progress-205.png
+│       │   │   │       ├── progress-206.png
+│       │   │   │       ├── progress-207.png
+│       │   │   │       ├── progress-208.png
+│       │   │   │       ├── progress-209.png
+│       │   │   │       ├── progress-21.png
+│       │   │   │       ├── progress-210.png
+│       │   │   │       ├── progress-211.png
+│       │   │   │       ├── progress-212.png
+│       │   │   │       ├── progress-213.png
+│       │   │   │       ├── progress-214.png
+│       │   │   │       ├── progress-215.png
+│       │   │   │       ├── progress-216.png
+│       │   │   │       ├── progress-217.png
+│       │   │   │       ├── progress-218.png
+│       │   │   │       ├── progress-219.png
+│       │   │   │       ├── progress-22.png
+│       │   │   │       ├── progress-220.png
+│       │   │   │       ├── progress-221.png
+│       │   │   │       ├── progress-222.png
+│       │   │   │       ├── progress-223.png
+│       │   │   │       ├── progress-224.png
+│       │   │   │       ├── progress-225.png
+│       │   │   │       ├── progress-226.png
+│       │   │   │       ├── progress-227.png
+│       │   │   │       ├── progress-228.png
+│       │   │   │       ├── progress-229.png
+│       │   │   │       ├── progress-23.png
+│       │   │   │       ├── progress-230.png
+│       │   │   │       ├── progress-231.png
+│       │   │   │       ├── progress-232.png
+│       │   │   │       ├── progress-233.png
+│       │   │   │       ├── progress-234.png
+│       │   │   │       ├── progress-235.png
+│       │   │   │       ├── progress-236.png
+│       │   │   │       ├── progress-237.png
+│       │   │   │       ├── progress-238.png
+│       │   │   │       ├── progress-239.png
+│       │   │   │       ├── progress-24.png
+│       │   │   │       ├── progress-240.png
+│       │   │   │       ├── progress-241.png
+│       │   │   │       ├── progress-242.png
+│       │   │   │       ├── progress-243.png
+│       │   │   │       ├── progress-244.png
+│       │   │   │       ├── progress-245.png
+│       │   │   │       ├── progress-246.png
+│       │   │   │       ├── progress-247.png
+│       │   │   │       ├── progress-248.png
+│       │   │   │       ├── progress-249.png
+│       │   │   │       ├── progress-25.png
+│       │   │   │       ├── progress-250.png
+│       │   │   │       ├── progress-251.png
+│       │   │   │       ├── progress-252.png
+│       │   │   │       ├── progress-253.png
+│       │   │   │       ├── progress-254.png
+│       │   │   │       ├── progress-255.png
+│       │   │   │       ├── progress-256.png
+│       │   │   │       ├── progress-257.png
+│       │   │   │       ├── progress-258.png
+│       │   │   │       ├── progress-259.png
+│       │   │   │       ├── progress-26.png
+│       │   │   │       ├── progress-260.png
+│       │   │   │       ├── progress-261.png
+│       │   │   │       ├── progress-262.png
+│       │   │   │       ├── progress-263.png
+│       │   │   │       ├── progress-264.png
+│       │   │   │       ├── progress-265.png
+│       │   │   │       ├── progress-266.png
+│       │   │   │       ├── progress-267.png
+│       │   │   │       ├── progress-268.png
+│       │   │   │       ├── progress-269.png
+│       │   │   │       ├── progress-27.png
+│       │   │   │       ├── progress-270.png
+│       │   │   │       ├── progress-271.png
+│       │   │   │       ├── progress-272.png
+│       │   │   │       ├── progress-273.png
+│       │   │   │       ├── progress-274.png
+│       │   │   │       ├── progress-275.png
+│       │   │   │       ├── progress-276.png
+│       │   │   │       ├── progress-277.png
+│       │   │   │       ├── progress-278.png
+│       │   │   │       ├── progress-279.png
+│       │   │   │       ├── progress-28.png
+│       │   │   │       ├── progress-280.png
+│       │   │   │       ├── progress-281.png
+│       │   │   │       ├── progress-282.png
+│       │   │   │       ├── progress-283.png
+│       │   │   │       ├── progress-284.png
+│       │   │   │       ├── progress-285.png
+│       │   │   │       ├── progress-286.png
+│       │   │   │       ├── progress-287.png
+│       │   │   │       ├── progress-288.png
+│       │   │   │       ├── progress-289.png
+│       │   │   │       ├── progress-29.png
+│       │   │   │       ├── progress-290.png
+│       │   │   │       ├── progress-291.png
+│       │   │   │       ├── progress-292.png
+│       │   │   │       ├── progress-293.png
+│       │   │   │       ├── progress-294.png
+│       │   │   │       ├── progress-295.png
+│       │   │   │       ├── progress-296.png
+│       │   │   │       ├── progress-297.png
+│       │   │   │       ├── progress-298.png
+│       │   │   │       ├── progress-299.png
+│       │   │   │       ├── progress-3.png
+│       │   │   │       ├── progress-30.png
+│       │   │   │       ├── progress-300.png
+│       │   │   │       ├── progress-301.png
+│       │   │   │       ├── progress-302.png
+│       │   │   │       ├── progress-303.png
+│       │   │   │       ├── progress-304.png
+│       │   │   │       ├── progress-305.png
+│       │   │   │       ├── progress-306.png
+│       │   │   │       ├── progress-307.png
+│       │   │   │       ├── progress-308.png
+│       │   │   │       ├── progress-309.png
+│       │   │   │       ├── progress-31.png
+│       │   │   │       ├── progress-310.png
+│       │   │   │       ├── progress-311.png
+│       │   │   │       ├── progress-312.png
+│       │   │   │       ├── progress-313.png
+│       │   │   │       ├── progress-314.png
+│       │   │   │       ├── progress-315.png
+│       │   │   │       ├── progress-316.png
+│       │   │   │       ├── progress-317.png
+│       │   │   │       ├── progress-318.png
+│       │   │   │       ├── progress-319.png
+│       │   │   │       ├── progress-32.png
+│       │   │   │       ├── progress-320.png
+│       │   │   │       ├── progress-321.png
+│       │   │   │       ├── progress-322.png
+│       │   │   │       ├── progress-323.png
+│       │   │   │       ├── progress-324.png
+│       │   │   │       ├── progress-325.png
+│       │   │   │       ├── progress-326.png
+│       │   │   │       ├── progress-327.png
+│       │   │   │       ├── progress-328.png
+│       │   │   │       ├── progress-329.png
+│       │   │   │       ├── progress-33.png
+│       │   │   │       ├── progress-330.png
+│       │   │   │       ├── progress-331.png
+│       │   │   │       ├── progress-332.png
+│       │   │   │       ├── progress-333.png
+│       │   │   │       ├── progress-334.png
+│       │   │   │       ├── progress-335.png
+│       │   │   │       ├── progress-336.png
+│       │   │   │       ├── progress-337.png
+│       │   │   │       ├── progress-338.png
+│       │   │   │       ├── progress-339.png
+│       │   │   │       ├── progress-34.png
+│       │   │   │       ├── progress-340.png
+│       │   │   │       ├── progress-341.png
+│       │   │   │       ├── progress-342.png
+│       │   │   │       ├── progress-343.png
+│       │   │   │       ├── progress-344.png
+│       │   │   │       ├── progress-345.png
+│       │   │   │       ├── progress-346.png
+│       │   │   │       ├── progress-347.png
+│       │   │   │       ├── progress-348.png
+│       │   │   │       ├── progress-349.png
+│       │   │   │       ├── progress-35.png
+│       │   │   │       ├── progress-350.png
+│       │   │   │       ├── progress-351.png
+│       │   │   │       ├── progress-352.png
+│       │   │   │       ├── progress-353.png
+│       │   │   │       ├── progress-354.png
+│       │   │   │       ├── progress-355.png
+│       │   │   │       ├── progress-356.png
+│       │   │   │       ├── progress-357.png
+│       │   │   │       ├── progress-358.png
+│       │   │   │       ├── progress-359.png
+│       │   │   │       ├── progress-36.png
+│       │   │   │       ├── progress-360.png
+│       │   │   │       ├── progress-361.png
+│       │   │   │       ├── progress-362.png
+│       │   │   │       ├── progress-363.png
+│       │   │   │       ├── progress-364.png
+│       │   │   │       ├── progress-365.png
+│       │   │   │       ├── progress-366.png
+│       │   │   │       ├── progress-367.png
+│       │   │   │       ├── progress-368.png
+│       │   │   │       ├── progress-369.png
+│       │   │   │       ├── progress-37.png
+│       │   │   │       ├── progress-370.png
+│       │   │   │       ├── progress-371.png
+│       │   │   │       ├── progress-372.png
+│       │   │   │       ├── progress-373.png
+│       │   │   │       ├── progress-374.png
+│       │   │   │       ├── progress-38.png
+│       │   │   │       ├── progress-39.png
+│       │   │   │       ├── progress-4.png
+│       │   │   │       ├── progress-40.png
+│       │   │   │       ├── progress-41.png
+│       │   │   │       ├── progress-42.png
+│       │   │   │       ├── progress-43.png
+│       │   │   │       ├── progress-44.png
+│       │   │   │       ├── progress-45.png
+│       │   │   │       ├── progress-46.png
+│       │   │   │       ├── progress-47.png
+│       │   │   │       ├── progress-48.png
+│       │   │   │       ├── progress-49.png
+│       │   │   │       ├── progress-5.png
+│       │   │   │       ├── progress-50.png
+│       │   │   │       ├── progress-51.png
+│       │   │   │       ├── progress-52.png
+│       │   │   │       ├── progress-53.png
+│       │   │   │       ├── progress-54.png
+│       │   │   │       ├── progress-55.png
+│       │   │   │       ├── progress-56.png
+│       │   │   │       ├── progress-57.png
+│       │   │   │       ├── progress-58.png
+│       │   │   │       ├── progress-59.png
+│       │   │   │       ├── progress-6.png
+│       │   │   │       ├── progress-60.png
+│       │   │   │       ├── progress-61.png
+│       │   │   │       ├── progress-62.png
+│       │   │   │       ├── progress-63.png
+│       │   │   │       ├── progress-64.png
+│       │   │   │       ├── progress-65.png
+│       │   │   │       ├── progress-66.png
+│       │   │   │       ├── progress-67.png
+│       │   │   │       ├── progress-68.png
+│       │   │   │       ├── progress-69.png
+│       │   │   │       ├── progress-7.png
+│       │   │   │       ├── progress-70.png
+│       │   │   │       ├── progress-71.png
+│       │   │   │       ├── progress-72.png
+│       │   │   │       ├── progress-73.png
+│       │   │   │       ├── progress-74.png
+│       │   │   │       ├── progress-75.png
+│       │   │   │       ├── progress-76.png
+│       │   │   │       ├── progress-77.png
+│       │   │   │       ├── progress-78.png
+│       │   │   │       ├── progress-79.png
+│       │   │   │       ├── progress-8.png
+│       │   │   │       ├── progress-80.png
+│       │   │   │       ├── progress-81.png
+│       │   │   │       ├── progress-82.png
+│       │   │   │       ├── progress-83.png
+│       │   │   │       ├── progress-84.png
+│       │   │   │       ├── progress-85.png
+│       │   │   │       ├── progress-86.png
+│       │   │   │       ├── progress-87.png
+│       │   │   │       ├── progress-88.png
+│       │   │   │       ├── progress-89.png
+│       │   │   │       ├── progress-9.png
+│       │   │   │       ├── progress-90.png
+│       │   │   │       ├── progress-91.png
+│       │   │   │       ├── progress-92.png
+│       │   │   │       ├── progress-93.png
+│       │   │   │       ├── progress-94.png
+│       │   │   │       ├── progress-95.png
+│       │   │   │       ├── progress-96.png
+│       │   │   │       ├── progress-97.png
+│       │   │   │       ├── progress-98.png
+│       │   │   │       └── progress-99.png
+│       │   │   └── unrap.gif
+│       │   └── scripts
+│       │       ├── ascii.py
+│       │       ├── deusfetch.sh
+│       │       └── utils.sh
+│       ├── ghostty
+│       │   ├── config
+│       │   ├── config.bak
+│       │   └── shaders
+│       │       ├── dx1.glsl
+│       │       ├── dx10.glsl
+│       │       ├── dx11.glsl
+│       │       ├── dx12.glsl
+│       │       ├── dx2.glsl
+│       │       ├── dx3.glsl
+│       │       ├── dx4.glsl
+│       │       ├── dx5.glsl
+│       │       ├── dx6.glsl
+│       │       ├── dx7.glsl
+│       │       ├── dx8.glsl                                           │       │       ├── dx9.glsl
+│       │       └── triangle_trouble.glsl                              │       ├── hypr
+│       │   ├── hypridle.conf
+│       │   ├── hyprland                                               │       │   │   ├── env.conf
+│       │   │   ├── execs.conf                                         │       │   │   ├── general.conf
+│       │   │   ├── keybinds.conf                                      │       │   │   └── rules.conf
+│       │   ├── hyprland.conf                                          │       │   ├── hyprlock
+│       │   │   └── status.sh                                          │       │   ├── hyprlock-scripts
+│       │   │   ├── battery-status.sh
+│       │   │   └── music-status.sh
+│       │   ├── hyprlock.conf
+│       │   └── shaders
+│       │       ├── chromatic_abberation.frag
+│       │       ├── crt.frag
+│       │       ├── drugs.frag
+│       │       ├── extradark.frag
+│       │       ├── invert.frag
+│       │       └── solarized.frag
+│       ├── jamesdsp
+│       │   ├── application.conf
+│       │   ├── audio.conf
+│       │   ├── graphiceq.conf
+│       │   ├── irs
+│       │   │   ├── Church.wav
+│       │   │   ├── CorredHRTF_Crossfeed.wav
+│       │   │   ├── CorredHRTF_Surround1.wav
+│       │   │   ├── CorredHRTF_Surround2.wav
+│       │   │   └── SwapChannels.wav
+│       │   ├── liveprog                                               │       │   │   ├── 3bandSplitting.eel
+│       │   │   ├── autopeakfilter.eel
+│       │   │   ├── dc_remove.eel
+│       │   │   ├── depthsurround.eel
+│       │   │   ├── downmixer.eel
+│       │   │   ├── downsampler.eel
+│       │   │   ├── dynamicbass.eel
+│       │   │   ├── fftConvolution2x4x2.eel
+│       │   │   ├── fftConvolutionHRTF.eel
+│       │   │   ├── firFilter.eel
+│       │   │   ├── firlsProc.eel
+│       │   │   ├── fractionalDelayline.eel
+│       │   │   ├── gainControl.eel
+│       │   │   ├── hadamVerb.eel
+│       │   │   ├── lowpass.eel                                        │       │   │   ├── metallic-reverb.eel
+│       │   │   ├── msCentreBoost.eel
+│       │   │   ├── pfb.eel
+│       │   │   ├── phaseshifter.eel
+│       │   │   ├── polyphaseFilterbank.eel
+│       │   │   ├── stereowide.eel
+│       │   │   ├── stft-filter.eel
+│       │   │   ├── stftCentreBoost.eel
+│       │   │   ├── stftCentreCut.eel
+│       │   │   ├── stftDenoise.eel
+│       │   │   └── swapChannels.eel
+│       │   └── vdc
+│       │       ├── Butterworth.vdc
+│       │       ├── FrontRearContrast.vdc
+│       │       └── mh750.vdc
+│       ├── kitty
+│       │   ├── current-theme.conf
+│       │   ├── kitty.conf
+│       │   └── kitty.conf.bak
+│       ├── kwinrc
+│       ├── nvim
+│       │   ├── .gitignore
+│       │   ├── .neoconf.json
+│       │   ├── LICENSE
+│       │   ├── README.md                                              │       │   ├── init.lua
+│       │   ├── lazy-lock.json
+│       │   ├── lazyvim.json
+│       │   ├── lua
+│       │   │   ├── config
+│       │   │   │   ├── autocmds.lua
+│       │   │   │   ├── keymaps.lua
+│       │   │   │   ├── lazy.lua
+│       │   │   │   └── options.lua
+│       │   │   └── plugins
+│       │   │       ├── activate.lua
+│       │   │       ├── autosave.lua
+│       │   │       ├── cheatsheet.lua
+│       │   │       ├── dashboard.lua
+│       │   │       ├── disabled_plugins.lua
+│       │   │       ├── dropbar.lua
+│       │   │       ├── example.lua
+│       │   │       ├── gesture_nvim.lua
+│       │   │       ├── live-server.lua
+│       │   │       ├── lualine.lua
+│       │   │       ├── markview_nvim.lua
+│       │   │       ├── mini-animate.lua
+│       │   │       ├── neo-tree.lua
+│       │   │       ├── neorg.lua
+│       │   │       ├── neovim.lua
+│       │   │       ├── noice.lua
+│       │   │       ├── nvim-cmp.lua
+│       │   │       ├── nvim-notify.lua
+│       │   │       ├── nvim-scrollbar.lua
+│       │   │       ├── presence.lua
+│       │   │       ├── tabby.lua
+│       │   │       ├── telescope-media-files.lua
+│       │   │       ├── telescope-tabs.lua
+│       │   │       ├── telescope.lua
+│       │   │       ├── tips.lua
+│       │   │       ├── toggleterm.lua
+│       │   │       ├── tokyonight.lua
+│       │   │       ├── undotree.lua
+│       │   │       ├── wakatime.lua
+│       │   │       ├── whereami_nvim.lua
+│       │   │       ├── yazi.lua
+│       │   │       └── zen-mode.lua
+│       │   └── stylua.toml
+│       ├── rmpc
+│       │   ├── config.ron
+│       │   ├── lyrics.sh
+│       │   └── themes
+│       │       └── theme.ron
+│       ├── systemd
+│       │   └── user
+│       │       ├── default.target.wants
+│       │       │   ├── pipewire-pulse.service
+│       │       │   └── ydotool.service
+│       │       ├── dynwalla.service
+│       │       ├── dynwalla.timer
+│       │       ├── dynwallb.service
+│       │       ├── dynwallb.timer
+│       │       ├── dynwallc.service
+│       │       ├── dynwallc.timer
+│       │       ├── dynwalld.service
+│       │       ├── dynwalld.timer
+│       │       ├── sockets.target.wants
+│       │       │   └── pipewire-pulse.socket
+│       │       └── timers.target.wants
+│       │           ├── dynwalla.timer
+│       │           ├── dynwallb.timer
+│       │           ├── dynwallc.timer
+│       │           └── dynwalld.timer
+│       ├── tmux
+│       │   ├── plugins
+│       │   │   └── tpm_log.txt
+│       │   ├── tmux.conf
+│       │   └── tmux.conf.local
+│       ├── yazi
+│       │   ├── flavors
+│       │   │   ├── kanagawa-dragon.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── LICENSE-tmtheme
+│       │   │   │   ├── README.md
+│       │   │   │   ├── flavor.toml
+│       │   │   │   ├── preview.png
+│       │   │   │   └── tmtheme.xml
+│       │   │   └── tokyo-night.yazi
+│       │   │       ├── LICENSE
+│       │   │       ├── LICENSE-tmtheme
+│       │   │       ├── README.md
+│       │   │       ├── flavor.toml
+│       │   │       ├── preview.png
+│       │   │       └── tmtheme.xml
+│       │   ├── init.lua
+│       │   ├── keymap.toml
+│       │   ├── package.toml
+│       │   ├── plugins
+│       │   │   ├── arrow.yazi
+│       │   │   │   └── main.lua
+│       │   │   ├── chmod.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── diff.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── duckdb.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── exifaudio.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── eza-preview.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── full-border.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── git.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── glow.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── hexyl.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── hide-preview.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── jump-to-char.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── lazygit.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── mediainfo.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   ├── assets
+│       │   │   │   │   ├── 2025-02-15-09-14-23.png
+│       │   │   │   │   ├── 2025-02-15-09-15-39.png
+│       │   │   │   │   ├── 2025-02-15-16-51-11.png
+│       │   │   │   │   └── 2025-02-15-16-52-39.png
+│       │   │   │   └── main.lua
+│       │   │   ├── miller.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── mount.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── nbpreview.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── omp.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── ouch.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── restore.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── rich-preview.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── smart-enter.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── smart-filter.yazi
+│       │   │   │   ├── LICENSE
+│       │   │   │   ├── README.md
+│       │   │   │   └── main.lua
+│       │   │   ├── smart-switch.yazi
+│       │   │   │   └── main.lua
+│       │   │   ├── smart-tab.yazi
+│       │   │   │   └── main.lua
+│       │   │   └── torrent-preview.yazi
+│       │   │       ├── LICENSE
+│       │   │       ├── README.md
+│       │   │       └── main.lua
+│       │   ├── theme.toml
+│       │   └── yazi.toml
+│       └── zsh
+│           ├── .zlogin
+│           ├── .zlogout
+│           ├── .zprofile
+│           ├── .zshenv
+│           ├── .zshrc
+│           ├── README.md
+│           ├── aliases
+│           │   ├── CLI
+│           │   │   ├── Docker
+│           │   │   │   ├── docker-compose.zsh
+│           │   │   │   └── docker.zsh
+│           │   │   ├── Git
+│           │   │   │   ├── git-lfs.zsh
+│           │   │   │   └── git.zsh
+│           │   │   ├── Python
+│           │   │   │   ├── pip.zsh
+│           │   │   │   ├── pipenv.zsh
+│           │   │   │   └── python.zsh
+│           │   │   ├── conda.zsh
+│           │   │   ├── eza.zsh
+│           │   │   ├── github_cli.zsh
+│           │   │   ├── gpg.zsh
+│           │   │   ├── homebrew.zsh
+│           │   │   ├── macports.zsh
+│           │   │   ├── npm.zsh
+│           │   │   ├── podman.zsh
+│           │   │   ├── rsync.zsh
+│           │   │   ├── ruby.zsh
+│           │   │   ├── snap.zsh
+│           │   │   ├── systemd.zsh
+│           │   │   ├── tmuxinator.zsh
+│           │   │   ├── vscodium.zsh
+│           │   │   └── yt-dlp.zsh
+│           │   ├── basics
+│           │   │   ├── files_n_paths.zsh
+│           │   │   ├── find_files.zsh
+│           │   │   └── misc.zsh
+│           │   └── os
+│           │       ├── arch.zsh
+│           │       ├── debian.zsh
+│           │       ├── fedora.zsh
+│           │       └── ubuntu.zsh
+│           ├── completions
+│           │   ├── auto
+│           │   │   └── gen_completion.bundle.zsh
+│           │   └── options.zsh
+│           ├── functions
+│           │   ├── CLI
+│           │   │   ├── Python
+│           │   │   │   ├── pip.bundle.zsh
+│           │   │   │   ├── pyenv.bundle.zsh
+│           │   │   │   └── python.zsh
+│           │   │   ├── command-not-found.bundle.zsh
+│           │   │   ├── doas.bundle.zsh
+│           │   │   ├── dotnet.zsh
+│           │   │   ├── yazi.zsh
+│           │   │   ├── yt-dlp.bundle.zsh
+│           │   │   └── zoxide-eza.bundle.zsh
+│           │   ├── misc
+│           │   │   ├── copyfile.zsh
+│           │   │   ├── copypath.zsh
+│           │   │   ├── mkdircd.zsh
+│           │   │   ├── torrent.zsh
+│           │   │   ├── ua.zsh
+│           │   │   └── updir.bundle.zsh
+│           │   └── os
+│           │       ├── Arch
+│           │       │   └── arch.bundle.zsh
+│           │       ├── Debian
+│           │       │   └── debian.bundle.zsh
+│           │       └── Ubuntu
+│           │           └── ubuntu.bundle.zsh
+│           └── plugin-opts
+│               ├── alias-tips.zsh
+│               ├── fzf-tab.zsh
+│               ├── zsh-auto-notify.zsh
+│               ├── zsh-autosuggestions.zsh
+│               └── zsh-history-substring-search.zsh
 ├── misc
-│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
-│   ├── HyprBibataModernClassicSVG.tar.gz
-│   ├── Scripts
-│   │   ├── DynWalls
-│   │   │   ├── scripts
-│   │   │   │   ├── switchwalla.sh
-│   │   │   │   ├── switchwallb.sh
-│   │   │   │   ├── switchwallc.sh
-│   │   │   │   └── switchwalld.sh
-│   │   │   └── walls
-│   │   │       ├── Windows_11_Rise_&_Fall_a.jpg
-│   │   │       ├── Windows_11_Rise_&_Fall_b.jpg
-│   │   │       ├── Windows_11_Rise_&_Fall_c.jpg
-│   │   │       └── Windows_11_Rise_&_Fall_d.jpg
-│   │   └── Utils
-│   │       └── archup.sh
-│   ├── Windows_3D_Emoji_14+15.ttf
-│   ├── ascii-neovim-logos.txt
-│   ├── cava.sh
-│   ├── sametaor.omp.json
-│   ├── spicetify_lucid_theme_settings.json
-│   ├── titan_aug.mp4
-│   └── zen-themes-export.json
+│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
+│   ├── HyprBibataModernClassicSVG.tar.gz
+│   ├── Scripts
+│   │   ├── DynWalls
+│   │   │   ├── scripts
+│   │   │   │   ├── switchwalla.sh
+│   │   │   │   ├── switchwallb.sh
+│   │   │   │   ├── switchwallc.sh
+│   │   │   │   └── switchwalld.sh
+│   │   │   └── walls
+│   │   │       ├── Windows_11_Rise_&_Fall_a.jpg
+│   │   │       ├── Windows_11_Rise_&_Fall_b.jpg
+│   │   │       ├── Windows_11_Rise_&_Fall_c.jpg
+│   │   │       └── Windows_11_Rise_&_Fall_d.jpg
+│   │   └── Utils
+│   │       └── archup.sh
+│   ├── Windows_3D_Emoji_14+15.ttf
+│   ├── ascii-neovim-logos.txt
+│   ├── cava.sh
+│   ├── sametaor.omp.json
+│   ├── spicetify_lucid_theme_settings.json
+│   ├── titan_aug.mp4
+│   └── zen-themes-export.json
 └── windows
     ├── HyperV_on_HomeEdition.bat
     ├── Microsoft.PowerShell_profile.ps1
     ├── Virt_machines
-    │   └── VMWare
-    │       └── Windows
-    │           ├── MS Windows 1.04.7z
-    │           ├── MS Windows 2.11.7z
-    │           └── MS Windows 3.11.7z
+    │   └── VMWare
+    │       └── Windows
+    │           ├── MS Windows 1.04.7z
+    │           ├── MS Windows 2.11.7z
+    │           └── MS Windows 3.11.7z
     ├── Windhawk mod configs
-    │   ├── Slick_Window_Arrangement.yaml
-    │   ├── Taskbar_Button_Scroll.yaml
-    │   ├── Taskbar_Clock_Customization.yaml
-    │   ├── Taskbar_Volume_Control.yaml
-    │   ├── Taskbar_Wheel_Cycle.yaml
-    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
-    │   ├── Translucent_Windows.yaml
-    │   ├── Win11_File_Explorer_Styler.yaml
-    │   ├── Windows_11_Notification_Center_Styler.yaml
-    │   ├── Windows_11_Start_Menu_Styler.yaml
-    │   └── Windows_11_Taskbar_Styler.yaml
+    │   ├── Slick_Window_Arrangement.yaml
+    │   ├── Taskbar_Button_Scroll.yaml
+    │   ├── Taskbar_Clock_Customization.yaml
+    │   ├── Taskbar_Volume_Control.yaml
+    │   ├── Taskbar_Wheel_Cycle.yaml
+    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
+    │   ├── Translucent_Windows.yaml
+    │   ├── Win11_File_Explorer_Styler.yaml
+    │   ├── Windows_11_Notification_Center_Styler.yaml
+    │   ├── Windows_11_Start_Menu_Styler.yaml
+    │   └── Windows_11_Taskbar_Styler.yaml
     ├── Windows_7x11.png
     ├── Windows_7x11ALT.png
     ├── Windows_7x11ALT_lockscr.png
@@ -1917,6 +1917,461 @@ Below is a categorized, collapsible "cheat sheet" of every essential tool, cover
 <summary><strong>🔧 System Tools & Shells</strong></summary>
 
 | Tool                                                  | Description                                           | Arch (Pacman/yay)                                                           | Ubuntu/Debian (apt)                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                                                                                                      | openSUSE (zypper)                                                                                                                                                                                                         | Alpine (apk)                                                                                          | NixOS (nix-env)                                                                                                                        | Gentoo (emerge)                                                                                                                                                                               | Windows (winget/scoop/choco)                                                                                           | Android/Termux                                                                                                   | Flatpak                                      | Void Linux (Xbps)                                                                                                |
-|-------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------|-------------------------------------------------------|-----------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------------------|
 | Bash                                                  | Unix shell                                            | `sudo pacman -S bash`/`yay -S bash-git`                                     | `sudo apt install bash`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install bash`                                                                                                                                                                                                                                                                                        | `sudo zypper install bash`                                                                                                                                                                                                | `apk add bash`                                                                                        | `nix-env -iA nixpkgs.bash`                                                                                                             | `emerge -a app-shells/bash`                                                                                                                                                                   | Default/MSYS2/`winget install MSYS2.MSYS2; pacman -S bash`                                                             | `pkg install bash`                                                                                               | N/A                                          | `sudo xbps-install bash`                                                                                         |
+| Zsh                                                   | Unix shell                                            | `sudo pacman -S zsh`                                                        | `sudo apt install zsh`                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install zsh`                                                                                                                                                                                                                                                                                         | `sudo zypper install zsh`                                                                                                                                                                                                 | `apk add zsh`                                                                                         | `nix-env -iA nixpkgs.zsh`                                                                                                              | `emerge -a app-shells/zsh`                                                                                                                                                                    | Default/MSYS2/`winget install MSYS2.MSYS2; pacman -S zsh`                                                              | `pkg install zsh`                                                                                                | N/A                                          | `sudo xbps-install zsh`                                                                                          |
+| zsh-completions                                       | Zsh completions                                       | `sudo pacman -S zsh-completions`                                            | `sudo apt install zsh-common`*                                                                                                                                                                                                                                                                                                                                                                                                                                               | [Manual](https://github.com/zsh-users/zsh-completions)                                                                                                                                                                                                                                                          | `sudo zypper addrepo https://download.opensuse.org/repositories/shells:zsh-users:zsh-completions/openSUSE_Tumbleweed/shells:zsh-users:zsh-completions.repo && sudo zypper refresh && sudo zypper install zsh-completions` | `apk add zsh-completions`                                                                             | `nix-env -iA nixpkgs.zsh-completions`                                                                                                  | `emerge -a app-shells/gentoo-zsh-completions`                                                                                                                                                 | [Manual](https://github.com/zsh-users/zsh-completions)                                                                 | `pkg install zsh-completions`                                                                                    | N/A                                          | `sudo xbps-install zsh-completions`                                                                              |
+| tmux                                                  | Terminal multiplexer                                  | `sudo pacman -S tmux`                                                       | `sudo apt install tmux`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install tmux`                                                                                                                                                                                                                                                                                        | `sudo zypper install tmux`                                                                                                                                                                                                | `apk add tmux`                                                                                        | `nix-env -iA nixpkgs.tmux`                                                                                                             | `emerge -a app-misc/tmux`                                                                                                                                                                     | Default/MSYS2/`pacman -S tmux`                                                                                         | `pkg install tmux`                                                                                               | N/A                                          | `sudo xbps-install tmux`                                                                                         |
+| fzf                                                   | Fuzzy finder                                          | `sudo pacman -S fzf`                                                        | `sudo apt install fzf`                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install fzf`                                                                                                                                                                                                                                                                                         | `sudo zypper install fzf`                                                                                                                                                                                                 | `apk add fzf`                                                                                         | `nix-env -iA nixpkgs.fzf`                                                                                                              | `emerge -a app-shells/fzf`                                                                                                                                                                    | `winget install fzf`/`scoop install fzf`/`choco install fzf`                                                           | `pkg install fzf`                                                                                                | N/A                                          | `sudo xbps-install fzf`                                                                                          |
+| zoxide                                                | Directory jumper                                      | `sudo pacman -S zoxide`                                                     | `sudo apt install zoxide`                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `sudo dnf5 install zoxide`                                                                                                                                                                                                                                                                                      | `sudo zypper install zoxide`/`sudo zypper addrepo https://download.opensuse.org/repositories/home:mimi_vx/15.6/home:mimi_vx.repo && sudo zypper refresh && sudo zypper install zoxide`                                    | `apk add zoxide`                                                                                      | `nix-env -iA nixpkgs.zoxide`                                                                                                           | `emerge -a app-shells/zoxide`                                                                                                                                                                 | `scoop install zoxide`/`choco install zoxide`                                                                          | `pkg install zoxide`                                                                                             | N/A                                          | `sudo xbps-install zoxide`                                                                                       |
+| curl                                                  | Data transfer utility                                 | `sudo pacman -S curl`                                                       | `sudo apt install curl`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install curl`                                                                                                                                                                                                                                                                                        | `sudo zypper install curl`                                                                                                                                                                                                | `apk add curl`                                                                                        | `nix-env -iA nixpkgs.curl`                                                                                                             | `emerge -a net-misc/curl`                                                                                                                                                                     | `winget install curl`/`scoop install curl`/`choco install curl`                                                        | `pkg install curl`                                                                                               | N/A                                          | `sudo xbps-install curl`                                                                                         |
+| git                                                   | Version control                                       | `sudo pacman -S git`                                                        | `sudo apt install git`                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install git`                                                                                                                                                                                                                                                                                         | `sudo zypper install git`                                                                                                                                                                                                 | `apk add git`                                                                                         | `nix-env -iA nixpkgs.git`                                                                                                              | `emerge -a acct-group/git`                                                                                                                                                                    | `winget install Git.Git`/`scoop install git`/`choco install git`                                                       | `pkg install git`                                                                                                | N/A                                          | `sudo xbps-install git`                                                                                          |
+| git-lfs                                               | Git Large File Storage                                | `sudo pacman -S git-lfs`                                                    | `sudo apt install git-lfs`                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install git-lfs`                                                                                                                                                                                                                                                                                     | `sudo zypper install git-lfs`                                                                                                                                                                                             | `apk add git-lfs`                                                                                     | `nix-env -iA nixpkgs.git-lfs`                                                                                                          | `emerge -a dev-vcs/git-lfs`                                                                                                                                                                   | `winget install GitHub.GitLFS`/`scoop install git-lfs`/`choco install git-lfs`                                         | `pkg install git-lfs`                                                                                            | N/A                                          | `sudo xbps-install git-lfs`                                                                                      |
+| man-db                                                | Man page utilities                                    | `sudo pacman -S man-db`                                                     | `sudo apt install man-db`                                                                                                                                                                                                                                                                                                                                                                                                                                                    | `sudo dnf5 install man-db`                                                                                                                                                                                                                                                                                      | `sudo zypper install man`                                                                                                                                                                                                 | `apk add man-db`                                                                                      | `nix-env -iA nixpkgs.man`                                                                                                              | `emerge -a sys-apps/man-db`                                                                                                                                                                   | `scoop install man-db`/`choco install man-db`                                                                          | `pkg install man`                                                                                                | N/A                                          | `sudo xbps-install man-db`                                                                                       |
+| less                                                  | Pager utility                                         | `sudo pacman -S less`                                                       | `sudo apt install less`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install less`                                                                                                                                                                                                                                                                                        | `sudo zypper install less`                                                                                                                                                                                                | `apk add less`                                                                                        | `nix-env -iA nixpkgs.less`                                                                                                             | `emerge -a sys-apps/less`                                                                                                                                                                     | `scoop install less`                                                                                                   | `pkg install less`                                                                                               | N/A                                          | `sudo xbps-install less`                                                                                         |
+| tree                                                  | Directory visualizer                                  | `sudo pacman -S tree`                                                       | `sudo apt install tree`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install tree`                                                                                                                                                                                                                                                                                        | `sudo zypper install tree`                                                                                                                                                                                                | `apk add tree`                                                                                        | `nix-env -iA nixpkgs.tree`                                                                                                             | `emerge -a app-text/tree`                                                                                                                                                                     | `scoop install tree`/`choco install tree`                                                                              | `pkg install tree`                                                                                               | N/A                                          | `sudo xbps-install tree`                                                                                         |
+| lolcat                                                | Rainbow text generator                                | `sudo pacman -S lolcat`                                                     | `sudo apt install lolcat`**                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `gem install lolcat`                                                                                                                                                                                                                                                                                            | Gem:`gem install lolcat`                                                                                                                                                                                                  | `apk add lolcat`                                                                                      | `nix-env -iA nixpkgs.lolcat`                                                                                                           | `emerge -a games-misc/lolcat`                                                                                                                                                                 | `scoop install lolcat`/`choco install lolcat`                                                                          | `pkg install lolcat`                                                                                             | N/A                                          | `sudo xbps-install lolcat-c`                                                                                     |
+| bat                                                   | cat with syntax highlighting                          | `sudo pacman -S bat`                                                        | `sudo apt install bat`                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install bat`                                                                                                                                                                                                                                                                                         | `sudo zypper install bat`                                                                                                                                                                                                 | `apk add bat`                                                                                         | `nix-env -iA nixpkgs.bat`                                                                                                              | `emerge -a sys-apps/bat`                                                                                                                                                                      | `winget install sharkdp.bat`/`scoop install bat`/`choco install bat`                                                   | `pkg install bat`                                                                                                | N/A                                          | `sudo xbps-install bat`                                                                                          |
+| hexyl                                                 | Hex viewer                                            | `sudo pacman -S hexyl`                                                      | `sudo apt install hexyl`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 install hexyl`                                                                                                                                                                                                                                                                                       | `sudo zypper install hexyl`/`sudo zypper addrepo https://download.opensuse.org/repositories/home:mnhauke/openSUSE_Tumbleweed/home:mnhauke.repo && sudo zypper refresh && sudo zypper install hexyl`                       | `apk add hexyl`                                                                                       | `nix-env -iA nixpkgs.hexyl`                                                                                                            | `eselect repository enable guru && emerge --sync && echo "app-misc/hexyl ~amd64" \| tee -a /etc/portage/package.accept_keywords && emerge -a app-misc/hexyl`                                  | `winget install sharkdp.hexyl`/`scoop install hexyl`/`choco install hexyl`                                             | `pkg install hexyl`                                                                                              | N/A                                          | `sudo xbps-install hexyl`                                                                                        |
+| eza                                                   | Modern ls replacement                                 | `sudo pacman -S eza`                                                        | `sudo apt install gpg && sudo mkdir -p /etc/apt/keyrings && wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc \| sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg && echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" \| sudo tee /etc/apt/sources.list.d/gierens.list && sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list && sudo apt update && sudo apt install -y eza` | `sudo dnf5 copr enable alternateved/eza -y && sudo dnf5 install eza`                                                                                                                                                                                                                                            | `sudo zypper install eza`/`sudo zypper addrepo https://download.opensuse.org/repositories/home:ur4ltz:utils/openSUSE_Tumbleweed/home:ur4ltz:utils.repo && sudo zypper refresh && sudo zypper install eza`                 | `apk add eza`                                                                                         | `nix-env -iA nixpkgs.eza`                                                                                                              | `emerge -a sys-apps/eza`                                                                                                                                                                      | `winget install eza-community.eza`/`scoop install eza`/`choco install eza`                                             | `pkg install eza`                                                                                                | N/A                                          | `sudo xbps-install eza`                                                                                          |
+| fd                                                    | Find alternative                                      | `sudo pacman -S fd`                                                         | `sudo apt install fd-find`                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install fd-find`                                                                                                                                                                                                                                                                                     | `sudo zypper install fd`                                                                                                                                                                                                  | `apk add fd`                                                                                          | `nix-env -iA nixpkgs.fd`                                                                                                               | `emerge -a sys-apps/fd`                                                                                                                                                                       | `winget install sharkdp.fd`/`scoop install fd`/`choco install fd`                                                      | `pkg install fd`                                                                                                 | N/A                                          | `sudo xbps-install fd`                                                                                           |
+| ripgrep                                               | Modern grep                                           | `sudo pacman -S ripgrep`                                                    | `sudo apt install ripgrep`                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install ripgrep`                                                                                                                                                                                                                                                                                     | `sudo zypper install ripgrep`                                                                                                                                                                                             | `apk add ripgrep`                                                                                     | `nix-env -iA nixpkgs.ripgrep`                                                                                                          | `emerge -a sys-apps/ripgrep`                                                                                                                                                                  | `winget install BurntSushi.ripgrep`/`scoop install ripgrep`/`choco install ripgrep`                                    | `pkg install ripgrep`                                                                                            | N/A                                          | `sudo xbps-install ripgrep`                                                                                      |
+| ripgrep-all                                           | Search all files                                      | `sudo pacman -S ripgrep-all`                                                | `brew install pandoc poppler ffmpeg ripgrep-all`                                                                                                                                                                                                                                                                                                                                                                                                                             | `sudo dnf5 copr enable lukasfr/ripgrep-allsudo dnf5 install ripgrep-all`/`brew install pandoc poppler ffmpeg ripgrep-all`                                                                                                                                                                                       | `brew install pandoc poppler ffmpeg ripgrep-all`                                                                                                                                                                          | `brew install pandoc poppler ffmpeg ripgrep-all`                                                      | `nix-env -iA nixpkgs.ripgrep-all`                                                                                                      | `emerge -a sys-apps/ripgrep-all`                                                                                                                                                              | `scoop install rga`/`choco install ripgrep-all`                                                                        | `pkg install ripgrep-all`                                                                                        | N/A                                          | `sudo xbps-install ripgrep-all`                                                                                  |
+| btop                                                  | Resource monitor                                      | `sudo pacman -S btop`                                                       | `sudo apt install btop`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install btop`                                                                                                                                                                                                                                                                                        | `sudo zypper install btop`/`sudo zypper addrepo https://download.opensuse.org/repositories/home:ecsos/openSUSE_Tumbleweed/home:ecsos.repo && sudo zypper refresh && sudo zypper install btop`                             | `apk add btop`                                                                                        | `nix-env -iA nixpkgs.btop`                                                                                                             | `emerge -a sys-process/btop`                                                                                                                                                                  | `winget install aristocratos.btop` / `scoop install btop` / `choco install btop`                                       | `pkg install btop`                                                                                               | N/A                                          | `sudo xbps-install btop`                                                                                         |
+| systemd                                               | Init system manager                                   | Native/preinstalled                                                         | `sudo apt install systemd`                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install systemd`                                                                                                                                                                                                                                                                                     | `sudo zypper install systemd`                                                                                                                                                                                             | `apk add openrc` (Systemd alternative)                                                                | `nix-env -iA nixpkgs.systemd`                                                                                                          | `emerge -a sys-apps/systemd`                                                                                                                                                                  | WSL/WSL2 (auto, see docs)                                                                                              | `pkg install proot` (proot-distro for Termux)                                                                    | N/A                                          | `sudo xbps-install proot`                                                                                        |
+| reflector                                             | Pacman mirror optimizer                               | `sudo pacman -S reflector`                                                  | `pip install rate-mirrors`                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Available with dnf5-plugins-core (`sudo dnf5 dnf5-plugins-core`)                                                                                                                                                                                                                                                | `pip install rate-mirrors`                                                                                                                                                                                                | `pip install rate-mirrors`                                                                            | `pip install rate-mirrors`                                                                                                             | `emerge -a app-portage/mirrorselect`                                                                                                                                                          | `pip install rate-mirrors`                                                                                             | `pip install rate-mirrors`                                                                                       | N/A                                          | `pip install rate-mirrors`                                                                                       |
+| pkgtop                                                | TUI package monitor                                   | `yay -S pkgtop` (AUR)                                                       | `cargo install pkgtop`                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install golang -y && git clone https://github.com/orhun/pkgtop.git && cd pkgtop && go build cmd/pkgtop.go && sudo mv pkgtop /usr/local/bin/`                                                                                                                                                         | `cargo install pkgtop`                                                                                                                                                                                                    | `cargo install pkgtop`                                                                                | `nix-env -iA nixpkgs.pkgtop`                                                                                                           | `cargo install pkgtop`                                                                                                                                                                        | `scoop install pkgtop`/`choco install pkgtop`                                                                          | `pkg install pkgtop`                                                                                             | N/A                                          | `sudo xbps-install pkgtop`                                                                                       |
+| oh-my-posh                                            | Shell prompt theme engine                             | `yay -S oh-my-posh-bin`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh` | `snap install oh-my-posh` (Snap, newer IoT)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                                                                                                                                                                                                                              | `sudo dnf5 copr enable chronoscrat/oh-my-posh && dnf5 install --refresh oh-my-posh`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                         | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                     | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh` | `nix-env -iA nixpkgs.oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh` | `eselect repository enable stintel && emerge --sync && emerge -a app-shells/oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh` | `winget install JanDeDobbeleer.OhMyPosh`/`scoop install oh-my-posh`/`choco install oh-my-posh`                         | `pkg install oh-my-posh` (if available)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                      | N/A                                          | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`            |
+| command-not-found                                     | Suggest missing packages                              | Built-in using pkgfile                                                      | `sudo apt install command-not-found`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `sudo dnf5 install PackageKit-command-not-found`                                                                                                                                                                                                                                                                | `sudo zypper install command-not-found`                                                                                                                                                                                   | `apk add command-not-found`                                                                           | Enable under `configuration.nix` (`programs.command-not-found.enable = true;`)                                                         | `emerge -a app-portage/command-not-found`                                                                                                                                                     | `scoop install command-not-found`                                                                                      | `pkg install command-not-found`                                                                                  | N/A                                          | N/A                                                                                                              |
+| pygmentize                                            | Syntax highlighter                                    | `sudo pacman -S python-pygments`                                            | `sudo apt install python3-pygments`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo dnf5 install python3-pygments`                                                                                                                                                                                                                                                                            | `sudo zypper install python3-Pygments`                                                                                                                                                                                    | `apk add py3-pygments`                                                                                | `nix-env -iA nixpkgs.python313Packages.pygments`                                                                                       | `emerge -a dev-python/pygments`                                                                                                                                                               | `pip install pygments`                                                                                                 | `pip install pygments`                                                                                           | N/A                                          | `sudp xbps-install python3-Pygments`                                                                             |
+| yazi                                                  | Terminal file manager                                 | `yay -S yazi`                                                               | `cargo install yazi-fm`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 copr enable varlad/yazi && sudo dnf5 install yazi`/`cargo install yazi-fm`/`sudo snap install yazi --classic`                                                                                                                                                                                        | `sudo zypper install yazi`                                                                                                                                                                                                | `apk add yazi`                                                                                        | `nix-env -iA nixpkgs.yazi`                                                                                                             | `eselect repository enable guru && emerge --sync && emerge -a app-misc/yazi`                                                                                                                  | `scoop install yazi`/`choco install yazi`                                                                              | `pkg install yazi`                                                                                               | N/A                                          | `sudo xbps-install yazi`                                                                                         |
+| tmatrix                                               | Matrix terminal animation                             | `yay -S tmatrix`                                                            | `cargo install tmatrix`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install ncurses-devel wget gcc make -y && wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz && tar -xzf installation.tar.gz && cd installation && sudo ./install.sh`/`cargo install tmatrix`                                                                       | `cargo install tmatrix`                                                                                                                                                                                                   | `apk add tmatrix`                                                                                     | `nix-env -iA nixpkgs.tmatrix`                                                                                                          | `cargo install tmatrix`                                                                                                                                                                       | `scoop install tmatrix`                                                                                                | `pkg install tmatrix`                                                                                            | N/A                                          | `cargo install tmatrix`                                                                                          |
+| PowerShell                                            | Windows shell and scripting                           | `yay -S powershell`                                                         | `source /etc/os-release && wget -q https://packages.microsoft.com/config/debian/$VERSION_ID/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install powershell`                                                                                                                                                                                                             | `sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && curl https://packages.microsoft.com/config/rhel/7/prod.repo \| sudo tee /etc/yum.repos.d/microsoft.repo && sudo dnf5 makecache && sudo dnf5 install powershell`                                                                         | `curl -s https://raw.githubusercontent.com/PowerShell/PowerShell/refs/heads/master/tools/installpsh-suse.sh \| bash`                                                                                                      | `apk add powershell`                                                                                  | `nix-env -iA nixpkgs.powershell`                                                                                                       | `emerge -a app-shells/pwsh`                                                                                                                                                                   | `winget install Microsoft.Powershell`/`scoop install powershell`/`choco install powershell`                            | [Manual](https://learn.microsoft.com/en-us/powershell/scripting/install/install-other-linux?view=powershell-7.5) | N/A                                          | [Manual](https://learn.microsoft.com/en-us/powershell/scripting/install/install-other-linux?view=powershell-7.5) |
+| Windows Terminal                                      | Terminal emulator                                     | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.WindowsTerminal`/`scoop install windows-terminal`/`choco install microsoft-windows-terminal` | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Gpg4win                                               | GnuPG for Windows                                     | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Gpg4win.Gpg4win`/`choco install gpg4win`                                                               | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| OneDrive                                              | Microsoft OneDrive                                    | N/A                                                                         | `sudo apt install onedrive`                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | `nix-env -iA nixpkgs.onedrive`                                                                                                         | `emerge -a net-misc/onedrive`                                                                                                                                                                 | Preinstalled/`winget install Microsoft.OneDrive`                                                                       | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Edge                                        | Microsoft Edge                                        | `yay -S microsoft-edge-stable-bin`                                          | [Manual](https://www.microsoft.com/en-us/edge/download?form=MA13FJ)                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo dnf5 config-manager --add-repo https://packages.microsoft.com/yumrepos/edge && sudo mv /etc/yum.repos.d/packages.microsoft.com_yumrepos_edge.repo /etc/yum.repos.d/microsoft-edge.repo && sudo dnf5 install microsoft-edge-stable` | `sudo zypper ar https://packages.microsoft.com/yumrepos/edge edge && sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo zypper refresh && sudo zypper install microsoft-edge-stable`             | N/A                                                                                                   | `nix-env -iA nixpkgs.microsoft-edge`                                                                                                   | `emerge -a www-client/microsoft-edge`                                                                                                                                                         | Preinstalled/`winget install Microsoft.Edge`/`scoop install microsoft-edge`/`choco install microsoft-edge`             | N/A                                                                                                              | `flatpak install flathub com.microsoft.Edge` | N/A                                                                                                              |
+| Nilesoft Shell                                        | Nilesoft Shell                                        | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Nilesoft.Shell`/`choco install nilesoft-shell`                                                         | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Mica For Everyone                                     | Mica For Everyone                                     | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install MicaForEveryone.MicaForEveryone`/`choco install mica-for-everyone`                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Windhawk                                              | Windhawk                                              | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Windhawk.Windhawk`/`choco install windhawk`                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| NVIDIA PhysX                                          | NVIDIA PhysX                                          | `yay -S physx` (NOTE: ORPHANED SINCE 2022-11-09)                            | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Nvidia.PhysX`                                                                                          | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| NVCleanstall                                          | NVCleanstall                                          | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install TechPowerUp.NVCleanstall`                                                                              | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft.UI.Xaml 2.7                                 | Microsoft.UI.Xaml 2.7                                 | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.UI.Xaml.2.7`                                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft.UI.Xaml 2.8                                 | Microsoft.UI.Xaml 2.8                                 | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.UI.Xaml.2.8`                                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2015 UWP Desktop Runtime Package | Microsoft Visual C++ 2015 UWP Desktop Runtime Package | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2015UWPDesktopRuntimePackage`                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2005 Redistributable (x64)       | Microsoft Visual C++ 2005 Redistributable (x64)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2005Redistributable-x64`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2005 Redistributable (x86)       | Microsoft Visual C++ 2005 Redistributable (x86)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2005Redistributable-x86`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2008 Redistributable - x64       | Microsoft Visual C++ 2008 Redistributable - x64       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2008Redistributable-x64`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2008 Redistributable - x86       | Microsoft Visual C++ 2008 Redistributable - x86       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2008Redistributable-x86`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2010 x64 Redistributable         | Microsoft Visual C++ 2010 x64 Redistributable         | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2010Redistributable-x64`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2010 x86 Redistributable         | Microsoft Visual C++ 2010 x86 Redistributable         | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2010Redistributable-x86`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2012 Redistributable (x64)       | Microsoft Visual C++ 2012 Redistributable (x64)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2012Redistributable-x64`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2012 Redistributable (x86)       | Microsoft Visual C++ 2012 Redistributable (x86)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2012Redistributable-x86`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2013 Redistributable (x64)       | Microsoft Visual C++ 2013 Redistributable (x64)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2013Redistributable-x64`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2013 Redistributable (x86)       | Microsoft Visual C++ 2013 Redistributable (x86)       | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2013Redistributable-x86`                                                                 | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2015-2022 Redistributable (x64)  | Microsoft Visual C++ 2015-2022 Redistributable (x64)  | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2015-2022Redistributable-x64`                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft Visual C++ 2015-2022 Redistributable (x86)  | Microsoft Visual C++ 2015-2022 Redistributable (x86)  | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.VC++2015-2022Redistributable-x86`                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 3.1            | Microsoft .NET Windows Desktop Runtime 3.1            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.3_1`                                                                   | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 5.0            | Microsoft .NET Windows Desktop Runtime 5.0            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.5`                                                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 6.0            | Microsoft .NET Windows Desktop Runtime 6.0            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.6`                                                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 7.0            | Microsoft .NET Windows Desktop Runtime 7.0            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.7`                                                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 8.0            | Microsoft .NET Windows Desktop Runtime 8.0            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.8`                                                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Windows Desktop Runtime 9.0            | Microsoft .NET Windows Desktop Runtime 9.0            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.DesktopRuntime.9`                                                                     | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 3.1                            | Microsoft .NET Runtime 3.1                            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.Runtime.3_1`                                                                          | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 5.0                            | Microsoft .NET Runtime 5.0                            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DotNet.Runtime.5`                                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 6.0                            | Microsoft .NET Runtime 6.0                            | `sudo pacman -S dotnet-runtime-6.0`                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | `apk add dotnet6-runtime`                                                                             | N/A                                                                                                                                    | `emerge -a dev-dotnet/dotnet-runtime-nugets`                                                                                                                                                  | `winget install Microsoft.DotNet.Runtime.6`                                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 7.0                            | Microsoft .NET Runtime 7.0                            | `sudo pacman -S dotnet-runtime-7.0`                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | `emerge -a dev-dotnet/dotnet-runtime-nugets`                                                                                                                                                  | `winget install Microsoft.DotNet.Runtime.7`                                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 8.0                            | Microsoft .NET Runtime 8.0                            | `sudo pacman -S dotnet-runtime-8.0`                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo dnf5 install dotnet-runtime-8.0`                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                       | `apk add dotnet8-runtime`                                                                             | `nix-env -iA nixpkgs.dotnetCorePackages.runtime_8_0-bin`                                                                               | `emerge -a dev-dotnet/dotnet-runtime-nugets`                                                                                                                                                  | `winget install Microsoft.DotNet.Runtime.8`                                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft .NET Runtime 9.0                            | Microsoft .NET Runtime 9.0                            | `sudo pacman -S dotnet-runtime`                                             | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo dnf5 install dotnet-runtime-9.0`                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                       | `apk add dotnet9-runtime`                                                                             | `nix-env -iA nixpkgs.dotnetCorePackages.runtime_9_0-bin`                                                                               | `emerge -a dev-dotnet/dotnet-runtime-nugets`                                                                                                                                                  | `winget install Microsoft.DotNet.Runtime.9`                                                                            | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| EFI Boot Editor                                       | EFI Boot Editor                                       | `yay -S efibooteditor`                                                      | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | `apk add efibootmgr`                                                                                  | `nix-env -iA nixpkgs.efibootmgr`                                                                                                       | `emerge -a sys-boot/efibootmgr`                                                                                                                                                               | `winget install Hasleo.EFIBootEditor`                                                                                  | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| Microsoft App Installer                               | Microsoft App Installer                               | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | `winget install Microsoft.DesktopAppInstaller`                                                                         | N/A                                                                                                              | N/A                                          | N/A                                                                                                              |
+| coreutils                                             | GNU core utilities                                    | `sudo pacman -S coreutils`                                                  | `sudo apt install coreutils`                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `sudo dnf5 install coreutils`                                                                                                                                                                                                                                                                                   | `sudo zypper install coreutils`                                                                                                                                                                                           | `apk add coreutils`                                                                                   | `nix-env -iA nixpkgs.coreutils-full`                                                                                                   | `emerge -a sys-apps/coreutils`                                                                                                                                                                | `scoop install coreutils`/`choco install coreutils`                                                                    | `pkg install coreutils`                                                                                          | N/A                                          | N/A                                                                                                              |
+| clang                                                 | Clang                                                 | `sudo pacman -S clang`                                                      | `sudo apt install clang`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 install clang`                                                                                                                                                                                                                                                                                       | `sudo zypper install clang`                                                                                                                                                                                               | `apk add clang`                                                                                       | `nix-env -iA nixpkgs.clang`                                                                                                            | `emerge -a dev-python/clang`                                                                                                                                                                  | `winget install LLVM.Clang`/`scoop install llvm`/`choco install llvm`                                                  | `pkg install clang`                                                                                              | N/A                                          | N/A                                                                                                              |
+| make                                                  | Make                                                  | `sudo pacman -S make`                                                       | `sudo apt install make`                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install make`                                                                                                                                                                                                                                                                                        | `sudo zypper install make`                                                                                                                                                                                                | `apk add make`                                                                                        | `nix-env -iA nixpkgs.gnumake`                                                                                                          | `emerge -a dev-build/make`                                                                                                                                                                    | `winget install GnuWin32.Make`/`scoop install make`/`choco install make`                                               | `pkg install make`                                                                                               | N/A                                          | N/A                                                                                                              |
+| CMake                                                 | CMake                                                 | `sudo pacman -S cmake`                                                      | `sudo apt install cmake`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 install cmake`                                                                                                                                                                                                                                                                                       | `sudo zypper install cmake`                                                                                                                                                                                               | `apk add cmake`                                                                                       | `nix-env -iA nixpkgs.cmake`                                                                                                            | `emerge -a dev-build/cmake`                                                                                                                                                                   | `winget install Kitware.CMake`/`scoop install cmake`/`choco install cmake`                                             | `pkg install cmake`                                                                                              | N/A                                          | N/A                                                                                                              |
+| Termux:API                                            | Termux:API                                            | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | N/A                                                                                                                    | `pkg install termux-api`                                                                                         | N/A                                          | N/A                                                                                                              |
+| termux-exec                                           | termux-exec                                           | N/A                                                                         | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                                       | N/A                                                                                                   | N/A                                                                                                                                    | N/A                                                                                                                                                                                           | N/A                                                                                                                    | `pkg install termux-exec`                                                                                        | N/A                                          | N/A                                                                                                              |
+
+\* Some zsh completions available as part of zsh-common or other packages
+** On Debian/Ubuntu, may require Ruby (`gem install lolcat` if not in apt)
+
 </details>
+
+<details>
+<summary><strong>📝 Editors & IDEs</strong></summary>
+
+| Tool         | Description                             | Arch (Pacman/yay)                                                                                                | Ubuntu/Debian (apt)                                                                                                                                                                                                                                                                                                                             | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                                                                                                                                                                                                                                              | openSUSE (zypper)                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Alpine (apk)                                                                                                     | NixOS (nix-env)                                                                                                  | Gentoo (emerge)                                                                                                  | Windows (winget/scoop/choco)                                                                                    | Android/Termux                                                            | Flatpak                                                                                                          | Void Linux (Xbps)                                                                                                |
+|--------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| Neovim       | Modern Vim-based editor                 | `sudo pacman -S neovim`                                                                                          | `sudo add-apt-repository ppa:neovim-ppa/stable && sudo apt update && sudo apt install neovim`                                                                                                                                                                                                                                                   | `sudo dnf5 install neovim`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install neovim`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `apk add neovim`                                                                                                 | `nix-env -iA nixpkgs.neovim`                                                                                     | `emerge -a app-editors/neovim`                                                                                   | `winget install Neovim.Neovim`/`scoop install neovim`/`choco install neovim`                                    | `pkg install neovim`                                                      | `flatpak install flathub io.neovim.nvim`                                                                         | `sudo xbps-install neovim`                                                                                       |
+| Vim          | Classic modal editor                    | `sudo pacman -S vim`                                                                                             | `sudo apt install vim`                                                                                                                                                                                                                                                                                                                          | `sudo dnf5 install vim-enhanced`                                                                                                                                                                                                                                                                                                                                                                                                                        | `sudo zypper install vim`                                                                                                                                                                                                                                                                                                                                                                                                                                            | `apk add vim`                                                                                                    | `nix-env -iA nixpkgs.vim`                                                                                        | `emerge -a app-editors/vim`                                                                                      | `winget install Vim.Vim`/`scoop install vim`/`choco install vim`                                                | `pkg install vim`                                                         | `flatpak install flathub org.vim.Vim`                                                                            | `sudo xbps-install vim`                                                                                          |
+| LazyVim      | Neovim IDE config (Lazy-loaded, modern) | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                                                                                                                                                                                                                                                   | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                                                                                                                                                                                                                                                                                                                                                           | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                                                                                                                                                                                                                                                                                                                                                                        | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    | `git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim`                                           | `git clone https://github.com/LazyVim/starter ~/.config/nvim`             | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    | `git clone https://github.com/LazyVim/starter ~/.config/nvim`                                                    |
+| GNU Emacs    | Programmable text editor                | `sudo pacman -S emacs`                                                                                           | `sudo apt install emacs`                                                                                                                                                                                                                                                                                                                        | `sudo dnf5 install emacs`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install emacs`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `apk add emacs`                                                                                                  | `nix-env -iA nixpkgs.emacs`                                                                                      | `emerge -a app-editors/emacs`                                                                                    | `winget install GNU.Emacs`/`scoop install emacs`/`choco install emacs`                                          | `pkg install emacs`                                                       | `flatpak install flathub org.gnu.emacs`                                                                          | `sudo xbps-install emacs`                                                                                        |
+| Helix        | Modal code editor                       | `sudo pacman -S helix`                                                                                           | `sudo add-apt-repository ppa:maveonair/helix-editor && sudo apt update && sudo apt install helix`                                                                                                                                                                                                                                               | `sudo dnf5 install helix`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install helix`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `apk add helix`                                                                                                  | `nix-env -iA nixpkgs.helix`                                                                                      | `emerge -a app-editors/helix`                                                                                    | `winget install Helix.Helix`/`scoop install helix`/`choco install helix`                                        | Manual                                                                    | `flatpak install flathub com.helix_editor.Helix`                                                                 | `sudo xbps-install helix`                                                                                        |
+| Kakoune      | Modal code editor, vi inspired          | `sudo pacman -S kakoune`                                                                                         | `sudo apt install kakoune`                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 install kakoune`                                                                                                                                                                                                                                                                                                                                                                                                                             | `sudo zypper install kakoune`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `apk add kakoune`                                                                                                | `nix-env -iA nixpkgs.kakoune`                                                                                    | `emerge -a app-editors/kakoune`                                                                                  | `winget install Kakoune.Kakoune`/`scoop install kakoune`                                                        | `pkg install kakoune`                                                     | N/A                                                                                                              | `sudo xbps-install kakoune`                                                                                      |
+| Micro        | Modern terminal editor                  | `sudo pacman -S micro`                                                                                           | `sudo apt install micro`                                                                                                                                                                                                                                                                                                                        | `sudo dnf5 install micro`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install micro-editor`                                                                                                                                                                                                                                                                                                                                                                                                                                   | `apk add micro`                                                                                                  | `nix-env -iA nixpkgs.micro`                                                                                      | `emerge -a app-editors/micro`                                                                                    | `winget install zyedidia.micro`/`scoop install micro`/`choco install micro`                                     | `pkg install micro`                                                       | `flatpak install flathub io.github.zyedidia.micro`                                                               | `sudo xbps-install micro`                                                                                        |
+| VSCodium     | FOSS VS Code                            | `yay -S vscodium vscodium-marketplace`                                                                           | `snap install codium --classic`/`wget https://github.com/VSCodium/vscodium/releases/latest/download/codium_amd64.deb && sudo apt install ./codium_amd64.deb`                                                                                                                                                                                    | `sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" \| sudo tee -a /etc/yum.repos.d/vscodium.repo && sudo dnf5 install codium` | `sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" \| sudo tee -a /etc/zypp/repos.d/vscodium.repo && sudo zypper in codium` | `apk add vscodium`                                                                                               | `nix-env -iA nixpkgs.vscodium`                                                                                   | `emerge -a app-editors/vscodium`                                                                                 | `winget install VSCodium.VSCodium`/`scoop bucket add extras && scoop install vscodium`/`choco install vscodium` | Manual                                                                    | `flatpak install flathub com.vscodium.codium`                                                                    | `sudo xbps-install vscode`                                                                                       |
+| Kate         | KDE code editor                         | `sudo pacman -S kate`                                                                                            | `sudo apt install kate`                                                                                                                                                                                                                                                                                                                         | `sudo dnf5 install kate`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install kate`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add kate`                                                                                                   | `nix-env -iA nixpkgs.kate`                                                                                       | `emerge -a kde-apps/kate`                                                                                        | `winget install KDE.Kate`/`scoop install kate`                                                                  | Manual                                                                    | `flatpak install flathub org.kde.kate`                                                                           | `sudo xbps-install kate`                                                                                         |
+| Sublime Text | Proprietary editor (shareware)          | `yay -S sublime-text-4`                                                                                          | Manual (download)                                                                                                                                                                                                                                                                                                                               | `sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg && sudo dnf5 config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo && sudo dnf5 install sublime-text -y`                                                                                                                                                                                                             | `sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg && sudo zypper addrepo -g -f https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo && sudo zypper refresh && sudo zypper install sublime-text -y`                                                                                                                                                                                                                        | Manual                                                                                                           | Manual                                                                                                           | `emerge -a app-editors/sublime-text`                                                                             | `winget install SublimeHQ.SublimeText.4`/`choco install sublimetext`                                            | Manual                                                                    | `flatpak install flathub com.sublimetext.three`                                                                  | `sudo xbps-install sublime-text4`                                                                                |
+| Geany        | Lightweight IDE/editor                  | `sudo pacman -S geany geany-plugins`                                                                             | `sudo apt install geany`                                                                                                                                                                                                                                                                                                                        | `sudo dnf5 install geany`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install geany`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `apk add geany`                                                                                                  | `nix-env -iA nixpkgs.geany`                                                                                      | `emerge -a dev-util/geany`                                                                                       | `winget install Geany.Geany`                                                                                    | Manual                                                                    | `flatpak install flathub org.geany.Geany`                                                                        | `sudo xbps-install geany`                                                                                        |
+| GNU nano     | Tiny terminal editor                    | `sudo pacman -S nano`                                                                                            | `sudo apt install nano`                                                                                                                                                                                                                                                                                                                         | `sudo dnf5 install nano`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install nano`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add nano`                                                                                                   | `nix-env -iA nixpkgs.nano`                                                                                       | `emerge -a app-editors/nano`                                                                                     | `winget install GNU.nano`/`scoop install nano`/`choco install nano`                                             | `pkg install nano`                                                        | N/A                                                                                                              | `sudo xbps-install nano`                                                                                         |
+| Glow         | Markdown TUI viewer/editor              | `yay -S glow`                                                                                                    | `sudo snap install glow`/`sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key \| sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" \| sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install glow` | `sudo dnf5 install glow`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install glow`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add glow`                                                                                                   | `nix-env -iA nixpkgs.glow`                                                                                       | `eselect repository enable guru && emerge --sync && emerge -a app-misc/glow`                                     | `winget install Charm.Glow`/`scoop install glow`/`choco install glow`                                           | `pkg install glow`                                                        | N/A                                                                                                              | `sudo xbps-install glow`                                                                                         |
+| Doom Emacs   | Emacs config framework                  | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install`                                                                                                                                                                                                                                | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install`                                                                                                                                                                                                                                                                                                                                        | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install`                                                                                                                                                                                                                                                                                                                                                     | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` | N/A                                                                                                             | N/A                                                                       | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` | `git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs && ~/.config/emacs/bin/doom install` |
+| Lazygit      | Terminal git frontend                   | `sudo pacman -S lazygit`                                                                                         | `sudo apt install lazygit`                                                                                                                                                                                                                                                                                                                      | `sudo dnf5 copr enable atim/lazygit -y && sudo dnf5 install lazygit`                                                                                                                                                                                                                                                                                                                                                                                    | `sudo zypper install lazygit`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `apk add lazygit`                                                                                                | `nix-env -iA nixpkgs.lazygit`                                                                                    | `eselect repository enable guru && emerge --sync && emerge -a dev-vcs/lazygit`                                   | `winget install JesseDuffield.Lazygit` / `scoop install lazygit` / `choco install lazygit`                      | N/A                                                                       | N/A                                                                                                              | `sudo xbps-install lazygit`                                                                                      |
+| nb           | Markdown/Notebook preview (TUI)         | `yay -S nb`                                                                                                      | `pip install nb`                                                                                                                                                                                                                                                                                                                                | `pip install nb`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `pip install nb`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `apk add nb`                                                                                                     | `nix-env -iA nixpkgs.nb`                                                                                         | `pip install nb`                                                                                                 | `pip install nb`                                                                                                | `pip install nb`                                                          | `pip install nb`                                                                                                 | `pip install nb`                                                                                                 |
+| Obsidian     | Markdown knowledge base / PKM           | `sudo pacman -S obsidian`                                                                                        | `[Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)`                                                                                                                                                                                                                                                                     | `sudo dnf5 copr enable alxhr0/Obsidian -y && sudo dnf5 install obsidian`/`sudo snap install obsidian --classic`/`flatpak install flathub md.obsidian.Obsidian`                                                                                                                                                                                                                                                                                          | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                                                                                                                                                                                                                                                                                                                                                                            | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                        | `nix-env -iA nixpkgs.obsidian`                                                                                   | `eselect repository enable guru && emerge --sync && emerge -a app-office/obsidian`                               | `winget install Obsidian.Obsidian`/`scoop install obsidian`/`choco install obsidian`                            | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest) | `flatpak install flathub md.obsidian.Obsidian`                                                                   | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                        |
+
+</details>
+
+<details>
+<summary><strong>📦 Package Managers</strong></summary>   
+   
+| Tool       | Description                             | Arch (Pacman/yay)                                                                                                | Ubuntu/Debian (apt)                                                                               | Fedora/RHEL (dnf5/dnf/yum)                                                                                     | openSUSE (zypper)                                                                                                                                                                                                                                                                                                                             | Alpine (apk)                                                                                      | NixOS (nix-env)                                                                                   | Gentoo (emerge)                                                                                                  | Windows (winget/scoop/choco)                                                                                                                                                                                                                                                  | Android/Termux        | Flatpak      | Void Linux (Xbps)                                                                                 |
+|------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|--------------|---------------------------------------------------------------------------------------------------|
+| pacman     | Arch package manager (native)           | Preinstalled                                                                                                     | N/A                                                                                               | `sudo dnf5 install pacman`                                                                                     | `sudo zypper addrepo https://download.opensuse.org/repositories/system:packagemanager/openSUSE_Tumbleweed/system:packagemanager.repo && sudo zypper refresh && sudo zypper install pacman`                                                                                                                                                    | `apk add pacman`                                                                                  | `nix-env -iA nixpkgs.pacman`                                                                      | `eselect repository enable gentoo-zh && emerge --sync && emerge -a sys-apps/pacman`                              | Manual (`winget install MSYS2.MSYS2`)                                                                                                                                                                                                                                         | N/A                   | N/A          | N/A                                                                                               |
+| yay        | AUR helper (Arch)                       | `sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si` | N/A                                                                                               | N/A                                                                                                            | N/A                                                                                                                                                                                                                                                                                                                                           | N/A                                                                                               | `nix-env -iA nixpkgs.yay`                                                                         | Manual                                                                                                           | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | N/A                                                                                               |
+| apt        | Debian package manager                  | `sudo pacman -S apt`                                                                                             | preinstalled                                                                                      | `sudo dnf5 install apt`                                                                                        | N/A                                                                                                                                                                                                                                                                                                                                           | `apk add apt`                                                                                     | `nix-env -iA nixpkgs.apt`                                                                         | `eselect repository enable guru && emerge --sync && emerge -a sys-apps/aptly`                                    | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | `sudo xbps-install apt`                                                                           |
+| dpkg       | Debian low-level package manager        | `sudo pacman -S dpkg`                                                                                            | preinstalled                                                                                      | `sudo dnf5 install dpkg`                                                                                       | `sudo zypper install dpkg`                                                                                                                                                                                                                                                                                                                    | `apk add dpkg`                                                                                    | `nix-env -iA nixpkgs.dpkg`                                                                        | `emerge -a app-arch/dpkg`                                                                                        | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | `sudo xbps-install dpkg`                                                                          |
+| dnf/dnf5   | Fedora package manager                  | `sudo pacman -S dnf dnf5`                                                                                        | `sudo apt install dnf5`                                                                           | preinstalled                                                                                                   | `sudo zypper install dnf5`                                                                                                                                                                                                                                                                                                                    | N/A                                                                                               | `nix-env -iA nixpkgs.dnf5`                                                                        | `eselect repository enable guru && emerge --sync && emerge -a sys-apps/dnf5`                                     | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | N/A                                                                                               |
+| zypper     | openSUSE package manager                | `sudo pacman -S zypper`                                                                                          | `sudo apt install zypper`                                                                         | `sudo dnf5 install zypper`                                                                                     | preinstalled                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                               | N/A                                                                                               | Manual                                                                                                           | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | N/A                                                                                               |
+| apk        | Alpine package manager                  | `sudo pacman -S apk-tools`                                                                                       | `sudo apt install alpine-chroot-install`                                                          | `sudo dnf5 install apk-tools`                                                                                  | `sudo zypper install apk-tools`                                                                                                                                                                                                                                                                                                               | preinstalled                                                                                      | `nix-env -iA nixpkgs.apk-tools`                                                                   | `eselect repository enable robertgzr && emerge --sync && emerge -a dev-util/apk-tools`                           | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | `sudo xbps-install apk-tools`                                                                     |
+| Nix        | Universal package manager (declarative) | `sudo pacman -S nix`                                                                                             | `sudo apt install nix-setup-systemd`                                                              | `curl -L https://nixos.org/nix/install \| sh`/`sudo dnf5 copr enable petersen/nix -y && sudo dnf5 install nix` | `sudo zypper install nix`/`sh <(curl -L https://nixos.org/nix/install)`                                                                                                                                                                                                                                                                       | `apk add nix`                                                                                     | preinstalled                                                                                      | Manual                                                                                                           | [Manual](https://nixos.org/download.html)                                                                                                                                                                                                                                     | N/A                   | N/A          | `sudo xbps-install nix`                                                                           |
+| Portage    | Gentoo package manager                  | `yay -S portage-git`                                                                                             | Manual                                                                                            | Manual                                                                                                         | N/A                                                                                                                                                                                                                                                                                                                                           | N/A                                                                                               | N/A                                                                                               | `emerge -a sys-apps/portage`                                                                                     | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | `sudo xbps-install portage`                                                                       |
+| Flatpak    | Flatpak package manager                 | `sudo pacman -S flatpak flatpak-kcm`                                                                             | `sudo apt install flatpak`                                                                        | `sudo dnf5 install flatpak`                                                                                    | `sudo zypper install flatpak`                                                                                                                                                                                                                                                                                                                 | `apk add flatpak`                                                                                 | `nix-env -iA nixpkgs.flatpak`                                                                     | `emerge -a sys-apps/flatpak`                                                                                     | `winget install Flatpak.Flatpak` (in preview)¹                                                                                                                                                                                                                                | N/A                   | Preinstalled | `sudo xbps-install flatpak`                                                                       |
+| Snap       | Snap package manager                    | `yay -S snapd`                                                                                                   | `sudo apt install snapd`                                                                          | `sudo dnf5 install snapd`                                                                                      | `sudo zypper addrepo --refresh https://download.opensuse.org/repositories/system:/snappy/openSUSE_Tumbleweed snappy && sudo zypper --gpg-auto-import-keys refresh && sudo zypper dup --from snappy && sudo zypper install snapd -y && sudo systemctl enable --now snapd && sudo systemctl enable --now snapd.apparmor && source /etc/profile` | N/A                                                                                               | Manual                                                                                            | `emerge -a app-containers/snapd`                                                                                 | `winget install Canonical.Snapcraft` (in preview)²                                                                                                                                                                                                                            | `pkg install snap`    | N/A          | N/A                                                                                               |
+| Homebrew   | Homebrew package manager                | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`                | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`              | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`                  | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`                                                                                                                        | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` (Git Bash/WSL) | N/A                                                                                                                                                                                                                                                                           | N/A                   | N/A          | `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` |
+| Chocolatey | Chocolatey package manager              | N/A                                                                                                              | N/A                                                                                               | N/A                                                                                                            | N/A                                                                                                                                                                                                                                                                                                                                           | N/A                                                                                               | N/A                                                                                               | N/A                                                                                                              | `Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))` | N/A                   | N/A          | N/A                                                                                               |
+| Scoop      | Scoop package manager                   | N/A                                                                                                              | N/A                                                                                               | N/A                                                                                                            | N/A                                                                                                                                                                                                                                                                                                                                           | N/A                                                                                               | N/A                                                                                               | N/A                                                                                                              | `Set-ExecutionPolicy RemoteSigned -scope CurrentUser; irm get.scoop.sh \| iex`                                                                                                                                                                                                | N/A                   | N/A          | N/A                                                                                               |
+| pip        | Python package manager                  | `sudo pacman -S python-pip`                                                                                      | `sudo apt install python3-pip`                                                                    | `sudo dnf5 install python3-pip`                                                                                | `sudo zypper addrepo https://download.opensuse.org/repositories/devel:languages:python/openSUSE_Tumbleweed/devel:languages:python.repo && sudo zypper refresh && sudo zypper install python3-pip`                                                                                                                                             | `apk add py3-pip`                                                                                 | `nix-env -iA nixpkgs.python313Packages.pip`                                                       | `emerge -a dev-python/pip`                                                                                       | `winget install Python.Python.3.13`/`scoop install python`/`choco install python`                                                                                                                                                                                             | `pkg install python`  | N/A          | `sudo xbps-install python`                                                                        |
+| pipx       | Python application runner               | `sudo pacman -S pipx`                                                                                            | `sudo apt install pipx`                                                                           | `sudo dnf5 install pipx`                                                                                       | `sudo zypper install python313-pipx`                                                                                                                                                                                                                                                                                                          | `apk add pipx`                                                                                    | `nix-env -iA nixpkgs.pipx`                                                                        | `emerge -a dev-python/pipx`                                                                                      | `choco install pipx`                                                                                                                                                                                                                                                          | `pip install pipx`    | N/A          | `sudo xbps-install python3-pipx`                                                                  |
+| pipenv     | Python dependency manager               | `sudo pacman -S pipenv`                                                                                          | `sudo apt install pipenv`                                                                         | `sudo dnf5 copr enable @python/pipenv && sudo dnf5 install pipenv`                                             | `sudo zypper install python313-micropipenv`                                                                                                                                                                                                                                                                                                   | `pip install pipenv`                                                                              | `nix-env -iA nixpkgs.pipenv`                                                                      | `emerge -a dev-python/pipenv`                                                                                    | `choco install pipenv`/`pipx install pipenv`                                                                                                                                                                                                                                  | `pip install pipenv`  | N/A          | `sudo xbps-install python3-pipenv`                                                                |
+| cargo      | Rust package manager                    | `sudo pacman -S cargo`                                                                                           | `sudo apt install cargo`                                                                          | `sudo dnf5 install cargo`                                                                                      | `sudo zypper install cargo`                                                                                                                                                                                                                                                                                                                   | `apk add cargo`                                                                                   | `nix-env -iA nixpkgs.cargo`                                                                       | `emerge -a dev-lang/rust`                                                                                        | `winget install Rustlang.Rustup`/`scoop install rustup`/`choco install rust`                                                                                                                                                                                                  | `pkg install rust`    | N/A          | `sudo xbps-install rust`                                                                          |
+| RubyGems   | Ruby package manager                    | `sudo pacman -S ruby`                                                                                            | `sudo apt install ruby`                                                                           | `sudo dnf5 install ruby`                                                                                       | `sudo zypper install ruby`                                                                                                                                                                                                                                                                                                                    | `apk add ruby`                                                                                    | `nix-env -iA nixpkgs.ruby`                                                                        | `emerge -a dev-lang/ruby`                                                                                        | `winget install RubyInstallerTeam.Ruby`/`choco install ruby`                                                                                                                                                                                                                  | `pkg install ruby`    | N/A          | `sudo xbps-install ruby`                                                                          |
+| npm        | Node.js package manager                 | `sudo pacman -S npm`                                                                                             | `sudo apt install npm`                                                                            | `sudo dnf5 install nodejs`                                                                                     | `sudo zypper install npm22`                                                                                                                                                                                                                                                                                                                   | `apk add npm`                                                                                     | `nix-env -iA nixpkgs.nodejs_24`                                                                   | `emerge -a net-libs/nodejs`                                                                                      | `winget install OpenJS.NodeJS.LTS`/`scoop install nodejs-lts`/`choco install nodejs-lts`                                                                                                                                                                                      | `pkg install nodejs`  | N/A          | `sudo xbps-install nodejs`                                                                        |
+| pnpm       | pnpm package manager                    | `sudo pacman -S pnpm`/`npm i -g pnpm`                                                                            | `npm i -g pnpm`                                                                                   | `sudo dnf5 install pnpm`/`npm i -g pnpm`                                                                       | `sudo zypper install pnpm`/`npm i -g pnpm`                                                                                                                                                                                                                                                                                                    | `apk add pnpm`/`npm i -g pnpm`                                                                    | `nix-env -iA nixpkgs.pnpm`                                                                        | `emerge -a sys-apps/pnpm`                                                                                        | `winget install pnpm.pnpm`/`scoop install pnpm`                                                                                                                                                                                                                               | `npm install -g pnpm` | N/A          | `sudo xbps-install pnpm`                                                                          |
+| Perl       | Perl package manager                    | `sudo pacman -S perl`                                                                                            | `sudo apt install perl`                                                                           | `sudo dnf5 install perl`                                                                                       | `sudo zypper install perl`                                                                                                                                                                                                                                                                                                                    | `apk add perl`                                                                                    | `nix-env -iA nixpkgs.perl`                                                                        | `emerge -a dev-lang/perl`                                                                                        | `winget install StrawberryPerl.StrawberryPerl`/`choco install strawberryperl`                                                                                                                                                                                                 | `pkg install perl`    | N/A          | `sudo xbps-install perl`                                                                          |
+| NuGet      | NuGet package manager                   | `sudo pacman -S nuget`                                                                                           | `sudo apt install nuget`                                                                          | `sudo dnf5 install nuget`                                                                                      | `sudo zypper install mono-complete`                                                                                                                                                                                                                                                                                                           | `dotnet tool install --global NuGet.CommandLine`                                                  | `nix-env -iA nixpkgs.dotnetPackages.Nuget`                                                        | `emerge -a dev-lang/mono`                                                                                        | `winget install NuGet.NuGet`/`choco install nuget.commandline`                                                                                                                                                                                                                | Manual                | N/A          | Manual                                                                                            |
+
+¹ winget install Flatpak.Flatpak is in preview, not yet default on Windows ² Snapcraft, for snap builds, not for running snaps on Windows—see official docs for future progress
+* Homebrew for Fedora, Alpine—use Linuxbrew/homebrew-core, but it’s not a core package in repos.
+
+</details>
+
+<details>
+<summary><strong>🎨 Desktop, Audio & Misc Tools</strong></summary>
+
+| Tool                  | Description                                 | Arch (Pacman/yay)                                                                                                                     | Ubuntu/Debian (apt)                                                                                                                                                                                                                                                                                                                                                                                        | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                                                                                                                                                                                                                                              | openSUSE (zypper)                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Alpine (apk)                                                                                                                                                                  | NixOS (nix-env)                                                                                                                                                                                                                  | Gentoo (emerge)                                                                                                                                                                                                                                                                 | Windows (winget/scoop/choco)                                                                                                                                                                       | Android/Termux                                                                              | Flatpak                                                   | Void Linux (Xbps)                                                                                                                                                                          |
+|-----------------------|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Hyprland              | Wayland compositor                          | `sudo pacman -S hyprland`                                                                                                             | Manual (build)                                                                                                                                                                                                                                                                                                                                                                                             | `sudo dnf5 install hyprland`                                                                                                                                                                                                                                                                                                                                                                                                                            | `sudo zypper install hyprland`                                                                                                                                                                                                                                                                                                                                                                                                                                       | `apk add hyprland`                                                                                                                                                            | `nix-env -iA nixpkgs.hyprland`                                                                                                                                                                                                   | `emerge -a gui-wm/hyprland`                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | Manual                                                                                                                                                                                     |
+| Hypridle              | Idle daemon for Hyprland                    | `sudo pacman -S hypridle`                                                                                                             | Manual (build)                                                                                                                                                                                                                                                                                                                                                                                             | Manual (build)                                                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo zypper install hypridle`                                                                                                                                                                                                                                                                                                                                                                                                                                       | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.hypridle`                                                                                                                                                                                                   | `eselect repository enable guru && emerge --sync && emerge -a gui-apps/hypridle`                                                                                                                                                                                                | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | Manual                                                                                                                                                                                     |
+| hyprpicker            | Color picker for Hyprland                   | `sudo pacman -S hyprpicker`                                                                                                           | `sudo apt install cargo && cargo install hyprpicker`                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install cargo && cargo install hyprpicker`                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo zypper install hyprpicker`                                                                                                                                                                                                                                                                                                                                                                                                                                     | `apk add cargo && cargo install hyprpicker`                                                                                                                                   | `nix-env -iA nixpkgs.hyprpicker`                                                                                                                                                                                                 | `eselect repository enable guru && emerge --sync && emerge -a gui-apps/hyprpicker`                                                                                                                                                                                              | `winget install Rustlang.Rustup; cargo install hyprpicker`/`scoop install rustup; cargo install hyprpicker`/`choco install rust; cargo install hyprpicker`                                         | `pkg install rust && cargo install hyprpicker`                                              | N/A                                                       | `sudo xbps-install hyprpicker`                                                                                                                                                             |
+| hyprland-plugins      | Plugins for Hyprland                        | Manual                                                                                                                                | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `sudo zypper install hyprland-plugin-*`                                                                                                                                                                                                                                                                                                                                                                                                                              | `apk add hyprland-plugins`                                                                                                                                                    | `nix-env -iA nixpkgs.hyprlandPlugins`                                                                                                                                                                                            | Manual                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | Manual                                                                                                                                                                                     |
+| hyprshot              | Screenshot tool for Hyprland                | `sudo pacman -S hyprshot`                                                                                                             | `sudo apt install cargo && cargo install hyprshot`                                                                                                                                                                                                                                                                                                                                                         | `sudo dnf5 install cargo && cargo install hyprshot`                                                                                                                                                                                                                                                                                                                                                                                                     | `sudo zypper install hyprshot`                                                                                                                                                                                                                                                                                                                                                                                                                                       | `apk add cargo && cargo install hyprshot`                                                                                                                                     | `nix-env -iA nixpkgs.hyprshot`                                                                                                                                                                                                   | `eselect repository enable guru && emerge --sync && emerge -a gui-apps/hyprshot`                                                                                                                                                                                                | `winget install Rustlang.Rustup; cargo install hyprshot`/`scoop install rustup; cargo install hyprshot`/`choco install rust; cargo install hyprshot`                                               | `pkg install rust && cargo install hyprshot`                                                | N/A                                                       | Manual                                                                                                                                                                                     |
+| fuzzel                | Wayland launcher                            | `sudo pacman -S fuzzel`                                                                                                               | `sudo apt install fuzzel`                                                                                                                                                                                                                                                                                                                                                                                  | `sudo dnf5 install fuzzel`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install fuzzel`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `apk add fuzzel`                                                                                                                                                              | `nix-env -iA nixpkgs.fuzzel`                                                                                                                                                                                                     | `eselect repository enable guru && emerge --sync && emerge -a gui-apps/fuzzel`                                                                                                                                                                                                  | `winget install Rustlang.Rustup; cargo install fuzzel`/`scoop install rustup; cargo install fuzzel`/`choco install rust; cargo install fuzzel`                                                     | `pkg install rust && cargo install fuzzel`                                                  | N/A                                                       | `sudo xbps-install fuzzel`                                                                                                                                                                 |
+| cliphist              | Clipboard history (Wayland)                 | `sudo pacman -S cliphist`                                                                                                             | `sudo apt install wmcliphist`                                                                                                                                                                                                                                                                                                                                                                              | `sudo dnf5 copr enable wef/cliphist && sudo dnf5 install cliphist`                                                                                                                                                                                                                                                                                                                                                                                      | `sudo zypper install cliphist`                                                                                                                                                                                                                                                                                                                                                                                                                                       | `apk add cliphist`                                                                                                                                                            | `nix-env -iA nixpkgs.cliphist`                                                                                                                                                                                                   | `eselect repository enable guru && emerge --sync && emerge -a app-misc/cliphist`                                                                                                                                                                                                | `winget install Rustlang.Rustup; cargo install cliphist`/`scoop install rustup; cargo install cliphist`/`choco install rust; cargo install cliphist`                                               | `pkg install rust && cargo install cliphist`                                                | N/A                                                       | `sudo xbps-install cliphist`                                                                                                                                                               |
+| wl-clipboard          | Wayland clipboard utils (wl-copy/paste)     | `sudo pacman -S wl-clipboard`                                                                                                         | `sudo apt install wl-clipboard`                                                                                                                                                                                                                                                                                                                                                                            | `sudo dnf5 install wl-clipboard`                                                                                                                                                                                                                                                                                                                                                                                                                        | `sudo zypper install wl-clipboard`                                                                                                                                                                                                                                                                                                                                                                                                                                   | `apk add wl-clipboard`                                                                                                                                                        | `nix-env -iA nixpkgs.wl-clipboard`                                                                                                                                                                                               | `emerge -a gui-apps/wl-clipboard`                                                                                                                                                                                                                                               | Manual                                                                                                                                                                                             | N/A                                                                                         | N/A                                                       | `sudo xbps-install wl-clipboard`                                                                                                                                                           |
+| swww                  | Wallpaper daemon for Wayland                | `sudo pacman -S swww`                                                                                                                 | `sudo apt install cargo && cargo install swww`                                                                                                                                                                                                                                                                                                                                                             | `sudo dnf5 copr enable solopasha/hyprland -y && sudo dnf5 install swww`                                                                                                                                                                                                                                                                                                                                                                                 | `sudo zypper install swww`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add swww`                                                                                                                                                                | `nix-env -iA nixpkgs.swww`                                                                                                                                                                                                       | `eselect repository enable guru && emerge --sync && emerge -a gui-apps/swww`                                                                                                                                                                                                    | `winget install Rustlang.Rustup; cargo install swww`/`scoop install rustup; cargo install swww`/`choco install rust; cargo install swww`                                                           | `pkg install rust && cargo install swww`                                                    | N/A                                                       | `sudo xbps-install swww`                                                                                                                                                                   |
+| kitty                 | GPU terminal emulator                       | `sudo pacman -S kitty`                                                                                                                | `sudo apt install kitty`                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install kitty`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install kitty`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `apk add kitty`                                                                                                                                                               | `nix-env -iA nixpkgs.kitty`                                                                                                                                                                                                      | `emerge -a x11-terms/kitty`                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                | Manual                                                                                      | N/A                                                       | `sudo xbps-install kitty`                                                                                                                                                                  |
+| ghostty               | Fast terminal emulator                      | `yay -S ghostty`                                                                                                                      | `curl -s https://download.opensuse.org/repositories/home:/clayrisser:/bookworm/Debian_12/amd64/ \| grep -oP 'ghostty_.*?\.deb' \| tail -1 \| xargs -I{} curl -LO https://download.opensuse.org/repositories/home:/clayrisser:/bookworm/Debian_12/amd64/{} && sudo apt install ./ghostty_*.deb -y`/`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"` | `sudo dnf5 copr enable solopasha/hyprland -y && sudo dnf5 install ghostty`                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install ghostty`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `apk add ghostty`                                                                                                                                                             | ``nix-env -iA nixpkgs.ghostty`                                                                                                                                                                                                   | `emerge -a x11-terms/ghostty`                                                                                                                                                                                                                                                   | N/A (WIP)                                                                                                                                                                                          | N/A                                                                                         | N/A                                                       | N/A                                                                                                                                                                                        |
+| playerctl             | Media player controller (MPRIS)             | `sudo pacman -S playerctl`                                                                                                            | `sudo apt install playerctl`                                                                                                                                                                                                                                                                                                                                                                               | `sudo dnf5 install playerctl`                                                                                                                                                                                                                                                                                                                                                                                                                           | `sudo zypper install playerctl`                                                                                                                                                                                                                                                                                                                                                                                                                                      | `apk add playerctl`                                                                                                                                                           | `nix-env -iA nixpkgs.playerctl`                                                                                                                                                                                                  | `emerge -a media-sound/playerctl`                                                                                                                                                                                                                                               | Manual                                                                                                                                                                                             | Manual                                                                                      | N/A                                                       | `sudo xbps-install playerctl`                                                                                                                                                              |
+| cava                  | Audio spectrum visualizer (TUI)             | `sudo pacman -S cava`                                                                                                                 | `sudo apt install cava`                                                                                                                                                                                                                                                                                                                                                                                    | `sudo dnf5 install cava`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install cava`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add cava`                                                                                                                                                                | `nix-env -iA nixpkgs.cava`                                                                                                                                                                                                       | `emerge -a media-sound/cava`                                                                                                                                                                                                                                                    | Manual                                                                                                                                                                                             | Manual                                                                                      | N/A                                                       | `sudo xbps-install cava`                                                                                                                                                                   |
+| JamesDSP              | Audio effects daemon (Wayland)              | `yay -S jamesdsp`                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.jamesdsp`                                                                                                                                                                                                   | `eselect repository enable gentoobr && emerge --sync && emerge -a media-sound/jamesdsp                                                                                                                                                                                          | N/A                                                                                                                                                                                                | N/A                                                                                         | `flatpak install flathub me.timschneeberger.jdsp4linux`   | N/A                                                                                                                                                                                        |
+| wireplumber           | PipeWire audio control tool                 | `sudo pacman -S wireplumber`                                                                                                          | `sudo apt install wireplumber`                                                                                                                                                                                                                                                                                                                                                                             | `sudo dnf5 install wireplumber`                                                                                                                                                                                                                                                                                                                                                                                                                         | `sudo zypper install wireplumber`                                                                                                                                                                                                                                                                                                                                                                                                                                    | `apk add wireplumber`                                                                                                                                                         | `nix-env -iA nixpkgs.wireplumber`                                                                                                                                                                                                | Manual                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                                                | Manual                                                                                      | N/A                                                       | `sudo xbps-install wireplumber`                                                                                                                                                            |
+| weston                | Linux reference compositor                  | `sudo pacman -S weston`                                                                                                               | `sudo apt install weston`                                                                                                                                                                                                                                                                                                                                                                                  | `sudo dnf5 install weston`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install weston`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `apk add weston`                                                                                                                                                              | `nix-env -iA nixpkgs.weston`                                                                                                                                                                                                     | `emerge -a dev-libs/weston`                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                             | N/A                                                                                         | N/A                                                       | `sudo xbps-install weston`                                                                                                                                                                 |
+| qt5ct                 | Qt5 theme config utility                    | `sudo pacman -S qt5ct`                                                                                                                | `sudo apt install qt5ct`                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install qt5ct`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install qt5ct`                                                                                                                                                                                                                                                                                                                                                                                                                                          | `apk add qt5ct`                                                                                                                                                               | `nix-env -iA nixpkgs.libsForQt5.qt5ct`                                                                                                                                                                                           | `emerge -a x11-misc/qt5ct`                                                                                                                                                                                                                                                      | Manual                                                                                                                                                                                             | N/A                                                                                         | N/A                                                       | `sudo xbps-install qt5ct                                                                                                                                                                   |
+| Flatpak               | Flatpak package manager                     | `sudo pacman -S flatpak flatpak-kcm`                                                                                                  | `sudo apt install flatpak`                                                                                                                                                                                                                                                                                                                                                                                 | `sudo dnf5 install flatpak`                                                                                                                                                                                                                                                                                                                                                                                                                             | `sudo zypper install flatpak`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `apk add flatpak`                                                                                                                                                             | `nix-env -iA nixpkgs.flatpak`                                                                                                                                                                                                    | `emerge -a sys-apps/flatpak`                                                                                                                                                                                                                                                    | `winget install Flatpak.Flatpak` (in preview)¹                                                                                                                                                     | N/A                                                                                         | Preinstalled                                              | `sudo xbps-install flatpak`                                                                                                                                                                |
+| Dino                  | Modern XMPP desktop chat                    | `sudo pacman -S dino`                                                                                                                 | `sudo apt install dino-im`                                                                                                                                                                                                                                                                                                                                                                                 | `sudo dnf5 install dino`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install dino`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add dino`                                                                                                                                                                | `nix-env -iA nixpkgs.dino`                                                                                                                                                                                                       | `emerge -a net-im/dino`                                                                                                                                                                                                                                                         | Manual                                                                                                                                                                                             | N/A                                                                                         | `flatpak install flathub im.dino.Dino`                    | `sudo xbps-install dino`                                                                                                                                                                   |
+| rclone                | Cloud storage sync                          | `sudo pacman -S rclone`                                                                                                               | `sudo apt install rclone`                                                                                                                                                                                                                                                                                                                                                                                  | `sudo dnf5 install rclone`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install rclone`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `apk add rclone`                                                                                                                                                              | `nix-env -iA nixpkgs.rclone`                                                                                                                                                                                                     | `emerge -a net-misc/rclone`                                                                                                                                                                                                                                                     | `winget install rclone.rclone`/`scoop install rclone`/`choco install rclone`                                                                                                                       | `pkg install rclone`                                                                        | N/A                                                       | `sudo xbps-install rclone`                                                                                                                                                                 |
+| Steam                 | Steam game launcher                         | `sudo pacman -S steam`                                                                                                                | `sudo apt install steam`                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && sudo dnf5 config-manager setopt fedora-cisco-openh264.enabled=1 && sudo dnf5 upgrade --refresh -y && sudo dnf5 install steam`                                                                                                | `sudo zypper install steam`                                                                                                                                                                                                                                                                                                                                                                                                                                          | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.steam`                                                                                                                                                                                                      | `eselect repository enable barrensea-overlay && emerge --sync && emerge -a games-misc/steam`                                                                                                                                                                                    | `winget install Valve.Steam`/`scoop install steam`/`choco install steam`                                                                                                                           | N/A                                                                                         | `flatpak install flathub com.valvesoftware.Steam`         | `sudo xbps-install steam`                                                                                                                                                                  |
+| VSCodium              | FOSS VS Code                                | `yay -S vscodium vscodium-marketplace`                                                                                                | `snap install codium --classic`/`wget https://github.com/VSCodium/vscodium/releases/latest/download/codium_amd64.deb && sudo apt install ./codium_amd64.deb`                                                                                                                                                                                                                                               | `sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" \| sudo tee -a /etc/yum.repos.d/vscodium.repo && sudo dnf5 install codium` | `sudo rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg && printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=gitlab.com_paulcarroty_vscodium_repo\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" \| sudo tee -a /etc/zypp/repos.d/vscodium.repo && sudo zypper in codium` | `apk add vscodium`                                                                                                                                                            | `nix-env -iA nixpkgs.vscodium`                                                                                                                                                                                                   | `emerge -a app-editors/vscodium`                                                                                                                                                                                                                                                | `winget install VSCodium.VSCodium`/`scoop bucket add extras && scoop install vscodium`/`choco install vscodium`                                                                                    | Manual                                                                                      | `flatpak install flathub com.vscodium.codium`             | `sudo xbps-install vscode`                                                                                                                                                                 |
+| Spicetify             | Spicetify CLI                               | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \                                                         | sh (Shell)`/`yay -S spicetify-cli`/`brew install spicetify-cli`/`sudo pacman -S npm && npm install -g spicetify-cli` | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/`brew install spicetify-cli`/`sudo apt install npm && npm install -g spicetify-cli`                                                                                                      | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual (`npm`/GitHub)/`brew install spicetify-cli`/`sudo dnf5 install npm && npm install -g spicetify-cli`                                                                                                                                                                                                                                                  | `sudo zypper install spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`sudo zypper install npm && npm install -g spicetify-cli`                                                                                                                                                                                                                                        | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`apk add npm && npm install -g spicetify-cli` | `nix-env -iA nixpkgs.spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`nix-env -iA nixpkgs.nodejs && npm install -g spicetify-cli` | `eselect repository enable parona-overlay && emerge --sync && emerge -a app-misc/spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`emerge -a npm && npm install -g spicetify-cli` | `iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 \| iex` (Powershell) /`winget install Spicetify.Spicetify`/`scoop install spicetify-cli`/`choco install spicetify-cli` | N/A                                                                                         | N/A                                                       | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh` (Shell)/ Manual/`brew install spicetify-cli`/`sudo xbps-install nodejs && npm install -g spicetify-cli` |
+| kwinrc                | KWin configuration utility (KDE)            | `sudo pacman -S kwin`                                                                                                                 | `sudo apt install kf6-kwindowsystem`                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install kwin`                                                                                                                                                                                                                                                                                                                                                                                                                                | `sudo zypper install kwin6`                                                                                                                                                                                                                                                                                                                                                                                                                                          | N/A                                                                                                                                                                           | `nix-env -iA nixpkgs.kdePackages.kwin`                                                                                                                                                                                           | `emerge -a kde-plasma/kde`                                                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | Part of KDE                                                                                                                                                                                |
+| exifaudio/exiftool    | Audio file metadata tool                    | `sudo pacman -S perl-image-exiftool`                                                                                                  | `pip install exiftool`                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 install perl-Image-ExifTool`                                                                                                                                                                                                                                                                                                                                                                                                                 | `sudo zypper install exiftool`/`pip install exifaudio`                                                                                                                                                                                                                                                                                                                                                                                                               | `apk add exiftool`/`pip install exifaudio`                                                                                                                                    | `nix-env -iA nixpkgs.exiftool`                                                                                                                                                                                                   | `emerge -a media-libs/exiftool`                                                                                                                                                                                                                                                 | N/A                                                                                                                                                                                                | `pip install exifaudio`                                                                     | N/A                                                       | N/A                                                                                                                                                                                        |
+| ouch                  | Multi-format archiver (CLI)                 | `sudo pacman -S ouch`                                                                                                                 | `cargo install ouch`                                                                                                                                                                                                                                                                                                                                                                                       | `cargo install ouch`                                                                                                                                                                                                                                                                                                                                                                                                                                    | `cargo install ouch`                                                                                                                                                                                                                                                                                                                                                                                                                                                 | `apk add ouch`                                                                                                                                                                | `nix-env -iA nixpkgs.ouch`                                                                                                                                                                                                       | `eselect repository enable guru && emerge --sync && emerge -a app-arch/ouch`                                                                                                                                                                                                    | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | `sudo xbps-install ouch`                                                                                                                                                                   |
+| DuckDB                | DuckDB (embeddable database CLI/SQL)        | `yay -S duckdb`                                                                                                                       | `sudo apt install duckdb`                                                                                                                                                                                                                                                                                                                                                                                  | `sudo dnf5 install duckdb`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo snap install duckdb`                                                                                                                                                                                                                                                                                                                                                                                                                                           | Cargo/manual                                                                                                                                                                  | `nix-env -iA nixpkgs.duckdb`                                                                                                                                                                                                     | `eselect repository enable pypi-sci && emerge --sync && emerge -a dev-python/duckdb`                                                                                                                                                                                            | `winget install DuckDB.DuckDB`/`scoop install duckdb`                                                                                                                                              | `pip install duckdb`                                                                        | N/A                                                       | `sudo xbps-install duckdb`                                                                                                                                                                 |
+| fastfetch             | Fastfetch (system info, neofetch alt)       | `sudo pacman -S fastfetch`                                                                                                            | `sudo apt install fastfetch`                                                                                                                                                                                                                                                                                                                                                                               | `sudo dnf5 install fastfetch`                                                                                                                                                                                                                                                                                                                                                                                                                           | `sudo zypper install fastfetch`                                                                                                                                                                                                                                                                                                                                                                                                                                      | `apk add fastfetch`                                                                                                                                                           | `nix-env -iA nixpkgs.fastfetch`                                                                                                                                                                                                  | `emerge -a app-misc/fastfetch`                                                                                                                                                                                                                                                  | `winget install Fastfetch.Fastfetch`/`scoop install fastfetch`/`choco install fastfetch`                                                                                                           | `pkg install fastfetch`                                                                     | N/A                                                       | `sudo xbps-install fastfetch`                                                                                                                                                              |
+| nb                    | Markdown/Notebook preview (TUI)             | `yay -S nb`                                                                                                                           | `pip install nb`                                                                                                                                                                                                                                                                                                                                                                                           | `pip install nb`                                                                                                                                                                                                                                                                                                                                                                                                                                        | `pip install nb`                                                                                                                                                                                                                                                                                                                                                                                                                                                     | `apk add nb`                                                                                                                                                                  | `nix-env -iA nixpkgs.nb`                                                                                                                                                                                                         | `pip install nb`                                                                                                                                                                                                                                                                | `pip install nb`                                                                                                                                                                                   | `pip install nb`                                                                            | N/A                                                       | `pip install nb`                                                                                                                                                                           |
+| bat                   | cat with syntax highlighting                | `sudo pacman -S bat`                                                                                                                  | `sudo apt install bat`                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 install bat`                                                                                                                                                                                                                                                                                                                                                                                                                                 | `sudo zypper install bat`                                                                                                                                                                                                                                                                                                                                                                                                                                            | `apk add bat`                                                                                                                                                                 | `nix-env -iA nixpkgs.bat`                                                                                                                                                                                                        | `emerge -a sys-apps/bat`                                                                                                                                                                                                                                                        | `winget install sharkdp.bat`/`scoop install bat`/`choco install bat`                                                                                                                               | `pkg install bat`                                                                           | N/A                                                       | `sudo xbps-install bat`                                                                                                                                                                    |
+| ascii-image-converter | CLI image to ASCII art                      | `yay -S ascii-image-converter`                                                                                                        | `snap install ascii-image-converter` \| [Manual](https://github.com/TheZoraiz/ascii-image-converter/releases)                                                                                                                                                                                                                                                                                              | `sudo snap install ascii-image-converter`/ Manual / build from [GitHub](https://github.com/TheZoraiz/ascii-image-converter)                                                                                                                                                                                                                                                                                                                             | `sudo snap install ascii-image-converter`                                                                                                                                                                                                                                                                                                                                                                                                                            | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.ascii-image-converter`                                                                                                                                                                                      | Manual                                                                                                                                                                                                                                                                          | `choco install ascii-image-converter` (community)                                                                                                                                                  | Manual                                                                                      | N/A                                                       | Manual                                                                                                                                                                                     |
+| rmpc                  | Terminal MPD client                         | `sudo pacman -S rmpc`                                                                                                                 | [GitHub binary](https://mierak.github.io/rmpc/)                                                                                                                                                                                                                                                                                                                                                            | `sudo dnf5 copr enable evanc577/packages -y && sudo dnf5 install rmpc`                                                                                                                                                                                                                                                                                                                                                                                  | `sudo zypper install rmpc` (Tumbleweed)                                                                                                                                                                                                                                                                                                                                                                                                                              | `apk add rmpc`                                                                                                                                                                | `nix-env -iA nixpkgs.rmpc`                                                                                                                                                                                                       | `eselect repository enable guru && emerge --sync && emerge -a media-sound/rmpc`                                                                                                                                                                                                 | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | `sudo xbps-install rmpc`                                                                                                                                                                   |
+| tmuxinator            | Tmuxinator (tmux session manager, Ruby)     | `yay -S tmuxinator`                                                                                                                   | `gem install tmuxinator`                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 copr enable fcsm/tmuxinator -y && sudo dnf5 install tmuxinator`/`gem install tmuxinator`                                                                                                                                                                                                                                                                                                                                                     | `gem install tmuxinator`                                                                                                                                                                                                                                                                                                                                                                                                                                             | `apk add tmuxinator`                                                                                                                                                          | `nix-env -iA nixpkgs.tmuxinator`                                                                                                                                                                                                 | `gem install tmuxinator`                                                                                                                                                                                                                                                        | N/A                                                                                                                                                                                                | N/A                                                                                         | N/A                                                       | `sudo xbps-install ruby-tmuxinator`                                                                                                                                                        |
+| yt-dlp                | yt-dlp (video downloader, youtube-dl alt)   | `sudo pacman -S yt-dlp`                                                                                                               | `sudo apt install python-yt-dlp`                                                                                                                                                                                                                                                                                                                                                                           | `sudo dnf5 install yt-dlp`                                                                                                                                                                                                                                                                                                                                                                                                                              | `sudo zypper install yt-dlp`                                                                                                                                                                                                                                                                                                                                                                                                                                         | `apk add yt-dlp`                                                                                                                                                              | `nix-env -iA nixpkgs.yt-dlp`                                                                                                                                                                                                     | `emerge -a net-misc/yt-dlp`                                                                                                                                                                                                                                                     | `winget install yt-dlp.yt-dlp` / `scoop install yt-dlp` / `choco install yt-dlp`                                                                                                                   | `pip install yt-dlp`                                                                        | N/A                                                       | `sudo xbps-install yt-dlp`                                                                                                                                                                 |
+| navi                  | navi (interactive cheatsheets)              | `sudo pacman -S navi`/`brew install navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)` | `sudo apt install navi/`brew install navi`/`cargo install --locked navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                                                                                                                                                       | `sudo dnf5 install navi`/`brew install navi`/`cargo install --locked navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                                                                                                                                                                                                  | `brew install navi`/`cargo install --locked navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                                                                                                                                                                                                                                        | `apk add navi`/`brew install navi`/`cargo install --locked navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                  | `nix-env -iA nixpkgs.navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                           | `emerge -a app-misc/navi`/`bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                                                                           | `choco install navi`                                                                                                                                                                               | `pkg install navi`                                                                          | N/A                                                       | `bash <(curl -sL https://raw.githubusercontent.com/denisidoro/navi/master/scripts/install)`                                                                                                |
+| tmatrix               | Matrix terminal animation                   | `yay -S tmatrix`                                                                                                                      | `cargo install tmatrix`                                                                                                                                                                                                                                                                                                                                                                                    | `sudo dnf5 install ncurses-devel wget gcc make -y && wget -q https://github.com/M4444/TMatrix/releases/download/v1.4/installation.tar.gz && tar -xzf installation.tar.gz && cd installation && sudo ./install.sh`/`cargo install tmatrix`                                                                                                                                                                                                               | `cargo install tmatrix`                                                                                                                                                                                                                                                                                                                                                                                                                                              | `apk add tmatrix`                                                                                                                                                             | `nix-env -iA nixpkgs.tmatrix`                                                                                                                                                                                                    | `cargo install tmatrix`                                                                               | `scoop install tmatrix`                                                                                                                                                 | `pkg install tmatrix`                                                                                                                                                                              | N/A                                                                                         | `cargo install tmatrix`                                   | `cargo install tmatrix`                                                                                                                                                                    |
+| 7-Zip                 | 7-Zip (file archiver/compression tool)      | `sudo pacman -S 7zip`                                                                                                                 | `sudo apt install 7zip`                                                                                                                                                                                                                                                                                                                                                                                    | `sudo dnf5 install p7zip`                                                                                                                                                                                                                                                                                                                                                                                                                               | `sudo zypper install 7zip`                                                                                                                                                                                                                                                                                                                                                                                                                                           | `apk add 7zip`                                                                                                                                                                | `nix-env -iA nixpkgs.p7zip`                                                                                                                                                                                                      | `emerge -a app-arch/7zip`                                                                                                                                                                                                                                                       | `winget install 7zip.7zip`/`scoop install 7zip`/`choco install 7zip`                                                                                                                               | Manual                                                                                      | N/A                                                       | `sudo xbps-install 7zip`                                                                                                                                                                   |
+| oh-my-posh            | Shell prompt theme engine                   | `yay -S oh-my-posh-bin`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                           | `snap install oh-my-posh` (Snap, newer IoT)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                                                                                                                                                            | `sudo dnf5 copr enable chronoscrat/oh-my-posh && dnf5 install --refresh oh-my-posh`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                                                                                                                                                                 | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                                                                                                                                                                                                                | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                         | `nix-env -iA nixpkgs.oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                           | `eselect repository enable stintel && emerge --sync && emerge -a app-shells/oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                   | `winget install JanDeDobbeleer.OhMyPosh`/`scoop install oh-my-posh`/`choco install oh-my-posh`                                                                                                     | `pkg install oh-my-posh` (if available)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh` | N/A                                                       | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                      |
+| Rainmeter             | Rainmeter (desktop customization, Windows)  | N/A                                                                                                                                   | N/A                                                                                                                                                                                                                                                                                                                                                                                                        | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Rainmeter.Rainmeter`/`scoop install rainmeter`/`choco install rainmeter`                                                                                                           | N/A                                                                                         | N/A                                                       | N/A                                                                                                                                                                                           |
+| qBittorrent           | qBittorrent (BitTorrent client)             | `sudo pacman -S qbittorrent`                                                                                                          | `sudo apt install qbittorrent`                                                                                                                                                                                                                                                                                                                                                                             | `sudo dnf5 install qbittorrent`                                                                                                                                                                                                                                                                                                                                                                                                                         | `sudo zypper install qbittorrent`                                                                                                                                                                                                                                                                                                                                                                                                                                    | `apk add qbittorrent`                                                                                                                                                         | `nix-env -iA nixpkgs.qbittorrent`                                                                                                                                                                                                | `emerge -a net-p2p/qbittorrent`                                                                                                                                                                                                                                                 | `winget install qBittorrent.qBittorrent`/`scoop install qbittorrent`/`choco install qbittorrent`                                                                                                   | Manual                                                                                      | `flatpak install flathub org.qbittorrent.qBittorrent`     | `sudo xbps-install qbittorrent`                                                                                                                                                            |
+| OneDrive              | Microsoft OneDrive                          | N/A                                                                                                                                   | `sudo apt install onedrive`                                                                                                                                                                                                                                                                                                                                                                                | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                                                                                                           | `nix-env -iA nixpkgs.onedrive`                                                                                                                                                                                                   | `emerge -a net-misc/onedrive`                                                                                                                                                                                                                                                   | Preinstalled/`winget install Microsoft.OneDrive`                                                                                                                                                   | N/A                                                                                         | N/A                                                       | N/A                                                                                                                                                                                        |
+| ProtonVPN             | ProtonVPN (VPN client)                      | Manual                                                                                                                                | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | `sudo zypper install proton-vpn`                                                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.protonvpn-gui`                                                                                                                                                                                              | `emerge -a net-vpn/proton-vpn-gtk-app`                                                                                                                                                                                                                                          | `winget install ProtonVPN.ProtonVPN`/`scoop install protonvpn`                                                                                                                                     | Manual                                                                                      | `flatpak install flathub com.protonvpn.www`               | Manual                                                                                                                                                                                     |
+| Google Earth Pro      | Google Earth Pro                            | Manual                                                                                                                                | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | `emerge -a sci-geosciences/google-earth-pro`                                                                                                                                                                                                                                    | `winget install Google.EarthPro`/`scoop install google-earth-pro`                                                                                                                                  | Manual                                                                                      | `flatpak install flathub com.google.EarthPro`             | Manual                                                                                                                                                                                     |
+| 8Gadget Pack          | Desktop gadgets (Windows)                   | N/A                                                                                                                                   | N/A                                                                                                                                                                                                                                                                                                                                                                                                        | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install 8GadgetPack.8GadgetPack`/`choco install 8gadgetpack`                                                                                                                               | N/A                                                                                         | N/A                                                       | N/A                                                                                                                                                                                        |
+| ASIO4ALL              | Audio driver (Windows)                      | N/A                                                                                                                                   | N/A                                                                                                                                                                                                                                                                                                                                                                                                        | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install ASIO4ALL.ASIO4ALL`/`choco install asio4all`                                                                                                                                        | N/A                                                                                         | N/A                                                       | N/A                                                                                                                                                                                        |
+| Adobe Creative Cloud  | Adobe suite launcher                        | Manual                                                                                                                                | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                                                          | `winget install Adobe.AdobeCreativeCloud`/`choco install adobecreativecloud`                                                                                                                       | Manual                                                                                      | N/A                                                       | N/A                                                                                                                                                                                        |
+| Zen Browser           | Minimalist web browser (Windows)            | `yay -S zen-browser`                                                                                                                  | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | `sudo dnf5 copr enable firminunderscore/zen-browser && sudo dnf5 install zen-browser -y`                                                                                                                                                                                                                                                                                                                                                                | `flatpak install flathub org.zen_browser.Zen`                                                                                                                                                                                                                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | `eselect repository enable edgets && emerge --sync && emerge -a www-client/zen-browser-bin`                                                                                                                                                                                     | Manual                                                                                                                                                                                             | N/A                                                                                         | `flatpak install flathub app.zen_browser.zen`             | Manual                                                                                                                                                                                     |
+| Google Drive          | Cloud storage client                        | Manual                                                                                                                                | Manual                                                                                                                                                                                                                                                                                                                                                                                                     | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                                                          | `winget install Google.Drive`/`scoop install google-drive`/`choco install googledrive`                                                                                                             | Manual                                                                                      | N/A                                                       | Manual                                                                                                                                                                                     |
+
+</details>
+
+<details>
+<summary><strong>🎮 Gaming and Multimedia Tools</strong></summary>
+
+| Tool                | Description                         | Arch (Pacman/yay)                                                         | Ubuntu/Debian (apt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                                                                                                                                               | openSUSE (zypper)                                         | Alpine (apk)                                                                      | NixOS (nix-env)                                                                    | Gentoo (emerge)                                                                              | Windows (winget/scoop/choco)                                                            | Android/Termux | Flatpak                                                   | Void Linux (Xbps)                 |
+|---------------------|-------------------------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|----------------|-----------------------------------------------------------|-----------------------------------|
+| RetroArch           | RetroArch (emulator frontend)       | `sudo pacman -S retroarch`                                                | `sudo apt install retroarch`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | `sudo dnf5 install retroarch`                                                                                                                                                                                                                                                                                                                            | `sudo zypper install retroarch`                           | `apk add retroarch`                                                               | `nix-env -iA nixpkgs.retroarch-full`                                               | `eselect repository enable menelkir && emerge --sync && emerge -a games-emulation/retroarch` | `winget install Libretro.RetroArch`/`scoop install retroarch`/`choco install retroarch` | Manual         | `flatpak install flathub org.libretro.RetroArch`          | `sudo xbps-install retroarch`     |
+| Discord             | Discord (chat client)               | `sudo pacman -S discord`                                                  | `sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC && sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<< "deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main" && sudo apt update && sudo apt install discord`                                                                                                                               | `sudo dnf5 install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && sudo dnf5 install discord -y`/`flatpak install flathub com.discordapp.Discord`                                            | `sudo zypper install discord`                             | `flatpak install flathub com.discordapp.Discord`                                  | `nix-env -iA nixpkgs.discord`                                                      | `emerge -a net-im/discord`                                                                   | `winget install Discord.Discord`/`scoop install discord`/`choco install discord`        | Manual         | `flatpak install flathub com.discordapp.Discord`          | Manual                            |
+| EA app              | EA app (game launcher)              | Manual                                                                    | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Manual                                                                                                                                                                                                                                                                                                                                                   | Manual                                                    | Manual                                                                            | Manual                                                                             | Manual                                                                                       | `winget install ElectronicArts.EADesktop`/`scoop install ea-app`                        | Manual         | N/A                                                       | Manual                            |
+| Steam               | Steam game launcher                 | `sudo pacman -S steam`                                                    | `sudo apt install steam`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | `sudo dnf5 install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && sudo dnf5 config-manager setopt fedora-cisco-openh264.enabled=1 && sudo dnf5 upgrade --refresh -y && sudo dnf5 install steam` | `sudo zypper install steam`                               | Manual                                                                            | `nix-env -iA nixpkgs.steam`                                                        | `eselect repository enable barrensea-overlay && emerge --sync && emerge -a games-misc/steam` | `winget install Valve.Steam`/`scoop install steam`/`choco install steam`                | N/A            | `flatpak install flathub com.valvesoftware.Steam`         | `sudo xbps-install steam`         |
+| Epic Games Launcher | Epic Games Launcher                 | `yay -S heroic-games-launcher`                                            | `flatpak install flathub com.heroicgameslauncher.hgl`                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | `sudo dnf5 copr enable atim/heroic-games-launcher -y && sudo dnf5 install heroic-games-launcher-bin`/`flatpak install flathub com.heroicgameslauncher.hgl`                                                                                                                                                                                               | `flatpak install flathub com.heroicgameslauncher.hgl`     | `flatpak install flathub com.heroicgameslauncher.hgl`                             | `nix-env -iA nixpkgs.heroic`/`flatpak install flathub com.heroicgameslauncher.hgl` | `emerge -a games-util/heroic-bin`                                                            | `winget install EpicGames.EpicGamesLauncher`/`scoop install epic-games-launcher`        | Manual         | `flatpak install flathub com.heroicgameslauncher.hgl`     | Manual                            |
+| Xemu                | Xemu (Xbox emulator)                | `yay -S xemu`                                                             | `flatpak install flathub app.xemu.xemu`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | `flatpak install flathub app.xemu.xemu`                                                                                                                                                                                                                                                                                                                  | `flatpak install flathub app.xemu.xemu`                   | `apk add xemu`                                                                    | `nix-env -iA nixpkgs.xemu`                                                         | `eselect repository enable tatsh-overlay && emerge --sync && emerge -a games-emulation/xemu` | `winget install xemu-project.xemu`/`scoop install xemu`                                 | Manual         | `flatpak install flathub app.xemu.xemu`                   | Manual                            |
+| Playnite            | Playnite (game library manager)     | Manual                                                                    | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Manual                                                                                                                                                                                                                                                                                                                                                   | Manual                                                    | Manual                                                                            | Manual                                                                             | Manual                                                                                       | `winget install Playnite.Playnite`/`scoop install playnite`/`choco install playnite`    | Manual         | N/A                                                       | Manual                            |
+| Prism Launcher      | Prism Launcher (Minecraft launcher) | `yay -S prismlauncher-git`                                                | `wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' \| gpg --dearmor \| sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null && echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" \| sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list && sudo apt update && sudo apt install prismlauncher -y`/`flatpak install flathub org.prismlauncher.PrismLauncher` | `sudo dnf5 copr enable g3tchoo/prismlauncher -y && sudo dnf5 install prismlauncher`/`flatpak install flathub org.prismlauncher.PrismLauncher`                                                                                                                                                                                                            | `flatpak install flathub org.prismlauncher.PrismLauncher` | `apk add prismlauncher`/`flatpak install flathub org.prismlauncher.PrismLauncher` | `nix-env -iA nixpkgs.prismlauncher`                                                | `emerge -a games-action/prismlauncher`                                                       | `winget install PrismLauncher.PrismLauncher`/`scoop install prismlauncher`              | Manual         | `flatpak install flathub org.prismlauncher.PrismLauncher` | `sudo xbps-install PrismLauncher` |
+| ArchiSteamFarm      | ArchiSteamFarm (Steam farming bot)  | `yay -S archisteamfarm-bin`/`dotnet tool install --global ArchiSteamFarm` | `wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/latest/download/ASF-linux-x64.zip && unzip ASF-linux-x64.zip -d ASF && cd ASF && chmod +x ArchiSteamFarm && ./ArchiSteamFarm`/`dotnet tool install --global ArchiSteamFarm`                                                                                                                                                                                                                                                                                      | `dotnet tool install --global ArchiSteamFarm`                                                                                                                                                                                                                                                                                                            | `dotnet tool install --global ArchiSteamFarm`             | `dotnet tool install --global ArchiSteamFarm`                                     | `nix-env -iA nixpkgs.ArchiSteamFarm`/`dotnet tool install --global ArchiSteamFarm` | `dotnet tool install --global ArchiSteamFarm`                                                | `winget install JustArchi.ArchiSteamFarm`/`scoop install archisteamfarm`                | Manual         | N/A                                                       | Manual                            |
+| NVCleanstall        | NVCleanstall (NVIDIA customizer)    | Manual                                                                    | Manual                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Manual                                                                                                                                                                                                                                                                                                                                                   | Manual                                                    | Manual                                                                            | Manual                                                                             | Manual                                                                                       | `winget install TechPowerUp.NVCleanstall`/`choco install nvcleanstall`                  | Manual         | N/A                                                       | Manual                            |
+
+</details>
+
+<details>
+<summary><strong>🧑‍💻 Programming and Power-user Tools</strong></summary>
+
+| Tool                  | Description                                | Arch (Pacman/yay)                                                                                                                                                                                   | Ubuntu/Debian (apt)                                                                                                                                                                                                                                              | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                              | openSUSE (zypper)                                                                                                                                                                                                             | Alpine (apk)                                                                                                                                                                  | NixOS (nix-env)                                                                                                                                                                                                                  | Gentoo (emerge)                                                                                                                                                                                                                                                                 | Windows (winget/scoop/choco)                                                                                                                                                                       | Android/Termux                                                                                                   | Flatpak                                               | Void Linux(Xbps)                                                                                                                                                                           |
+|-----------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| PowerShell            | Windows shell and scripting                | `yay -S powershell`                                                                                                                                                                                 | `source /etc/os-release && wget -q https://packages.microsoft.com/config/debian/$VERSION_ID/packages-microsoft-prod.deb && sudo dpkg -i packages-microsoft-prod.deb && rm packages-microsoft-prod.deb && sudo apt-get update && sudo apt-get install powershell` | `sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && curl https://packages.microsoft.com/config/rhel/7/prod.repo \| sudo tee /etc/yum.repos.d/microsoft.repo && sudo dnf5 makecache && sudo dnf5 install powershell` | `curl -s https://raw.githubusercontent.com/PowerShell/PowerShell/refs/heads/master/tools/installpsh-suse.sh \| bash`                                                                                                          | `apk add powershell`                                                                                                                                                          | `nix-env -iA nixpkgs.powershell`                                                                                                                                                                                                 | `emerge -a app-shells/pwsh`                                                                                                                                                                                                                                                     | `winget install Microsoft.Powershell`/`scoop install powershell`/`choco install powershell`                                                                                                        | [Manual](https://learn.microsoft.com/en-us/powershell/scripting/install/install-other-linux?view=powershell-7.5) | N/A                                                   | [Manual](https://learn.microsoft.com/en-us/powershell/scripting/install/install-other-linux?view=powershell-7.5)                                                                           |
+| Windows Terminal      | Terminal emulator                          | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Microsoft.WindowsTerminal`/`scoop install windows-terminal`/`choco install microsoft-windows-terminal`                                                                             | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Terminal-Icons        | Terminal-Icons (icon theme)                | Manual                                                                                                                                                                                              | Manual                                                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                                                          | `winget install devblackops.terminal-icons`/`scoop install terminal-icons`                                                                                                                         | Manual                                                                                                           | N/A                                                   | N/A                                                                                                                                                                                        |
+| 7-Zip                 | 7-Zip (file archiver/compression tool)     | `sudo pacman -S 7zip`                                                                                                                                                                               | `sudo apt install 7zip`                                                                                                                                                                                                                                          | `sudo dnf5 install p7zip`                                                                                                                                                                                                               | `sudo zypper install 7zip`                                                                                                                                                                                                    | `apk add 7zip`                                                                                                                                                                | `nix-env -iA nixpkgs.p7zip`                                                                                                                                                                                                      | `emerge -a app-arch/7zip`                                                                                                                                                                                                                                                       | `winget install 7zip.7zip`/`scoop install 7zip`/`choco install 7zip`                                                                                                                               | Manual                                                                                                           | N/A                                                   | `sudo xbps-install 7zip`                                                                                                                                                                   |
+| GitHub CLI            | GitHub CLI (command-line tool)             | `sudo pacman -S github-cli`                                                                                                                                                                         | `sudo apt install gh`                                                                                                                                                                                                                                            | `sudo dnf5 install gh`                                                                                                                                                                                                                  | `sudo zypper install gh`                                                                                                                                                                                                      | `apk add gh`                                                                                                                                                                  | `nix-env -iA nixpkgs.gh`                                                                                                                                                                                                         | `emerge -a dev-util/github-cli`                                                                                                                                                                                                                                                 | `winget install GitHub.cli`/`scoop install gh`/`choco install gh`                                                                                                                                  | `pkg install gh`                                                                                                 | N/A                                                   | `sudo xbps-install github-cli`                                                                                                                                                             |
+| Git Extensions        | Git Extensions (GUI)                       | Manual                                                                                                                                                                                              | Manual                                                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                                                          | `winget install GitExtensionsTeam.GitExtensions`/`choco install gitextensions`                                                                                                                     | Manual                                                                                                           | N/A                                                   | N/A                                                                                                                                                                                        |
+| Docker Desktop        | Docker Desktop (container management)      | `yay -S docker-desktop`                                                                                                                                                                             | `sudo apt install podman`/`brew install --cask docker`                                                                                                                                                                                                           | `brew install --cask docker`/`sudo dnf5 install podman`                                                                                                                                                                                 | `sudo zypper install docker`/`brew install --cask docker`                                                                                                                                                                     | `apk add docker docker-compose`                                                                                                                                               | `nix-env -iA nixpkgs.docker`                                                                                                                                                                                                     | `emerge -a app-containers/docker`                                                                                                                                                                                                                                               | `winget install Docker.DockerDesktop`/`scoop install docker-desktop`/`choco install docker-desktop`                                                                                                | Manual                                                                                                           | N/A                                                   | `sudo xbps-install docker`                                                                                                                                                                 |
+| fzf                   | Fuzzy finder                               | `sudo pacman -S fzf`                                                                                                                                                                                | `sudo apt install fzf`                                                                                                                                                                                                                                           | `sudo dnf5 install fzf`                                                                                                                                                                                                                 | `sudo zypper install fzf`                                                                                                                                                                                                     | `apk add fzf`                                                                                                                                                                 | `nix-env -iA nixpkgs.fzf`                                                                                                                                                                                                        | `emerge -a app-shells/fzf`                                                                                                                                                                                                                                                      | `winget install fzf`/`scoop install fzf`/`choco install fzf`                                                                                                                                       | `pkg install fzf`                                                                                                | N/A                                                   | `sudo xbps-install fzf`                                                                                                                                                                    |
+| fastfetch             | Fastfetch (system info, neofetch alt)      | `sudo pacman -S fastfetch`                                                                                                                                                                          | `sudo apt install fastfetch`                                                                                                                                                                                                                                     | `sudo dnf5 install fastfetch`                                                                                                                                                                                                           | `sudo zypper install fastfetch`                                                                                                                                                                                               | `apk add fastfetch`                                                                                                                                                           | `nix-env -iA nixpkgs.fastfetch`                                                                                                                                                                                                  | `emerge -a app-misc/fastfetch`                                                                                                                                                                                                                                                  | `winget install Fastfetch.Fastfetch`/`scoop install fastfetch`/`choco install fastfetch`                                                                                                           | `pkg install fastfetch`                                                                                          | N/A                                                   | `sudo xbps-install fastfetch`                                                                                                                                                              |
+| oh-my-posh            | Shell prompt theme engine                  | `yay -S oh-my-posh-bin`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                         | `snap install oh-my-posh` (Snap, newer IoT)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                                                                  | `sudo dnf5 copr enable chronoscrat/oh-my-posh && dnf5 install --refresh oh-my-posh`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                 | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                                                         | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                         | `nix-env -iA nixpkgs.oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                           | `eselect repository enable stintel && emerge --sync && emerge -a app-shells/oh-my-posh`/`curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                   | `winget install JanDeDobbeleer.OhMyPosh`/`scoop install oh-my-posh`/`choco install oh-my-posh`                                                                                                     | `pkg install oh-my-posh` (if available)/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                      | N/A                                                   | `curl -s https://ohmyposh.dev/install.sh \| bash`/`brew install jandedobbeleer/oh-my-posh/oh-my-posh`                                                                                      |
+| Gpg4win               | Gpg4win (GPG suite for Windows)            | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Gpg4win.Gpg4win`/`choco install gpg4win`                                                                                                                                           | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Spicetify             | Spicetify CLI                              | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/`yay -S spicetify-cli`/`brew install spicetify-cli`/`sudo pacman -S npm && npm install -g spicetify-cli` | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/`brew install spicetify-cli`/`sudo apt install npm && npm install -g spicetify-cli`                                                                                   | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual (`npm`/GitHub)/`brew install spicetify-cli`/`sudo dnf5 install npm && npm install -g spicetify-cli`                                  | `sudo zypper install spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`sudo zypper install npm && npm install -g spicetify-cli` | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`apk add npm && npm install -g spicetify-cli` | `nix-env -iA nixpkgs.spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`nix-env -iA nixpkgs.nodejs && npm install -g spicetify-cli` | `eselect repository enable parona-overlay && emerge --sync && emerge -a app-misc/spicetify-cli`/`curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh (Shell)`/ Manual/`brew install spicetify-cli`/`emerge -a npm && npm install -g spicetify-cli` | `iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 \| iex` (Powershell) /`winget install Spicetify.Spicetify`/`scoop install spicetify-cli`/`choco install spicetify-cli` | N/A                                                                                                              | N/A                                                   | `curl -fsSL https://raw.githubusercontent.com/spicetify/cli/main/install.sh \| sh` (Shell)/ Manual/`brew install spicetify-cli`/`sudo xbps-install nodejs && npm install -g spicetify-cli` |
+| Rainmeter             | Rainmeter (desktop customization, Windows) | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Rainmeter.Rainmeter`/`scoop install rainmeter`/`choco install rainmeter`                                                                                                           | N/A                                                                                                              | N/A                                                   |                                                                                                                                                                                            |
+| qBittorrent           | qBittorrent (BitTorrent client)            | `sudo pacman -S qbittorrent`                                                                                                                                                                        | `sudo apt install qbittorrent`                                                                                                                                                                                                                                   | `sudo dnf5 install qbittorrent`                                                                                                                                                                                                         | `sudo zypper install qbittorrent`                                                                                                                                                                                             | `apk add qbittorrent`                                                                                                                                                         | `nix-env -iA nixpkgs.qbittorrent`                                                                                                                                                                                                | `emerge -a net-p2p/qbittorrent`                                                                                                                                                                                                                                                 | `winget install qBittorrent.qBittorrent`/`scoop install qbittorrent`/`choco install qbittorrent`                                                                                                   | Manual                                                                                                           | `flatpak install flathub org.qbittorrent.qBittorrent` | `sudo xbps-install qbittorrent`                                                                                                                                                            |
+| Everything            | Everything (file search utility)           | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install voidtools.Everything`/`scoop install everything`/`choco install everything`                                                                                                        | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| RetroArch             | RetroArch (emulator frontend)              | `sudo pacman -S retroarch`                                                                                                                                                                          | `sudo apt install retroarch`                                                                                                                                                                                                                                     | `sudo dnf5 install retroarch`                                                                                                                                                                                                           | `sudo zypper install retroarch`                                                                                                                                                                                               | `apk add retroarch`                                                                                                                                                           | `nix-env -iA nixpkgs.retroarch-full`                                                                                                                                                                                             | `eselect repository enable menelkir && emerge --sync && emerge -a games-emulation/retroarch`                                                                                                                                                                                    | `winget install Libretro.RetroArch`/`scoop install retroarch`/`choco install retroarch`                                                                                                            | Manual                                                                                                           | `flatpak install flathub org.libretro.RetroArch`      | `sudo xbps-install retroarch`                                                                                                                                                              |
+| Flow Launcher         | Flow Launcher (app launcher)               | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Flow-Launcher.Flow-Launcher`/`scoop install flow-launcher`/`choco install flow-launcher`                                                                                           | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Bulk Crap Uninstaller | Bulk Crap Uninstaller (Windows)            | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Klocman.BulkCrapUninstaller`/`scoop install bulk-crap-uninstaller`/`choco install bulk-crap-uninstaller`                                                                           | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| FFmpeg                | FFmpeg (multimedia framework/CLI tools)    | `sudo pacman -S ffmpeg`                                                                                                                                                                             | `sudo apt install ffmpeg`                                                                                                                                                                                                                                        | `sudo dnf5 install ffmpeg`                                                                                                                                                                                                              | `sudo zypper install ffmpeg-7`                                                                                                                                                                                                | `apk add ffmpeg`                                                                                                                                                              | `nix-env -iA nixpk.ffmpeg-full`                                                                                                                                                                                                  | `emerge -a media-video/ffmpeg`                                                                                                                                                                                                                                                  | `winget install Gyan.FFmpeg`/`scoop install ffmpeg`/`choco install ffmpeg`                                                                                                                         | `pkg install ffmpeg`                                                                                             | N/A                                                   | `sudo xbps-install ffmpeg`                                                                                                                                                                 |
+| Obsidian              | Markdown knowledge base / PKM              | `sudo pacman -S obsidian`                                                                                                                                                                           | `[Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)`                                                                                                                                                                                      | `sudo dnf5 copr enable alxhr0/Obsidian -y && sudo dnf5 install obsidian`/`sudo snap install obsidian --classic`/`flatpak install flathub md.obsidian.Obsidian`                                                                          | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                                                                                                                                     | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                                                                                     | `nix-env -iA nixpkgs.obsidian`                                                                                                                                                                                                   | `eselect repository enable guru && emerge --sync && emerge -a app-office/obsidian`                                                                                                                                                                                              | `winget install Obsidian.Obsidian`/`scoop install obsidian`/`choco install obsidian`                                                                                                               | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                        | `flatpak install flathub md.obsidian.Obsidian`        | [Manual](https://github.com/obsidianmd/obsidian-releases/releases/latest)                                                                                                                  |
+| Xemu                  | Xemu (Xbox emulator)                       | `yay -S xemu`                                                                                                                                                                                       | `flatpak install flathub app.xemu.xemu`                                                                                                                                                                                                                          | `flatpak install flathub app.xemu.xemu`                                                                                                                                                                                                 | `flatpak install flathub app.xemu.xemu`                                                                                                                                                                                       | `apk add xemu`                                                                                                                                                                | `nix-env -iA nixpkgs.xemu`                                                                                                                                                                                                       | `eselect repository enable tatsh-overlay && emerge --sync && emerge -a games-emulation/xemu`                                                                                                                                                                                    | `winget install xemu-project.xemu`/`scoop install xemu`                                                                                                                                            | Manual                                                                                                           | `flatpak install flathub app.xemu.xemu`               | Manual                                                                                                                                                                                     |
+| MSEdgeRedirect        | MSEdgeRedirect (Edge protocol redirector)  | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install rcmaehl.MSEdgeRedirect`/`choco install msedgeredirect`                                                                                                                             | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| DevToys               | DevToys (developer Swiss Army knife)       | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install DevToys.DevToys`/`scoop install devtoys`/`choco install devtoys`                                                                                                                   | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| HWiNFO                | HWiNFO (hardware info tool)                | `sudo pacman -S hwinfo`                                                                                                                                                                             | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | `apk add hwinfo`                                                                                                                                                              | `nix-env -iA nixpkgs.hwinfo`                                                                                                                                                                                                     | `emerge -a sys-apps/hwinfo`                                                                                                                                                                                                                                                     | `winget install REALiX.HWiNFO`/`scoop install hwinfo`/`choco install hwinfo`                                                                                                                       | N/A                                                                                                              | N/A                                                   | `sudo xbps-install hwinfo`                                                                                                                                                                 |
+| WiseToys              | WiseToys (productivity tools suite)        | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install WiseCleaner.WiseToys`/`scoop install wisetoys`                                                                                                                                     | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| File Converter        | File Converter (file format converter)     | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install AdrienAllard.FileConverter`/`choco install fileconverter`                                                                                                                          | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Link Shell Extension  | Link Shell Extension (NTFS/symlink ext.)   | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install HermannSchinagl.LinkShellExtension`/`choco install linkshellextension`                                                                                                             | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Playnite              | Playnite (game library manager)            | Manual                                                                                                                                                                                              | Manual                                                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                  | Manual                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | Manual                                                                                                                                                                                                                                                                          | `winget install Playnite.Playnite`/`scoop install playnite`/`choco install playnite`                                                                                                               | Manual                                                                                                           | N/A                                                   | N/A                                                                                                                                                                                        |
+| Nilesoft Shell        | Nilesoft Shell (Windows shell extension)   | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Nilesoft.Shell`/`scoop install nilesoft-shell`                                                                                                                                     | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Mica For Everyone     | Mica For Everyone (mica effect)            | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install MicaForEveryone.MicaForEveryone`/`choco install micaforeveryone`                                                                                                                   | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| PowerToys             | PowerToys (power-user utilities)           | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Microsoft.PowerToys`/`scoop install powertoys`/`choco install powertoys`                                                                                                           | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| NuGet                 | NuGet package manager                      | `sudo pacman -S nuget`                                                                                                                                                                              | `sudo apt install nuget`                                                                                                                                                                                                                                         | `sudo dnf5 install nuget`                                                                                                                                                                                                               | `sudo zypper install mono-complete`                                                                                                                                                                                           | `dotnet tool install --global NuGet.CommandLine`                                                                                                                              | `nix-env -iA nixpkgs.dotnetPackages.Nuget`                                                                                                                                                                                       | `emerge -a dev-lang/mono`                                                                                                                                                                                                                                                       | `winget install NuGet.NuGet`/`choco install nuget.commandline`                                                                                                                                     | Manual                                                                                                           | N/A                                                   | Manual                                                                                                                                                                                     |
+| Ventoy                | USB multiboot tool                         | `yay -S ventoy`                                                                                                                                                                                     | `wget https://github.com/ventoy/Ventoy/releases/latest/download/ventoy-1.0.xx-linux.tar.gz && tar -xzvf ventoy-1.0.xx-linux.tar.gz && cd ventoy-1.0.xx && sudo sh Ventoy2Disk.sh -i /dev/sdX`                                                                    | `sudo dnf5 copr enable karlisk/ventoy -y && sudo dnf5 install ventoy -y`                                                                                                                                                                | Manual                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | `nix-env -iA nixpkgs.ventoy-full`                                                                                                                                                                                                | `eselect repository enable gentoo-zh && emerge --sync && emerge -a sys-boot/ventoy-bin`                                                                                                                                                                                         | `winget install Ventoy.Ventoy`/`scoop install ventoy`/`choco install ventoy`                                                                                                                       | Manual                                                                                                           | N/A                                                   | Manual                                                                                                                                                                                     |
+| Google Android Studio | Android IDE                                | `yay -S android-studio`                                                                                                                                                                             | `sudo add-apt-repository ppa:maarten-fonville/android-studio && sudo apt update && sudo apt install android-studio -y`                                                                                                                                           | `sudo snap install android-studio --classic`                                                                                                                                                                                            | Manual                                                                                                                                                                                                                        | Manual                                                                                                                                                                        | `nix-env -iA nixpk.android-studio`                                                                                                                                                                                               | `emerge -a dev-util/android-studio`                                                                                                                                                                                                                                             | `winget install Google.AndroidStudio`/`scoop install android-studio`/`choco install androidstudio`                                                                                                 | Manual                                                                                                           | ` flatpak install flathub com.google.AndroidStudio`   | Manual                                                                                                                                                                                     |
+| MSI Afterburner       | GPU overclocking tool (Windows)            | N/A                                                                                                                                                                                                 | `sudo apt install corectrl`                                                                                                                                                                                                                                      | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install MSI.Afterburner`/`choco install msiafterburner`                                                                                                                                    | N/A                                                                                                              | N/A                                                   | Manual                                                                                                                                                                                     |
+| Windhawk              | Windows modding framework                  | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install Ramensoftware.Windhawk`/`choco install windhawk`                                                                                                                                   | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Wiztree               | Disk space analyzer (Windows)              | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | `winget install AntibodySoftware.WizTree`/`scoop install wiztree`/`choco install wiztree`                                                                                                          | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| ArchiSteamFarm        | ArchiSteamFarm (Steam farming bot)         | `yay -S archisteamfarm-bin`/`dotnet tool install --global ArchiSteamFarm`                                                                                                                           | `wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/latest/download/ASF-linux-x64.zip && unzip ASF-linux-x64.zip -d ASF && cd ASF && chmod +x ArchiSteamFarm && ./ArchiSteamFarm`/`dotnet tool install --global ArchiSteamFarm`                        | `dotnet tool install --global ArchiSteamFarm`                                                                                                                                                                                           | `dotnet tool install --global ArchiSteamFarm`                                                                                                                                                                                 | `dotnet tool install --global ArchiSteamFarm`                                                                                                                                 | `nix-env -iA nixpkgs.ArchiSteamFarm`/`dotnet tool install --global ArchiSteamFarm`                                                                                                                                               | `dotnet tool install --global ArchiSteamFarm`                                                                                                                                                                                                                                   | `winget install JustArchi.ArchiSteamFarm`/`scoop install archisteamfarm`                                                                                                                           | Manual                                                                                                           | N/A                                                   | Manual                                                                                                                                                                                     |
+| Zen Browser           | Minimalist web browser (Windows)           | `yay -S zen-browser`                                                                                                                                                                                | Manual                                                                                                                                                                                                                                                           | `sudo dnf5 copr enable firminunderscore/zen-browser && sudo dnf5 install zen-browser -y`                                                                                                                                                | `flatpak install flathub org.zen_browser.Zen`                                                                                                                                                                                 | Manual                                                                                                                                                                        | Manual                                                                                                                                                                                                                           | `eselect repository enable edgets && emerge --sync && emerge -a www-client/zen-browser-bin`                                                                                                                                                                                     | Manual                                                                                                                                                                                             | N/A                                                                                                              | `flatpak install flathub app.zen_browser.zen`         | Manual                                                                                                                                                                                     |
+| EFI Boot Editor       | EFI Boot Editor                            | `yay -S efibooteditor`                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | `apk add efibootmgr`                                                                                                                                                          | `nix-env -iA nixpkgs.efibootmgr`                                                                                                                                                                                                 | `emerge -a sys-boot/efibootmgr`                                                                                                                                                                                                                                                 | `winget install Hasleo.EFIBootEditor`                                                                                                                                                              | N/A                                                                                                              | N/A                                                   | N/A                                                                                                                                                                                        |
+| Ollama                | Ollama (local LLM runner/manager)          | `sudo pacman -S ollama`                                                                                                                                                                             | `curl -fsSL https://ollama.com/install.sh \| sh`/`sudo snap install ollama`                                                                                                                                                                                      | `sudo dnf5 install ollama`                                                                                                                                                                                                              | Manual                                                                                                                                                                                                                        | `apk add ollama`                                                                                                                                                              | `nix-env -iA nixpkgs.ollama-cuda`                                                                                                                                                                                                | `eselect repository enable mrpenguin && emerge --sync && emerge -a dev-ml/ollama`                                                                                                                                                                                               | `winget install Ollama.Ollama`/`scoop install ollama`                                                                                                                                              | Manual                                                                                                           | N/A                                                   | Manual                                                                                                                                                                                     |
+| jq                    | jq (JSON CLI processor)                    | `sudo pacman -S jq`                                                                                                                                                                                 | `sudo apt install jq`                                                                                                                                                                                                                                            | `sudo dnf5 install jq`                                                                                                                                                                                                                  | `sudo zypper install jq`                                                                                                                                                                                                      | `apk add jq`                                                                                                                                                                  | `nix-env -iA nixpk.jq`                                                                                                                                                                                                           | `emerge -a app-misc/jq`                                                                                                                                                                                                                                                         | `winget install stedolan.jq`/`scoop install jq`/`choco install jq`                                                                                                                                 | `pkg install jq`                                                                                                 | N/A                                                   | `sudo xbps-install jq`                                                                                                                                                                     |
+| proot                 | proot (user-space chroot)                  | `sudo pacman -S proot`                                                                                                                                                                              | `sudo apt install proot`                                                                                                                                                                                                                                         | `sudo dnf5 install proot`                                                                                                                                                                                                               | `sudo zypper install proot`                                                                                                                                                                                                   | `apk add proot`                                                                                                                                                               | `nix-env -iA nixpk.proot`                                                                                                                                                                                                        | `emerge -a sys-apps/proot`                                                                                                                                                                                                                                                      | Manual                                                                                                                                                                                             | `pkg install proot`                                                                                              | N/A                                                   | `sudo xbps-install proot`                                                                                                                                                                  |
+| Termux-API            | Termux:API (Android terminal API bridge)   | N/A                                                                                                                                                                                                 | N/A                                                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                     | N/A                                                                                                                                                                                                                           | N/A                                                                                                                                                                           | N/A                                                                                                                                                                                                                              | N/A                                                                                                                                                                                                                                                                             | N/A                                                                                                                                                                                                | `pkg install termux-api`                                                                                         | N/A                                                   | N/A                                                                                                                                                                                        |
+
+</details>
+
+<details>
+<summary><strong>🌐 Social Media</strong></summary>
+
+| Tool             | Description                        | Arch (Pacman/yay)                 | Ubuntu/Debian (apt)                                                                                                                                                                                                                                                                                                                                                                              | Fedora/RHEL (dnf5/dnf/yum)                                                                                                                                                                                                                                                                                    | openSUSE (zypper)                      | Alpine (apk)                                     | NixOS (nix-env)                                      | Gentoo (emerge)                                                                                        | Windows (winget/scoop/choco)                                                                | Android/Termux | Flatpak                                          | Void Linux (Xbps)                   |
+|------------------|------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|--------------------------------------------------|------------------------------------------------------|--------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|----------------|--------------------------------------------------|-------------------------------------|
+| Discord          | Discord (chat client)              | `sudo pacman -S discord`          | `sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC && sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<< "deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main" && sudo apt update && sudo apt install discord` | `sudo dnf5 install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y && sudo dnf5 install discord -y`/`flatpak install flathub com.discordapp.Discord` | `sudo zypper install discord`          | `flatpak install flathub com.discordapp.Discord` | `nix-env -iA nixpkgs.discord`                        | `emerge -a net-im/discord`                                                                             | `winget install Discord.Discord`/`scoop install discord`/`choco install discord`            | Manual         | `flatpak install flathub com.discordapp.Discord` | Manual                              |
+| Telegram Desktop | Telegram Desktop (messaging app)   | `sudo pacman -S telegram-desktop` | `sudo apt install telegram-desktop`                                                                                                                                                                                                                                                                                                                                                              | `sudo dnf5 install telegram-desktop`                                                                                                                                                                                                                                                                          | `sudo zypper install telegram-desktop` | `apk add telegram-desktop`                       | `nix-env -iA nixpk.telegram-desktop`                 | `eselect repository enable mva && emerge --sync && emerge -a net-im/telegram-desktop`                  | `winget install Telegram.TelegramDesktop`/`scoop install telegram`/`choco install telegram` | Manual         | `flatpak install flathub org.telegram.desktop`   | `sudo xbps-install telegram-desktop |
+| PreMiD           | PreMiD (rich presence integration) | `yay -S premid`                   | `curl -s https://packagecloud.io/install/repositories/PreMiD/Linux/script.deb.sh \| sudo bash && sudo apt install premid -y`/`npm install -g premid`                                                                                                                                                                                                                                             | `sudo dnf5 install premid`/`npm install -g premid`                                                                                                                                                                                                                                                            | `npm install -g premid`                | `npm install -g premid`                          | `nix-env -iA nixpkgs.premid`/`npm install -g premid` | `eselect repository enable xira && emerge --sync && emerge -a app-misc/premid`/`npm install -g premid` | `winget install PreMiD.PreMiD`/`scoop install premid`                                       | Manual         | N/A                                              | Manual                              |
+
+</details>
+
+> **Note:**
+> Some tools are only available through secondary means such as `pip`, `cargo`, `gem`, or manual download from their official website or GitHub releases. If a tool is not available through your platform’s main package manager, refer to the corresponding “Manual”, “GitHub”, or language-specific package column, or check the official project documentation for installation instructions. Some Windows utilities (like Windhawk, Zen Browser, EFI Boot Editor, etc.) require manual installation. Platform-specific or feature-only tools may also require dedicated setup outside package management systems.
+
+## Credits
+
+_All software, scripts, and config seeds referenced in this repository are the intellectual property of their respective authors and maintainers. Their generosity and effort enable this repo's cross-platform CLI and customization curation._
+
+- [.Net](https://github.com/dotnet/core) – [Microsoft](https://github.com/dotnet)
+- [8GadgetPack](https://8gadgetpack.net/) – [Helmut Buhler](https://8gadgetpack.net/)
+- [Alias-tips](https://github.com/djui/alias-tips) - [Djui](https://github.com/djui) - Alias tips implementation
+- [Alpinelinux Apk-tools](https://gitlab.alpinelinux.org/alpine/apk-tools) – [Alpine Team](https://alpinelinux.org/)
+- [ArchiSteamFarm](https://github.com/JustArchiNET/ArchiSteamFarm) – [JustArchi](https://github.com/JustArchiNET)
+- [ASIO4ALL](https://www.asio4all.org/) – [Michael Tippach](https://www.asio4all.org/)
+- [Bat](https://github.com/sharkdp/bat) – [David Peter](https://github.com/sharkdp)
+- [Bitwarden](https://github.com/bitwarden/clients) – [Bitwarden Inc](https://bitwarden.com/)
+- [Btop](https://github.com/aristocratos/btop) – [Aristocratos](https://github.com/aristocratos)
+- [Bulk-Crap-Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller) – [Klocman](https://github.com/Klocman)
+- [Cava](https://github.com/karlstav/cava) – [Karl Stavestrand](https://github.com/karlstav)
+- [Chmod.yazi](https://github.com/yazi-rs/plugins/tree/main/chmod.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Cliphist](https://github.com/sentriz/cliphist) – [sentriz](https://github.com/sentriz)
+- [DevToys](https://github.com/DevToysApp/DevToys) – [DevToys team](https://github.com/DevToysApp)
+- [Diff.yazi](https://github.com/yazi-rs/plugins/tree/main/diff.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Discord](https://discord.com/) – [Discord, Inc.](https://discord.com/)
+- [Docker Compose](https://github.com/docker/compose) – [Docker contributors](https://github.com/docker/compose)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) – [Docker, Inc.](https://www.docker.com/)
+- [Doom Emacs](https://github.com/hlissner/doom-emacs) – [Henrik Lissner](https://github.com/hlissner)
+- [Dpkg](https://salsa.debian.org/dpkg-team/dpkg) – [Debian/Ubuntu maintainers](https://www.debian.org/)
+- [DuckDB.yazi](https://github.com/wylie102/duckdb.yazi) – [wylie102](https://github.com/wylie102)
+- [DuckDB](https://github.com/duckdb/duckdb) – [DuckDB Labs](https://github.com/duckdb)
+- [EA Desktop](https://www.ea.com/ea-app) – [Electronic Arts](https://www.ea.com/)
+- [EarthPro](https://www.google.com/earth/versions/#earth-pro) – [Google Inc](https://www.google.com/)
+- [EFI Boot Editor](https://www.hasleo.com/efibooteditor.html) – [Hasleo Software](https://www.hasleo.com/)
+- [Emacs](https://github.com/emacs-mirror/emacs) – [FSF (Richard Stallman et al)](https://www.gnu.org/software/emacs/)
+- [Epic Games Launcher](https://epicgames.com/store/en-US/download/epic-games-launcher) – [Epic Games Inc.](https://www.epicgames.com/)
+- [Everything](https://www.voidtools.com/) – [David Carpenter](https://www.voidtools.com/)
+- [ExifAudio.yazi](https://github.com/Sonico98/exifaudio.yazi) – [Sonico98](https://github.com/Sonico98)
+- [Exifaudio](https://github.com/Spotlight0xff/exifaudio) – [Spotlight0xff](https://github.com/Spotlight0xff)
+- [Eza](https://github.com/eza-community/eza) – [eza community](https://github.com/eza-community)
+- [Eza-Preview.yazi](https://github.com/yazi-rs/plugins/tree/main/eza-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Fastfetch](https://github.com/fastfetch-cli/fastfetch) – [fastfetch-cli contributors](https://github.com/fastfetch-cli)
+- [Fd](https://github.com/sharkdp/fd) – [David Peter](https://github.com/sharkdp)
+- [FFmpeg](https://ffmpeg.org/) – [FFmpeg Team](https://ffmpeg.org/)
+- [FileConverter](https://github.com/AdrienAllard/FileConverter) – [Adrien Allard](https://github.com/AdrienAllard)
+- [Flow-Launcher](https://github.com/Flow-Launcher/Flow.Launcher) – [Flow-Launcher contributors](https://github.com/Flow-Launcher)
+- [Folke&#39;s lazy.nvim](https://github.com/folke/lazy.nvim) - [Folke](https://github.com/folke) - Plugin management patterns for Neovim
+- [Full-Border.yazi](https://github.com/yazi-rs/plugins/tree/main/full-border.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Fuzzel](https://github.com/fuzzel-project/fuzzel) – [Christian M. Aagesen](https://github.com/fuzzel-project)
+- [Fzf](https://github.com/junegunn/fzf) – [Junegunn Choi](https://github.com/junegunn)
+- [Fzf-tab](https://github.com/Aloxaf/fzf-tab) - [Aloxaf](https://github.com/Aloxaf) - Fuzzy completion framework
+- [Git Extensions](https://gitextensions.github.io/) – [Git Extensions Team](https://github.com/gitextensions/gitextensions)
+- [Git.yazi](https://github.com/yazi-rs/plugins/tree/main/git.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Github CLI](https://cli.github.com/) – [GitHub](https://github.com/cli)
+- [Github cli](https://github.com/cli/cli) – [GitHub](https://github.com/cli)
+- [Glow.yazi](https://github.com/yazi-rs/plugins/tree/main/glow.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Glow](https://github.com/charmbracelet/glow) – [Charmbracelet](https://github.com/charmbracelet)
+- [GNU Bash](https://www.gnu.org/software/bash/) – [Brian Fox and the GNU Project](https://www.gnu.org/software/bash/)
+- [Godot](https://github.com/godotengine/godot) – [Godot Team](https://github.com/godotengine)
+- [GOG Galaxy](https://www.gog.com/galaxy) – [GOG.com](https://www.gog.com/)
+- [Google Android Studio](https://developer.android.com/studio) – [Google](https://developer.android.com/)
+- [Google Drive](https://www.google.com/drive/) – [Google](https://www.google.com/)
+- [Helix](https://github.com/helix-editor/helix) – [Kiro Risk, contributors](https://github.com/helix-editor)
+- [Hexyl.yazi](https://github.com/yazi-rs/plugins/tree/main/hexyl.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Hide-Preview.yazi](https://github.com/yazi-rs/plugins/tree/main/hide-preview.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Homebrew](https://github.com/Homebrew/brew) – [Homebrew contributors](https://github.com/Homebrew)
+- [HWiNFO](https://www.hwinfo.com/) – [REALiX](https://www.hwinfo.com/)
+- [Hypridle](https://github.com/hyprwm/hypridle) – [Hypridle contributors](https://github.com/hyprwm)
+- [Hyprland](https://github.com/hyprwm/Hyprland) – [Vaxry](https://github.com/hyprwm)
+- [Hyprpicker](https://github.com/hyprwm/hyprpicker) – [Hyprpicker contributors](https://github.com/hyprwm)
+- [Hyprplugins](https://github.com/hyprwm/hyprplugins) – [Hyprplugins contributors](https://github.com/hyprwm)
+- [Hyprshot](https://github.com/hyprwm/hyprshot) – [Hyprshot contributors](https://github.com/hyprwm)
+- [JamesDSP Linux](https://github.com/Audio4Linux/JDSP4Linux) – [Audio4Linux team](https://github.com/Audio4Linux)
+- [Jq](https://github.com/stedolan/jq) – [Stephen Dolan](https://github.com/stedolan)
+- [Jump-To-Char.yazi](https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Kakoune](https://github.com/mawww/kakoune) – [Martin Tournoij, contributors](https://github.com/mawww)
+- [Kitty](https://github.com/kovidgoyal/kitty) – [Kovid Goyal](https://github.com/kovidgoyal)
+- [Kwinrc](https://invent.kde.org/plasma/kwin) – [KDE Community](https://kde.org/)
+- [LazyGit.yazi](https://github.com/yazi-rs/plugins/tree/main/lazygit.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Lazygit](https://github.com/JesseDuffield/lazygit) – [Jesse Duffield](https://github.com/JesseDuffield)
+- [LazyVim](https://github.com/LazyVim/LazyVim) – [LazyVim](https://www.lazyvim.org/) - Neovim configuration patterns and plugins structure
+- [Less](https://github.com/gwsw/less) – [Mark Nudelman](https://github.com/gwsw)
+- [Link Shell Extension](https://schinagl.priv.at/nt/hardlinkshellext/linkshellextension.html) – [Hermann Schinagl](https://schinagl.priv.at/)
+- [Linux](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/) - [Linus Torvalds et al](https://www.kernel.org/)
+- [Lolcat](https://github.com/busyloop/lolcat) – [Ruby community](https://github.com/busyloop)
+- [MacPorts](https://www.macports.org/) – [MacPorts Team](https://github.com/macports/macports-base)
+- [MajorGeeks](https://www.majorgeeks.com/) - Windows utility scripts and Group Policy Editor enablement
+- [Man-db](https://gitlab.com/man-db/man-db) – [Colin Watson](https://gitlab.com/man-db)
+- [MediaInfo.yazi](https://github.com/yazi-rs/plugins/tree/main/mediainfo.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [MicaForEveryone](https://github.com/MicaForEveryone/MicaForEveryone) – [MicaForEveryone team](https://github.com/MicaForEveryone)
+- [Microsoft Edge Redirect](https://rcmaehl.github.io/MSEdgeRedirect/) – [Robert Maehl](https://github.com/rcmaehl)
+- [Microsoft Learn](https://learn.microsoft.com/) - Microsoft documentation used in Windows configs
+- [Microsoft NuGet](https://www.nuget.org/) – [Microsoft](https://www.nuget.org/profiles/Microsoft)
+- [Microsoft OneDrive](https://onedrive.live.com/) – [Microsoft](https://microsoft.com)
+- [Microsoft PowerToys](https://github.com/microsoft/PowerToys) – [Microsoft](https://github.com/microsoft)
+- [Microsoft](https://microsoft.com) – [Microsoft](https://microsoft.com)
+- [Miller.yazi](https://github.com/yazi-rs/plugins/tree/main/miller.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Mount.yazi](https://github.com/yazi-rs/plugins/tree/main/mount.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) – [MSI](https://www.msi.com/)
+- [Nano](https://github.com/nano-editor/nano) – [Chris Allegretta et al](https://github.com/nano-editor)
+- [Navi](https://github.com/denisidoro/navi) – [Denis Idoro](https://github.com/denisidoro)
+- [Nb](https://github.com/xwmx/nb) – [William Melody (xwmx)](https://github.com/xwmx)
+- [Nbpreview.yazi](https://github.com/AnirudhG07/nbpreview.yazi) – AnirudhG07
+- [Nb-preview](https://github.com/dalance/nb) – [Ichiro Hara (dalance)](https://github.com/dalance)
+- [Neovim Theme: Tokyo Night](https://github.com/folke/tokyonight.nvim) - Folke Lemaitre
+- [Neovim](https://github.com/neovim/neovim) – [neovim team](https://github.com/neovim)
+- [Nilesoft Shell](https://nilesoft.org/shell/) – [Nilesoft](https://nilesoft.org/)
+- [Nix](https://github.com/NixOS/nix) – [Domen Kožar et al](https://github.com/NixOS)
+- [Npm](https://github.com/npm/cli) – [npm community](https://github.com/npm)
+- [Obsidian](https://obsidian.md/) – [Obsidian.md](https://obsidian.md/)
+- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh) – [Jan De Dobbeleer](https://github.com/JanDeDobbeleer)
+- [Oh My Zsh](https://ohmyz.sh/) – [Robby Russell et al](https://github.com/ohmyzsh/ohmyzsh)
+- [Omp.yazi](https://github.com/saumyajyoti/omp.yazi) – [Saumyajyoti Mukherjee](https://github.com/saumyajyoti)
+- [OneDrive (abraunegg)](https://github.com/abraunegg/onedrive) – [abraunegg](https://github.com/abraunegg)
+- [OpenDoas](https://github.com/Duncaen/OpenDoas) – [Ted Unangst](https://github.com/Duncaen)
+- [OpenRGB](https://github.com/AdamHonse/OpenRGB) – [Adam Honse](https://github.com/AdamHonse)
+- [Ouch](https://github.com/ouch-org/ouch) – [Ouch contributors](https://github.com/ouch-org)
+- [Pacman](https://gitlab.archlinux.org/pacman/pacman) – [Arch Linux Team](https://archlinux.org/)
+- [Perplexity AI](https://www.perplexity.ai/) - Initial README.md content generation
+- [Pip](https://github.com/pypa/pip) – [PyPA](https://github.com/pypa)
+- [Pipenv](https://github.com/pypa/pipenv) – [PyPA](https://github.com/pypa)
+- [Pipx](https://github.com/pipxproject/pipx) – [pipx contributors](https://github.com/pipxproject)
+- [Playerctl](https://github.com/acrisci/playerctl) – [Alec A. Criscuolo](https://github.com/acrisci)
+- [Playnite](https://playnite.link/) – [Josef Nemec](https://github.com/JosefNemec)
+- [Podman](https://github.com/containers/podman) – [Podman contributors](https://github.com/containers/podman)
+- [Podman](https://podman.io/) – [Podman contributors](https://github.com/containers/podman)
+- [PowerShell](https://github.com/PowerShell/PowerShell) – [Microsoft](https://github.com/PowerShell)
+- [PreMiD](https://github.com/Timeraa/PreMiD) – [Timeraa et al](https://github.com/Timeraa)
+- [Prism Launcher](https://prismlauncher.org/) – [Prism Launcher Team](https://github.com/PrismLauncher)
+- [Proot](https://proot-me.github.io/) – [proot-me](https://github.com/proot-me)
+- [ProtonVPN](https://protonvpn.com/) – [Proton AG](https://protonvpn.com/)
+- [Pygments](https://github.com/pygments/pygments) – [Pygments Team](https://github.com/pygments)
+- [Python](https://www.python.org/downloads/) - [Python.org](https://www.python.org)
+- [Qbittorrent](https://www.qbittorrent.org/) – [qBittorrent Team](https://github.com/qbittorrent/qBittorrent)
+- [Qt5ct](https://github.com/qt5ct/qt5ct) – [Maksim Sosnovskiy](https://github.com/qt5ct)
+- [Rainmeter](https://www.rainmeter.net/) – [Rainmeter team](https://www.rainmeter.net/)
+- [Ranger](https://github.com/ranger/ranger) – [Roman Zimbelmann](https://github.com/ranger)
+- [Reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
+- [Restore.yazi](https://github.com/boydaihungst/restore.yazi) – [boydaihungst](https://github.com/boydaihungst)
+- [RetroArch](https://www.retroarch.com/) – [Libretro Team](https://github.com/libretro/RetroArch)
+- [Rich-preview.yazi](https://github.com/AnirudhG07/rich-preview.yazi) – [AnirudhG07](https://github.com/AnirudhG07)
+- [Ripgrep](https://github.com/BurntSushi/ripgrep) – [Andrew Gallant](https://github.com/BurntSushi)
+- [Rmpc](https://github.com/mierak/rmpc) – [mierak](https://github.com/mierak)
+- [Rust-lang/Cargo](https://github.com/rust-lang/cargo) – [Rust Team](https://github.com/rust-lang)
+- [Scoop.sh](https://scoop.sh) – [Scoop contributors](https://github.com/ScoopInstaller)
+- [Scrcpy](https://github.com/Genymobile/scrcpy) – [Genymobile](https://github.com/Genymobile)
+- [Smart-Enter.yazi](https://github.com/yazi-rs/plugins/tree/main/smart-enter.yazi) – [yazi-rs contributors](https://github.com/yazi-rs/plugins/graphs/contributors/)
+- [Snapd](https://github.com/snapcore/snapd) – [Canonical](https://github.com/snapcore)
+- [Spicetify](https://github.com/spicetify/spicetify-cli) – [Khanhas](https://github.com/khanhas)
+- [Spotify](https://www.spotify.com/) – [Spotify AB](https://www.spotify.com/)
+- [Steam](https://store.steampowered.com/) – [Valve](https://store.steampowered.com/)
+- [Swww](https://github.com/LGFae/swww) – [LG Fae](https://github.com/LGFae)
+- [Telegram](https://telegram.org/) – [Telegram Messenger LLP](https://telegram.org/)
+- [Termux-API](https://wiki.termux.com/wiki/Termux:API) – [Termux contributors](https://github.com/termux/termux-api)
+- [TheZoraiz/ascii-image-converter](https://github.com/TheZoraiz/ascii-image-converter) – [TheZoraiz](https://github.com/TheZoraiz)
+- [Tmux](https://github.com/tmux/tmux) – [Nicholas Marriott](https://github.com/tmux)
+- [Tmuxinator](https://github.com/tmuxinator/tmuxinator) – [Gabriel Sobrinho, team](https://github.com/tmuxinator)
+- [Torrent-preview.yazi](https://github.com/kirasok/torrent-preview.yazi) – [kirasok](https://github.com/kirasok)
+- [Tree](https://github.com/Old-Man-Programmer/tree) – [Steve Baker, Old-Man-Programmer](https://github.com/Old-Man-Programmer)
+- [Ventoy](https://github.com/ventoy/Ventoy) – [longpanda](https://github.com/ventoy)
+- [VSCodium](https://vscodium.com/) – [VSCodium community](https://github.com/VSCodium)
+- [Wayland/Weston](https://wayland.freedesktop.org/) – [Wayland/Weston contributors](https://gitlab.freedesktop.org/wayland/weston)
+- [Winaero Tweaker](https://winaero.com) – [Sergey Tkachenko](https://winaero.com)
+- [Windhawk](https://github.com/ramensoftware/windhawk) – [Roman Lebedev](https://github.com/ramensoftware)
+- [Windows Answer File Generator](https://schneegans.de/windows/unattend-generator/) - Christian Schneegans
+- [Windows Terminal](https://github.com/microsoft/terminal) – [Microsoft](https://github.com/microsoft)
+- [Winutil](https://github.com/ChrisTitusTech/winutil) – [Chris Titus](https://github.com/ChrisTitusTech)
+- [Wireplumber](https://pipewire.pages.freedesktop.org/wireplumber/) – [PipeWire Project](https://gitlab.freedesktop.org/pipewire/wireplumber)
+- [WiseToys](https://wisetoys.app/) – [WiseToys Team](https://github.com/WiseUncle)
+- [WiseUncle/WiseToys](https://github.com/WiseUncle/WiseToys) – [WiseToys Team](https://github.com/WiseUncle)
+- [WizTree](https://wiztreefree.com/) – [Antibody Software](https://github.com/AntibodySoftware)
+- [Xemu](https://github.com/mborgerson/xemu) – [mborgerson](https://github.com/mborgerson)
+- [Xyne/reflector](https://github.com/Xyne/reflector) – [Xyne](https://github.com/Xyne)
+- [Yazi](https://github.com/sxyazi/yazi) – [YaZi contributors](https://github.com/sxyazi)
+- [Yt-dlp](https://github.com/yt-dlp/yt-dlp) – [yt-dlp contributors](https://github.com/yt-dlp)
+- [Zen Browser Theme Authors](https://github.com/zenbrowser/zenbrowser) - Various contributors including lenzfliker, paasito, ToBinio, shldk, rsiebertdev, Kaedriz, Felkazz, ocean-mars, HliasOuzounis, ch4og, danm36, n7itro, KiKaraage, DaitiDay, AmirhBeigi, Dinno-DEV, TheBigWazz, RobotoSkunk, Uiniel, Nimit1705
+- [Zen Browser](https://github.com/zen-browser/desktop/releases/latest/) – [Zen Browser](https://zen-browser.app/)
+- [Zsh](https://github.com/zsh-users/zsh) – [Paul Falstad and contributors](https://github.com/zsh-users)
+- [Zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) - [Zsh-users](https://github.com/zsh-users) - Auto-suggestions implementation
+- [Zsh-completions](https://github.com/zsh-users/zsh-completions) – [Zsh-users](https://github.com/zsh-users)
+- [Zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search) - [Zsh-users](https://github.com/zsh-users) - History search functionality
+- [Zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) - [Zsh-users](https://github.com/zsh-users) - Zsh syntax highlighting implementation
+
+_If you are the author of any tool/config/snip used here and wish a correction or further explicit attribution, please [open an issue or pull request](https://github.com/sametaor/sametaor_CLIconfig/issues) and you will be credited transparently. This repository is a personal reference implementation, not a redistribution, and does not claim ownership over any listed tool or script._
