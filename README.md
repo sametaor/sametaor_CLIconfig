@@ -15,20 +15,12 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 ```
 sametaor_CLIconfig/
 ├── linux/                    # Linux-specific dotfiles, shell scripts, and setup instructions
-│   ├── dotfiles/            # Shell and application configuration files
-│   │   ├── .bashrc          # Bash shell configuration
-│   │   ├── .zshrc           # Zsh shell configuration
-│   │   ├── .vimrc           # Vim editor configuration
-│   │   ├── .tmux.conf       # Tmux terminal multiplexer config
-│   │   └── .gitconfig       # Git version control settings
-│   ├── scripts/             # Automation and utility scripts
-│   │   ├── setup.sh         # Main Linux setup script
-│   │   ├── install-tools.sh # Package installation automation
-│   │   └── backup.sh        # Configuration backup utility
-│   └── configs/             # Application-specific configurations
-│       ├── alacritty/       # Alacritty terminal emulator
-│       ├── neovim/          # Neovim editor configuration
-│       └── i3/              # i3 window manager config
+│   ├── .bashrc            # Shell and application configuration files
+│   ├── .config          # Bash shell configuration
+│   │   ├── zsh           # Zsh shell configuration
+│   │   ├── nvim           # Vim editor configuration
+│   │   ├── tmux       # Tmux terminal multiplexer config
+│   │   └── 
 ├── windows/                 # PowerShell scripts, Windows terminal configs, VMWare profiles
 │   ├── dotfiles/            # Windows configuration files
 │   │   ├── Microsoft.PowerShell_profile.ps1  # PowerShell profile
