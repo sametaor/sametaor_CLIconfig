@@ -3,7 +3,7 @@ setopt AUTO_CD             # `cd` by omission
 setopt AUTO_PUSHD PUSHD_IGNORE_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST    # allow prompt expansion
-bindkey -v                 # vi-mode
+bindkey -v; export KEYTIMEOUT=1                 # vi-mode
 
 # Edit the command line using default editor
 autoload -Uz edit-command-line
@@ -63,7 +63,7 @@ for file in "$ZDOTDIR/aliases"/**/*.zsh(N); do source "$file"; done
 export ZSH_PLUGINS_DIR="$ZDOTDIR/plugins"
 
 # Helper: add a plugin once – no external manager needed
-zplug_add() {
+zpl_add() {
   local param=$1 host url name
 
   if [[ "$param" == */* ]]; then
@@ -98,18 +98,18 @@ zplug_add() {
 }
 
 # Helper: update every git plugin silently on shell start
-zplug_update_all() {
+zpl_update_all() {
   local repo
   for repo in "$ZSH_PLUGINS_DIR"/*/.git(N); do
     export GIT_TERMINAL_PROMPT=0
     git -C "${repo:h}" pull --ff-only --quiet >/dev/null 2>&1 &!
   done
 }
-zplug_update_all                                    # keep plugins fresh
+zpl_update_all                                    # keep plugins fresh
 
 plugins=(
   fzf-tab                       # completion UI   – needs to be early
-  zsh-syntax-highlighting       # colours
+  fast-syntax-highlighting       # colours
   zsh-history-substring-search  # Up/Down filtered history
   zsh-autosuggestions           # grey inline ghost text
   # my-own-plugin               # add more whenever you like
@@ -223,3 +223,31 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -- "${key[Up]}" history-substring-search-up
 bindkey -- "${key[Down]}" history-substring-search-down
+
+# Vim motions
+
+## History search
+bindkey -M vicmd '/' history-incremental-search-forward
+bindkey -M vicmd '?' history-incremental-search-backward
+
+## Incremental pattern search in insert mode
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
+
+## Prefix search
+bindkey '^[OA' up-line-or-beginning-search # Up
+bindkey '^[OB' down-line-or-beginning-search # Down
+bindkey -M vicmd 'k' up-line-or-beginning-search
+bindkey -M vicmd 'j' down-line-or-beginning-search
+
+# Cursor shape
+function zle-keymap-select {
+case $KEYMAP in
+vicmd) print -n -- $'\e[1 q' ;; # block cursor
+viins|main) print -n -- $'\e[5 q' ;; # beam cursor
+esac
+}
+zle -N zle-keymap-select
+function zle-line-init { zle-keymap-select }
+zle -N zle-line-init
+preexec() { print -n -- $'\e[0 q' } # reset on external cmd

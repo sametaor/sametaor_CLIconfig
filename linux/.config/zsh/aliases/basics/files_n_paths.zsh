@@ -4,6 +4,7 @@ alias rm="rm -ir"
 alias rmf="rm -irf"
 alias cp="cp -irv"
 alias mkd="mkdir -ip"
+alias mkz="mkdir $1 && cd $1"
 alias zshrc='nvim ~/.zshrc'
 alias dud='du -d 1 -h'
 alias duh='du -sh'

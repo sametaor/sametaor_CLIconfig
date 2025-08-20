@@ -13,3 +13,5 @@ y() {
   fi
     return $?
 }
+
+# Reused from https://github.com/fdw/yazi-zoxide-zsh/blob/main/ranger-zoxide.plugin.zsh
