@@ -3,7 +3,7 @@ setopt AUTO_CD             # `cd` by omission
 setopt AUTO_PUSHD PUSHD_IGNORE_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST    # allow prompt expansion
-bindkey -v; export KEYTIMEOUT=1                 # vi-mode
+#bindkey -v; export KEYTIMEOUT=1                 # vi-mode
 
 # Edit the command line using default editor
 autoload -Uz edit-command-line
@@ -109,9 +109,10 @@ zpl_update_all                                    # keep plugins fresh
 
 plugins=(
   fzf-tab                       # completion UI   – needs to be early
-  fast-syntax-highlighting       # colours
+  fast-syntax-highlighting      # colours
   zsh-history-substring-search  # Up/Down filtered history
   zsh-autosuggestions           # grey inline ghost text
+  zsh-vi-mode                   # Better vi-mode for zsh
   # my-own-plugin               # add more whenever you like
 )
 
@@ -146,6 +147,8 @@ _zsh_load_plugins
 for f in "$ZDOTDIR/plugin-opts"/*.zsh(N); do
   source "$f"
 done
+
+function zvm_cursor_style() { :; }
 
 ## 3-F  Prompt (minimal; tweak to taste) -----------------------------------
 # Load the module only once
@@ -224,30 +227,49 @@ bindkey '^[[B' history-substring-search-down
 bindkey -- "${key[Up]}" history-substring-search-up
 bindkey -- "${key[Down]}" history-substring-search-down
 
+# Oh My Posh integration with zsh-vi-mode plugin
+_omp_redraw_prompt() {
+  local precmd
+  for precmd in $precmd_functions; do $precmd; done
+  zle .reset-prompt
+}
+
+function zvm_after_select_vi_mode() {
+  case $ZVM_MODE in
+    $ZVM_MODE_NORMAL)      POSH_VI_MODE="command" ;;
+    $ZVM_MODE_INSERT)      POSH_VI_MODE="insert" ;;
+    $ZVM_MODE_VISUAL)      POSH_VI_MODE="visual" ;;
+    $ZVM_MODE_VISUAL_LINE) POSH_VI_MODE="visual-line" ;;
+    $ZVM_MODE_REPLACE)     POSH_VI_MODE="replace" ;;
+    *)                     POSH_VI_MODE="insert" ;;
+  esac
+  _omp_redraw_prompt
+}
+
 # Vim motions
 
 ## History search
-bindkey -M vicmd '/' history-incremental-search-forward
-bindkey -M vicmd '?' history-incremental-search-backward
+#bindkey -M vicmd '/' history-incremental-search-forward
+#bindkey -M vicmd '?' history-incremental-search-backward
 
 ## Incremental pattern search in insert mode
-bindkey -M viins '^R' history-incremental-pattern-search-backward
-bindkey -M viins '^F' history-incremental-pattern-search-forward
+#bindkey -M viins '^R' history-incremental-pattern-search-backward
+#bindkey -M viins '^F' history-incremental-pattern-search-forward
 
 ## Prefix search
-bindkey '^[OA' up-line-or-beginning-search # Up
-bindkey '^[OB' down-line-or-beginning-search # Down
-bindkey -M vicmd 'k' up-line-or-beginning-search
-bindkey -M vicmd 'j' down-line-or-beginning-search
+#bindkey '^[OA' up-line-or-beginning-search # Up
+#bindkey '^[OB' down-line-or-beginning-search # Down
+#bindkey -M vicmd 'k' up-line-or-beginning-search
+#bindkey -M vicmd 'j' down-line-or-beginning-search
 
 # Cursor shape
-function zle-keymap-select {
-case $KEYMAP in
-vicmd) print -n -- $'\e[1 q' ;; # block cursor
-viins|main) print -n -- $'\e[5 q' ;; # beam cursor
-esac
-}
-zle -N zle-keymap-select
-function zle-line-init { zle-keymap-select }
-zle -N zle-line-init
-preexec() { print -n -- $'\e[0 q' } # reset on external cmd
+#function zle-keymap-select {
+#case $KEYMAP in
+#vicmd) print -n -- $'\e[1 q' ;; # block cursor
+#viins|main) print -n -- $'\e[5 q' ;; # beam cursor
+#esac
+#}
+#zle -N zle-keymap-select
+#function zle-line-init { zle-keymap-select }
+#zle -N zle-line-init
+#preexec() { print -n -- $'\e[0 q' } # reset on external cmd
