@@ -3,7 +3,7 @@ setopt AUTO_CD             # `cd` by omission
 setopt AUTO_PUSHD PUSHD_IGNORE_DUPS
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST    # allow prompt expansion
-#bindkey -v; export KEYTIMEOUT=1                 # vi-mode
+bindkey -v; export KEYTIMEOUT=1                 # vi-mode
 
 # Edit the command line using default editor
 autoload -Uz edit-command-line
@@ -112,7 +112,6 @@ plugins=(
   fast-syntax-highlighting      # colours
   zsh-history-substring-search  # Up/Down filtered history
   zsh-autosuggestions           # grey inline ghost text
-  zsh-vi-mode                   # Better vi-mode for zsh
   # my-own-plugin               # add more whenever you like
 )
 
@@ -227,25 +226,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey -- "${key[Up]}" history-substring-search-up
 bindkey -- "${key[Down]}" history-substring-search-down
 
-# Oh My Posh integration with zsh-vi-mode plugin
-_omp_redraw_prompt() {
-  local precmd
-  for precmd in $precmd_functions; do $precmd; done
-  zle .reset-prompt
-}
-
-function zvm_after_select_vi_mode() {
-  case $ZVM_MODE in
-    $ZVM_MODE_NORMAL)      POSH_VI_MODE="command" ;;
-    $ZVM_MODE_INSERT)      POSH_VI_MODE="insert" ;;
-    $ZVM_MODE_VISUAL)      POSH_VI_MODE="visual" ;;
-    $ZVM_MODE_VISUAL_LINE) POSH_VI_MODE="visual-line" ;;
-    $ZVM_MODE_REPLACE)     POSH_VI_MODE="replace" ;;
-    *)                     POSH_VI_MODE="insert" ;;
-  esac
-  _omp_redraw_prompt
-}
-
 # Vim motions
 
 ## History search
@@ -273,3 +253,74 @@ function zvm_after_select_vi_mode() {
 #function zle-line-init { zle-keymap-select }
 #zle -N zle-line-init
 #preexec() { print -n -- $'\e[0 q' } # reset on external cmd
+
+redraw-prompt() {
+  _omp_precmd
+  zle .reset-prompt
+}
+
+vimode-cmd() {
+  export VI_MODE="NORMAL"
+  redraw-prompt
+}
+
+vimode-insert() {
+  export VI_MODE="INSERT"
+  redraw-prompt
+}
+
+vimode-visual() {
+  export VI_MODE="VISUAL"
+  redraw-prompt
+}
+
+vimode-visual-line() {
+  export VI_MODE="V-LINE"
+  redraw-prompt
+}
+
+vimode-replace() {
+  export VI_MODE="REPLACE"
+  redraw-prompt
+}
+
+
+# CMD/Normal mode
+_omp_create_widget vi-cmd-mode vimode-cmd
+_omp_create_widget deactivate-region vimode-cmd
+
+# Insert mode
+_omp_create_widget vi-insert vimode-insert
+_omp_create_widget vi-insert-bol vimode-insert
+_omp_create_widget vi-add-eol vimode-insert
+_omp_create_widget vi-add-next vimode-insert
+_omp_create_widget vi-change vimode-insert
+_omp_create_widget vi-change-eol vimode-insert
+_omp_create_widget vi-change-whole-line vimode-insert
+_omp_create_widget vi-open-line-above vimode-insert
+_omp_create_widget vi-open-line-below vimode-insert
+
+# Replace mode
+_omp_create_widget vi-replace vimode-replace
+_omp_create_widget vi-replace-chars vimode-replace
+
+# Visual mode
+_omp_create_widget visual-mode vimode-visual
+_omp_create_widget visual-line-mode vimode-visual-line
+
+# reset to default mode at the end of line input reading
+line-finish() {
+    export VI_MODE="INSERT"
+}
+_omp_create_widget zle-line-finish line-finish
+
+# Fix a bug when you C-c in CMD mode, you'd be prompted with CMD mode indicator
+# while in fact you would be in INS mode.
+# Fixed by catching SIGINT (C-c), set mode to INS and repropagate the SIGINT,
+# so if anything else depends on it, we will not break it.
+TRAPINT() {
+  vimode-insert
+  return $(( 128 + $1 ))
+}
+
+export VI_MODE="INSERT"
