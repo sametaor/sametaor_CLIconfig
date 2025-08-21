@@ -143,11 +143,12 @@
 	  "background": "#0077c2",
 	  "template": "{{ if .Env.VI_MODE }} {{ .Env.VI_MODE }} {{ end }}",
 	  "background_templates": [
-            "{{if eq .Env.VI_MODE \"NORMAL\"}}#5898ff{{end}}",
-            "{{if eq .Env.VI_MODE \"INSERT\"}}#ff57a8{{end}}",
-            "{{if eq .Env.VI_MODE \"VISUAL\"}}#b879ff{{end}}",
-            "{{if eq .Env.VI_MODE \"V-LINE\"}}#b879ff{{end}}",
-            "{{if eq .Env.VI_MODE \"REPLACE\"}}#ff2185{{end}}"
+            "{{if eq .Env.VI_MODE \" N\"}}#5898ff{{end}}",
+            "{{if eq .Env.VI_MODE \"󱩽 I\"}}#ff57a8{{end}}",
+            "{{if eq .Env.VI_MODE \" V\"}}#b879ff{{end}}",
+            "{{if eq .Env.VI_MODE \"󰡮 VL\"}}#b879ff{{end}}",
+            "{{if eq .Env.VI_MODE \"󱂔 VB\"}}#b879ff{{end}}",
+            "{{if eq .Env.VI_MODE \" R\"}}#ff2185{{end}}"
           ]
 	},
         {

@@ -242,73 +242,167 @@ bindkey -- "${key[Down]}" history-substring-search-down
 #bindkey -M vicmd 'k' up-line-or-beginning-search
 #bindkey -M vicmd 'j' down-line-or-beginning-search
 
+# Prompt redraw cooperating with Oh My Posh if present
 redraw-prompt() {
-  _omp_precmd
+  if typeset -f _omp_precmd >/dev/null; then
+    _omp_precmd
+  fi
   zle .reset-prompt
 }
 
-vimode-cmd() {
-  export VI_MODE="NORMAL"
+_vi_set_NORMAL()  { export VI_MODE=" N";  }
+_vi_set_INSERT()  { export VI_MODE="󱩽 I";  }
+_vi_set_VISUAL()  { export VI_MODE=" V";  }
+_vi_set_VLINE()   { export VI_MODE="󰡮 VL";  }
+_vi_set_VBLOCK()  { export VI_MODE="󱂔 VB"; }
+_vi_set_REPLACE() { export VI_MODE=" R"; }
+
+# NORMAL/INSERT mode detection via keymap hook (safe)
+zle-keymap-select() {
+  case "$KEYMAP" in
+    vicmd)      _vi_set_NORMAL ;;
+    viins|main) _vi_set_INSERT ;;
+  esac
   redraw-prompt
 }
+zle -N zle-keymap-select
 
-vimode-insert() {
-  export VI_MODE="INSERT"
+zle-line-init() {
+  _vi_set_INSERT
   redraw-prompt
 }
+zle -N zle-line-init
 
-vimode-visual() {
-  export VI_MODE="VISUAL"
-  redraw-prompt
+zle-line-finish() {
+  _vi_set_INSERT
 }
+zle -N zle-line-finish
 
-vimode-visual-line() {
-  export VI_MODE="V-LINE"
-  redraw-prompt
-}
-
-vimode-replace() {
-  export VI_MODE="REPLACE"
-  redraw-prompt
-}
-
-
-# CMD/Normal mode
-_omp_create_widget vi-cmd-mode vimode-cmd
-_omp_create_widget deactivate-region vimode-cmd
-
-# Insert mode
-_omp_create_widget vi-insert vimode-insert
-_omp_create_widget vi-insert-bol vimode-insert
-_omp_create_widget vi-add-eol vimode-insert
-_omp_create_widget vi-add-next vimode-insert
-_omp_create_widget vi-change vimode-insert
-_omp_create_widget vi-change-eol vimode-insert
-_omp_create_widget vi-change-whole-line vimode-insert
-_omp_create_widget vi-open-line-above vimode-insert
-_omp_create_widget vi-open-line-below vimode-insert
-
-# Replace mode
-_omp_create_widget vi-replace vimode-replace
-_omp_create_widget vi-replace-chars vimode-replace
-
-# Visual mode
-_omp_create_widget visual-mode vimode-visual
-_omp_create_widget visual-line-mode vimode-visual-line
-
-# reset to default mode at the end of line input reading
-line-finish() {
-    export VI_MODE="INSERT"
-}
-_omp_create_widget zle-line-finish line-finish
-
-# Fix a bug when you C-c in CMD mode, you'd be prompted with CMD mode indicator
-# while in fact you would be in INS mode.
-# Fixed by catching SIGINT (C-c), set mode to INS and repropagate the SIGINT,
-# so if anything else depends on it, we will not break it.
 TRAPINT() {
-  vimode-insert
-  return $(( 128 + $1 ))
+  _vi_set_INSERT
+  redraw-prompt
+  return $((128 + $1))
 }
 
-export VI_MODE="INSERT"
+# Wrap visual modes with original calls and prompt updates
+if zle -l | grep -qx "set-mark-command"; then
+  zle -A set-mark-command set-mark-command-orig 2>/dev/null
+  _vi_visual_begin() {
+    zle set-mark-command-orig 2>/dev/null || true
+    _vi_set_VISUAL
+    redraw-prompt
+  }
+  zle -N set-mark-command _vi_visual_begin
+else
+  _vi_visual_begin_fallback() {
+    zle set-mark-command 2>/dev/null || true
+    _vi_set_VISUAL
+    redraw-prompt
+  }
+  zle -N _vi_visual_begin_fallback
+  bindkey -M vicmd 'v' _vi_visual_begin_fallback
+fi
+
+if zle -l | grep -qx "visual-line-mode"; then
+  zle -A visual-line-mode visual-line-mode-orig 2>/dev/null
+  _vi_visual_line_begin() {
+    zle visual-line-mode-orig 2>/dev/null || true
+    _vi_set_VLINE
+    redraw-prompt
+  }
+  zle -N visual-line-mode _vi_visual_line_begin
+else
+  _vi_visual_line_begin_fallback() {
+    zle set-mark-command 2>/dev/null || true
+    zle end-of-line       2>/dev/null || true
+    _vi_set_VLINE
+    redraw-prompt
+  }
+  zle -N _vi_visual_line_begin_fallback
+  bindkey -M vicmd 'V' _vi_visual_line_begin_fallback
+fi
+
+if zle -l | grep -qx "visual-block-mode"; then
+  zle -A visual-block-mode visual-block-mode-orig 2>/dev/null
+  _vi_visual_block_begin() {
+    zle visual-block-mode-orig 2>/dev/null || true
+    _vi_set_VBLOCK
+    redraw-prompt
+  }
+  zle -N visual-block-mode _vi_visual_block_begin
+else
+  _vi_visual_block_begin_fallback() {
+    zle set-mark-command 2>/dev/null || true
+    _vi_set_VBLOCK
+    redraw-prompt
+  }
+  zle -N _vi_visual_block_begin_fallback
+  bindkey -M vicmd '\ev' _vi_visual_block_begin_fallback
+fi
+
+_vi_replace_bound=0
+if zle -l | grep -qx "vi-replace"; then
+  zle -A vi-replace vi-replace-orig 2>/dev/null
+  _vi_replace_begin() {
+    zle vi-replace-orig 2>/dev/null || true
+    _vi_set_REPLACE
+    redraw-prompt
+  }
+  zle -N vi-replace _vi_replace_begin
+  _vi_replace_bound=1
+fi
+
+if (( !_vi_replace_bound )) && zle -l | grep -qx "overwrite-mode"; then
+  zle -A overwrite-mode overwrite-mode-orig 2>/dev/null
+  _vi_overwrite_begin() {
+    zle overwrite-mode-orig 2>/dev/null || true
+    _vi_set_REPLACE
+    redraw-prompt
+  }
+  zle -N overwrite-mode _vi_overwrite_begin
+  _vi_replace_bound=1
+fi
+
+if (( !_vi_replace_bound )); then
+  _vi_replace_fallback() {
+    _vi_set_REPLACE
+    redraw-prompt
+  }
+  zle -N _vi_replace_fallback
+  bindkey -M vicmd 'R' _vi_replace_fallback
+fi
+
+if zle -l | grep -qx "vi-replace-chars"; then
+  if ! zle -l | grep -qx "_vi_replace_chars_orig"; then
+    zle -A vi-replace-chars _vi_replace_chars_orig 2>/dev/null
+  fi
+  _vi_replace_chars_wrap() {
+    zle _vi_replace_chars_orig 2>/dev/null || true
+    _vi_set_REPLACE
+    redraw-prompt
+  }
+  zle -N vi-replace-chars _vi_replace_chars_wrap
+  bindkey -M vicmd 'r' vi-replace-chars
+fi
+
+# Safe wrapping of deactivate-region to prevent recursion loops
+if zle -l | grep -qx "deactivate-region"; then
+  zle -A deactivate-region deactivate-region-orig 2>/dev/null
+  _vi_deactivate_region() {
+    zle deactivate-region-orig 2>/dev/null || true
+    _vi_set_NORMAL
+    redraw-prompt
+  }
+  zle -N deactivate-region _vi_deactivate_region
+fi
+
+_vi_leave_transient() {
+  _vi_set_NORMAL
+  redraw-prompt
+  zle deactivate-region 2>/dev/null || true
+}
+zle -N _vi_leave_transient
+bindkey -M vicmd '^[' _vi_leave_transient
+
+# Initialize prompt mode to INSERT
+_vi_set_INSERT
