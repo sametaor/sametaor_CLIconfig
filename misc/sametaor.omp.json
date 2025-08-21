@@ -141,14 +141,14 @@
 	  "powerline_symbol": "",
 	  "foreground": "#ffffff",
 	  "background": "#0077c2",
-	  "template": "{{ if .Env.POSH_VI_MODE }} {{ .Env.POSH_VI_MODE }} {{ end }}",
-	  "foreground_templates" : [
-    "{{if contains \"N\" .Env.POSH_VI_MODE}}blue{{end}}",
-    "{{if contains \"I\" .Env.POSH_VI_MODE}}magenta{{end}}",
-    "{{if contains \"V\" .Env.POSH_VI_MODE}}cyan{{end}}",
-    "{{if contains \"V-L\" .Env.POSH_VI_MODE}}cyan{{end}}",
-    "{{if contains \"R\" .Env.POSH_VI_MODE}}yellow{{end}}"
-  ]
+	  "template": "{{ if .Env.VI_MODE }} {{ .Env.VI_MODE }} {{ end }}",
+	  "background_templates": [
+            "{{if eq .Env.VI_MODE \"NORMAL\"}}#5898ff{{end}}",
+            "{{if eq .Env.VI_MODE \"INSERT\"}}#ff57a8{{end}}",
+            "{{if eq .Env.VI_MODE \"VISUAL\"}}#b879ff{{end}}",
+            "{{if eq .Env.VI_MODE \"V-LINE\"}}#b879ff{{end}}",
+            "{{if eq .Env.VI_MODE \"REPLACE\"}}#ff2185{{end}}"
+          ]
 	},
         {
           "type": "spotify",
