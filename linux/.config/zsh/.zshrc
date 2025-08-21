@@ -55,6 +55,7 @@ for fnfile in "$ZDOTDIR/functions"/**/*(N-.); do    # (N-.) = regular files, no 
   esac
 done
 
+
 ## 3-D  Source modular alias sets -----------------------------------------
 for file in "$ZDOTDIR/aliases"/**/*.zsh(N); do source "$file"; done
 
