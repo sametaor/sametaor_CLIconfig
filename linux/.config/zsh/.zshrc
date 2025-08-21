@@ -55,7 +55,6 @@ for fnfile in "$ZDOTDIR/functions"/**/*(N-.); do    # (N-.) = regular files, no 
   esac
 done
 
-
 ## 3-D  Source modular alias sets -----------------------------------------
 for file in "$ZDOTDIR/aliases"/**/*.zsh(N); do source "$file"; done
 
@@ -241,18 +240,6 @@ bindkey -- "${key[Down]}" history-substring-search-down
 #bindkey '^[OB' down-line-or-beginning-search # Down
 #bindkey -M vicmd 'k' up-line-or-beginning-search
 #bindkey -M vicmd 'j' down-line-or-beginning-search
-
-# Cursor shape
-#function zle-keymap-select {
-#case $KEYMAP in
-#vicmd) print -n -- $'\e[1 q' ;; # block cursor
-#viins|main) print -n -- $'\e[5 q' ;; # beam cursor
-#esac
-#}
-#zle -N zle-keymap-select
-#function zle-line-init { zle-keymap-select }
-#zle -N zle-line-init
-#preexec() { print -n -- $'\e[0 q' } # reset on external cmd
 
 redraw-prompt() {
   _omp_precmd
