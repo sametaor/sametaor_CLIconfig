@@ -133,6 +133,20 @@
             }
           }
         },
+	{
+          "type": "text",
+	  "style": "diamond",
+	  "leading_diamond": "\u251c╼\ue0b6",                                                     "trailing_diamond": "",
+	  "powerline_symbol": "",
+	  "foreground": "#ffffff",
+	  "background": "#0077c2",
+	  "template": "{{ if .Env.POSH_VI_MODE }}[{{ .Env.POSH_VI_MODE }}] {{ end }}",
+	  "foreground_templates": [
+		"{{ if eq .Env.POSH_VI_MODE \"command\" }}#ff6b6b{{ end }}",
+		"{{ if eq .Env.POSH_VI_MODE \"insert\" }}#4ecdc4{{ end }}",
+		"{{ if eq .Env.POSH_VI_MODE \"visual\" }}#f4b93e{{ end }}"
+		]
+	},
         {
           "type": "spotify",
           "style": "diamond",
