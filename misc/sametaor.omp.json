@@ -141,7 +141,7 @@
 	  "powerline_symbol": "",
 	  "foreground": "#ffffff",
 	  "background": "#0077c2",
-	  "template": "{{ if .Env.VI_MODE }} {{ .Env.VI_MODE }} {{ end }}",
+	  "template": "{{ if .Env.POSH_VI_MODE }} {{ .Env.POSH_VI_MODE }} {{ end }}",
 	  "foreground_templates" : [
     "{{if contains \"N\" .Env.POSH_VI_MODE}}blue{{end}}",
     "{{if contains \"I\" .Env.POSH_VI_MODE}}magenta{{end}}",
