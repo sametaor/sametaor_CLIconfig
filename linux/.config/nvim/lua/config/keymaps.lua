@@ -67,3 +67,9 @@ vim.keymap.set("n", "<leader>d", ":Telescope colorscheme<CR>", { desc = "View an
 vim.keymap.set("n", "<leader>v", ":Cheatsheet<CR>", { desc = "View cheatsheet" })
 
 vim.keymap.set("n", "<leader>i", ":LiveServerToggle<CR>", { desc = "Start/Stop Live Server" })
+
+vim.keymap.set({ "n", "x" }, "<leader>ca", function()
+  require("tiny-code-action").code_action({
+    context = { onl = "refactor" },
+  })
+end, { noremap = true, silent = true })

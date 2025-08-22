@@ -5,7 +5,7 @@ local theme = {
   current_tab = { fg = "#0077C2", bg = "#FBFBFB", style = "bold" },
   tab = { fg = "#FBFBFB", bg = "#0077C2" },
   win = { fg = "#000000", bg = "#7700FF" },
-  tail = { fg = "E6EDF3", bg = "#0F4A74" },
+  tail = { fg = "#E6EDF3", bg = "#0F4A74" },
 }
 
 return {

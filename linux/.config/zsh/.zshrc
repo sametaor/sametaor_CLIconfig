@@ -242,6 +242,12 @@ bindkey -- "${key[Down]}" history-substring-search-down
 #bindkey -M vicmd 'k' up-line-or-beginning-search
 #bindkey -M vicmd 'j' down-line-or-beginning-search
 
+# --- Cursor shape switching, integrated with vi-mode ---
+
+zsh_cursor_set_shape() {
+  print -n -- "\e[${1} q"
+}
+
 # Prompt redraw cooperating with Oh My Posh if present
 redraw-prompt() {
   if typeset -f _omp_precmd >/dev/null; then
@@ -250,12 +256,12 @@ redraw-prompt() {
   zle .reset-prompt
 }
 
-_vi_set_NORMAL()  { export VI_MODE=" N";  }
-_vi_set_INSERT()  { export VI_MODE="󱩽 I";  }
-_vi_set_VISUAL()  { export VI_MODE=" V";  }
-_vi_set_VLINE()   { export VI_MODE="󰡮 VL";  }
-_vi_set_VBLOCK()  { export VI_MODE="󱂔 VB"; }
-_vi_set_REPLACE() { export VI_MODE=" R"; }
+_vi_set_NORMAL()  { export VI_MODE=" N"; zsh_cursor_set_shape 2   }
+_vi_set_INSERT()  { export VI_MODE="󱩽 I"; zsh_cursor_set_shape 6  }
+_vi_set_VISUAL()  { export VI_MODE=" V"; zsh_cursor_set_shape 4  }
+_vi_set_VLINE()   { export VI_MODE="󰡮 VL"; zsh_cursor_set_shape 4  }
+_vi_set_VBLOCK()  { export VI_MODE="󱂔 VB"; zsh_cursor_set_shape 4 }
+_vi_set_REPLACE() { export VI_MODE=" R"; zsh_cursor_set_shape 2 }
 
 # NORMAL/INSERT mode detection via keymap hook (safe)
 zle-keymap-select() {
