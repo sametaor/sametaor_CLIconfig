@@ -1,7 +1,7 @@
 {
   "RenderingMod.ThemeBackground": 1,
   "RenderingMod.AccentColorControls": 1,
-  "type": "acrylicblur",
+  "type": "mica",
   "AccentBlurBehind": "00000000",
   "ImmersiveDarkTitle": 1,
   "ExtendFrame": 1,
@@ -38,5 +38,6 @@
   "RuledPrograms[0].BorderColor.ColorBorder": 0,
   "RuledPrograms[0].BorderColor.RainbowBorder": 0,
   "RuledPrograms[0].BorderColor.borderstyles_active": "FF0000",
-  "RuledPrograms[0].BorderColor.borderstyles_inactive": "00FFFF"
+  "RuledPrograms[0].BorderColor.borderstyles_inactive": "00FFFF",
+  "RenderingMod.TextAlphaBlend": 1
 }
