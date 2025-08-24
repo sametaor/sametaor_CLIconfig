@@ -22,7 +22,7 @@ alias prit='podman container run --interactive --tty'
 alias prm='podman container rm'
 
 # Bash does not support exclamation point in alias names; convert to function:
-prm!() { podman container rm --force "$@"; }
+prmf() { podman container rm --force "$@"; }
 
 alias pst='podman container start'
 alias prs='podman container restart'
