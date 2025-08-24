@@ -1,10 +1,8 @@
+# --- Key Bindings ---
 bind -m vi-insert '"\C-l": clear-screen'
 bind -m vi-insert '"\C-w": backward-kill-word'
 
-# ~/.config/bash/.bashrc
-# Unified Bash config: all logic, environment, and modular sourcing in one file
-
-# --- 1. Environment Variables & Paths (was .bashenv) ---
+# --- Environment/Paths ---
 export USERNAME=sametaor
 export BASH_CONFIG_DIR="${HOME}/.config/bash"
 export EDITOR=nvim
@@ -15,21 +13,19 @@ export LANG=en_US.UTF-8
 PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH
 
-
-# --- 2. Bash History (bash only, not zsh) ---
+# --- History ---
 export HISTFILE="$HOME/.config/bash/.bash_history"
 export HISTSIZE=50000
 export HISTFILESIZE=50000
 export HISTCONTROL=ignoreboth:erasedups
 export HISTTIMEFORMAT='[%F %T] '
 
-# --- 2A. Cache Directory (for completions, etc.) ---
+# --- Cache Directory ---
 BASH_CACHE_DIR="$BASH_CONFIG_DIR/cache"
 mkdir -p "$BASH_CACHE_DIR"
-# Optional: Clean up cache files older than 30 days (uncomment to enable)
-# find "$BASH_CACHE_DIR" -type f -mtime +30 -delete 2>/dev/null
+# Optional: find "$BASH_CACHE_DIR" -type f -mtime +30 -delete 2>/dev/null
 
-# --- 3. GPG, FZF, Pyenv, XDG, Perl, etc. ---
+# --- Extra Env/Tooling Setup ---
 export GPG_TTY=$(tty)
 export FZF_DEFAULT_OPTS='--color=fg:#c8d3f5,fg+:#c8d3f5,bg:#222436,bg+:#2a2e54 --color=hl:#82aaff,hl+:#86e1fc,info:#c3e88d,marker:#ffc777 --color=prompt:#ff757f,spinner:#c099ff,pointer:#c099ff,header:#828bb8 --color=border:#6c75ba,label:#9da8ee,query:#c8d3f5 --border="rounded" --border-label="FZF" --border-label-pos="0" --preview-window="border-double" --padding="1" --margin="1" --prompt=">_ " --marker=">>" --pointer="=>" --separator="─" --scrollbar="|" --layout="reverse" --info="right" --tmux left,80% --height=80%'
 export PYENV_ROOT="$HOME/.pyenv"
@@ -48,87 +44,71 @@ export PERL_LOCAL_LIB_ROOT="/home/sametaor/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_L
 export PERL_MB_OPT="--install_base \"/home/sametaor/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/sametaor/perl5"
 
-# --- 4. Login/Logout Logic (was .bash_profile, .bash_login, .bash_logout) ---
-# Homebrew, pyenv, oh-my-posh, zoxide, and Arch/cleanup logic
+# --- Login/Logout Logic (Homebrew, pyenv, oh-my-posh, zoxide, Arch cleanup) ---
 if [[ -d "/home/linuxbrew/.linuxbrew/bin" ]]; then
-    [[ -d /home/linuxbrew/.linuxbrew/bin ]] && PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-    [[ -d /home/linuxbrew/.linuxbrew/sbin ]] && PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  [[ -d /home/linuxbrew/.linuxbrew/bin ]] && PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+  [[ -d /home/linuxbrew/.linuxbrew/sbin ]] && PATH="/home/linuxbrew/.linuxbrew/sbin:$PATH"
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 elif [[ -d "/opt/homebrew/bin" ]]; then
-    [[ -d /opt/homebrew/bin ]] && PATH="/opt/homebrew/bin:$PATH"
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+  [[ -d /opt/homebrew/bin ]] && PATH="/opt/homebrew/bin:$PATH"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 export PATH
 if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 if command -v oh-my-posh >/dev/null 2>&1; then eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"; fi
 if command -v zoxide >/dev/null 2>&1; then eval "$(zoxide init bash)"; fi
-# Arch Linux cleanup (from .bash_login)
 if [[ -f /etc/arch-release ]] && command -v ifne >/dev/null 2>&1 && command -v doas >/dev/null 2>&1; then
-        sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
+  sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
 elif ! command -v ifne >/dev/null 2>&1; then
-        sudo pacman -Syu && yay -a
-        orphans=$(sudo pacman -Qdtq)
-        if [[ -n "$orphans" ]]; then
-                echo "$orphans" | sudo pacman -Rns -
-        fi
-        sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
+  sudo pacman -Syu && yay -a
+  orphans=$(sudo pacman -Qdtq)
+  if [[ -n "$orphans" ]]; then
+    echo "$orphans" | sudo pacman -Rns -
+  fi
+  sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
 fi
 
-# --- 5. Shell Options & Behavior (was .bashrc) ---
+# --- Shell Options ---
 shopt -s nullglob
+shopt -s globstar
 shopt -s autocd extglob failglob promptvars
 set -o vi; export KEYTIMEOUT=1
 
-
-# --- 6. Modular Sourcing: Plugins, Aliases, Completions, Functions ---
-shopt -s nullglob
-for opt in "$BASH_CONFIG_DIR"/plugin-opts/*.sh; do [ -r "$opt" ] && source "$opt"; done
-for plugin in "$BASH_CONFIG_DIR"/plugin-functions/*.sh; do [ -r "$plugin" ] && source "$plugin"; done
-for dir in "$BASH_CONFIG_DIR"/aliases/*; do
-        if [ -d "$dir" ]; then for afile in "$dir"/*.sh; do [ -r "$afile" ] && source "$afile"; done
-        elif [ -f "$dir" ]; then [ -r "$dir" ] && source "$dir"; fi
+# --- Recursive Bundle Sourcing with globstar ---
+for file in "$BASH_CONFIG_DIR"/**/*.bundle.sh; do
+  [ -r "$file" ] && source "$file"
 done
-# --- Efficient completions sourcing (recursive, only non-empty files) ---
-_source_completions() {
-        local d="$1"
-        [ -d "$d" ] || return
-        for f in "$d"/*; do
-                if [ -d "$f" ]; then _source_completions "$f"; fi
-                if [ -f "$f" ] && [ -s "$f" ] && [ -r "$f" ]; then source "$f"; fi
-        done
-}
-_source_completions "$BASH_CONFIG_DIR/completions"
-# System completions
+
+# --- Register Lazy Functions via globstar ---
+for file in "$BASH_CONFIG_DIR"/**/*.sh; do
+  [[ "$file" == *.bundle.sh ]] && continue
+  fname="${file##*/}"; fname="${fname%.*}"
+  eval "
+    $fname() {
+      source \"$file\"
+      $fname \"\$@\"
+    }
+  "
+done
+
+# --- Completions ---
 if [ -f /etc/bash_completion ]; then
-        source /etc/bash_completion
+  source /etc/bash_completion
 elif [ -f /usr/share/bash-completion/bash_completion ]; then
-        source /usr/share/bash-completion/bash_completion
+  source /usr/share/bash-completion/bash_completion
 elif [ -f /usr/local/etc/bash_completion ]; then
-        source /usr/local/etc/bash_completion
+  source /usr/local/etc/bash_completion
 fi
-for dir in "$BASH_CONFIG_DIR"/functions/*; do
-        if [ -d "$dir" ]; then for ffile in "$dir"/*.sh; do [ -r "$ffile" ] && source "$ffile"; done
-        elif [ -f "$dir" ]; then [ -r "$dir" ] && source "$dir"; fi
-done
 
-# --- 7. Prompt Configuration ---
+# --- Prompt Configuration ---
 if [ -f /usr/share/git/completion/git-prompt.sh ]; then
-        source /usr/share/git/completion/git-prompt.sh
+  source /usr/share/git/completion/git-prompt.sh
 fi
 __git_ps1() { :; }
 PS1='\[\e[36m\]\u@\h\[\e[m\] \[\e[33m\]\w\[\e[m\]$(__git_ps1 " ‹%s›")\n$ '
 
-# --- 8. Misc Convenience ---
+# --- Misc ---
 alias reload='source ~/.bashrc'
 command -v fastfetch >/dev/null 2>&1 && fastfetch
 
-# --- 9. Key Bindings (readline) ---
-# Only include valid Bash/readline keybindings here. Remove problematic or zsh-specific binds.
-
-# History substring search equivalents are not builtin; you can install bash-history-substring-search externally
-
-
-# ---------------- Vi mode cursor and prompt redraw is not directly possible in bash readline ----------------
-# Cursor shape and mode prompt updates are advanced zsh features without direct bash equivalents
-
-# You can set simple vi mode with 'set -o vi' and customize PS1, but no zle or widget manipulation
+# --- End ---
