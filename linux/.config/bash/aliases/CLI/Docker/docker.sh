@@ -1,0 +1,46 @@
+# docker.sh — Docker aliases for Bash
+
+alias dbl='docker build'
+alias dcin='docker container inspect'
+alias dcls='docker container ls'
+alias dclsa='docker container ls -a'
+alias dib='docker image build'
+alias dii='docker image inspect'
+alias dils='docker image ls'
+alias dipu='docker image push'
+alias dipru='docker image prune -a'
+alias dirm='docker image rm'
+alias dit='docker image tag'
+alias dlo='docker container logs'
+alias dnc='docker network create'
+alias dncn='docker network connect'
+alias dndcn='docker network disconnect'
+alias dni='docker network inspect'
+alias dnls='docker network ls'
+alias dnrm='docker network rm'
+alias dpo='docker container port'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dpu='docker pull'
+alias dr='docker container run'
+
+# Bash does not support '!' in alias names, so use a function:
+drm!() { docker container rm -f "$@"; }
+
+alias dst='docker container start'
+alias drs='docker container restart'
+alias dsta='docker stop $(docker ps -q)'
+alias dstp='docker container stop'
+alias dsts='docker stats'
+alias dtop='docker top'
+alias dvi='docker volume inspect'
+alias dvprune='docker volume prune'
+alias dxc='docker container exec'
+alias drit="docker run -it"
+alias deit="docker exec -it"
+alias dlog="docker logs"
+# dip supports extra arguments
+dip() { docker inspect --format "{{ .NetworkSettings.IPAddress }}" "$@"; }
+alias dstop-all='docker stop $(docker ps -q -f "status=running")'
+alias drm='docker rm'
+dvls() { docker volume ls "$@"; }

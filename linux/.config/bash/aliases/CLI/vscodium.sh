@@ -1,0 +1,16 @@
+alias vscy='codium --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland'
+alias vsc=codium
+alias vsca="vsc --add"
+alias vscd="vsc --diff"
+alias vscg="vsc --goto"
+alias vscn="vsc --new-window"
+alias vscr="vsc --reuse-window"
+alias vscw="vsc --wait"
+alias vscu="vsc --user-data-dir"
+alias vscp="vsc --profile"
+alias vsced="vsc --extensions-dir"
+alias vscie="vsc --install-extension"
+alias vscue="vsc --uninstall-extension"
+alias vscv="vsc --verbose"
+alias vscl="vsc --log"
+alias vscde="vsc --disable-extensions"
