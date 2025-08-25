@@ -25,7 +25,7 @@ alias dpu='docker pull'
 alias dr='docker container run'
 
 # Bash does not support '!' in alias names, so use a function:
-drm!() { docker container rm -f "$@"; }
+drmf() { docker container rm -f "$@"; }
 
 alias dst='docker container start'
 alias drs='docker container restart'

@@ -55,7 +55,6 @@ elif [[ -d "/opt/homebrew/bin" ]]; then
 fi
 export PATH
 if command -v pyenv >/dev/null 2>&1; then eval "$(pyenv init -)"; fi
-if command -v oh-my-posh >/dev/null 2>&1; then eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"; fi
 if command -v zoxide >/dev/null 2>&1; then eval "$(zoxide init bash)"; fi
 if [[ -f /etc/arch-release ]] && command -v ifne >/dev/null 2>&1 && command -v doas >/dev/null 2>&1; then
   sudo pacman -Syu && yay -a && sudo pacman -Qdtq | ifne sudo pacman -Rns - && sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
@@ -74,19 +73,32 @@ shopt -s globstar
 shopt -s autocd extglob failglob promptvars
 set -o vi; export KEYTIMEOUT=1
 
-# --- Recursive Bundle Sourcing with globstar ---
+
+# --- Plugin Loader: Source all plugin-functions first ---
+for file in "$BASH_CONFIG_DIR"/plugin-functions/*.sh; do
+  [ -r "$file" ] && source "$file"
+done
+
+# --- Bundle Loader: Source all .bundle.sh files (recursively) ---
 for file in "$BASH_CONFIG_DIR"/**/*.bundle.sh; do
   [ -r "$file" ] && source "$file"
 done
 
-# --- Register Lazy Functions via globstar ---
+# --- Aliases Loader: Source all alias files (recursively) ---
+for file in "$BASH_CONFIG_DIR"/aliases/**/*.sh; do
+  [ -r "$file" ] && source "$file"
+done
+
+# --- Functions Loader: Register lazy-loaders for all .sh files except bundles/plugins (recursively) ---
 for file in "$BASH_CONFIG_DIR"/**/*.sh; do
   [[ "$file" == *.bundle.sh ]] && continue
+  [[ "$file" == */plugin-functions/* ]] && continue
+  [[ "$file" == */aliases/* ]] && continue
   fname="${file##*/}"; fname="${fname%.*}"
   eval "
     $fname() {
       source \"$file\"
-      $fname \"\$@\"
+      $fname \"$@\"
     }
   "
 done
@@ -100,15 +112,10 @@ elif [ -f /usr/local/etc/bash_completion ]; then
   source /usr/local/etc/bash_completion
 fi
 
-# --- Prompt Configuration ---
-if [ -f /usr/share/git/completion/git-prompt.sh ]; then
-  source /usr/share/git/completion/git-prompt.sh
-fi
-__git_ps1() { :; }
-PS1='\[\e[36m\]\u@\h\[\e[m\] \[\e[33m\]\w\[\e[m\]$(__git_ps1 " ‹%s›")\n$ '
-
 # --- Misc ---
 alias reload='source ~/.bashrc'
 command -v fastfetch >/dev/null 2>&1 && fastfetch
 
 # --- End ---
+
+if command -v oh-my-posh >/dev/null 2>&1; then eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"; fi
