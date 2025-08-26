@@ -1,4 +1,4 @@
-[[ $- == *i* ]] && source -- ~/.local/share/blesh/ble.sh --attach=none
+[[ $- == *i* ]] && source -- ~/.local/share/blesh/ble.sh --attach=none --rcfile ~/.config/bash/.blerc
 
 # --- Key Bindings ---
 bind -m vi-insert '"\C-l": clear-screen'
@@ -122,6 +122,5 @@ if [[ $- == *i* ]] && command -v oh-my-posh >/dev/null 2>&1; then
   eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"
 fi
 
-# --- End ---
 [[ ! ${BLE_VERSION-} ]] || ble-attach
 
