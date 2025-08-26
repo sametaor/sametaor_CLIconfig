@@ -301,5 +301,6 @@
     "template": " {{ .UserName }} on  {{ .Shell }} @ 󰍹 {{ .HostName }} 󰂵 {{ .PWD }} =>  "
   },
   "final_space": true,
-  "version": 2
+  "version": 2,
+  "shell_integration": true
 }
