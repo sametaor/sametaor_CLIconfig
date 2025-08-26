@@ -1,3 +1,5 @@
+[[ $- == *i* ]] && source -- ~/.local/share/blesh/ble.sh --attach=none
+
 # --- Key Bindings ---
 bind -m vi-insert '"\C-l": clear-screen'
 bind -m vi-insert '"\C-w": backward-kill-word'
@@ -74,7 +76,7 @@ shopt -s autocd extglob failglob promptvars
 set -o vi; export KEYTIMEOUT=1
 
 
-# --- Plugin Loader: Source all plugin-functions first ---
+# --- Plugin Loader: Source all plugin-functions ---
 for file in "$BASH_CONFIG_DIR"/plugin-functions/*.sh; do
   [ -r "$file" ] && source "$file"
 done
@@ -117,5 +119,9 @@ alias reload='source ~/.bashrc'
 command -v fastfetch >/dev/null 2>&1 && fastfetch
 
 # --- End ---
+[[ ! ${BLE_VERSION-} ]] || ble-attach
 
-if command -v oh-my-posh >/dev/null 2>&1; then eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"; fi
+# --- Oh My Posh prompt (must be last, only in interactive shells) ---
+if [[ $- == *i* ]] && command -v oh-my-posh >/dev/null 2>&1; then
+  eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"
+fi
