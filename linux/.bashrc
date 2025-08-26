@@ -117,6 +117,22 @@ fi
 # --- Misc ---
 alias reload='source ~/.bashrc'
 command -v fastfetch >/dev/null 2>&1 && fastfetch
+
+# --- Ble.sh compatible oh-my-posh VI-MODE indicators:-
+function ble_vi_mode_env {
+  local mode="$_ble_decode_keymap"
+  case "$mode" in
+    (vi_nmap) export VI_MODE=" N" ;;    # Normal
+    (vi_imap) export VI_MODE="󱩽 I" ;;    # Insert
+    (vi_vmap) export VI_MODE=" V" ;;    # Visual
+    (vi_Vmap) export VI_MODE="󰡮 VL" ;;   # Visual Line
+    (vi_smap|vi_xmap) export VI_MODE="󱂔 VB" ;;   # Visual Block/Select
+    (vi_Rmap) export VI_MODE=" R" ;;    # Replace
+    (*) export VI_MODE="" ;;
+  esac
+}
+PROMPT_COMMAND="ble_vi_mode_env${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+
 # --- Oh My Posh prompt (must be last, only in interactive shells) ---
 if [[ $- == *i* ]] && command -v oh-my-posh >/dev/null 2>&1; then
   eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"
