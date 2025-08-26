@@ -117,11 +117,11 @@ fi
 # --- Misc ---
 alias reload='source ~/.bashrc'
 command -v fastfetch >/dev/null 2>&1 && fastfetch
-
-# --- End ---
-[[ ! ${BLE_VERSION-} ]] || ble-attach
-
 # --- Oh My Posh prompt (must be last, only in interactive shells) ---
 if [[ $- == *i* ]] && command -v oh-my-posh >/dev/null 2>&1; then
   eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json')"
 fi
+
+# --- End ---
+[[ ! ${BLE_VERSION-} ]] || ble-attach
+
