@@ -1,105 +1,183 @@
 #!/usr/bin/env bash
-# alias-tips.plugin.sh — Advanced alias tips plugin for Bash with global alias awareness
+# alias-tips for Bash: remind when you type long form instead of an alias.
+# Pure Bash, no external deps. If ble.sh is present, uses blehook automatically.
 
-# Load user config options file if it exists (adjust path as needed)
-if [ -f "${HOME}/.config/bash/plugin-opts/alias-tips.sh" ]; then
+# Load user options if present
+PLUGIN_OPTS="${HOME}/.config/bash/plugin-opts/alias-tips.sh"
+if [ -f "$PLUGIN_OPTS" ]; then
   # shellcheck source=/dev/null
-  source "${HOME}/.config/bash/plugin-opts/alias-tips.sh"
+  source "$PLUGIN_OPTS"
 fi
 
-# User-configurable environment variables:
-# BASH_ALIAS_TIPS_TEXT: prefix text for alias tip output
-# BASH_ALIAS_TIPS_EXCLUDES: space-separated aliases to exclude from tips
-# BASH_ALIAS_TIPS_FORCE: If set to 1, abort command if alias exists
-# BASH_ALIAS_TIPS_REVEAL: If set to 1, always show alias expansions
+# ---------------------------------------
+# Config (override via env before sourcing)
+# ---------------------------------------
+: "${ALIASTIPS_PREFIX:=1}"       # 1: match when command STARTS WITH alias expansion; 0: exact match only
+: "${ALIASTIPS_MIN_WORDS:=2}"    # ignore aliases whose expansion has fewer than N words (avoid noise like g=git)
+: "${ALIASTIPS_SHOW_COLOR:=1}"   # 1: faint gray, 0: no color
+: "${ALIASTIPS_LABEL:=alias tip}"# label in the printed hint
 
-: "${BASH_ALIAS_TIPS_TEXT:=Alias tip: }"
-: "${BASH_ALIAS_TIPS_EXCLUDES:=_ ll vi vim}"
-: "${BASH_ALIAS_TIPS_FORCE:=0}"
-: "${BASH_ALIAS_TIPS_REVEAL:=0}"
+# ---------------------------------------
+# Internal state
+# ---------------------------------------
+declare -gA ALIASTIPS_MAP=()       # aliasName -> expansion
+declare -gA ALIASTIPS_BY_CMD=()    # firstWord -> "alias1 alias2 ..."
+declare -gA ALIASTIPS_NAMES=()     # aliasName -> 1 (for quick existence test)
+declare -g  ALIASTIPS_NEXT_TIP=
+declare -g  ALIASTIPS_LAST_CMD=
+declare -g  ALIASTIPS_DIRTY=
+declare -g  ALIASTIPS__in_preexec=
 
-# Internal vars
-__bat_last_command=""
-read -r -a __bat_excludes <<< "$BASH_ALIAS_TIPS_EXCLUDES"
+# Colors
+if [[ -t 2 && $ALIASTIPS_SHOW_COLOR -eq 1 && -z ${NO_COLOR:-} ]]; then
+  ALIASTIPS_COLOR=$'\e[90m'   # faint/bright black
+  ALIASTIPS_RESET=$'\e[0m'
+else
+  ALIASTIPS_COLOR=
+  ALIASTIPS_RESET=
+fi
 
-__bat_is_excluded() {
-  local alias_name=$1
-  for excl in "${__bat_excludes[@]}"; do
-    [[ $alias_name == "$excl" ]] && return 0
-  done
-  return 1
+# ---------------------------------------
+# Utils
+# ---------------------------------------
+alias_tips__unescape_single_quoted() {
+  local s=$1
+  s=${s//\'\\\'\'/\'}
+  printf %s "$s"
 }
 
-__bat_print_tip() {
-  local alias_name=$1
-  printf "%s%s\n" "$BASH_ALIAS_TIPS_TEXT" "$alias_name"
-}
+alias_tips_refresh() {
+  ALIASTIPS_MAP=()
+  ALIASTIPS_BY_CMD=()
+  ALIASTIPS_NAMES=()
 
-__bat_reveal_alias() {
-  local alias_name=$1
-  alias "$alias_name" 2>/dev/null
-}
+  local line name raw exp
+  while IFS= read -r line; do
+    [[ $line == alias\ *=* ]] || continue
+    name=${line#alias }
+    name=${name%%=*}
+    ALIASTIPS_NAMES["$name"]=1
 
-# Check if a command is an expansion of any alias we have
-__bat_match_alias() {
-  local cmdline=$1
-
-  # Iterate over all aliases
-  alias | while IFS= read -r line; do
-    local name=${line%%=*}
-    name=${name#alias }
-    local expansion=${line#*=}
-    expansion=${expansion#\'}
-    expansion=${expansion%\'}
-
-    __bat_is_excluded "$name" && continue
-
-    if [[ $cmdline == $expansion* ]]; then
-      echo "$name"
-      break
+    raw=${line#alias $name=}
+    if [[ $raw == \'*\' ]]; then
+      exp=${raw:1:-1}
+      exp=$(alias_tips__unescape_single_quoted "$exp")
+    else
+      exp=$raw
     fi
-  done
+
+    if [[ $exp == *[';&|><(){}$`']* ]]; then
+      continue
+    fi
+
+    local _arr
+    read -r -a _arr <<< "$exp"
+    local words=${#_arr[@]}
+    (( words >= ALIASTIPS_MIN_WORDS )) || continue
+
+    ALIASTIPS_MAP["$name"]=$exp
+
+    local head=${exp%%[[:space:]]*}
+    if [[ -n ${ALIASTIPS_BY_CMD[$head]:-} ]]; then
+      ALIASTIPS_BY_CMD[$head]+=" $name"
+    else
+      ALIASTIPS_BY_CMD[$head]=$name
+    fi
+  done < <(alias -p)
 }
 
-# Main function hooked into PROMPT_COMMAND
-__bat_prompt_command() {
-  # Extract last executed command line ignoring history numbers and spaces
-  local histline cmdline cmd
-  histline=$(history 1)
-  cmdline=${histline#*[0-9] }
-  cmd=${cmdline%% *}
+alias_tips_preexec() {
+  [[ -n $ALIASTIPS__in_preexec ]] && return
+  ALIASTIPS__in_preexec=1
 
-  # Skip empty or duplicate
-  [[ -z "$cmd" || "$cmd" == "$__bat_last_command" ]] && return
-  __bat_last_command=$cmd
+  local cmd=$BASH_COMMAND
+  cmd=${cmd##[[:space:]]}
+  [[ -z $cmd ]] && { ALIASTIPS__in_preexec=; return; }
 
-  # Check if command is an alias itself
-  if alias "$cmd" &>/dev/null; then
-    [[ $BASH_ALIAS_TIPS_REVEAL -eq 1 ]] && __bat_reveal_alias "$cmd"
+  local first=${cmd%%[[:space:]]*}
+  if [[ $first == alias || $first == unalias ]]; then
+    ALIASTIPS_DIRTY=1
+  fi
+
+  if [[ -n ${ALIASTIPS_NAMES[$first]:-} ]]; then
+    ALIASTIPS__in_preexec=
     return
   fi
 
-  # Check for alias whose expansion matches this typed command
-  local aliased
-  aliased=$(__bat_match_alias "$cmdline")
-  if [[ -n $aliased ]]; then
-    __bat_print_tip "$aliased"
+  local candidates=${ALIASTIPS_BY_CMD[$first]:-}
+  [[ -n $candidates ]] || { ALIASTIPS__in_preexec=; return; }
 
-    if [[ $BASH_ALIAS_TIPS_FORCE -eq 1 ]]; then
-      echo "Aborting execution. Please use your alias: $aliased" >&2
-      # Attempts to abort command execution by resetting last command
-      # Note: This won't cancel command already running, but stops prompt update
-      __bat_last_command=""
-      return 1
+  local name exp tip=""
+  for name in $candidates; do
+    exp=${ALIASTIPS_MAP[$name]}
+    [[ -n $exp ]] || continue
+    if (( ALIASTIPS_PREFIX )); then
+      if [[ $cmd == "$exp" || $cmd == "$exp "* ]]; then
+        tip=$name; break
+      fi
+    else
+      if [[ $cmd == "$exp" ]]; then
+        tip=$name; break
+      fi
     fi
+  done
+
+  if [[ -n $tip && $cmd != "$ALIASTIPS_LAST_CMD" ]]; then
+    ALIASTIPS_NEXT_TIP="${ALIASTIPS_LABEL}: ${tip} -> ${ALIASTIPS_MAP[$tip]}"
+    ALIASTIPS_LAST_CMD=$cmd
+  else
+    ALIASTIPS_NEXT_TIP=
   fi
+
+  ALIASTIPS__in_preexec=
 }
 
-# Hook the main function into PROMPT_COMMAND if not already hooked
-if [[ "$PROMPT_COMMAND" != *"__bat_prompt_command"* ]]; then
-  if [[ -z "$PROMPT_COMMAND" ]]; then
-    PROMPT_COMMAND=__bat_prompt_command
-  else
-    PROMPT_COMMAND="$PROMPT_COMMAND;__bat_prompt_command"
+alias_tips_precmd() {
+  local st=$?
+
+  if [[ -n $ALIASTIPS_DIRTY ]]; then
+    alias_tips_refresh
+    ALIASTIPS_DIRTY=
   fi
-fi
+
+  if [[ -n $ALIASTIPS_NEXT_TIP ]]; then
+    printf '%b\n' "${ALIASTIPS_COLOR}${ALIASTIPS_NEXT_TIP}${ALIASTIPS_RESET}" >&2
+    ALIASTIPS_NEXT_TIP=
+  fi
+
+  return $st
+}
+
+alias_tips_enable() {
+  [[ $- == *i* ]] || return 0
+
+  alias_tips_refresh
+
+#  if type -t blehook >/dev/null 2>&1; then
+#    blehook ble/widget/accept-line += alias_tips_preexec
+#    blehook ble/prompt/prepare += alias_tips_precmd
+#  else
+    trap 'alias_tips_preexec' DEBUG
+    case ";$PROMPT_COMMAND;" in
+      *";alias_tips_precmd;"*) : ;;
+      *) PROMPT_COMMAND="alias_tips_precmd${PROMPT_COMMAND:+;$PROMPT_COMMAND}" ;;
+    esac
+#  fi
+}
+
+alias_tips_disable() {
+#  if type -t blehook >/dev/null 2>&1; then
+#    blehook preexec-=alias_tips_preexec 2>/dev/null || true
+#    blehook prompt-=alias_tips_precmd 2>/dev/null || true
+#  else
+    trap - DEBUG
+    PROMPT_COMMAND="${PROMPT_COMMAND//alias_tips_precmd; }"
+    PROMPT_COMMAND="${PROMPT_COMMAND//alias_tips_precmd}"
+    PROMPT_COMMAND="${PROMPT_COMMAND/#; /}"
+#  fi
+}
+
+alias_tips_rebuild() { alias_tips_refresh; }
+
+alias_tips_enable
+# End of alias-tips.sh

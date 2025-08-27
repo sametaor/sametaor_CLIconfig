@@ -2,7 +2,7 @@ if [[ $- == *i* ]] && command -v curl >/dev/null 2>&1; then
 	if [[ ! -f "$HOME/.local/share/blesh/ble.sh" ]]; then
 		curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -
 		bash ble-nightly/ble.sh --install "$HOME/.local/share"
-		fi
+	fi
 fi
 if [[ -f "$HOME/.local/share/blesh/ble.sh" ]]; then
 	[[ $- == *i* ]] && source -- ~/.local/share/blesh/ble.sh --attach=none --rcfile ~/.config/bash/.blerc
@@ -83,7 +83,6 @@ shopt -s globstar
 shopt -s autocd extglob failglob promptvars
 set -o vi; export KEYTIMEOUT=1
 
-
 # --- Plugin Loader: Source all plugin-functions ---
 for file in "$BASH_CONFIG_DIR"/plugin-functions/*.sh; do
   [ -r "$file" ] && source "$file"
@@ -148,3 +147,6 @@ fi
 
 [[ ! ${BLE_VERSION-} ]] || ble-attach
 
+if [[ -f "$BASH_CONFIG_DIR/plugin-functions/alias-tips.plugin.sh" ]]; then
+  source "$BASH_CONFIG_DIR/plugin-functions/alias-tips.plugin.sh"
+fi

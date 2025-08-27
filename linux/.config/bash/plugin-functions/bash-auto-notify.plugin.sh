@@ -7,7 +7,7 @@ if [ -f "${HOME}/.config/bash/plugin-opts/auto-notify.opts.sh" ]; then
 fi
 
 # Configuration via environment variables (set before sourcing)
-: "${AUTO_NOTIFY_THRESHOLD:=10}"            # seconds; notify if command exceeds this
+: "${AUTO_NOTIFY_THRESHOLD:=120}"            # seconds; notify if command exceeds this
 : "${AUTO_NOTIFY_TITLE:='Command finished'}"  # notification title template
 : "${AUTO_NOTIFY_BODY:='Command \"%command\" finished in %elapsed seconds with exit code %exit_code'}"
 : "${AUTO_NOTIFY_EXPIRE_TIME:=8000}"       # ms, notification expiry (Linux notify-send)
@@ -22,6 +22,11 @@ __aan_start_time=0
 __aan_command=""
 __aan_exit_code=0
 __aan_ignore=0
+
+# Helper: Detect WSL
+__aan_is_wsl() {
+    grep -qi microsoft /proc/version 2>/dev/null
+}
 
 # Send notification helper (Linux using notify-send)
 __aan_send_notification() {
@@ -38,12 +43,19 @@ __aan_send_notification() {
     fi
 
     notify-send --expire-time="$AUTO_NOTIFY_EXPIRE_TIME" --urgency="$urgency" --hint="$hint" "$title" "$body"
+  elif __aan_is_wsl && command -v wsl-notify-send.exe >/dev/null 2>&1; then
+    body="${body//\\n/$'\n'}"
+    # On WSL, use wsl-notify-send.exe
+    wsl-notify-send.exe "$title: $body"
   elif [[ "$(uname)" == "Darwin" ]]; then
     # macOS notification using AppleScript
     osascript -e "display notification \"$body\" with title \"$title\""
+  elif [[ "$(uname)" == "Linux" ]]; then
+    # Linux notification using notify-send
+    notify-send --expire-time="$AUTO_NOTIFY_EXPIRE_TIME" --urgency="normal" "$title" "$body"
   else
     # Fallback: just echo
-    echo "Notification: $title - $body" >&2
+    echo "Notification: $title - $body" > /dev/null
   fi
 }
 
