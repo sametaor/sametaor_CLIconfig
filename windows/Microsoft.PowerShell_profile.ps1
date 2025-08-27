@@ -432,6 +432,3 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-echo "Checking for upgrades..."
-winget upgrade --all --include-pinned
-sudo choco upgrade all -y -i
