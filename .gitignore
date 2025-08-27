@@ -3,3 +3,4 @@ linux/.config/zsh/.zsh_history
 linux/.config/zsh/cache/.zcompdump
 linux/.config/zsh/cache/zcompdump
 linux/.config/zsh/plugins/*
+linux/.config/bash/.bash_history
