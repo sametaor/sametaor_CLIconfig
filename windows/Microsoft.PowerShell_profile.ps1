@@ -1,5 +1,6 @@
 Import-Module -Name Microsoft.WinGet.Client
 Import-Module -Name Microsoft.WinGet.CommandNotFound
+Import-Module -Name BurntToast
 Import-Module $env:ChocolateyInstall\helpers\chocolateyProfile.psm1
 $canConnectToGitHub = Test-Connection github.com -Count 1 -Quiet -TimeoutSeconds 1
 function Update-PowerShell {
