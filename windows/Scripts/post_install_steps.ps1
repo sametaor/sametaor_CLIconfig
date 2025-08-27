@@ -1,7 +1,7 @@
 $winget_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/wingetinstall.json"
 $winutil_script = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/winutilconfig.json"
 
-$hypervon = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/HyperV_on_HomeEdition.bat"
+$hypervon = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/Scripts/HyperV_on_HomeEdition.bat"
 
 $regconfig = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/regconfig.reg"
 
@@ -95,7 +95,7 @@ Invoke-RestMethod https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/
 
 Invoke-WebRequest -useb https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/.config/fastfetch/config.jsonc -OutFile $HOME\fastfetch
 
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/HyperV_on_HomeEdition.bat" -OutFile HyperV_on_HomeEdition.bat
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/Scripts/HyperV_on_HomeEdition.bat" -OutFile HyperV_on_HomeEdition.bat
 
 git config --global user.name "sametaor"
 git config --global user.email "71749831+sametaor@users.noreply.github.co"
