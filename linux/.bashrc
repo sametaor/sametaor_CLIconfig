@@ -1,4 +1,7 @@
 if [[ $- == *i* ]] && command -v curl >/dev/null 2>&1; then
+	if [[ ! -f "$HOME/.config/bash/bash-preexec.sh" ]]; then
+		curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o "$HOME/.config/bash/bash-preexec.sh"
+	fi
 	if [[ ! -f "$HOME/.local/share/blesh/ble.sh" ]]; then
 		curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf -
 		bash ble-nightly/ble.sh --install "$HOME/.local/share"
@@ -6,6 +9,9 @@ if [[ $- == *i* ]] && command -v curl >/dev/null 2>&1; then
 fi
 if [[ -f "$HOME/.local/share/blesh/ble.sh" ]]; then
 	[[ $- == *i* ]] && source -- ~/.local/share/blesh/ble.sh --attach=none --rcfile ~/.config/bash/.blerc
+fi
+if [[ -f "$HOME/.config/bash/bash-preexec.sh" ]]; then
+	source ~/.config/bash/bash-preexec.sh
 fi
 
 # --- Key Bindings ---
