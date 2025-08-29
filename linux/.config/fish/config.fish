@@ -1,31 +1,40 @@
-# --- Auto-load installed plugins ---
 # --- Auto-load installed plugins (safe globbing) ---
 set -l plugins_dir $HOME/.config/fish/functions/plugins
 set -l opts_dir $HOME/.config/fish/functions/plugin-opts
+
 if test -d $plugins_dir
     set -l plugin_dirs (find $plugins_dir -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
     for plugin in $plugin_dirs
         set -l plugin_name (basename $plugin)
         set -l opts_file $opts_dir/$plugin_name.fish
-        # Source plugin options if present
+
+        # Confirm opts file path
         if test -f $opts_file
+            echo "Sourcing plugin opts for: $plugin_name ($opts_file)"
             source $opts_file
+        else
+            echo "No opts file for $plugin_name at $opts_file"
         end
-        # Source all .fish files in the plugin
+
+        # Source all .fish files in plugin dir, skip if none
         for f in $plugin/*.fish
             if test -f $f
+                echo "Sourcing plugin file: $f"
                 source $f
             end
         end
     end
+else
+    echo "Plugins directory not found: $plugins_dir"
 end
 
-# --- Fish plugin installer function (inline) ---
-function plugin_installer --argument-names plugin_name git_url
-    set -l plugin_dir $HOME/.config/fish/functions/plugins/$plugin_name
-    set -l opts_file $HOME/.config/fish/functions/plugin-opts/$plugin_name.fish
 
-    # Clone or update the plugin
+# --- Fish plugin installer function ---
+function fpl_add --argument-names plugin_name git_url
+    set -l plugin_dir $HOME/.config/fish/functions/plugins/$plugin_name
+    set -l opts_file $HOME/.config/fish/functions/plugin-opts/$plugin_name.fish                                       
+
+    # Clone or update the plugin repository
     if test -d $plugin_dir
         echo "Updating $plugin_name..."
         command git -C $plugin_dir pull
@@ -34,12 +43,13 @@ function plugin_installer --argument-names plugin_name git_url
         command git clone $git_url $plugin_dir
     end
 
-    # Source plugin options if present
+    # Source plugin options first (configuration)
     if test -f $opts_file
+	echo "Sourcing plugin-opts..."
         source $opts_file
     end
 
-    # Source plugin main file(s)
+    # Source all main plugin .fish files
     for f in $plugin_dir/*.fish
         if test -f $f
             source $f
@@ -55,7 +65,6 @@ end
 if not set -q __startup_fish_loaded
     set -g __startup_fish_loaded 1
     if test -f $HOME/.config/fish/conf.d/startup.fish
-        source $HOME/.config/fish/conf.d/startup.fish
     end
 end
 

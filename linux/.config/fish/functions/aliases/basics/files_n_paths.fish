@@ -1,5 +1,6 @@
 # Fish shell basic file/path aliases (ported from bash/zsh)
-alias cd 'z' # requires zoxide installed
+#alias cd 'z' # requires zoxide installed
+# Causes recursion errors in fish shell, use z instead
 alias c 'clear'
 alias rm 'rm -ir'
 alias rmf 'rm -irf'

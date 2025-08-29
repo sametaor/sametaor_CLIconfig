@@ -14,11 +14,6 @@ for dir in $HOME/.config/fish/functions/aliases/* $HOME/.config/fish/functions/c
 	end
 end
 
-# Source completions
-for file in (find $HOME/.config/fish/completions -type f -name '*.fish' 2>/dev/null)
-	source $file
-end
-
 # --- Plugin Features: Autosuggestions, Syntax Highlighting, fzf-tab ---
 # Use native fish plugins if available, else fallback to custom logic
 if type -q fish_config
@@ -36,14 +31,11 @@ end
 set -g fish_key_bindings fish_vi_key_bindings
 
 # History substring search (up/down)
-bind -M insert '\eOA' up-or-search
-bind -M insert '\eOB' down-or-search
-bind -M insert '\e[A' up-or-search
-bind -M insert '\e[B' down-or-search
-
+bind -M insert up up-or-search
+bind -M insert down down-or-search
 
 # Accept autosuggestion with right arrow (fixed)
-bind -M insert '\e[C' accept-autosuggestion
+bind -M insert right accept-autosuggestion
 
 # Removed problematic bind with unmatched brackets
 
