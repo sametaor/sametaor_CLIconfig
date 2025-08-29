@@ -1,0 +1,9 @@
+# Fish shell aliases for MacPorts (ported from bash/zsh)
+alias pc 'sudo port clean --all installed'
+alias pi 'sudo port install'
+alias pli 'port livecheck installed'
+alias plm 'port-livecheck-maintainer'
+alias psu 'sudo port selfupdate'
+alias puni 'sudo port uninstall inactive'
+alias puo 'sudo port upgrade outdated'
+alias pup 'sudo port selfupdate; and sudo port upgrade outdated'
