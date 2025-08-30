@@ -2,7 +2,7 @@
 
 # Customize the tip text format.
 # Use {{ .abbr }} for abbreviation and {{ .cmd }} for the corresponding full command.
-set -U ABBR_TIPS_PROMPT "\n󰛩 \e[1mAlias Tip: {{ .abbr }}\e[0m means -> {{ .cmd }}"
+set -U ABBR_TIPS_PROMPT "\n\e[38;2;59;120;254m󰛩 \e[38;2;59;120;254mAlias Tip: {{ .abbr }}\e[38;2;59;120;254m -> {{ .cmd }}"
 
 # Optionally customize alias whitelist or regexes here as well if needed.
 #set -U ABBR_TIPS_ALIAS_WHITELIST "alias1 alias2"  # example

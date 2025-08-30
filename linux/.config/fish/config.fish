@@ -1,86 +1,40 @@
-# --- Auto-load installed plugins (safe globbing) ---
-set -l plugins_dir $HOME/.config/fish/functions/plugins
-set -l opts_dir $HOME/.config/fish/functions/plugin-opts
+# --- Fish Shell Bootstrap ---
+#
+# Fish automatically sources all files in conf.d/ and its subdirectories (except hidden files),
+# so all configuration, plugin, and helper scripts placed there are loaded at shell startup.
+#
+# Functions in the functions/ directory are autoloaded ("lazy loaded") by fish when called.
+#
+# Do NOT source completions/ here, as this can cause issues.
+#
+# If you have a plugin loader (like fpl.fish), source it here:
+#if test -f $HOME/.config/fish/fpl.fish
+#    source $HOME/.config/fish/fpl.fish
+#end
 
-if test -d $plugins_dir
-    set -l plugin_dirs (find $plugins_dir -mindepth 1 -maxdepth 1 -type d 2>/dev/null)
-    for plugin in $plugin_dirs
-        set -l plugin_name (basename $plugin)
-        set -l opts_file $opts_dir/$plugin_name.fish
+function fish_mode_prompt; end
 
-        # Confirm opts file path
-        if test -f $opts_file
-            echo "Sourcing plugin opts for: $plugin_name ($opts_file)"
-            source $opts_file
-        else
-            echo "No opts file for $plugin_name at $opts_file"
-        end
-
-        # Source all .fish files in plugin dir, skip if none
-        for f in $plugin/*.fish
-            if test -f $f
-                echo "Sourcing plugin file: $f"
-                source $f
-            end
-        end
-    end
-else
-    echo "Plugins directory not found: $plugins_dir"
+# Eagerly load all plugin functions
+for f in ~/.config/fish/functions/plugin-functions/*.fish
+    source $f
 end
 
-
-# --- Fish plugin installer function ---
-function fpl_add --argument-names plugin_name git_url
-    set -l plugin_dir $HOME/.config/fish/functions/plugins/$plugin_name
-    set -l opts_file $HOME/.config/fish/functions/plugin-opts/$plugin_name.fish                                       
-
-    # Clone or update the plugin repository
-    if test -d $plugin_dir
-        echo "Updating $plugin_name..."
-        command git -C $plugin_dir pull
-    else
-        echo "Installing $plugin_name from $git_url..."
-        command git clone $git_url $plugin_dir
-    end
-
-    # Source plugin options first (configuration)
-    if test -f $opts_file
-	echo "Sourcing plugin-opts..."
-        source $opts_file
-    end
-
-    # Source all main plugin .fish files
-    for f in $plugin_dir/*.fish
-        if test -f $f
-            source $f
-        end
-    end
-
-    echo "$plugin_name loaded."
+# Eagerly load all plugin options
+for f in ~/.config/fish/functions/plugin-opts/*.fish
+    source $f
 end
 
-# --- Session and login logic (ported from .zprofile/.zlogin) ---
+set confd_dir ~/.config/fish/conf.d
 
-# Source modular loader only once per session to prevent recursion
-if not set -q __startup_fish_loaded
-    set -g __startup_fish_loaded 1
-    if test -f $HOME/.config/fish/conf.d/startup.fish
-    end
+for f in (find $confd_dir -mindepth 3 -type f -name '*.fish' | sort)
+    source $f
 end
 
-# Ensure reload function is available
-if not functions -q reload
-    if test -f $HOME/.config/fish/functions/reload.fish
-        source $HOME/.config/fish/functions/reload.fish
-    end
-end
+set fish_greeting
 
-# DBUS session (if needed)
-if test -z "$DBUS_SESSION_BUS_ADDRESS"
-    set -gx DBUS_SESSION_BUS_ADDRESS (dbus-launch --sh-syntax | string match -r 'DBUS_SESSION_BUS_ADDRESS=([^;]+);' | string replace 'DBUS_SESSION_BUS_ADDRESS=' '')
-end
+oh-my-posh init fish --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json' | source
 
-# Interactive session logic
-if status is-interactive
-    # Place interactive-only logic here
+# Helper to always refresh the prompt after mode switch
+function __omp_repaint_on_mode_change --on-event fish_bind_mode
+    commandline -f repaint
 end

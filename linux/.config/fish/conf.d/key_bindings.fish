@@ -2,7 +2,7 @@
 # --- Key bindings (ported from .zshrc/.blerc) ---
 
 # Enable vi mode
-fish_vi_key_bindings
+#fish_vi_key_bindings
 
 # FZF key bindings (if fzf installed)
 if type -q fzf
@@ -20,4 +20,3 @@ bind \cu backward-kill-line
 
 # Insert literal tab with Ctrl+V
 bind \cv self-insert
-

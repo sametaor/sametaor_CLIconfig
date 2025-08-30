@@ -1,5 +1,5 @@
 
-function magnet_to_torrent --description 'Convert magnet link to .torrent file'
+function torrent --description 'Convert magnet link to .torrent file'
 	if test (count $argv) -eq 0
 		echo 'Usage: magnet_to_torrent <magnet-link>' >&2
 		return 1
