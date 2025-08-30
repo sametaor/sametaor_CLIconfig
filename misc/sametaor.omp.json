@@ -134,7 +134,7 @@
           }
         },
 	{
-          "type": "text",
+    "type": "text",
 	  "style": "diamond",
 	  "leading_diamond": "",
 	  "trailing_diamond": "",

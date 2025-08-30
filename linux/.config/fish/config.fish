@@ -14,11 +14,6 @@
 
 function fish_mode_prompt; end
 
-# Eagerly load all plugin functions
-for f in ~/.config/fish/functions/plugin-functions/*.fish
-    source $f
-end
-
 # Eagerly load all plugin options
 for f in ~/.config/fish/functions/plugin-opts/*.fish
     source $f
@@ -34,7 +29,30 @@ set fish_greeting
 
 oh-my-posh init fish --config 'https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/master/misc/sametaor.omp.json' | source
 
-# Helper to always refresh the prompt after mode switch
-function __omp_repaint_on_mode_change --on-event fish_bind_mode
-    commandline -f repaint
+function rerender_on_bind_mode_change --on-variable fish_bind_mode
+    set mode_value ""
+    switch $fish_bind_mode
+        case default
+            set mode_value " N"
+        case insert
+            set mode_value "󱩽 I"
+        case visual
+            set mode_value " V"
+        case visual_line
+            set mode_value "󰡮 VL"
+        case visual_block
+            set mode_value "󱂔 VB"
+        case replace_one
+            set mode_value " R"
+        case '*'
+            set mode_value $fish_bind_mode
+    end
+    if test "$fish_bind_mode" != paste -a "$mode_value" != "$VI_MODE"
+        set -gx VI_MODE $mode_value
+        omp_repaint_prompt
+    end
+end
+
+function fish_default_mode_prompt --description "Display vi prompt mode"
+    # This function is masked and does nothing
 end
