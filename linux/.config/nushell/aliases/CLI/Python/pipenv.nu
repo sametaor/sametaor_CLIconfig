@@ -1,0 +1,15 @@
+export alias pch = pipenv check
+export alias pcl = pipenv clean
+export alias pgr = pipenv graph
+export alias pi = pipenv install
+export alias pidev = pipenv install --dev
+export alias pl = pipenv lock
+export alias po = pipenv open
+export alias prun = pipenv run
+export alias psh = pipenv shell
+export alias psy = pipenv sync
+export alias pu = pipenv uninstall
+export alias pupd = pipenv update
+export alias pwh = pipenv --where
+export alias pvenv = pipenv --venv
+export alias ppy = pipenv --py

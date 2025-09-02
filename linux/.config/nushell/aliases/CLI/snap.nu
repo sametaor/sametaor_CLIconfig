@@ -1,0 +1,10 @@
+export alias sv = snap version
+export alias sf = snap find
+export alias si = snap install
+export alias sin = snap info
+export alias sr = snap remove
+export alias sref = snap refresh
+export alias srev = snap revert
+export alias sl = snap list
+export alias sd = snap disable
+export alias se = snap enable

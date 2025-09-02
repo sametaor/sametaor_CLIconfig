@@ -1,0 +1,33 @@
+export alias pipc = pip config
+export alias pipcg = pip config --global
+export alias pipcgd = pip config --global debug
+export alias pipcge = pip config --global edit
+export alias pipcgg = pip config --global get
+export alias pipcgl = pip config --global list
+export alias pipcgs = pip config --global set
+export alias pipcgu = pip config --global unset
+export alias pipcu = pip config --user
+export alias pipcud = pip config --user debug
+export alias pipcue = pip config --user edit
+export alias pipcug = pip config --user get
+export alias pipcul = pip config --user list
+export alias pipcus = pip config --user set
+export alias pipcuu = pip config --user unset
+export alias pipde = pip debug
+export alias piph = pip help
+export alias pipi = pip install
+export alias pipiu = pip install --upgrade
+export alias pipl = pip list
+export alias piplo = pip list --outdated
+export alias piplu = pip list --uptodate
+export alias piple = pip list --editable
+export alias pipll = pip list --local
+export alias pipsh = pip show
+export alias pipu = pip uninstall
+export alias pipuy = pip uninstall --yes
+export alias pipUp = python -m pip install --upgrade pip
+export alias pipV = pip --version
+
+# Redirects: replace `> requirements.txt` with save in Nushell:
+export alias pipreq = pip freeze | save requirements.txt
+export alias pipir = pip install -r requirements.txt

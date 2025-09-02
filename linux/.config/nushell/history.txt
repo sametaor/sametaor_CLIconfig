@@ -1,0 +1,735 @@
+eza | table
+eza
+cd ~/.config/nushell
+tree
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | table
+ls
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | explore
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | table ()
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | table
+table
+table --help
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | table --expand
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | table --theme basic
+ls | table --theme basic
+find
+find --name
+clear
+z
+cd
+cd ..
+cd
+clear
+exit
+clear
+ls
+eza | table
+ls
+/bin/ls
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+eza ... --json | from json | table
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o --json| from json | table
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o | from json | table
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+ls
+eza -h
+eza --help
+eza --help | explore
+ls | explore
+eza --help | less
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+eza --help | less
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G | lines | split column " " name permissions links owner group size date time type
+^eza -al --git --git-repos -o | parse "{permissions} {links} {owner} {group} {size} {date} {time} {name}"
+eza --help | grep json
+clear
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+ls -a -l -d
+ls -a<\n>| update name { |it| (ansi link $"file://($it.path)" $it.name) }<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size mode permissions user group modified<\n>| table<\n>
+ls -a | update name { |it| (ansi link $"file://($it.path)" $it.name) } | insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } } | select icon name type size mode permissions user group modified | table<\n>
+ls -a<\n>| update name { |it| (ansi link $"file://($it.path)" $it.name) }<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size mode permissions user group modified<\n>| table<\n>
+ls -a<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size mode permissions user group modified<\n>| table<\n>
+ls -a<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size modified permissions user group modified<\n>| table<\n>
+ls -a<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size modified user group modified<\n>| table<\n>
+ls -a<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size modified group modified<\n>| table<\n>
+ls -a<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size modified modified<\n>| table<\n>
+ls -al<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size mode permissions user group modified<\n>| table<\n>
+ls -al<\n>| insert icon { |it| if ($it.type == "dir") { "📁" } else if ($it.type == "file") { "📄" } else { "" } }<\n>| select icon name type size mode user group modified<\n>| table<\n>
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+ls -al | select name mode | update mode { |it| $it.mode.octal }
+ls -al | get mode | first
+def perms_to_octal [perms: string] {<\n>    let p = $perms | split chars<\n>    [<\n>        (if ($p.0 == "r") {4} else {0}) + (if ($p.1 == "w") {2} else {0}) + (if ($p.2 == "x") {1} else {0}),<\n>        (if ($p.3 == "r") {4} else {0}) + (if ($p.4 == "w") {2} else {0}) + (if ($p.5 == "x") {1} else {0}),<\n>        (if ($p.6 == "r") {4} else {0}) + (if ($p.7 == "w") {2} else {0}) + (if ($p.8 == "x") {1} else {0}),<\n>    ] | str join ""<\n>}<\n>
+ls -al | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    # Only use the first nine chars (ignore file type if present)<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    $groups | each {|g| $g | math sum } | str join ""<\n>}<\n>
+ls -al | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n>
+ls -al | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+eza -al --color
+eza -a --icons
+eza -a --icons --color
+let eza_names = (<\n>  eza -al --icons --color=never | lines | parse "{decorated_name} {filename}"<\n>)<\n><\n>let ls_data = ls -al<\n><\n>$ls_data | each {|row|<\n>    let match = ($eza_names | where filename == $row.name | get decorated_name | first)<\n>    $row | update name {|| $match }<\n>}<\n>| select name mode user group size type modified<\n>
+eza
+/bin/ls
+clear
+exit
+clear
+let eza_names = (<\n>  eza -al --icons --color=never | lines | parse "{decorated_name} {filename}"<\n>)<\n><\n>let ls_data = ls -al<\n><\n>$ls_data | each {|row|<\n>    let match = ($eza_names | where filename == $row.name | get decorated_name | first)<\n>    $row | update name {|| $match }<\n>}<\n>| select name mode user group size type modified<\n>
+let eza_names = (<\n>  eza -al --icons --color=never | lines<\n>  | parse "{decorated_name} {name}"<\n>  | where name != ""<\n>  | collect<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data<\n>| each { |row|<\n>    let match = ($eza_names | where name == $row.name | get decorated_name | first | default $row.name)<\n>    $row | update name {|| $match }<\n>}<\n>| select name mode user group size type modified<\n>
+let ls_data = (ls -al | to json | from json)
+let eza_lines = (eza -al --icons --color=never | lines | collect)<\n><\n>let eza_names = (<\n>  $eza_lines | each { |line| <\n>    let name = ($line | str trim | str split " " | last)<\n>    { decorated_name: $line, name: $name }<\n>  }<\n>)<\n><\n>let ls_data = (ls -al | to json | from json)<\n><\n>$ls_data | each { |row| <\n>  let maybe_match = ($eza_names | where name == $row.name)<\n>  let match = if ($maybe_match | empty?) { $row.name } else { ($maybe_match | first | get decorated_name) }<\n>  $row | update name {|| $match }<\n>} | select name mode user group size type modified<\n>
+let eza_lines = (eza -al --icons --color=never | lines | collect)<\n><\n>let eza_names = (<\n>  $eza_lines | each { |line| <\n>    let name = ($line | str trim | ssplit " " | last)<\n>    { decorated_name: $line, name: $name }<\n>  }<\n>)<\n><\n>let ls_data = (ls -al | to json | from json)<\n><\n>$ls_data | each { |row| <\n>  let maybe_match = ($eza_names | where name == $row.name)<\n>  let match = if ($maybe_match | empty?) { $row.name } else { ($maybe_match | first | get decorated_name) }<\n>  $row | update name {|| $match }<\n>} | select name mode user group size type modified<\n>
+let eza_lines = (eza -al --icons --color=never | lines | collect)<\n><\n>let eza_names = (<\n>  $eza_lines | each { |line| <\n>    let name = ($line | str trim | str split separator=" " | last)<\n>    { decorated_name: $line, name: $name }<\n>  }<\n>)<\n><\n>let ls_data = (ls -al | to json | from json)<\n><\n>$ls_data | each { |row| <\n>  let maybe_match = ($eza_names | where name == $row.name)<\n>  let match = if ($maybe_match | empty?) { $row.name } else { ($maybe_match | first | get decorated_name) }<\n>  $row | update name {|| $match }<\n>} | select name mode user group size type modified<\n>
+let eza_lines = (eza -al --icons --color=never | lines | collect)<\n><\n>let eza_names = (<\n>  $eza_lines | each { |line| <\n>    let name = ($line | str trim | last)<\n>    { decorated_name: $line, name: $name }<\n>  }<\n>)<\n><\n>let ls_data = (ls -al | to json | from json)<\n><\n>$ls_data | each { |row| <\n>  let maybe_match = ($eza_names | where name == $row.name)<\n>  let match = if ($maybe_match | empty?) { $row.name } else { ($maybe_match | first | get decorated_name) }<\n>  $row | update name {|| $match }<\n>} | select name mode user group size type modified<\n>
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+eza -a -l --icons=always --hyperlink -F
+eza -a -l --icons=always --hyperlink -F always
+eza -a -l --icons=always --hyperlink -F always --git --git-repos
+eza -a -l --icons=always --hyperlink -F always --git --git-repos -o
+eza -a -l --icons=always --hyperlink -F always --git --git-repos -o -G
+eza -a -l --icons=always --hyperlink -F always --git --git-repos -o
+eza -a -l --icons=always --hyperlink -F always
+eza -a --icons=always --hyperlink -F always
+eza -a --icons=always --hyperlink
+eza -a --icons=always
+eza -a --icons=always | table
+ls -al | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n>ls -al | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+eza -a --icons=always --color | table
+eza -a --icons | table
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = $eza_names | get $row.index | get decorated_name<\n>    $row.item | update name {|| $decorated_name }<\n>} | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified<\n>
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = $eza_names | get $row.index | get decorated_name<\n>    $row.item | update name {|| $decorated_name }<\n>} | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified<\n>
+# Function for octal mode (4-digit), as before<\n>def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Get eza decorated lines with icons (without colors for easier parsing)<\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n><\n># Wrap decorated lines as records<\n>let eza_names = (<\n>  $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n># Get ls data fully<\n>let ls_data = (ls -al | collect)<\n><\n># Get the current git branch (empty if not a repo)<\n>let git_branch = (git branch --show-current | str trim)<\n><\n># Combine ls data with eza names by index, build hyperlinks and color gradient for mode column<\n>$ls_data | enumerate | each {|row|<\n>  let decorated_name = $eza_names | get $row.index | get decorated_name<\n>  let hyperlink_name = (ansi link $"file://($row.item.name)" $decorated_name)<\n>  let gradient_mode = (ansi gradient $row.item.mode)  # applies gradient coloring to mode string<\n>  $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>} <\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+$ls_data<\n>| enumerate<\n>| each { |row|<\n>    # Access decorated_name by index (index is number)<\n>    let decorated_name = $eza_names[$row.index].decorated_name<\n><\n>    # Pipe decorated_name into ansi link<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n><\n>    # Pipe mode string into ansi gradient<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    # Return the updated record<\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+# Function for octal mode (4-digit), as before<\n>def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Get eza decorated lines with icons (without colors for easier parsing)<\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n><\n># Wrap decorated lines as records<\n>let eza_names = (<\n>  $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n># Get ls data fully<\n>let ls_data = (ls -al | collect)<\n><\n># Get the current git branch (empty if not a repo)<\n>let git_branch = (git branch --show-current | str trim)<\n><\n># Combine ls data with eza names by index, build hyperlinks and color gradient for mode column<\n>$ls_data<\n>| enumerate<\n>| each { |row|<\n>    # Access decorated_name by index (index is number)<\n>    let decorated_name = $eza_names[$row.index].decorated_name<\n><\n>    # Pipe decorated_name into ansi link<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n><\n>    # Pipe mode string into ansi gradient<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    # Return the updated record<\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+# Convert symbolic permissions (e.g. rwxr-xr-x) to 4-digit octal (e.g. 0755)<\n>def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Capture eza output lines with icons, no color to ease parsing<\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n><\n># Wrap every line into decorated_name records<\n>let eza_names = (<\n>  $eza_lines | each { |line| { decorated_name: $line } }<\n>)<\n><\n># Capture ls -al output including all metadata<\n>let ls_data = (ls -al | collect)<\n><\n># Capture current git branch, empty if none<\n>let git_branch = (git branch --show-current | str trim)<\n><\n># Process ls data, replace name with eza decorated name, add hyperlink, add gradient mode coloring, add git branch<\n>$ls_data<\n>| enumerate<\n>| each { |row|<\n>    let decorated_name = ($eza_names | nth $row.index | get decorated_name)<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n>let eza_names = ($eza_lines | each { |line| { decorated_name: $line } })<\n>let ls_data = (ls -al | collect)<\n><\n>let git_branch = (try git branch --show-current | str trim | default "no git repo")<\n><\n>$ls_data<\n>| enumerate<\n>| each { |row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+# Function for octal mode (4-digit), as before<\n>def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Get eza decorated lines with icons (without colors for easier parsing)<\n>let eza_lines = (eza -a --icons=always --color=never | lines | collect)<\n><\n># Wrap decorated lines as records<\n>let eza_names = (<\n>  $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n># Get ls data fully<\n>let ls_data = (ls -al | collect)<\n><\n># Get the current git branch (empty if not a repo)<\n>let git_branch = (git branch --show-current | str trim)<\n><\n># Combine ls data with eza names by index, build hyperlinks and color gradient for mode column<\n>$ls_data | enumerate | each {|row|<\n>  let decorated_name = $eza_names | get $row.index | get decorated_name<\n>  let hyperlink_name = (ansi link $"file://($row.item.name)" $decorated_name)<\n>  let gradient_mode = (ansi gradient $row.item.mode)  # applies gradient coloring to mode string<\n>  $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>} <\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name mode permissions user group size type modified git_branch<\n>| table<\n>
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = $eza_names | get $row.index | get decorated_name<\n>    $row.item | update name {|| $decorated_name }<\n>} | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified<\n>
+ls --help
+ls -l
+ls -al
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    <\n>    # Compose full path of item (relative to current directory)<\n>    let full_path = (path current-directory) | path join $row.item.name<\n>    <\n>    # Check if this entry is a directory<\n>    let is_dir = ($row.item.type == "dir")<\n>    <\n>    # Determine git branch or empty string<\n>    let git_branch = if $is_dir {<\n>        # Try to get git branch in this directory, fallback empty string<\n>        (try git -C $full_path branch --show-current | str trim | default "")<\n>    } else {<\n>        ""<\n>    }<\n>    <\n>    $row.item<\n>    | update name {|| $decorated_name }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name git_branch mode permissions user group size type modified<\n>
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    let current_dir = (path current-directory)<\n>    let full_path = (echo $current_dir | path join $row.item.name)<\n>    let is_dir = ($row.item.type == "dir")<\n>    let git_branch = if $is_dir {<\n>        (try git -C $full_path branch --show-current | str trim | default "")<\n>    } else {<\n>        ""<\n>    }<\n>    $row.item<\n>    | update name {|| $decorated_name }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n><\n>let ls_data = (ls -al | collect)<\n><\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    <\n>    # Compose full path of item (relative to current directory)<\n>    let full_path = (path ) | path join $row.item.name<\n>    <\n>    # Check if this entry is a directory<\n>    let is_dir = ($row.item.type == "dir")<\n>    <\n>    # Determine git branch or empty string<\n>    let git_branch = if $is_dir {<\n>        # Try to get git branch in this directory, fallback empty string<\n>        (try git -C $full_path branch --show-current | str trim | default "")<\n>    } else {<\n>        ""<\n>    }<\n>    <\n>    $row.item<\n>    | update name {|| $decorated_name }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name git_branch mode permissions user group size type modified<\n>
+def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Capture the decorated filenames with icons from eza (without color codes)<\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n># Wrap each line as a record with 'decorated_name'<\n>let eza_names = (<\n>  $eza_lines | each { |line| { decorated_name: $line } }<\n>)<\n><\n># Capture Nushell ls output with full metadata<\n>let ls_data = (ls -al | collect)<\n><\n># Get current directory path once<\n>let current_dir = (path current-directory)<\n><\n># Process directory entries<\n>$ls_data<\n>| enumerate<\n>| each { |row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    let full_path = (echo $current_dir | path join $row.item.name)<\n>    let is_dir = ($row.item.type == "dir")<\n>    let git_branch = if $is_dir {<\n>      try { git -C $full_path branch --show-current | str trim | default "" }<\n>    } else {<\n>      ""<\n>    }<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n><\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name git_branch mode permissions user group size type modified<\n>| table<\n>
+def perms_to_octal [perms: string] {<\n>  let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>  let chars = $perms | str substring 0..9 | split chars<\n>  let values = $chars | each {|c| $table | get $c }<\n>  let groups = $values | chunks 3<\n>  "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Capture the decorated filenames with icons from eza (without color codes)<\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n><\n># Wrap each line as a record with 'decorated_name'<\n>let eza_names = (<\n>  $eza_lines | each { |line| { decorated_name: $line } }<\n>)<\n><\n># Capture Nushell ls output with full metadata<\n>let ls_data = (ls -al | collect)<\n><\n># Get current directory path once<\n>let current_dir = (path)<\n><\n># Process directory entries<\n>$ls_data<\n>| enumerate<\n>| each { |row|<\n>    let decorated_name = ($eza_names | skip $row.index | first | get decorated_name)<\n>    let full_path = (echo $current_dir | path join $row.item.name)<\n>    let is_dir = ($row.item.type == "dir")<\n>    let git_branch = if $is_dir {<\n>      try { git -C $full_path branch --show-current | str trim | default "" }<\n>    } else {<\n>      ""<\n>    }<\n>    let hyperlink_name = (echo $decorated_name | ansi link $"file://($row.item.name)")<\n>    let gradient_mode = (echo $row.item.mode | ansi gradient)<\n><\n>    $row.item<\n>    | update name {|| $hyperlink_name }<\n>    | update mode {|| $gradient_mode }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n><\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name git_branch mode permissions user group size type modified<\n>| table<\n>
+clear
+nvim test.nu
+.test.nu
+start test.nu
+exit
+start test.nu
+test.nu
+chmod +x test.nu
+test.nu
+.test.nu
+nu test.nu
+open test.nu
+nvim test.nu
+nu test.nu
+let current_dir = (path current-directory)
+path
+path basename
+path .
+path self
+clear
+pwd
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+nu test.nu
+nvim test.nu
+rm test.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos
+nvim test.nu
+nu test.nu
+eza -a -l --git-repos
+eza -a --git-repos
+eza -l --git-repos
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| ($table | get $c | default 0) }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n><\n># Capture eza with --git-repos to get branch info integrated<\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink --git-repos | lines | collect)<\n><\n># Parse lines into table with decorated_name and git_branch (assumes eza outputs git branch right-aligned or in a consistent position)<\n># Adjust parse pattern based on eza output; example parses last space-separated column as git_branch<\n>let eza_table = (<\n>    $eza_lines<\n>    | each {|line| <\n>        # Split line by whitespace<\n>        let parts = $line | str trim | str split separator " "<\n>        # Last element is git branch or "-" if none<\n>        let git_branch = ($parts | last)<\n>        # Remove git branch from decorated name<\n>        let decorated_name = ($parts | skip 0 | take (($parts | length) - 1) | str join " ")<\n>        { decorated_name: $decorated_name, git_branch: $git_branch }<\n>    }<\n>)<\n><\n># Nushell ls data<\n>let ls_data = (ls -al | collect)<\n><\n># Merge by line order<\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = ($eza_table | nth $row.index | get decorated_name)<\n>    let git_branch = ($eza_table | nth $row.index | get git_branch)<\n>    $row.item<\n>    | update name {|| $decorated_name }<\n>    | insert git_branch {|| $git_branch }<\n>}<\n>| insert permissions { |row| perms_to_octal $row.mode }<\n>| select name git_branch mode permissions user group size type modified<\n>
+def perms_to_octal [perms: string] {<\n>    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }<\n>    let chars = $perms | str substring 0..9 | split chars<\n>    let values = $chars | each {|c| $table | get $c }<\n>    let groups = $values | chunks 3<\n>    "0" + ($groups | each {|g| $g | math sum } | str join "")<\n>}<\n>let eza_lines = (eza -a --icons=always --color=never --hyperlink | lines | collect)<\n>let eza_names = (<\n>    $eza_lines | each {|line| { decorated_name: $line } }<\n>)<\n>let ls_data = (ls -al | collect)<\n>$ls_data | enumerate | each {|row|<\n>    let decorated_name = $eza_names | get $row.index | get decorated_name<\n>    $row.item | update name {|| $decorated_name }<\n>} | insert permissions { |row| perms_to_octal $row.mode } | select name mode permissions user group size type modified
+rm test.nu
+nvim test
+ls
+ls -a
+nvim test.nu
+nu test.nu
+nvim new.nu
+chmod +x new.nu
+nu new.nu
+let parts = $line | str trim | str split " "
+let parts = $eza_lines | str trim | str split " "
+let parts = $eza_lines | str trim | str
+$parts
+clear
+nu new.nu
+nvim new.nu
+nu new.nu
+nvim new.nu
+nu new.nu
+nvim new.nu
+nu new.nu
+nvim new.nu
+nu new.nu
+nvim new.nu
+nu new.nu
+nvim new.nu
+git
+git status pwd
+git status pwd/*
+find . -maxdepth 2 -type d -name ".git" -exec dirname {} \;
+^find . -maxdepth 2 -type d -name ".git" -exec dirname {} \;
+for dir in */ ; do<\n>  (<\n>    cd "$dir" &&<\n>    if [ -d .git ]; then<\n>      echo "$dir [$(git rev-parse --abbrev-ref HEAD)]"<\n>    fi<\n>  )<\n>done<\n>
+sh
+rm new.nu
+nvim test.nu
+nvim new.nu
+nu new.nu
+rm new.nu
+nvim new.nu
+nu new.nu
+nvim new2.nu
+chmod +x new2.nu
+nu new2.nu
+nvim new2.nu
+nu new2.nu
+nvim new2.nu
+nu new2.nu
+open new2.nu
+nvim new2.nu
+nu new2.nu
+nvim new2.nu
+nu new2.nu
+nvim new2.nu
+nu new2.nu
+open new2.nu
+clear
+rm new.nu
+rm test.nu
+rename
+rename --help
+^rename --help
+^rename -vi "new2.nu" "ls.nu" new2.nu
+ls
+chmod +x ls.nu
+nu ls.nu
+clear
+nu ls.nu
+clear
+nu ls.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+nvim ls.nu
+nu ls.nu
+clear
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+nu ls.nu
+nvim ls.nu
+clear
+nu ls.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+clear
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+nvim ls.nu
+nu ls.nu
+eza -a -l --icons=always --hyperlink -F always --git --git-repos -o -G
+/bin/eza -a -l --icons=always --hyperlink -F always --git --git-repos -o -G
+eza
+/bin/eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+open ls.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -G
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nvim ls2.nu
+chmod +x ls2.nu
+nu ls2.nu
+ansi
+ansi --help
+clear
+nu ls2.nu
+ls
+nu ls.nu
+nu ls2.nu
+clear
+nu ls.nu
+nu ls2.nu
+format filesize --help
+nu ls2.nu
+nu ls.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls.nu
+nu ls2.nu
+clear
+ls
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+clear
+chmod +x ls2.nu
+sudo chmod +x ls2.nu
+nu ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls2.nu
+ansi --help
+nu ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls2.nu
+ls
+nu ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+nu ls2.nu
+cd /mnt/c
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+cd
+cd /mnt/c
+nu ls2.nu
+nu ~/.ls2.nu
+nu ~/ls2.nu
+cd
+nu ~/ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
+ls
+exit
+eza -h
+eza --help
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -@ -Z
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos-no-status -o
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos-no-status -o
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks
+clear
+echo $EZA_CONFIG_DIR
+cd .config
+ls -a
+mkdir eza
+cd eza
+nvim default.yml
+eza
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks
+cd
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks
+eza --help
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks -L 3
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks -L 3 prog
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks prog
+nu ~/ls2.nu
+nu ~/ls2.nu prog
+cd prog
+nu ~/ls2.nu prog
+cd
+nu ~/ls.nu | explore
+ls | explore
+history
+history | explore
+nu ~/ls.nu | explore
+du
+nu ~/ls.nu | table
+nu ~/ls.nu | table | explore
+nu ~/ls.nu | from json | table | explore
+nu ~/ls.nu | table | explore
+nu ~/ls.nu | table
+nu ~/ls.nu
+ls
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks prog
+cd
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o --show-symlinks prog
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+nu ~/ls.nu
+nvim ls2.nu
+nu ~/ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+nu ~/ls2.nu
+clear
+nu ~/ls2.nu
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+nu ~/ls2.nu
+nu ~/ls2.nu | explore
+nu ~/ls2.nu | table
+nu ~/ls2.nu | table | explore
+nu ~/ls2.nu | ansi strip | explore
+nu ~/ls.nu | ansi strip | explore
+nu ~/ls.nu | table | ansi strip | explore
+nu ~/ls.nu | ansi strip | table | explore
+sys
+syscpu
+sys cpu
+sys disks
+fastfetch
+sys host
+sys mem
+sys net
+sys temp
+sys users
+nu ~/ls.nu | ansi strip | grid
+nu ~/ls.nu | grid
+nu ~/ls2.nu | ansi strip | explore
+your_script_above | table colored_mode colored_user colored_git_branch colored_modified colored_size name
+nu ~/ls2.nu | ansi strip | explore
+ls2.nu | table colored_mode colored_user colored_git_branch colored_modified colored_size name
+nu ls2.nu | table colored_mode colored_user colored_git_branch colored_modified colored_size name
+nu ~/ls.nu
+nu ~/ls.nu | table
+nu ~/ls.nu | ansi strip | explore
+ls -al | collect | describe
+ls -al<\n>| insert colored_name { |row| (ansi color green) + $row.name + (ansi reset) }<\n>| insert colored_size { |row| <\n>    let size_str = $row.size | to-string<\n>    (ansi color blue) + $size_str + (ansi reset)<\n>}<\n>| select name colored_name size colored_size<\n>| table<\n>
+nu ~/ls.nu
+source ls.nu
+nls
+zsh l
+exit
+eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o -H
+eza -a -l -H --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+eza -a -l -h --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git-repos -o
+nu ~/ls.nu
+ls
+nls
+source ls.nu
+nls
+source ls.nu
+nls
+source ls.nu
+nls
+source ls.nu
+nls
+source ls.nu
+nl
+exit
+source ls.nu
+nl
+nls
+clear
+source ls.nu
+source nls.nu
+source nl.nu
+nl
+source nl.nu
+nl
+source nl.nu
+nl
+nls
+source nl.nu
+nl
+source nls.nu
+nl
+exit
+source nls.nu
+nl
+exit
+source nls.nu
+nl
+nls
+source nls.nu
+source ls.nu
+nls
+source ls.nu
+nls
+source ls.nu
+nls
+source ls.nu
+nl
+source ls.nu
+nl
+ls
+ls -a
+ls -l
+exit
+source ls.nu
+nl
+source ls.nu
+nl
+source ls.nu
+nl
+source ls.nu
+nla
+source ls.nu
+nls
+source ls.nu
+nlt
+ls
+eza -tRhF
+eza -RhF
+eza -RhF | explore
+eza -RhF | table
+eza -RhF | table | explore
+eza -RhF | ansi_strip | table | explore
+eza -RhF | ansi strip | table | explore
+eza -RhFt created | ansi strip | table | explore
+eza -tRhF | ansi strip | table | explore
+eza -RhF | ansi strip | table | explore
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+eza -RhF | ansi strip | table | explore
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+clear
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+exit
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+source lr.nu
+lr
+clear
+source ls.nu
+lr
+cd /
+lr
+source ls.nu
+exit
+source ls.nu
+cd .
+cd /
+lr
+ls
+sudo lr
+sudo source ~/ls.nu
+sudo /bin/source ~/ls.nu
+source ls.nu
+nl | to text
+nl
+nl | get Name
+source ls.nu
+nll
+nl | get Name Permissions
+nl | get Name, Permissions
+nl | get Name , Permissions
+nl | get Name Permissions
+nl | get *
+nl | get ALL
+nl | get all
+nl | select all
+nl | select *
+nl | select * from
+clear
+nl
+nl | table
+nl | get Permissions Size User Date Modified Name
+nl | get Permissions Size User 'Date Modified' Name
+nl | get Permissions Size User 'Date Modified' Name | table
+nl | get Permissions Size User 'Date Modified' Name
+eza -ld
+eza -ld .*
+ls
+ls -l
+ls -al
+ls -al **/*.*
+ls -al *.*
+ls -al .*
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+exit
+source ls.nu
+nldot
+eza -ld .*
+source ls.nu
+nldot
+source ls.nu
+nldot
+exit
+source ls.nu
+nldot
+source ls.nu
+nldot
+source ls.nu
+nldot
+ls -al .*
+eza -ld .*
+ls -al .* | where { |row| ($row.name | str starts-with ".") and $row.name != "." and $row.name != ".." }
+ls -al .* | where { |row| ($row.name | str starts-with ".") and $row.name != "." }
+eza -ld .*
+source ls.nu
+nldot
+source ls.nu
+nldot
+exit
+source ls.nu
+nldot
+eza -ld .*
+source ls.nu
+nldot
+source ls.nu
+nlS
+source ls.nu
+nlart
+source ls.nu
+nlrt
+nlr
+lr
+clear
+lr
+nlart
+nlart | reverse
+nl
+nll
+source ls.nu
+nlsr
+nlsr_detailed_recursive 
+nlsr 2
+nlsr . 2
+clear
+nlsr
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+exit
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+exit
+source ls.nu
+nlsr
+source ls.nu
+lsnr
+nlsnr
+nlsr
+nla
+exit
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+lnls
+nls
+nlsr
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+nla
+source ls.nu
+nlsr
+exit
+nlsr
+source ls.nu
+nlsr
+source ls.nu
+nlsr
+ls
+ls .*
+ls | select name
+nls
+nlsn
+nla
+nll
+nlr
+nlt
+nlrt
+nlart
+nlS
+source ls.nu
+nlsn
