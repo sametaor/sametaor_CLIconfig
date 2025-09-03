@@ -7,7 +7,7 @@ export alias ldot = eza -ld .*
 export alias lS = eza -1Ss Extension -hF
 export alias lart = eza -1artF
 export alias lrt = eza -1rtF
-export alias lsr = eza -lARhF -l 2
+export alias lsr = eza -lARhF -L 2
 export alias lsn = eza -1
 export alias ls = eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o
 
