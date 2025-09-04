@@ -1160,54 +1160,6 @@ def nlst [] {
   let eza_lines_cwd = (eza -a --icons=always --color=always --hyperlink | lines | collect)
   let eza_names_cwd = ($eza_lines_cwd | each {|line| { decorated_name: $line } })
 
-  # ===== New section: show only non-directory files table =====
-  echo "Non-directory files in current directory:"
-  let formatted_non_dirs = $root_files | enumerate | each { |row|
-    let decorated_name = ($eza_names_cwd | skip $row.index | first | get decorated_name | default $row.item.name)
-    let is_executable = (($row.item.mode | default "") | str contains "x")
-    let name_with_flag = if $is_executable { $decorated_name + "*" } else { $decorated_name }
-    $row.item
-    | update name {|| $name_with_flag }
-    | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
-  }
-  | each { |row|
-    let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
-    let size_str = ($row.size | default 0) | into string
-    {
-      Octal: $row.Octal,
-      Permissions: $row.mode,
-      Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
-      "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
-      Name: $row.name
-    }
-  }
-  $formatted_non_dirs | table
-
-  # ===== Existing full listing section: all files and dirs =====
-  echo "Files and directories in current directory:"
-  let formatted_root_files = $root_items | enumerate | each { |row|
-    let decorated_name = ($eza_names_cwd | skip $row.index | first | get decorated_name | default $row.item.name)
-    let is_executable = (($row.item.mode | default "") | str contains "x")
-    let name_with_flag = if $is_executable { $decorated_name + "*" } else { $decorated_name }
-
-    $row.item
-    | update name {|| $name_with_flag }
-    | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
-  }
-  | each { |row|
-    let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
-    let size_str = ($row.size | default 0) | into string
-    {
-      Octal: $row.Octal,
-      Permissions: $row.mode,
-      Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
-      "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
-      Name: $row.name
-    }
-  }
-  $formatted_root_files | table
-
-  # Iterate over each directory and show detailed contents recursively
   $root_dirs | each { |dir_row|
     echo ("Directory: " + $dir_row.name)
     let dir_path = ($cwd | path join $dir_row.name)
@@ -1223,19 +1175,63 @@ def nlst [] {
 
       $row.item
       | update name {|| $name_with_flag }
-      | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
+      | insert Octal {|| (ansi --escape "38;2;135;23;151m") + (perms_to_octal ($row.item.mode | default "")) + (ansi --escape "0m") }
     }
     | each { |row|
-      let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
-      let size_str = ($row.size | default 0) | into string
+      let prefix = if $row.type == "dir" { "d" } else { "." }
+      let mode_str = $prefix + ($row.mode | default "")
+      let chars = $mode_str | split chars
+
+      let r_indices = ($chars | enumerate | where {|e| $e.item == "r"} | get index)
+      let mult_r_indices = if ($r_indices | length) > 1 { $r_indices | skip 1 } else { [] }
+
+      let colored_chars = $chars | enumerate | each {|e|
+        let c = $e.item
+        let i = $e.index
+
+        if $c == "d" {
+          (ansi --escape "38;2;41;84;177m") + $c + (ansi --escape "0m")
+        } else if $c == "r" {
+          if ($mult_r_indices | any {|x| $x == $i}) {
+            (ansi --escape "38;2;132;106;0m") + $c + (ansi --escape "0m")
+          } else {
+            (ansi --escape "38;2;248;240;164m") + $c + (ansi --escape "0m")
+          }
+        } else if $c == "w" {
+          (ansi --escape "38;2;187;58;70m") + $c + (ansi --escape "0m")
+        } else if $c == "x" {
+          (ansi --escape "38;2;18;161;10m") + $c + (ansi --escape "0m")
+        } else {
+          $c
+        }
+      }
+
+      let colored_mode = $colored_chars | str join ""
+      $row | update mode {|| $colored_mode }
+    }
+    | each { |row|
+      let colored_size = if $row.type == "dir" {
+        "-"
+      } else {
+        let size_str = $row.size | into string
+        (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m")
+      }
+      $row | update size {|| $colored_size }
+    }
+    | each { |row|
+      let exact_modified = $row.modified | format date "%d %b %H:%M"
+      let colored_date = (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m")
+      $row | update modified {|| $colored_date }
+    }
+    | each { |row|
       {
         Octal: $row.Octal,
         Permissions: $row.mode,
-        Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
-        "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
+        Size: $row.size,
+        "Date Modified": $row.modified,
         $dir_path: $row.name
       }
     }
-    $formatted_dir_contents | table
+    $formatted_dir_contents
   }
 }
