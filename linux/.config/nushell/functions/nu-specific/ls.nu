@@ -964,7 +964,7 @@ def nls [] {
     }
     | each { |row| 
         {
-        "Octals": $row.Octal,
+        "Octal": $row.Octal,
         "Permissions": $row.mode,
         "Size": $row.size,
         "User": $row.user,
@@ -1136,4 +1136,106 @@ def nlsm [] {
         "Name": $row.name
         }
     }
+}
+
+def nlst [] {
+  # Helper: Convert permission string to octal notation
+  def perms_to_octal [perms: string] {
+    let table = { 'r': 4, 'w': 2, 'x': 1, '-': 0 }
+    let chars = $perms | str substring 0..9 | split chars
+    let values = $chars | each {|c| ($table | get $c | default 0) }
+    let groups = $values | chunks 3
+    "0" + ($groups | each {|g| $g | math sum } | str join "")
+  }
+
+  let cwd = (pwd)
+
+  # List all items in cwd, excluding '.' and '..'
+  let root_items = (ls -al | where {|row| $row.name != '.' and $row.name != '..'} | collect)
+
+  let root_files = $root_items | where {|row| $row.type != "dir"}           # all non-dir entries
+  let root_dirs = $root_items | where {|row| $row.type == "dir"}
+
+  # Decorated names for cwd files using eza
+  let eza_lines_cwd = (eza -a --icons=always --color=always --hyperlink | lines | collect)
+  let eza_names_cwd = ($eza_lines_cwd | each {|line| { decorated_name: $line } })
+
+  # ===== New section: show only non-directory files table =====
+  echo "Non-directory files in current directory:"
+  let formatted_non_dirs = $root_files | enumerate | each { |row|
+    let decorated_name = ($eza_names_cwd | skip $row.index | first | get decorated_name | default $row.item.name)
+    let is_executable = (($row.item.mode | default "") | str contains "x")
+    let name_with_flag = if $is_executable { $decorated_name + "*" } else { $decorated_name }
+    $row.item
+    | update name {|| $name_with_flag }
+    | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
+  }
+  | each { |row|
+    let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
+    let size_str = ($row.size | default 0) | into string
+    {
+      Octal: $row.Octal,
+      Permissions: $row.mode,
+      Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
+      "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
+      Name: $row.name
+    }
+  }
+  $formatted_non_dirs | table
+
+  # ===== Existing full listing section: all files and dirs =====
+  echo "Files and directories in current directory:"
+  let formatted_root_files = $root_items | enumerate | each { |row|
+    let decorated_name = ($eza_names_cwd | skip $row.index | first | get decorated_name | default $row.item.name)
+    let is_executable = (($row.item.mode | default "") | str contains "x")
+    let name_with_flag = if $is_executable { $decorated_name + "*" } else { $decorated_name }
+
+    $row.item
+    | update name {|| $name_with_flag }
+    | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
+  }
+  | each { |row|
+    let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
+    let size_str = ($row.size | default 0) | into string
+    {
+      Octal: $row.Octal,
+      Permissions: $row.mode,
+      Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
+      "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
+      Name: $row.name
+    }
+  }
+  $formatted_root_files | table
+
+  # Iterate over each directory and show detailed contents recursively
+  $root_dirs | each { |dir_row|
+    echo ("Directory: " + $dir_row.name)
+    let dir_path = ($cwd | path join $dir_row.name)
+
+    let dir_contents = (ls -al $dir_path | collect)
+    let eza_lines_dir = (eza -a --icons=always --color=always --hyperlink $dir_path | lines | collect)
+    let eza_names_dir = ($eza_lines_dir | each {|line| { decorated_name: $line } })
+
+    let formatted_dir_contents = $dir_contents | enumerate | each { |row|
+      let decorated_name = ($eza_names_dir | skip $row.index | first | get decorated_name | default $row.item.name)
+      let is_executable = (($row.item.mode | default "") | str contains "x")
+      let name_with_flag = if $is_executable { $decorated_name + "*" } else { $decorated_name }
+
+      $row.item
+      | update name {|| $name_with_flag }
+      | insert Octal {|| perms_to_octal ($row.item.mode | default "") }
+    }
+    | each { |row|
+      let exact_modified = (($row.modified | default "") | format date "%d %b %H:%M")
+      let size_str = ($row.size | default 0) | into string
+      {
+        Octal: $row.Octal,
+        Permissions: $row.mode,
+        Size: ( (ansi --escape "38;2;22;197;12m") + $size_str + (ansi --escape "0m") ),
+        "Date Modified": ( (ansi --escape "38;2;0;55;216m") + $exact_modified + (ansi --escape "0m") ),
+        $dir_path: $row.name
+      }
+    }
+    $formatted_dir_contents | table
+  }
 }
