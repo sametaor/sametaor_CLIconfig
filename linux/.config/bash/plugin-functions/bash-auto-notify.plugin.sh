@@ -14,8 +14,8 @@ fi
 : "${AUTO_NOTIFY_ENABLE_SSH:=0}"            # 0 no forward, 1 forward to SSH client
 : "${AUTO_NOTIFY_ENABLE_TRANSIENT:=1}"      # 1 transient notification (no history), 0 persistent
 : "${AUTO_NOTIFY_CANCEL_ON_SIGINT:=0}"      # 1 cancel notification on SIGINT, 0 no
-AUTO_NOTIFY_IGNORE=("watch" "man" "less" "more" "ssh" "top") # commands to ignore
-AUTO_NOTIFY_WHITELIST=()                     # Set non-empty to whitelist instead of ignore
+AUTO_NOTIFY_IGNORE=("watch" "man" "less" "more" "ssh" "top" "ps" "grep" "cat" "tail" "head" "awk" "sed" "sort" "cut" "uniq" "tr" "wc" "du" "df" "ls" "tree" "clear" "vim" "vi" "nano" "emacs" "nvim" "code" "vscodium" "gedit" "leafpad" "kate" "mousepad" "micro" "apt" "dnf5" "dnf" "yum" "zypper" "pacman" "yay" "snap" "flatpak" "brew" "ssh" "mosh" "sftp" "tmux" "screen" "find" "locate" "which" "whereis" "uname" "hostname" "whoami" "lsb_release" "fastfetch" "inxi" "lscpu" "free" "dmesq" "git" "gh" "cd" "pushd" "popd" "dirs" "echo" "printf" "exit" "reboot" "shutdown" "poweroff" "alias" "unalias" "export" "unset" "set" "history" "tee") # commands to ignore
+AUTO_NOTIFY_WHITELIST=("yay" "make" "cmake" "jinja" "ninja" "clang" "gcc")                     # Set non-empty to whitelist instead of ignore
 
 # Internal vars to store command info
 __aan_start_time=0
@@ -79,42 +79,25 @@ __aan_check_ignore() {
   return 1
 }
 
-# Called by DEBUG trap before running command
 __aan_preexec() {
+  # Only run this if the shell is at top-level prompt
+  [[ "$BASH_SUBSHELL" != "0" ]] && return
+  # Get command name
+  local cmd=$(awk '{print $1}' <<< "$BASH_COMMAND")
+  for ignore in "${AUTO_NOTIFY_IGNORE[@]}"; do
+    [[ "$cmd" == "$ignore" ]] && __aan_ignore=1 && return
+  done
   __aan_start_time=$(date +%s)
-  __aan_command="${BASH_COMMAND}"
+  __aan_command="$BASH_COMMAND"
   __aan_ignore=0
-
-  # Get just the command name (strip args)
-  local cmdname=$(awk '{print $1}' <<< "$__aan_command")
-
-  if __aan_check_ignore "$cmdname"; then
-    __aan_ignore=1
-  fi
 }
 
-# Called by PROMPT_COMMAND after command finishes
 __aan_precmd() {
-  # If ignored command, do nothing
-  if [[ $__aan_ignore -eq 1 ]]; then
-    return
-  fi
-
-  local end_time=$(date +%s)
-  local elapsed=$((end_time - __aan_start_time))
-
-  # Notify only if elapsed time exceeds threshold
-  if (( elapsed >= AUTO_NOTIFY_THRESHOLD )); then
-    __aan_exit_code=$?
-
-    # Format title and body replacing placeholders
-    local title="${AUTO_NOTIFY_TITLE//%command/$__aan_command}"
-    local body="${AUTO_NOTIFY_BODY//%command/$__aan_command}"
-    body="${body//%elapsed/$elapsed}"
-    body="${body//%exit_code/$__aan_exit_code}"
-
-    __aan_send_notification "$title" "$body"
-  fi
+  [[ $__aan_ignore -eq 1 ]] && __aan_ignore=0 && return
+  local now=$(date +%s)
+  local elapsed=$((now - __aan_start_time))
+  [[ $elapsed -lt $AUTO_NOTIFY_THRESHOLD ]] && return
+  # (send notification here)
 }
 
 # Trap SIGINT to possibly cancel notification

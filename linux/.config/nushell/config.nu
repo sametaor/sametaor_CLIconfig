@@ -1,6 +1,6 @@
 # Set prompt to mimic Zsh style
-let-env PROMPT_COMMAND = { || $"(whoami)@($hostname):($pwd) > " }
-prompt = $PROMPT_COMMAND
+let PROMPT_COMMAND = { || $"(whoami)@(^hostname):(pwd) > " }
+let prompt = $PROMPT_COMMAND
 
 # Aliases (Zsh style mapped to Nushell)
 alias ll = eza -l --git
@@ -24,4 +24,4 @@ alias grep = grep --color=auto
 alias cat = bat
 
 # Source env.nu for environment variables
-source-env ~/env.nu
+source-env ~/.config/nushell/env.nu

@@ -733,3 +733,481 @@ nlart
 nlS
 source ls.nu
 nlsn
+clear
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+nls
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+eza
+ls
+eza -l
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source lst.nu
+nlst
+clear
+exit
+source lst.nu
+source ls.nu
+nl
+nll
+nla
+nls
+nlr
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+clear
+source ls.nu
+nlt 
+nl
+nla
+nlr
+nll
+source lst.nu
+nls
+exit
+source lst.nu
+nls
+ls
+ls -a
+exit
+source ls.nu
+nls
+source lst.nu
+nlst
+nls
+source lst.nu
+man eza
+source lst.nu
+nlst
+source ls.nu
+nlr
+source lst.nu
+nlst
+source lst.nu
+nlst
+exit
+source lst.nu
+nlst
+nls_for_nlst
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlr
+source lst.nu
+nlr
+source lst.nu
+nlr
+source lst.nu
+nlr
+source lst.nu
+nlst
+nls_for_nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+exit
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nls_for_nlst
+nlst
+source lst.nu
+nlst
+exit
+source lst.nu
+nlst
+source lst.nu
+nlst
+source lst.nu
+nlst
+nls_for_nlst
+nls_for_nlst | append nlr_for_nlst
+nlr_for_nlst | append nls_for_nlst
+nlr_for_nlst; nls_for_nlst
+nls_for_nlst; nlr_for_nlst
+nls_for_nlst | table ; nlr_for_nlst | table
+exit
+source lst.nu
+nlst
+combined_listings 
+nlr_for_nlst; nls_for_nlst
+nlr_for_nlst; ^sleep 5; nls_for_nlst
+source lst.nu
+nlst
+exit
+source lst.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+source ls.nu
+nlst
+exit
+source ls.nu
+nlst
+ls | histogram
+ls -al
+clear
+ls -al
+ls -al | histogram size
+ls -al | histogram num_links
+ls -al | histogram .*
+ls -al | histogram name
+ls -al | histogram name | where name =~ ".*"
+ls -al | histogram name | where (name =~ ".*")
+ls -al | histogram name | where name =~ ".*"
+ls -al | histogram name | where name == ".*"
+ls -al | histogram name | where name == .*
+ls -al | histogram name | where name = .*
+ls -al | where name =~ '^\\.' | histogram name
+ls -al | histogram name | where name == '^\\.'
+ls -al | histogram name | where name == ^\\.
+ls -al | histogram name | where name == \\.
+ls -al | histogram name | where name == .
+ls -al | histogram name | where name == .*
+ls -al | histogram name | where name =~ .*
+ls -al | histogram name | where name =~ b*
+ls -al | histogram name | where name =~ *b*
+ls -al | histogram name | where name =~ a
+ls -al | histogram name | where name =~ b
+ls -al | histogram name | where name =~ .
+ls -al | histogram name | where name =~ .*
+ls -al | histogram name | where name =~ b
+ls -al | where name =~ b | histogram name
+ls -al | where name =~ .* | histogram name
+ls -al | where name =~ ~/.* | histogram name
+ls -al | where name =~ '~/.'* | histogram name
+ls -al | where name =~ '~/.' | histogram name
+ls -al | where name =~ .* | histogram name
+ls -al | where name =~ .** | histogram name
+ls -al
+source ~/.config/nushell/functions/nu-specific/ls.nu
+nls
+date
+date now
+date list-timezone
+date to-timezone
+date to-timezone ROC
+date now | date to-timezone ROC
+date now | date to-timezone US/Alaska
+banner
+clear
+banner
+pwd
+config use-colors 
+job
+nvim
+job unfreeze
+job kill
+job kill 1
+nvim
+job list
+job kill *
+job kill all
+job kill 1
+job kill 2
+job kill 3
+job kill 4
+job kill 5
+job kill 6
+du
+cd /mnt/c/users/sametaor
+ls -a
+cd Desktop
+ls
+ls --help
+ls -a | where type == dir
+cd 'SF2 WINDOWS'
+ls
+ls -a (glob **/*.{plist})
+ls .. (glob **/*.{plist})
+ls ... (glob **/*.{plist})
+ls -a **/*.plist
+cd
+cal
+seq dates
+seq date
+seq dates 1
+seq date
+seq date 1
+seq char
+seq char 1 2
+seq char 1 10
+seq char 1 9
+seq char * )
+seq char * \)
+seq char * \
+seq char  \
+seq char \ \
+seq char \ \~
+seq char \ /~
+seq char \ /
+http get 8.8.8.8
+http get https://github.com
+http get https://github.com | explore
+http get https://github.com | ansi-strip | explore
+http get https://github.com | ansi strip | explore
+port
+path basename
+pwd | path basename
+pwd | path dirname
+ulimit
+whoami
+is-terminal
+input
+clear
+plugin
+plugin list
+gstat
+random
+clear
+random
+random bool
+random binary
+random binary 2
+random binary 1
+random binary 0
+random binary -1
+random binary +1
+random dice
+clear
+random uuid
+uname
+ps
+exit
+hostname
+$hostname
+exit
+..
+cd
+ll
+mkdir --help
+du --help
+^du --help
+du --help
+du | get size | math sum | into filesize | print
+du -l | get size | math sum | into filesize | print
+du -l
+du | get physical | math sum | into filesize | print
+^du -sh
+du | get apparent | math sum | into filesize | print
+du
+du | get apparent | math sum | into filesize | print
+sudo ^du -sh
+sudo du -sh
+sudo du -s
+sudo du -h
+du
+^du
+^du | explore
+^du | ansi strip | explore
+du
+clear
+fd
+^fd
+sudo pacman -S fd ripgrep-all
+fd
+clear
+fd -t -d lol
+fd -t -d "lol"
+fd -t file -d lol
+fd -t file -d "lol"
+fd -t file -d
+fd -t file "lol"
+fd -t file "lo"
+fd -t file "log"
+ripgrep
+rg
+rg "lol"
+fd -t d "lol"
+fd -t d "lo"
+fd -t d "l"
+find
+ls --full-paths -a **/*<\n>  | where type == "dir" and (name =~ l)
+ls --full-paths -a **/*<\n>  | where type == "dir" and name =~ l
+ps -f
+^ps -f
+^ps
+^ps --help
+^ps --help all
+ps
+ps --help
+ps -l
+^ps -f
+ps | select pid, ppid, user, cpu, mem, name | rename "PID" "PPID" "USER" "%CPU" "%MEM" "CMD"
+ps | select pid ppid user cpu mem name | rename "PID" "PPID" "USER" "%CPU" "%MEM" "CMD"
+ps | select pid ppid uid cpu mem name | rename "PID" "PPID" "USER" "%CPU" "%MEM" "CMD"
+ps
+ps -l | select pid ppid user cpu mem name | rename "PID" "PPID" "USER" "%CPU" "%MEM" "CMD"
+ps -l | select pid ppid user_id cpu mem name | rename "PID" "PPID" "USER" "%CPU" "%MEM" "CMD"
+ps -l | select all
+ps -l
+ps -l | remove command
+ps -l | rm command
+ps -l | drop command
+ps -l | drop 1
+ps -l | reject command
+ps -f
+^ps -f
+ps -ef
+^ps -ef
+^ps --help all
+^ps -ef
+ps | select user, pid, ppid, cpu, start_time, tty, time, name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps | rename name cmd | each {<\n>    let username = (id -nu $it.uid | get -d 0)<\n>    $it | upsert user $username<\n>  } | select user, pid, ppid, cpu, start_time, tty, time, cmd
+ps | rename name cmd | each {<\n>    let username = (id -nu $it.uid )<\n>    $it | upsert user $username<\n>  } | select user, pid, ppid, cpu, start_time, tty, time, cmd
+ps | select uid, pid, ppid, cpu, start_time, tty, time, name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select uid, pid, ppid, cpu, start_time, tty, time, name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select pid, ppid, cpu, start_time, tty, time, name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select user pid ppid cpu start_time tty time name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select user_i pid ppid cpu start_time tty time name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select user_id pid ppid cpu start_time tty time name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select user_id pid ppid cpu start_time time name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+ps -l | select user_id pid ppid cpu start_time name<\n>  | rename "USER" "PID" "PPID" "C" "STIME" "TTY" "TIME" "CMD"
+^ps -ef
+^ps --help
+^ps --help all
+^ps -ef f
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+ps | columns
+ps -l | columns
+ps -l | select name status
+ps -l | columns
+ps -l | select name virtual priority
+ps -l | columns
+ps -l | select process_threads cwd
+ps -l | select name process_threads cwd
+sudo ps -l | select name process_threads cwd
+ps -l | select name process_threads cwd
+clear
+ps -l | select name user_id
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+^ps -ef
+ps -l
+^ps -f
+ps -l | select command
+^ps --help -f
+^ps --help a
+^ps a
+^ps a -f
+^ps -e -f
+^ps -e -F
+p
+^ps -ef
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+^ps -ef
+ps --help l
+^ps --help l
+^ps --help
+^ps --help o
+^ps --help a
+^ps -e
+^ps -eo user,pid,ppid,c,stime,tty,time,comm
+p
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+exit
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+^ps -eo user,pid,ppid,c,stime,tty,time,comm
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+ps -l | columns
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+^ps -eotty,time
+^ps -eo tty,time
+^ps -eol tty,time
+^ps -el tty,time
+^ps -eof tty,time
+^ps -ef tty,time
+^ps -eo tty,time
+source ~/.config/nushell/functions/nu-specific/misc.nu
+p
+tar -tzf
+tar --help
+tar --help | explore
+tar --help | ansi strip | explore
+tar tf
+tar --help | ansi strip | explore
+unrar
+^unrar
+^unzip
+unzip
+tar.gz
+zip
+zip --help

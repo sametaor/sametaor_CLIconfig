@@ -4,7 +4,7 @@ alias hs='history | grep'
 alias hsi='history | grep -i'
 alias hgrep='fc -El 0 | grep'
 alias help=man
-alias p='ps -eo user,pid,ppid,c,stime,tty,time,comm'
+alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport=unset
 alias H='| head'
@@ -48,7 +48,48 @@ else
 fi
 
 # Zip Files
-alias zip='unzip -l'
-alias rar='unrar l'
-alias tar='tar tf'
-alias 'tar.gz'=echo
+alias zipnew='zip -r'
+alias zipadd='zip -ur'
+alias zipls='unzip -l'
+alias zipfix='zip -F'
+
+# Usage: unzip_to archive.zip path/to/destination/
+unzip_to() {
+  if [ -z "$2" ]; then
+    unzip "$1"
+  else
+    unzip "$1" -d "$2"
+  fi
+}
+
+alias zipdel='zip -d'
+alias unzipt='unzip -t'
+alias zipenc='zip -er'
+
+# Tar Files
+# "Smart" extract function that detects compression type from file extension.
+# Usage: untar archive.tar.gz
+# Usage: untar archive.tar.bz2
+# Usage: untar archive.tar.xz
+untar() {
+    if [[ "$1" == *.tar.gz || "$1" == *.tgz ]]; then
+        tar -xzvf "$1"
+    elif [[ "$1" == *.tar.bz2 || "$1" == *.tbz2 ]]; then
+        tar -xjvf "$1"
+    elif [[ "$1" == *.tar.xz || "$1" == *.txz ]]; then
+        tar -xJvf "$1"
+    elif [[ "$1" == *.tar ]]; then
+        tar -xvf "$1"
+    else
+        echo "Unsupported file type: $1"
+        return 1
+    fi
+}
+
+# Create a gzipped tar archive (.tar.gz).
+# Usage: tarc archive.tar.gz folder/ file.txt
+alias tarc='tar -czvf'
+
+# List the contents of any tar archive.
+# Usage: tart archive.tar.gz
+alias tart='tar -tvf'
