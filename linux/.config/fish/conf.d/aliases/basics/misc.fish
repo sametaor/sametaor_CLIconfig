@@ -5,7 +5,7 @@ abbr -a hs 'history | grep'
 abbr -a hsi 'history | grep -i'
 abbr -a hgrep 'fc -El 0 | grep'
 abbr -a help 'man'
-abbr -a p 'ps -f'
+abbr -a p 'ps -eo user,pid,ppid,c,stime,tty,time,comm
 abbr -a sortnr 'sort -nr'
 abbr -a unexport 'set -e'
 # The following are not possible as aliases in fish, but can be functions if needed:
