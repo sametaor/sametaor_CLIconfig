@@ -1211,3 +1211,14 @@ unzip
 tar.gz
 zip
 zip --help
+$EDITOR
+config
+config nu
+exit
+config nu
+exit
+start
+start --help
+exit
+run
+exit
