@@ -1,7 +1,7 @@
 {
   "RenderingMod.ThemeBackground": 1,
   "RenderingMod.AccentColorControls": 1,
-  "type": "mica",
+  "type": "acrylicblur",
   "AccentBlurBehind": "00000000",
   "ImmersiveDarkTitle": 1,
   "ExtendFrame": 1,
