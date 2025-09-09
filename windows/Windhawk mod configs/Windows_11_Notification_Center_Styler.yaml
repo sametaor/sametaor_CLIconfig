@@ -12,7 +12,7 @@
   "controlStyles[1].styles[4]": "MinHeight = 40",
   "controlStyles[1].styles[5]": "BorderBrush:=$BorderBrush",
   "controlStyles[2].target": "ScrollViewer#CalendarControlScrollViewer",
-  "controlStyles[2].styles[0]": "Background:=$ElementBG",
+  "controlStyles[2].styles[0]": "Background:=$Background",
   "controlStyles[2].styles[1]": "CornerRadius=$r2",
   "controlStyles[2].styles[2]": "Margin=-10,11,-10,-14",
   "controlStyles[2].styles[3]": "BorderBrush:=$ElementBorderBrush",
