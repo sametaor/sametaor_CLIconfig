@@ -1,4 +1,5 @@
 # Folder containing Winget-installed packages
+Set-ExecutionPolicy Unrestricted
 $wingetPackages = "$env:USERPROFILE\AppData\Local\Microsoft\WinGet\Packages"
 # Your single shims directory to be added to PATH
 $shims = "$env:USERPROFILE\winget-shims"
