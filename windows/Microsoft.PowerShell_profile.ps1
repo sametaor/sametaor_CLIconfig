@@ -8,7 +8,6 @@ function Update-PowerShell {
         Write-Host "Skipping PowerShell update check due to GitHub.com not responding within 1 second." -ForegroundColor Yellow
         return
     }
-
     try {
         Write-Host "Checking for PowerShell updates..." -ForegroundColor Cyan
         $updateNeeded = $false
@@ -19,7 +18,6 @@ function Update-PowerShell {
         if ($currentVersion -lt $latestVersion) {
             $updateNeeded = $true
         }
-
         if ($updateNeeded) {
             Write-Host "Updating PowerShell..." -ForegroundColor Yellow
             winget upgrade "Microsoft.PowerShell" --accept-source-agreements --accept-package-agreements
@@ -29,10 +27,6 @@ function Update-PowerShell {
         }
     } catch {
         Write-Error "Failed to update PowerShell. Error: $_"
-
-
-
-
     }
 }
 Update-PowerShell
@@ -41,38 +35,20 @@ function Update-Profile {
         Write-Host "Skipping profile update check due to GitHub.com not responding within 1 second." -ForegroundColor Yellow
         return
     }
-
     try {
         $url = "https://raw.githubusercontent.com/sametaor/sametaor_CLIconfig/refs/heads/master/windows/Microsoft.PowerShell_profile.ps1"
         $oldhash = Get-FileHash $PROFILE
         Invoke-RestMethod $url -OutFile "$env:temp/Microsoft.PowerShell_profile.ps1"
-
-
-
-
         $newhash = Get-FileHash "$env:temp/Microsoft.PowerShell_profile.ps1"
-
-
-
-
-
 
         if ($newhash.Hash -ne $oldhash.Hash) {
             Copy-Item -Path "$env:temp/Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force
-
-
-
-
             Write-Host "Profile has been updated. Please restart your shell to reflect changes" -ForegroundColor Magenta
         }
     } catch {
         Write-Error "Unable to check for `$profile updates"
     } finally {
         Remove-Item "$env:temp/Microsoft.PowerShell_profile.ps1" -ErrorAction SilentlyContinue
-
-
-
-
     }
 }
 Update-Profile
@@ -375,7 +351,6 @@ function fd {
     fzf
 }
 function fzf { fzf --preview 'bat --color=always {}' --preview-window '~3' }
-
 function gpglk { gpg --list-secret-key --keyid-format LONG }
 function gpgep { gpg --armor --export }
 function ytnpl { yt-dlp --no-playlist --restrict-filenames }
@@ -390,8 +365,6 @@ function pst { Get-Clipboard }
 function git-send {
     git add .
     git commit -m "$args"
-
-
     git push
 }
 function nf { param($name) New-Item -ItemType "file" -Path . -Name $name }
@@ -400,7 +373,6 @@ function head {
   param($Path, $n = 5)
   Get-Content $Path -Head $n
 }
-
 function tail {
   param($Path, $n = 5)
   Get-Content $Path -Tail $n
@@ -408,7 +380,6 @@ function tail {
 function pkill($name) {
     Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
 }
-
 function pgrep($name) {
     Get-Process $name
 }
@@ -421,19 +392,13 @@ function df {
 function uptime {
     if ($PSVersionTable.PSVersion.Major -eq 5) {
         Get-WmiObject win32_operatingsystem | Select-Object @{Name='LastBootUpTime'; Expression={$_.ConverttoDateTime($_.lastbootuptime)}} | Format-Table -HideTableHeaders
-
     } else {
         net statistics workstation | Select-String "since" | ForEach-Object { $_.ToString().Replace('Statistics since ', '') }
-
     }
 }
 function ff($name) {
     Get-ChildItem -recurse -filter "*${name}*" -ErrorAction SilentlyContinue | ForEach-Object {
-
-
         Write-Output "$($_.directory)\$($_)"
-
-
     }
 }
 function grep($regex, $dir) {
@@ -445,14 +410,10 @@ function grep($regex, $dir) {
 }
 function sed($file, $find, $replace) {
     (Get-Content $file).replace("$find", $replace) | Set-Content $file
-
-
 }
 function yy {
     $tmp = [System.IO.Path]::GetTempFileName()
     yazi $args --cwd-file="$tmp"
-
-
     $cwd = Get-Content -Path $tmp
     if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
         Set-Location -LiteralPath $cwd
@@ -472,403 +433,3 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
