@@ -1,0 +1,72 @@
+# yazi.toml
+
+[mgr]
+ratio = [1,2,5]
+linemode = "mtime"
+show_hidden = true
+show_symlink = true
+
+[preview]
+wrap = "yes"
+
+[input]
+cursor_blink = true
+
+[confirm]
+trash = true
+delete = true
+overwrite = true
+quit = true
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*"
+run  = "git"
+
+[[plugin.prepend_fetchers]]
+id   = "git"
+name = "*/"
+run  = "git"
+
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+  { mime = "audio/*",   run = "exifaudio"},
+  #{ mime = "audio/*", run = "mediainfo"},
+  #{ mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/*zip", run = "ouch" },
+	{ mime = "application/x-tar", run = "ouch" },
+	{ mime = "application/x-bzip2", run = "ouch" },
+	{ mime = "application/x-7z-compressed", run = "ouch" },
+	{ mime = "application/x-rar", run = "ouch" },
+	{ mime = "application/x-xz", run = "ouch" },
+  { name = "*.ipynb", run = "nbpreview" },
+  { mime = "application/bittorrent", run = "torrent-preview" },
+  #{ name = "*.csv", run = "rich-preview"}, # for csv files
+  #{ name = "*.md", run = "rich-preview" }, # for markdown (.md) files
+  #{ name = "*.rst", run = "rich-preview"}, # for restructured text (.rst) files
+  #{ name = "*.ipynb", run = "rich-preview"}, # for jupyter notebooks (.ipynb)
+  #{ name = "*.json", run = "rich-preview"}, # for json (.json) files
+  { name = "*.csv", run = "duckdb" },  
+  { name = "*.tsv", run = "duckdb" },  
+  { name = "*.json", run = "duckdb" },  
+  { name = "*.parquet", run = "duckdb" },  
+  { name = "*.txt", run = "duckdb" },  
+  { name = "*.xlsx", run = "duckdb" },  
+  { name = "*.db", run = "duckdb" },
+  { name = "*.duckdb", run = "duckdb" }
+]
+append_previewers = [
+  { name = "*", run = "hexyl" },
+]
+prepend_preloaders = [
+    # Replace magick, image, video with mediainfo
+  #{ mime = "{audio,video,image}/*", run = "mediainfo" },
+  #{ mime = "application/subrip", run = "mediainfo" },
+  { name = "*.csv", run = "duckdb", multi = false },  
+  { name = "*.tsv", run = "duckdb", multi = false },  
+  { name = "*.json", run = "duckdb", multi = false },  
+  { name = "*.parquet", run = "duckdb", multi = false },
+  { name = "*.txt", run = "duckdb", multi = false },  
+  { name = "*.xlsx", run = "duckdb", multi = false }
+]

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<false/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>homebrew.mxcl.mpd</string>
+	<key>LimitLoadToSessionType</key>
+	<array>
+		<string>Aqua</string>
+		<string>StandardIO</string>
+		<string>Background</string>
+		<string>LoginWindow</string>
+		<string>System</string>
+	</array>
+	<key>ProcessType</key>
+	<string>Interactive</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/opt/mpd/bin/mpd</string>
+		<string>--no-daemon</string>
+		<string>/Users/sametaor/.config/mpd/mpd.conf</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/tmp/homebrew.mxcl.mpd.err</string>
+	<key>StandardOutPath</key>
+	<string>/tmp/homebrew.mxcl.mpd.out</string>
+	<key>WorkingDirectory</key>
+	<string>/usr/local</string>
+</dict>
+</plist>

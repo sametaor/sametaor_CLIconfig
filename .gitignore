@@ -1,6 +1,16 @@
-linux/.config/zsh/.zcompdump
-linux/.config/zsh/.zsh_history
-linux/.config/zsh/cache/.zcompdump
-linux/.config/zsh/cache/zcompdump
-linux/.config/zsh/plugins/*
-linux/.config/bash/.bash_history
+linux/home/sametaor/.config/zsh/.zcompdump
+linux/home/sametaor/.config/zsh/.zsh_history
+linux/home/sametaor/.config/zsh/cache/.zcompdump
+linux/home/sametaor/.config/zsh/cache/zcompdump
+linux/home/sametaor/.config/zsh/plugins/*
+linux/home/sametaor/.config/bash/.bash_history
+linux/home/sametaor/.config/nushell/history.txt
+macos/Users/sametaor/.config/zsh/.zsh_history
+"macos/Users/sametaor/Library/Application Support/nushell/history.txt"
+macos/Users/sametaor/.config/zsh/.zcompdump
+macos/Users/sametaor/.config/zsh/.zsh_history
+macos/Users/sametaor/.config/zsh/cache/.zcompdump
+macos/Users/sametaor/.config/zsh/cache/zcompdump
+macos/Users/sametaor/.config/zsh/plugins/*
+macos/Users/sametaor/.config/bash/.bash_history
+.git

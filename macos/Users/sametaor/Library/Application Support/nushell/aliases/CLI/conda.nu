@@ -1,0 +1,24 @@
+export alias cna = conda activate
+export alias cnab = conda activate base
+export alias cncf = conda env create -f
+export alias cncn = conda create -y -n
+export alias cnconf = conda config
+export alias cncp = conda create -y -p
+export alias cncr = conda create -n
+export alias cncss = conda config --show-source
+export alias cnde = conda deactivate
+export alias cnel = conda env list
+export alias cni = conda install
+export alias cniy = conda install -y
+export alias cnl = conda list
+export alias cnle = conda list --export
+# For aliases using output redirection, use a Nushell pipeline:
+export alias cnles = conda list --explicit | save spec-file.txt
+export alias cnr = conda remove
+export alias cnrn = conda remove -y --all -n
+export alias cnrp = conda remove -y --all -p
+export alias cnry = conda remove -y
+export alias cnsr = conda search
+export alias cnu = conda update
+export alias cnua = conda update --all
+export alias cnuc = conda update conda

@@ -1,0 +1,11 @@
+# Fish shell aliases for snap (ported from bash/zsh)
+abbr -a sv 'snap version'
+abbr -a sf 'snap find'
+abbr -a si 'snap install'
+abbr -a sin 'snap info'
+abbr -a sr 'snap remove'
+abbr -a sref 'snap refresh'
+abbr -a srev 'snap revert'
+abbr -a sl 'snap list'
+abbr -a sd 'snap disable'
+abbr -a se 'snap enable'
