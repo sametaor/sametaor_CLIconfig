@@ -1,6 +1,6 @@
 # External tools used:-
-- [Ble.sh](https://github.com/akinomyoga/ble.sh) 
-- [Bash-Preexec](https://github.com/rcaloras/bash-preexec)
+- Ble.sh
+- Bash-Preexec
 
 Inspiration from:-
 - Awesome-zsh

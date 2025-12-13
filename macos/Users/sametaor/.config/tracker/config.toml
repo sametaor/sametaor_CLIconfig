@@ -1,0 +1,42 @@
+[world_map]
+follow_object = true
+follow_smoothing = 0.3
+show_terminator = true
+show_visibility_area = true
+lon_delta_deg = 10.0
+map_color = "gray"
+trajectory_color = "light_blue"
+terminator_color = "dark_gray"
+visibility_area_color = "yellow"
+
+[satellite_groups]
+cache_lifetime_min = 120
+groups = [
+    # Space Stations
+    { label = "ISS", id = "1998-067A" },
+    { label = "CSS", id = "2021-035A" },
+    # Weather & Earth Resources Satellites
+    { label = "Weather", group = "weather" },
+    { label = "NOAA", group = "noaa" },
+    { label = "GOES", group = "goes" },
+    { label = "Earth resources", group = "resource" },
+    { label = "Search & rescue", group = "sarsat" },
+    { label = "Disaster monitoring", group = "dmc" },
+    # Navigation Satellites
+    { label = "GPS", group = "gps-ops" },
+    { label = "GLONASS", group = "glo-ops" },
+    { label = "Galileo", group = "galileo" },
+    { label = "Beidou", group = "beidou" },
+    # Scientific Satellites
+    { label = "Space & Earth Science", group = "science" },
+    { label = "Geodetic", group = "geodetic" },
+    { label = "Engineering", group = "engineering" },
+    { label = "Education", group = "education" },
+    # Miscellaneous Satellites
+    { label = "Military", group = "military" },
+    { label = "Radar calibration", group = "radar" },
+    { label = "CubeSats", group = "cubesat" },
+]
+
+[timeline]
+time_delta_min = 1

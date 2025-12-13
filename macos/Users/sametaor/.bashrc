@@ -28,6 +28,7 @@ export LESS="-RFiX"
 export LANG=en_US.UTF-8
 PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH
+export MANPAGER="bat -plman"
 
 # --- History ---
 export HISTFILE="$HOME/.config/bash/.bash_history"
@@ -43,7 +44,7 @@ mkdir -p "$BASH_CACHE_DIR"
 
 # --- Extra Env/Tooling Setup ---
 export GPG_TTY=$(tty)
-export FZF_DEFAULT_OPTS='--color=fg:#c8d3f5,fg+:#c8d3f5,bg:#222436,bg+:#2a2e54 --color=hl:#82aaff,hl+:#86e1fc,info:#c3e88d,marker:#ffc777 --color=prompt:#ff757f,spinner:#c099ff,pointer:#c099ff,header:#828bb8 --color=border:#6c75ba,label:#9da8ee,query:#c8d3f5 --border="rounded" --border-label="FZF" --border-label-pos="0" --preview-window="border-double" --padding="1" --margin="1" --prompt=">_ " --marker=">>" --pointer="=>" --separator="─" --scrollbar="|" --layout="reverse" --info="right" --tmux left,80% --height=80%'
+export FZF_DEFAULT_OPTS='--color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#20192b --color=hl:#6d77b3,hl+:#4adef5,info:#72f0b8,marker:#fede5d --color=prompt:#ff757f,spinner:#fede5d,pointer:#f1527e,header:#6d77b3 --color=border:#43c5fc,label:#ed70df,query:#efedfe --border="bold" --border-label="FZF" --border-label-pos="0" --preview-window="border-sharp" --padding="1" --margin="1" --prompt=" " --marker=" " --pointer="󰛡" --separator="─" --scrollbar="┃" --layout="reverse" --info="right" --tmux left,80% --height=80% --preview="~/.config/fzf/fzf-preview.sh {}"'
 export PYENV_ROOT="$HOME/.pyenv"
 if [[ -d "$PYENV_ROOT/bin" ]]; then export PATH="$PYENV_ROOT/bin:$PATH"; fi
 export XDG_RUNTIME_DIR="/run/user/$UID"
@@ -60,6 +61,7 @@ export PERL_LOCAL_LIB_ROOT="/home/sametaor/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_L
 export PERL_MB_OPT="--install_base \"/home/sametaor/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/sametaor/perl5"
 export EZA_CONFIG_DIR=$HOME/.config/eza
+export PATH="$HOME/go/bin:$PATH"
 # Ruby for macOS Intel
 if [[ -d "/usr/local/opt/ruby/bin" ]]; then
   [[ -d /usr/local/opt/ruby/bin/ ]] && PATH="/usr/local/opt/ruby/bin:$PATH"

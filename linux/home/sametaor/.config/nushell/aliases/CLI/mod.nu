@@ -3,6 +3,7 @@ export module CLI_mod {
     export use Docker/mod.nu Docker_mod *
     export use Git/mod.nu Git_mod *
     export use Python/mod.nu Python_mod *
+    export use ./astroterm.nu *
     export use ./conda.nu *
     export use ./eza.nu *
     export use ./github_cli.nu *

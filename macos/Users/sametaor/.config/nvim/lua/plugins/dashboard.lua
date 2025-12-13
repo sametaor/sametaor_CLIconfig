@@ -71,7 +71,7 @@ return {
       },
     },
     hide = {
-      statusline = true, -- hide statusline default is true
+      statusline = false, -- hide statusline default is true
       tabline = true, -- hide the tabline
       winbar = true, -- hide winbar
     },

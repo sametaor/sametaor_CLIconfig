@@ -6,7 +6,7 @@
     password: None,
     theme: "theme",
     cache_dir: None,
-    lyrics_dir: "~/Songs/lyrics/",
+    lyrics_dir: "~/lyrics/",
     on_song_change: ["~/.config/rmpc/lyrics.sh"],
     volume_step: 2,
     max_fps:60,
@@ -138,5 +138,20 @@
             pane: Pane(Search),
         ),
     ],
+        cava: (
+        framerate: 60, autosens: true, sensitivity: 100,
+        lower_cutoff_freq: 50, higher_cutoff_freq: 10000,
+        input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 48000,
+            channels: 2,
+            samble_bits: 16,
+        ),
+        smoothing: (
+            noise_reduction: 35,
+        ),
+        eq: []
+    ),
 )
 

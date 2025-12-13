@@ -1,0 +1,11 @@
+---
+version: 1.4.2
+commands:
+  - name: neovim
+    namespace: default
+    tags:
+      - neovim
+      - nvm
+      - lazyvim
+    command: nvim
+    description: opens neovim

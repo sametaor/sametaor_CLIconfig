@@ -4,6 +4,7 @@ $env.VISUAL = $env.EDITOR
 $env.PAGER = 'less'
 $env.LESS = "-RFiX"
 $env.LANG = 'en_US.UTF-8'
+$env.MANPAGER = "bat -plman"
 
 # PATH for all shells (persistent PATH modifications)
 $env.PATH = ($env.PATH | append [
@@ -16,7 +17,8 @@ $env.PATH = ($env.PATH | append [
   $'($nu.home-path)/.local/share/pnpm',
   $'($nu.home-path)/perl5/bin',
   $'($nu.home-path)/.local/bin',
-  $'($nu.home-path)/.pyenv/bin'
+  $'($nu.home-path)/.pyenv/bin',
+  $'($nu.home-path)/go/bin'
 ])
 
 # History config
@@ -47,7 +49,7 @@ let gpg_tty = (tty | complete | get stdout | str trim)
 $env.GPG_TTY = $gpg_tty
 
 # FZF default color/format opts
-$env.FZF_DEFAULT_OPTS = "--color=fg:#c8d3f5,fg+:#c8d3f5,bg:#222436,bg+:#2a2e54 --color=hl:#82aaff,hl+:#86e1fc,info:#c3e88d,marker:#ffc777 --color=prompt:#ff757f,spinner:#c099ff,pointer:#c099ff,header:#828bb8 --color=border:#6c75ba,label:#9da8ee,query:#c8d3f5 --border=\"rounded\" --border-label=\"FZF\" --border-label-pos=\"0\" --preview-window=\"border-double\" --padding=\"1\" --margin=\"1\" --prompt=\">_ \" --marker=\">>\" --pointer=\"=>\" --separator=\"─\" --scrollbar=\"|\" --layout=\"reverse\" --info=\"right\" --tmux left,80% --height=80%"
+$env.FZF_DEFAULT_OPTS = '--color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#20192b --color=hl:#6d77b3,hl+:#4adef5,info:#72f0b8,marker:#fede5d --color=prompt:#ff757f,spinner:#fede5d,pointer:#f1527e,header:#6d77b3 --color=border:#43c5fc,label:#ed70df,query:#efedfe --border="bold" --border-label="FZF" --border-label-pos="0" --preview-window="border-sharp" --padding="1" --margin="1" --prompt=" " --marker=" " --pointer="󰛡" --separator="─" --scrollbar="┃" --layout="reverse" --info="right" --tmux left,80% --height=80% --preview="~/.config/fzf/fzf-preview.sh {}"'
 
 if ("/usr/local/opt/ruby/bin" | path exists) {
     let gem_bin = try { (^gem environment gemdir | str trim)/bin } catch { null }
@@ -57,4 +59,7 @@ if ("/usr/local/opt/ruby/bin" | path exists) {
     $env.PATH = ($new_paths | prepend $env.PATH)
 }
 
-$env.EZA_CONFIG_DIR = $"($nu.home-path)/config/eza"
+$env.EZA_CONFIG_DIR = $"($nu.home-path)/.config/eza"
+
+# Ripgrep Config directory
+$env.RIPGREP_CONFIG_PATH = $"($nu.home-path)/.config/ripgrep"

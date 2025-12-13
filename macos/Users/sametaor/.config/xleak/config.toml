@@ -1,0 +1,9 @@
+[theme]
+default = "Dracula"
+
+[ui]
+max_rows = 0
+column_width = 0
+
+[keybindings]
+profile = "vim"

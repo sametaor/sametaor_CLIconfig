@@ -10,11 +10,7 @@ elif ! command -v ifne >/dev/null 2>&1; then
     sudo pacman -Scc --noconfirm && yay -a -Scc --noconfirm
 
 fi
-
-if [[ -f /usr/sbin/softwareupdate ]]; then
-    sudo softwareupdate -ia
     
-    if [[ -f /usr/local/bin/brew ]]; then
-      brew upgrade
-    fi
+if [[ -f /usr/local/bin/brew ]]; then
+	brew upgrade
 fi

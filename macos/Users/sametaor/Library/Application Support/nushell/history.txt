@@ -1,0 +1,820 @@
+exit
+config nu
+nl
+nls
+nl
+nll
+ll
+la
+ls -a
+echo $env.EDITOR
+config nu
+echo ($nu.data-dir)/vendor/autoload
+echo $nu.vendor-auto-load
+echo $nu.vendor-autoload-dirs
+config nu
+exit
+nls
+ll
+nla
+cd `/Library/Application Support/nushell/vendor/autoload`
+cd `/Library/Application Support/nushell/vendor/`
+cd `/Library/Application Support/nushell/`
+cd `~/Library/Application Support/nushell/`
+ls
+cd vendor
+ls
+eza
+nls
+source autoload/functions/nu-specific/eza.nu
+nls
+echo $env.XDG_DATA_DIRS
+exit
+config nu
+exit
+reload
+config nu
+exit
+ls **/*.nu | each { |f| source $f.name }
+ls **/*.nu | each { |const f| source $f.name }
+exit
+port livecheck installed
+port-livecheck installed
+port --help
+exit
+nls
+cd
+nls
+..
+nls
+nla
+la
+ls
+nla
+exit
+ls
+nls
+nll
+source autoload/nu_eza.nu
+nls
+nla
+exit
+nls
+ls
+exit
+nls
+nl
+exit
+nls
+duh
+brew install du
+brew --help
+brew update
+brew upgrade
+brew list
+brew upgrade --help
+brew upgrade --casks
+ls
+/bin/ls
+la
+lt
+ll
+exit
+ls `~/Library/Application Support/nushell/`
+cd `~/Library/Application Support/nushell/`
+z
+^cd `~/Library/Application Support/nushell/`
+^z `~/Library/Application Support/nushell/`
+^zoxide `~/Library/Application Support/nushell/`
+^cd `~/Library/Application Support/nushell/`
+ls
+mkdir completions
+ls
+cd completions
+^cd completions
+ls
+^cd completions
+ls
+/bin/cd completions
+^/bin/cd completions
+/usr/bin/cd completions
+ls
+ls -a
+pwd
+rm completions
+exiy
+..
+fzf
+exit
+^source `~/Library/Application Support/nushell/autoload/*.nu`
+source `~/Library/Application Support/nushell/autoload/*.nu`
+use `~/Library/Application Support/nushell/autoload/` *
+exit
+cd
+z
+^cd
+cd completions
+cd nushell
+cd ../
+cd
+cd /
+cd
+cd /
+cd Library
+cd
+cd ||
+^cd ||
+^cd try
+cd try
+cd
+cd ^^
+cd Library
+cd Application\ Support
+cd `Application Support`
+cd nushell
+nvim
+c
+cd
+config nu
+exit
+nvim mod.nu
+exit
+nvim mod.nu
+exit
+nvim mod.nu
+exit
+nvim mod.nu
+exit
+nvim mod.nu
+exit
+c
+cl
+cal
+nvim mod.nu
+cd
+config nu
+exit
+c
+nvim mod.nu
+zshrc
+ls
+config nu
+exit
+config nu
+exit
+c
+clear
+source files_n_paths.nu
+c
+ls -a
+cat files_n_paths.nu
+alias c = clear
+c
+echo $c
+echo $clear
+aliases
+alias
+alias --help
+export alias
+export alias --help
+use mod.nu *
+c
+exit
+use mod.nu *
+c
+use --help
+module test { use ./mod.nu }; use test
+c
+module test { export use mod.nu }; use test
+c
+module test { export use files_n_paths.nu }; use test
+c
+module test { use files_n_paths.nu }; use test
+c
+module test { use files_n_paths.nu }
+use test
+c
+module test { source files_n_paths.nu }; use test
+module test { alias files_n_paths.nu }; use test
+module test { def files_n_paths.nu }; use test
+export module test { export use files_n_paths.nu }; use test
+c
+export module test { export use ./files_n_paths.nu }; use test
+c
+cat files_n_paths.nu
+export module test { export use ./files_n_paths.nu * }; use test
+c
+export module test { export use ./files_n_paths.nu * }; c
+test c
+export use ./files_n_paths.nu *; c
+test c
+cc
+export use ./files_n_paths.nu *; c
+export use *; c
+export use . *; c
+exit
+export use . *; c
+export use ./mod.nu *; c
+export use *; c
+export use basics_mod *; c
+nvim mod.nu
+exit
+c
+cd ..
+cd
+zoxide
+zoxide init
+zoxide init nu
+zoxide init nushell
+config nu
+exit
+cd ..
+ls
+config nu
+exit
+cd ..
+z
+^z
+zoxide init nushell
+source `~/Library/Application Support/nushell/zoxide.nu`
+z
+cd
+nvim
+cd ..
+..
+rename 
+rename  --help
+rename --help
+rename -h
+^rename zoxide.nu .zoxide.nu zoxide.nu
+ls
+ls -a
+config.
+config nu
+exit
+z
+zoxide
+cd
+..
+config nu
+exit
+cd
+z basics
+cd ..
+ls
+cp ./basics/mod.nu ./CLI
+cp ./basics/mod.nu ./os
+cd CLI
+ls
+cp mod.nu ./Docker
+cp mod.nu ./Git
+cp mod.nu ./Python
+cd Docker
+ls
+nvim mod.nu
+cd ..
+nvim mod.nu
+exit
+(ls (**/*.nu) | where type == "file" | each { |it| $"use ./($it.name) *" } | each {|cmd| nu -c $cmd})
+(ls **/*.nu | where type == "file" | each { |it| $"use ./($it.name) *" } | each {|cmd| nu -c $cmd})
+ls **/*.nu | where type == "file" | each { |it| $"use ./($it.name) *" } | each {|cmd| nu -c $cmd}
+z nushell
+ls **/*.nu | where type == "file" | each { |it| $"use ./($it.name) *" } | each {|cmd| nu -c $cmd}
+# Master module generator - run once per directory<\n>def generate-mod [--dir (-)] {<\n>    let target_dir = if $dir == "-" { pwd } else { $dir }<\n>    <\n>    let nu_files = (<\n>        ls ($target_dir | path join "**/*.nu")<\n>        | where type == "file"<\n>        | reject parent<\n>        | each {|it| <\n>            let rel = ($it.parent | path relative-to $target_dir | path join $it.name)<\n>            $"    use ./($rel) *"<\n>        }<\n>    )<\n>    <\n>    let mod_content = [<\n>        "# Auto-generated module - lazy loads all .nu files recursively"<\n>        "export module mod {"<\n>        ...$nu_files<\n>        "}"<\n>    ]<\n>    <\n>    $mod_content | str join "\n" | save ($target_dir | path join "mod.nu")<\n>    print $"✅ Generated ($target_dir)/mod.nu"<\n>}<\n><\n># Usage examples:<\n># generate-mod          # Current dir<\n># generate-mod ./basics # Specific dir
+cd
+zshrc
+reload
+exit
+zshrc
+exit
+pli
+cd aliases
+aliases
+^aliases
+^alias list
+ls
+lt
+la
+^ls
+lst
+^lst
+lst
+/bin/lst
+exit
+nls
+nlS
+cna
+exit
+nvim mod.nu
+nls
+dnls
+exit
+nls
+nlS
+dnls
+exit
+dnls
+/usr/bin/dnls
+/bin/dnls
+dnls
+ls
+nls
+nlsm
+exit
+nls
+CLI_mod nls
+exit
+nls
+exit
+nlsm
+clear
+ls
+exit
+ls
+nls
+ls
+rm mod.nu
+cd functions/CLI/Python/
+ls
+cp pip.bundle.nu mod.nu
+..
+touch mod.nu
+..
+touch mod.nu
+ls
+cd misc
+ls
+touch mod.nu
+..
+cd nu-specific/
+touch mod.nu
+ls
+..
+cd os
+ls
+cd Arch
+ls
+cd ..
+touch mod.nu
+gh
+ga
+exit
+ga
+cd functions/nu-specific/
+rm ls.nu
+ls
+exit
+nls
+exit
+nla
+clear
+exit
+ls -al | first 1
+ls -al
+nvim `~/Library/Application Support/nushell`
+exit
+nvim `~/Library/Application Support/nushell/aliases/CLI/eza.nu`
+exit
+els
+nla
+nl
+nls
+nlS
+nll
+nlm
+nlsm
+nl
+nla
+nlr
+nlt
+nll
+nldot
+nlS
+nlart
+nlrt
+nlsr
+nlsn
+nls
+nlsm
+nlst
+nlsm
+exit
+nlsm
+exit
+nlsm
+exit
+nlsm
+exit
+nlsm
+nvim `~/Library/Application Support/nushell/aliases/CLI/eza.nu`
+exit
+clear
+cd nushell
+cd
+z nushell
+ls -a
+touch profile.nu
+navi
+echo $nu.config-path
+print ($nu.config-path | path dirname)
+echo ($nu.config-path | path dirname)
+ls
+oh-my-posh
+oh-my-posh init nu
+oh-my-posh init nushell
+oh-my-posh init nu
+oh-my-posh auth
+npm install --global carbonyl
+carbonyl --help
+exit
+pyenv init
+config nu
+pyenv init - nu
+config nu
+nvim .
+exit
+exit
+config nu
+$ pip install osxmpdkeys
+pip install osxmpdkeys
+brew install pip
+bins python
+exiy
+exit
+rmpc
+brew install music-presence
+exit
+reload
+exit
+rmpc
+exit
+:q
+nvim
+:q
+reload
+exit
+nur
+exit
+zig
+^zig
+reload
+exit
+zig
+source config
+source `~/Library/Application Support/nushell/config.nu`
+exit
+source `~/Library/Application Support/nushell/config.nu`
+exit
+source `~/Library/Application Support/nushell/config.nu`
+cd
+exit
+y
+source `~/Library/Application Support/nushell/config.nu`
+z ..
+z
+cd ..
+z
+ls
+nls
+ls
+z VMs
+cd
+source `~/Library/Application Support/nushell/config.nu`
+z ..
+source `~/Library/Application Support/nushell/config.nu`
+z ..
+tput
+source `~/Library/Application Support/nushell/config.nu`
+z ..
+exit
+z ..
+cd ..
+cd /
+cd
+exit
+z ..
+ls
+cd
+cd /
+cd ..
+cd
+z /
+cd
+z ..
+cd
+exit
+z /
+exit
+whoami
+print ($whoami)
+print whoami
+print $"Hello, ($env.USER)!"
+exit
+z nushell
+z10
+updir_mod 10
+bins num-utils
+updir_mod 10
+exit
+z nushell
+z10
+^range
+exit
+z nushell
+z10
+updir 10
+exit
+z nushell
+z10
+z
+exit
+^find /etc /usr ! -name "lost+found" \( -type d -printf '%p/\n' -o -print \)
+^find /etc /usr ! -name "lost+found" \( -type d -^printf '%p/\n' -o -print \)
+^find /etc /usr ! -name "lost+found" \( -type ^d -printf '%p/\n' -o -print \)
+^find /etc /usr ! -name "lost+found" \( -^type d -printf '%p/\n' -o -print \)
+^find /etc /usr ! -name "lost+found" -type d -printf '%p/\n' -o -print
+exit
+clear
+c
+bins
+brew install
+exit
+brew install
+exit
+brew install
+exit
+brew install
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+unsource `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+exit
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+exit
+brew install
+exit
+brew install
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+..
+cd plugin-functions/
+touch mod.nu
+exit
+cd
+source `~/Library/Application Support/nushell/plugin-functions/fzf-tab.nu`
+exit
+brew install
+exit
+brew install
+exit
+brew install
+plugin add nu_plugin_alias-tips
+plugin add ($nu.default-config-dir)/plugins/nu_plugin_alias-tips
+exit
+plugin add nu_plugin_alias-tips
+plugin add `($nu.default-config-dir)/plugins/nu_plugin_alias-tips`
+plugin add `~/Library/Application Support/plugins/nu_plugin_alias-tips`
+plugin add `~/Library/Application Support/plugins/nu_plugin_alias-tips.nu`
+plugin add `~/Library/Application Support/plugin-functions/nu_plugin_alias-tips.nu`
+plugin add `~/Library/Application Support/nushell/plugins/nu_plugin_alias-tips`
+plugin add `~/Library/Application Support/nushell/plugins/nu_plugin_alias-tips.nu`
+plugin use nu_plugin_alias-tips
+const NU_PLUGIN_DIRS = [($nu.default-confir-dir | path join "plugins") ... $NU_PLUGIN_DIRS]
+const NU_PLUGIN_DIRS = [($nu.default-config-dir | path join "plugins") ... $NU_PLUGIN_DIRS]
+plugin use nu_plugin_alias-tips
+plugin use plugins/nu_plugin_alias-tips
+echo $env.NU_PLUGIN_DIRS
+echo $NU_PLUGIN_DIRS
+echo $NU_PLUGIN_DIRS | to json
+plugin add `~/Library/Application Support/nushell/plugins/nu_plugin_alias-tips.nu`
+spicetify update
+exit
+brew install
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+exit
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+cd nushell
+z nushell
+exit
+source `~/Library/Application Support/nushell/plugin-functions/alias-tips.nu`
+brew install
+exit
+brew install
+config nu -d
+config nu -d | bat
+exit
+brew install
+touch mod.nu
+nvim mod.nu
+rm fast-syntax-highlighting.nu
+..
+cd plugin-o
+ls
+touch auto-notify.nu
+nvim auto-notify.nu
+exit
+rmpc
+exit
+rmpc
+fzf
+fcd
+fcd .
+fzf-history
+cd | fzf-history
+fzf-history
+fzf-history | cd
+fzf-history | grep cd
+exit
+use plugins/nupm
+use plugins/nupm/
+use ./plugins/nupm/
+use ./plugins/nupm
+use nupm
+use nupm/
+exit
+nupm install nupm --force --path
+nupm install --force --path
+nupm install
+nupm search
+nupm --help
+exit
+nupm install
+nupm install https://github.com/FMotalleb/nu_plugin_desktop_notifications.git --git
+nupm install --git https://github.com/FMotalleb/nu_plugin_desktop_notifications
+nupm install --help
+nupm install FMotalleb/nu_plugin_desktop_notifications --git
+nupm install
+nupm test
+nupm
+cd nushell
+cd plugins
+ls
+git clone https://github.com/FMotalleb/nu_plugin_desktop_notifications.git
+nupm install --path nu_plugin_desktop_notifications -f 
+rm nupm
+rm -rf nupm
+ls
+rm nu_plugin_desktop_notifications/
+..
+git clone https://github.com/nushell/nupm.git
+use nupm/nupm<\n>nupm install nupm --force --path
+use nupm/nupm
+use nupm
+nupm install --force --path
+nupm install https://github.com/FMotalleb/nu_plugin_desktop_notifications.git --git
+nupm install https://github.com/FMotalleb/nu_plugin_desktop_notifications.git --git --path
+nupm --help
+nupm install https://github.com/FMotalleb/nu_plugin_desktop_notifications.git --git --path
+nupm install https://github.com/FMotalleb/nu_plugin_desktop_notifications.git --git
+rm -rf nupm
+ls
+cd plugins
+cd ..
+cat plugins.registry
+cd plugins
+git clone https://github.com/FMotalleb/nu_plugin_desktop_notifications.git  <\n>cd nu_plugin_desktop_notifications  <\n>cargo build -r  <\n>register target/release/nu_plugin_desktop_notifications
+plugin add nu_plugin_desktop_notifications/
+sudo plugin add nu_plugin_desktop_notifications/
+ls
+plugin add plugins/nu_plugin_desktop_notifications/
+plugin add nu_plugin_desktop_notifications/
+plugin add nu_plugin_desktop_notifications
+sudo chown -R sametaor .
+sudo chmod -R +x .
+plugin add nu_plugin_desktop_notifications
+plugin add ./nu_plugin_desktop_notifications
+plugin use desktop_notifications
+plugin add desktop_notifications
+plugin add nu_plugin_desktop_notifications
+sudo su
+cd nu_plugin_desktop_notifications/
+ls
+cd target
+ls
+cd release
+ls
+register nu_plugin_desktop_notifications
+plugin add nu_plugin_desktop_notifications
+exit
+notify -t "Test" --summary "Test title"
+cd plugin-opts
+ls
+nvim auto-notify.json
+..
+cd plugin-functions/
+ls
+nvim auto-notify.nu
+cd
+cd plugin-functions/
+cd plugin-functions
+nvim mod.nu
+exit
+rmpc
+rmpc | setup-auto-notify
+source ($nu.default-config-dir | path join "plugin-functions/auto-notify.nu")
+exit
+setup-auto-notify
+def "notify-on-done" [task: closure] {<\n>  let start = date now<\n>  let result = do $task<\n>  let end = date now<\n>  let total = $end - $start | format duration sec<\n>  let body = $"Task completed in ($total)"<\n>  <\n>  notify -s "Task Finished" -t $body<\n>  <\n>  return $result<\n>}
+notify-on-done {rmpc}
+notify-on-done {ping 8.8.8.8}
+bins prettyping
+notify-on-done {ping 8.8.8.8}
+ping 8.8.8.8 | notify-on-done
+notify-on-done --help
+notify-on-done { port scan 8.8.8.8 53 }
+port
+port 53748
+port --help
+cd plugin-functions
+ls
+rm auto-notify.nu
+cd plugin-o
+cd
+exit
+sleep 12
+sleep
+sleep --help
+rmpc
+exit
+rmpc
+notify -t "Test notification body" --summary "Test title"
+exit
+nvim
+source $nu.config-path
+notify -t "Test notification body" --summary "Test title"
+notify --help
+plugin use desktop_notifications
+notify -t "Test notification body" --summary "Test title"
+notify
+notify -t "Test notification body" --summary "Test title" --crash-on-error test.txt
+ls
+cat test.sh
+rm test.sh
+config nu
+exit
+notify -t "Test notification body" --summary "Test title"
+plugin use desktop_notifications
+notify -t "Test notification body" --summary "Test title"
+plugin
+plugin stop desktop_notifications
+plugin use desktop_notifications
+plugin list
+config nu
+ls
+ls | table -t rounded
+ls | table -t dots
+ls | table -t markdown
+ls | table -t compact
+ls | table -t thin
+ls | table -t single
+ls | table -t double
+ls | table -t heavy
+ls | table -t reinforced
+ls | table -t psql
+ls | table -t restructured
+ls | table -t none
+ls | table -t basic
+ls | table -t with_love
+ls | table -t light
+ls | table -t heavy
+nll
+nll | table -t heavy
+nll | table -t reinforced
+nll | table -t double
+nll | table -t ascii_rounded
+nll | table -t double
+fg
+job
+job spawn
+job list
+job spawn 44580
+job unfreeze 44580
+job unfreeze
+source $nu.config-path
+config nu
+source $nu.config-path
+config nu
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+fastfetch
+job unfreeze
+fastfetch
+job unfreeze
+fastfetch
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze
+~/.config/fastfetch/scripts/deusfetch.sh
+job unfreeze

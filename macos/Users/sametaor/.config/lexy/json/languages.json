@@ -1,0 +1,1076 @@
+[
+    {
+        "language": "AsciiDoc",
+        "language_url": "https://learnxinyminutes.com/asciidoc/",
+        "language_file_url": "https://learnxinyminutes.com/files/asciidoc.adoc",
+        "file_extension": ".adoc"
+    },
+    {
+        "language": "APL",
+        "language_url": "https://learnxinyminutes.com/apl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnapl.apl",
+        "file_extension": ".apl"
+    },
+    {
+        "language": "bc",
+        "language_url": "https://learnxinyminutes.com/bc/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnbc.bc",
+        "file_extension": ".bc"
+    },
+    {
+        "language": "BF",
+        "language_url": "https://learnxinyminutes.com/bf/",
+        "language_file_url": "https://learnxinyminutes.com/files/bf.bf",
+        "file_extension": ".bf"
+    },
+    {
+        "language": "Bash",
+        "language_url": "https://learnxinyminutes.com/bash/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnBash.sh",
+        "file_extension": ".sh"
+    },
+    {
+        "language": "Ada",
+        "language_url": "https://learnxinyminutes.com/ada/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn.ada",
+        "file_extension": ".ada"
+    },
+    {
+        "language": "AssemblyScript",
+        "language_url": "https://learnxinyminutes.com/assemblyscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnassemblyscript.ts",
+        "file_extension": ".ts"
+    },
+    {
+        "language": "Arturo",
+        "language_url": "https://learnxinyminutes.com/arturo/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnarturo.art",
+        "file_extension": ".art"
+    },
+    {
+        "language": "BQN",
+        "language_url": "https://learnxinyminutes.com/bqn/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnbqn.bqn",
+        "file_extension": ".bqn"
+    },
+    {
+        "language": "Ballerina",
+        "language_url": "https://learnxinyminutes.com/ballerina/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn_ballerina.bal",
+        "file_extension": ".bal"
+    },
+    {
+        "language": "citron",
+        "language_url": "https://learnxinyminutes.com/citron/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncitron.ctr",
+        "file_extension": ".ctr"
+    },
+    {
+        "language": "Clojure",
+        "language_url": "https://learnxinyminutes.com/clojure/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnclojure.clj",
+        "file_extension": ".clj"
+    },
+    {
+        "language": "CHICKEN",
+        "language_url": "https://learnxinyminutes.com/chicken/",
+        "language_file_url": "https://learnxinyminutes.com/files/CHICKEN.scm",
+        "file_extension": ".scm"
+    },
+    {
+        "language": "C",
+        "language_url": "https://learnxinyminutes.com/c/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnc.c",
+        "file_extension": ".c"
+    },
+    {
+        "language": "ATS",
+        "language_url": "https://learnxinyminutes.com/ats/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnats.dats",
+        "file_extension": ".dats"
+    },
+    {
+        "language": "Clojure macros",
+        "language_url": "https://learnxinyminutes.com/clojure-macros/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnclojuremacros.clj",
+        "file_extension": ".clj"
+    },
+    {
+        "language": "C++",
+        "language_url": "https://learnxinyminutes.com/c++/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncpp.cpp",
+        "file_extension": ".cpp"
+    },
+    {
+        "language": "CoffeeScript",
+        "language_url": "https://learnxinyminutes.com/coffeescript/",
+        "language_file_url": "https://learnxinyminutes.com/files/coffeescript.coffee",
+        "file_extension": ".coffee"
+    },
+    {
+        "language": "COBOL",
+        "language_url": "https://learnxinyminutes.com/cobol/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn.cob",
+        "file_extension": ".cob"
+    },
+    {
+        "language": "C#",
+        "language_url": "https://learnxinyminutes.com/csharp/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnCSharp.cs",
+        "file_extension": ".cs"
+    },
+    {
+        "language": "CSS",
+        "language_url": "https://learnxinyminutes.com/css/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncss.css",
+        "file_extension": ".css"
+    },
+    {
+        "language": "Common Lisp",
+        "language_url": "https://learnxinyminutes.com/common-lisp/",
+        "language_file_url": "https://learnxinyminutes.com/files/commonlisp.lisp",
+        "file_extension": ".lisp"
+    },
+    {
+        "language": "Cypher",
+        "language_url": "https://learnxinyminutes.com/cypher/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnCypher.cql",
+        "file_extension": ".cql"
+    },
+    {
+        "language": "Chapel",
+        "language_url": "https://learnxinyminutes.com/chapel/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnchapel.chpl",
+        "file_extension": ".chpl"
+    },
+    {
+        "language": "ColdFusion",
+        "language_url": "https://learnxinyminutes.com/coldfusion/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncoldfusion.cfm",
+        "file_extension": ".cfm"
+    },
+    {
+        "language": "Coq",
+        "language_url": "https://learnxinyminutes.com/coq/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncoq.v",
+        "file_extension": ".v"
+    },
+    {
+        "language": "Crystal",
+        "language_url": "https://learnxinyminutes.com/crystal/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncrystal.cr",
+        "file_extension": ".cr"
+    },
+    {
+        "language": "Easylang",
+        "language_url": "https://learnxinyminutes.com/easylang/",
+        "language_file_url": "https://learnxinyminutes.com/files/easylang.el",
+        "file_extension": ".el"
+    },
+    {
+        "language": "CUE",
+        "language_url": "https://learnxinyminutes.com/cue/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncue.cue",
+        "file_extension": ".cue"
+    },
+    {
+        "language": "D",
+        "language_url": "https://learnxinyminutes.com/d/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnd.d",
+        "file_extension": ".d"
+    },
+    {
+        "language": "EDN",
+        "language_url": "https://learnxinyminutes.com/edn/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnedn.edn",
+        "file_extension": ".edn"
+    },
+    {
+        "language": "Emacs Lisp",
+        "language_url": "https://learnxinyminutes.com/elisp/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-emacs-lisp.el",
+        "file_extension": ".el"
+    },
+    {
+        "language": "fish",
+        "language_url": "https://learnxinyminutes.com/fish/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn.fish",
+        "file_extension": ".fish"
+    },
+    {
+        "language": "Elixir",
+        "language_url": "https://learnxinyminutes.com/elixir/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnelixir.ex",
+        "file_extension": ".ex"
+    },
+    {
+        "language": "Dart",
+        "language_url": "https://learnxinyminutes.com/dart/",
+        "language_file_url": "https://learnxinyminutes.com/files/learndart.dart",
+        "file_extension": ".dart"
+    },
+    {
+        "language": "Factor",
+        "language_url": "https://learnxinyminutes.com/factor/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnfactor.factor",
+        "file_extension": ".factor"
+    },
+    {
+        "language": "Dhall",
+        "language_url": "https://learnxinyminutes.com/dhall/",
+        "language_file_url": "https://learnxinyminutes.com/files/learndhall.dhall",
+        "file_extension": ".dhall"
+    },
+    {
+        "language": "Erlang",
+        "language_url": "https://learnxinyminutes.com/erlang/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnerlang.erl",
+        "file_extension": ".erl"
+    },
+    {
+        "language": "Elm",
+        "language_url": "https://learnxinyminutes.com/elm/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnelm.elm",
+        "file_extension": ".elm"
+    },
+    {
+        "language": "Forth",
+        "language_url": "https://learnxinyminutes.com/forth/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnforth.fs",
+        "file_extension": ".fs"
+    },
+    {
+        "language": "Hack",
+        "language_url": "https://learnxinyminutes.com/hack/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhack.hh",
+        "file_extension": ".hh"
+    },
+    {
+        "language": "GDScript",
+        "language_url": "https://learnxinyminutes.com/gdscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/learngdscript.gd",
+        "file_extension": ".gd"
+    },
+    {
+        "language": "GolfScript",
+        "language_url": "https://learnxinyminutes.com/golfscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/golfscript.gs",
+        "file_extension": ".gs"
+    },
+    {
+        "language": "Go",
+        "language_url": "https://learnxinyminutes.com/go/",
+        "language_file_url": "https://learnxinyminutes.com/files/learngo.go",
+        "file_extension": ".go"
+    },
+    {
+        "language": "F#",
+        "language_url": "https://learnxinyminutes.com/fsharp/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnfsharp.fs",
+        "file_extension": ".fs"
+    },
+    {
+        "language": "Haml",
+        "language_url": "https://learnxinyminutes.com/haml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhaml.haml",
+        "file_extension": ".haml"
+    },
+    {
+        "language": "Groovy",
+        "language_url": "https://learnxinyminutes.com/groovy/",
+        "language_file_url": "https://learnxinyminutes.com/files/learngroovy.groovy",
+        "file_extension": ".groovy"
+    },
+    {
+        "language": "Gleam",
+        "language_url": "https://learnxinyminutes.com/gleam/",
+        "language_file_url": "https://learnxinyminutes.com/files/learngleam.gleam",
+        "file_extension": ".gleam"
+    },
+    {
+        "language": "Fortran",
+        "language_url": "https://learnxinyminutes.com/fortran/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnfortran.f90",
+        "file_extension": ".f90"
+    },
+    {
+        "language": "Hjson",
+        "language_url": "https://learnxinyminutes.com/hjson/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhjson.hjson",
+        "file_extension": ".hjson"
+    },
+    {
+        "language": "HTML",
+        "language_url": "https://learnxinyminutes.com/html/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhtml.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Haxe",
+        "language_url": "https://learnxinyminutes.com/haxe/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnHaxe3.hx",
+        "file_extension": ".hx"
+    },
+    {
+        "language": "HDL",
+        "language_url": "https://learnxinyminutes.com/hdl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhdl.hdl",
+        "file_extension": ".hdl"
+    },
+    {
+        "language": "HQ9+",
+        "language_url": "https://learnxinyminutes.com/hq9+/",
+        "language_file_url": "https://learnxinyminutes.com/files/hq9+.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Haskell",
+        "language_url": "https://learnxinyminutes.com/haskell/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhaskell.hs",
+        "file_extension": ".hs"
+    },
+    {
+        "language": "HOCON",
+        "language_url": "https://learnxinyminutes.com/hocon/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhocon.conf",
+        "file_extension": ".conf"
+    },
+    {
+        "language": "JSON",
+        "language_url": "https://learnxinyminutes.com/json/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnjson.json",
+        "file_extension": ".json"
+    },
+    {
+        "language": "Inform7",
+        "language_url": "https://learnxinyminutes.com/inform7/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnInform.Inform",
+        "file_extension": ".Inform"
+    },
+    {
+        "language": "JavaScript",
+        "language_url": "https://learnxinyminutes.com/javascript/",
+        "language_file_url": "https://learnxinyminutes.com/files/javascript.js",
+        "file_extension": ".js"
+    },
+    {
+        "language": "Jinja",
+        "language_url": "https://learnxinyminutes.com/jinja/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-jinja.j2",
+        "file_extension": ".j2"
+    },
+    {
+        "language": "Hy",
+        "language_url": "https://learnxinyminutes.com/hy/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnhy.hy",
+        "file_extension": ".hy"
+    },
+    {
+        "language": "Jsonnet",
+        "language_url": "https://learnxinyminutes.com/jsonnet/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnjsonnet.jsonnet",
+        "file_extension": ".jsonnet"
+    },
+    {
+        "language": "LaTeX",
+        "language_url": "https://learnxinyminutes.com/latex/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-latex.tex",
+        "file_extension": ".tex"
+    },
+    {
+        "language": "Java",
+        "language_url": "https://learnxinyminutes.com/java/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnJava.java",
+        "file_extension": ".java"
+    },
+    {
+        "language": "Julia",
+        "language_url": "https://learnxinyminutes.com/julia/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnjulia.jl",
+        "file_extension": ".jl"
+    },
+    {
+        "language": "LB Stanza",
+        "language_url": "https://learnxinyminutes.com/lbstanza/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-stanza.stanza",
+        "file_extension": ".stanza"
+    },
+    {
+        "language": "Janet",
+        "language_url": "https://learnxinyminutes.com/janet/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnJanet.janet",
+        "file_extension": ".janet"
+    },
+    {
+        "language": "LDPL",
+        "language_url": "https://learnxinyminutes.com/ldpl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnLDPL.ldpl",
+        "file_extension": ".ldpl"
+    },
+    {
+        "language": "kdb+",
+        "language_url": "https://learnxinyminutes.com/kdb+/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnkdb.q",
+        "file_extension": ".q"
+    },
+    {
+        "language": "Kotlin",
+        "language_url": "https://learnxinyminutes.com/kotlin/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnKotlin.kt",
+        "file_extension": ".kt"
+    },
+    {
+        "language": "Less",
+        "language_url": "https://learnxinyminutes.com/less/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnless.less",
+        "file_extension": ".less"
+    },
+    {
+        "language": "Lean 4",
+        "language_url": "https://learnxinyminutes.com/lean4/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnlean4.lean",
+        "file_extension": ".lean"
+    },
+    {
+        "language": "Lisp Flavoured Erlang (LFE)",
+        "language_url": "https://learnxinyminutes.com/lfe/",
+        "language_file_url": "https://learnxinyminutes.com/files/lispflavourederlang.lfe",
+        "file_extension": ".lfe"
+    },
+    {
+        "language": "Lua",
+        "language_url": "https://learnxinyminutes.com/lua/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnlua.lua",
+        "file_extension": ".lua"
+    },
+    {
+        "language": "Markdown",
+        "language_url": "https://learnxinyminutes.com/markdown/",
+        "language_file_url": "https://learnxinyminutes.com/files/markdown.md",
+        "file_extension": ".md"
+    },
+    {
+        "language": "Logtalk",
+        "language_url": "https://learnxinyminutes.com/logtalk/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnlogtalk.lgt",
+        "file_extension": ".lgt"
+    },
+    {
+        "language": "LiveScript",
+        "language_url": "https://learnxinyminutes.com/livescript/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnLivescript.ls",
+        "file_extension": ".ls"
+    },
+    {
+        "language": "LOLCODE",
+        "language_url": "https://learnxinyminutes.com/lolcode/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnLOLCODE.lol",
+        "file_extension": ".lol"
+    },
+    {
+        "language": "Nim",
+        "language_url": "https://learnxinyminutes.com/nim/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnNim.nim",
+        "file_extension": ".nim"
+    },
+    {
+        "language": "M (MUMPS)",
+        "language_url": "https://learnxinyminutes.com/m/",
+        "language_file_url": "https://learnxinyminutes.com/files/LEARNM.m",
+        "file_extension": ".m"
+    },
+    {
+        "language": "MiniScript",
+        "language_url": "https://learnxinyminutes.com/miniscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/miniscript.ms",
+        "file_extension": ".ms"
+    },
+    {
+        "language": "Nix",
+        "language_url": "https://learnxinyminutes.com/nix/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn.nix",
+        "file_extension": ".nix"
+    },
+    {
+        "language": "MongoDB",
+        "language_url": "https://learnxinyminutes.com/mongodb/",
+        "language_file_url": "https://learnxinyminutes.com/files/mongo.js",
+        "file_extension": ".js"
+    },
+    {
+        "language": "Odin",
+        "language_url": "https://learnxinyminutes.com/odin/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnodin.odin",
+        "file_extension": ".odin"
+    },
+    {
+        "language": "MIPS Assembly",
+        "language_url": "https://learnxinyminutes.com/mips/",
+        "language_file_url": "https://learnxinyminutes.com/files/MIPS.asm",
+        "file_extension": ".asm"
+    },
+    {
+        "language": "MATLAB",
+        "language_url": "https://learnxinyminutes.com/matlab/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnmatlab.m",
+        "file_extension": ".m"
+    },
+    {
+        "language": "MoonScript",
+        "language_url": "https://learnxinyminutes.com/moonscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/moonscript.moon",
+        "file_extension": ".moon"
+    },
+    {
+        "language": "niva",
+        "language_url": "https://learnxinyminutes.com/niva/",
+        "language_file_url": "https://learnxinyminutes.com/files/main.niva",
+        "file_extension": ".niva"
+    },
+    {
+        "language": "OCaml",
+        "language_url": "https://learnxinyminutes.com/ocaml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnocaml.ml",
+        "file_extension": ".ml"
+    },
+    {
+        "language": "Objective-C",
+        "language_url": "https://learnxinyminutes.com/objective-c/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnObjectiveC.m",
+        "file_extension": ".m"
+    },
+    {
+        "language": "OpenSCAD",
+        "language_url": "https://learnxinyminutes.com/openscad/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnopenscad.scad",
+        "file_extension": ".scad"
+    },
+    {
+        "language": "PCRE",
+        "language_url": "https://learnxinyminutes.com/pcre/",
+        "language_file_url": "https://learnxinyminutes.com/files/pcre.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Paren",
+        "language_url": "https://learnxinyminutes.com/paren/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnparen.paren",
+        "file_extension": ".paren"
+    },
+    {
+        "language": "Pascal",
+        "language_url": "https://learnxinyminutes.com/pascal/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnpascal.pas",
+        "file_extension": ".pas"
+    },
+    {
+        "language": "Phix",
+        "language_url": "https://learnxinyminutes.com/phix/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnphix.exw",
+        "file_extension": ".exw"
+    },
+    {
+        "language": "PHP",
+        "language_url": "https://learnxinyminutes.com/php/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnphp.php",
+        "file_extension": ".php"
+    },
+    {
+        "language": "Phel",
+        "language_url": "https://learnxinyminutes.com/phel/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnphel.phel",
+        "file_extension": ".phel"
+    },
+    {
+        "language": "Perl",
+        "language_url": "https://learnxinyminutes.com/perl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnperl.pl",
+        "file_extension": ".pl"
+    },
+    {
+        "language": "Pod",
+        "language_url": "https://learnxinyminutes.com/raku-pod/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnpod.pod6",
+        "file_extension": ".pod6"
+    },
+    {
+        "language": "PowerShell",
+        "language_url": "https://learnxinyminutes.com/powershell/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnPowershell.ps1",
+        "file_extension": ".ps1"
+    },
+    {
+        "language": "Processing",
+        "language_url": "https://learnxinyminutes.com/processing/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnprocessing.pde",
+        "file_extension": ".pde"
+    },
+    {
+        "language": "PureScript",
+        "language_url": "https://learnxinyminutes.com/purescript/",
+        "language_file_url": "https://learnxinyminutes.com/files/purescript.purs",
+        "file_extension": ".purs"
+    },
+    {
+        "language": "Prolog",
+        "language_url": "https://learnxinyminutes.com/prolog/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnprolog.pl",
+        "file_extension": ".pl"
+    },
+    {
+        "language": "OSL",
+        "language_url": "https://learnxinyminutes.com/osl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnosl.osl",
+        "file_extension": ".osl"
+    },
+    {
+        "language": "Pug",
+        "language_url": "https://learnxinyminutes.com/pug/",
+        "language_file_url": "https://learnxinyminutes.com/files/index.pug",
+        "file_extension": ".pug"
+    },
+    {
+        "language": "Python",
+        "language_url": "https://learnxinyminutes.com/python/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnpython.py",
+        "file_extension": ".py"
+    },
+    {
+        "language": "Q#",
+        "language_url": "https://learnxinyminutes.com/qsharp/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnQSharp.qs",
+        "file_extension": ".qs"
+    },
+    {
+        "language": "QML",
+        "language_url": "https://learnxinyminutes.com/qml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnqml.qml",
+        "file_extension": ".qml"
+    },
+    {
+        "language": "RDF",
+        "language_url": "https://learnxinyminutes.com/rdf/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnrdf.ttl",
+        "file_extension": ".ttl"
+    },
+    {
+        "language": "Raku",
+        "language_url": "https://learnxinyminutes.com/raku/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnraku.raku",
+        "file_extension": ".raku"
+    },
+    {
+        "language": "reStructuredText (RST)",
+        "language_url": "https://learnxinyminutes.com/rst/",
+        "language_file_url": "https://learnxinyminutes.com/files/restructuredtext.rst",
+        "file_extension": ".rst"
+    },
+    {
+        "language": "Red",
+        "language_url": "https://learnxinyminutes.com/red/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnred.red",
+        "file_extension": ".red"
+    },
+    {
+        "language": "R",
+        "language_url": "https://learnxinyminutes.com/r/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnr.r",
+        "file_extension": ".r"
+    },
+    {
+        "language": "Reason",
+        "language_url": "https://learnxinyminutes.com/reason/",
+        "language_file_url": "https://learnxinyminutes.com/files/reason.re",
+        "file_extension": ".re"
+    },
+    {
+        "language": "ReScript",
+        "language_url": "https://learnxinyminutes.com/rescript/",
+        "language_file_url": "https://learnxinyminutes.com/files/rescript.res",
+        "file_extension": ".res"
+    },
+    {
+        "language": "Racket",
+        "language_url": "https://learnxinyminutes.com/racket/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnracket.rkt",
+        "file_extension": ".rkt"
+    },
+    {
+        "language": "Rust",
+        "language_url": "https://learnxinyminutes.com/rust/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnrust.rs",
+        "file_extension": ".rs"
+    },
+    {
+        "language": "Self",
+        "language_url": "https://learnxinyminutes.com/self/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnself.self",
+        "file_extension": ".self"
+    },
+    {
+        "language": "Sass",
+        "language_url": "https://learnxinyminutes.com/sass/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsass.scss",
+        "file_extension": ".scss"
+    },
+    {
+        "language": "SmallBASIC",
+        "language_url": "https://learnxinyminutes.com/smallbasic/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsmallbasic.bas",
+        "file_extension": ".bas"
+    },
+    {
+        "language": "Ruby",
+        "language_url": "https://learnxinyminutes.com/ruby/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnruby.rb",
+        "file_extension": ".rb"
+    },
+    {
+        "language": "SQL",
+        "language_url": "https://learnxinyminutes.com/sql/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsql.sql",
+        "file_extension": ".sql"
+    },
+    {
+        "language": "Sing",
+        "language_url": "https://learnxinyminutes.com/sing/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsing.sing",
+        "file_extension": ".sing"
+    },
+    {
+        "language": "Solidity",
+        "language_url": "https://learnxinyminutes.com/solidity/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnSolidity.sol",
+        "file_extension": ".sol"
+    },
+    {
+        "language": "Stylus",
+        "language_url": "https://learnxinyminutes.com/stylus/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnStylus.styl",
+        "file_extension": ".styl"
+    },
+    {
+        "language": "Scala",
+        "language_url": "https://learnxinyminutes.com/scala/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnscala.scala",
+        "file_extension": ".scala"
+    },
+    {
+        "language": "Tcl",
+        "language_url": "https://learnxinyminutes.com/tcl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learntcl.tcl",
+        "file_extension": ".tcl"
+    },
+    {
+        "language": "Standard ML",
+        "language_url": "https://learnxinyminutes.com/standard-ml/",
+        "language_file_url": "https://learnxinyminutes.com/files/standardml.sml",
+        "file_extension": ".sml"
+    },
+    {
+        "language": "Tailspin",
+        "language_url": "https://learnxinyminutes.com/tailspin/",
+        "language_file_url": "https://learnxinyminutes.com/files/learntailspin.tt",
+        "file_extension": ".tt"
+    },
+    {
+        "language": "tcsh",
+        "language_url": "https://learnxinyminutes.com/tcsh/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnTCSH.csh",
+        "file_extension": ".csh"
+    },
+    {
+        "language": "Swift",
+        "language_url": "https://learnxinyminutes.com/swift/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnswift.swift",
+        "file_extension": ".swift"
+    },
+    {
+        "language": "Smalltalk",
+        "language_url": "https://learnxinyminutes.com/smalltalk/",
+        "language_file_url": "https://learnxinyminutes.com/files/smalltalk.st",
+        "file_extension": ".st"
+    },
+    {
+        "language": "Texinfo",
+        "language_url": "https://learnxinyminutes.com/texinfo/",
+        "language_file_url": "https://learnxinyminutes.com/files/learntexinfo.texi",
+        "file_extension": ".texi"
+    },
+    {
+        "language": "Sorbet",
+        "language_url": "https://learnxinyminutes.com/sorbet/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsorbet.rb",
+        "file_extension": ".rb"
+    },
+    {
+        "language": "TypeScript",
+        "language_url": "https://learnxinyminutes.com/typescript/",
+        "language_file_url": "https://learnxinyminutes.com/files/learntypescript.ts",
+        "file_extension": ".ts"
+    },
+    {
+        "language": "Textile",
+        "language_url": "https://learnxinyminutes.com/textile/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-textile.textile",
+        "file_extension": ".textile"
+    },
+    {
+        "language": "TOML",
+        "language_url": "https://learnxinyminutes.com/toml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learntoml.toml",
+        "file_extension": ".toml"
+    },
+    {
+        "language": "Vimscript",
+        "language_url": "https://learnxinyminutes.com/vimscript/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnvimscript.vim",
+        "file_extension": ".vim"
+    },
+    {
+        "language": "Uxntal",
+        "language_url": "https://learnxinyminutes.com/uxntal/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnuxn.tal",
+        "file_extension": ".tal"
+    },
+    {
+        "language": "V",
+        "language_url": "https://learnxinyminutes.com/v/",
+        "language_file_url": "https://learnxinyminutes.com/files/vlang.v",
+        "file_extension": ".v"
+    },
+    {
+        "language": "YAML",
+        "language_url": "https://learnxinyminutes.com/yaml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnyaml.yaml",
+        "file_extension": ".yaml"
+    },
+    {
+        "language": "Vim9Script",
+        "language_url": "https://learnxinyminutes.com/vim9script/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnvim9script.vim",
+        "file_extension": ".vim"
+    },
+    {
+        "language": "Visual Basic",
+        "language_url": "https://learnxinyminutes.com/visualbasic/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnvisualbasic.vb",
+        "file_extension": ".vb"
+    },
+    {
+        "language": "XML",
+        "language_url": "https://learnxinyminutes.com/xml/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnxml.xml",
+        "file_extension": ".xml"
+    },
+    {
+        "language": "Wikitext",
+        "language_url": "https://learnxinyminutes.com/wikitext/",
+        "language_file_url": "https://learnxinyminutes.com/files/wikitext.md",
+        "file_extension": ".md"
+    },
+    {
+        "language": "Wolfram",
+        "language_url": "https://learnxinyminutes.com/wolfram/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnwolfram.nb",
+        "file_extension": ".nb"
+    },
+    {
+        "language": "WebAssembly",
+        "language_url": "https://learnxinyminutes.com/wasm/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-wasm.wast",
+        "file_extension": ".wast"
+    },
+    {
+        "language": "Vala",
+        "language_url": "https://learnxinyminutes.com/vala/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnVala.vala",
+        "file_extension": ".vala"
+    },
+    {
+        "language": "MessagePack",
+        "language_url": "https://learnxinyminutes.com/messagepack/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnmessagepack.mpac",
+        "file_extension": ".mpac"
+    },
+    {
+        "language": "AngularJS",
+        "language_url": "https://learnxinyminutes.com/angularjs/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnangular.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "jQuery",
+        "language_url": "https://learnxinyminutes.com/jquery/",
+        "language_file_url": "https://learnxinyminutes.com/files/jquery.js",
+        "file_extension": ".js"
+    },
+    {
+        "language": "PyQt",
+        "language_url": "https://learnxinyminutes.com/pyqt/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnpyqt.py",
+        "file_extension": ".py"
+    },
+    {
+        "language": "Zig",
+        "language_url": "https://learnxinyminutes.com/zig/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnzig.zig",
+        "file_extension": ".zig"
+    },
+    {
+        "language": "p5.js",
+        "language_url": "https://learnxinyminutes.com/p5/",
+        "language_file_url": "https://learnxinyminutes.com/files/p5.js",
+        "file_extension": ".js"
+    },
+    {
+        "language": "OpenCV",
+        "language_url": "https://learnxinyminutes.com/opencv/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnopencv.py",
+        "file_extension": ".py"
+    },
+    {
+        "language": "Statistical computing with Python",
+        "language_url": "https://learnxinyminutes.com/pythonstatcomp/",
+        "language_file_url": "https://learnxinyminutes.com/files/pythonstatcomp.py",
+        "file_extension": ".py"
+    },
+    {
+        "language": "Qt",
+        "language_url": "https://learnxinyminutes.com/qt/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnqt.cpp",
+        "file_extension": ".cpp"
+    },
+    {
+        "language": "AMD",
+        "language_url": "https://learnxinyminutes.com/amd/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnamd.js",
+        "file_extension": ".js"
+    },
+    {
+        "language": "raylib",
+        "language_url": "https://learnxinyminutes.com/raylib/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnraylib.c",
+        "file_extension": ".c"
+    },
+    {
+        "language": "DirectX 9",
+        "language_url": "https://learnxinyminutes.com/directx9/",
+        "language_file_url": "https://learnxinyminutes.com/files/learndirectx9.cpp",
+        "file_extension": ".cpp"
+    },
+    {
+        "language": "OpenGL",
+        "language_url": "https://learnxinyminutes.com/opengl/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnopengl.cpp",
+        "file_extension": ".cpp"
+    },
+    {
+        "language": "Ansible",
+        "language_url": "https://learnxinyminutes.com/ansible/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnAnsible.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Docker",
+        "language_url": "https://learnxinyminutes.com/docker/",
+        "language_file_url": "https://learnxinyminutes.com/files/docker.bat",
+        "file_extension": ".bat"
+    },
+    {
+        "language": "Git",
+        "language_url": "https://learnxinyminutes.com/git/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnGit.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "ShutIt",
+        "language_url": "https://learnxinyminutes.com/shutit/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnshutit.py",
+        "file_extension": ".py"
+    },
+    {
+        "language": "HTTPie",
+        "language_url": "https://learnxinyminutes.com/httpie/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn-httpie.sh",
+        "file_extension": ".sh"
+    },
+    {
+        "language": "Emacs",
+        "language_url": "https://learnxinyminutes.com/emacs/",
+        "language_file_url": "https://learnxinyminutes.com/files/emacs.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Composer",
+        "language_url": "https://learnxinyminutes.com/php-composer/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnComposer.sh",
+        "file_extension": ".sh"
+    },
+    {
+        "language": "Compojure",
+        "language_url": "https://learnxinyminutes.com/compojure/",
+        "language_file_url": "https://learnxinyminutes.com/files/learncompojure.clj",
+        "file_extension": ".clj"
+    },
+    {
+        "language": "Linker script",
+        "language_url": "https://learnxinyminutes.com/linker/",
+        "language_file_url": "https://learnxinyminutes.com/files/learn.ld",
+        "file_extension": ".ld"
+    },
+    {
+        "language": "HCL",
+        "language_url": "https://learnxinyminutes.com/hcl/",
+        "language_file_url": "https://learnxinyminutes.com/files/terraform.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "tmux",
+        "language_url": "https://learnxinyminutes.com/tmux/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnTmux.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "jq",
+        "language_url": "https://learnxinyminutes.com/jq/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnjq.sh",
+        "file_extension": ".sh"
+    },
+    {
+        "language": "Mercurial",
+        "language_url": "https://learnxinyminutes.com/mercurial/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnMercurial.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "ZFS",
+        "language_url": "https://learnxinyminutes.com/zfs/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnZfs.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "Protocol Buffers",
+        "language_url": "https://learnxinyminutes.com/protocol-buffer-3/",
+        "language_file_url": "https://learnxinyminutes.com/files/protocol-buffers.proto",
+        "file_extension": ".proto"
+    },
+    {
+        "language": "sed",
+        "language_url": "https://learnxinyminutes.com/sed/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnsed.sed",
+        "file_extension": ".sed"
+    },
+    {
+        "language": "Vim",
+        "language_url": "https://learnxinyminutes.com/vim/",
+        "language_file_url": "https://learnxinyminutes.com/files/LearnVim.txt",
+        "file_extension": ".txt"
+    },
+    {
+        "language": "OpenMP",
+        "language_url": "https://learnxinyminutes.com/openmp/",
+        "language_file_url": "https://learnxinyminutes.com/files/learnopenMP.cpp",
+        "file_extension": ".cpp"
+    }
+]

@@ -1,0 +1,174 @@
+{# This is an example of a comment. #}
+
+{#
+  You can use this syntax
+  to write multiline comments
+  as well.
+#}
+{# You have the option to access variables from the context passed to the template #}
+
+{{ foo }}
+
+{# 
+  Additionally, you can use a dot (.) to access attributes of a variable or
+  use Python syntax, using []
+#}
+
+{{ foo.bar }}
+{{ foo['bar'] }}
+
+{# Within the template, you can define variables as well #}
+
+{% set name = "Magdiel" %}
+{{ name }}
+Members
+
+{% for user in users %}
+    {{ user.username }}
+{% endfor %}
+
+
+{% for key, value in my_dict.items() %}
+    {{ key }} - {{ value }}
+{% endfor %}
+
+
+{% for idx, url in enumerate(urls) %}
+    Go to url {{ idx + 1 }}
+{% endfor %}
+
+{% if users %}
+
+{% for user in users %}
+    {{ user.username }}
+{% endfor %}
+
+{% endif %}
+
+
+{# For multiple branches, elif and else can be used like in Python. #}
+
+
+{% if message.status == "error" %}
+    {{ message.content }}
+{% elif message.status == "success" %}
+    {{ message.content }}
+{% else %}
+    {{ message.content }}
+{% endif %}
+{# file: base.html.j2 #}
+
+
+
+
+    {% block head %}
+    
+
+{% block title %}{% endblock title %} - Learning Jinja
+    {% endblock head %}
+
+
+
+        {% block content %}{% endblock %}
+        {# the endblock tag doesn't need the name of the block #}
+    
+
+
+
+
+
+{# file: child.html.j2 #}
+
+{% extends "base.html.j2" %}
+
+{% block head %}
+    {{ super() }}
+    
+{% endblock %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    Index
+Welcome to my home homepage.
+{% endblock %}
+
+
+
+{# RESULT #}
+
+
+
+
+
+
+Home - Learning Jinja
+
+
+
+
+Index
+Welcome to my home homepage.
+
+
+
+{# file: footer.html.j2 #}
+
+
+© 2024 - John Doe
+
+
+
+
+{# file: index.html.j2 #}
+...
+
+
+Hi! I'm John Doe!
+
+    {% include "footer.html.j2" %}
+
+...
+
+
+
+{# RESULT #}
+
+...
+
+
+Hi! I'm John Doe!
+
+
+© 2024 - John Doe
+
+
+...
+{# file: greetings.html.j2 #}
+
+I'm the {{ name }} and i like to {{ hobby }}.
+
+
+
+{# file: index.html.j2 #}
+
+{% set name = "Captain Nemo" %}
+{% set hobby = "navigate through the depths of the ocean" %}
+
+
+    {% include "greetings.html.j2" %}
+
+
+
+
+{# RESULT #}
+
+
+I'm the Captain Nemo and i like to navigate through the depths of the ocean.
+
+{% macro input(value="", type="text", placeholder="") -%}
+    
+{%- endmacro %}
+
+{{ input(placeholder="Your username") }}
+{{ input(type="password") }}

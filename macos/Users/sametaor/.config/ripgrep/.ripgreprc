@@ -1,0 +1,13 @@
+-z
+# --search-zip
+-S
+# --smart-case
+-L
+# --follow
+--no-messages
+-.
+# --hidden
+--no-ignore
+-n
+# --line-number
+--trim

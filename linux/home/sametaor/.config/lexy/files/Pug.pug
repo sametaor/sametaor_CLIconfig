@@ -1,0 +1,184 @@
+//- Single Line Comment
+
+//- Multi Line
+    Comment
+
+//- ---TAGS---
+//- Basic
+div
+//- 
+h1
+//- 
+my-customTag
+//- 
+
+//- Sibling
+div
+div
+//- 
+
+
+//- Child
+div
+  div
+//- 
+
+
+
+//- Text
+h1 Hello there
+//- Hello there
+
+//- Multi Line Text
+div.
+  Hello
+  There
+//- 
+      Hello
+      There
+    
+
+//- ---ATTRIBUTES---
+div(class="my-class" id="my-id" my-custom-attrs="data" enabled)
+//- 
+
+//- Short Hand
+span.my-class
+//- 
+.my-class
+//- 
+div#my-id
+//- 
+div#my-id.my-class
+//- 
+
+
+//- ---JS---
+- const lang = "pug";
+
+//- Multi Line JS
+-
+  const lang = "pug";
+  const awesome = true;
+
+//- JS Classes
+- const myClass = ['class1', 'class2', 'class3']
+div(class=myClass)
+//- 
+
+//- JS Styles
+- const myStyles = {'color':'white', 'background-color':'blue'}
+div(style=myStyles)
+//- 
+
+//- JS Attributes
+- const myAttributes = {"src": "photo.png", "alt": "My Photo"}
+img&attributes(myAttributes)
+//- 
+- let disabled = false
+input(type="text" disabled=disabled)
+//- 
+- disabled = true
+input(type="text" disabled=disabled)
+//- 
+
+//- JS Templating
+- const name = "Bob";
+h1 Hi #{name}
+h1= name
+//- Hi Bob
+//- Bob
+
+//- ---LOOPS---
+
+//- 'each' and 'for' do the same thing we will use 'each' only.
+
+each value, i in [1,2,3]
+  p=value
+//-
+  1
+2
+3
+
+each value, index in [1,2,3]
+  p=value + '-' + index
+//-
+  1-0
+2-1
+3-2
+
+each value in []
+  p=value
+//-
+
+each value in []
+  p=value
+else
+  p No Values are here
+
+//- No Values are here
+
+//- ---CONDITIONALS---
+
+- const number = 5
+if number < 5
+  p number is less than 5
+else if number > 5
+  p number is greater than 5
+else
+  p number is 5
+//- number is 5
+
+- const orderStatus = "Pending";
+case orderStatus
+  when "Pending"
+    p.warn Your order is pending
+  when "Completed"
+    p.success Order is Completed.
+  when -1
+    p.error Error Occurred
+  default
+    p No Order Record Found
+//- Your order is pending
+
+//- --INCLUDE--
+//- File path -> "includes/nav.pug"
+h1 Company Name
+nav
+  a(href="index.html") Home
+  a(href="about.html") About Us
+
+//- File path -> "index.pug"
+html
+  body
+    include includes/nav.pug
+//-
+  
+
+Company Name
+HomeAbout Us
+
+
+
+//- Importing JS and CSS
+script
+  include scripts/index.js
+style
+  include styles/theme.css
+
+//- ---MIXIN---
+mixin basic
+  div Hello
++basic
+//- Hello
+
+mixin comment(name, comment)
+  div
+    span.comment-name= name
+    div.comment-text= comment
++comment("Bob", "This is Awesome")
+//-
+  
+Bob
+This is Awesome
+

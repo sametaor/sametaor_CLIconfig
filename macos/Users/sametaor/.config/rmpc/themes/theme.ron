@@ -243,12 +243,11 @@
         ],
     ),
     cava: (
-        bar_symbols: ['⣿'],
+        bar_symbols: ['░', '▒', '▓', '█'],
         bar_width: 1, bar_spacing: 1,
         bar_color: Gradient({
                 0:   "#ed71df",
-                50:  "#c791ea",
-                100: "#e1abfc"
+                100: "#a166e4"
             })
     ),
     browser_song_format: [

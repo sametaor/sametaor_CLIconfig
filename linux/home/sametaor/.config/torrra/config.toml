@@ -1,0 +1,11 @@
+[general]
+download_path = "/Users/sametaor/Downloads"
+download_in_external_client = false
+use_transmission = false
+transmission_user = ""
+transmission_pass = ""
+theme = "textual-dark"
+timeout = 10
+max_retries = 3
+use_cache = true
+cache_ttl = 300
