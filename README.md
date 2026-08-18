@@ -25,130 +25,87 @@ This repository serves as a unified, version-controlled collection of **dotfiles
 <summary><strong> Click here! </strong></summary>
 
 ```
-sametaor_CLIconfig/
+sametaor_CLIconfig
 ├── .gitignore
+├── android
+│   └── data
+│       └── data
+│           └── com.termux
+│               └── files
 ├── CREDITS.md
 ├── LICENSE
 ├── linux
-│   └── home
-│       └── sametaor
-│           ├── .bashrc
-│           ├── .config
-│           │   ├── bash
-│           │   ├── btop
-│           │   ├── cava
-│           │   ├── doom
-│           │   ├── eza
-│           │   ├── fastfetch
-│           │   ├── fish
-│           │   ├── ghostty
-│           │   ├── hypr
-│           │   ├── jamesdsp
-│           │   ├── kitty
-│           │   ├── kwinrc
-│           │   ├── mpd
-│           │   ├── nushell
-│           │   ├── nvim
-│           │   ├── rmpc
-│           │   ├── systemd
-│           │   ├── tmux
-│           │   ├── yazi
-│           │   └── zsh
-│           ├── .profile
-│           └── ble-nightly
-│               ├── ble.sh
-│               ├── cache.d
-│               ├── contrib
-│               ├── doc
-│               ├── lib
-│               ├── licenses
-│               └── run
+│   ├── ArchLinux
+│   │   └── home
+│   │       └── sametaor
+│   │           ├── .bashrc
+│   │           ├── .config
+│   │           ├── .profile
+│   │           └── ble-nightly
+│   └── NixOS
+│       └── home
+│           └── sametaor
+│               └── .config
 ├── macos
-│   ├── etc
-│   │   ├── zprofile
-│   │   ├── zshenv
-│   │   └── zshrc
-│   └── Users
-│       └── sametaor
-│           ├── .bashrc
-│           ├── .config
-│           │   ├── apple_terminal
-│           │   ├── bash
-│           │   ├── btop
-│           │   ├── cava
-│           │   ├── eza
-│           │   ├── fastfetch
-│           │   ├── fish
-│           │   ├── ghostty
-│           │   ├── mpd
-│           │   ├── nvim
-│           │   ├── rmpc
-│           │   ├── yazi
-│           │   └── zsh
-│           ├── .profile
-│           └── Library
-│               ├── Application Support
-│               └── LaunchAgents
+│   ├── .DS_Store
+│   ├── etc
+│   │   ├── zprofile
+│   │   ├── zshenv
+│   │   └── zshrc
+│   ├── README.md
+│   └── Users
+│       ├── .DS_Store
+│       └── sametaor
+│           ├── .bashrc
+│           ├── .config
+│           │   ├── .DS_Store
+│           │   ├── apple_terminal
+│           │   ├── bash
+│           │   ├── btop
+│           │   ├── cava
+│           │   ├── eza
+│           │   ├── fastfetch
+│           │   ├── fish
+│           │   ├── fzf
+│           │   ├── ghostty
+│           │   ├── hoard
+│           │   ├── lexy
+│           │   ├── mpd
+│           │   ├── nvim
+│           │   ├── ripgrep
+│           │   ├── rmpc
+│           │   ├── sc-im
+│           │   ├── television
+│           │   ├── topgrade.toml
+│           │   ├── tracker
+│           │   ├── xleak
+│           │   ├── yazi
+│           │   └── zsh
+│           ├── .DS_Store
+│           ├── .profile
+│           └── Library
+│               ├── .DS_Store
+│               ├── 'Application Support'
+│               └── LaunchAgents
 ├── misc
-│   ├── ascii-neovim-logos.txt
-│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
-│   ├── HyprBibataModernClassicSVG.tar.gz
-│   ├── sametaor.omp.json
-│   ├── Scripts
-│   │   ├── DynWalls
-│   │   │   ├── scripts
-│   │   │   │   ├── switchwalla.sh
-│   │   │   │   ├── switchwallb.sh
-│   │   │   │   ├── switchwallc.sh
-│   │   │   │   └── switchwalld.sh
-│   │   │   └── walls
-│   │   │       ├── Windows_11_Rise_&_Fall_a.jpg
-│   │   │       ├── Windows_11_Rise_&_Fall_b.jpg
-│   │   │       ├── Windows_11_Rise_&_Fall_c.jpg
-│   │   │       └── Windows_11_Rise_&_Fall_d.jpg
-│   │   └── Utils
-│   │       └── archup.sh
-│   ├── spicetify_lucid_theme_settings.json
-│   ├── titan_aug.mp4
-│   ├── Windows_3D_Emoji_14+15.ttf
-│   └── zen-themes-export.json
-├── README.md
-└── windows
-    ├── autounattend.xml
-    ├── Microsoft.PowerShell_profile.ps1
-    ├── regconfig.reg
-    ├── Scripts
-    │   ├── HyperV_on_HomeEdition.bat
-    │   ├── post_install_steps.ps1
-    │   ├── UpdateWinget.xml
-    │   ├── winget_update.ps1
-    │   └── winget-shims-sync.ps1
-    ├── startlayout.json
-    ├── unattend.iso
-    ├── Virt_machines
-    │   └── VMWare
-    │       └── Windows
-    │           ├── MS Windows 1.04.7z
-    │           ├── MS Windows 2.11.7z
-    │           └── MS Windows 3.11.7z
-    ├── Windhawk mod configs
-    │   ├── Slick_Window_Arrangement.yaml
-    │   ├── Taskbar_Button_Scroll.yaml
-    │   ├── Taskbar_Clock_Customization.yaml
-    │   ├── Taskbar_height_and_icon_size.yaml
-    │   ├── Taskbar_tray_icon_spacing_and_grid.yaml
-    │   ├── Taskbar_Volume_Control.yaml
-    │   ├── Taskbar_Wheel_Cycle.yaml
-    │   ├── Translucent_Windows.yaml
-    │   ├── Windows_11_File_Explorer_Styler.yaml
-    │   ├── Windows_11_Notification_Center_Styler.yaml
-    │   ├── Windows_11_Start_Menu_Styler.yaml
-    │   └── Windows_11_Taskbar_Styler.yaml
-    ├── Windows_7x11.png
-    ├── Windows_7x11ALT_lockscr.png
-    ├── Windows_7x11ALT.png
-    ├── wingetinstall.json
-    └── winutilconfig.json
+│   ├── Deus_Ex_Mankind_Divided_Background_Titan_Wave.jpg
+│   ├── sametaor.omp.json
+│   ├── Scripts
+│   │   ├── DynWalls
+│   │   │   ├── scripts
+│   │   │   │   ├── switchwalla.sh
+│   │   │   │   ├── switchwallb.sh
+│   │   │   │   ├── switchwallc.sh
+│   │   │   │   └── switchwalld.sh
+│   │   │   └── walls
+│   │   │       ├── Windows_11_Rise_&_Fall_a.jpg
+│   │   │       ├── Windows_11_Rise_&_Fall_b.jpg
+│   │   │       ├── Windows_11_Rise_&_Fall_c.jpg
+│   │   │       └── Windows_11_Rise_&_Fall_d.jpg
+│   │   └── Utils
+│   │       └── archup.sh
+│   └── titan_aug.mp4
+└── README.md
 ```
 </details>
 
