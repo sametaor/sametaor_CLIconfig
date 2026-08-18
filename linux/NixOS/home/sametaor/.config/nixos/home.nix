@@ -13,6 +13,8 @@
   # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "sametaor";
   home.homeDirectory = "/home/sametaor";
+  home.file.".config/nixos".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. You should not change this, even if you update Home Manager.

@@ -446,7 +446,7 @@ in
   };
   nix = {
     nixPath = [
-      "nixos-config=/home/sametaor/Projects/github/prog/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
+      "nixos-config=/home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
     ];
     gc = {
       automatic = true;
