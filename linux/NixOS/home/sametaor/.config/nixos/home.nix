@@ -38,13 +38,21 @@
   };
   home.pointerCursor = {
     enable = true;
-    gtk.enable = true;
+    gtk = {
+        enable = true;
+        size = 24;
+    };
+    hyprcursor = {
+        enable = true;
+        size = 24;
+    };
     package = pkgs.breeze-hacked-cursor-theme;
     name = "Breeze_Hacked";
     size = 24;
   };
   gtk = {
     enable = true;
+    colorScheme = "dark";
     cursorTheme.name = "Breeze_Hacked";
     cursorTheme.size = 24;
     cursorTheme.package = pkgs.breeze-hacked-cursor-theme;
@@ -52,15 +60,32 @@
       name = "Iosevka SciFi Extended";
       size = 11;
     };
+    theme = { };
+    gtk2 = {
+      iconTheme = { };
+      theme = { };
+    };
+    gtk3 = {
+      bookmarks = [
+        "file:///home/sametaor"
+        "file:///data"
+        "file:///home/sametaor/Downloads"
+        "file:///home/sametaor/Documents"
+        "file:///home/sametaor/Pictures"
+        "file:///home/sametaor/Videos"
+        "file:///home/sametaor/Music"
+        "file:///home/sametaor/.config"
+        "file:///home/sametaor/Projects/github"
+      ];
+    };
   };
   home.preferXdgDirectories = true;
   home.shell = {
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-    enableNushellIntegration = true;
     enableShellIntegration = true;
-    enableZshIntegration = true;
   };
+  home.shellAliases = {};
+  home.sessionPath = [];
+  home.sessionSearchVariables = [];
   home.sessionVariables = {
     XCURSOR_THEME = "Breeze_Hacked";
     XCURSOR_SIZE = "24";
