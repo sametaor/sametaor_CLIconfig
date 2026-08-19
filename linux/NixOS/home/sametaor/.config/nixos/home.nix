@@ -61,9 +61,9 @@
     ];
   };
   nixpkgs = {
-        config = {
-                allowUnfree = true;
-        };
+    config = {
+      allowUnfree = true;
+    };
   };
   gtk = {
     enable = true;
@@ -123,19 +123,16 @@
     };
   };
   qt = {
-        enable = true;
-        style = {
-                name = "kvantum";
-        };
+    enable = true;
+    style = {
+      name = "kvantum";
+    };
   };
   qt.kvantum = {
-        enable = true;
-        settings = {
-        };
-        themes = [];
-        platformTheme = {
-                name = "qtct";
-        };
+    enable = true;
+    settings = {
+    };
+    themes = [ ];
   };
 
   # Home Manager can also manage your environment variables and git configurations natively
