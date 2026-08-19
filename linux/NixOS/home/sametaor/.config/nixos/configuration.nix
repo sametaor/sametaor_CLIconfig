@@ -1354,7 +1354,7 @@ in
       pkgs.zsh
     ];
     shellAliases = {
-      rebuild = "doas nixos-rebuild switch --flake ~/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos#nixsametaor";
+      rebuild = "doas nixos-rebuild switch --flake ~/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos\\#nixsametaor";
       sudo = "doas";
       btop = "doas nvidia-offload btop";
       dco = "docker compose";
