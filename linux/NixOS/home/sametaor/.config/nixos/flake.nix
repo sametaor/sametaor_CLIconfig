@@ -65,7 +65,7 @@
                 extraSpecialArgs = { inherit inputs; };
                 users.sametaor = import ./home.nix;
                 backupFileExtension = "bak";
-                home-manager.overwriteBackup = true;
+                overwriteBackup = true;
               };
             }
           ];
