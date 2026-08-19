@@ -39,16 +39,31 @@
   home.pointerCursor = {
     enable = true;
     gtk = {
-        enable = true;
-        size = 24;
+      enable = true;
+      size = 24;
     };
     hyprcursor = {
-        enable = true;
-        size = 24;
+      enable = true;
+      size = 24;
     };
     package = pkgs.breeze-hacked-cursor-theme;
     name = "Breeze_Hacked";
     size = 24;
+  };
+  nix = {
+    assumeXdg = true;
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 7d";
+    };
+    nixPath = [
+      "nixos-config=/home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
+    ];
+  };
+  nixpkgs = {
+        config = {
+                allowUnfree = true;
+        };
   };
   gtk = {
     enable = true;
@@ -83,9 +98,9 @@
   home.shell = {
     enableShellIntegration = true;
   };
-  home.shellAliases = {};
-  home.sessionPath = [];
-  home.sessionSearchVariables = [];
+  home.shellAliases = { };
+  home.sessionPath = [ ];
+  home.sessionSearchVariables = [ ];
   home.sessionVariables = {
     XCURSOR_THEME = "Breeze_Hacked";
     XCURSOR_SIZE = "24";
@@ -107,8 +122,21 @@
       };
     };
   };
-  qt.enable = true;
-  qt.kvantum.enable = true;
+  qt = {
+        enable = true;
+        style = {
+                name = "kvantum";
+        };
+  };
+  qt.kvantum = {
+        enable = true;
+        settings = {
+        };
+        themes = [];
+        platformTheme = {
+                name = "qtct";
+        };
+  };
 
   # Home Manager can also manage your environment variables and git configurations natively
   wayland.windowManager.hyprland = {
