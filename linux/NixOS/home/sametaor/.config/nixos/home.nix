@@ -657,9 +657,31 @@
     enableFishIntegration = true;
     enableZshIntegration = true;
   };
-  programs.zsh.initExtra = ''
-    	bindkey "''${key[Up]}" up-line-or-search
-  '';
+  programs.zsh = {
+    autocd = true;
+    autosuggestion = {
+      enable = true;
+    };
+    defaultKeymap = "vicmd";
+    fastSyntaxHighlighting = {
+      enable = true;
+    };
+    history = {
+      append = true;
+      expireDuplicatesFirst = true;
+      extended = true;
+      findNoDups = true;
+      ignoreAllDups = true;
+      ignoreDups = true;
+      ignoreSpace = true;
+      save = 50000;
+      saveNoDups = true;
+      size = 50000;
+    };
+    historySubstringSearch = {
+      enable = true;
+    };
+  };
   programs.ghostty = {
     enable = true;
     package = if pkgs.stdenv.isDarwin then pkgs.ghostty-bin else (pkgs.nvidiaWrap pkgs.ghostty);

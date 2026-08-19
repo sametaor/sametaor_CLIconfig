@@ -1264,10 +1264,17 @@ in
       enableCompletion = true;
       autosuggestions.enable = true;
       enableBashCompletion = true;
-      histSize = 50000;
-      syntaxHighlighting.enable = true;
       setOptions = [
-        "HIST_IGNORE_ALL_DUPS"
+        "INC_APPEND_HISTORY_TIME"
+        "HIST_LEX_WORDS"
+        "HIST_REDUCE_BLANKS"
+        "AUTO_CD"
+        "AUTO_PUSHD"
+        "PUSHD_IGNORE_DUPS"
+        "INTERACTIVE_COMMENTS"
+        "PROMPT_SUBST"
+        "EXTENDED_GLOB"
+        "NO_ERR_RETURN"
       ];
     };
   };
@@ -1324,6 +1331,7 @@ in
     rtkit.enable = true;
   };
   environment = {
+    enableAllTerminfo = true;
     sessionVariables = rec {
       LIBVA_DRIVER_NAME = "nvidia";
       NVD_BACKEND = "direct";
@@ -1333,6 +1341,18 @@ in
       XDG_STATE_HOME = "$HOME/.local/state";
       NIXOS_OZONE_WL = "1";
     };
+    variables = {
+      EDITOR = "nvim";
+      VISUAL = "$EDITOR";
+      PAGER = "less";
+      LESS = "-RFiX";
+      LANG = "en_US.UTF-8";
+      MANPAGER = "bat -plman";
+      FZF_DEFAULT_OPTS = "--color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#20192b --color=hl:#6d77b3,hl+:#4adef5,info:#72f0b8,marker:#fede5d --color=prompt:#ff757f,spinner:#fede5d,pointer:#f1527e,header:#6d77b3 --color=border:#43c5fc,label:#ed70df,query:#efedfe --border='bold' --border-label='FZF' --border-label-pos='0' --preview-window='border-sharp' --padding='1' --margin='1' --prompt=' ' --marker=' ' --pointer='󰛡' --separator='─' --scrollbar='┃' --layout='reverse' --info='right' --tmux left,80% --height=80%";
+    };
+    shells = with pkgs; [
+      pkgs.zsh
+    ];
     shellAliases = {
       rebuild = "doas nixos-rebuild switch --flake /home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos#nixsametaor";
       sudo = "doas";
