@@ -60,11 +60,6 @@
       "nixos-config=/home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
     ];
   };
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
   gtk = {
     enable = true;
     colorScheme = "dark";
@@ -114,8 +109,8 @@
     autostart.readOnly = true;
     localBinInPath = true;
     portal = {
-        enable = true;
-        xdgOpenUsePortal = true;
+      enable = true;
+      xdgOpenUsePortal = true;
     };
     mimeApps = {
       enable = true;
@@ -251,11 +246,11 @@
     };
   };
   programs.aria2 = {
-        enable = true;
-        systemd.enable = true;
+    enable = true;
+    systemd.enable = true;
   };
   programs.aria2p = {
-        enable = true;
+    enable = true;
   };
   programs.hyprland-qt-support.enable = true;
   programs.zen-browser = {
@@ -698,20 +693,48 @@
   };
   programs.git = {
     enable = true;
-    lfs.enable = true;
-    settings.user.name = "sametaor";
-    settings.user.email = "71749831+sametaor@users.noreply.github.com";
+    lfs = {
+      enable = true;
+      skipSmudge = true;
+    };
+    settings.user = {
+      name = "sametaor";
+      email = "71749831+sametaor@users.noreply.github.com";
+    };
   };
   programs.gh = {
     enable = true;
     gitCredentialHelper = {
       enable = true;
     };
+    hosts = {
+      "github.com" = {
+        user = "sametaor";
+      };
+    };
+    settings = {
+      aliases = {};
+      editor = "";
+    };
+    extensions = with pkgs; [
+      gh-eco
+    ];
+  };
+  programs.gpg = {
+    enable = true;
   };
   programs.fzf = {
+    enable = true;
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;
+    enableNushellIntegration = true;
+    colors = {};
+    defaultOptions = [];
+    tmux = {
+      enableShellIntegration = true;
+      shellIntegrationOptions = [];
+    };
   };
   programs.vscodium = {
     enable = true;
@@ -837,33 +860,238 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.hyprshot.enable = true;
+  programs.hyprshot = {
+    enable = true;
+    saveLocation = "${config.home.homeDirectory}/Pictures/Screenshots";
+  };
   programs.bash = {
-        enable = true;
-        enableCompletion = true;
-        historyFileSize = 50000;
-        historySize = 50000;
-        historyControl = [];
+    enable = true;
+    enableCompletion = true;
+    historyFileSize = 50000;
+    historySize = 50000;
+    historyControl = [
+      "erasedups"
+      "ignoreboth"
+    ];
+    historyFile = "${config.home.homeDirectory}/.bash_history";
+    historyIgnore = [ ];
+    shellOptions = [
+      "nullglob"
+      "globstar"
+      "autocd"
+      "extglob"
+      "failglob"
+      "promptvars"
+      "histappend"
+    ];
+  };
+  programs.lazygit = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+    enableZshIntegration = true;
+    settings = {};
   };
   programs.bat.enable = true;
   programs.bluetuith.enable = true;
-  programs.btop.enable = true;
-  programs.cargo.enable = true;
-  programs.cava.enable = true;
+  programs.btop = {
+        enable = true;
+        settings = {
+                color_theme = "samwave";
+                theme_background = false;
+                truecolor = true;
+                presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
+                vim_keys = true;
+                rounded_corners = false;
+                terminal_sync = true;
+                graph_symbol = "braille";
+                graph_symbol_cpu = "default";
+                graph_symbol_mem = "default";
+                graph_symbol_net = "default";
+                graph_symbol_proc = "default";
+                shown_boxes = "cpu mem net proc gpu0 gpu1";
+                update_ms = 2000;
+                proc_sorting = "cpu lazy";
+                proc_reversed = false;
+                proc_tree = true;
+                proc_colors = true;
+                proc_gradient = true;
+                proc_per_core = false;
+                proc_mem_bytes = true;
+                proc_cpu_graphs = true;
+                proc_info_smaps = false;
+                proc_left = false;
+                proc_filter_kernel = true;
+                proc_follow_detailed = true;
+                proc_aggregate = true;
+                proc_tree_auto_collapse = 0;
+                keep_dead_proc_usage = false;
+                cpu_graph_upper = "idle";
+                cpu_graph_lower = "total";                
+                cpu_invert_lower = true;
+                cpu_single_graph = false;
+                cpu_bottom = false;
+                show_uptime = true;
+                show_cpu_watts = true;
+                check_temp = true;
+                cpu_sensor = "Auto";
+                show_coretemp = true;
+                cpu_core_map = "";
+                temp_scale = "celsius";
+                base_10_sizes = false;
+                show_cpu_freq = true;
+                freq_mode = "range";
+                clock_format = "/host | %H:%M ";
+                background_update = false;
+                custom_cpu_name = "";
+                disks_filter = "";
+                mem_graphs = true;
+                mem_below_net = false;
+                zfs_arc_cached = true;
+                show_swap = true;
+                show_disks = true;
+                only_physical = false;
+                use_fstab = true;
+                zfs_hide_datasets = false;
+                disk_free_priv = false;
+                show_io_stat = true;
+                io_mode = true;
+                io_graph_combined = false;
+                io_graph_speeds = "";
+                net_auto = true;
+                net_sync = true;
+                net_iface = "";
+                base_10_bitrate = true;
+                show_battery = true;
+                selected_battery = "Auto";
+                show_battery_watts = true;
+                log_level = "WARNING";
+        };
+        themes = {
+            samwave = ''
+              theme[main_bg]="#20192b"
+              theme[main_fg]="#efeeff"
+              theme[title]="#f6037d"
+              theme[hi_fg]="#ff2afc"
+              theme[selected_bg]="#42c6ff"
+              theme[inactive_fg]="#6D77B3"
+              theme[graph_text]="#fcef52"
+              theme[meter_bg]="#20192b"
+              theme[proc_misc]="#72f1b8"
+              theme[cpu_box]="#f6037d"
+              theme[mem_box]="#41def4"
+              theme[net_box]="#f93aa1"
+              theme[proc_box]="#8f00ff"
+              theme[div_line]="#8f00ff"
+              theme[temp_start]="#41def4"
+              theme[temp_mid]="#f93aa1"
+              theme[temp_end]="#ff0040"
+              theme[cpu_start]="#8b00ff"
+              theme[cpu_mid]="#f93aa1"
+              theme[cpu_end]="#41def4"
+              theme[free_start]="#9400d3"
+              theme[free_mid]="#f93aa1"
+              theme[free_end]="#72f1b8"
+              theme[cached_start]="#0080ff"
+              theme[cached_mid]="#41def4"
+              theme[cached_end]="#00ffff"
+              theme[available_start]="#f93aa1"
+              theme[available_mid]="#ff0080"
+              theme[available_end]="#9400d3"
+              theme[used_start]="#41def4"
+              theme[used_mid]="#72f1b8"
+              theme[used_end]="#fcef52"
+              theme[download_start]="#f93aa1"
+              theme[download_mid]="#ff0080"
+              theme[download_end]="#9400d3"
+              theme[upload_start]="#41def4"
+              theme[upload_mid]="#00bfff"
+              theme[upload_end]="#0080ff"
+              theme[process_start]="#8b00ff"
+              theme[process_mid]="#f93aa1"
+              theme[process_end]="#41def4"
+            '';
+        };
+  };
+  programs.cargo = {
+      enable = true;
+      settings = {
+        alias = {
+          b = "build";
+          i = "install";
+        };
+        build = {
+          jobs = 8;
+        };
+        doc.browser = "zen-beta";
+        cache.auto-clean-frequency = "always";
+        net.git-fetch-with-cli = true;
+        term.quiet = true;
+      };
+  };
+  programs.cava = {
+    enable = true;
+    settings = {
+        general = {
+          framerate = 144;
+        };
+        input = {
+          method = "pipewire";
+          source = "auto";
+        };
+        output = {
+          method = "noncurses";
+          orientation = "horizontal";
+          channels = "stereo";
+          show_idle_bar_heads = 0;
+        };
+        color = {
+          blend_direction = "up";
+          horizontal_gradient = 1;
+          horizontal_gradient_color_1 = "#FEF709";
+          horizontal_gradient_color_2 = "#F807CB";
+          horizontal_gradient_color_3 = "#4F0C71";
+        };
+        smoothing = {
+          monstercat = 1;
+        };
+    };
+  };
   programs.chawan.enable = true;
   programs.command-not-found.enable = true;
-  programs.eza.enable = true;
-  programs.eza.colors = "always";
-  programs.eza.git = true;
-  programs.eza.icons = "always";
-  programs.eza.enableBashIntegration = true;
-  programs.eza.enableFishIntegration = true;
-  programs.eza.enableNushellIntegration = true;
-  programs.eza.enableZshIntegration = true;
-  programs.fastfetch.enable = true;
-  programs.fd.enable = true;
-  programs.fd.hidden = true;
-  programs.fish.enable = true;
+  programs.devenv = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+  };
+  programs.emacs = {
+    enable = true;
+
+  };
+  programs.eza = {
+    enable = true;
+    colors = "always";
+    git = true;
+    icons = "always";
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+    enableZshIntegration = true;
+  };
+  programs.fastfetch = {
+    enable = true;
+    settings = {};
+  };
+  programs.fd = {
+    enable = true;
+    hidden = true;
+  };
+  programs.fish = {
+    enable = true;
+  };
   programs.mpv = {
     enable = true;
     scripts = with pkgs.mpvScripts; [
