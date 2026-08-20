@@ -75,10 +75,9 @@
       name = "Iosevka SciFi Extended";
       size = 11;
     };
-    theme = { };
-    gtk2 = {
-      iconTheme = { };
-      theme = { };
+    theme = {
+      package = pkgs.magnetic-catppuccin-gtk;
+      name = "Catppuccin-GTK";
     };
     gtk3 = {
       bookmarks = [
@@ -100,17 +99,24 @@
   };
   home.shellAliases = { };
   home.sessionPath = [ ];
-  home.sessionSearchVariables = [ ];
+  home.sessionSearchVariables = { };
   home.sessionVariables = {
     XCURSOR_THEME = "Breeze_Hacked";
     XCURSOR_SIZE = "24";
     HYPRCURSOR_THEME = "Breeze_Hacked";
-    HYPRCURSOR_SIZE = "24";
   };
   manual.manpages.enable = true;
   manual.html.enable = true;
   manual.json.enable = true;
   xdg = {
+    enable = true;
+    autostart.enable = true;
+    autostart.readOnly = true;
+    localBinInPath = true;
+    portal = {
+        enable = true;
+        xdgOpenUsePortal = true;
+    };
     mimeApps = {
       enable = true;
       defaultApplications = {
@@ -136,108 +142,120 @@
   };
 
   # Home Manager can also manage your environment variables and git configurations natively
-  wayland.windowManager.hyprland = {
-    enable = true;
-    systemd.enable = false;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    configType = "lua";
-    settings = {
-      config = {
-        general = {
-          border_size = 2;
-          gaps_in = 5;
-          gaps_out = 5;
-          layout = "dwindle";
-        };
-        decoration = {
-          rounding = 12;
-          active_opacity = 1.0;
-          inactive_opacity = 0.8;
-          shadow = {
-            enabled = true;
-            range = 30;
-            render_power = 4;
-            offset = "0 5";
-            color = "rgba(00000070)";
+  wayland.windowManager = {
+    niri = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+      systemd.enable = false;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage =
+        inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+      configType = "lua";
+      settings = {
+        config = {
+          general = {
+            border_size = 2;
+            gaps_in = 5;
+            gaps_out = 5;
+            layout = "dwindle";
           };
-        };
-        misc = {
-          disable_hyprland_logo = true;
-          disable_splash_rendering = true;
-        };
-        dwindle = {
-          preserve_split = true;
-        };
-        master = {
-          mfact = 0.5;
-        };
-        cursor = {
-          no_hardware_cursors = 0;
-        };
-        input = {
-          kb_layout = "";
-          numlock_by_default = true;
-          follow_mouse = 0;
-          touchpad = {
-            tap_to_click = true;
-            natural_scroll = true;
+          decoration = {
+            rounding = 12;
+            active_opacity = 1.0;
+            inactive_opacity = 0.8;
+            shadow = {
+              enabled = true;
+              range = 30;
+              render_power = 4;
+              offset = "0 5";
+              color = "rgba(00000070)";
+            };
+          };
+          misc = {
+            disable_hyprland_logo = true;
+            disable_splash_rendering = true;
+          };
+          dwindle = {
+            preserve_split = true;
+          };
+          master = {
+            mfact = 0.5;
+          };
+          cursor = {
+            no_hardware_cursors = 0;
+          };
+          input = {
+            kb_layout = "";
+            numlock_by_default = true;
+            follow_mouse = 0;
+            touchpad = {
+              tap_to_click = true;
+              natural_scroll = true;
+            };
           };
         };
       };
+      extraConfig = ''
+        hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+        hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+        hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
+        hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
+        hl.env("TERMINAL", "ghostty")
+        hl.on("hyprland.start", function()
+          hl.exec_cmd("dms run")
+        end)
+
+        hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
+        hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })
+        hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "default" })
+        hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "default" })
+        hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
+        hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
+
+        hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
+        hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
+        hl.window_rule({ match = { class = "^(gnome-control-center)$" }, tile = true })
+        hl.window_rule({ match = { class = "^(pavucontrol)$" }, tile = true })
+        hl.window_rule({ match = { class = "^(nm-connection-editor)$" }, tile = true })
+        hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
+        hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
+        hl.window_rule({ match = { class = "^(galculator)$" }, float = true })
+        hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true })
+        hl.window_rule({ match = { class = "^(org\\.gnome\\.Nautilus)$" }, float = true })
+        hl.window_rule({ match = { class = "^(xdg-desktop-portal)$" }, float = true })
+        hl.window_rule({
+        	match = { class = "^(steam)$", title = "^(notificationtoasts)" },
+        	no_initial_focus = true,
+        	pin = true,
+        })
+        hl.window_rule({
+        	match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
+        	float = true,
+        })
+        hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
+        hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
+        hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
+
+        pcall(require, "dms.colors")
+        pcall(require, "dms.outputs")
+        pcall(require, "dms.layout")
+        pcall(require, "dms.cursor")
+        pcall(require, "dms.binds")
+        pcall(require, "dms.binds-user")
+        pcall(require, "dms.windowrules")
+      '';
+      plugins = with pkgs.hyprlandPlugins; [ ];
+      systemd.variables = [ "--all" ];
     };
-    extraConfig = ''
-      hl.env("QT_QPA_PLATFORM", "wayland;xcb")
-      hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
-      hl.env("QT_QPA_PLATFORMTHEME", "gtk3")
-      hl.env("QT_QPA_PLATFORMTHEME_QT6", "gtk3")
-      hl.env("TERMINAL", "ghostty")
-      hl.on("hyprland.start", function()
-        hl.exec_cmd("dms run")
-      end)
-
-      hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
-      hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "default" })
-      hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "default" })
-      hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "default" })
-      hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "default" })
-      hl.animation({ leaf = "border", enabled = true, speed = 3, bezier = "default" })
-
-      hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
-      hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
-      hl.window_rule({ match = { class = "^(gnome-control-center)$" }, tile = true })
-      hl.window_rule({ match = { class = "^(pavucontrol)$" }, tile = true })
-      hl.window_rule({ match = { class = "^(nm-connection-editor)$" }, tile = true })
-      hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
-      hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
-      hl.window_rule({ match = { class = "^(galculator)$" }, float = true })
-      hl.window_rule({ match = { class = "^(blueman-manager)$" }, float = true })
-      hl.window_rule({ match = { class = "^(org\\.gnome\\.Nautilus)$" }, float = true })
-      hl.window_rule({ match = { class = "^(xdg-desktop-portal)$" }, float = true })
-      hl.window_rule({
-      	match = { class = "^(steam)$", title = "^(notificationtoasts)" },
-      	no_initial_focus = true,
-      	pin = true,
-      })
-      hl.window_rule({
-      	match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
-      	float = true,
-      })
-      hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
-      hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
-      hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
-
-      pcall(require, "dms.colors")
-      pcall(require, "dms.outputs")
-      pcall(require, "dms.layout")
-      pcall(require, "dms.cursor")
-      pcall(require, "dms.binds")
-      pcall(require, "dms.binds-user")
-      pcall(require, "dms.windowrules")
-    '';
-    plugins = with pkgs.hyprlandPlugins; [ ];
-    systemd.variables = [ "--all" ];
+  };
+  programs.aria2 = {
+        enable = true;
+        systemd.enable = true;
+  };
+  programs.aria2p = {
+        enable = true;
   };
   programs.hyprland-qt-support.enable = true;
   programs.zen-browser = {
@@ -820,13 +838,13 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.hyprshot.enable = true;
-  programs.aerc.enable = true;
-  programs.andcli.enable = true;
-  programs.aria2.enable = true;
-  programs.aria2.systemd.enable = true;
-  programs.bash.enable = true;
-  programs.bash.enableCompletion = true;
-  programs.bash.historyFileSize = 50000;
+  programs.bash = {
+        enable = true;
+        enableCompletion = true;
+        historyFileSize = 50000;
+        historySize = 50000;
+        historyControl = [];
+  };
   programs.bat.enable = true;
   programs.bluetuith.enable = true;
   programs.btop.enable = true;
