@@ -302,6 +302,19 @@
     };
     aria2 = {
       enable = true;
+      settings = {
+        dir = "${config.home.homeDirectory}/Downloads";
+        max-concurrent-downloads = 100;
+        check-integrity = true;
+        continue = true;
+        remote-time = true;
+        show-fles = true;
+        bt-force-encryption = true;
+        bt-load-saved-metadata = true;
+        bt-min-crypto-level = "arc4";
+        bt-require-crypto = true;
+        optimize-concurrent-downloads = true;
+      };
       systemd.enable = true;
     };
     aria2p = {
