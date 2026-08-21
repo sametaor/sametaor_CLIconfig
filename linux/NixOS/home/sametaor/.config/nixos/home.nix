@@ -866,6 +866,7 @@
         enable = true;
       };
     };
+    go = {};
     ghostty = {
       enable = true;
       package = if pkgs.stdenv.isDarwin then pkgs.ghostty-bin else (pkgs.nvidiaWrap pkgs.ghostty);
@@ -976,6 +977,7 @@
         "histappend"
       ];
     };
+    lazydocker = {};
     lazygit = {
       enable = true;
       enableBashIntegration = true;
@@ -1241,6 +1243,19 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
       enableZshIntegration = true;
+    };
+    obs-studio = {};
+    password-store = {};
+    pidgin = {
+      enable = true;
+      plugins = [];
+    };
+    prismlauncher = {
+      enable = true;
+      extraPackages = [];
+      settings = {};
+      themes = {};
+      
     };
     obsidian = {
       enable = true;
