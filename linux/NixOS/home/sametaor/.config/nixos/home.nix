@@ -275,7 +275,16 @@
     };
     topgrade = {
       enable = true;
-      settings = {};
+      settings = {
+        misc = {
+          pre_sudo = true;
+          sudo_command = "doas";
+          disable = [];
+          first = [];
+          last = [];
+          ignore_failures = [];
+        };
+      };
     };
     man = {
       enable = true;
@@ -803,6 +812,7 @@
     };
     rmpc = {
       enable = true;
+      config = "";
     };
     yazi = {
       enable = true;
@@ -820,6 +830,30 @@
     yt-dlp = {
       enable = true;
       settings = {};
+    };
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
+      enableNushellIntegration = true;
+      enableInteractive = true;
+      enableTransience = true;
+      presets = [];
+      settings = {};
+    };
+    tealdeer = {
+      enable = true;
+      settings = {
+        updates = {
+          auto_update = true;
+          auto_update_interval_hours = 24;
+        };
+      };
+    };
+    timidity = {
+      enable = true;
+      extraConfig = "";
     };
     zellij = {
       enable = true;
@@ -839,7 +873,9 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
       enableZshIntegration = true;
-      options = [];
+      options = [
+        "--cmd cd"
+      ];
     };
     zsh = {
       autocd = true;
@@ -1224,19 +1260,20 @@
       enableZshIntegration = true;
       settings = {
       	cheats = {
-	  paths = {};
-	};
-	style = {
-	  tag = {
-	  };
-	};
-	shell = {
-		command = "zsh";
-		finder_command = "zsh";
-	};
-	finder = {
-		command = "fzf";
-	};
+	        paths = {};
+        };
+        style = {
+          tag.color = {};
+          comment.color = {};
+          snippet.color = {};
+        };
+        shell = {
+          command = "zsh";
+          finder_command = "zsh";
+        };
+        finder = {
+          command = "fzf";
+        };
       };
     };
     nix-search-tv = {
@@ -1300,6 +1337,51 @@
         themes  = {};
       };
       vaults = {};
+    };
+    qalculate = {
+      enable = true;
+      settings = {};
+    };
+    radio-cli = {
+      enable = true;
+      settings = {};
+    };
+    rclone = {
+      enable = true;
+      remotes = {
+        gdrive = {
+          config = {};
+          mounts = {};
+          secrets = {};
+          serve = {};
+          requiresUnit = "";
+        };
+        onedrive = {};
+        mega = {};
+        dropbox = {};
+        fichier = {};
+        icloud = {};
+        pixeldrain = {};
+        protondrive = {};
+        zohodrive = {};
+      };
+    };
+    retroarch = {
+      enable = true;
+      cores = {
+        mgba = {
+          enable = true;
+        };
+      };
+      settings = {};
+    };
+    ripgrep = {
+      enable = true;
+      arguments = [];
+    };
+    ripgrep-all = {
+      enable = true;
+      custom-adapters = [];
     };
   };
   services = {
