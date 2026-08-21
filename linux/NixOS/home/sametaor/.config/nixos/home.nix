@@ -248,6 +248,35 @@
     };
   };
   programs = {
+    television = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+      channels = {};
+      settings = {};
+      themes = {};
+    };
+    tmux = {
+      enable = true;
+      clock24 = true;
+      historyLimit = 50000;
+      keyMode = "vi";
+      mouse = true;
+      newSession = true;
+      plugins = [];
+      secureSocket = false;
+      shell = "${pkgs.zsh}/bin/zsh";
+      terminal = "screen-256color";
+      tmuxp = {
+        enable = true;
+      };
+    };
+    topgrade = {
+      enable = true;
+      settings = {};
+    };
     man = {
       enable = true;
     };
@@ -755,15 +784,62 @@
     };
     vscodium = {
       enable = true;
+      profiles = {
+        default = {
+          enableExtensionUpdateCheck = true;
+          enableMcpIntegration = true;
+          enableUpdateCheck = true;
+          extensions = [];
+          keybindings = [];
+          userMcp = {};
+          userSettings = {};
+        };
+      };
+    };
+    wlr-which-key = {
+      enable = true;
+      extraMenus = {};
+      settings = {};
     };
     rmpc = {
       enable = true;
+    };
+    yazi = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+      extraPackages = [];
+      flavors = {};
+      keymap = {};
+      plugins = {};
+      settings = {};
+      theme = {};
+    };
+    yt-dlp = {
+      enable = true;
+      settings = {};
     };
     zellij = {
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
+      attachExistingSession = true;
+      exitShellOnExit = false;
+      layouts = {};
+      plugins = [];
+      settings = {};
+      themes = {};
+    };
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+      options = [];
     };
     zsh = {
       autocd = true;
