@@ -1223,6 +1223,20 @@
       enableFishIntegration = true;
       enableZshIntegration = true;
       settings = {
+      	cheats = {
+	  paths = {};
+	};
+	style = {
+	  tag = {
+	  };
+	};
+	shell = {
+		command = "zsh";
+		finder_command = "zsh";
+	};
+	finder = {
+		command = "fzf";
+	};
       };
     };
     nix-search-tv = {
@@ -1255,7 +1269,6 @@
       extraPackages = [];
       settings = {};
       themes = {};
-      
     };
     obsidian = {
       enable = true;
