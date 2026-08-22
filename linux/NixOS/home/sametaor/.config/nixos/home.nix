@@ -149,13 +149,13 @@
               format_tag_separator: "; ",
               symbols: (song: "󰝚 ", dir: "󱍙 ", marker: " ", ellipsis: "..."),
               progress_bar: (
-                  symbols: ["", "█", " ", " ", ""],
+                  symbols: ["◾", "⟧", "╾", "─", "┤"],
                   track_style: (fg: "blue", modifiers: "Bold"),
                   elapsed_style: (fg: "blue"),
                   thumb_style: (fg: "blue"),
               ),
               scrollbar: (
-                  symbols: ["│", "▒", "╭", "╰"],
+                  symbols: ["│", "█", "┌", "└"],
                   track_style: (modifiers: "Bold"),
                   ends_style: (),
                   thumb_style: (fg: "blue", modifiers: "CrossedOut"),
@@ -195,12 +195,13 @@
                   direction: Vertical,
                   panes: [
                     (
-                      size: "3",
+                      size: "1",
                       pane: Pane(Tabs),
                     ),
                     (
                       size: "100%",
                       borders: "ALL",
+                      border_style: (fg: "#F809C9"),
                       pane: Split(
                         direction: Horizontal,
                         panes: [
@@ -212,6 +213,7 @@
                                 (
                                   size: "7%",
                                   borders: "ALL",
+                                  border_style: (fg: "#FEF709"),
                                   pane: Pane(Property(content: [
                                     (kind: Text("󰍰 Lyrics"), style: (fg: "blue", modifiers: "Bold")),
                                   ], align: Center,))
@@ -224,11 +226,13 @@
                                         (
                                           size: "70%",
                                           borders: "ALL",
+                                          border_style: (fg: "#FEF709"),
                                           pane: Pane(Lyrics),
                                         ),
                                         (
                                           size: "30%",
                                           borders: "ALL",
+                                          border_style: (fg: "#72F1B8"),
                                           pane: Pane(Cava),
                                         )
                                       ]
@@ -236,11 +240,11 @@
                                 ),
                               ]
                             ),
-                            borders: "RIGHT",
                           ),
                           (
                             size: "70%",
                             borders: "ALL",
+                            border_style: (fg: "#F88414"),
                             pane: Pane(TabContent),
                           )
                         ]
@@ -277,6 +281,7 @@
                       ),
                       size: "6",
                       borders: "ALL",
+                      border_style: (fg: "#41DEF4"),
                     ),
                   ],
               ),
@@ -1418,6 +1423,16 @@
             disabled_protocols: [],
             vertical_align: Center,
             horizontal_align: Center,
+          ),
+          keybinds : (
+            global: {
+              "1": SwitchToTab("󰦚 Now Playing"),
+              "2": SwitchToTab("󱍚 Directories"),
+              "3": SwitchToTab("󰳩 Artists"),
+              "4": SwitchToTab("󰀥 Albums"),
+              "5": SwitchToTab("󰲸 Playlists"),
+              "6": SwitchToTab(" Search"),
+            },
           ),
           tabs: [
             (
