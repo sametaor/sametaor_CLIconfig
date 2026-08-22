@@ -512,6 +512,12 @@ in
             type = "pipewire";
             name = "My PipeWire Output";
           }
+          {
+            type = "fifo";
+            name = "mpd_fifo";
+            path = "/tmp/mpd.fifo";
+            format = "48100:16:2";
+          }
         ];
       };
       user = "sametaor";
@@ -1466,7 +1472,7 @@ in
       lsn = "eza -1";
       ls = "eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o";
       lsm = "eza -lbhHigUmua@ --time-style=long-iso --git --icons=always --colour=always";
-      lst = "ls -T -L 2 --no-user";
+      lst = "eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -T -L 2 --no-user";
       gpglk = "gpg --list-secret-key --keyid-format LONG";
       gpgep = "gpg --armor --export";
       bs = "brew search";
@@ -1808,7 +1814,6 @@ in
         megacmd
         megasync
         microsoft-edge
-        mpd-discord-rpc
         mpvpaper
         mtools
         navi

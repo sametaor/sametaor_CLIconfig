@@ -107,8 +107,317 @@
   };
   xdg = {
     enable = true;
-    autostart.enable = true;
-    autostart.readOnly = true;
+    autostart = {
+      enable = true;
+      readOnly = true;
+    };
+    configFile = {
+      "rmpc/themes/theme.ron" = {
+        text = ''
+          #![enable(implicit_some)]
+          #![enable(unwrap_newtypes)]
+          #![enable(unwrap_variant_newtypes)]
+          (
+              default_album_art_path: None,
+              lyrics: (
+                timestamp: true,
+              ),
+              show_song_table_header: true,
+              draw_borders: true,
+              browser_column_widths: [20, 38, 42],
+              background_color: None,
+              text_color: None,
+              header_background_color: None,
+              modal_background_color: None,
+              modal_backdrop: true,
+              level_styles: (
+                info: (fg: "blue", bg: "#000000"),
+                warn: (fg: "yellow", bg: "#000000"),
+                error: (fg: "red", bg: "#000000"),
+                debug: (fg: "light_green", bg: "#000000"),
+                trace: (fg: "magenta", bg: "#000000"),
+              ),
+              tab_bar: (
+                  enabled: true,
+                  active_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+                  inactive_style: (),
+              ),
+              highlighted_item_style: (fg: "blue", modifiers: "Bold"),
+              current_item_style: (fg: "black", bg: "blue", modifiers: "Bold"),
+              borders_style: (fg: "#0fffcf"),
+              highlight_border_style: (fg: "blue"),
+              format_tag_separator: "; ",
+              symbols: (song: "󰝚 ", dir: "󱍙 ", marker: " ", ellipsis: "..."),
+              progress_bar: (
+                  symbols: ["", "█", " ", " ", ""],
+                  track_style: (fg: "blue", modifiers: "Bold"),
+                  elapsed_style: (fg: "blue"),
+                  thumb_style: (fg: "blue"),
+              ),
+              scrollbar: (
+                  symbols: ["│", "▒", "╭", "╰"],
+                  track_style: (modifiers: "Bold"),
+                  ends_style: (),
+                  thumb_style: (fg: "blue", modifiers: "CrossedOut"),
+              ),
+              song_table_format: [
+                  (
+                      prop:(kind: Property(Title), style: (modifiers: "Bold"),
+                          default: (kind: Text("Unknown"))
+                      ),
+                      width: "35%",
+                      label: Some("󰽰 Title")
+                  ),
+                  (
+                      prop: (kind: Property(Artist),style: (modifiers: "Italic"),
+                          default: (kind: Text("Unknown"))
+                      ),
+                      width: "20%",
+                      label: Some("󰳩 Artist")
+                  ),
+                  (
+                      prop: (kind: Property(Album), style: (fg: "white", modifiers: "Dim"),
+                          default: (kind: Text("Unknown Album"), style: (fg: "white"))
+                      ),
+                      width: "30%",
+                      label: Some("󰀥 Album")
+                  ),
+                  (
+                      prop: (kind: Property(Duration),style: (modifiers: "Italic"),
+                          default: (kind: Text("-"))
+                      ),
+                      width: "15%",
+                      alignment: Right,
+                      label: Some("󰔚 Duration")
+                  ),
+              ],
+              layout: Split(
+                  direction: Vertical,
+                  panes: [
+                    (
+                      size: "3",
+                      pane: Pane(Tabs),
+                    ),
+                    (
+                      size: "100%",
+                      borders: "ALL",
+                      pane: Split(
+                        direction: Horizontal,
+                        panes: [
+                          (
+                            size: "30%",
+                            pane: Split(
+                              direction: Vertical,
+                              panes: [
+                                (
+                                  size: "7%",
+                                  borders: "ALL",
+                                  pane: Pane(Property(content: [
+                                    (kind: Text("󰍰 Lyrics"), style: (fg: "blue", modifiers: "Bold")),
+                                  ], align: Center,))
+                                ),
+                                (
+                                  size: "93%",
+                                  pane: Split(
+                                    direction: Vertical,
+                                      panes: [
+                                        (
+                                          size: "70%",
+                                          borders: "ALL",
+                                          pane: Pane(Lyrics),
+                                        ),
+                                        (
+                                          size: "30%",
+                                          borders: "ALL",
+                                          pane: Pane(Cava),
+                                        )
+                                      ]
+                                  ),
+                                ),
+                              ]
+                            ),
+                            borders: "RIGHT",
+                          ),
+                          (
+                            size: "70%",
+                            borders: "ALL",
+                            pane: Pane(TabContent),
+                          )
+                        ]
+                      )
+                    ),
+                    (
+                      pane: Split(
+                        direction: Horizontal,
+                        size: "100%",
+                        panes: [
+                          (
+                            size: "10",
+                            pane: Pane(AlbumArt),
+                            borders: "RIGHT",
+                          ),
+                          (
+                            size: "100%",
+                            pane: Split(
+                              direction: Vertical,
+                              panes:[
+                                (
+                                  size: "100%",
+                                  pane: Pane(Header)
+                                ),
+                                (
+                                  size: "2",
+                                  pane: Pane(ProgressBar),
+                                  borders: "TOP",
+                                )
+                              ]
+                            ),
+                          )
+                        ]
+                      ),
+                      size: "6",
+                      borders: "ALL",
+                    ),
+                  ],
+              ),
+              header: (
+                  rows: [
+                      (
+                          left: [
+                              (kind: Text("⟬"), style: (fg: "#fdef50", modifiers: "Bold")),
+                              (kind: Property(Status(StateV2(playing_label: " Playing", paused_label: "󰏨 Paused", stopped_label: "󰙧 Stopped"))), style: (fg: "#fdef50", modifiers: "Bold")),
+                              (kind: Text("⟭"), style: (fg: "#fdef50", modifiers: "Bold"))
+                          ],
+                          center: [
+                                (kind: Text(" "), style: (fg: "#5df7f5", modifiers: "Bold")),
+                                (kind: Property(Song(Title)), style: (fg: "#5df7f5",modifiers: "Bold"),
+                                    default: (kind: Property(Song(Filename)), style: (fg: "#5df7f5", modifiers: "Bold"))
+                                ),
+                          ],
+                          right: [
+                              (kind: Text(" ")),
+                              (kind: Property(Widget(Volume)), style: (fg: "blue"))
+                          ]
+                      ),
+                      (
+                          left: [
+                              (kind: Text("󰔚 ")),
+                              (kind: Property(Status(Elapsed))),
+                              (kind: Text(" / ")),
+                              (kind: Property(Status(Duration))),
+                              (kind: Text(" (")),
+                              (kind: Property(Status(Bitrate))),
+                              (kind: Text(" kbps)"))
+                          ],
+                          center: [
+                              (kind: Text("󰳩 "), style: (fg: "blue", modifiers: "Bold")),
+                              (kind: Property(Song(Artist)), style: (fg: "blue", modifiers: "Bold"),
+                                  default: (kind: Text("Unknown"), style: (fg: "blue", modifiers: "Bold"))
+                              ),
+                              (kind: Text(" - ")),
+                              (kind: Text("󰀥 ")),
+                              (kind: Property(Song(Album)),
+                                  default: (kind: Text("Unknown Album"))
+                              )
+                          ],
+                          right: [
+                              (kind: Text("⟬ "),style: (fg: "blue")),
+
+                              (kind: Property(Status(RepeatV2(
+
+                                              on_label: " ", off_label: "󰑗 ",
+
+                                              on_style: (fg: "white", modifiers: "Bold"), off_style: (fg: "#969696", modifiers: "Bold"))))),
+
+                              (kind: Text(" ┃ "),style: (fg: "blue")),
+
+                              (kind: Property(Status(RandomV2(
+
+                                              on_label: " ", off_label: "󰒞 ",
+
+                                              on_style: (fg: "white", modifiers: "Bold"), off_style: (fg: "#969696", modifiers: "Bold"))))),
+
+                              (kind: Text(" ┃ "),style: (fg: "blue")),
+
+                              (kind: Property(Status(ConsumeV2(
+
+                                              on_label: "󰮯", off_label: "󰮯", oneshot_label: "󰮯󰇊",
+
+                                              on_style: (fg: "white", modifiers: "Bold"), off_style: (fg: "#969696", modifiers: "Bold"))))),
+
+                              (kind: Text(" ┃ "),style: (fg: "blue")),
+
+                              (kind: Property(Status(SingleV2(
+
+                                              on_label: "󰎤", off_label: "󰎦", oneshot_label: "󰇊", off_oneshot_label: "󱅊",
+
+                                              on_style: (fg: "white", modifiers: "Bold"), off_style: (fg: "#969696", modifiers: "Bold"))))),
+
+                              (kind: Text(" ⟭"),style: (fg: "blue")),
+                          ]
+                      ),
+                  ],
+              ),
+              cava: (
+                  bar_symbols: ['░', '▒', '▓', '█'],
+                  bar_width: 1, bar_spacing: 1,
+                  bar_color: Gradient({
+                          0:   "#ed71df",
+                          100: "#a166e4"
+                      })
+              ),
+              browser_song_format: [
+                  (
+                      kind: Group([
+                          (kind: Property(Track)),
+                          (kind: Text(" ")),
+                      ])
+                  ),
+                  (
+                      kind: Group([
+                          (kind: Property(Artist)),
+                          (kind: Text(" - ")),
+                          (kind: Property(Title)),
+                      ]),
+                      default: (kind: Property(Filename))
+                  ),
+              ],
+          )
+        '';
+      };
+      "rmpc/lyrics.sh" = {
+        text = ''
+          #!/bin/env sh
+          LRCLIB_INSTANCE="https://lrclib.net"
+          if [ "$HAS_LRC" = "false" ]; then
+              mkdir -p "$(dirname "$LRC_FILE")"
+              LYRICS="$(curl -X GET -sG \
+                  -H "Lrclib-Client: rmpc-$VERSION" \
+                  --data-urlencode "artist_name=$ARTIST" \
+                  --data-urlencode "track_name=$TITLE" \
+                  --data-urlencode "album_name=$ALBUM" \
+                  "$LRCLIB_INSTANCE/api/get" | jq -r '.syncedLyrics')"
+              if [ -z "$LYRICS" ]; then
+                  rmpc remote --pid "$PID" status "Failed to download lyrics for $ARTIST - $TITLE" --level error
+                  exit
+              fi
+              if [ "$LYRICS" = "null" ]; then
+                  rmpc remote --pid "$PID" status "Lyrics for $ARTIST - $TITLE not found" --level warn
+                  exit
+              fi
+              echo "[ar:$ARTIST]" >"$LRC_FILE"
+              {
+                  echo "[al:$ALBUM]"
+                  echo "[ti:$TITLE]"
+              } >>"$LRC_FILE"
+              echo "$LYRICS" | sed -E '/^\[(ar|al|ti):/d' >>"$LRC_FILE"
+              rmpc remote --pid "$PID" indexlrc --path "$LRC_FILE"
+              rmpc remote --pid "$PID" status "Downloaded lyrics for $ARTIST - $TITLE" --level info
+          fi
+        '';
+        executable = true;
+      };
+    };
     localBinInPath = true;
     portal = {
       enable = true;
@@ -317,10 +626,14 @@
       };
       systemd.enable = true;
     };
-    aria2p = {
+    hyprland-qt-support = {
       enable = true;
+      settings = {
+        roundess = 0;
+        border_width = 1;
+        reduce_motion = false;
+      };
     };
-    hyprland-qt-support.enable = true;
     zen-browser = {
       enable = true;
       package =
@@ -781,11 +1094,247 @@
         };
       };
       settings = {
-        aliases = { };
+        aliases = { 
+          a = "auth";
+          li = "auth login";
+          lih = "auth login --hostname";
+          liw = "auth login --web";
+          lo = "auth logout";
+          loh = "auth logout --hostname";
+          ast = "auth status";
+          asth = "auth status --hostname";
+          astt = "auth status --show-token";
+          atk = "auth token";
+          atkh = "auth token --hostname";
+          b = "browse";
+          bc = "browse --commit";
+          bn = "browse --no-browser";
+          bp = "browse --projects";
+          bs = "browse --settings";
+          bw = "browse --wiki";
+          cf = "config";
+          cfg = "gh config get";
+          cfl = "gh config list";
+          cfs = "gh config set";
+          ex = "extension";
+          h = "gh help";
+          st = "gh status";
+          ste = "gh status --exclude";
+          sto = "gh status --org";
+          w = "gh workflow";
+          wd = "gh workflow disable";
+          we = "gh workflow enable";
+          wl = "gh workflow list";
+          wla = "gh workflow list --all";
+          wlL = "gh workflow list --limit";
+          wr = "gh workflow run";
+          wrj = "gh workflow run --json";
+          wv = "gh workflow view";
+          wvw = "gh workflow view --web";
+          wvy = "gh workflow view --yaml";
+          g = "gh gist";
+          gcl = "gh gist clone";
+          gcr = "gh gist create";
+          gcrp = "gh gist create --public";
+          gcrw = "gh gist create --web";
+          gd = "gh gist delete";
+          ge = "gh gist edit";
+          gl = "gh gist list";
+          gll = "gh gist list --limit";
+          glp = "gh gist list --public";
+          gls = "gh gist list --secret";
+          gv = "gh gist view";
+          gvf = "gh gist view --files";
+          gvr = "gh gist view --raw";
+          gvw = "gh gist view --web";
+          i = "gh issue";
+          icl = "gh issue close";
+          icm = "gh issue comment";
+          icme = "gh issue comment --editor";
+          icml = "gh issue comment --edit-last";
+          icmw = "gh issue comment --web";
+          icr = "gh issue create";
+          icra = "gh issue create --assignee";
+          icrl = "gh issue create --label";
+          icrm = "gh issue create --milestone";
+          icrp = "gh issue create --project";
+          icrw = "gh issue create --web";
+          id = "gh issue delete";
+          idc = "gh issue delete --confirm";
+          ie = "gh issue edit";
+          il = "gh issue list";
+          ila = "gh issue list --assignee";
+          ilA = "gh issue list --author";
+          ilj = "gh issue list --json";
+          ill = "gh issue list --label";
+          ilL = "gh issue list --limit";
+          ilM = "gh issue list --mention";
+          ilm = "gh issue list --milestone";
+          ilS = "gh issue list --search";
+          ils = "gh issue list --state";
+          ilw = "gh issue list --web";
+          ip = "gh issue pin";
+          ir = "gh issue reopen";
+          is = "gh issue status";
+          isj = "gh issue status --json";
+          it = "gh issue transfer";
+          iu = "gh issue unpin";
+          iv = "gh issue view";
+          ivc = "gh issue view --comments";
+          ivw = "gh issue view --web";
+          p = "gh pr";
+          pco = "gh pr checkout";
+          pcod = "gh pr checkout --detach";
+          pcof = "gh pr checkout --force";
+          pcor = "gh pr checkout --recurse-submodules";
+          pcs = "gh pr checks";
+          pcsr = "gh pr checks --required";
+          pcsW = "gh pr checks --watch";
+          pcsw = "gh pr checks --web";
+          pcl = "gh pr close";
+          pcld = "gh pr close --delete-branch";
+          pcm = "gh pr comment";
+          pcme = "gh pr comment --editor";
+          pcml = "gh pr comment --edit-last";
+          pcmw = "gh pr comment --web";
+          pcr = "gh pr create";
+          pcra = "gh pr create --assignee";
+          pcrd = "gh pr create --draft";
+          pcrf = "gh pr create --fill";
+          pcrl = "gh pr create --label";
+          pcrm = "gh pr create --milestone";
+          pcrn = "gh pr create --no-maintainer-edit";
+          pcrp = "gh pr create --project";
+          pcrw = "gh pr create --web";
+          pd = "gh pr diff";
+          pdn = "gh pr diff --name-only";
+          pdp = "gh pr diff --patch";
+          pdw = "gh pr diff --web";
+          pe = "gh pr edit";
+          pl = "gh pr list";
+          pla = "gh pr list --assignee";
+          plA = "gh pr list --author";
+          plb = "gh pr list --base";
+          pld = "gh pr list --draft";
+          plh = "gh pr list --head";
+          plj = "gh pr list --json";
+          pll = "gh pr list --label";
+          plL = "gh pr list --limit";
+          plS = "gh pr list --search";
+          pls = "gh pr list --state";
+          plw = "gh pr list --web";
+          pm = "gh pr merge";
+          pma = "gh pr merge --admin";
+          pmau = "gh pr merge --auto";
+          pmd = "gh pr merge --delete-branch";
+          pmda = "gh pr merge --disable-auto";
+          pmm = "gh pr merge --merge";
+          pmr = "gh pr merge --rebase";
+          pms = "gh pr merge --squash";
+          prd = "gh pr ready";
+          prdu = "gh pr ready --undo";
+          pro = "gh pr reopen";
+          prv = "gh pr review";
+          prva = "gh pr review --approve";
+          prvc = "gh pr review --comment";
+          prvr = "gh pr review --request-changes";
+          ps = "gh pr status";
+          psc = "gh pr status --conflict-status";
+          psj = "gh pr status --json";
+          pv = "gh pr view";
+          pvc = "gh pr view --comments";
+          pvj = "gh pr view --json";
+          pvw = "gh pr view --web";
+          rl = "gh release";
+          rlc = "gh release create";
+          rlcd = "gh release create --draft";
+          rlcg = "gh release create --generate-notes";
+          rlcl = "gh release create --latest";
+          rlcp = "gh release create --prerelease";
+          rld = "gh release delete";
+          rldc = "gh release delete --cleanup-tag";
+          rldy = "gh release delete --yes";
+          rlda = "gh release delete-asset";
+          rlday = "gh release delete-asset --yes";
+          rldo = "gh release download";
+          rldoc = "gh release download --clobber";
+          rldos = "gh release download --skip-existing";
+          rle = "gh release edit";
+          rled = "gh release edit --draft";
+          rlel = "gh release edit --latest";
+          rlep = "gh release edit --prerelease";
+          rll = "gh release list";
+          rlle = "gh release list --exclude-drafts";
+          rlu = "gh release upload";
+          rluc = "gh release upload --clobber";
+          rlv = "gh release view";
+          rlvw = "gh release view --web";
+          rp = "gh repo";
+          rpa = "gh repo archive";
+          rpay = "gh repo archive --confirm";
+          rpcl = "gh repo clone";
+          rpc = "gh repo create";
+          rpca = "gh repo create --add-readme";
+          rpcc = "gh repo create --clone";
+          rpcdi = "gh repo create --disable-issues";
+          rpcdw = "gh repo create --disable-wiki";
+          rpcia = "gh repo create --include-all-branches";
+          rpci = "gh repo create --internal";
+          rpcpv = "gh repo create --private";
+          rpcpb = "gh repo create --public";
+          rpcps = "gh repo create --push";
+          rpd = "gh repo delete";
+          rpdc = "gh repo delete --confirm";
+          rpdk = "gh repo deploy-key";
+          rpdka = "gh repo deploy-key add";
+          rpdkaw = "gh repo deploy-key add --allow-write";
+          rpdkd = "gh repo deploy-key delete";
+          rpdkl = "gh repo deploy-key list";
+          rpe = "gh repo edit";
+          rpeat = "gh repo edit --add-topic";
+          rpeaf = "gh repo edit --allow-forking";
+          rpeau = "gh repo edit --allow-update-branch";
+          rpedb = "gh repo edit --default-branch";
+          rpedm = "gh repo edit --delete-branch-on-merge";
+          rpeds = "gh repo edit --description";
+          rpeam = "gh repo edit --enable-auto-merge";
+          rped = "gh repo edit --enable-discussions";
+          rpei = "gh repo edit --enable-issues";
+          rpemc = "gh repo edit --enable-merge-commit";
+          rpep = "gh repo edit --enable-projects";
+          rperm = "gh repo edit --enable-rebase-merge";
+          rpesm = "gh repo edit --enable-squash-merge";
+          rpew = "gh repo edit --enable-wiki";
+          rpeh = "gh repo edit --homepage";
+          rpert = "gh repo edit --remove-topic";
+          rpet = "gh repo edit --template";
+          rpev = "gh repo edit --visibility";
+          rpf = "gh repo fork";
+          rpfc = "gh repo fork --clone";
+          rpfr = "gh repo fork --remote";
+          rpl = "gh repo list";
+          rpla = "gh repo list --archived";
+          rplf = "gh repo list --fork";
+          rpln = "gh repo list --no-archived";
+          rpls = "gh repo list --source";
+          rpr = "gh repo rename";
+          rprc = "gh repo rename --confirm";
+          rps = "gh repo sync";
+          rpsf = "gh repo sync --force";
+          rpv = "gh repo view";
+          rpvw = "gh repo view --web";
+        };
         editor = "";
       };
       extensions = with pkgs; [
         gh-eco
+        gh-s
+        gh-f
+        gh-i
+        gh-cal
+        gh-enhance
+        gh-screensaver
+        github-copilot-cli
       ];
     };
     gpg = {
@@ -797,8 +1346,18 @@
       enableFishIntegration = true;
       enableZshIntegration = true;
       enableNushellIntegration = true;
+      changeDirWidget = {
+        command = "fd --type d";
+      };
       colors = { };
+      defaultCommand = "fd";
       defaultOptions = [ ];
+      fileWidget = {
+        command = "fd --type f";
+      };
+      historyWidget = {
+        command = "fc -rl 1";
+      };
       tmux = {
         enableShellIntegration = true;
         shellIntegrationOptions = [ ];
@@ -825,7 +1384,79 @@
     };
     rmpc = {
       enable = true;
-      config = "";
+      config = ''
+        cache_dir: None,
+        lyrics_dir: "~/Music/lyrics",
+        max_fps: 144,
+        select_current_song_on_change: true,
+        center_current_song_on_change: true,
+        on_song_change: ["~/.config/rmpc/lyrics.sh],
+        artists: (
+          album_display_mode: NameOnly,
+          album_sort_by: Name,
+        ),
+        browser_song_sort: [Disc, Track, Title, Artist],
+        directories_sort: SortFormat,
+        theme: "theme",
+        search: (
+          case_sensitive: false,
+          mode: Contains,
+          tags: [
+              (value: "any",         label: "Any Tag"),
+              (value: "artist",      label: "Artist"),
+              (value: "album",       label: "Album"),
+              (value: "title",       label: "Title"),
+              (value: "filename",    label: "Filename"),
+              (value: "genre",       label: "Genre"),
+          ],
+        ),
+        album_art: (
+          method: Auto,
+          max_size_px: (width: 1200, height: 1200),
+          disabled_protocols: [],
+          vertical_align: Center,
+          horizontal_align: Center,
+        ),
+        tabs: [
+          (
+              name: "󰦚 Now Playing",
+              pane: Pane(Queue)
+          ),
+          (
+              name: "󱍚 Directories",
+              pane: Pane(Directories),
+          ),
+          (
+              name: "󰳩 Artists",
+              pane: Pane(Artists),
+          ),
+          (
+              name: "󰀥 Albums",
+              pane: Pane(Albums),
+          ),
+          (
+              name: "󰲸 Playlists",
+              pane: Pane(Playlists),
+          ),
+          (
+              name: " Search",
+              pane: Pane(Search),
+          ),
+        ],
+        cava: (
+          framerate: 144,
+          input: (
+            method: Fifo,
+            source: "/tmp/mpd.fifo",
+            sample_rate: 48000,
+            channels: 2,
+            sample_bits: 16,
+          ),
+          smoothing: (
+            noise_reduction: 35,
+          ),
+        ),
+      '';
     };
     yazi = {
       enable = true;
@@ -1026,17 +1657,70 @@
         "histappend"
       ];
     };
-    lazydocker = {};
+    lazydocker = {
+      enable = true;
+      settings = {
+        gui = {
+          scrollHeight = 2;
+          border = "single";
+          theme = {
+            activeBorderColor = [
+              "red"
+              "bold"
+            ];
+            inactiveBorderColor = [
+              "white"
+            ];
+          };
+          showBottomLine = true;
+        };
+        logs = {
+          timestamps = true;
+        };
+      };
+    };
     lazygit = {
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableNushellIntegration = true;
       enableZshIntegration = true;
-      settings = { };
+      settings = {
+        gui = {
+          fileTreeSortOrder = "filesFirst";
+          showNumstatInFilesView = true;
+          nerdFontsVersion = "3";
+          border = "single";
+          spinner = {
+            frames = [
+              "󰋙"
+              "󰫃"
+              "󰫄"
+              "󰫅"
+              "󰫆"
+              "󰫇"
+              "󰫈"
+            ];
+            rate = "200";
+          };
+        };
+      };
     };
     bat.enable = true;
     bluetuith.enable = true;
+    clock-rs = {
+      enable = true;
+      settings = {
+        general = {
+          color = "#41def4";
+          blink = true;
+          bold = true;
+        };
+        date = {
+          fmt = "%A, %d.%B.%Y";
+        };
+      };
+    };
     btop = {
       enable = true;
       settings = {
@@ -1048,11 +1732,12 @@
         rounded_corners = false;
         terminal_sync = true;
         graph_symbol = "braille";
-        graph_symbol_cpu = "default";
-        graph_symbol_mem = "default";
-        graph_symbol_net = "default";
-        graph_symbol_proc = "default";
-        shown_boxes = "cpu mem net proc gpu0 gpu1";
+        graph_symbol_cpu = "braille";
+        graph_symbol_gpu = "braille";
+        graph_symbol_mem = "braille";
+        graph_symbol_net = "block";
+        graph_symbol_proc = "braille";
+        shown_boxes = "cpu mem net proc gpu0";
         update_ms = 2000;
         proc_sorting = "cpu lazy";
         proc_reversed = false;
@@ -1074,6 +1759,7 @@
         cpu_invert_lower = true;
         cpu_single_graph = false;
         cpu_bottom = false;
+        show_gpu_info = "On";
         show_uptime = true;
         show_cpu_watts = true;
         check_temp = true;
@@ -1087,6 +1773,7 @@
         clock_format = "/host | %H:%M ";
         background_update = false;
         custom_cpu_name = "";
+        gpu_mirror_graph = true;
         disks_filter = "";
         mem_graphs = true;
         mem_below_net = false;
@@ -1098,7 +1785,7 @@
         zfs_hide_datasets = false;
         disk_free_priv = false;
         show_io_stat = true;
-        io_mode = true;
+        io_mode = false;
         io_graph_combined = false;
         io_graph_speeds = "";
         net_auto = true;
@@ -1221,6 +1908,16 @@
       enableFishIntegration = true;
       enableNushellIntegration = true;
       enableZshIntegration = true;
+      extraOptions = [
+        "-a"
+        "-l"
+        "--hyperlink"
+        "-F always"
+        "--color-scale-mode=gradient"
+        "--git"
+        "--git-repos -o"
+      ];
+      theme = {};
     };
     fastfetch = {
       enable = true;
@@ -1228,6 +1925,13 @@
     };
     fd = {
       enable = true;
+      extraOptions = [
+        "--ansi"
+        "--style=full"
+        "--color=dark"
+        "--track"
+        "--cycle"
+      ];
       hidden = true;
     };
     fish = {
@@ -1361,23 +2065,7 @@
     };
     rclone = {
       enable = true;
-      remotes = {
-        gdrive = {
-          config = {};
-          mounts = {};
-          secrets = {};
-          serve = {};
-          requiresUnit = "";
-        };
-        onedrive = {};
-        mega = {};
-        dropbox = {};
-        fichier = {};
-        icloud = {};
-        pixeldrain = {};
-        protondrive = {};
-        zohodrive = {};
-      };
+      remotes = {};
     };
     retroarch = {
       enable = true;
@@ -1394,7 +2082,6 @@
     };
     ripgrep-all = {
       enable = true;
-      custom-adapters = [];
     };
   };
   services = {
@@ -1423,6 +2110,30 @@
       enable = true;
       musicDirectory = "/home/sametaor/Music";
       network.startWhenNeeded = true;
+      extraConfig = ''
+        bind_to_address "/tmp/mpd_socket"
+      '';
+    };
+    mpd-mpris = {
+      enable = true;
+      mpd.useLocal = true;
+    };
+    mpd-discord-rpc = {
+      enable = true;
+      settings = {
+        format = {
+          details = "$disc - $title";
+          state = "$artist - $album";
+          timestamp = "both";
+          large_text = "I use rmpc, btw";
+          small_text = "rmpc x mpd";
+          display_type = "state";
+          button1_text = "";
+          button1_link = "";
+          button2_text = "";
+          button2_link = "";
+        };
+      };
     };
     hyprlauncher.enable = true;
     mpris-proxy.enable = true;
