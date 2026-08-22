@@ -1385,77 +1385,80 @@
     rmpc = {
       enable = true;
       config = ''
-        cache_dir: None,
-        lyrics_dir: "~/Music/lyrics",
-        max_fps: 144,
-        select_current_song_on_change: true,
-        center_current_song_on_change: true,
-        on_song_change: ["~/.config/rmpc/lyrics.sh],
-        artists: (
-          album_display_mode: NameOnly,
-          album_sort_by: Name,
-        ),
-        browser_song_sort: [Disc, Track, Title, Artist],
-        directories_sort: SortFormat,
-        theme: "theme",
-        search: (
-          case_sensitive: false,
-          mode: Contains,
-          tags: [
-              (value: "any",         label: "Any Tag"),
-              (value: "artist",      label: "Artist"),
-              (value: "album",       label: "Album"),
-              (value: "title",       label: "Title"),
-              (value: "filename",    label: "Filename"),
-              (value: "genre",       label: "Genre"),
+        #![enable(implicit_some)]
+        #![enable(unwrap_newtypes)]
+        #![enable(unwrap_variant_newtypes)]
+        (
+          lyrics_dir: "~/Music/lyrics",
+          max_fps: 144,
+          select_current_song_on_change: true,
+          center_current_song_on_change: true,
+          on_song_change: ["~/.config/rmpc/lyrics.sh"],
+          artists: (
+            album_display_mode: NameOnly,
+            album_sort_by: Name,
+          ),
+          browser_song_sort: [Disc, Track, Title, Artist],
+          theme: "theme",
+          search: (
+            case_sensitive: false,
+            mode: Contains,
+            tags: [
+                (value: "any",         label: "Any Tag"),
+                (value: "artist",      label: "Artist"),
+                (value: "album",       label: "Album"),
+                (value: "title",       label: "Title"),
+                (value: "filename",    label: "Filename"),
+                (value: "genre",       label: "Genre"),
+            ],
+          ),
+          album_art: (
+            method: Auto,
+            max_size_px: (width: 1200, height: 1200),
+            disabled_protocols: [],
+            vertical_align: Center,
+            horizontal_align: Center,
+          ),
+          tabs: [
+            (
+                name: "󰦚 Now Playing",
+                pane: Pane(Queue)
+            ),
+            (
+                name: "󱍚 Directories",
+                pane: Pane(Directories),
+            ),
+            (
+                name: "󰳩 Artists",
+                pane: Pane(Artists),
+            ),
+            (
+                name: "󰀥 Albums",
+                pane: Pane(Albums),
+            ),
+            (
+                name: "󰲸 Playlists",
+                pane: Pane(Playlists),
+            ),
+            (
+                name: " Search",
+                pane: Pane(Search),
+            ),
           ],
-        ),
-        album_art: (
-          method: Auto,
-          max_size_px: (width: 1200, height: 1200),
-          disabled_protocols: [],
-          vertical_align: Center,
-          horizontal_align: Center,
-        ),
-        tabs: [
-          (
-              name: "󰦚 Now Playing",
-              pane: Pane(Queue)
+          cava: (
+            framerate: 144,
+            input: (
+              method: Fifo,
+              source: "/tmp/mpd.fifo",
+              sample_rate: 48000,
+              channels: 2,
+              sample_bits: 16,
+            ),
+            smoothing: (
+              noise_reduction: 35,
+            ),
           ),
-          (
-              name: "󱍚 Directories",
-              pane: Pane(Directories),
-          ),
-          (
-              name: "󰳩 Artists",
-              pane: Pane(Artists),
-          ),
-          (
-              name: "󰀥 Albums",
-              pane: Pane(Albums),
-          ),
-          (
-              name: "󰲸 Playlists",
-              pane: Pane(Playlists),
-          ),
-          (
-              name: " Search",
-              pane: Pane(Search),
-          ),
-        ],
-        cava: (
-          framerate: 144,
-          input: (
-            method: Fifo,
-            source: "/tmp/mpd.fifo",
-            sample_rate: 48000,
-            channels: 2,
-            sample_bits: 16,
-          ),
-          smoothing: (
-            noise_reduction: 35,
-          ),
-        ),
+        )
       '';
     };
     yazi = {
@@ -2112,6 +2115,16 @@
       network.startWhenNeeded = true;
       extraConfig = ''
         bind_to_address "/tmp/mpd_socket"
+        audio_output {
+            type "pipewire"
+            name "My PipeWire Output"
+        }
+        audio_output {
+            type "fifo"
+            name "mpd_fifo"
+            path "/tmp/mpd.fifo"
+            format "48100:16:2"
+        }
       '';
     };
     mpd-mpris = {
@@ -2122,11 +2135,11 @@
       enable = true;
       settings = {
         format = {
-          details = "$disc - $title";
-          state = "$artist - $album";
+          details = "$title";
+          state = "$album";
           timestamp = "both";
-          large_text = "I use rmpc, btw";
-          small_text = "rmpc x mpd";
+          large_text = "$artist";
+          small_text = "I use rmpc + mpd btw";
           display_type = "state";
           button1_text = "";
           button1_link = "";
