@@ -612,7 +612,8 @@
     };
     lutris = {
       enable = true;
-      protonPackages = [];
+      protonPackages = [pkgs.proton-ge-bin];
+      runners = {};
     };
     aria2 = {
       enable = true;
