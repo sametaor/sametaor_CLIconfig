@@ -1995,7 +1995,7 @@
       settings = {
           "logo" = {
             "type" = "kitty";
-            "source" = "${config.home.homeDirectory}/.config/fastfetch/logos/Fastfetcharch.png";
+            "source" = "${config.home.homeDirectory}/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/fastfetch/logo.png";
             "width" = 40;
             "padding" = {
               "left" = 1;
@@ -2013,10 +2013,10 @@
             };
             "constants" = [
               "━━━━━━━━━━━━━━━━━━━━━━━"
-              "╽\u001b[51C╽\u001b[50D"
-              "┃\u001b[51C┃\u001b[52D"
+              "╽[51C╽[50D"
+              "┃[51C┃[52D"
               "╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌"
-              "╿\u001b[51C╿\u001b[52D"
+              "╿[51C╿[52D"
             ];
             "temp" = {
               "unit" = "C";
@@ -2185,7 +2185,7 @@
               "key" = "{$3}{#35}󰦖 Time  ";
               "type" = "command";
               "shell" = "/bin/sh";
-              "text" = "date '+%H =%M 󰛡 %d-%m-%Y'";
+              "text" = "date '+%H:%M 󰛡 %d-%m-%Y'";
             }
             {
               "key" = "{$5}{#31} Colors";

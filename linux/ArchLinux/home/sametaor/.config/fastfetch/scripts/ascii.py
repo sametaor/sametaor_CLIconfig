@@ -2,7 +2,7 @@ import glob
 import subprocess
 import os
 
-directory = r"/home/sametaor/.config/fastfetch/logos/image/deus_ex/"
+directory = r"/home/sametaor/Projects/github/sametaor_CLIconfig/linux/ArchLinux/home/sametaor/.config/fastfetch/logos/image/deus_ex_retrowave/"
 png_files = glob.glob(os.path.join(directory, "*.png"))
 
 for image_path in png_files:
@@ -10,7 +10,7 @@ for image_path in png_files:
     file_name = os.path.basename(image_path)
     output_file = file_name + ".txt"
     # Add quotes around the path
-    cmd = f"ascii-image-converter {image_path} -C -d 40,20 -c | tee -a '/home/sametaor/.config/fastfetch/logos/ascii/deus_ex/{output_file}'"
+    cmd = f"ascii-image-converter {image_path} -C -d 40,20 -c | tee -a '/home/sametaor/Projects/github/sametaor_CLIconfig/linux/ArchLinux/home/sametaor/.config/fastfetch/logos/ascii/deus_ex_retrowave/{output_file}'"
     result = subprocess.run(cmd, shell=True)
     if result.returncode != 0:
         print(f"Error processing {image_path}")
