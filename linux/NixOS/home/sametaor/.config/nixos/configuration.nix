@@ -28,6 +28,7 @@ in
 {
   nixpkgs.overlays = [
     inputs.millennium.overlays.default
+    inputs.durdraw.overlays.default
     inputs.nur.overlays.default
     (final: prev: {
       # Make nvidiaWrap available globally
@@ -446,6 +447,7 @@ in
   };
   nix = {
     nixPath = [
+      "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos"
       "nixos-config=/home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
     ];
     gc = {

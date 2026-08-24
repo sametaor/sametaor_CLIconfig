@@ -20,7 +20,7 @@
     # compatible with. You should not change this, even if you update Home Manager.
     stateVersion = "26.05"; # Please check the release notes before changing
     # The home.packages option allows you to install packages to your user profilee
-    packages = [ ];
+    packages = with pkgs; [ libnotify durdraw ];
     pointerCursor = {
       enable = true;
       gtk = {
@@ -566,10 +566,46 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
       channels = {};
-      settings = {};
+      settings = {
+        shell = "zsh";
+        history_size = 50000;
+        global_history = true;
+        ui = {
+          theme = "samwave";
+          input_bar = {
+            position = "bottom";
+            border_type = "HeavyDoubleDashed";
+          };
+          results_panel.border_tyoe = "LightDoubleDashed";
+          preview_panel = {
+            border_type = "Thick";
+          };
+        };
+        themes = {
+          samwave = {
+            border_fg = "#ff2afc";
+            text_fg = "#efeeff";
+            dimmed_text_fg = "#646477";
+            input_text_fg = "#41def4";
+            result_count_fg = "#72f1b8";
+            result_name_fg = "#41def4";
+            result_line_number_fg = "#72f1b8";
+            result_value_fg = "#646477";
+            selection_fg = "#090819";
+            selection_bg = "#42c6ff";
+            match_fg = "#f6037d";
+            preview_title_fg = "#8f00ff";
+            channel_mode_fg = "#20192b";
+            channel_mode_bg = "#fcef52";
+            remote_control_mode_fg = "#20192b";
+            remote_control_mode_bg = "#72f1b8";
+            action_picker_mode_fg = "#20192b";
+            action_picker_mode_bg = "#0080ff";
+          };
+        };
+      };
       themes = {};
     };
     tmux = {
@@ -1351,7 +1387,6 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
       changeDirWidget = {
         command = "fd --type d";
       };
@@ -1360,9 +1395,6 @@
       defaultOptions = [ ];
       fileWidget = {
         command = "fd --type f";
-      };
-      historyWidget = {
-        command = "fc -rl 1";
       };
       tmux = {
         enableShellIntegration = true;
@@ -1481,7 +1513,6 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
       extraPackages = [];
       flavors = {};
@@ -1499,7 +1530,6 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
       enableInteractive = true;
       enableTransience = true;
       presets = [];
@@ -1534,20 +1564,43 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
       options = [
         "--cmd cd"
       ];
     };
     zsh = {
+      enable = true;
+      plugins = [
+          {
+            name = "alias-tips";
+            file = "alias-tips.plugin.zsh";
+            src = pkgs.fetchFromGitHub {
+              owner = "djui";
+              repo = "alias-tips";
+              rev = "master";
+              sha256 = "sha256-ZFWrwcwwwSYP5d8k7Lr/hL3WKAZmgn51Q9hYL3bq9vE=";
+            };
+          }
+          {
+            name = "zsh-auto-notify";
+            file = "auto-notify.plugin.zsh";
+            src = pkgs.fetchFromGitHub {
+              owner = "MichaelAquilina";
+              repo = "zsh-auto-notify";
+              rev = "master";
+              sha256 = "sha256-s3TBAsXOpmiXMAQkbaS5de0t0hNC1EzUUb0ZG+p9keE=";
+            };
+          }
+      ];
       autocd = true;
       autosuggestion = {
         enable = true;
       };
-      defaultKeymap = "vicmd";
+      defaultKeymap = "viins";
       fastSyntaxHighlighting = {
         enable = true;
+        theme = "sv-orple";
       };
       history = {
         append = true;
@@ -1563,6 +1616,8 @@
       };
       historySubstringSearch = {
         enable = true;
+        searchUpKey = [ "^[[A" "$terminfo[kcuu1]" ];
+        searchDownKey = [ "^[[B" "$terminfo[kcud1]" ];
       };
     };
     go = {};
@@ -1702,7 +1757,6 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
       settings = {
         gui = {
@@ -1912,7 +1966,6 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-      enableNushellIntegration = true;
     };
     emacs = {
       enable = true;
@@ -1925,13 +1978,12 @@
       icons = "always";
       enableBashIntegration = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
       extraOptions = [
         "-a"
         "-l"
         "--hyperlink"
-        "-F always"
+        "-F"
         "--color-scale-mode=gradient"
         "--git"
         "--git-repos -o"
@@ -1940,7 +1992,213 @@
     };
     fastfetch = {
       enable = true;
-      settings = { };
+      settings = {
+          "logo" = {
+            "type" = "kitty";
+            "source" = "${config.home.homeDirectory}/.config/fastfetch/logos/Fastfetcharch.png";
+            "width" = 40;
+            "padding" = {
+              "left" = 1;
+              "right" = 1;
+            };
+          };
+          "general" = {
+            "thread" = true;
+          };
+          "display" = {
+            "disableLinewrap" = false;
+            "separator" = " ❯ ";
+            "color" = {
+              "separator" = "cyan";
+            };
+            "constants" = [
+              "━━━━━━━━━━━━━━━━━━━━━━━"
+              "╽\u001b[51C╽\u001b[50D"
+              "┃\u001b[51C┃\u001b[52D"
+              "╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌"
+              "╿\u001b[51C╿\u001b[52D"
+            ];
+            "temp" = {
+              "unit" = "C";
+              "ndigits" = 1;
+            };
+            "bar" = {
+              "char" = {
+                "elapsed" = "█";
+              };
+              "charTotal" = "▒";
+              "border" = {
+                "left" = "";
+                "right" = "";
+              };
+              "width" = 10;
+            };
+            "freq" = {
+              "ndigits" = 1;
+            };
+            "percent" = {
+              "type" = 9;
+              "ndigits" = 1;
+              "color" = {
+                "green" = "green";
+                "red" = "red";
+                "yellow" = "yellow";
+              };
+            };
+          };
+          "modules" = [
+            {
+              "type" = "custom";
+              "format" = "{#34}╭╼{$1} 󰫃 {$1}╾╮";
+            }
+            {
+              "type" = "title";
+              "format" = "{#1}{#keys}{$2}{6} {7} {8}";
+              "outputColor" = "italic_";
+            }
+            {
+              "type" = "custom";
+              "format" = "{#1}{#keys}┠╌{$4} 󰫄 {$4}╌┨";
+            }
+            {
+              "key" = "{$3}{#34}󰨇 Distro";
+              "outputColor" = "bright_";
+              "type" = "os";
+              "format" = "{3} {12}";
+            }
+            {
+              "outputColor" = "bright_";
+              "key" = "{$3}{#32}󰾰 Device";
+              "type" = "host";
+              "format" = "{5} {2} {3}";
+            }
+            {
+              "outputColor" = "bright_";
+              "key" = "{$3}{#31}󰒓 Kernel";
+              "type" = "kernel";
+              "format" = "{1} {2} ({4})";
+            }
+            {
+              "key" = "{$3}{#33}󱦟 Uptime";
+              "type" = "uptime";
+              "format" = "{1}d; {2} ={3}hrs";
+            }
+            {
+              "key" = "{$3}{#35} Shell ";
+              "type" = "shell";
+              "format" = "{6} {4}";
+            }
+            {
+              "key" = "{$3}{#36}󰏖 Pkgs  ";
+              "type" = "packages";
+              "format" = "{1}";
+            }
+            {
+              "type" = "custom";
+              "format" = "{#1}{#keys}┠╌{$4} 󰫅 {$4}╌┨";
+            }
+            {
+              "key" = "{$3}{#34}󱎴 Res   ";
+              "type" = "display";
+              "compactType" = "original-with-refresh-rate";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#32} WM    ";
+              "type" = "wm";
+              "format" = "{2} ({3})";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#31}󰍂 LM    ";
+              "type" = "lm";
+            }
+            {
+              "key" = "{$3}{#33}󰔎 Theme ";
+              "type" = "theme";
+              "format" = "{1}";
+            }
+            {
+              "key" = "{$3}{#35} Icons ";
+              "type" = "icons";
+              "format" = "{1}";
+            }
+            {
+              "key" = "{$3}{#36} Term  ";
+              "type" = "terminal";
+              "format" = "{1}";
+            }
+            {
+              "key" = "{$3}{#38}󰛖 Fonts ";
+              "type" = "font";
+              "format" = "{1}";
+            }
+            {
+              "type" = "custom";
+              "format" = "{#1}{#keys}┠╌{$4} 󰫆 {$4}╌┨";
+            }
+            {
+              "key" = "{$3}{#34} CPU   ";
+              "type" = "cpu";
+              "format" = "{1}({5})";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#32}󰍛 GPU   ";
+              "type" = "gpu";
+              "format" = "{1} {2}({6})";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#31} Mem   ";
+              "type" = "memory";
+              "format" = "{1}/{2} {4}";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#33} Disk  ";
+              "type" = "disk";
+              "format" = "{1}/{2} {13}";
+              "outputColor" = "bright_";
+            }
+            {
+              "key" = "{$3}{#35} Files ";
+              "type" = "disk";
+              "format" = "{4}/{5} {14}";
+            }
+            {
+              "key" = "{$3}{#36}󱊣 Batt  ";
+              "type" = "battery";
+              "format" = "{1} ({4}) {10}";
+            }
+            {
+              "type" = "custom";
+              "format" = "{#1}{#keys}┠╌{$4} 󰫇 {$4}╌┨";
+            }
+            {
+              "key" = "{$3}{#32} Wttr  ";
+              "type" = "command";
+              "shell" = "/bin/sh";
+              "text" = "curl 'wttr.in/Noida?format=%C+%t'";
+            }
+            {
+              "key" = "{$3}{#35}󰦖 Time  ";
+              "type" = "command";
+              "shell" = "/bin/sh";
+              "text" = "date '+%H =%M 󰛡 %d-%m-%Y'";
+            }
+            {
+              "key" = "{$5}{#31} Colors";
+              "type" = "custom";
+              "format" = " {#90}  {#31}  {#32}  {#33}  {#34}  {#35}  {#36}  {#37}  {#38}  {#39} ";
+            }
+            {
+              "key" = " ";
+              "format" = "{#34}╰╼{$1} 󰫈 {$1}╾╯";
+              "type" = "custom";
+            }
+          ];
+      };
     };
     fd = {
       enable = true;
@@ -1955,6 +2213,36 @@
     };
     fish = {
       enable = true;
+      plugins = [
+        {
+          name = "fish-abbreviation-tips";
+          src = pkgs.fetchFromGitHub {
+            owner = "gazorby";
+            repo = "fish-abbreviation-tips";
+            rev = "master";
+            sha256 = "sha256-F1t81VliD+v6WEWqj1c1ehFBXzqLyumx5vV46s/FZRU=";
+          };
+        }
+        {
+          name = "fzf.fish";
+          src = pkgs.fetchFromGitHub {
+            owner = "PatrickF1";
+            repo = "fzf.fish";
+            rev = "main";
+            sha256 = "sha256-ql8UncXGwOIpyC49w1bCRfynRB02u7s1a1rOWTfKcTk=";
+          };
+        }
+        {
+          name = "done";
+          src = pkgs.fetchFromGitHub {
+            owner = "franciscolourenco";
+            repo = "done";
+            rev = "master";
+            sha256 = "sha256-Tr22ktv2tQdtV153xm2vHnll8G26abSyXD5IokMjAj0=";
+          };
+        }
+      ];
+      preferAbbrs = true;
     };
     mpv = {
       enable = true;
@@ -1996,13 +2284,9 @@
       enableZshIntegration = true;
       settings = {
       	cheats = {
-	        paths = {};
+	        paths = [];
         };
-        style = {
-          tag.color = {};
-          comment.color = {};
-          snippet.color = {};
-        };
+        style = {};
         shell = {
           command = "zsh";
           finder_command = "zsh";
@@ -2011,6 +2295,15 @@
           command = "fzf";
         };
       };
+    };
+    nh = {
+      enable = true;
+      clean = {
+        enable = true;
+        dates = "weekly";
+        extraArgs = "--delete-older-than 7d";
+      };
+      flake = "${config.home.homeDirectory}/.config/nixos/flake.nix";
     };
     nix-search-tv = {
       enable = true;
@@ -2028,7 +2321,6 @@
     nix-your-shell = {
       enable = true;
       enableFishIntegration = true;
-      enableNushellIntegration = true;
       enableZshIntegration = true;
     };
     obs-studio = {};

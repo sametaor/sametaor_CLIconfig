@@ -34,6 +34,10 @@
       inputs.hyprland.follows = "hyprland";
     };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+    durdraw = {
+      url = "github:Daaboulex/durdraw-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
