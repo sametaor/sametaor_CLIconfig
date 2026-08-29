@@ -1348,6 +1348,7 @@ in
       XDG_DATA_HOME = "$HOME/.local/share";
       XDG_STATE_HOME = "$HOME/.local/state";
       NIXOS_OZONE_WL = "1";
+      ZLE_RPROMPT_INDENT = "0";
     };
     variables = {
       EDITOR = "nvim";
@@ -1357,6 +1358,7 @@ in
       LANG = "en_US.UTF-8";
       MANPAGER = "bat -plman";
       FZF_DEFAULT_OPTS = "--color=fg:-1,fg+:#d0d0d0,bg:-1,bg+:#20192b --color=hl:#6d77b3,hl+:#4adef5,info:#72f0b8,marker:#fede5d --color=prompt:#ff757f,spinner:#fede5d,pointer:#f1527e,header:#6d77b3 --color=border:#43c5fc,label:#ed70df,query:#efedfe --border='bold' --border-label='FZF' --border-label-pos='0' --preview-window='border-sharp' --padding='1' --margin='1' --prompt=' ' --marker=' ' --pointer='󰛡' --separator='─' --scrollbar='┃' --layout='reverse' --info='right' --tmux left,80% --height=80%";
+      STARSHIP_CONFIG = "~/.config/starship/starship.toml";
     };
     shells = with pkgs; [
       pkgs.zsh

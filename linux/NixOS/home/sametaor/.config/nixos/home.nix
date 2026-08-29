@@ -64,10 +64,6 @@
   };
   nix = {
     assumeXdg = true;
-    gc = {
-      automatic = true;
-      options = "--delete-older-than 7d";
-    };
     nixPath = [
       "nixos-config=/home/sametaor/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos/configuration.nix"
     ];
@@ -1537,7 +1533,259 @@
       enableInteractive = true;
       enableTransience = true;
       presets = [];
-      settings = {};
+      settings = {
+        format = lib.concatStrings [
+          "┌╼ $os $hostname ╌╌ $username  $directory▒░ $jobs $shlvl $sudo $fill ░▒ $battery $time╾┐"
+          "$line_break"
+          "├╼┥$shell$c$cpp$cmake$container$dotnet$git_branch$git_commit$git_state$git_metrics$git_status$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill $status $cmd_duration╾┘ "
+          "$line_break"
+          "└╼ $character"
+        ];
+        right_format = lib.concatStrings [
+          ""
+        ];
+        add_newline = true;
+        continuation_prompt = "";
+        battery = {
+          full_symbol = "󰁹 ";
+          charging_symbol = "󰂄 ";
+          discharging_symbol = "󱟞 ";
+          unknown_symbol = "󰂑 ";
+          empty_symbol = "󰂎 ";
+          disabled = false;
+          display = [
+            {
+              threshold = 10;
+              charging_symbol = "󰢜 ";
+              discharging_symbol = "󰁺 ";
+            }
+            {
+              threshold = 20;
+              charging_symbol = "󰂆 ";
+              discharging_symbol = "󰁻 ";
+            }
+            {
+              threshold = 30;
+              charging_symbol = "󰂇 ";
+              discharging_symbol = "󰁼 ";
+            }
+            {
+              threshold = 40;
+              charging_symbol = "󰂈 ";
+              discharging_symbol = "󰁽 ";
+            }
+            {
+              threshold = 50;
+              charging_symbol = "󰢝 ";
+              discharging_symbol = "󰁾 ";
+            }
+            {
+              threshold = 60;
+              charging_symbol = "󰂉 ";
+              discharging_symbol = "󰁿 ";
+            }
+            {
+              threshold = 70;
+              charging_symbol = "󰢞 ";
+              discharging_symbol = "󰂀 ";
+            }
+            {
+              threshold = 80;
+              charging_symbol = "󰂊 ";
+              discharging_symbol = "󰂁 ";
+            }
+            {
+              threshold = 90;
+              charging_symbol = "󰂋 ";
+              discharging_symbol = "󰂂 ";
+            }
+          ];
+        };
+        c = {
+          format = "[$symbol($version(-$name) )]($style)";
+          symbol = " ";
+        };
+        cpp = {
+          format = "[$symbol($version(-$name) )]($style)";
+          symbol = " ";
+          disabled = false;
+        };
+        character = {
+          success_symbol = "[⟫](bold green) ";
+          error_symbol = "[⟫](bold red) ";
+          vimcmd_symbol = "[⟩](bold green)";
+          vimcmd_replace_one_symbol = "[⟩](bold blue)";
+          vimcmd_replace_symbol = "[⟩](bold purple)";
+          vimcmd_visual_symbol = "[⟩](bold yellow)";
+        };
+        cmake = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        cmd_duration = {
+          min_time = 0;
+          show_notifications = false;
+        };
+        container = {
+          format = "[$symbol \[$name\]]($style) ";
+          symbol = " ";
+        };
+        directory = {
+          read_only = "󰷤";
+          home_symbol = "󰋜";
+          use_os_path_sep = true;
+        };
+        dotnet = {
+          format = "[$symbol($version )(🎯 $tfm )]($style)";
+          symbol = " ";
+        };
+        fill = {
+          symbol = " ";
+        };
+        git_branch = {
+          format = " [$symbol$branch(:$remote_branch)]($style) ";
+          symbol = " ";
+        };
+        git_commit = {
+          format = "[\($hash$tag\)]($style)";
+          tag_symbol = " 󰓹 ";
+        };
+        git_state = {
+          rebase = "󰚰 REBASING";
+          merge = " MERGING";
+          revert = " REVERTING";
+          cherry_pick = " CHERRY-PICKING";
+          bisect = "󰵌 BISECTING";
+          am = "󰛮 AM";
+          am_or_rebase = "󰶊 AM/REBASE";
+          format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+        };
+        git_metrics = {
+          format = " ([+$added]($added_style) )([-$deleted]($deleted_style) )";
+          disabled = false;
+        };
+        git_status = {
+          conflicted = " ";
+          ahead = "󰓘 ";
+          behind = "󰓖 ";
+          diverged = "󰵈 ";
+          up_to_date = " ";
+          untracked = " ";
+          stashed = " ";
+          modified = " ";
+          staged = " ";
+          renamed = " ";
+          deleted = "󰆴 ";
+          typechanged = "󰑃 ";
+          worktree_added = " ";
+          worktree_deleted = "󰍴 ";
+          worktree_modified = " ";
+          worktree_typechanged = "󰞘 ";
+          index_added = "󰝒 ";
+          index_deleted = "󱪡 ";
+          index_modified = "󰮘 ";
+          index_typechanged = "󰪹 ";
+          format = " ([$all_status$ahead_behind]($style) )";
+        };
+        golang = {
+          format = "[$symbol($version )]($style)";
+          symbol = "󰟓 ";
+        };
+        hostname = {
+          format = "[$ssh_symbol$hostname]($style)";
+          ssh_only = false;
+          ssh_symbol = "󰣀 ";
+        };
+        java = {
+          format = "[$symbol($version )]($style)";
+          symbol = "󰬷 ";
+        };
+        jobs = {
+          format = "░▒[$symbol$number]($style) ▒░";
+          symbol = "󱃐 ";
+        };
+        line_break = {
+          disabled = false;
+        };
+        lua = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        nix_shell = {
+          format = "[$symbol$state( \($name\))]($style) ";
+          symbol = " ";
+          impure_msg = " Impure";
+          pure_msg = " Pure";
+          unknown_msg = "󰅪 Unknown";
+        };
+        nodejs = {
+          format = "[$symbol($version )]($style)";
+          symbol = "󰎙 ";
+        };
+        os = {
+          disabled = false;
+          symbols = {
+            NixOS = " ";
+          };
+        };
+        package = {
+          format = "[$symbol$version]($style) ";
+          symbol = "󰏖 ";
+        };
+        php = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        python = {
+          format = "[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)";
+          symbol = " ";
+        };
+        rlang = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        rust = {
+          format = "[$symbol($version )]($style)";
+          symbol = " ";
+        };
+        shell = {
+          bash_indicator = " Bash";
+          fish_indicator = "󰈺 Fish";
+          zsh_indicator = " Zsh";
+          unknown_indicator = "";
+          disabled = false;
+        };
+        shlvl = {
+          format = "░▒ [$symbol$shlvl]($style) ▒░";
+          threshold = 3;
+          symbol = "󱎁 ";
+          disabled = false;
+        };
+        status = {
+          symbol = "";
+          success_symbol = "";
+          not_executable_symbol = "󰜺";
+          not_found_symbol = "";
+          sigint_symbol = "󰘴";
+          signal_symbol = "󰔫";
+          map_symbol = true;
+          disabled = false;
+        };
+        sudo = {
+          format = "░▒[$symbol]($style)▒░";
+          symbol = "󰌆 ";
+          disabled = false;
+        };
+        time = {
+          format = "[$time]($style) ";
+          utc_time_offset = "Asia/Kolkata";
+          disabled = false;
+        };
+        username = {
+          format = "[$user]($style)";
+          show_always = true;
+        };
+      };
     };
     tealdeer = {
       enable = true;
