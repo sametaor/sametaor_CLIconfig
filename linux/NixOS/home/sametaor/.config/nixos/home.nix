@@ -20,7 +20,7 @@
     # compatible with. You should not change this, even if you update Home Manager.
     stateVersion = "26.05"; # Please check the release notes before changing
     # The home.packages option allows you to install packages to your user profilee
-    packages = with pkgs; [ libnotify durdraw ];
+    packages = with pkgs; [ libnotify durdraw curl jq];
     pointerCursor = {
       enable = true;
       gtk = {
@@ -392,7 +392,7 @@
       };
       "rmpc/lyrics.sh" = {
         text = ''
-          #!/bin/env sh
+          #!/usr/bin/env sh
           LRCLIB_INSTANCE="https://lrclib.net"
           if [ "$HAS_LRC" = "false" ]; then
               mkdir -p "$(dirname "$LRC_FILE")"
@@ -1427,11 +1427,11 @@
         #![enable(unwrap_newtypes)]
         #![enable(unwrap_variant_newtypes)]
         (
-          lyrics_dir: "~/Music/lyrics",
+          lyrics_dir: "${config.home.homeDirectory}/Music/lyrics",
           max_fps: 144,
           select_current_song_on_change: true,
           center_current_song_on_change: true,
-          on_song_change: ["~/.config/rmpc/lyrics.sh"],
+          on_song_change: ["${config.home.homeDirectory}/.config/rmpc/lyrics.sh"],
           artists: (
             album_display_mode: NameOnly,
             album_sort_by: Name,
@@ -1535,18 +1535,16 @@
       presets = [];
       settings = {
         format = lib.concatStrings [
-          "┌╼ $os $hostname ╌╌ $username  $directory▒░ $jobs $shlvl $sudo $fill ░▒ $battery $time╾┐"
+          "[┌╼](fg:#F809C9)[](fg:#20192B)[$os $hostname ](fg:#F809C9 bg:#20192B)[](fg:prev_bg)[╌╌](fg:#F809C9)[$username](bg:#F809C9 fg:#631B87)[](fg:prev_bg bg:prev_fg)[ $directory](fg:#F809C9 bg:#631B87)[▓▒░](fg:prev_bg) $jobs $shlvl $sudo $fill [░▒▓](fg:#631B87)[ $battery](fg:#F809C9 bg:#631B87)[](fg:#F809C9 bg:#631B87)[ $time](bg:#F809C9 fg:#631B87)[╾┐](fg:#F809C9)"
           "$line_break"
-          "├╼┥$shell$c$cpp$cmake$container$dotnet$git_branch$git_commit$git_state$git_metrics$git_status$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill $status $cmd_duration╾┘ "
+          "[├╼](fg:#F809C9)[](fg:#20192B)$shell$git_branch$git_status$git_metrics$git_commit$git_state$c$cpp$cmake$container$dotnet$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill$status[](fg:#20192B)[╾┘](fg:#F809C9) "
           "$line_break"
-          "└╼ $character"
-        ];
-        right_format = lib.concatStrings [
-          ""
+          "[└╼](fg:#F809C9) $character"
         ];
         add_newline = true;
         continuation_prompt = "";
         battery = {
+          format = "[$symbol$percentage ]($style)";
           full_symbol = "󰁹 ";
           charging_symbol = "󰂄 ";
           discharging_symbol = "󱟞 ";
@@ -1558,97 +1556,107 @@
               threshold = 10;
               charging_symbol = "󰢜 ";
               discharging_symbol = "󰁺 ";
+              style = "fg:#FF80C2 bg:#631B87";
             }
             {
               threshold = 20;
               charging_symbol = "󰂆 ";
               discharging_symbol = "󰁻 ";
+              style = "fg:#FA84B3 bg:#631B87";
             }
             {
               threshold = 30;
               charging_symbol = "󰂇 ";
               discharging_symbol = "󰁼 ";
+              style = "fg:#CD86A7 bg:#631B87";
             }
             {
               threshold = 40;
               charging_symbol = "󰂈 ";
               discharging_symbol = "󰁽 ";
+              style = "fg:#A3899C bg:#631B87";
             }
             {
               threshold = 50;
               charging_symbol = "󰢝 ";
               discharging_symbol = "󰁾 ";
+              style = "fg:#7B8C91 bg:#631B87";
             }
             {
               threshold = 60;
               charging_symbol = "󰂉 ";
               discharging_symbol = "󰁿 ";
+              style = "fg:#548E86 bg:#631B87";
             }
             {
               threshold = 70;
               charging_symbol = "󰢞 ";
               discharging_symbol = "󰂀 ";
+              style = "fg:#2E917C bg:#631B87";
             }
             {
               threshold = 80;
               charging_symbol = "󰂊 ";
               discharging_symbol = "󰂁 ";
+              style = "fg:#089372 bg:#631B87"; 
             }
             {
               threshold = 90;
               charging_symbol = "󰂋 ";
               discharging_symbol = "󰂂 ";
+              style = "fg:#009568 bg:#631B87";
             }
           ];
         };
         c = {
-          format = "[$symbol($version(-$name) )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version(-$name) )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         cpp = {
-          format = "[$symbol($version(-$name) )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version(-$name) )]($style)[◸](fg:#FEF709)";
           symbol = " ";
           disabled = false;
+          style = "bg:#FEF709 fg:#20192B";
         };
         character = {
-          success_symbol = "[⟫](bold green) ";
-          error_symbol = "[⟫](bold red) ";
+          success_symbol = "[⟫](bold green)";
+          error_symbol = "[⟫](bold red)";
           vimcmd_symbol = "[⟩](bold green)";
           vimcmd_replace_one_symbol = "[⟩](bold blue)";
           vimcmd_replace_symbol = "[⟩](bold purple)";
           vimcmd_visual_symbol = "[⟩](bold yellow)";
         };
         cmake = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = " ";
-        };
-        cmd_duration = {
-          min_time = 0;
-          show_notifications = false;
+          style = "bg:#FEF709 fg:#20192B";
         };
         container = {
-          format = "[$symbol \[$name\]]($style) ";
+          format = "[◿](fg:#FEF709)[ $symbol \[$name\]]($style) [◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         directory = {
-          read_only = "󰷤";
+          format = "[$path]($style) [$read_only]($read_only_style)";
+          style = "bold fg:#F809C9 bg:#631B87";
+          read_only_style = "bold fg:#EFEEFF bg:#631B87";
+          read_only = "󰞚";
           home_symbol = "󰋜";
           use_os_path_sep = true;
         };
         dotnet = {
-          format = "[$symbol($version )(🎯 $tfm )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )(🎯 $tfm )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         fill = {
           symbol = " ";
         };
-        git_branch = {
-          format = " [$symbol$branch(:$remote_branch)]($style) ";
-          symbol = " ";
-        };
         git_commit = {
-          format = "[\($hash$tag\)]($style)";
+          format = "[](fg:#36F8EC)[\($hash$tag\)]($style)[](fg:#36F8EC)";
           tag_symbol = " 󰓹 ";
+          style = "fg:#20192B bg:#36F8EC";
         };
         git_state = {
           rebase = "󰚰 REBASING";
@@ -1658,11 +1666,13 @@
           bisect = "󰵌 BISECTING";
           am = "󰛮 AM";
           am_or_rebase = "󰶊 AM/REBASE";
-          format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+          format = "[](fg:#36F8EC)\([$state( $progress_current/$progress_total)]($style)\)[](fg:#36F8EC) ";
+          style = "fg:#20192B bg:#36F8EC";
         };
-        git_metrics = {
-          format = " ([+$added]($added_style) )([-$deleted]($deleted_style) )";
-          disabled = false;
+        git_branch = {
+          format = "[](fg:#36F8EC)[$symbol$branch(:$remote_branch)]($style)";
+          symbol = " ";
+          style = "fg:#20192B bg:#36F8EC";
         };
         git_status = {
           conflicted = " ";
@@ -1685,104 +1695,130 @@
           index_deleted = "󱪡 ";
           index_modified = "󰮘 ";
           index_typechanged = "󰪹 ";
-          format = " ([$all_status$ahead_behind]($style) )";
+          format = "([ $all_status$ahead_behind]($style))";
+          style = "fg:#20192B bg:#36F8EC";
+        };
+        git_metrics = {
+          format = "([ +$added]($added_style))([ -$deleted ]($deleted_style))[](fg:#36F8EC)";
+          disabled = false;
+          added_style = "fg:#0B6623 bg:#36F8EC";
+          deleted_style = "fg:#D60036 bg:#36F8EC"; 
         };
         golang = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = "󰟓 ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         hostname = {
+          style = "bold bg:#20192B fg:#F809C9";
           format = "[$ssh_symbol$hostname]($style)";
           ssh_only = false;
           ssh_symbol = "󰣀 ";
         };
         java = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = "󰬷 ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         jobs = {
-          format = "░▒[$symbol$number]($style) ▒░";
+          format = "░▒▓[$symbol$number]($style) ▓▒░";
           symbol = "󱃐 ";
         };
         line_break = {
           disabled = false;
         };
         lua = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         nix_shell = {
-          format = "[$symbol$state( \($name\))]($style) ";
+          format = "[◿](fg:#FEF709)[ $symbol$state( \($name\) )]($style)[◸](fg:#FEF709)";
           symbol = " ";
           impure_msg = " Impure";
           pure_msg = " Pure";
           unknown_msg = "󰅪 Unknown";
+          style = "bg:#FEF709 fg:#20192B";
         };
         nodejs = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = "󰎙 ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         os = {
           disabled = false;
+          style = "bold bg:#20192B fg:#F809C9";
           symbols = {
             NixOS = " ";
           };
         };
         package = {
-          format = "[$symbol$version]($style) ";
+          format = "[◿](fg:#FEF709)[ $symbol$version]($style) [◸](fg:#FEF709)";
           symbol = "󰏖 ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         php = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         python = {
-          format = "[$symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol$pyenv_prefix($version )(\($virtualenv\) )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         rlang = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         rust = {
-          format = "[$symbol($version )]($style)";
+          format = "[◿](fg:#FEF709)[ $symbol($version )]($style)[◸](fg:#FEF709)";
           symbol = " ";
+          style = "bg:#FEF709 fg:#20192B";
         };
         shell = {
-          bash_indicator = " Bash";
-          fish_indicator = "󰈺 Fish";
-          zsh_indicator = " Zsh";
-          unknown_indicator = "";
+          bash_indicator = " Bash ";
+          fish_indicator = "󰈺 Fish ";
+          zsh_indicator = " Zsh ";
+          unknown_indicator = " ";
           disabled = false;
+          format = "[ $indicator]($style)[](fg:prev_bg)[](fg:#36F8EC)";
+          style = "bg:#20192B fg:#36F8EC";
         };
         shlvl = {
-          format = "░▒ [$symbol$shlvl]($style) ▒░";
+          format = "░▒▓ [$symbol$shlvl]($style) ▓▒░";
           threshold = 3;
           symbol = "󱎁 ";
           disabled = false;
         };
         status = {
-          symbol = "";
-          success_symbol = "";
-          not_executable_symbol = "󰜺";
-          not_found_symbol = "";
-          sigint_symbol = "󰘴";
-          signal_symbol = "󰔫";
+          symbol = " ";
+          success_symbol = " ";
+          not_executable_symbol = "󰜺 ";
+          not_found_symbol = " ";
+          sigint_symbol = "󰘴 ";
+          signal_symbol = "󰔫 ";
           map_symbol = true;
           disabled = false;
+          format = "[](fg:$style bg:none)[](fg:#20192B)[ $symbol$status]($style)";
+          success_style = "fg:#72F1B8 bg:#20192B";
+          failure_style = "fg:#F6037D bg:#20192B";
         };
         sudo = {
-          format = "░▒[$symbol]($style)▒░";
+          format = "░▒▓[$symbol]($style)▓▒░";
           symbol = "󰌆 ";
           disabled = false;
         };
         time = {
-          format = "[$time]($style) ";
+          format = "[$time]($style)";
           utc_time_offset = "Asia/Kolkata";
           disabled = false;
+          style = "fg:#631B87 bg:#F809C9";
         };
         username = {
           format = "[$user]($style)";
+          style_user = "bold bg:#F809C9 fg:#631B87";
           show_always = true;
         };
       };
