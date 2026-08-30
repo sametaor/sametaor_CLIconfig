@@ -1652,7 +1652,7 @@
         directory = {
           format = "[$path]($style) [$read_only]($read_only_style)";
           style = "bold fg:#F809C9 bg:#631B87";
-          read_only_style = "bold fg:#EFEEFF bg:#631B87";
+          read_only_style = "bold fg:#FEF709 bg:#631B87";
           read_only = "󰞚";
           home_symbol = "󰋜";
           use_os_path_sep = true;
