@@ -1539,10 +1539,22 @@
           "$line_break"
           "[├╼](fg:#F809C9)[](fg:#20192B)$shell$git_branch$git_status$git_metrics$git_commit$git_state$c$cpp$cmake$container$dotnet$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill$status[](fg:#20192B)[╾┘](fg:#F809C9) "
           "$line_break"
-          "[└╼](fg:#F809C9) $character"
+          "[└╼](fg:#F809C9)\${custom.user_icon}\${custom.root_icon}$character"
         ];
         add_newline = true;
         continuation_prompt = "";
+        custom.user_icon = {
+          symbol = " ";
+          when = "[ \"$(/run/current-system/sw/bin/id -u)\" -ne 0 ]";
+          style = "fg:#72F1B8";
+          format = "[$symbol]($style)";
+        };
+        custom.root_icon = {
+          symbol = " ";
+          when = "[ \"$(/run/current-system/sw/bin/id -u)\" -eq 0 ]";
+          style = "fg:#F6037D";
+          format = "[$symbol]($style)";
+        };
         battery = {
           format = "[$symbol$percentage ]($style)";
           full_symbol = "󰁹 ";
