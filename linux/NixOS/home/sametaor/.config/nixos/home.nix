@@ -1535,9 +1535,9 @@
       presets = [];
       settings = {
         format = lib.concatStrings [
-          "[┌╼](fg:#F809C9)[](fg:#20192B)[$os $hostname ](fg:#F809C9 bg:#20192B)[](fg:prev_bg)[╌╌](fg:#F809C9)[$username](bg:#F809C9 fg:#631B87)[](fg:prev_bg bg:prev_fg)[ $directory](fg:#F809C9 bg:#631B87)[▓▒░](fg:prev_bg) $jobs $shlvl $sudo $fill [░▒▓](fg:#631B87)[ $battery](fg:#F809C9 bg:#631B87)[](fg:#F809C9 bg:#631B87)[ $time](bg:#F809C9 fg:#631B87)[╾┐](fg:#F809C9)"
+          "[┌╼](fg:#F809C9)[](fg:#20192B)[$os $hostname ](fg:#F809C9 bg:#20192B)[](fg:prev_bg)[╌╌](fg:#F809C9)[$username](bg:#F809C9 fg:#631B87)[](fg:prev_bg bg:prev_fg)[ $directory](fg:#F809C9 bg:#631B87)[▓▒░](fg:prev_bg) $jobs $shlvl $sudo $fill [░▒▓](fg:#F809C9)[ $time](bg:#F809C9 fg:#631B87)[╾┐](fg:#F809C9)"
           "$line_break"
-          "[├╼](fg:#F809C9)[](fg:#20192B)$shell$git_branch$git_status$git_metrics$git_commit$git_state$c$cpp$cmake$container$dotnet$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill$status[](fg:#20192B)[╾┘](fg:#F809C9) "
+          "[├╼](fg:#F809C9)[](fg:#20192B)$shell$git_branch$git_status$git_metrics$git_commit$git_state$c$cpp$cmake$container$dotnet$golang$java$lua$nix_shell$nodejs$package$php$python$rlang$rust$fill$status[](fg:#20192B)[╾┘](fg:#F809C9)"
           "$line_break"
           "[└╼](fg:#F809C9)\${custom.user_icon}\${custom.root_icon}$character"
         ];
@@ -1554,71 +1554,6 @@
           when = "[ \"$(/run/current-system/sw/bin/id -u)\" -eq 0 ]";
           style = "fg:#F6037D";
           format = "[$symbol]($style)";
-        };
-        battery = {
-          format = "[$symbol$percentage ]($style)";
-          full_symbol = "󰁹 ";
-          charging_symbol = "󰂄 ";
-          discharging_symbol = "󱟞 ";
-          unknown_symbol = "󰂑 ";
-          empty_symbol = "󰂎 ";
-          disabled = false;
-          display = [
-            {
-              threshold = 10;
-              charging_symbol = "󰢜 ";
-              discharging_symbol = "󰁺 ";
-              style = "fg:#FF80C2 bg:#631B87";
-            }
-            {
-              threshold = 20;
-              charging_symbol = "󰂆 ";
-              discharging_symbol = "󰁻 ";
-              style = "fg:#FA84B3 bg:#631B87";
-            }
-            {
-              threshold = 30;
-              charging_symbol = "󰂇 ";
-              discharging_symbol = "󰁼 ";
-              style = "fg:#CD86A7 bg:#631B87";
-            }
-            {
-              threshold = 40;
-              charging_symbol = "󰂈 ";
-              discharging_symbol = "󰁽 ";
-              style = "fg:#A3899C bg:#631B87";
-            }
-            {
-              threshold = 50;
-              charging_symbol = "󰢝 ";
-              discharging_symbol = "󰁾 ";
-              style = "fg:#7B8C91 bg:#631B87";
-            }
-            {
-              threshold = 60;
-              charging_symbol = "󰂉 ";
-              discharging_symbol = "󰁿 ";
-              style = "fg:#548E86 bg:#631B87";
-            }
-            {
-              threshold = 70;
-              charging_symbol = "󰢞 ";
-              discharging_symbol = "󰂀 ";
-              style = "fg:#2E917C bg:#631B87";
-            }
-            {
-              threshold = 80;
-              charging_symbol = "󰂊 ";
-              discharging_symbol = "󰂁 ";
-              style = "fg:#089372 bg:#631B87"; 
-            }
-            {
-              threshold = 90;
-              charging_symbol = "󰂋 ";
-              discharging_symbol = "󰂂 ";
-              style = "fg:#009568 bg:#631B87";
-            }
-          ];
         };
         c = {
           format = "[◿](fg:#FEF709)[ $symbol($version(-$name) )]($style)[◸](fg:#FEF709)";
@@ -1733,7 +1668,8 @@
           style = "bg:#FEF709 fg:#20192B";
         };
         jobs = {
-          format = "░▒▓[$symbol$number]($style) ▓▒░";
+          format = "[░▒▓](fg:#631B87)[$symbol$number ]($style)[▓▒░](fg:#631B87)";
+          style = "fg:#F809C9 bg:#631B87";
           symbol = "󱃐 ";
         };
         line_break = {
@@ -1799,7 +1735,8 @@
           style = "bg:#20192B fg:#36F8EC";
         };
         shlvl = {
-          format = "░▒▓ [$symbol$shlvl]($style) ▓▒░";
+          format = "[░▒▓](fg:#631B87)[ $symbol$shlvl ]($style)[▓▒░](fg:#631B87)";
+          style = "fg:#F809C9 bg:#631B87";
           threshold = 3;
           symbol = "󱎁 ";
           disabled = false;
@@ -1818,7 +1755,8 @@
           failure_style = "fg:#F6037D bg:#20192B";
         };
         sudo = {
-          format = "░▒▓[$symbol]($style)▓▒░";
+          format = "[░▒▓](fg:#631B87)[$symbol]($style)[▓▒░](fg:#631B87)";
+          style = "fg:#F809C9 bg:#631B87";
           symbol = "󰌆 ";
           disabled = false;
         };
