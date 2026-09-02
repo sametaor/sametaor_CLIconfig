@@ -39,7 +39,97 @@
     shell = {
       enableShellIntegration = true;
     };
-    shellAliases = { };
+    shellAliases = {
+      H = "| head";
+      T = "| tail";
+      G = "| grep";
+      L = "| less";
+      M = "| most";
+      LL = "2>&1 | less";
+      CA = "2>&1 | cat -A";
+      NE = "2 > /dev/null";
+      NUL = "> /dev/null 2>&1";
+      P = "2>&1| pygmentize -l pytb";
+      ping = "prettyping";
+      what = "navi --query";
+      neo = "tmatrix -s 15 --fade -c default -C cyan -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10";
+      matrix = "tmatrix -s 15 --fade -c default -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10";
+      lolcat = "lolcat -t";
+      astro = "astroterm -cC -s 100 -f 60 -u -m -i Delhi";
+      l = "eza -lhF";
+      la = "eza -lAhF";
+      lr = "eza -RhF -L 2";
+      lt = "eza -l -h -t created -F";
+      ll = "eza -l";
+      ldot = "eza -ld .*";
+      lS = "eza -1Ss Extension -hF";
+      lart = "eza -1artF";
+      lrt = "eza -1rtF";
+      lsr = "eza -lARhF -L 2";
+      lsn = "eza -1";
+      ls = "eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o";
+      lsm = "eza -lbhHigUmua@ --time-style=long-iso --git --icons=always --colour=always";
+      lst = "eza -a -l --icons=always --colour=always --hyperlink -F always --color-scale-mode=gradient --git --git-repos -o -T -L 2 --no-user";
+      rsync-copy = "rsync -avz --progress -h";
+      rsync-move = "rsync -avz --progress -h --remove-source-files";
+      rsync-update = "rsync -avzu --progress -h";
+      rsync-synchronize = "rsync -avzu --delete --progress -h";
+      "sc-lsu" = "systemctl --user list-units";
+      "sc-iact" = "systemctl --user is-active";
+      "sc-status" = "systemctl --user status";
+      "sc-show" = "systemctl --user show";
+      "sc-help" = "systemctl --user help";
+      "sc-lsuf" = "systemctl --user list-unit-files";
+      "sc-ien" = "systemctl --user is-enabled";
+      "sc-lsj" = "systemctl --user list-jobs";
+      "sc-showenv" = "systemctl --user show-environment";
+      "sc-cat" = "systemctl --user cat";
+      "sc-lst" = "systemctl --user list-timers";
+      "sc-start" = "systemctl --user start";
+      "sc-stop" = "systemctl --user stop";
+      "sc-reload" = "systemctl --user reload";
+      "sc-restart" = "systemctl --user restart";
+      "sc-trystart" = "systemctl --user try-restart";
+      "sc-iso" = "systemctl --user isolate";
+      "sc-kill" = "systemctl --user kill";
+      "sc-repass" = "systemctl --user reset-failed";
+      "sc-en" = "systemctl --user enable";
+      "sc-dis" = "systemctl --user disable";
+      "sc-reen" = "systemctl --user reenable";
+      "sc-pre" = "systemctl --user preset";
+      "sc-mask" = "systemctl --user mask";
+      "sc-unmask" = "systemctl --user unmask";
+      "sc-link" = "systemctl --user link";
+      "sc-load" = "systemctl --user load";
+      "sc-cancel" = "systemctl --user cancel";
+      "sc-setenv" = "systemctl --user set-environment";
+      "sc-unsetenv" = "systemctl --user unset-environment";
+      "sc-edit" = "systemctl --user edit";
+      "sc-ennow" = "systemctl --user enable --now";
+      "sc-disnow" = "systemctl --user disable --now";
+      "sc-masknow" = "systemctl --user mask --now";
+      ga = "git add";
+      gall = "git add .";
+      gc = "git commit -v";
+      gca = "git commit -v -a";
+      gci = "git commit --interactive";
+      gcm = "git commit -v -m \"$1\"";
+      gcl = "git clone";
+      gps = "git push";
+      gpl = "git pull";
+      gplps = "git pull && git push";
+      gpr = "git pull --rebase";
+      gs = "git status";
+      git-send = "gall && gcm && gps";
+      pipi = "pip install";
+      pipiu = "pip install --upgrade";
+      pipls = "pip list";
+      pipu = "pip uninstall";
+      pipr = "pip install -r requirements.txt";
+      pygrep = "grep -nr --include=\"*.py\"";
+      pyfind = "find . -name \"*.py\"";
+      pyserve = "python3 -m http.server";
+    };
     sessionPath = [ ];
     sessionSearchVariables = { };
     sessionVariables = {
@@ -1514,12 +1604,306 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-      extraPackages = [];
-      flavors = {};
-      keymap = {};
-      plugins = {};
-      settings = {};
-      theme = {};
+      extraPackages = with pkgs; [
+        allmytoes
+        duckdb
+        glow
+        mediainfo
+        poppler-utils
+        trash-cli
+      ];
+      theme = {
+        mgr = {
+          cwd = { fg = "cyan"; };
+          border_style = {fg = "#F809C9";};
+        };
+        indicator = {
+          parent  = { fg = "#F809C9"; bg = "#20192B"; };
+          current = { fg = "#F809C9"; bg = "#631B87"; };
+          preview = { underline = true; };
+          padding = { open = "▐"; close = "◸"; };
+        };
+        confirm = {
+          border = {fg = "#36F8EC";};
+          title = {bold = true; fg="#36F8EC";};
+          body = {fg="#F809C9";};
+          list = {fg="#FEF709";};
+          btn_yes = {fg="#72F1B8"; bg="#265B43";};
+          btn_no = {fg="#F6037D"; bg="#71053B";};
+          btn_labels = [
+            "⟦󰄬 [Y]es⟧"
+            "⟦ [N]o⟧"
+          ];
+        };
+        notify = {
+          title_info = {bold = true; fg="#F809C9";};
+          title_warn = {bold = true; fg="#F88414";};
+          title_error = {bold = true; fg="#F6037D";};
+        };
+        pick = {
+          border = {fg = "#36F8EC";};
+          active = {fg="#F809C9"; bg="#631B87";};
+          inactive = {fg="#631B87"; bg="#20192B";};
+        };
+        input = {
+          border = {fg = "#36F8EC";};
+          title = {fg="#F809C9";};
+          value = {fg="#36F8EC";};
+          selected = {fg="#72F1B8"; bg="#265B43";};
+        };
+      };
+      plugins = {
+        git = {
+          package = pkgs.yaziPlugins.git;
+          setup = true;
+        };
+        piper = {
+          package = pkgs.yaziPlugins.piper;
+        };
+        chmod = {
+          package = pkgs.yaziPlugins.chmod;
+        };
+        bypass = {
+          package = pkgs.yaziPlugins.bypass;
+        };
+        duckdb = {
+          package = pkgs.yaziPlugins.duckdb;
+          setup = true;
+        };
+        lazygit = {
+          package = pkgs.yaziPlugins.lazygit;
+        };
+        mime-ext = {
+          package = pkgs.yaziPlugins.mime-ext;
+        };
+        dupes = {
+          package = pkgs.yaziPlugins.dupes;
+          setup = true;
+          settings = {
+            profiles = {
+              default = {
+                args = [ "-r" "-s" "-S"];
+              };
+            };
+          };
+        };
+        mediainfo = {
+          package = pkgs.yaziPlugins.mediainfo;
+        };
+        yafg = {
+          package = pkgs.yaziPlugins.yafg;
+          setup = true;
+          settings = {
+            editor = "nvim";
+          };
+        };
+        yatline = {
+          package = pkgs.yaziPlugins.yatline;
+          setup = true;
+          settings = {
+            section_separator = { open = ""; close = ""; };
+            part_separator = { open = "╱"; close = "╱"; };
+            inverse_separator = { open = ""; close = ""; };
+
+            padding = { inner = 1; outer = 1; };
+
+            style_a = {
+              bg = "#20192B";
+              fg = "#F809C9";
+              bg_mode = {
+                normal = "#20192B";
+                select = "#631B87";
+                un_set = "#FEF709";
+              };
+            };
+            style_b = { bg = "#36F8EC"; fg = "#20192B"; };
+            style_c = { bg = "#20192B"; fg = "#36F8EC"; };
+
+            permissions_t_fg = "#72F1B8";
+            permissions_r_fg = "#FEF709";
+            permissions_w_fg = "#F6037D";
+            permissions_x_fg = "#36F8EC";
+            permissions_s_fg = "#EFEEFF";
+
+            tab_width = 20;
+
+            selected = { icon = "󰻭"; fg = "#631B87"; };
+            copied = { icon = ""; fg = "#72F1B8"; };
+            cut = { icon = ""; fg = "#f6037D"; };
+
+            files = { icon = ""; fg = "#36F8EC"; };
+            filtereds = { icon = ""; fg = "#f809C9"; };
+
+            total = { icon = "󰮍"; fg = "#FEF709"; };
+            success = { icon = ""; fg = "#72F1B8"; };
+            failed = { icon = ""; fg = "#F6037D"; };
+
+            show_background = false;
+
+            display_header_line = true;
+            display_status_line = true;
+
+            component_positions = [ "header" "tab" "status" ];
+
+            header_line = {
+              left = {
+                section_a = [
+                  { type = "line"; name = "tabs"; }
+                ];
+                section_b = [];
+                section_c = [];
+              };
+              right = {
+                section_a = [
+                  { type = "string"; name = "date"; params = [ "%d %B %Y" ]; }
+                ];
+                section_b = [
+                  { type = "string"; name = "date"; params = [ "%H:%M" ]; }
+                ];
+                section_c = [];
+              };
+            };
+
+            status_line = {
+              left = {
+                section_a = [
+                  { type = "string"; name = "tab_mode"; }
+                ];
+                section_b = [
+                  { type = "string"; name = "hovered_size"; }
+                ];
+                section_c = [
+                  { type = "string"; name = "hovered_path"; }
+                  { type = "coloreds"; name = "count"; }
+                ];
+              };
+              right = {
+                section_a = [
+                  { type = "string"; name = "cursor_position"; }
+                ];
+                section_b = [
+                  { type = "string"; name = "cursor_percentage"; }
+                ];
+                section_c = [
+                  { type = "string"; name = "hovered_file_extension"; params = [ true ]; }
+                  { type = "coloreds"; name = "permissions"; }
+                ];
+              };
+            };
+          };
+        };
+        full-border = {
+          package = pkgs.yaziPlugins.full-border;
+          setup = true;
+          settings = {
+            type = lib.generators.mkLuaInline "ui.Border.PLAIN";
+          };
+        };
+        omni-trash = {
+          package = pkgs.yaziPlugins.omni-trash;
+        };
+        sshfs = {
+          package = pkgs.yaziPlugins.sshfs;
+          setup = true;
+        };
+        office = {
+          package = pkgs.yaziPlugins.office;
+        };
+        relative-motions = {
+          package = pkgs.yaziPlugins.relative-motions;
+          setup = true;
+          settings = {
+            show_numbers = "relative_absolute";
+            show_motion = true;
+            enter_mode = "first";
+          };
+        };
+        convert = {
+          package = pkgs.yaziPlugins.convert;
+        };
+        zoom = {
+          package = pkgs.yaziPlugins.zoom;
+        };
+        wl-clipboard = {
+          package = pkgs.yaziPlugins.wl-clipboard;
+        };
+        allmytoes = {
+          package = pkgs.yaziPlugins.allmytoes;
+          setup = true;
+        };
+        kdeconnect-send = {
+          package = pkgs.yaziPlugins.kdeconnect-send;
+        };
+        keep-preferences = {
+          package = pkgs.yaziPlugins.keep-preferences;
+          setup = true;
+        };
+      };
+      keymap = {
+        manager.prepend_keymap = [
+          { on = "C-y"; run = ["plugin wl-clipboard copy"];}
+          { on = "C-p"; run = ["plugin wl-clipboard paste"];}
+          { on = "+"; run = "plugin zoom 1"; desc = "Zoom in hovered file";}
+          { on = "-"; run = "plugin zoom -1"; desc = "Zoom out hovered file";}
+        ];
+      };
+      settings = {
+        mgr = {
+          ratio = [1 2 5];
+          sort_by = "natural";
+          sort_sensitive = false;
+          sort_dir_first = true;
+          sort_translit = true;
+          linemode = "mtime";
+          show_hidden = true;
+          show_symlink = true;
+        };
+        preview = {
+          wrap = "no";
+          tab_size = 4;
+        };
+        opener = {
+          play = [
+            { run = "mpv %s"; orphan = true; for = "unix"; }
+          ];
+          edit = [
+            { run = "$EDITOR %s"; block = true; for = "unix"; }
+          ];
+          open = [
+            { run = "xdg-open %s1"; desc = "Open"; }
+          ];
+        };
+        input = {
+          cursor_blink = true;
+        };
+        plugin = {
+          prepend_fetchers = [
+              { group = "git"; url = "{*,*/}"; run = "git"; }
+              { group = "mime"; url = "local://"; run = "mime-ext.local"; prio = "high";}
+              { group = "mime"; url = "remote://"; run = "mime-ext.remote"; prio = "high";}
+          ];
+          prepend_previewers = [
+              { url = "*.md"; run = "piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark \"$1\"";}
+              { url = "*/"; run = "piper -- eza -TL=3 --color=always --group-directories-first --icons --no-quotes \"$1\"";}
+              { mime = "image/{svg+xml,heic,jxl}"; run = "magick";}
+              { mime = "image/*"; run = "allmytoes";}
+              { mime = "{audio,video}/*"; run = "mediainfo";}
+              { mime = "application/{subrip,postscript,illustrator,dvb.ait,vnd.adobe.illustrator,eps}"; run = "mediainfo";}
+              { url = "*.{ai,eps,ait}"; run = "mediainfo"; }
+              { url = "*.{csv,tsv,json,parquet,txt,xlsx,db,duckdb}"; run = "duckdb"; }
+              { mime = "{.docx,application/{openxmlformats-officedocument,oasis.opendocument}.*,ms-*,msword}"; run = "office";}
+          ];
+          prepend_preloaders = [
+              { mime = "image/{svg+xml,heic,hxl}"; run = "magick";}
+              { mime = "image/*"; run = "allmytoes";}
+              { mime = "{audio,video}/*"; run = "mediainfo";}
+              { mime = "application/{subrip,postscript,illustrator,dvb.ait,vnd.adobe.illustrator,eps}"; run = "mediainfo";}
+              { url = "*.{ai,eps,ait}"; run = "mediainfo"; }
+              { url = "*.{csv,tsv,json,parquet,txt,xlsx}"; run = "duckdb"; multi = false; }
+              { mime = "{.docx,application/{openxmlformats-officedocument,oasis.opendocument}.*,ms-*,msword}"; run = "office";}
+          ];
+        };
+      };
     };
     yt-dlp = {
       enable = true;
@@ -2224,7 +2608,7 @@
         "-F"
         "--color-scale-mode=gradient"
         "--git"
-        "--git-repos -o"
+        "--git-repos"
       ];
       theme = {};
     };
