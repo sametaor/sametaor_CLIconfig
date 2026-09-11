@@ -9,6 +9,7 @@
 {
   imports = [
     inputs.zen-browser.homeModules.beta
+    inputs.prismnix.homeModules.prismnix
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home = {
@@ -20,7 +21,14 @@
     # compatible with. You should not change this, even if you update Home Manager.
     stateVersion = "26.05"; # Please check the release notes before changing
     # The home.packages option allows you to install packages to your user profilee
-    packages = with pkgs; [ libnotify durdraw curl jq];
+    packages = with pkgs; [
+      libnotify
+      durdraw
+      curl
+      jq
+      libretro-core-info
+      libretro-shaders-slang
+    ];
     pointerCursor = {
       enable = true;
       gtk = {
@@ -108,19 +116,6 @@
       "sc-ennow" = "systemctl --user enable --now";
       "sc-disnow" = "systemctl --user disable --now";
       "sc-masknow" = "systemctl --user mask --now";
-      ga = "git add";
-      gall = "git add .";
-      gc = "git commit -v";
-      gca = "git commit -v -a";
-      gci = "git commit --interactive";
-      gcm = "git commit -v -m \"$1\"";
-      gcl = "git clone";
-      gps = "git push";
-      gpl = "git pull";
-      gplps = "git pull && git push";
-      gpr = "git pull --rebase";
-      gs = "git status";
-      git-send = "gall && gcm && gps";
       pipi = "pip install";
       pipiu = "pip install --upgrade";
       pipls = "pip list";
@@ -555,28 +550,78 @@
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       configType = "lua";
       settings = {
+        monitor = [
+          {
+            output = "";
+            mode = "1920x1080@144";
+            scale = "1";
+            bitdepth = 10;
+            sdr_eotf = "srgb";
+            supports_wide_color = 1;
+            position = "auto";
+          }
+        ];
         config = {
           general = {
+            allow_tearing = true;
             border_size = 2;
-            gaps_in = 5;
+            gaps_in = 2;
             gaps_out = 5;
-            layout = "dwindle";
+            layout = "scrolling";
+            locale = "en_US";
+            col = {
+              active_border = { colors = ["#F809C9FF" "#4F0C71FF"]; angle = 90.00; };
+              inactive_border = { colors = ["#F809C980" "#4F0C7180"]; angle = 90.00; };
+            };
+            snap.enabled = true;
+          };
+          scrolling = {
+            direction = "right";
+            column_width = 1.0;
           };
           decoration = {
-            rounding = 12;
+            rounding = 25;
+            rounding_power = 1.0;
             active_opacity = 1.0;
             inactive_opacity = 0.8;
             shadow = {
               enabled = true;
-              range = 30;
+              range = 15;
               render_power = 4;
-              offset = "0 5";
-              color = "rgba(00000070)";
+              offset = "0 0";
+              color = { colors = ["#F809C9FF" "#4F0C71FF"]; angle = 90.00; };
+              scale = 2.0;
+            };
+            #screen_shader = "retro.frag";
+            blur = {
+              enabled = true;
+              brightness = 1;
+              contrast = 0.8916;
+              input_methods = true;
+              noise = 0.0117;
+              passes = 1;
+              popups = true;
+              size = 8;
+              special = false;
+              variant = "prism";
+              glass = {
+                refraction = 20.0;
+                roughness = 1.0;
+                size = 7.5;
+              };
+            };
+            glow = {
+              enabled = true;
+              color = { colors = ["#F809C970" "#4F0C7170"]; angle = 90.00; };
+              range = 60;
+              render_power = 4;
             };
           };
           misc = {
+            allow_session_lock_restore = true;
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
+            vrr = 3;
           };
           dwindle = {
             preserve_split = true;
@@ -587,8 +632,12 @@
           cursor = {
             no_hardware_cursors = 0;
           };
+          ecosystem = {
+            no_donation_nag = true;
+            no_update_news = true;
+          };
           input = {
-            kb_layout = "";
+            kb_layout = "us";
             numlock_by_default = true;
             follow_mouse = 0;
             touchpad = {
@@ -636,12 +685,12 @@
         	float = true,
         })
         hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
-        hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = true })
+        hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = false })
         hl.layer_rule({ match = { namespace = "^dms:.*" }, no_anim = true })
 
-        pcall(require, "dms.colors")
+        hl.window_rule({ name = "ghostty_starting_width", match = { class = "com.mitchellh.ghostty" }, scrolling_width = 0.7})
+
         pcall(require, "dms.outputs")
-        pcall(require, "dms.layout")
         pcall(require, "dms.cursor")
         pcall(require, "dms.binds")
         pcall(require, "dms.binds-user")
@@ -3037,11 +3086,280 @@
       enable = true;
       plugins = [];
     };
-    prismlauncher = {
+    #prismlauncher = {
+    #  enable = true;
+    #  extraPackages = [];
+    #  settings = {};
+    #  themes = {};
+    #};
+    prismnix = {
       enable = true;
-      extraPackages = [];
-      settings = {};
-      themes = {};
+      package = pkgs.prismlauncher;
+      instances = {
+        peakmc = {
+          config = {
+            memory = {
+              max = 8192;
+              min = 1024;
+            };
+            name = "PeakMC";
+            window = {
+              hide-launcher-on-open = true;
+              launch-maximized = true;
+              quit-launcher-on-close = false;
+            };
+          };
+          minecraft = {
+            enable = true;
+            allowed-symlinks = {
+              enable = true;
+            };
+            version = "1.20.1";
+            mod-loader = {
+              enable = true;
+              loader = "fabric";
+            };
+            shader-loader = {
+              enable = true;
+              loader = "iris";
+            };
+            mods = {
+              fabric-api.enable = true;
+            };
+            packages = with pkgs; [
+              # Resource Packs
+              #prismnix."(unofficial)-mandalas-gui-dark-mode-mod-compatibility"
+              # Mods
+              prismnix."3dskinlayers"
+              prismnix.accessories
+              prismnix.accessories-tc-layer
+              prismnix.addonslib
+              prismnix.advancement-plaques
+              prismnix.amendments
+              prismnix.appleskin
+              prismnix.architectury-api
+              prismnix.artifacts
+              prismnix.athena-ctm
+              prismnix.azurelib
+              prismnix.azurelib-armor
+              prismnix.balm
+              prismnix.bclib
+              prismnix.beautify-refabricated
+              prismnix.bellsandwhistles
+              prismnix.betterend
+              (prismnix.mkModrinthPkg{
+                name = "better-f3";
+                id = "8shC1gFX";
+                type = "mod";
+                version = {
+                  id = "7WkFnw9F";
+                  file = "BetterF3-7.0.2-Fabric-1.20.1.jar";
+                  hash = "sha256-ySgrNxxh+gTzKcxXcZseIh1lwFenDcuT0dK0MBaP2kY=";
+                };
+              })
+              prismnix.betternether
+              prismnix.biomes-o-plenty
+              prismnix.blockus
+              prismnix.botania
+              prismnix.botarium
+              prismnix.brewin-and-chewin-fabric
+              prismnix.cameraoverhaul
+              prismnix.casualness-delight
+              prismnix.cc-androids
+              prismnix.cc-tweaked
+              prismnix.charm-forked
+              prismnix.chipped
+              prismnix.chunky
+              prismnix.cinderscapes
+              prismnix.cloth-config
+              prismnix.clumps
+              prismnix.comforts
+              prismnix.controlling
+              prismnix.corgilib
+              prismnix.corn-delight-fabric
+              prismnix.craftpresence
+              prismnix.crate-delight
+              prismnix.createaddition
+              prismnix.create-deco
+              prismnix.create-fabric
+              prismnix.create-food
+              prismnix.creativecore
+              prismnix.cultural-creators
+              prismnix.cultural-delights-fabric
+              prismnix.delightful-creators
+              prismnix.do-api
+              prismnix.dusty-decorations
+              prismnix.dynamic-fps
+              prismnix.ebe
+              prismnix.emi
+              prismnix.emiffect
+              prismnix.emi-enchanting
+              prismnix.emi-ores
+              prismnix."emi-professions-(emip)"
+              prismnix.ends-delight
+              (prismnix.mkModrinthPkg{
+                name = "entity-culling";
+                id = "MwYnBlwK";
+                type = "mod";
+                version = {
+                  id = "infkTCSN";
+                  file = "entityculling-fabric-1.10.5-mc1.20.1.jar";
+                  hash = "sha256-y03rKoI8g6+Y/MBukoB5E7SC3lSYHRZXopiC3B/UZlw=";
+                };
+              })
+              prismnix.entitytexturefeatures
+              prismnix.entity-model-features
+              prismnix.esf
+              prismnix.expanded-delight
+              prismnix.extra-mod-integrations
+              prismnix.extshape
+              prismnix.extshape_blockus
+              prismnix.fabric-language-kotlin
+              prismnix.farmers-delight-refabricated
+              prismnix.farmers-knives
+              prismnix.ferrite-core
+              prismnix.frights-delight
+              (prismnix.mkModrinthPkg{
+                name = "fusion";
+                id = "p19vrgc2";
+                type = "mod";
+                version = {
+                    id = "5ezihlcf";
+                    file = "fusion-1.3.15a-fabric-mc1.20.1.jar";
+                    hash = "sha256-PXLIoDCw3AZJYzhrL93y6MsGNoSWIC3OGN90lE9LVuI=";
+                  };
+              })
+              prismnix.geckolib
+              prismnix.glitchcore
+              prismnix.handcrafted
+              prismnix.hearths
+              prismnix.hephaestus
+              prismnix.hephaestus-expansion
+              prismnix.hephaestusplus
+              prismnix.iceberg
+              prismnix.immediatelyfast
+              prismnix.immersive-aircraft
+              prismnix.incendium
+              prismnix.indium
+              prismnix.jade
+              prismnix.jade-addons-fabric
+              prismnix.keybindsgaloreplus
+              prismnix.kleeslabs
+              prismnix.legendary-tooltips
+              prismnix.lets-do-addon-compat
+              prismnix.lets-do-addon-corn-expansion
+              prismnix.lets-do-addon-fluids
+              prismnix.lets-do-addon-structures
+              prismnix.lets-do-addon-questing-items
+              prismnix.lets-do-bakery
+              prismnix.lets-do-bakery-farmcharm-compat
+              prismnix.lets-do-beachparty
+              prismnix.lets-do-brewery
+              prismnix.lets-do-brewery-farmcharm-compat
+              prismnix.lets-do-candlelight
+              prismnix.lets-do-candlelight-farmcharm-compat
+              prismnix.lets-do-emi-compat
+              prismnix.lets-do-herbalbrews
+              prismnix.lets-do-farm-charm
+              prismnix.lets-do-lilis-lucky-lures
+              prismnix.lets-do-meadow
+              prismnix.lets-do-meadow-sawmill-compat
+              prismnix.lets-do-nethervinery
+              prismnix.lets-do-vinery
+              prismnix.libipn
+              prismnix.lithium
+              prismnix.lithostitched
+              prismnix.macaws-betters
+              prismnix.macaws-bridges
+              prismnix.macaws-biomes-o-plenty
+              prismnix.macaws-doors
+              prismnix.macaws-fences-and-walls
+              prismnix.macaws-furniture
+              prismnix.macaws-holidays
+              prismnix.macaws-lights-and-lamps
+              prismnix.macaws-paintings
+              prismnix.macaws-paths-and-pavings
+              prismnix.macaws-regions-unexplored
+              prismnix.macaws-roofs
+              prismnix.macaws-stairs
+              prismnix.macaws-trapdoors
+              prismnix.macaws-windows
+              prismnix.modernfix
+              prismnix.modmenu
+              prismnix.moonlight
+              prismnix.moremcmeta
+              prismnix.moremcmeta-emissive
+              prismnix.more-delight
+              prismnix.nethers-delight-refabricated
+              prismnix.nets
+              prismnix.no-chat-reports
+              prismnix.nuit
+              prismnix.oceans-delight
+              prismnix.owo-lib
+              #prismnix.particular
+              prismnix.patchouli
+              prismnix.pineapple-delight
+              prismnix.platform
+              prismnix.plethora-peripherals
+              prismnix.polytone
+              prismnix.prism-lib
+              prismnix.puzzles-lib
+              prismnix.rechiseled
+              prismnix.rechiseled-create
+              prismnix.reeses-sodium-options
+              prismnix.reframed
+              prismnix.regions-unexplored
+              prismnix.repurposed-structures-fabric
+              prismnix.resourceful-config
+              prismnix.resourceful-lib
+              prismnix.respite-creators-fabric
+              prismnix.rrls
+              prismnix.searchables
+              prismnix.slice-and-dice
+              prismnix.small-ships
+              prismnix.sodium
+              prismnix.sodium-dynamic-lights
+              prismnix.sodium-extra
+              prismnix.sound-physics-remastered
+              prismnix.storage-delight
+              prismnix.supermartijn642s-core-lib
+              prismnix.supermartijn642s-config-lib
+              prismnix.supplementaries
+              prismnix.supplementaries-squared
+              prismnix.tempad
+              prismnix.terrablender
+              prismnix.terralith
+              prismnix.things
+              prismnix.tiny-item-animations
+              prismnix.toms-peripherals
+              prismnix.travelersbackpack
+              prismnix.ubes-delight
+              prismnix.unilib
+              prismnix.vanillabackport
+              prismnix.visuality
+              prismnix.waystones
+              prismnix.wormhole
+              prismnix.yacl
+              prismnix.yungs-api
+              prismnix.yungs-better-desert-temples
+              prismnix.yungs-better-dungeons
+              prismnix.yungs-better-jungle-temples
+              prismnix.yungs-better-mineshafts
+              prismnix.yungs-better-nether-fortresses
+              prismnix.yungs-better-ocean-monuments
+              prismnix.yungs-better-strongholds
+              prismnix.yungs-better-witch-huts
+              prismnix.yungs-bridges
+              prismnix.yungs-cave-biomes
+              prismnix.yungs-extras
+              prismnix.yungs-menu-tweaks
+              prismnix.zoomify
+              # Shaders
+              prismnix.complementary-reimagined
+            ];
+          };
+        };
+      };
     };
     obsidian = {
       enable = true;
@@ -3089,11 +3407,140 @@
     retroarch = {
       enable = true;
       cores = {
+        beetle-lynx = {
+          enable = true;
+          package = pkgs.libretro.beetle-lynx;
+        };
+        beetle-psx-hw = {
+          enable = true;
+          package = pkgs.libretro.beetle-psx-hw;
+        };
+        beetle-saturn = {
+          enable = true;
+          package = pkgs.libretro.beetle-saturn;
+        };
+        bsnes = {
+          enable = true;
+          package = pkgs.libretro.bsnes;
+        };
+        citra = {
+          enable = true;
+          package = pkgs.libretro.citra;
+        };
+        dolphin = {
+          enable = true;
+          package = pkgs.libretro.dolphin;
+        };
+        dosbox-pure = {
+          enable = true;
+          package = pkgs.libretro.dosbox-pure;
+        };
+        flycast = {
+          enable = true;
+          package = pkgs.libretro.flycast;
+        };
+        mame = {
+          enable = true;
+          package = pkgs.libretro.mame;
+        };
+        melondsds = {
+          enable = true;
+          package = pkgs.libretro.melondsds;
+        };
         mgba = {
           enable = true;
+          package = pkgs.libretro.mgba;
+        };
+        mupen64plus = {
+          enable = true;
+          package = pkgs.libretro.mupen64plus;
+        };
+        pcsx2 = {
+          enable = true;
+          package = pkgs.libretro.pcsx2;
+        };
+        ppsspp = {
+          enable = true;
+          package = pkgs.libretro.ppsspp;
+        };
+        vice-x64sc = {
+          enable = true;
+          package = pkgs.libretro.vice-x64sc;
         };
       };
-      settings = {};
+      settings = {
+        savestate_auto_save = "true";
+        savestate_auto_load = "true";
+        history_list_enable = "true";
+        rgui_show_start_screen = "false";
+        show_hidden_file = "true";
+        config_save_on_exit = "true";
+        input_driver = "wayland";
+        input_joypad_driver = "udev";
+        video_driver = "vulkan";
+        audio_driver = "pipewire";
+        menu_driver = "xmb";
+        suspend_screensaver_enable = "true";
+        fps_show = "false";
+        memory_show = "false";
+        video_fullscreen = "true";
+        video_refresh_rate = "60";
+        video_window_show_decorations = "true";
+        video_vsync = "true";
+        video_threaded = "true";
+        video_smooth = "true";
+        video_shader_dir = "${pkgs.libretro-shaders-slang}/share/libretro/shaders/shaders_slang";
+        libretro_info_path = "${pkgs.libretro-core-info}/share/retroarch/cores/";
+        video_shader_enable = "true";
+        video_font_enable = "true";
+        audio_enable = "true";
+        audio_enable_menu = "true";
+        audio_enable_menu_ok = "true";
+        audio_enable_menu_cancel = "true";
+        audio_enable_menu_notice = "true";
+        audio_enable_menu_bgm = "true";
+        audio_sync = "true";
+        microphone_enable = "false";
+        input_overlay_enable = "true";
+        menu_show_online_updater = "true";
+        menu_show_core_updater = "true";
+        menu_mouse_enable = "true";
+        menu_pointer_enable = "true";
+        menu_timedate_enable = "true";
+        menu_battery_level_enable = "true";
+        menu_core_enable = "true";
+        menu_thumbnails = "4";
+        menu_left_thumbnails = "3";
+        menu_navigation_wraparound_enable = "true";
+        camera_allow = "false";
+        location_allow = "false";
+        netplay_nickname = "sametaor";
+        netplay_mode = "true";
+        cheevos_enable = "true";
+        cheevos_username = "sametaor";
+        cheevos_visibility_account = "false";
+        cheevos_hardcore_mode_enable = "false";
+        cheevos_visibility_unlock = "true";
+        cheevos_unlock_sound_enable = "true";
+        cheevos_auto_screenshot = "true";
+        cheevos_visibility_mastery = "true";
+        cheevos_badges_enable = "true";
+        cheevos_challenge_indicators = "true";
+        cheevos_visibility_lboard_start = "true";
+        cheevos_visibility_lboard_submit = "true";
+        cheevos_visibility_lboard_trackers = "true";
+        cheevos_richpresence_enable = "true";
+        cheevos_start_active = "true";
+        cheevos_test_unofficial = "true";
+        rewind_enable = "true";
+        pause_on_disconnect = "true";
+        video_gpu_record = "true";
+        video_gpu_screenshot = "true";
+        video_shader_watch_files = "true";
+        savestate_auto_index = "true";
+        gamemode_enable = "true";
+        vulkan_gpu_index = "1";
+      };
     };
     ripgrep = {
       enable = true;

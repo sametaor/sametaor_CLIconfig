@@ -30,6 +30,7 @@ in
     inputs.millennium.overlays.default
     inputs.durdraw.overlays.default
     inputs.nur.overlays.default
+    inputs.prismnix.overlays.default
     (final: prev: {
       # Make nvidiaWrap available globally
       nvidiaWrap =
@@ -508,6 +509,8 @@ in
       HandleLidSwitchDocked = "ignore";
     };
     mpd = {
+      startWhenNeeded = true;
+      fluidsynth = true;
       settings = {
         audio_output = [
           {
@@ -562,6 +565,11 @@ in
       alsa.support32Bit = true;
       jack.enable = true;
       wireplumber.enable = true;
+      extraConfig.pipewire."99-retroarch-fix" = {
+        "context.properties" = {
+          "default.clock.min-quantum" = 1024;
+        };
+      };
     };
     libinput.enable = true;
     openssh.enable = true;
@@ -727,7 +735,41 @@ in
       enableAudioWavelength = true;
       enableCalendarEvents = true;
     };
-    git.enable = true;
+    git = {
+      enable = true;
+      config = {
+        safe = {
+          directory = "/home/sametaor/Projects/github/sametaor_CLIconfig/";
+        };
+        alias = {
+          a = "add";
+          all = "add .";
+          c = "commit -v";
+          ca = "commit -v -a";
+          ci = "commit --interactive";
+          cm = "commit -v -m";
+          cl = "clone";
+          ps = "push";
+          pl = "pull";
+          pr = "pull --rebase";
+          s = "status";
+          plps = "!git pull && git push";
+          send = ''!f() { git add . && git commit -v -m "$1" && git push; }; f'';
+        };
+        feature = {
+          manyFiles = {
+            index.version = 4;
+          };
+        };
+        fetch.parallel = 8;
+        grep = {
+          lineNumber = true;
+          column = true;
+          extendedRegexp = true;
+          threads = 8;
+        };
+      };
+    };
     bash = {
       completion.enable = true;
       enable = true;
@@ -1367,7 +1409,7 @@ in
       rebuild = "doas nixos-rebuild switch --flake ~/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos\\#nixsametaor";
       sudo = "doas";
       btop = "doas nvidia-offload btop";
-      sudoedit = "doas nvim -Z"
+      sudoedit = "doas nvim -Z";
       ":q" = "exit";
       rm = "rm -ir";
       rmf = "rm -irf";
@@ -1444,7 +1486,6 @@ in
         _2048-in-terminal
         _7zip-zstd-rar
         _7zz-rar
-        adb-sync
         adbfs-rootless
         adbtuifm
         adi1090x-plymouth-themes
@@ -1467,6 +1508,7 @@ in
         bat-extras.batpipe
         bat-extras.core
         bat-extras.prettybat
+        better-adb-sync
         inputs.blender-bin.packages.x86_64-linux.default
         bluetui
         bluez
@@ -1638,16 +1680,16 @@ in
         poppler-utils
         poppler_data
         prettyping
-        (prismlauncher.override {
-          jdks = with pkgs; [
-            jdk25
-            jdk17
-            jdk21
-            jdk8
-            jdk
-          ];
-          gamemodeSupport = true;
-        })
+        #(prismlauncher.override {
+        #  jdks = with pkgs; [
+        #    jdk25
+        #    jdk17
+        #    jdk21
+        #    jdk8
+        #    jdk
+        #  ];
+        #  gamemodeSupport = true;
+        #})
         protonup-qt
         proton-vpn
         proton-vpn-cli
@@ -1678,6 +1720,7 @@ in
         systemctl-tui
         tailscale
         tealdeer
+        teams-for-linux
         telegram-desktop
         tenacity
         tenki
@@ -1703,7 +1746,6 @@ in
         wakatime-cli
         wiki-tui
         wikiman
-        winboat
         winetricks
         wineWow64Packages.waylandFull
         wget
@@ -1748,7 +1790,7 @@ in
     permittedInsecurePackages = [
       "electron-39.8.10"
       "electron-40.10.5"
-      "ventoy-1.1.12"
+      "ventoy-1.1.17"
     ];
   };
 

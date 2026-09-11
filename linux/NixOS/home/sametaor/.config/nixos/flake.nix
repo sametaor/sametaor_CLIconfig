@@ -38,6 +38,14 @@
       url = "github:Daaboulex/durdraw-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    prismnix = {
+      url = "github:qacow37/prismnix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
