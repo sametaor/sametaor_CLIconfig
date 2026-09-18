@@ -15,7 +15,6 @@
 }:
 
 let
-  # <-- change this if your Linux username isn't "sametaor"
   username = "sametaor";
 
   userCfg = config.users.users.${username};
