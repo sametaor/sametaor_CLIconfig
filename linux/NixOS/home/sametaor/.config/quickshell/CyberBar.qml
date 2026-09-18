@@ -192,7 +192,7 @@ Item {
             }
 
             PathLine {
-                x: 556
+                x: 550
                 y: 6
             }
 
@@ -214,7 +214,7 @@ Item {
             property real rightX: (root.width / 2) + (innerCenter / 2)
 
             // 1. Top left corner of the inner box
-            startX: 564
+            startX: 558
             startY: 6
 
             // 3. Line down to bottom right corner
@@ -240,7 +240,7 @@ Item {
             }
 
             PathLine {
-                x: 564
+                x: 558
                 y: 6
             }
         }

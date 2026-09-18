@@ -584,14 +584,6 @@
             rounding_power = 1.0;
             active_opacity = 1.0;
             inactive_opacity = 0.8;
-            shadow = {
-              enabled = true;
-              range = 15;
-              render_power = 4;
-              offset = "0 0";
-              color = { colors = ["#F809C9FF" "#4F0C71FF"]; angle = 90.00; };
-              scale = 2.0;
-            };
             #screen_shader = "retro.frag";
             blur = {
               enabled = true;

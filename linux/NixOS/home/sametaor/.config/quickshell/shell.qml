@@ -101,5 +101,18 @@ ShellRoot {
                 anchors.verticalCenterOffset: -16
             }
         }
+        Item {
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            // Align x coordinates with your dual trapezoidal frames on the left/middle bar zone
+            x: 412
+            width: 260
+
+            Overview {
+                anchors.centerIn: parent
+                anchors.verticalCenterOffset: -6
+                anchors.horizontalCenterOffset: 16
+            }
+        }
     }
 }
