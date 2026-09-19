@@ -98,7 +98,7 @@ ShellRoot {
 
             Screenshot {
                 anchors.centerIn: parent
-                anchors.verticalCenterOffset: -16
+                anchors.verticalCenterOffset: -15
             }
         }
         Item {
@@ -112,6 +112,17 @@ ShellRoot {
                 anchors.centerIn: parent
                 anchors.verticalCenterOffset: -6
                 anchors.horizontalCenterOffset: 16
+            }
+        }
+        Item {
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            x: 1294 // Adjust to fit safely next to Overview/Cava
+            width: 140
+
+            SysMon {
+                anchors.centerIn: parent
+                anchors.verticalCenterOffset: -8
             }
         }
     }

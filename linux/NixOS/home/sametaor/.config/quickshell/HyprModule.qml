@@ -9,7 +9,7 @@ RowLayout {
     // Hexagon Logo
     Text {
         text: "󰛡"
-        color: "#ffcc00"
+        color: "#FEF709"
         font.pixelSize: 32
         Layout.alignment: Qt.AlignVCenter
     }
@@ -22,7 +22,7 @@ RowLayout {
 
         Text {
             text: Hyprland.focusedMonitor ? "Workspace " + Hyprland.focusedMonitor.activeWorkspace.id : "Workspace 0"
-            color: "white"
+            color: "#EFEEFF"
             font.bold: true
             font.family: "Iosevka SciFi"
             font.pixelSize: 14
@@ -30,7 +30,7 @@ RowLayout {
         Text {
             // Actively tracks the focused window title
             text: Hyprland.activeToplevel ? Hyprland.activeToplevel.title : "System Idle"
-            color: "#7a7f8c"
+            color: "#36F8EC"
             font.family: "Iosevka SciFi"
             font.pixelSize: 12
             // These two properties must be paired for QML to truncate the text properly

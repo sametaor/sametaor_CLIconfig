@@ -106,8 +106,8 @@ Item {
                     }
                 }
                 height: targetHeight
-                color: root.isIdle ? "#00FFFF" : "#36F8EC"
-                opacity: root.isIdle ? 0.85 : 1.0
+                color: root.isIdle ? "#F809C9" : "#FEF709"
+                opacity: root.isIdle ? 1.0 : 1.0
                 anchors.bottom: parent.bottom
 
                 Behavior on height {

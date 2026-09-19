@@ -6,7 +6,7 @@ Item {
     width: 1200 // Will adapt dynamically to PanelWindow width
     height: 60
 
-    property color backgroundColor: "#b30b0c10"
+    property color backgroundColor: "#b3251933"
     property color borderColor: "#f809c9"
     property real borderWidth: 1.5
 
@@ -76,13 +76,13 @@ Item {
 
             // 9. Line to the start of the center section's bottom step up
             PathLine {
-                x: 1465
+                x: 1458
                 y: 30
             }
 
             // 10. Slant up into the middle section
             PathLine {
-                x: 1450
+                x: 1443
                 y: 45
             }
 

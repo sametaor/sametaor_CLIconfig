@@ -8,7 +8,7 @@ Item {
     width: 150
     height: 24
 
-    property string trackInfo: "NO SIGNAL"
+    property string trackInfo: "-"
 
     Process {
         id: playerProc
@@ -17,7 +17,7 @@ Item {
         stdout: SplitParser {
             onRead: data => {
                 let trimmed = data.trim();
-                root.trackInfo = trimmed.length > 0 ? trimmed : "NO SIGNAL";
+                root.trackInfo = trimmed.length > 0 ? trimmed : "-";
             }
         }
     }
@@ -29,7 +29,7 @@ Item {
         Text {
             id: scrollingText
             text: root.trackInfo
-            color: root.trackInfo === "NO SIGNAL" ? "#7a7f8c" : "white"
+            color: root.trackInfo === "-" ? "#631B87" : "#36F8EC"
             font.family: "Iosevka SciFi"
             font.pixelSize: 16
             anchors.verticalCenter: parent.verticalCenter

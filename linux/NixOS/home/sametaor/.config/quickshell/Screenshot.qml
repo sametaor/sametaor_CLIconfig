@@ -3,8 +3,8 @@ import Quickshell.Io
 
 Item {
     id: root
-    width: 40
-    height: 30
+    width: 38
+    height: 27
 
     MouseArea {
         id: mouseArea
@@ -42,9 +42,9 @@ Item {
         Text {
             anchors.centerIn: parent
             text: mouseArea.containsMouse ? "󰞢" : "󰞤"
-            color: mouseArea.containsMouse ? "#36F8EC" : "white"
+            color: mouseArea.containsMouse ? "#FEF709" : "#36F8EC"
             font.family: "Iosevka SciFi"
-            font.pixelSize: 32
+            font.pixelSize: 28
         }
     }
 
