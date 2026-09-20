@@ -109,18 +109,11 @@ ShellRoot {
                 anchors.verticalCenterOffset: -15
             }
         }
-        Item {
-            anchors.top: parent.top
-            anchors.bottom: parent.bottom
-            // Align x coordinates with your dual trapezoidal frames on the left/middle bar zone
-            x: 412
-            width: 260
-
-            Overview {
-                anchors.centerIn: parent
-                anchors.verticalCenterOffset: -6
-                anchors.horizontalCenterOffset: 16
-            }
+        // Workspace overview. Bar-sized item at the bar's origin: its pills are
+        // placed in the same coordinates CyberBar.qml draws the two frames in.
+        Overview {
+            x: 0
+            y: 0
         }
         Item {
             anchors.top: parent.top
