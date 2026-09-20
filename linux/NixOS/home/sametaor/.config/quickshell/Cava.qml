@@ -38,7 +38,7 @@ Item {
 
     Process {
         id: cavaProc
-        command: ["sh", "-c", "cava -p ~/.config/cava/bar.conf"]
+        command: ["sh", "-c", "cava -p ~/.config/quickshell/bar.conf"]
         running: true
         stdout: SplitParser {
             onRead: data => {

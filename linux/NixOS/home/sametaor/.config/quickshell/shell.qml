@@ -36,18 +36,26 @@ ShellRoot {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.verticalCenterOffset: +20
             }
-            // 3. RIGHT SIDE WIDGETS
-            RowLayout {
-                height: 33
-                anchors.right: parent.right
-                anchors.rightMargin: 15
-                spacing: 15
-                Text {
-                    text: "⬡ ⬡ ⬡"
-                    color: "white"
-                    font.pixelSize: 18
-                }
-            }
+        }
+
+        // 3. RIGHT SIDE: button boxes at the very end of the bar, tray to their left.
+        //    ControlStrip = clipboard, wifi, sound, battery (laptops only), control panel.
+        ControlStrip {
+            id: controls
+            anchors.right: parent.right
+            anchors.rightMargin: 18
+            anchors.top: parent.top
+        }
+
+        // The tray's slanted right edge nests against the strip's first box, keeping
+        // the same `gap` as between the boxes. It may grow leftward only as far as
+        // the bar's y=30 ledge starts (x=1458 in CyberBar.qml, +12 of breathing room).
+        TrayModule {
+            id: tray
+            anchors.right: controls.left
+            anchors.rightMargin: controls.gap - controls.slant
+            anchors.top: parent.top
+            maxWidth: Math.max(60, controls.x + controls.slant - controls.gap - 1470)
         }
         MediaModule {
             id: mediaTriggerBox

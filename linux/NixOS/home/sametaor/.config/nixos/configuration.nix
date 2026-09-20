@@ -482,6 +482,7 @@ in
     hardwareClockInLocalTime = true;
   };
   services = {
+    upower.enable = true;
     kmscon = {
       enable = true;
       config = {
