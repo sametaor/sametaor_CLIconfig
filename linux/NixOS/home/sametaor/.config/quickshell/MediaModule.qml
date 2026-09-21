@@ -1,6 +1,12 @@
 import QtQuick
-import Quickshell.Io
+import Quickshell
+import Quickshell.Services.Mpris
 
+// The "Song - Artist" box in the bar. Click it to open the media flyout
+// (MediaFlyout.qml / MediaCard.qml); middle-click toggles play/pause.
+// Track info now comes straight from MPRIS (same source as the flyout and the
+// Cava module) instead of a `playerctl -F` process, so it updates instantly and
+// the bar and the flyout can never disagree about which player is showing.
 Item {
     id: root
 
@@ -8,20 +14,47 @@ Item {
     width: 150
     height: 24
 
-    property string trackInfo: "-"
+    // ---- which player to show -------------------------------------------
+    // The one you picked in the flyout (while it still exists), else whichever
+    // is playing, else the first one that has a track.
+    property var manualPlayer: null
+    readonly property var players: Mpris.players.values
+    readonly property var player: pick()
 
-    Process {
-        id: playerProc
-        command: ["playerctl", "-F", "metadata", "--format", "{{ title }} - {{ artist }}"]
-        running: true
-        stdout: SplitParser {
-            onRead: data => {
-                let trimmed = data.trim();
-                root.trackInfo = trimmed.length > 0 ? trimmed : "-";
-            }
+    function pick() {
+        const list = root.players;
+        if (!list || list.length === 0)
+            return null;
+        if (root.manualPlayer && list.indexOf(root.manualPlayer) !== -1)
+            return root.manualPlayer;
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].playbackState === MprisPlaybackState.Playing)
+                return list[i];
         }
+        for (let j = 0; j < list.length; j++) {
+            if (list[j].trackTitle)
+                return list[j];
+        }
+        return list[0];
     }
 
+    function cyclePlayer() {
+        const list = root.players;
+        if (!list || list.length < 2)
+            return;
+        root.manualPlayer = list[(list.indexOf(root.player) + 1) % list.length];
+    }
+
+    readonly property string trackInfo: {
+        const p = root.player;
+        if (!p || !p.trackTitle)
+            return "-";
+        return p.trackArtist ? p.trackTitle + " - " + p.trackArtist : p.trackTitle;
+    }
+
+    readonly property bool open: flyout.visible
+
+    // ---- scrolling title --------------------------------------------------
     Item {
         anchors.fill: parent
         clip: true
@@ -29,7 +62,7 @@ Item {
         Text {
             id: scrollingText
             text: root.trackInfo
-            color: root.trackInfo === "-" ? "#631B87" : "#36F8EC"
+            color: root.open ? "#FEF709" : (root.trackInfo === "-" ? "#631B87" : "#36F8EC")
             font.family: "Iosevka SciFi"
             font.pixelSize: 16
             anchors.verticalCenter: parent.verticalCenter
@@ -37,8 +70,7 @@ Item {
             // Explicitly lock the starting X coordinate
             x: 0
 
-            // Trigger the animation natively when the text updates
-            onTextChanged: {
+            function restartMarquee() {
                 x = 0; // Snap back to start when the song changes
                 if (implicitWidth > parent.width) {
                     marqueeAnim.restart();
@@ -46,6 +78,11 @@ Item {
                     marqueeAnim.stop();
                 }
             }
+            onTextChanged: restartMarquee()
+            // fonts can load after the first layout; recheck when the width settles
+            onImplicitWidthChanged: restartMarquee()
+            Component.onCompleted: restartMarquee()
+
             SequentialAnimation {
                 id: marqueeAnim
                 loops: Animation.Infinite
@@ -80,5 +117,27 @@ Item {
                 }
             }
         }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.LeftButton | Qt.MiddleButton
+        cursorShape: Qt.PointingHandCursor
+        onClicked: mouse => {
+            if (mouse.button === Qt.MiddleButton) {
+                if (root.player && root.player.canTogglePlaying)
+                    root.player.togglePlaying();
+            } else {
+                flyout.toggle();
+            }
+        }
+    }
+
+    MediaFlyout {
+        id: flyout
+        target: root
+        player: root.player
+        players: root.players
+        onCyclePlayer: root.cyclePlayer()
     }
 }

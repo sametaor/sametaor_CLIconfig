@@ -57,6 +57,8 @@ ShellRoot {
             anchors.top: parent.top
             maxWidth: Math.max(60, controls.x + controls.slant - controls.gap - 1470)
         }
+        // "Song - Artist" box. Clicking it opens the media flyout (MediaFlyout.qml),
+        // which MediaModule owns, so no click handling is needed out here.
         MediaModule {
             id: mediaTriggerBox
             height: 45
@@ -65,13 +67,6 @@ ShellRoot {
             anchors.verticalCenter: parent.verticalCenter
             // This formula pushes it down into the narrow cutout
             anchors.verticalCenterOffset: -5
-
-            // Keeps your existing click-to-open logic intact
-            MouseArea {
-                anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
-                onClicked: mediaPopup.visible = !mediaPopup.visible
-            }
         }
         Item {
             anchors.top: parent.top
