@@ -46,6 +46,23 @@
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    musnix = {
+      url = "github:musnix/musnix";
+    };
+    nixpkgs-wayland = {
+      url = "github:nix-community/nixpkgs-wayland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    eza = {
+      url = "github:eza-community/eza";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    llm-agents.url = "github:numtide/llm-agents.nix";
+    bedrock-on-linux = {
+      url = "github:Wyze3306/BedrockOnLinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -56,6 +73,7 @@
       zen-browser,
       nvf,
       nur,
+      bedrock-on-linux,
       ...
     }@inputs:
     {
@@ -66,6 +84,8 @@
           modules = [
             nur.modules.nixos.default
             nvf.nixosModules.default
+            inputs.chaotic.nixosModules.default
+            inputs.musnix.nixosModules.musnix
             ./hardware-configuration.nix
             ./configuration.nix
             ./alg-rgb.nix

@@ -1,15 +1,23 @@
 import QtQuick
 import QtQuick.Layouts
 
+// Time + date box. Click it to open DateFlyout (TO-DO list + MONTH calendar).
 Item {
     id: root
 
-    // Explicit sizing ensures the layout doesn't collapse
+    // Explicit sizing ensures the layout doesn't collapse. width/height must be
+    // bound too, not just implicitWidth/Height - a plain Item doesn't do that on
+    // its own, so without this the item's real geometry stays 0x0 even though its
+    // content visually overflows past it (this bit DateFlyout's popup anchoring:
+    // it anchored relative to this item's true - zero - width).
     implicitWidth: layout.implicitWidth
     implicitHeight: layout.implicitHeight
+    width: implicitWidth
+    height: implicitHeight
 
     property string currentTime: ""
     property string currentDate: ""
+    readonly property bool open: flyout.visible
 
     function updateTime() {
         let d = new Date();
@@ -24,7 +32,7 @@ Item {
         interval: 1000
         running: true
         repeat: true
-        onTriggered: updateTime()
+        onTriggered: root.updateTime()
     }
 
     RowLayout {
@@ -35,7 +43,7 @@ Item {
 
         Text {
             text: root.currentTime
-            color: "white"
+            color: root.open ? "#FEF709" : (area.containsMouse ? "#9DFBF5" : "white")
             font.family: "Iosevka SciFi"
             font.pixelSize: 20
             font.letterSpacing: 1 // Adds a slightly stretched, digital look
@@ -44,10 +52,23 @@ Item {
 
         Text {
             text: root.currentDate
-            color: "white"
+            color: root.open ? "#FEF709" : (area.containsMouse ? "#9DFBF5" : "white")
             font.family: "Iosevka SciFi"
             font.pixelSize: 16
             Layout.alignment: Qt.AlignVCenter
         }
+    }
+
+    MouseArea {
+        id: area
+        anchors.fill: parent
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
+        onClicked: flyout.toggle()
+    }
+
+    DateFlyout {
+        id: flyout
+        target: root
     }
 }

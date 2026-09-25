@@ -10,6 +10,7 @@
   imports = [
     inputs.zen-browser.homeModules.beta
     inputs.prismnix.homeModules.prismnix
+    inputs.nvf.homeManagerModules.default
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home = {
@@ -24,10 +25,20 @@
     packages = with pkgs; [
       libnotify
       durdraw
+      cbonsai
+      cowsay
       curl
+      figlet
       jq
       libretro-core-info
       libretro-shaders-slang
+      lolcat
+      nethack
+      pipes-rs
+      rmatrix
+      vitetris
+      wtfutil
+      inputs."bedrock-on-linux".packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     pointerCursor = {
       enable = true;
@@ -138,13 +149,19 @@
     enable = true;
     subpixelRendering = "rgb";
     defaultFonts = {
-      emoji = [ ];
+      emoji = [
+        "Twitter Color Emoji"
+      ];
       monospace = [
         "Iosevka SciFi Extended"
         "Symbols Nerd Font"
       ];
-      sansSerif = [ ];
-      serif = [ ];
+      sansSerif = [
+        "Lilex Nerd Font"
+      ];
+      serif = [
+        "IosevkaTermSlab Nerd Font"
+      ];
     };
   };
   nix = {
@@ -197,6 +214,23 @@
       readOnly = true;
     };
     configFile = {
+      "pipes-rs/config.toml".source =
+        (pkgs.formats.toml {}).generate "pipes-rs-config" {
+                bold = true;
+                color_mode = "rgb";
+                rainbow = 5;
+                delay_ms = 25;
+                inherit_style = true;
+                kinds = [
+                        "heavy"
+                        "light"
+                        "knobby"
+                        "outline"
+                ];
+                num_pipes = 5;
+                reset_threshold = 0.75;
+                turn_chance = 0.05;
+        };
       "rmpc/themes/theme.ron" = {
         text = ''
           #![enable(implicit_some)]
@@ -693,6 +727,337 @@
     };
   };
   programs = {
+    nvf = {
+      enable = true;
+      settings = {
+        vim = {
+          autocomplete = {
+            blink-cmp = {
+              enable = true;
+              friendly-snippets.enable = true;
+              setupOpts = {
+                fuzzy.implementation = "prefer_rust";
+                completion.ghost_text.enabled = true;
+                sources = {
+                  default = [
+                    "lsp"
+                    "path"
+                    "snippets"
+                    "buffer"
+                  ];
+                };
+              };
+            };
+          };
+          autopairs.nvim-autopairs.enable = true;
+          bell = "visual";
+          binds = {
+            cheatsheet.enable = true;
+            whichKey = {
+              enable = true;
+              setupOpts = {
+                win.border = "single";
+                preset = "helix";
+              };
+            };
+          };
+          clipboard = {
+            enable = true;
+            providers = {
+              wl-copy.enable = true;
+            };
+            registers = "unnamedplus";
+          };
+          extraPlugins = {
+            "fluoromachine.nvim" = {
+              package = pkgs.vimUtils.buildVimPlugin {
+                name = "fluoromachine.nvim";
+                src = pkgs.fetchFromGitHub {
+                  owner = "maxmx03";
+                  repo = "fluoromachine.nvim";
+                  rev = "main";
+                  sha256 = "sha256-alZBQYmo9jrsKYTL7dnObaP2op4SMQQRiEZBdhxUZiI=";
+                };
+              };
+            };
+            "dropbar.nvim" = {
+              package = pkgs.vimPlugins.dropbar-nvim;
+            };
+            "dashboard-nvim" = {
+              package = pkgs.vimPlugins.dashboard-nvim;
+            };
+          };
+          filetree.neo-tree = {
+            enable = true;
+            setupOpts = {
+              auto_clean_after_session_restore = true;
+              enable_cursor_hijack = true;
+              git_status_async = true;
+            };
+          };
+          fzf-lua = {
+            enable = true;
+            setupOpts.winopts.border = "single";
+          };
+          gestures.gesture-nvim.enable = true;
+          git = {
+            enable = true;
+            gitsigns.enable = true;
+            neogit.enable = true;
+          };
+          keymaps = [
+            {
+              key = "<leader>e";
+              mode = "n";
+              action = "<cmd>Neotree toggle<CR>";
+              silent = true;
+              desc = "Toggle Neo-tree File Explorer";
+            }
+          ];
+          languages = {
+                nix = {
+                        enable = true;
+                        format.type = ["nixfmt"];
+                        format.enable = false;
+                };
+                python = {
+                        enable = true;
+                        format.enable = false;
+                };
+          };
+          lsp = {
+            enable = true;
+            formatOnSave = false;
+            inlayHints.enable = true;
+            lspkind = {
+              enable = true;
+              setupOpts = "symbol_text";
+            };
+            presets.nixd.enable = true;
+            trouble.enable = true;
+          };
+          luaConfigRC = {
+            fluoromachine = inputs.nvf.lib.nvim.dag.entryAnywhere ''
+              require("fluoromachine").setup({
+                      glow = true,
+                      theme = "fluoromachine",
+                      transparent = true,
+                      brightness = 0.1,
+              })
+              vim.cmd.colorscheme("fluoromachine")
+            '';
+            dropbar = inputs.nvf.lib.nvim.dag.entryAnywhere ''
+              require("dropbar").setup({})
+            '';
+            dashboard = inputs.nvf.lib.nvim.dag.entryAnywhere ''
+              local dashboard = require("dashboard")
+              dashboard.setup({
+                      theme = 'hyper',
+                      disable_move = true,
+                      shortcut_type = "number",
+                      buffer_name = "SaVim",
+                      shuffle_letter = false,
+                      change_to_vcs_root = false,
+                      config = {
+                              shortcut = {
+                                      { desc = "󰊳 Health", group = "@property", action = "checkhealth", key = "u" },
+                                      { desc = " New", group = "Label", action = "ene | startinsert", key = "n" },
+                                      {
+                                              desc = "  Config",
+                                              group = "Constant",
+                                              action = "FzfLua files cwd=/etc/nixos",
+                                              key = "c",
+                                      },
+                                      {
+                                              desc = "󰁯 Resume",
+                                              group = "@comment.info",
+                                              action = 'lua require("persistence").load()',
+                                              key = "s",
+                                      },
+                                      { desc = "󰒲  Search", group = "@character.special", action = "FzfLua builtin", key = "l" },
+                                      { desc = "  LSP Info", group = "@comment.warning", action = "LspInfo", key = "m" },
+                                      { desc = "󰿅 Quit", group = "@comment.error", action = "qa", key = "q" },
+                              },
+                              ehader = {},
+                              week_header = { enable = false },
+                              packages = { enable = true },
+                              project = { enable = true, limit = 5, icon = " ", label = "Projects", action = "FzfLua files cwd=" },
+                              mru = { limit = 10, icon = " ", label = "Recently Opened", cwd_only = false },
+                              footer = {
+                                      [[]],
+                                      [[Powered by  NeoVim]],
+                                      [[]],
+                                      [[╰╼━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 󰫆 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╾╯]],
+                              },
+                      },
+                      hide = {
+                              statusline = false,
+                              tabline = true,
+                              winbar = true,
+                      },
+                      preview = {
+                              command = "${./ascii.sh} -c",
+                              file_path = "${./ascii.sh}",
+                              file_height = 16,
+                              file_width = 90,
+                      },
+              })
+            '';
+          };
+          mini = {
+            move.enable = true;
+            map.enable = true;
+          };
+          navigation = {
+            harpoon = {
+              enable = true;
+              setupOpts.defaults = {
+                save_on_toggle = true;
+                sync_on_ui_close = true;
+              };
+            };
+          };
+          notes.neorg = {
+            enable = true;
+            setupOpts.load."core.defaults".enable = true;
+            treesitter.enable = true;
+          };
+          notify.nvim-notify = {
+            enable = true;
+            setupOpts = {
+              position = "bottom_right";
+              render = "default";
+            };
+          };
+          opts.wrap = false;
+          presence.neocord = {
+            enable = true;
+            setupOpts = {
+              enable_line_number = true;
+              logo_tooltip = "I use NeoVim, btw";
+            };
+          };
+          runner.run-nvim = {
+            enable = true;
+          };
+          searchCase = "smart";
+          session.persisted.enable = true;
+          statusline.lualine = {
+            enable = true;
+
+          };
+          syntaxHighlighting = true;
+          tabline.nvimBufferline = {
+            enable = true;
+            setupOpts.options = {
+              separator_style = "padded_slant";
+              enforce_regular_tabs = true;
+              indicator.style = "icon";
+              numbers = "none";
+            };
+          };
+          terminal.toggleterm = {
+            enable = true;
+            lazygit.enable = true;
+            setupOpts = {
+              direction = "float";
+              enable_winbar = true;
+            };
+          };
+          treesitter = {
+            enable = true;
+            addDefaultGrammars = true;
+            autotagHtml = true;
+            context.enable = true;
+            fold = true;
+            textobjects.enable = true;
+          };
+          ui = {
+            borders = {
+              enable = true;
+              globalStyle = "single";
+              plugins = {
+                nvim-cmp = {
+                  enable = true;
+                  style = "single";
+                };
+                which-key = {
+                  enable = true;
+                  style = "single";
+                };
+              };
+            };
+            colorful-menu-nvim.enable = true;
+            illuminate.enable = true;
+            modes-nvim.enable = true;
+            noice = {
+              enable = false;
+            };
+          };
+          undoFile.enable = true;
+          utility = {
+            ccc = {
+              enable = true;
+              setupOpts = {
+                alpha_show = "auto";
+              };
+            };
+            direnv.enable = true;
+            grug-far-nvim.enable = true;
+            icon-picker.enable = true;
+            images = {
+              image-nvim = {
+                enable = true;
+                setupOpts.backend = "kitty";
+              };
+              img-clip.enable = true;
+            };
+            mkdir.enable = true;
+            motion.precognition.enable = true;
+            multicursors.enable = true;
+            nix-develop.enable = true;
+            nvim-biscuits.enable = true;
+            oil-nvim = {
+              enable = true;
+              gitStatus.enable = true;
+            };
+            preview.glow.enable = true;
+            smart-splits.enable = true;
+            surround.enable = true;
+            undotree.enable = true;
+            vim-wakatime.enable = true;
+            yanky-nvim = {
+              enable = true;
+              setupOpts.ring.storage = "sqlite";
+            };
+            yazi-nvim.enable = true;
+          };
+          visuals = {
+            indent-blankline = {
+              enable = true;
+              setupOpts = {
+                scope = {
+                  show_start = true;
+                  show_end = true;
+                };
+              };
+            };
+            nvim-cursorline = {
+              enable = true;
+              setupOpts = {
+                cursorline.enable = true;
+                cursorword.enable = true;
+              };
+            };
+            nvim-web-devicons.enable = true;
+            rainbow-delimiters.enable = true;
+          };
+          withNodeJs = true;
+          withPython3 = true;
+          withRuby = true;
+        };
+      };
+    };
     television = {
       enable = true;
       enableBashIntegration = true;
@@ -739,9 +1104,329 @@
       };
       themes = {};
     };
+    zellij = {
+        enable = true;
+        enableBashIntegration = true;
+        enableFishIntegration = true;
+        enableZshIntegration = true;
+        layouts = {
+                default = {
+                        layout = {
+                                _children = [
+                                        {
+                                                default_tab_template = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                borderless = true;
+                                                                                plugin = {
+                                                                                        location = "zellij:tab-bar";
+                                                                                };
+                                                                                size = 1;
+                                                                        };
+                                                                }
+                                                                {
+                                                                        children = {};
+                                                                }
+                                                                {
+                                                                        pane = {
+                                                                                borderless = true;
+                                                                                plugin = {
+                                                                                        location = "zellij:status-bar";
+                                                                                };
+                                                                                size = 2;
+                                                                        };
+                                                                }
+                                                        ];
+                                                };
+                                        }
+                                        {
+                                                tab = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                split_direction = "vertical";
+                                                                                size = "70%";
+                                                                                _children = [
+                                                                                        {
+                                                                                                pane = {
+                                                                                                        size = "30%";
+                                                                                                        command = "zsh";
+                                                                                                        args = ["-c" "sleep 0.1 && pipes-rs"];
+                                                                                                        name = "Pipes-rs";
+                                                                                                };
+                                                                                        }
+                                                                                        {
+                                                                                                pane = {
+                                                                                                        size = "40%";
+                                                                                                        command = "clock-rs";
+                                                                                                        name = "Clock-rs";
+                                                                                                        focus = true;
+                                                                                                };
+                                                                                        }
+                                                                                        {
+                                                                                                pane = {
+                                                                                                        size = "30%";
+                                                                                                        command = "cbonsai";
+                                                                                                        args = ["-l" "-i" "-c" "@" "-b" "2" "-w" "0.01"];
+                                                                                                        name = "Cbonsai";
+                                                                                                };
+                                                                                        }
+                                                                                ];
+                                                                        };
+                                                                }
+                                                                {
+                                                                        pane = {
+                                                                                size = "30%";
+                                                                                command = "rmatrix";
+                                                                                args = ["-C" "rainbow" "-c" "binary" "-S" "1.33" "--fps" "60" "-b" "-s" "--color-depth" "truecolor" "-d" "0.6"];
+                                                                                name = "Rmatrix";
+                                                                        };
+                                                                }
+                                                        ];
+                                                        _props = {
+                                                                split_direction = "horizontal";
+                                                                name = "TUI";
+                                                        };
+                                                };
+                                        }
+                                        {
+                                                tab = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                command = "zsh";
+                                                                                name = "Zsh";
+                                                                        };
+                                                                }
+                                                        ];
+                                                        _props = {
+                                                                name = "Shell";
+                                                                focus = true;
+                                                        };
+                                                };
+                                        }
+                                        {
+                                                tab = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                command = "yazi";
+                                                                                start_suspended = true;
+                                                                                name = "Yazi";
+                                                                        };
+                                                                }
+                                                        ];
+                                                        _props = {
+                                                                name = "Yazi";
+                                                        };
+                                                };
+                                        }
+                                        {
+                                                tab = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                command = "btop";
+                                                                                start_suspended = true;
+                                                                                name = "Btop";
+                                                                        };
+                                                                }
+                                                        ];
+                                                        _props = {
+                                                                name = "Btop";
+                                                        };
+                                                };
+                                        }
+                                        {
+                                                tab = {
+                                                        _children = [
+                                                                {
+                                                                        pane = {
+                                                                                command = "nvitop";
+                                                                                start_suspended = true;
+                                                                                name = "Nvitop";
+                                                                        };
+                                                                }
+                                                        ];
+                                                        _props = {
+                                                                name = "Nvitop";
+                                                        };
+                                                };
+                                        }
+                                ];
+                        };
+                };
+        };
+        settings = {
+                default_shell = "zsh";
+                default_mode = "locked";
+                default_layout = "default";
+                theme = "samwave";
+                scroll_buffer_size = 50000;
+                copy_command = "wl-copy";
+                copy_on_select = true;
+                ui = {
+                        pane_frames = {
+                                rounded_corners = false;
+                                hide_session_name = true;
+                        };
+                };
+                show_startup_tips = false;
+                show_release_notes = false;
+                osc8_hyperlinks = true;
+                support_kitty_keyboard_protocol = true;
+                mouse_hover_effects = true;
+                visual_bell = true;
+                focus_follows_mouse = true;
+                mouse_click_through = true;
+                pane_frame_style = "none";
+                support_kitty_graphics_protocol = true;
+        };
+        themes.samwave = ''
+                themes {
+                  samwave {
+                      text_unselected {
+                          base 239 238 255
+                          background 32 25 43
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      text_selected {
+                          base 239 238 255
+                          background 32 25 43
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      ribbon_selected {
+                          base 99 27 135
+                          background 248 9 201
+                          emphasis_0 54 248 236
+                          emphasis_1 32 25 43
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      ribbon_unselected {
+                          base 248 9 201
+                          background 99 27 135
+                          emphasis_0 97 226 255
+                          emphasis_1 239 238 255
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      table_title {
+                          base 239 238 255
+                          background 0
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      table_cell_selected {
+                          base 239 238 255
+                          background 32 25 43
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      table_cell_unselected {
+                          base 239 238 255
+                          background 32 25 43
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      list_selected {
+                          base 239 238 255
+                          background 32 25 43
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      list_unselected {
+                          base 239 238 255
+                          background 0
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 114 241 184
+                          emphasis_3 254 247 9
+                      }
+                      frame_selected {
+                          base 114 241 184
+                          background 0
+                          emphasis_0 248 9 201
+                          emphasis_1 54 248 236
+                          emphasis_2 254 247 9
+                          emphasis_3 0
+                      }
+                      frame_highlight {
+                          base 248 132 20
+                          background 0
+                          emphasis_0 248 9 201
+                          emphasis_1 248 132 20
+                          emphasis_2 248 132 20
+                          emphasis_3 248 132 20
+                      }
+                      exit_code_success {
+                          base 114 241 184
+                          background 0
+                          emphasis_0 54 248 236
+                          emphasis_1 32 25 43
+                          emphasis_2 254 247 9
+                          emphasis_3 54 248 236
+                      }
+                      exit_code_error {
+                          base 246 3 125
+                          background 0
+                          emphasis_0 254 247 9
+                          emphasis_1 0
+                          emphasis_2 0
+                          emphasis_3 0
+                      }
+                      multiplayer_user_colors {
+                          player_1 248 9 201
+                          player_2 54 248 236
+                          player_3 0
+                          player_4 255 230 0
+                          player_5 97 226 255
+                          player_6 0
+                          player_7 246 3 125
+                          player_8 0
+                          player_9 0
+                          player_10 0
+                      }
+                  }
+              }
+        '';
+    };
     tmux = {
       enable = true;
       clock24 = true;
+      extraConfig = ''
+        set -g pane-border-status top
+        set -q -g status-utf8 on
+        setw -q -g utf8 on
+        set -g base-index 1
+        setw -g pane-base-index 1
+        setw -g automatic-rename on
+        set -g renumber-windows on
+        set -g set-titles on
+        set -g display-panes-time 800
+        set -g display-time 1000
+        set -g status-interval 10
+        set -ag terminal-overrides ",xterm-256color:RGB"
+        set -ag terminal-overrides ",xterm-ghostty:RGB"
+        set -g allow-passthrough on
+        set -ga update-environment TERM
+        set -ga update-environment TERM_PROGRAM
+      '';
       historyLimit = 50000;
       keyMode = "vi";
       mouse = true;
@@ -749,7 +1434,7 @@
       plugins = [];
       secureSocket = false;
       shell = "${pkgs.zsh}/bin/zsh";
-      terminal = "screen-256color";
+      terminal = "tmux-256color";
       tmuxp = {
         enable = true;
       };
@@ -1546,10 +2231,42 @@
         };
       };
     };
+    quickshell = {
+        enable = true;
+        systemd.enable = true;
+    };
     wlr-which-key = {
       enable = true;
       extraMenus = {};
-      settings = {};
+      settings = {
+        font = "Iosevka SciFi Extended 16";
+        background = "#251933";
+        color = "#36f8ec";
+        border = "#f809c9";
+        separator = " ⟫ ";
+        border_width = 2;
+        corner_r = 0;
+        padding = 10;
+        rows_per_column = 5;
+        column_padding = 25;
+        anchor = "center";
+        margin_right = 0;
+        margin_bottom = 0;
+        margin_left = 0;
+        margin_top = 0;
+        auto_kbd_layout = true;
+        menu = [
+                {
+                        key = "p";
+                        desc = "Power";
+                        submenu = [
+                                { key = "s"; desc = "Sleep"; cmd = "systemctl suspend"; }
+                                { key = "r"; desc = "Reboot"; cmd = "reboot"; }
+                                { key = "o"; desc = "Off"; cmd = "poweroff"; }
+                        ];
+                }
+        ];
+      };
     };
     rmpc = {
       enable = true;
@@ -2211,18 +2928,6 @@
       enable = true;
       extraConfig = "";
     };
-    zellij = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
-      attachExistingSession = true;
-      exitShellOnExit = false;
-      layouts = {};
-      plugins = [];
-      settings = {};
-      themes = {};
-    };
     zoxide = {
       enable = true;
       enableBashIntegration = true;
@@ -2286,7 +2991,7 @@
     go = {};
     ghostty = {
       enable = true;
-      package = if pkgs.stdenv.isDarwin then pkgs.ghostty-bin else (pkgs.nvidiaWrap pkgs.ghostty);
+      package = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.ghostty-bin else (pkgs.nvidiaWrap pkgs.ghostty);
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
@@ -2448,12 +3153,20 @@
       enable = true;
       settings = {
         general = {
-          color = "#41def4";
+          color = "#F809C9";
+          interval = 1000;
           blink = true;
           bold = true;
         };
+        position = {
+          horizontal = "center";
+          vertical = "center";
+        };
         date = {
           fmt = "%A, %d.%B.%Y";
+          use_12h = false;
+          utc = false;
+          hide_seconds = false;
         };
       };
     };
@@ -3543,6 +4256,28 @@
     };
   };
   services = {
+    kdeconnect = {
+        enable = true;
+        indicator = true;
+    };
+    ludusavi = {
+        enable = true;
+        backupNotification = true;
+        frequency = "daily";
+    };
+    fluidsynth = {
+        enable = true;
+        soundFont = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
+        soundService = "pipewire-pulse";
+    };
+    gpg-agent = {
+        enable = true;
+        enableBashIntegration = true;
+        enableExtraSocket = true;
+        enableFishIntegration = true;
+        enableSshSupport = true;
+        enableZshIntegration = true;
+    };
     hyprpolkitagent.enable = true;
     udiskie = {
       enable = true;
@@ -3563,7 +4298,32 @@
       ];
       allowImages = true;
     };
-    hypridle.enable = true;
+    hypridle = {
+        enable = true;
+        settings = {
+               general = {
+                 lock_cmd = "pidof hyprlock || hyprlock";
+                 before_sleep_cmd = "loginctl lock-session";
+                 ignore_dbus_inhibit = false;
+                 after_sleep_cmd = "hyprctl dispatch 'hl.dsp.dpms({ action = \"enable\" })'";
+               }; 
+               listener = [
+                {
+                         timeout = 150;
+                         on-timeout = "brightnessctl -s set 10";
+                         on-resume = "brightnessctl -r";
+                }
+                {
+                        timeout = 900;
+                        on-timeout = "hyprlock";
+                }
+                {
+                        timeout = 1800;
+                        on-timeout = "loginctl lock-session";
+                }
+               ];
+        };
+    };
     mpd = {
       enable = true;
       musicDirectory = "/home/sametaor/Music";
@@ -3585,6 +4345,29 @@
     mpd-mpris = {
       enable = true;
       mpd.useLocal = true;
+    };
+    pipewire = {
+        enable = true;
+        wireplumber.enable = true;
+    };
+    playerctld.enable = true;
+    podman = {
+        enable = true;
+    };
+    poweralertd.enable = true;
+    tldr-update.enable = true;
+    wl-clip-persist = {
+        enable = true;
+    };
+    wluma = {
+        enable = true;
+        settings = {};
+    };
+    network-manager-applet.enable = true;
+    notify-osd.enable = true;
+    ollama = {
+        enable = true;
+        acceleration = "cuda";
     };
     mpd-discord-rpc = {
       enable = true;

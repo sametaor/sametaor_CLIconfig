@@ -66,13 +66,16 @@ Item {
     readonly property real barY: 144
     readonly property real barH: 22
     readonly property real barCut: 10
-    readonly property real barCap: 24
+    // The striped cap is the wedge under the top-left chamfer: it ends exactly where
+    // the chamfer meets the top edge, and the fill starts right there (as in the concept).
+    readonly property real barCap: barCut
 
     // End-cap stripes: same look as the slanted accent stripes on the left edge of
     // CyberBar.qml (2px wide, 45°, magenta, one every 8px).
     property color stripeColor: "#f809c9"
-    property real stripeStep: 8
+    property real stripeStep: 6
     property real stripeWidth: 2
+    property real stripeGap: 3       // clear space between the chamfer and the first stripe
     readonly property real barW: width - 2 * pad
 
     // seeking state: while dragging, show the drag position instead of the player's
@@ -414,7 +417,9 @@ Item {
         }
     }
 
-    // hatched end-cap on the left (from the concept)
+    // hatched end-cap on the left (from the concept). Its box is inset 2px inside the
+    // outline; startSum keeps the first stripe `stripeGap` away from the chamfer line
+    // (the chamfer is x+y = barCut in bar coordinates, i.e. barCut - 4 in this box).
     Hatch {
         x: root.pad + 2
         y: root.barY + 2
@@ -423,6 +428,7 @@ Item {
         color: root.hasPlayer ? root.stripeColor : Qt.rgba(root.stripeColor.r, root.stripeColor.g, root.stripeColor.b, 0.4)
         step: root.stripeStep
         lineWidth: root.stripeWidth
+        startSum: root.barCut - 4 + root.stripeGap
     }
     Rectangle {
         x: root.pad + root.barCap

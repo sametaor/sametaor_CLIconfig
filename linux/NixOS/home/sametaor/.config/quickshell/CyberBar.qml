@@ -340,6 +340,74 @@ Item {
                 y: 6
             }
         }
+        ShapePath {
+            strokeColor: "#FEF709" // Neon accent border color
+            strokeWidth: 1
+            fillColor: "#FEF709"  // Tinted translucent background fill (optional)
+            joinStyle: ShapePath.MiterJoin
+
+            // Define the bounding box for the internal frame (relative to the center)
+            // It sits 4 pixels inside the main cut lines for a layered look
+            property real innerCenter: root.centerWidth - 8
+            property real leftX: (root.width / 2) - (innerCenter / 2)
+            property real rightX: (root.width / 2) + (innerCenter / 2)
+
+            // 1. Top left corner of the inner box
+            startX: 414
+            startY: 8
+
+            // 2. Line to top right corner
+            PathLine {
+                x: 394
+                y: 28
+            }
+
+            // 3. Line down to bottom right corner
+            PathLine {
+                x: 399
+                y: 34
+            }
+
+            // 4. Line across to bottom left corner
+            PathLine {
+                x: 425
+                y: 8
+            }
+        }
+        ShapePath {
+            strokeColor: "#36F8EC" // Neon accent border color
+            strokeWidth: 1
+            fillColor: "#36F8EC"  // Tinted translucent background fill (optional)
+            joinStyle: ShapePath.MiterJoin
+
+            // Define the bounding box for the internal frame (relative to the center)
+            // It sits 4 pixels inside the main cut lines for a layered look
+            property real innerCenter: root.centerWidth - 8
+            property real leftX: (root.width / 2) - (innerCenter / 2)
+            property real rightX: (root.width / 2) + (innerCenter / 2)
+
+            // 1. Top left corner of the inner box
+            startX: 671
+            startY: 12
+
+            // 2. Line to top right corner
+            PathLine {
+                x: 671
+                y: 28
+            }
+
+            // 3. Line down to bottom right corner
+            PathLine {
+                x: 662
+                y: 36
+            }
+
+            // 4. Line across to bottom left corner
+            PathLine {
+                x: 647
+                y: 36
+            }
+        }
     }
 
     // ========================================================

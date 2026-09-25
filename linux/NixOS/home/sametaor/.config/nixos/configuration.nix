@@ -31,6 +31,8 @@ in
     inputs.durdraw.overlays.default
     inputs.nur.overlays.default
     inputs.prismnix.overlays.default
+    inputs.nixpkgs-wayland.overlay
+    inputs.llm-agents.overlays.shared-nixpkgs
     (final: prev: {
       # Make nvidiaWrap available globally
       nvidiaWrap =
@@ -103,6 +105,9 @@ in
     };
     spiceUSBRedirection.enable = true;
     vmware.host.enable = true;
+  };
+  musnix = {
+    enable = true;
   };
   boot = {
     enableContainers = true;
@@ -222,8 +227,11 @@ in
       noto-fonts-lgc-plus
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
+      twitter-color-emoji
       liberation_ttf
       nerd-fonts.symbols-only
+      nerd-fonts.lilex
+      nerd-fonts.iosevka-term-slab
       (iosevka.override {
         set = "SciFi";
         privateBuildPlan = ''
@@ -469,10 +477,12 @@ in
         "https://cache.nixos.org"
         "https://cache.flox.dev"
         "https://cache.nixos-cuda.org"
+        "https://nixpkgs-wayland.cachix.org"
       ];
       trusted-public-keys = [
         "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
         "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
+        "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
       ];
     };
   };
@@ -591,6 +601,7 @@ in
         "wheel"
         "networkmanager"
         "video"
+        "audio"
         "aria2"
         "scanner"
         "lpadmin"
@@ -792,7 +803,9 @@ in
     };
     fzf.fuzzyCompletion = true;
     fuse.userAllowOther = true;
-    gamescope.enable = true;
+    gamescope = {
+      enable = true;
+    };
     gnupg.agent = {
       enable = true;
       enableBrowserSocket = true;
@@ -805,419 +818,6 @@ in
     localsend.enable = true;
     nano.enable = false;
     neovim.defaultEditor = true;
-    nvf = {
-      enable = true;
-      settings = {
-        vim = {
-          assistant = {
-            copilot = {
-              enable = true;
-              cmp.enable = false;
-            };
-          };
-          autocomplete = {
-            blink-cmp = {
-              enable = true;
-              friendly-snippets.enable = true;
-              setupOpts = {
-                fuzzy.implementation = "prefer_rust";
-                sources = {
-                  default = [
-                    "lsp"
-                    "path"
-                    "snippets"
-                    "buffer"
-                    "copilot"
-                  ];
-                  providers = {
-                    copilot = {
-                      name = "copilot";
-                      module = "blink-cmp-copilot";
-                      score_offset = 100;
-                      async = true;
-                    };
-                  };
-                };
-              };
-            };
-          };
-          autopairs.nvim-autopairs.enable = true;
-          bell = "visual";
-          binds = {
-            cheatsheet.enable = true;
-            whichKey = {
-              enable = true;
-              setupOpts = {
-                win.border = "single";
-                preset = "helix";
-              };
-            };
-          };
-          clipboard = {
-            enable = true;
-            providers = {
-              wl-copy.enable = true;
-            };
-            registers = "unnamedplus";
-          };
-          extraPlugins = {
-            "fluoromachine.nvim" = {
-              package = pkgs.vimUtils.buildVimPlugin {
-                name = "fluoromachine.nvim";
-                src = pkgs.fetchFromGitHub {
-                  owner = "maxmx03";
-                  repo = "fluoromachine.nvim";
-                  rev = "main";
-                  sha256 = "sha256-alZBQYmo9jrsKYTL7dnObaP2op4SMQQRiEZBdhxUZiI=";
-                };
-              };
-            };
-            "blink-cmp-copilot" = {
-              package = pkgs.vimUtils.buildVimPlugin {
-                name = "blink-cmp-copilot";
-                src = pkgs.fetchFromGitHub {
-                  owner = "giuxtaposition";
-                  repo = "blink-cmp-copilot";
-                  rev = "main";
-                  sha256 = "sha256-xEGAXv41UX9GUybCSzDODkhgdEd4cclBXl0k4UBmFbs=";
-                };
-                doCheck = false;
-              };
-            };
-            "dropbar.nvim" = {
-              package = pkgs.vimPlugins.dropbar-nvim;
-            };
-            "dashboard-nvim" = {
-              package = pkgs.vimPlugins.dashboard-nvim;
-            };
-          };
-          filetree.neo-tree = {
-            enable = true;
-            setupOpts = {
-              auto_clean_after_session_restore = true;
-              enable_cursor_hijack = true;
-              git_status_async = true;
-            };
-          };
-          formatter.conform-nvim = {
-            enable = true;
-            presets = {
-              clang-format.enable = true;
-              dockerfmt.enable = true;
-              fish-indent.enable = true;
-              indent.enable = true;
-              jsonfmt.enable = true;
-              latexindent.enable = true;
-              mdformat.enable = true;
-              nixfmt-rs.enable = true;
-              prettier.enable = true;
-              qmlformat.enable = true;
-              rustfmt.enable = true;
-              shfmt.enable = true;
-              styler.enable = true;
-              stylua.enable = true;
-            };
-          };
-          fzf-lua = {
-            enable = true;
-            setupOpts.winopts.border = "single";
-          };
-          gestures.gesture-nvim.enable = true;
-          git = {
-            enable = true;
-            gitsigns.enable = true;
-            neogit.enable = true;
-          };
-          keymaps = [
-            {
-              key = "<leader>e";
-              mode = "n";
-              action = "<cmd>Neotree toggle<CR>";
-              silent = true;
-              desc = "Toggle Neo-tree File Explorer";
-            }
-          ];
-          languages = {
-            bash.enable = true;
-            clang.enable = true;
-            cmake.enable = true;
-            csharp.enable = true;
-            css.enable = true;
-            docker.enable = true;
-            env.enable = true;
-            fish.enable = true;
-            glsl.enable = true;
-            go.enable = true;
-            html.enable = true;
-            java.enable = true;
-            json.enable = true;
-            lua.enable = true;
-            make.enable = true;
-            markdown.enable = true;
-            nix = {
-              enable = true;
-              lsp.servers = [ "nixd" ];
-            };
-            nu.enable = true;
-            python.enable = true;
-            qml.enable = true;
-            rust.enable = true;
-            toml.enable = true;
-            xml.enable = true;
-            yaml.enable = true;
-          };
-          lsp = {
-            enable = true;
-            formatOnSave = true;
-            inlayHints.enable = true;
-            lspkind = {
-              enable = true;
-              setupOpts = "symbol_text";
-            };
-            presets = {
-              bash-language-server.enable = true;
-              clangd.enable = true;
-              csharp_ls.enable = true;
-              docker-language-server.enable = true;
-              fish-lsp.enable = true;
-              glsl_analyzer.enable = true;
-              harper.enable = true;
-              lua-language-server.enable = true;
-              markdown-oxide.enable = true;
-              nixd.enable = true;
-              nushell.enable = true;
-              python-lsp-server.enable = true;
-              qmlls.enable = true;
-              rust-analyzer.enable = true;
-              vscode-css-language-server.enable = true;
-              vscode-json-language-server.enable = true;
-              yaml-language-server.enable = true;
-            };
-            trouble.enable = true;
-          };
-          luaConfigRC = {
-            fluoromachine = inputs.nvf.lib.nvim.dag.entryAnywhere ''
-              require("fluoromachine").setup({
-                      glow = true,
-                      theme = "fluoromachine",
-                      transparent = true,
-                      brightness = 0.1,
-              })
-              vim.cmd.colorscheme("fluoromachine")
-            '';
-            dropbar = inputs.nvf.lib.nvim.dag.entryAnywhere ''
-              require("dropbar").setup({})
-            '';
-            dashboard = inputs.nvf.lib.nvim.dag.entryAnywhere ''
-              local dashboard = require("dashboard")
-              dashboard.setup({
-                      theme = 'hyper',
-                      disable_move = true,
-                      shortcut_type = "number",
-                      buffer_name = "SaVim",
-                      shuffle_letter = false,
-                      change_to_vcs_root = false,
-                      config = {
-                              shortcut = {
-                                      { desc = "󰊳 Health", group = "@property", action = "checkhealth", key = "u" },
-                                      { desc = " New", group = "Label", action = "ene | startinsert", key = "n" },
-                                      {
-                                              desc = "  Config",
-                                              group = "Constant",
-                                              action = "FzfLua files cwd=/etc/nixos",
-                                              key = "c",
-                                      },
-                                      {
-                                              desc = "󰁯 Resume",
-                                              group = "@comment.info",
-                                              action = 'lua require("persistence").load()',
-                                              key = "s",
-                                      },
-                                      { desc = "󰒲  Search", group = "@character.special", action = "FzfLua builtin", key = "l" },
-                                      { desc = "  LSP Info", group = "@comment.warning", action = "LspInfo", key = "m" },
-                                      { desc = "󰿅 Quit", group = "@comment.error", action = "qa", key = "q" },
-                              },
-                              ehader = {},
-                              week_header = { enable = false },
-                              packages = { enable = true },
-                              project = { enable = true, limit = 5, icon = " ", label = "Projects", action = "FzfLua files cwd=" },
-                              mru = { limit = 10, icon = " ", label = "Recently Opened", cwd_only = false },
-                              footer = {
-                                      [[]],
-                                      [[Powered by  NeoVim]],
-                                      [[]],
-                                      [[╰╼━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 󰫆 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╾╯]],
-                              },
-                      },
-                      hide = {
-                              statusline = false,
-                              tabline = true,
-                              winbar = true,
-                      },
-                      preview = {
-                              command = "${./ascii.sh} -c",
-                              file_path = "${./ascii.sh}",
-                              file_height = 16,
-                              file_width = 90,
-                      },
-              })
-            '';
-          };
-          mini = {
-            move.enable = true;
-            map.enable = true;
-          };
-          navigation = {
-            harpoon = {
-              enable = true;
-              setupOpts.defaults = {
-                save_on_toggle = true;
-                sync_on_ui_close = true;
-              };
-            };
-          };
-          notes.neorg = {
-            enable = true;
-            setupOpts.load."core.defaults".enable = true;
-            treesitter.enable = true;
-          };
-          notify.nvim-notify = {
-            enable = true;
-            setupOpts = {
-              position = "bottom_right";
-              render = "default";
-            };
-          };
-          opts.wrap = false;
-          presence.neocord = {
-            enable = true;
-            setupOpts = {
-              enable_line_number = true;
-              logo_tooltip = "I use NeoVim, btw";
-            };
-          };
-          runner.run-nvim = {
-            enable = true;
-          };
-          searchCase = "smart";
-          session.persisted.enable = true;
-          statusline.lualine = {
-            enable = true;
-
-          };
-          syntaxHighlighting = true;
-          tabline.nvimBufferline = {
-            enable = true;
-            setupOpts.options = {
-              separator_style = "padded_slant";
-              enforce_regular_tabs = true;
-              indicator.style = "icon";
-              numbers = "none";
-            };
-          };
-          terminal.toggleterm = {
-            enable = true;
-            lazygit.enable = true;
-            setupOpts = {
-              direction = "float";
-              enable_winbar = true;
-            };
-          };
-          treesitter = {
-            enable = true;
-            addDefaultGrammars = true;
-            autotagHtml = true;
-            context.enable = true;
-            fold = true;
-            textobjects.enable = true;
-          };
-          ui = {
-            borders = {
-              enable = true;
-              globalStyle = "single";
-              plugins = {
-                nvim-cmp = {
-                  enable = true;
-                  style = "single";
-                };
-                which-key = {
-                  enable = true;
-                  style = "single";
-                };
-              };
-            };
-            colorful-menu-nvim.enable = true;
-            illuminate.enable = true;
-            modes-nvim.enable = true;
-            noice = {
-              enable = true;
-              setupOpts.lsp.signature.enabled = true;
-            };
-          };
-          undoFile.enable = true;
-          utility = {
-            ccc = {
-              enable = true;
-              setupOpts = {
-                alpha_show = "auto";
-              };
-            };
-            direnv.enable = true;
-            grug-far-nvim.enable = true;
-            icon-picker.enable = true;
-            images = {
-              image-nvim = {
-                enable = true;
-                setupOpts.backend = "kitty";
-              };
-              img-clip.enable = true;
-            };
-            mkdir.enable = true;
-            motion.precognition.enable = true;
-            multicursors.enable = true;
-            nix-develop.enable = true;
-            nvim-biscuits.enable = true;
-            oil-nvim = {
-              enable = true;
-              gitStatus.enable = true;
-            };
-            preview.glow.enable = true;
-            smart-splits.enable = true;
-            surround.enable = true;
-            undotree.enable = true;
-            vim-wakatime.enable = true;
-            yanky-nvim = {
-              enable = true;
-              setupOpts.ring.storage = "sqlite";
-            };
-            yazi-nvim.enable = true;
-          };
-          visuals = {
-            indent-blankline = {
-              enable = true;
-              setupOpts = {
-                scope = {
-                  show_start = true;
-                  show_end = true;
-                };
-              };
-            };
-            nvim-cursorline = {
-              enable = true;
-              setupOpts = {
-                cursorline.enable = true;
-                cursorword.enable = true;
-              };
-            };
-            nvim-web-devicons.enable = true;
-            rainbow-delimiters.enable = true;
-          };
-          withNodeJs = true;
-          withPython3 = true;
-          withRuby = true;
-        };
-      };
-    };
     nm-applet.enable = true;
     npm.enable = true;
     gamemode = {
@@ -1353,6 +953,15 @@ in
     };
   };
   security = {
+    wrappers = {
+      btop = {
+        enable = true;
+        owner = "root";
+        group = "root";
+        source = "${pkgs.btop-cuda.override { cudaSupport = true; }}/bin/btop";
+        capabilities = "cap_perfmon=ep";
+      };
+    };
     polkit.enable = true;
     sudo = {
       enable = false;
@@ -1409,7 +1018,6 @@ in
     shellAliases = {
       rebuild = "doas nixos-rebuild switch --flake ~/Projects/github/sametaor_CLIconfig/linux/NixOS/home/sametaor/.config/nixos\\#nixsametaor";
       sudo = "doas";
-      btop = "doas nvidia-offload btop";
       sudoedit = "doas nvim -Z";
       ":q" = "exit";
       rm = "rm -ir";
@@ -1532,16 +1140,13 @@ in
         cargo
         cargo-binstall
         cava
-        cbonsai
         chawan
         chess-tui
         clang
         cmake
-        cmatrix
         compsize
         corefonts
         coreutils-full
-        cowsay
         cpu-x
         cpufetch
         crates-tui
@@ -1573,13 +1178,11 @@ in
         ente-auth
         ente-cli
         exiftool
-        eza
         fastfetch
         fclones
         ((pkgs.ffmpeg-full.override { withUnfree = true; }).overrideAttrs (_: {
           doCheck = false;
         }))
-        figlet
         figma-linux
         fish-lsp
         fontforge-gtk
@@ -1616,14 +1219,12 @@ in
             ];
         })
         hexyl
-        hollywood
         hunspell
         hunspellDicts.en-us-large
         hwinfo
         hydroxide
         hyphenDicts.en_GB
         hyphenDicts.en_IN
-        hypridle
         hyprland-workspaces-tui
         hyprlauncher
         hyprlock
@@ -1638,10 +1239,10 @@ in
         kdenlive-nvenc
         lazydocker
         libisoburn
-        libreoffice-qt-fresh
+        libreoffice-qt
+        llm-agents.openclaw
         lmms-full
         lmstudio
-        lolcat
         lua
         luarocks-nix
         lucida-downloader
@@ -1657,15 +1258,12 @@ in
         navi
         nbfc-linux
         nchat
-        nethack
         ninja
         nix-bash-completions
         nix-top
         nix-zsh-completions
         nixfmt
-        nixos-artwork.wallpapers.binary-blue
         nvitop
-        nvtopPackages.full
         obsidian
         oh-my-posh
         onedrivegui
@@ -1724,7 +1322,6 @@ in
         teams-for-linux
         telegram-desktop
         tenacity
-        tenki
         tg
         toilet
         trash-cli
@@ -1741,7 +1338,6 @@ in
         virt-viewer
         virtiofsd
         vista-fonts
-        vitetris
         vlc
         vt-cli
         wakatime-cli
@@ -1751,7 +1347,6 @@ in
         wineWow64Packages.waylandFull
         wget
         wl-clipboard
-        wtfutil
         x264
         x265
         xwayland-satellite

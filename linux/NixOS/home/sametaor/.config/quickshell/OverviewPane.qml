@@ -87,17 +87,14 @@ Item {
             "chipWidth": pane.chipWidth
         })
 
-    function hyprAddress(tl) {
-        const a = tl ? tl.address : "";
-        if (!a)
-            return "";
-        return a.startsWith("0x") ? a : "0x" + a;
+    // speaks whichever dispatch syntax the running Hyprland config expects (Lua or classic)
+    HyprDispatch {
+        id: hypr
     }
 
     function focusWindow(tl) {
-        const a = hyprAddress(tl);
-        if (a !== "")
-            Hyprland.dispatch("focuswindow address:" + a);
+        if (tl && tl.address)
+            hypr.focusWindow(tl.address);
     }
 
     // desktop-entry + icon-theme lookups are slow-ish: do each class once
@@ -148,7 +145,7 @@ Item {
                     return p.x >= pane.pillHeight * (1 - t) && p.x <= pane.pillHeight + pane.spanWidth - pane.pillHeight * t;
                 }
             }
-            onClicked: Hyprland.dispatch("workspace " + pane.workspaceId)
+            onClicked: hypr.focusWorkspace(pane.workspaceId)
         }
     }
 

@@ -12,11 +12,16 @@ Item {
 
     clip: true
 
+    // Where the first stripe sits, as x+y along the box (0 = through the top-left
+    // corner). Stripes are then `step` apart. Lets a caller keep them clear of a
+    // chamfered corner instead of having them start wherever the pattern begins.
+    property real startSum: 0
+
     readonly property string d: {
         let s = "";
         const h = height;
-        for (let x = -h; x < width; x += step)
-            s += "M" + x + " " + h + " L" + (x + h) + " 0 ";
+        for (let sum = startSum; sum < width + h; sum += step)
+            s += "M" + (sum - h) + " " + h + " L" + sum + " 0 ";
         return s;
     }
 
