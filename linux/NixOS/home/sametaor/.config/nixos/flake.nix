@@ -53,7 +53,6 @@
       url = "github:nix-community/nixpkgs-wayland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     eza = {
       url = "github:eza-community/eza";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -61,6 +60,10 @@
     llm-agents.url = "github:numtide/llm-agents.nix";
     bedrock-on-linux = {
       url = "github:Wyze3306/BedrockOnLinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -74,6 +77,7 @@
       nvf,
       nur,
       bedrock-on-linux,
+      sops-nix,
       ...
     }@inputs:
     {
@@ -84,8 +88,8 @@
           modules = [
             nur.modules.nixos.default
             nvf.nixosModules.default
-            inputs.chaotic.nixosModules.default
             inputs.musnix.nixosModules.musnix
+            sops-nix.nixosModules.sops
             ./hardware-configuration.nix
             ./configuration.nix
             ./alg-rgb.nix

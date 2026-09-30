@@ -88,10 +88,16 @@ in
     ./rclone.nix
     ./cachix.nix
     inputs.nixcord.nixosModules.nixcord
+    inputs.sops-nix.nixosModules.sops
   ];
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocales = [ "en_IN/UTF-8" ];
+  };
+  sops = {
+    defaultSopsFile = ./secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+    age.keyFile = "/home/sametaor/.config/sops/age/keys.txt";
   };
   virtualisation = {
     podman = {
@@ -751,7 +757,9 @@ in
       enable = true;
       config = {
         safe = {
-          directory = "/home/sametaor/Projects/github/sametaor_CLIconfig/";
+          directory = [
+              "/home/sametaor/Projects/github/sametaor_CLIconfig/"
+            ];
         };
         alias = {
           a = "add";
@@ -1099,6 +1107,7 @@ in
         adbtuifm
         adi1090x-plymouth-themes
         aerc
+        age
         andcli
         android-tools
         ani-cli
@@ -1252,7 +1261,6 @@ in
         mediainfo
         megacmd
         megasync
-        microsoft-edge
         mpvpaper
         mtools
         navi
@@ -1311,6 +1319,7 @@ in
         searxng
         shellcheck
         smartmontools
+        sops
         speedtest-rs
         sshfs
         steam-art-manager

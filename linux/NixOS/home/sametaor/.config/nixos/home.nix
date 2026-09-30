@@ -23,21 +23,29 @@
     stateVersion = "26.05"; # Please check the release notes before changing
     # The home.packages option allows you to install packages to your user profilee
     packages = with pkgs; [
-      libnotify
-      durdraw
+      azahar
+      bigpemu
+      brave-origin
       cbonsai
       cowsay
       curl
+      durdraw
+      eden
       figlet
       jq
+      libnotify
       libretro-core-info
       libretro-shaders-slang
       lolcat
       nethack
       pipes-rs
       rmatrix
+      rpcs3
+      vita3k
       vitetris
       wtfutil
+      xemu
+      xenia-canary
       inputs."bedrock-on-linux".packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     pointerCursor = {
@@ -4112,6 +4120,10 @@
     retroarch = {
       enable = true;
       cores = {
+        atari800 = {
+          enable = true;
+          package = pkgs.libretro.atari800;
+        };
         beetle-lynx = {
           enable = true;
           package = pkgs.libretro.beetle-lynx;
@@ -4124,13 +4136,13 @@
           enable = true;
           package = pkgs.libretro.beetle-saturn;
         };
+        beetle-vb = {
+          enable = true;
+          package = pkgs.libretro.beetle-vb;
+        };
         bsnes = {
           enable = true;
           package = pkgs.libretro.bsnes;
-        };
-        citra = {
-          enable = true;
-          package = pkgs.libretro.citra;
         };
         dolphin = {
           enable = true;
@@ -4140,9 +4152,17 @@
           enable = true;
           package = pkgs.libretro.dosbox-pure;
         };
+        freeintv = {
+          enable = true;
+          package = pkgs.libretro.freeintv;
+        };
         flycast = {
           enable = true;
           package = pkgs.libretro.flycast;
+        };
+        genesis-plus-gx = {
+          enable = true;
+          package = pkgs.libretro.genesis-plus-gx;
         };
         mame = {
           enable = true;
@@ -4160,17 +4180,37 @@
           enable = true;
           package = pkgs.libretro.mupen64plus;
         };
+        nestopia = {
+          enable = true;
+          package = pkgs.libretro.nestopia;
+        };
         pcsx2 = {
           enable = true;
           package = pkgs.libretro.pcsx2;
+        };
+        picodrive = {
+          enable = true;
+          package = pkgs.libretro.picodrive;
         };
         ppsspp = {
           enable = true;
           package = pkgs.libretro.ppsspp;
         };
+        puae = {
+          enable = true;
+          package = pkgs.libretro.puae;
+        };
+        snes9x = {
+          enable = true;
+          package = pkgs.libretro.snes9x;
+        };
         vice-x64sc = {
           enable = true;
           package = pkgs.libretro.vice-x64sc;
+        };
+        vice-x128 = {
+          enable = true;
+          package = pkgs.libretro.vice-x128;
         };
       };
       settings = {
