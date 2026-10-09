@@ -9,7 +9,7 @@ import QtQuick
 Item {
     id: root
 
-    implicitWidth: 190
+    implicitWidth: 205
     width: implicitWidth
     implicitHeight: content.implicitHeight + 28
 
@@ -84,7 +84,7 @@ Item {
 
     Column {
         id: content
-        x: 14
+        x: 0
         y: 14
         width: parent.width - 28
         spacing: 10

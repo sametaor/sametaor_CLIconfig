@@ -23,6 +23,11 @@ Item {
     // narrowing the popup or fiddling with its anchor never actually fixed it.
     property real contentMargin: 14
 
+    // Where the day-cell grid actually starts, from this panel's own top - used
+    // by DateFlyout to line up the separator wedge's chamfer with the calendar's
+    // own boxes (top margin + header row + weekday row + the spacing between them)
+    readonly property real gridStartY: contentMargin + 26 + 8 + 22 + 8
+
     property int weekStart: 0     // 0 = Sunday first (as in the concept), 1 = Monday
     property date today: new Date()
     property int viewYear: today.getFullYear()

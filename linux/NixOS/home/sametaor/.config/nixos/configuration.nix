@@ -453,7 +453,7 @@ in
       };
       package = config.boot.kernelPackages.nvidiaPackages.stable;
       powerManagement = {
-        enable = false;
+        enable = true;
         finegrained = true;
       };
       nvidiaSettings = true;
@@ -588,7 +588,13 @@ in
         };
       };
     };
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      mouse = {
+        clickMethod = "buttonareas";
+        middleEmulation = true;
+      };
+    };
     openssh.enable = true;
     fstrim.enable = true;
     clipmenu.enable = true;
@@ -945,6 +951,16 @@ in
   systemd = {
     services = {
       NetworkManager-wait-online.enable = true;
+      reload-alg-rgb = {
+        description = "Reload ALG RGB Kernel Module after suspend";
+        after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target" ];
+        wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target" ];
+        serviceConfig = {
+          Type = "oneshot";
+          ExecStartPre = "-${pkgs.kmod}/bin/modprobe -r alg_rgb";
+          ExecStart = "${pkgs.kmod}/bin/modprobe alg_rgb";
+        };
+      };
       plymouth-wait-animation = {
         description = "Wait for Plymouth animation to complete";
         wantedBy = [ "multi-user.target" ];
@@ -1247,6 +1263,7 @@ in
         karere
         kdenlive-nvenc
         lazydocker
+        libinput
         libisoburn
         libreoffice-qt
         llm-agents.openclaw

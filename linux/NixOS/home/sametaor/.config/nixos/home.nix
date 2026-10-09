@@ -37,6 +37,7 @@
       libretro-core-info
       libretro-shaders-slang
       lolcat
+      meli
       nethack
       pipes-rs
       rmatrix
@@ -46,6 +47,8 @@
       wtfutil
       xemu
       xenia-canary
+      yewtube
+      ytui-music
       inputs."bedrock-on-linux".packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
     pointerCursor = {
@@ -655,6 +658,7 @@
             allow_session_lock_restore = true;
             disable_hyprland_logo = true;
             disable_splash_rendering = true;
+            middle_click_paste = false;
             vrr = 3;
           };
           dwindle = {
@@ -1595,7 +1599,546 @@
           isDefault = true;
           extensions = { };
           handlers = { };
-          keyboardShortcuts = [ ];
+          keyboardShortcuts = [
+            {
+              id = "zen-compact-mode-toggle";
+              key = "c";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-compact-mode-show-sidebar";
+              key = "f";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-create";
+              key = "n";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-close-all-unpinned-tabs";
+              key = "u";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "zen-workspace-forward";
+              keycode = "VK_RIGHT";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-backward";
+              keycode = "VK_LEFT";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-10";
+              key = "0";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-9";
+              key = "9";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-8";
+              key = "8";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-7";
+              key = "7";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-6";
+              key = "6";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-5";
+              key = "5";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-4";
+              key = "4";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-3";
+              key = "3";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-2";
+              key = "2";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-workspace-switch-1";
+              key = "1";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-new-empty-split-view";
+              key = "=";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-split-view-unsplit";
+              key = "-";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-split-view-horizontal";
+              key = "h";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-split-view-vertical";
+              key = "v";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-split-view-grid";
+              key = "g";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-new-unsynced-window";
+              key = "n";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "zen-glance-expand";
+              key = "e";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "zen-toggle-pin-tab";
+              key = "p";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "zen-copy-url-markdown";
+              key = "m";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "zen-copy-url";
+              key = "c";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "zen-duplicate-tab";
+              key = "d";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "key_undoCloseWindow";
+              key = "u";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectLastTab";
+              key = "9";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab8";
+              key = "8";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab7";
+              key = "7";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab6";
+              key = "6";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab5";
+              key = "5";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab4";
+              key = "4";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab3";
+              key = "3";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab2";
+              key = "2";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_selectTab1";
+              key = "1";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "goHome";
+              key = "h";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_search";
+              key = "f";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_findAgain";
+              key = "g";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "key_findPrevious";
+              key = "g";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_viewInfo";
+              key = "i";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_viewSource";
+              key = "s";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_togglePictureInPicture";
+              key = "p";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_toggleReaderMode";
+              key = "r";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "key_savePage";
+              key = "s";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "focusURLBar2";
+              key = "l";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "manBookmarkKb";
+              key = "b";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "addBookmarkAsKb";
+              key = "b";
+              modifiers = {
+                alt = true;
+              };
+            }
+            {
+              id = "showAllHistoryKb";
+              key = "h";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_accessibility";
+              key = "a";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_dom";
+              key = "d";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_storage";
+              key = "r";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_performance";
+              key = "p";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_styleeditor";
+              key = "e";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_netmonitor";
+              key = "n";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_jsdebugger";
+              key = "j";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_webconsole";
+              key = "w";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_inspector";
+              key = "i";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_responsiveDesignMode";
+              key = "m";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_browserConsole";
+              key = "c";
+              modifiers = {
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_browserToolbox";
+              key = "t";
+              modifiers = {
+                control = true;
+                alt = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_toggleToolbox";
+              key = "t";
+              modifiers = {
+                control = true;
+                alt = true;
+              };
+            }
+            {
+              id = "key_wrToggleCaptureSequenceCmd";
+              key = "^";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "key_wrCaptureCmd";
+              key = "#";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "viewBookmarksSidebarKb";
+              key = "b";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_aboutProcesses";
+              key = "`";
+              modifiers = {
+                control = true;
+              };
+            }
+            {
+              id = "openFileKb";
+              key = "f";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_openAddons";
+              key = "a";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+            {
+              id = "key_openDownloads";
+              key = "d";
+              modifiers = {
+                control = true;
+                shift = true;
+              };
+            }
+          ];
           mods = [ ];
           search = { };
           settings = {

@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Shapes
 import Quickshell
 
 // Opens under the clock/date box: a manual TO-DO list beside a MONTH calendar.
@@ -23,14 +24,13 @@ PopupWindow {
     // constant sums instead, so the correct final width is available before the
     // popup is ever shown.
     readonly property real todoW: 190
-    readonly property real spineW: 24
+    readonly property real spineW: 44   // thick, as in the concept
     readonly property real calW: 330
 
     property color lineColor: "#36F8EC"
     property color stripeColor: "#f809c9"
     property color fillColor: "#f00a0612"
     property real cardCut: 28
-    readonly property real spineNotch: 22   // how tall the wedge's own chamfer cuts are
 
     property double closedAt: 0
     function toggle() {
@@ -75,6 +75,7 @@ PopupWindow {
         lineColor: root.lineColor
         stripeCorners: ["tr", "bl"]
         stripeColor: root.stripeColor
+        stripeStep: 20   // tuned for cutSize 28: any denser and it reads as a hatch block
     }
 
     Item {
@@ -107,21 +108,162 @@ PopupWindow {
             }
         }
 
-        // Divider between the two panels: a narrow strip chamfered on its own
-        // top-left and bottom-left corners, with the concept's diagonal-stripe
-        // accent filling each notch. No fill of its own - it sits on the shared
-        // card background above, it's not a separate panel.
-        ChamferBox {
+        // Divider between the two panels: a thick strip whose LEFT edge (facing
+        // TO-DO) runs fully straight, while its RIGHT edge (facing the calendar)
+        // is chamfered near the top and bottom - matching the concept, where the
+        // cut sits on the calendar-facing side. The notch height lines up with
+        // where the calendar's own boxes start (CalendarPanel.gridStartY), so the
+        // cut visually continues into the weekday row rather than landing at an
+        // arbitrary height.
+        // Divider between the two panels: a thick strip whose RIGHT edge (facing
+        // the calendar) runs fully straight, while its LEFT edge (facing TO-DO)
+        // is chamfered near the top and bottom - matching the concept, where the
+        // cut sits on the TO-DO-facing side, densely filled with parallel lines.
+        // The notch height lines up with where the calendar's own boxes start
+        // (CalendarPanel.gridStartY), so the cut visually continues into the
+        // weekday row rather than landing at an arbitrary height.
+        Shape {
             id: spine
             x: todo.x + todo.width
             width: root.spineW
             height: cal.implicitHeight
-            cutTL: root.spineNotch
-            cutBL: root.spineNotch
-            fillColor: "transparent"
-            lineColor: root.lineColor
-            stripeCorners: ["tl", "bl"]
-            stripeColor: root.stripeColor
+
+            readonly property real notch: cal.gridStartY
+            // parallel-line offsets within each notch, as a fraction of the way
+            // from the actual cut (0) toward the fully-removed corner (1) - see
+            // the comment below for the geometry this is based on
+            readonly property var stripeParams: [0.2, 0.4, 0.6, 0.8]
+
+            ShapePath {
+                strokeColor: root.lineColor
+                strokeWidth: 1
+                fillColor: "transparent"
+                joinStyle: ShapePath.MiterJoin
+                startX: spine.width
+                startY: 0
+                PathLine {
+                    x: 0
+                    y: spine.notch
+                }
+                PathLine {
+                    x: 0
+                    y: spine.height - spine.notch
+                }
+                PathLine {
+                    x: spine.width
+                    y: spine.height
+                }
+                PathLine {
+                    x: spine.width
+                    y: 0
+                }
+            }
+
+            // Stripe accents, drawn as lines parallel to the ACTUAL cut angle -
+            // not with Hatch, which only draws true 45 degree lines and this
+            // notch is far taller than it is wide. For a right triangle with the
+            // removed corner at (0,0) and kept corners at (width,0) and
+            // (0,notch), a line parallel to the hypotenuse at parameter s (0..1,
+            // s=0 being the hypotenuse itself, s=1 the degenerate point at the
+            // removed corner) runs from (width*(1-s), 0) to (0, notch*(1-s)).
+            // The bottom notch mirrors this vertically. Unrolled explicitly
+            // (4 per notch) since a Repeater of ShapePath isn't supported here.
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: spine.width * (1 - spine.stripeParams[0])
+                startY: 0
+                PathLine {
+                    x: 0
+                    y: spine.notch * (1 - spine.stripeParams[0])
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: spine.width * (1 - spine.stripeParams[1])
+                startY: 0
+                PathLine {
+                    x: 0
+                    y: spine.notch * (1 - spine.stripeParams[1])
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: spine.width * (1 - spine.stripeParams[2])
+                startY: 0
+                PathLine {
+                    x: 0
+                    y: spine.notch * (1 - spine.stripeParams[2])
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: spine.width * (1 - spine.stripeParams[3])
+                startY: 0
+                PathLine {
+                    x: 0
+                    y: spine.notch * (1 - spine.stripeParams[3])
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: 0
+                startY: spine.height - spine.notch * (1 - spine.stripeParams[0])
+                PathLine {
+                    x: spine.width * (1 - spine.stripeParams[0])
+                    y: spine.height
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: 0
+                startY: spine.height - spine.notch * (1 - spine.stripeParams[1])
+                PathLine {
+                    x: spine.width * (1 - spine.stripeParams[1])
+                    y: spine.height
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: 0
+                startY: spine.height - spine.notch * (1 - spine.stripeParams[2])
+                PathLine {
+                    x: spine.width * (1 - spine.stripeParams[2])
+                    y: spine.height
+                }
+            }
+            ShapePath {
+                strokeColor: root.stripeColor
+                strokeWidth: 2
+                fillColor: "transparent"
+                capStyle: ShapePath.FlatCap
+                startX: 0
+                startY: spine.height - spine.notch * (1 - spine.stripeParams[3])
+                PathLine {
+                    x: spine.width * (1 - spine.stripeParams[3])
+                    y: spine.height
+                }
+            }
         }
 
         CalendarPanel {

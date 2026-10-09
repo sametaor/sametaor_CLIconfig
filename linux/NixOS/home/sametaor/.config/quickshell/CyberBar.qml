@@ -87,12 +87,12 @@ Item {
             }
 
             PathLine {
-                x: 1000
+                x: 1001
                 y: 45
             }
 
             PathLine {
-                x: 985
+                x: 986
                 y: 30
             }
 
