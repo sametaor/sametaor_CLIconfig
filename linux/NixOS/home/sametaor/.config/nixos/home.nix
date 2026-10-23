@@ -11,6 +11,8 @@
     inputs.zen-browser.homeModules.beta
     inputs.prismnix.homeModules.prismnix
     inputs.nvf.homeManagerModules.default
+    inputs.steam-config-nix.homeModules.default
+    inputs.mangowm.hmModules.mango
   ];
   # Home Manager needs a bit of information about you and the paths it should manage.
   home = {
@@ -29,7 +31,6 @@
       cbonsai
       cowsay
       curl
-      durdraw
       eden
       figlet
       jq
@@ -47,7 +48,6 @@
       wtfutil
       xemu
       xenia-canary
-      yewtube
       ytui-music
       inputs."bedrock-on-linux".packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
@@ -82,8 +82,6 @@
       P = "2>&1| pygmentize -l pytb";
       ping = "prettyping";
       what = "navi --query";
-      neo = "tmatrix -s 15 --fade -c default -C cyan -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10";
-      matrix = "tmatrix -s 15 --fade -c default -f 1,1 -G 0,70 -g 20,60 -l 2,60 -r 5,10";
       lolcat = "lolcat -t";
       astro = "astroterm -cC -s 100 -f 60 -u -m -i Delhi";
       l = "eza -lhF";
@@ -595,6 +593,104 @@
         inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       configType = "lua";
       settings = {
+        bind = [
+          { _args = [ "SUPER + ALT_L" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wlr-which-key')") { release = true; } ]; }
+          { _args = [ "SUPER_L + SUPER_R" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call spotlight-bar toggle')") ]; }
+          { _args = [ "SUPER + A" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call spotlight toggle')") ]; }
+          { _args = [ "SUPER + 1" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '1' })") ]; }
+          { _args = [ "SUPER + 2" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '2' })") ]; }
+          { _args = [ "SUPER + 3" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '3' })") ]; }
+          { _args = [ "SUPER + 4" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '4' })") ]; }
+          { _args = [ "SUPER + 5" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '5' })") ]; }
+          { _args = [ "SUPER + 6" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '6' })") ]; }
+          { _args = [ "SUPER + 7" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '7' })") ]; }
+          { _args = [ "SUPER + 8" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '8' })") ]; }
+          { _args = [ "SUPER + 9" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '9' })") ]; }
+          { _args = [ "SUPER + 0" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = '10' })") ]; }
+          { _args = [ "SUPER + K" (lib.generators.mkLuaInline "hl.dsp.workspace.toggle_special('spl')") ]; }
+          { _args = [ "SUPER + Page_Down" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 'e+1' })") ]; }
+          { _args = [ "SUPER + Page_Up" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 'e-1' })") ]; }
+          { _args = [ "SUPER + mouse_down" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 'e+1' })") ]; }
+          { _args = [ "SUPER + mouse_up" (lib.generators.mkLuaInline "hl.dsp.focus({ workspace = 'e-1' })") ]; }
+          { _args = [ "SUPER + SHIFT + 1" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '1' })") ]; }
+          { _args = [ "SUPER + SHIFT + 2" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '2' })") ]; }
+          { _args = [ "SUPER + SHIFT + 3" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '3' })") ]; }
+          { _args = [ "SUPER + SHIFT + 4" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '4' })") ]; }
+          { _args = [ "SUPER + SHIFT + 5" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '5' })") ]; }
+          { _args = [ "SUPER + SHIFT + 6" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '6' })") ]; }
+          { _args = [ "SUPER + SHIFT + 7" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '7' })") ]; }
+          { _args = [ "SUPER + SHIFT + 8" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '8' })") ]; }
+          { _args = [ "SUPER + SHIFT + 9" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '9' })") ]; }
+          { _args = [ "SUPER + SHIFT + 0" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = '10' })") ]; }
+          { _args = [ "SUPER + SHIFT + Page_Down" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 'e+1' })") ]; }
+          { _args = [ "SUPER + SHIFT + Page_Up" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 'e-1' })") ]; }
+          { _args = [ "SUPER + SHIFT + mouse_down" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 'e+1' })") ]; }
+          { _args = [ "SUPER + SHIFT + mouse_up" (lib.generators.mkLuaInline "hl.dsp.window.move({ workspace = 'e-1' })") ]; }
+          { _args = [ "SUPER + left" (lib.generators.mkLuaInline "hl.dsp.focus({ direction = 'l' })") ]; }
+          { _args = [ "SUPER + down" (lib.generators.mkLuaInline "hl.dsp.focus({ direction = 'd' })") ]; }
+          { _args = [ "SUPER + up" (lib.generators.mkLuaInline "hl.dsp.focus({ direction = 'u' })") ]; }
+          { _args = [ "SUPER + right" (lib.generators.mkLuaInline "hl.dsp.focus({ direction = 'r' })") ]; }
+          { _args = [ "SUPER + SHIFT + left" (lib.generators.mkLuaInline "hl.dsp.window.move({ direction = 'l' })") ]; }
+          { _args = [ "SUPER + SHIFT + down" (lib.generators.mkLuaInline "hl.dsp.window.move({ direction = 'd' })") ]; }
+          { _args = [ "SUPER + SHIFT + up" (lib.generators.mkLuaInline "hl.dsp.window.move({ direction = 'u' })") ]; }
+          { _args = [ "SUPER + SHIFT + right" (lib.generators.mkLuaInline "hl.dsp.window.move({ direction = 'r' })") ]; }
+          { _args = [ "SUPER + F" (lib.generators.mkLuaInline "hl.dsp.window.fullscreen({ mode = 'fullscreen', action = 'toggle'})") ]; }
+          { _args = [ "SUPER + grave" (lib.generators.mkLuaInline "hl.dsp.window.float({ action = 'toggle' })") ]; }
+          { _args = [ "SUPER + X" (lib.generators.mkLuaInline "hl.dsp.window.close()") ]; }
+          { _args = [ "SUPER + SHIFT + X" (lib.generators.mkLuaInline "hl.dsp.window.kill()") ]; }
+          { _args = [ "SUPER + I" (lib.generators.mkLuaInline "hl.dsp.window.pin()") ]; }
+          { _args = [ "SUPER + C" (lib.generators.mkLuaInline "hl.dsp.window.center()") ]; }
+          { _args = [ "SUPER + G" (lib.generators.mkLuaInline "hl.dsp.group.toggle()") ]; }
+          { _args = [ "SUPER + CTRL + left" (lib.generators.mkLuaInline "hl.dsp.window.move({ into_group = 'l' })") ]; }
+          { _args = [ "SUPER + CTRL + down" (lib.generators.mkLuaInline "hl.dsp.window.move({ into_group = 'd' })") ]; }
+          { _args = [ "SUPER + CTRL + up" (lib.generators.mkLuaInline "hl.dsp.window.move({ into_group = 'u' })") ]; }
+          { _args = [ "SUPER + CTRL + right" (lib.generators.mkLuaInline "hl.dsp.window.move({ into_group = 'r' })") ]; }
+          { _args = [ "SUPER + M" (lib.generators.mkLuaInline "hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' })") ]; }
+          { _args = [ "SUPER + minus" (lib.generators.mkLuaInline "hl.dsp.window.resize({ x = -50, y = 0, relative = true})")  { repeating = true; } ]; }
+          { _args = [ "SUPER + equal" (lib.generators.mkLuaInline "hl.dsp.window.resize({ x = 50, y = 0, relative = true})")  { repeating = true; } ]; }
+          { _args = [ "SUPER + SHIFT+ minus" (lib.generators.mkLuaInline "hl.dsp.window.resize({ x = 0, y = -50, relative = true})")  { repeating = true; } ]; }
+          { _args = [ "SUPER + SHIFT+ equal" (lib.generators.mkLuaInline "hl.dsp.window.resize({ x = 0, y = 50, relative = true})")  { repeating = true; } ]; }
+          { _args = [ "SUPER + S" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms screenshot')") { release = true; } ]; }
+          { _args = [ "SUPER + SHIFT + S" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms screenshot window')") { release = true; } ]; }
+          { _args = [ "SUPER + Print" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms screenshot full')") { release = true; } ]; }
+          { _args = [ "SUPER + V" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call clipboard toggle')") ]; }
+          { _args = [ "SUPER + W" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call dash toggle wallpaper')") ]; }
+          { _args = [ "SUPER + P" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call powermenu toggle')") ]; }
+          { _args = [ "SUPER + TAB" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call hypr toggleOverview')") ]; }
+          { _args = [ "SUPER + L" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call lock lock')") ]; }
+          { _args = [ "SUPER + Q" (lib.generators.mkLuaInline "hyprshutdown") ]; }
+          { _args = [ "SUPER + R" (lib.generators.mkLuaInline "hl.dsp.reload_config()") ]; }
+          { _args = [ "SUPER + mouse:272" (lib.generators.mkLuaInline "hl.dsp.window.drag()") { mouse = true; } ]; }
+          { _args = [ "SUPER + mouse:273" (lib.generators.mkLuaInline "hl.dsp.window.resize()") { mouse = true; } ]; }
+          { _args = [ "XF86AudioRaiseVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio increment 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86AudioLowerVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio decrement 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 1" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio mute')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + 2" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio decrement 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 3" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio increment 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 4" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris previous')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + 5" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + 6" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris next')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + minus" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness decrement 5')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + equal" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness increment 5')") { locked = true; repeating = true; } ]; }
+          { _args = [ "CTRL + XF86AudioRaiseVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris increment 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "CTRL + XF86AudioLowerVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris decrement 2')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86AudioMute" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio mute')") { locked = true; } ]; }
+          { _args = [ "XF86AudioMicMute" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio micmute')") { locked = true; } ]; }
+          { _args = [ "XF86AudioPause" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
+          { _args = [ "XF86AudioPlay" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
+          { _args = [ "XF86AudioPrev" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris previous')") { locked = true; } ]; }
+          { _args = [ "XF86AudioNext" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris next')") { locked = true; } ]; }
+          { _args = [ "XF86MonBrightnessUp" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness increment 5')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86MonBrightnessDown" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness decrement 5')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + KP_Add" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/rgb-transition.sh violet')") { desc = "Backlight on"; } ]; }
+          { _args = [ "SUPER + CTRL + KP_Subtract" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/off.sh')") { desc = "Backlight off"; } ]; }
+          { _args = [ "SUPER + CTRL + KP_Divide" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/cycle-rgb.sh')") { desc = "Backlight change"; } ]; }
+          { _args = [ "CTRL + SHIFT + Escape" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('ghostty -e btop')") ]; }
+          { _args = [ "SUPER + SHIFT + Slash" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call keybinds toggle hyprland')") ]; }
+          { _args = [ "SUPER + CTRL + SHIFT + R" (lib.generators.mkLuaInline "hl.dsp.pass({ window = [[class:com\.obsproject\.Studio]] })") ]; }
+          { _args = [ "SUPER + CTRL + SHIFT + T" (lib.generators.mkLuaInline "hl.dsp.pass({ window = [[class:com\.obsproject\.Studio]] })") ]; }
+          { _args = [ "SUPER + CTRL + SHIFT + P" (lib.generators.mkLuaInline "hl.dsp.pass({ window = [[class:com\.obsproject\.Studio]] })") ]; }
+        ];
         monitor = [
           {
             output = "";
@@ -631,7 +727,7 @@
             inactive_opacity = 0.8;
             #screen_shader = "retro.frag";
             blur = {
-              enabled = true;
+              enabled = false;
               brightness = 1;
               contrast = 0.8916;
               input_methods = true;
@@ -648,7 +744,7 @@
               };
             };
             glow = {
-              enabled = true;
+              enabled = false;
               color = { colors = ["#F809C970" "#4F0C7170"]; angle = 90.00; };
               range = 60;
               render_power = 4;
@@ -693,6 +789,7 @@
         hl.env("TERMINAL", "ghostty")
         hl.on("hyprland.start", function()
           hl.exec_cmd("dms run")
+          hl.exec_cmd("${config.home.homeDirectory}/alg-rgb-transitions/rgb-transition.sh violet")
         end)
 
         hl.animation({ leaf = "windowsIn", enabled = true, speed = 3, bezier = "default" })
@@ -730,15 +827,327 @@
 
         pcall(require, "dms.outputs")
         pcall(require, "dms.cursor")
-        pcall(require, "dms.binds")
-        pcall(require, "dms.binds-user")
         pcall(require, "dms.windowrules")
       '';
       plugins = with pkgs.hyprlandPlugins; [ ];
       systemd.variables = [ "--all" ];
     };
+    mango = {
+      enable = true;
+      autostart_sh = ''
+        quickshell &
+      '';
+      systemd.xdgAutostart = true;
+    };
   };
   programs = {
+    steam = {
+      config = {
+        enable = true;
+        notifications = true;
+        desktopEntries = {
+          enable = true;
+          libraryIcons = true;
+        };
+        onSteamRunning = "close";
+        apps = {
+          "945360" = {
+            name = "Among Us";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/9e05a81bf70d6b1afa3b5003a504e7e2.png";
+                hash = "sha256-jwO8NZ87/ggSVAGdB8ii6a/2C8mGA4sjnzbDRFNMq9M=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/d212c09e9c64621940c1a0ced94a9c98.png";
+                hash = "sha256-V7mNHEv0qq5YRSoxjafYqU0D6btTgAYXhY2If9aCmOQ=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/1cc1fab198176208789cf94b71412dc8.png";
+                hash = "sha256-QTx+lMGtUMltXN+N1MkCPEjNe6WniMi3uBlLlZbPkUA=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/6fd8a9e989f62bd98e7d20c2f81b1519.webp";
+                hash = "sha256-3VSwf3IwENb5GniS+xamqrAB64kEm4re5i5QEcxdOlg=";
+              };
+            };
+          };
+          "1812820" = {
+            name = "Bitburner";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/3abe9d080da27445343864121d017da7.png";
+                hash = "sha256-nVAZNIAcN9ape4iNtWEma9u3tXbcisTcKPqyriNagT4=";
+              };
+            };
+          };
+          "247080" = {
+            name = "Crypt of the NecroDancer";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/af73cc43b213c76a118568e511a2c3eb.webp";
+                hash = "sha256-c4S7cG/Gr7HH690nPg1PzNua0ZurwTcx/21gITghIXY=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/970185680baf285ad0bd7b61ee7338f4.png";
+                hash = "sha256-Yy19murxeCHLaBRUsLY2vr48Rt5YzZMMGUEzaOylLTQ=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/203ee2a6e05e62c33be85a1c9c1452e7.jpg";
+                hash = "sha256-xcJVrKpiLBPCGkjpe9GIsnqlGOToHjbGsCvkcL6NPuU=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/30699e092fabcb864ff2b28ab84e420d.png";
+                hash = "sha256-xVKYZDrYcMOTj25nTF9g6IsMb/R0qNHxjt48zPn/Yb0=";
+              };
+            };
+          };
+          "6910" = {
+            name = "Deus Ex";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/6d0d7f5a44981bccd5ca807fbf356601.webp";
+                hash = "sha256-yXerhuWIa5gB/GDClAbPODFtCb7OyfFTy15YQPk0/BQ=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/b0ce2f46831968fb8dcd4fa852e7ce7e.png";
+                hash = "sha256-O9odbDgejBxvBvxlqs3pocENUcrvWAUIwpCTT/WNWeU=";
+              };
+            };
+          };
+          "4137780" = {
+            name = "Doterra Industries";
+          };
+          "489830" = {
+            name = "Skyrim\: Special Edition";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/776b55b5ec8eda392aec950f51b2e1ec.png";
+                hash = "sha256-KNe0htWdL5F7wuB0VQ7V2ZRn2bj4CA6c4/BoPTq4BG0=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/ef1b5b66aa0b01a403629e4ee296a1ba.png";
+                hash = "sha256-r3an7Cpc0cFz1oOoCCq91PDbqES//c3NCCJPtbDrFi8=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/1afa34a7f984eeabdbb0a7d494132ee5.jpg";
+                hash = "sha256-MDDVju9XF+cDtdev1392dbmX531mh+2bX0PZ515HPtI=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/c7051811e49ab74434a470cf47e1e2ca.png";
+                hash = "sha256-H74CrNIzKgzbDUGgB5UKwbzK98GN+aN7I5hs4cbQrkI=";
+              };
+            };
+          };
+          "4000" = {
+            name = "Garry\'s Mod";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/54dc9a1a5bcec8ed5a026110b34e4468.webp";
+                hash = "sha256-jPP21li4w2R1QrB7N0XHoWmWydHlK9wURCaXXCy3pUQ=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/68a758feff60c72edb33cd93e37d5e93.webp";
+                hash = "sha256-Qo9GVcBPX01oY1s7rmgeeoeSkAp3ATPqcgw5X92tS/c=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/dda6d670e97068740b0b57b752f88adc.webp";
+                hash = "sha256-O1V1v/XhH2WYuOt/GYA2BWCUjJWBHkGuKiqkgcYKtJM=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/19fae75f817e799ac560aa7946299396.png";
+                hash = "sha256-MCLZ43m9kiZK1rUl8Bd9JPPr8RdCUmLKpBd4/B1oWKI=";
+              };
+            };
+          };
+          "322170" = {
+            name = "Geometry Dash";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/4b829b851f2def245cd8f821ada0c32a.webp";
+                hash = "sha256-9ruzfikbusq/yzwumY1uA7UCpubHsoqSFKY4O9PYhS8=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/9b975d2b8316b67c063f1ec8d56cf162.webp";
+                hash = "sha256-o9clbhzU/3Z3rMVfG+LBWh+YrvKKafQO4jODRajWk0U=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/56cfd1ff69a0c872443e1a3be3596bba.webp";
+                hash = "sha256-y+f5QBJfGz7SyBUUcp70lDIwhwtkQXVPADQQUPmtTig=";
+              };
+            };
+          };
+          "70" = {
+            name = "Half-Life";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/c98eaad77bd725b62d7fde993d85896a.png";
+                hash = "sha256-wGYirOhrKMjfuHuS8osRNbUBcTYGOhHjheUeELXMaCc=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/e0ecf7947469da3dc03f0977ffbbf417.png";
+                hash = "sha256-P53RoUS+LU6jVBkQAhf+/TJuS+w3f12xo0SGmasX+yI=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/9def35ba40ca680672185b7e6d96a6ae.webp";
+                hash = "sha256-x+kxy0NT2U4xxxVowujYqlFNo2peiDrEqcRpB15ziww=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/924dbf25def7ca057f504e6c7a4fd13a.webp";
+                hash = "sha256-7FM9AU2GQjL5+q7YyMovmCl2kRhOzXwhawhqbebwqQI=";
+              };
+            };
+          };
+          "1262560" = {
+            name = "Need for Speed\: Most Wanted \(2012\)";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/3c48c205e348c232559d45c96888bbfa.webp";
+                hash = "sha256-OMkTTvP0GIAaBDdLKkYIG8BY2p4+OAwbkId77bBj/Ho=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/e8c141f15e0d5aaf80de0cf973a7cbbf.webp";
+                hash = "sha256-nJhCOs29RVaNoAA+W6YafL2n8CZX6er8KwEpaHDp3xo=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/442e403a41f8f4dd2a9e89e3fec6efb4.webp";
+                hash = "sha256-oW9qZVNU7ZGNFG1juYoOrslF1bdymV3uWdF76kyNT0w=";
+              };
+            };
+          };
+          "1200580" = {
+            name = "One Gun Guy";
+          };
+          "108600" = {
+            name = "Project Zomboid";
+            artwork = {
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/9976d62ccc339a83321f7aebd3534e7b.webp";
+                hash = "sha256-IiaAxuRQKxjocigPw4maWrxZYleQQd0vmRc4xAVMIAo=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/9455a8df6e68ee4783f3d4761603dd80.png";
+                hash = "sha256-p98zAQ5h1C7LexM2IF9xvEmxdoO+LmtDHHxZY0nlehM=";
+              };
+            };
+          };
+          "1239690" = {
+            name = "Retrowave";
+            wrappers = [ "gamemoderun" ];
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/efbdd626334bd53190b53f2771201dc9.png";
+                hash = "sha256-BO3xrRfaZXh97JYeLO0ZgeMod78HCYkhaduUgEsvBGY=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/3e91f195a9b48bea20bad4f5af955cfc.png";
+                hash = "sha256-6SN6tmywuDMYU0PhRFLExnmh3mgCy43ZDUZ/3Xbf1sY=";
+              };
+            };
+          };
+          "1602900" = {
+            name = "SnOut";
+          };
+          "413150" = {
+            name = "Stardew Valley";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/2941fa0007bdcd541daf7d17cfcd140f.webp";
+                hash = "sha256-R7fTt/Vh5VjY/J/WoAN7zfG52xXRdn4oo/NXtsZAD0s=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/f9c1e83924ec2b3b79247ac16c7c966b.png";
+                hash = "sha256-RP3DVWhcOhknQpMac6CyG01/W2m0Z5uUdXTvGzmBTKI=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/993e94d67c110345aa133d31a19a9317.webp";
+                hash = "sha256-BfwAZYbxQK0S9duZHcykLoTmo9Wrt0DKY+CXBxX+TYU=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/0687a4d2ff8aea1e48edb4b6430183bf.webp";
+                hash = "sha256-Mc1hJraRA5JaHKunf5Hx9KvkZJvrkRulTpPQTWDJzvs=";
+              };
+            };
+          };
+          "252410" = {
+            name = "SteamWorld Dig";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/837a9a4a6602cb671a045791ae14dac7.png";
+                hash = "sha256-gvFvle+qnygTem9lVw0fSbRCWRLXusEQzhMbK+2WFls=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/87c23c9f6fb6ef706756b6698260e72d.png";
+                hash = "sha256-ZbAWDs8P+/iqjwRwQnobRYeiJXOvo9Scg9IN0RlqlgQ=";
+              };
+            };
+          };
+          "571310" = {
+            name = "SteamWorld Dig 2";
+            artwork = {
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/8d6207d5c61585069754daf3b60ba52a.png";
+                hash = "sha256-TorLEndoP8qJ2vea2OcgMZphsXWl0nEbtHztxfe65Pk=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/2e9636e7d9557fe233555170e4ca1ae6.png";
+                hash = "sha256-NYassRK1Y81P4qYurF1V+i4Da6o1koE8kmL72gFVSJc=";
+              };
+            };
+          };
+          "732430" = {
+            name = "Superflight";
+          };
+          "105600" = {
+            name = "Terraria";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/3b72f7ceab16764ca53861b91b0bb776.png";
+                hash = "sha256-bl0bpCGiF/qGTblfyS8Ef60Wc8k+nU7bXs2XE34CsfY=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/76acfdf01994a34d3a5f0942ab4944eb.png";
+                hash = "sha256-0MlF7YHUc4JqxCRzdx91cymgZN6n5rXrqYw1QyjrlVs=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/ef7127463e0c35bb98bb00516e3e6853.webp";
+                hash = "sha256-fzq19OLUxFtgIx64r2uskqLBFz5wf1F0wJ6RQAV+NPA=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/45e2477c030516f9e8a0f8921cac6aa9.webp";
+                hash = "sha256-8U/4uW/ACf//LQ7uE8+DX2JSv+1zGVLxnUcIic4ajRI=";
+              };
+            };
+          };
+          "1281930" = {
+            name = "tModloader";
+            artwork = {
+              cover = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/d048fe450e1f4666aeb12e14ac2c5514.png";
+                hash = "sha256-KWTzV7VgbuBlM1btAwJdapDViPyHPVoDmFrYQWEdO0I=";
+              };
+              header = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/grid/6081077dcf616ab6fdbab3e9b5c6ad85.png";
+                hash = "sha256-ewDHjRNKYbJkUNhbbQ90xfv1A87SKpTZ4Yy47V5eftM=";
+              };
+              hero = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/hero/b27bbc81a802711995f2aeddaa3b8960.png";
+                hash = "sha256-or9TcqS07Rx3pLOqcK7Vl9PMfRvUEkx13it+3bAnSh4=";
+              };
+              logo = pkgs.fetchurl {
+                url = "https://cdn2.steamgriddb.com/logo/2d8fd020f9d5171d3810d678ad172d96.png";
+                hash = "sha256-HF0PmcOBWn/7b7JCDuokM+LeGDCXCAlf9zQIUIx0lnY=";
+              };
+            };
+          };
+        };
+      };
+    };
     nvf = {
       enable = true;
       settings = {
@@ -913,6 +1322,17 @@
                               file_height = 16,
                               file_width = 90,
                       },
+              })
+            '';
+            nixd_autoarchive = inputs.nvf.lib.nvim.dag.entryAnywhere ''
+              require('lspconfig').nixd.setup({
+                settings = {
+                  nixd = {
+                    flake = {
+                      autoArchive = true
+                    }
+                  }
+                }
               })
             '';
           };
@@ -1166,6 +1586,7 @@
                                                                                                         command = "zsh";
                                                                                                         args = ["-c" "sleep 0.1 && pipes-rs"];
                                                                                                         name = "Pipes-rs";
+                                                                                                        start_suspended = true;
                                                                                                 };
                                                                                         }
                                                                                         {
@@ -1174,6 +1595,7 @@
                                                                                                         command = "clock-rs";
                                                                                                         name = "Clock-rs";
                                                                                                         focus = true;
+                                                                                                        start_suspended = true;
                                                                                                 };
                                                                                         }
                                                                                         {
@@ -1182,6 +1604,7 @@
                                                                                                         command = "cbonsai";
                                                                                                         args = ["-l" "-i" "-c" "@" "-b" "2" "-w" "0.01"];
                                                                                                         name = "Cbonsai";
+                                                                                                        start_suspended = true;
                                                                                                 };
                                                                                         }
                                                                                 ];
@@ -1193,6 +1616,7 @@
                                                                                 command = "rmatrix";
                                                                                 args = ["-C" "rainbow" "-c" "binary" "-S" "1.33" "--fps" "60" "-b" "-s" "--color-depth" "truecolor" "-d" "0.6"];
                                                                                 name = "Rmatrix";
+                                                                                start_suspended = true;
                                                                         };
                                                                 }
                                                         ];
@@ -1465,9 +1889,6 @@
       };
     };
     man = {
-      enable = true;
-    };
-    mcp = {
       enable = true;
     };
     less = {
@@ -2808,13 +3229,48 @@
         auto_kbd_layout = true;
         menu = [
                 {
-                        key = "p";
-                        desc = "Power";
-                        submenu = [
-                                { key = "s"; desc = "Sleep"; cmd = "systemctl suspend"; }
-                                { key = "r"; desc = "Reboot"; cmd = "reboot"; }
-                                { key = "o"; desc = "Off"; cmd = "poweroff"; }
-                        ];
+                  key = "a";
+                  desc = "Applications";
+                  submenu = [
+                    { key = "e"; desc = "Open Explorer"; cmd = "dolphin"; }
+                    { key = "b"; desc = "Open Browser"; cmd = "zen-beta"; }
+                    { key = "t"; desc = "Open Terminal"; cmd = "ghostty"; }
+                    { key = "a"; desc = "Open Authenticator"; cmd = "ente_auth"; }
+                    #{ key = "p"; desc = "Open Password Manager"; }
+                    #{ key = "m"; desc = "Open Mail"; }
+                    { key = "c"; desc = "Open Calculator"; cmd = "qalculate-qt"; }
+                    { key = "v"; desc = "Open VPN Client"; cmd = "protonvpn-app"; }
+                    { key = "o"; desc = "Open Office"; cmd = "libreoffice"; }
+                    { key = "p"; desc = "Open Task Manager"; cmd = "ghostty -e btop"; }
+                  ];
+                }
+                {
+                  key = "g";
+                  desc = "Gaming";
+                  submenu = [
+                    { key = "s"; desc = "Open Steam"; cmd = "steam"; }
+                    { key = "h"; desc = "Open Heroic"; cmd = "heroic"; }
+                    { key = "l"; desc = "Open Lutris"; cmd = "lutris"; }
+                    { key = "r"; desc = "Open Retroarch"; cmd = "retroarch"; }
+                    { key = "p"; desc = "Open Prism Launcher"; cmd = "prismlauncher"; }
+                  ];
+                }
+                {
+                  key = "p";
+                  desc = "Programming";
+                  submenu = [
+                    { key = "e"; desc = "Open Editor"; cmd = "ghostty -e nvim"; }
+                    { key = "v"; desc = "Open VM Manager"; cmd = "virt-manager"; }
+                    { key = "t"; desc = "Open Torrent Client"; cmd = "qbittorent"; }
+                  ];
+                }
+                {
+                  key = "w";
+                  desc = "Websites";
+                  submenu = [
+                    { key = "1"; desc = "Open FMHY"; cmd = "zen-beta --new-tab https:\/\/fmhy.net"; }
+                    { key = "2"; desc = "Open jnv/lists"; cmd = "zen-beta --new-tab https:\/\/github.com/jnv\/lists"; }
+                  ];
                 }
         ];
       };
@@ -3542,7 +3998,6 @@
     go = {};
     ghostty = {
       enable = true;
-      package = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.ghostty-bin else (pkgs.nvidiaWrap pkgs.ghostty);
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
@@ -3581,12 +4036,6 @@
         working-directory = "home";
         wait-after-command = true;
         shell-integration-features = "cursor,sudo,no-title,ssh-env,ssh-terminfo";
-        custom-shader = [
-          "/home/sametaor/.config/ghostty/shaders/cursor_warp.glsl"
-          "/home/sametaor/.config/ghostty/shaders/rectangle_boom_cursor.glsl"
-          "/home/sametaor/.config/ghostty/shaders/cursor_blaze.glsl"
-        ];
-        custom-shader-animation = true;
         clipboard-read = "allow";
         clipboard-write = "allow";
         copy-on-select = "clipboard";
@@ -3649,28 +4098,6 @@
         "promptvars"
         "histappend"
       ];
-    };
-    lazydocker = {
-      enable = true;
-      settings = {
-        gui = {
-          scrollHeight = 2;
-          border = "single";
-          theme = {
-            activeBorderColor = [
-              "red"
-              "bold"
-            ];
-            inactiveBorderColor = [
-              "white"
-            ];
-          };
-          showBottomLine = true;
-        };
-        logs = {
-          timestamps = true;
-        };
-      };
     };
     lazygit = {
       enable = true;
@@ -3886,8 +4313,7 @@
         };
       };
     };
-    chawan.enable = true;
-    command-not-found.enable = true;
+    nix-index.enable = true;
     devenv = {
       enable = true;
       enableBashIntegration = true;
@@ -4342,12 +4768,6 @@
       enable = true;
       plugins = [];
     };
-    #prismlauncher = {
-    #  enable = true;
-    #  extraPackages = [];
-    #  settings = {};
-    #  themes = {};
-    #};
     prismnix = {
       enable = true;
       package = pkgs.prismlauncher;
@@ -4453,16 +4873,16 @@
               prismnix.emi-ores
               prismnix."emi-professions-(emip)"
               prismnix.ends-delight
-              (prismnix.mkModrinthPkg{
-                name = "entity-culling";
-                id = "MwYnBlwK";
-                type = "mod";
-                version = {
-                  id = "infkTCSN";
-                  file = "entityculling-fabric-1.10.5-mc1.20.1.jar";
-                  hash = "sha256-y03rKoI8g6+Y/MBukoB5E7SC3lSYHRZXopiC3B/UZlw=";
-                };
-              })
+              #(prismnix.mkModrinthPkg{
+              #  name = "entity-culling";
+              #  id = "MwYnBlwK";
+              #  type = "mod";
+              #  version = {
+              #    id = "infkTCSN";
+              #    file = "entityculling-fabric-1.10.5-mc1.20.1.jar";
+              #    hash = "sha256-y03rKoI8g6+Y/MBukoB5E7SC3lSYHRZXopiC3B/UZlw=";
+              #  };
+              #})
               prismnix.entitytexturefeatures
               prismnix.entity-model-features
               prismnix.esf
@@ -4475,16 +4895,16 @@
               prismnix.farmers-knives
               prismnix.ferrite-core
               prismnix.frights-delight
-              (prismnix.mkModrinthPkg{
-                name = "fusion";
-                id = "p19vrgc2";
-                type = "mod";
-                version = {
-                    id = "5ezihlcf";
-                    file = "fusion-1.3.15a-fabric-mc1.20.1.jar";
-                    hash = "sha256-PXLIoDCw3AZJYzhrL93y6MsGNoSWIC3OGN90lE9LVuI=";
-                  };
-              })
+              #(prismnix.mkModrinthPkg{
+              #  name = "fusion";
+              #  id = "p19vrgc2";
+              #  type = "mod";
+              #  version = {
+              #      id = "5ezihlcf";
+              #      file = "fusion-1.3.15a-fabric-mc1.20.1.jar";
+              #      hash = "sha256-PXLIoDCw3AZJYzhrL93y6MsGNoSWIC3OGN90lE9LVuI=";
+              #    };
+              #})
               prismnix.geckolib
               prismnix.glitchcore
               prismnix.handcrafted
@@ -4649,10 +5069,6 @@
       vaults = {};
     };
     qalculate = {
-      enable = true;
-      settings = {};
-    };
-    radio-cli = {
       enable = true;
       settings = {};
     };
@@ -4927,7 +5343,6 @@
     };
     mpd-mpris = {
       enable = true;
-      mpd.useLocal = true;
     };
     pipewire = {
         enable = true;
@@ -4948,10 +5363,6 @@
     };
     network-manager-applet.enable = true;
     notify-osd.enable = true;
-    ollama = {
-        enable = true;
-        acceleration = "cuda";
-    };
     mpd-discord-rpc = {
       enable = true;
       settings = {

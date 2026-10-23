@@ -28,11 +28,10 @@ in
 {
   nixpkgs.overlays = [
     inputs.millennium.overlays.default
-    inputs.durdraw.overlays.default
     inputs.nur.overlays.default
     inputs.prismnix.overlays.default
     inputs.nixpkgs-wayland.overlay
-    inputs.llm-agents.overlays.shared-nixpkgs
+    (final: prev: { contour = prev.runCommand "contour-dummy" { outputs = [ "out" "terminfo" ]; } ''mkdir -p $out $terminfo''; })
     (final: prev: {
       # Make nvidiaWrap available globally
       nvidiaWrap =
@@ -89,6 +88,7 @@ in
     ./cachix.nix
     inputs.nixcord.nixosModules.nixcord
     inputs.sops-nix.nixosModules.sops
+    inputs.mangowm.nixosModules.mango
   ];
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -110,7 +110,7 @@ in
       qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
     };
     spiceUSBRedirection.enable = true;
-    vmware.host.enable = true;
+    vmware.host.enable = false; #true;
   };
   musnix = {
     enable = true;
@@ -199,6 +199,7 @@ in
       "compress=zstd:1"
       "noatime"
       "nofail"
+      "exec"
     ];
   };
   networking = {
@@ -438,8 +439,10 @@ in
       enable = true;
       extraBackends = [ pkgs.hplipWithPlugin ];
     };
-    nvidia-container-toolkit.enable = true;
-    nvidia-container-toolkit.suppressNvidiaDriverAssertion = true;
+    nvidia-container-toolkit = {
+      enable = true; 
+      suppressNvidiaDriverAssertion = true;
+    };
     nvidia = {
       modesetting.enable = true;
       open = false;
@@ -489,6 +492,10 @@ in
         "flox-cache-public-1:7F4OyH7ZCnFhcze3fJdfyXYLQw/aV7GEed86nQ7IsOs="
         "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
         "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
+      ];
+      trusted-users = [
+        "root"
+        "sametaor"
       ];
     };
   };
@@ -601,7 +608,6 @@ in
     colord.enable = true;
     flatpak.enable = true;
     power-profiles-daemon.enable = true;
-    weechat.enable = true;
     playerctld.enable = true;
   };
 
@@ -632,6 +638,9 @@ in
   };
 
   programs = {
+    mango = {
+      enable = true;
+    };
     nixcord = {
       enable = true;
       user = "sametaor";
@@ -670,7 +679,7 @@ in
             useDevIcon = "COLOR";
           };
           showConnections.enable = true;
-          tenorGifSearch.enable = true;
+          gifProviderSwitcher.enable = true;
           webKeybinds.enable = true;
           webContextMenus.enable = true;
           webRichPresence.enable = true;
@@ -693,19 +702,19 @@ in
           };
           collapsibleUi = {
             enable = true;
-            channelListCollapsed = true;
+            channelListCollapsed = false;
             chatButtonsCollapsed = true;
             guildBarCollapsed = true;
-            headerBarCollapsed = true;
+            headerBarCollapsed = false;
             membersListCollapsed = true;
-            titleBarCollapsed = true;
-            userAreaCollapsed = true;
+            titleBarCollapsed = false;
+            userAreaCollapsed = false;
           };
           customSounds = {
             enable = true;
           };
           fakeNitro.enable = true;
-          favouriteAnything.enable = true;
+          favoriteAnything.enable = true;
           fixFileExtensions.enable = true;
           fixYoutubeEmbeds.enable = true;
           globalBadges.enable = true;
@@ -722,7 +731,7 @@ in
           typingTweaks.enable = true;
           whoReacted = {
             enable = true;
-            avatarClick = true;
+            clickableAvatars = true;
           };
           zipPreview.enable = true;
         };
@@ -753,18 +762,13 @@ in
         enable = true;
         restartIfChanged = true;
       };
-      enableSystemMonitoring = true;
-      enableVPN = true;
-      enableDynamicTheming = true;
-      enableAudioWavelength = true;
-      enableCalendarEvents = true;
     };
     git = {
       enable = true;
       config = {
         safe = {
           directory = [
-              "/home/sametaor/Projects/github/sametaor_CLIconfig/"
+              "/home/sametaor/Projects/github/sametaor_CLIconfig"
             ];
         };
         alias = {
@@ -801,7 +805,7 @@ in
       enable = true;
     };
     bat.enable = true;
-    command-not-found.enable = true;
+    nix-index.enable = true;
     direnv = {
       enable = true;
       enableFishIntegration = true;
@@ -856,7 +860,7 @@ in
     };
     obs-studio = {
       enable = true;
-      enableVirtualCamera = true;
+      enableVirtualCamera = false;
       package = (pkgs.obs-studio.override { cudaSupport = true; });
     };
     television = {
@@ -951,16 +955,6 @@ in
   systemd = {
     services = {
       NetworkManager-wait-online.enable = true;
-      reload-alg-rgb = {
-        description = "Reload ALG RGB Kernel Module after suspend";
-        after = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target" ];
-        wantedBy = [ "suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target" ];
-        serviceConfig = {
-          Type = "oneshot";
-          ExecStartPre = "-${pkgs.kmod}/bin/modprobe -r alg_rgb";
-          ExecStart = "${pkgs.kmod}/bin/modprobe alg_rgb";
-        };
-      };
       plymouth-wait-animation = {
         description = "Wait for Plymouth animation to complete";
         wantedBy = [ "multi-user.target" ];
@@ -996,7 +990,7 @@ in
       extraRules = [
         {
           users = [ "sametaor" ];
-          keepEnv = true;
+          keepEnv = false;
           persist = true;
         }
       ];
@@ -1130,7 +1124,6 @@ in
         archisteamfarm
         aria2
         ascii-image-converter
-        aseprite
         assetripper
         astroterm
         bagels
@@ -1160,12 +1153,10 @@ in
         bzip2
         bzip3
         cachix
-        calibre-no-speech
         candy-icons
         cargo
         cargo-binstall
         cava
-        chawan
         chess-tui
         clang
         cmake
@@ -1208,7 +1199,6 @@ in
         ((pkgs.ffmpeg-full.override { withUnfree = true; }).overrideAttrs (_: {
           doCheck = false;
         }))
-        figma-linux
         fish-lsp
         fontforge-gtk
         fontforge-fonttools
@@ -1218,7 +1208,6 @@ in
         fzf
         gcc
         gh
-        gh-eco
         ghgrab
         gimp-with-plugins
         glava
@@ -1229,9 +1218,6 @@ in
         google-play
         gpg-tui
         gpgmepp
-        (gpufetch.override {
-          cudaSupport = true;
-        })
         grub2
         guestfs-tools
         gzip
@@ -1257,17 +1243,13 @@ in
         hyprsunset
         inkscape-with-extensions
         jackett
-        jamesdsp
         jq
         jre
-        karere
         kdenlive-nvenc
         lazydocker
         libinput
         libisoburn
         libreoffice-qt
-        llm-agents.openclaw
-        lmms-full
         lmstudio
         lua
         luarocks-nix
@@ -1291,10 +1273,8 @@ in
         nvitop
         obsidian
         oh-my-posh
-        onedrivegui
         ookla-speedtest
         ouch
-        OVMF
         p7zip
         pandoc
         pear-desktop
@@ -1304,16 +1284,6 @@ in
         poppler-utils
         poppler_data
         prettyping
-        #(prismlauncher.override {
-        #  jdks = with pkgs; [
-        #    jdk25
-        #    jdk17
-        #    jdk21
-        #    jdk8
-        #    jdk
-        #  ];
-        #  gamemodeSupport = true;
-        #})
         protonup-qt
         proton-vpn
         proton-vpn-cli
@@ -1345,7 +1315,6 @@ in
         systemctl-tui
         tailscale
         tealdeer
-        teams-for-linux
         telegram-desktop
         tenacity
         tg
@@ -1358,7 +1327,6 @@ in
         (ueberzugpp.override {
           cudaSupport = true;
         })
-        up
         uv
         ventoy-full
         virt-viewer
@@ -1377,13 +1345,9 @@ in
         x265
         xwayland-satellite
         yt-dlp
-        zoom-us
-        inputs.ani2hyprtui.packages."${pkgs.stdenv.hostPlatform.system}".default
       ]
-      ++ (map (pkgs.nvidiaWrap) [
-        mesa-demos
-      ])
       ++ [
+        mesa-demos
         nur.mic92.hello-nur
       ];
   };
@@ -1409,10 +1373,11 @@ in
 
   nixpkgs.config = {
     allowUnfree = true;
+    skipKernelModulesVerification = true;
     permittedInsecurePackages = [
       "electron-39.8.10"
       "electron-40.10.5"
-      "ventoy-1.1.17"
+      "ventoy-1.1.18"
     ];
   };
 

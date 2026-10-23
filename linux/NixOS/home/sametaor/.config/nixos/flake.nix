@@ -20,7 +20,6 @@
       url = "github:NotAShelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ani2hyprtui.url = "github:Sevilze/ani2hyprtui";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,10 +33,6 @@
       inputs.hyprland.follows = "hyprland";
     };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
-    durdraw = {
-      url = "github:Daaboulex/durdraw-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     prismnix = {
       url = "github:qacow37/prismnix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,13 +52,24 @@
       url = "github:eza-community/eza";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    llm-agents.url = "github:numtide/llm-agents.nix";
     bedrock-on-linux = {
       url = "github:Wyze3306/BedrockOnLinux";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    steam-config-nix = {
+      url = "github:different-name/steam-config-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mangowm = {
+      url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -78,6 +84,7 @@
       nur,
       bedrock-on-linux,
       sops-nix,
+      nix-index-database,
       ...
     }@inputs:
     {
@@ -93,13 +100,18 @@
             ./hardware-configuration.nix
             ./configuration.nix
             ./alg-rgb.nix
+            nix-index-database.nixosModules.nix-index
             home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = { inherit inputs; };
-                users.sametaor = import ./home.nix;
+                users.sametaor = {
+                  imports = [
+                    ./home.nix
+                  ];
+                };
                 backupFileExtension = "bak";
                 overwriteBackup = true;
               };
