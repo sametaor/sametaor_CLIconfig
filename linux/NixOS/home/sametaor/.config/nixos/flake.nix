@@ -119,5 +119,21 @@
           ];
         };
       };
+      homeConfigurations."sametaor@nixsametaor" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          overlays = import ./overlays.nix { inherit inputs; };
+          config = {
+            allowUnfree = true;
+            permittedInsecurePackages = [
+              "electron-39.8.10"
+              "electron-40.10.5"
+              "ventoy-1.1.18"
+            ];
+          };
+        };
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home.nix ];
+      };
     };
 }

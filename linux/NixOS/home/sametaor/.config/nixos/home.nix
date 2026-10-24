@@ -33,6 +33,7 @@
       curl
       eden
       figlet
+      home-manager
       jq
       libnotify
       libretro-core-info
@@ -658,30 +659,30 @@
           { _args = [ "SUPER + P" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call powermenu toggle')") ]; }
           { _args = [ "SUPER + TAB" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call hypr toggleOverview')") ]; }
           { _args = [ "SUPER + L" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call lock lock')") ]; }
-          { _args = [ "SUPER + Q" (lib.generators.mkLuaInline "hyprshutdown") ]; }
-          { _args = [ "SUPER + R" (lib.generators.mkLuaInline "hl.dsp.reload_config()") ]; }
+          { _args = [ "SUPER + Q" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('hyprshutdown')") { long_press = true; } ]; }
+          { _args = [ "SUPER + R" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('reload_config')") ]; }
           { _args = [ "SUPER + mouse:272" (lib.generators.mkLuaInline "hl.dsp.window.drag()") { mouse = true; } ]; }
           { _args = [ "SUPER + mouse:273" (lib.generators.mkLuaInline "hl.dsp.window.resize()") { mouse = true; } ]; }
-          { _args = [ "XF86AudioRaiseVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio increment 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "XF86AudioLowerVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio decrement 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "SUPER + CTRL + 1" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio mute')") { locked = true; } ]; }
-          { _args = [ "SUPER + CTRL + 2" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio decrement 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "SUPER + CTRL + 3" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio increment 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "SUPER + CTRL + 4" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris previous')") { locked = true; } ]; }
-          { _args = [ "SUPER + CTRL + 5" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
-          { _args = [ "SUPER + CTRL + 6" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris next')") { locked = true; } ]; }
+          { _args = [ "XF86AudioRaiseVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86AudioLowerVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 1" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + 2" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 3" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+')") { locked = true; repeating = true; } ]; }
+          { _args = [ "SUPER + CTRL + 4" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl previous')") { locked = true; long_press = true; } ]; }
+          { _args = [ "SUPER + CTRL + 5" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl play-pause')") { locked = true; } ]; }
+          { _args = [ "SUPER + CTRL + 6" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl next')") { locked = true; long_press = true; } ]; }
           { _args = [ "SUPER + CTRL + minus" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness decrement 5')") { locked = true; repeating = true; } ]; }
           { _args = [ "SUPER + CTRL + equal" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness increment 5')") { locked = true; repeating = true; } ]; }
-          { _args = [ "CTRL + XF86AudioRaiseVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris increment 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "CTRL + XF86AudioLowerVolume" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris decrement 2')") { locked = true; repeating = true; } ]; }
-          { _args = [ "XF86AudioMute" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio mute')") { locked = true; } ]; }
+          { _args = [ "CTRL + XF86AudioPrev" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl position -5')") { locked = true; } ]; }
+          { _args = [ "CTRL + XF86AudioNext" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl position +5')") { locked = true; } ]; }
+          { _args = [ "XF86AudioMute" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle')") { locked = true; } ]; }
           { _args = [ "XF86AudioMicMute" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call audio micmute')") { locked = true; } ]; }
-          { _args = [ "XF86AudioPause" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
-          { _args = [ "XF86AudioPlay" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris playPause')") { locked = true; } ]; }
-          { _args = [ "XF86AudioPrev" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris previous')") { locked = true; } ]; }
-          { _args = [ "XF86AudioNext" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call mpris next')") { locked = true; } ]; }
-          { _args = [ "XF86MonBrightnessUp" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness increment 5')") { locked = true; repeating = true; } ]; }
-          { _args = [ "XF86MonBrightnessDown" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('dms ipc call brightness decrement 5')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86AudioPause" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl play-pause')") { locked = true; } ]; }
+          { _args = [ "XF86AudioPlay" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl play-pause')") { locked = true; } ]; }
+          { _args = [ "XF86AudioPrev" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl previous')") { locked = true; long_press = true; } ]; }
+          { _args = [ "XF86AudioNext" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('playerctl next')") { locked = true; long_press = true; } ]; }
+          { _args = [ "XF86MonBrightnessUp" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('brightnessctl set 5%+')") { locked = true; repeating = true; } ]; }
+          { _args = [ "XF86MonBrightnessDown" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('brightnessctl set 5%-')") { locked = true; repeating = true; } ]; }
           { _args = [ "SUPER + CTRL + KP_Add" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/rgb-transition.sh violet')") { desc = "Backlight on"; } ]; }
           { _args = [ "SUPER + CTRL + KP_Subtract" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/off.sh')") { desc = "Backlight off"; } ]; }
           { _args = [ "SUPER + CTRL + KP_Divide" (lib.generators.mkLuaInline "hl.dsp.exec_cmd('/home/sametaor/alg-rgb-transitions/cycle-rgb.sh')") { desc = "Backlight change"; } ]; }
@@ -716,6 +717,12 @@
             };
             snap.enabled = true;
           };
+          binds = {
+            hide_special_on_workspace_change = true;
+          };
+          render = {
+            async_commit = true;
+          };
           scrolling = {
             direction = "right";
             column_width = 1.0;
@@ -728,23 +735,23 @@
             #screen_shader = "retro.frag";
             blur = {
               enabled = false;
-              brightness = 1;
-              contrast = 0.8916;
-              input_methods = true;
-              noise = 0.0117;
-              passes = 1;
-              popups = true;
-              size = 8;
-              special = false;
-              variant = "prism";
-              glass = {
-                refraction = 20.0;
-                roughness = 1.0;
-                size = 7.5;
-              };
+            #  brightness = 1;
+            #  contrast = 0.8916;
+            #  input_methods = true;
+            #  noise = 0.0117;
+            #  passes = 1;
+            #  popups = true;
+            #  size = 8;
+            #  special = false;
+            #  variant = "prism";
+            #  glass = {
+            #    refraction = 20.0;
+            #    roughness = 1.0;
+            #    size = 7.5;
+            #  };
             };
             glow = {
-              enabled = false;
+              enabled = true;
               color = { colors = ["#F809C970" "#4F0C7170"]; angle = 90.00; };
               range = 60;
               render_power = 4;
@@ -802,7 +809,7 @@
         hl.window_rule({ match = { class = "^(org\\.wezfurlong\\.wezterm)$" }, tile = true })
         hl.window_rule({ match = { class = "^(org\\.gnome\\.)" }, rounding = 12 })
         hl.window_rule({ match = { class = "^(gnome-control-center)$" }, tile = true })
-        hl.window_rule({ match = { class = "^(pavucontrol)$" }, tile = true })
+        hl.window_rule({ match = { class = "^(pwvucontrol)$" }, tile = true })
         hl.window_rule({ match = { class = "^(nm-connection-editor)$" }, tile = true })
         hl.window_rule({ match = { class = "^(org\\.gnome\\.Calculator)$" }, float = true })
         hl.window_rule({ match = { class = "^(gnome-calculator)$" }, float = true })
@@ -816,8 +823,9 @@
         	pin = true,
         })
         hl.window_rule({
-        	match = { class = "^(firefox)$", title = "^(Picture-in-Picture)$" },
+        	match = { class = "^(zen-beta)$", title = "^(Picture-in-Picture)$" },
         	float = true,
+          pin = true,
         })
         hl.window_rule({ match = { class = "^(zoom)$" }, float = true })
         hl.layer_rule({ match = { namespace = "^(quickshell)$" }, no_anim = false })
